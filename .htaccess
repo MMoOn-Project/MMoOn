@@ -1,8 +1,8 @@
-# From http://www.w3.org/TR/swbp-vocab-pub/#recipe4 
+# From http://www.w3.org/TR/swbp-vocab-pub/#recipe4
 Options -MultiViews
 
 AddType application/rdf+xml .rdf .owl
-AddType text/plain .ttl
+AddType text/turtle .ttl
 RewriteEngine On
 AddCharset utf-8 .txt .log .ttl .html
 
@@ -29,4 +29,3 @@ RewriteRule ^core$ /core/mmoon-core_v0.6.0.ttl [R=303,L]
 # Default
 #################
 RewriteRule ^core$ /core/mmoon-core_v0.6.0.ttl [R=303,L]
-
