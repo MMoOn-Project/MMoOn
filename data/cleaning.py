@@ -21,7 +21,8 @@ import regex
 
 mmoon = Namespace("http://mmoon.org/mmoon#")
 mmoon_heb = Namespace("http://mmoon.org/lang/heb/schema/oh/")
-heb_inventory = Namespace("http://mmoon.org/lang/heb/inventory/oh#")
+# TODO: Irgendwo verwendet bettina auch oh#
+heb_inventory = Namespace("http://mmoon.org/lang/heb/inventory/oh/")
 
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
@@ -63,6 +64,7 @@ def main(args=sys.argv[1:]):
     forbiddenChars = [" ", "(", ")", "[", "]", "/", "—"]
 
     charTranslation = str.maketrans("\"","״")
+    removeTranslation = str.maketrans("?!","  ")
 
     a = 0
     b = 0
@@ -70,6 +72,13 @@ def main(args=sys.argv[1:]):
     kategorie = set()
     filteredRows = []
     for row in csvReader:
+        row['vocalized'] = row['vocalized'].strip()
+        row['vocalized'] = row['vocalized'].translate(removeTranslation)
+        row['vocalized'] = row['vocalized'].translate(charTranslation)
+        row['unvocalized'] = row['unvocalized'].strip()
+        row['unvocalized'] = row['unvocalized'].translate(removeTranslation)
+        row['unvocalized'] = row['unvocalized'].translate(charTranslation)
+
         if not row['vocalized'] or any(char in row['vocalized'] for char in forbiddenChars):
             #print("removed because of A")
             a=a+1
@@ -83,12 +92,14 @@ def main(args=sys.argv[1:]):
             #print(row)
             kategorie.add(row['Kategorie'])
             row['root'] = normalizeRoot(row['root'])
-            if row['vocalized'] == "???":
-                row['vocalized'] = ""
-            row['vocalized'] = row['vocalized'].translate(charTranslation)
-            row['unvocalized'] = row['unvocalized'].translate(charTranslation)
+
+
             row['Genus/Binjan'] = row['Genus/Binjan'].translate(charTranslation)
+            row['Genus/Binjan'] = row['Genus/Binjan'].strip()
+
             row['Kategorie'] = row['Kategorie'].translate(charTranslation)
+            row['Kategorie'] = row['Kategorie'].strip()
+
             row['secundaryRoot'] = normalizeRoot(row['secundaryRoot'])
             filteredRows.append(row)
     file_fd.close()
@@ -119,7 +130,7 @@ def main(args=sys.argv[1:]):
         #if row['Kategorie']:
         #    store.add()
 
-        lexemes = []
+        lexeme = None
         roots = []
 
         # TODO
@@ -132,25 +143,28 @@ def main(args=sys.argv[1:]):
             # urllib.parse.urlencode()
             #voc = hashlib.md5(row['vocalized'].encode('utf-8')).hexdigest()
             voc = row['vocalized']
-            voclexeme = rdflib.term.URIRef(heb_inventory+"lexeme_"+voc)
+            lexeme = rdflib.term.URIRef(heb_inventory+"Lexeme/"+voc)
+            vocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/"+voc)
             vocliteral = rdflib.term.Literal(row['vocalized'], lang="he")
 
-            graph.add((voclexeme, RDF.type, mmoon_heb.OrthographicRepresentation))
-            graph.add((voclexeme, RDF.type, mmoon_heb.Lexeme))
-            graph.add((voclexeme, RDFS.label, vocliteral))
-            lexemes.append(voclexeme)
+            graph.add((vocrep, RDF.type, mmoon_heb.OrthographicRepresentation))
+            graph.add((vocrep, RDFS.label, vocliteral))
+            graph.add((lexeme, mmoon_heb.hasVocalizedOrthographicRepresentation, vocrep))
+            graph.add((lexeme, RDF.type, mmoon_heb.Lexeme))
+            graph.add((lexeme, RDFS.label, vocliteral))
 
         if row['unvocalized']:
             # urllib.parse.urlencode()
             #unvoc = hashlib.md5(row['unvocalized'].encode('utf-8')).hexdigest()
             unvoc = row['unvocalized']
-            unvoclexeme = rdflib.term.URIRef(heb_inventory+"lexeme_"+unvoc)
+            unvocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/"+unvoc)
             unvocliteral = rdflib.term.Literal(row['unvocalized'], lang="he")
 
-            graph.add((unvoclexeme, RDF.type, mmoon_heb.OrthographicRepresentation))
-            graph.add((unvoclexeme, RDF.type, mmoon_heb.Lexeme))
-            graph.add((unvoclexeme, RDFS.label, unvocliteral))
-            lexemes.append(unvoclexeme)
+            graph.add((unvocrep, RDF.type, mmoon_heb.OrthographicRepresentation))
+            graph.add((unvocrep, RDFS.label, unvocliteral))
+
+            if lexeme:
+                graph.add((lexeme, mmoon_heb.hasUnvocalizedOrthographicRepresentation, unvocrep))
 
         if row['root'] or row['secundaryRoot']:
             # secondary-root -> secondary-root
@@ -173,28 +187,45 @@ def main(args=sys.argv[1:]):
             # TODO: "מלת חיבור", "מילת חיבור", "מילת קריאה", "מילת שאלה"
             classResource = None
             inflectionalCategories = []
+            binjan = []
 
             if row['Kategorie'] == "פועל":
                 # TODO ist in OpenHebrewInstances.ttl noch als http://mmoon.org/lang/heb/inventory/oh#Verb angegeben
                 classResource = mmoon_heb.Verb
-                if row['Genus/Binjan'] == "ז״ר" or row['Genus/Binjan'] == "ז\"ר" or row['Genus/Binjan'] == "זכר רבים":
-                    # masc. plur.
-                    inflectionalCategories.append(mmoon_heb.Masculine)
-                    inflectionalCategories.append(mmoon_heb.Plural)
+                if row['Genus/Binjan'] == "פעל":
+                    binjan = mmoon_heb.paal
+                elif row['Genus/Binjan'] == "נפעל":
+                    binjan = mmoon_heb.nifal
+                elif row['Genus/Binjan'] == "פיעל":
+                    binjan = mmoon_heb.piel
+                elif row['Genus/Binjan'] == "פולל" or row['Genus/Binjan'] == "פיעל פולל":
+                    binjan = mmoon_heb.polel
+                elif row['Genus/Binjan'] == "פיעל (פעלל)":
+                    binjan = mmoon_heb.palel
+                elif row['Genus/Binjan'] == "פועל":
+                    binjan = mmoon_heb.pual
+                elif row['Genus/Binjan'] == "פועל (פועלל)":
+                    binjan = mmoon_heb.pulel
+                elif row['Genus/Binjan'] == "הפעיל":
+                    binjan = mmoon_heb.hifil
+                elif row['Genus/Binjan'] == "הופעל":
+                    binjan = mmoon_heb.hufal
+                elif row['Genus/Binjan'] == "התפעל":
+                    binjan = mmoon_heb.hitpael
             elif row['Kategorie'] == "שם עצם":
                 classResource = mmoon_heb.Noun
-                if row['Genus/Binjan'] == "ז״ר" or row['Genus/Binjan'] == "ז\"ר" or row['Genus/Binjan'] == "זכר רבים":
+                if row['Genus/Binjan'] == "ז״ר" or row['Genus/Binjan'] == "זכר רבים":
                     # masc. plur.
                     inflectionalCategories.append(mmoon_heb.Masculine)
                     inflectionalCategories.append(mmoon_heb.Plural)
                 elif row['Genus/Binjan'] == "ז״ז":
                     # masc. dual
                     inflectionalCategories.append(mmoon_heb.Masculine)
-                    # TODO Dual
+                    inflectionalCategories.append(mmoon_heb.Dual)
                 elif row['Genus/Binjan'] == "זכר":
                     # masc.
                     inflectionalCategories.append(mmoon_heb.Masculine)
-                elif row['Genus/Binjan'] == "זו\"נ" or row['Genus/Binjan'] == "זו״נ" or row['Genus/Binjan'] == "זכר/נקבה":
+                elif row['Genus/Binjan'] == "זו״נ" or row['Genus/Binjan'] == "זכר/נקבה":
                     #  masc. and fem.
                     inflectionalCategories.append(mmoon_heb.Feminine)
                     inflectionalCategories.append(mmoon_heb.Masculine)
@@ -203,7 +234,7 @@ def main(args=sys.argv[1:]):
                     inflectionalCategories.append(mmoon_heb.Feminine)
                     inflectionalCategories.append(mmoon_heb.Plural)
                 elif row['Genus/Binjan'] == "נקבה":
-                    # fem
+                    # fem.
                     inflectionalCategories.append(mmoon_heb.Feminine)
             elif row['Kategorie'] == "שם תואר":
                 classResource = mmoon_heb.Adjectiv
@@ -214,19 +245,15 @@ def main(args=sys.argv[1:]):
             elif row['Kategorie'] == "מילת יחס":
                 true
 
-
-
-            if classResource:
-                for lexeme in lexemes :
+            if lexeme:
+                if classResource:
                     graph.add((lexeme, RDF.type, classResource))
-            if inflectionalCategories:
-                for lexeme in lexemes :
-                    for inflectionalCategory in inflectionalCategories :
-                        graph.add((lexeme, mmoon.hasInflectionalCategory, inflectionalCategory))
+                for inflectionalCategory in inflectionalCategories :
+                    graph.add((lexeme, mmoon.hasInflectionalCategory, inflectionalCategory))
+                if binjan:
+                    graph.add((lexeme, mmoon.hasBinjan, binjan))
 
-
-
-        for lexeme in lexemes :
+        if lexeme:
             for root in roots :
                 graph.add((lexeme, mmoon_heb.consistsOfMorph, root))
                 graph.add((root, mmoon_heb.belongsToWord, lexeme))
