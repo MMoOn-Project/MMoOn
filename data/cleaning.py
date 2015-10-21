@@ -125,6 +125,7 @@ def main(args=sys.argv[1:]):
     graph.bind("mmoon", mmoon)
     graph.bind("mmoon_heb", mmoon_heb)
     graph.bind("heb_inventory", heb_inventory)
+    graph.bind("owl", OWL)
 
     for row in filteredRows:
         #if row['Kategorie']:
@@ -174,13 +175,12 @@ def main(args=sys.argv[1:]):
                 root = row['secundaryRoot']
                 if not root:
                     root = row['root']
-                rootResource = addRootResource(graph, root, mmoon_heb.Root)
+                rootResource = addRootResource(graph, root, mmoon_heb.PrimaryRoot)
                 roots.append(rootResource)
             else :
-                rootResourceA = addRootResource(graph, row['root'], mmoon_heb.PrimaryRoot)
-                rootResourceB = addRootResource(graph, row['secundaryRoot'], mmoon_heb.SecondaryRoot)
-                roots.append(rootResourceA)
-                roots.append(rootResourceB)
+                #rootResourceA = addRootResource(graph, row['root'], mmoon_heb.PrimaryRoot)
+                rootResource = addRootResource(graph, row['secundaryRoot'], mmoon_heb.SecondaryRoot, row['root'])
+                roots.append(rootResource)
 
         if row['Kategorie']:
             # Ignoriere, weil zu unspezifisch oder weil ich es nicht zuordnen kann: "מילים", "מילת הסבר", "מילת קישור",
@@ -193,25 +193,25 @@ def main(args=sys.argv[1:]):
                 # TODO ist in OpenHebrewInstances.ttl noch als http://mmoon.org/lang/heb/inventory/oh#Verb angegeben
                 classResource = mmoon_heb.Verb
                 if row['Genus/Binjan'] == "פעל":
-                    binjan = mmoon_heb.paal
+                    binjan = mmoon_heb.term("pa%27al")
                 elif row['Genus/Binjan'] == "נפעל":
-                    binjan = mmoon_heb.nifal
+                    binjan = mmoon_heb.term("nif%27al")
                 elif row['Genus/Binjan'] == "פיעל":
-                    binjan = mmoon_heb.piel
+                    binjan = mmoon_heb.term("pi%27el")
                 elif row['Genus/Binjan'] == "פולל" or row['Genus/Binjan'] == "פיעל פולל":
-                    binjan = mmoon_heb.polel
+                    binjan = mmoon_heb.term("polel")
                 elif row['Genus/Binjan'] == "פיעל (פעלל)":
-                    binjan = mmoon_heb.palel
+                    binjan = mmoon_heb.term("pa%27lel")
                 elif row['Genus/Binjan'] == "פועל":
-                    binjan = mmoon_heb.pual
+                    binjan = mmoon_heb.term("pu%27al")
                 elif row['Genus/Binjan'] == "פועל (פועלל)":
-                    binjan = mmoon_heb.pulel
+                    binjan = mmoon_heb.term("pu%27lel")
                 elif row['Genus/Binjan'] == "הפעיל":
-                    binjan = mmoon_heb.hifil
+                    binjan = mmoon_heb.term("hif%27il")
                 elif row['Genus/Binjan'] == "הופעל":
-                    binjan = mmoon_heb.hufal
+                    binjan = mmoon_heb.term("huf%27al")
                 elif row['Genus/Binjan'] == "התפעל":
-                    binjan = mmoon_heb.hitpael
+                    binjan = mmoon_heb.term("hitpa%27el")
             elif row['Kategorie'] == "שם עצם":
                 classResource = mmoon_heb.Noun
                 if row['Genus/Binjan'] == "ז״ר" or row['Genus/Binjan'] == "זכר רבים":
@@ -258,24 +258,25 @@ def main(args=sys.argv[1:]):
                 graph.add((lexeme, mmoon_heb.consistsOfMorph, root))
                 graph.add((root, mmoon_heb.belongsToWord, lexeme))
 
-
+    graph.add((heb_inventory.term(""), OWL.imports, mmoon_heb.term("")))
     graph.serialize(out_file_rdf, "turtle")
 
-def addRootResource(graph, root, classResource):
+def addRootResource(graph, root, classResource, primaryRoot=None):
     # https://stackoverflow.com/questions/33068727/how-to-split-unicode-strings-character-by-character-in-python
     #rootDashed = "-".join(regex.findall('\p{L}\p{M}*', root))
     rootDashed = "-".join(regex.findall('\X', root))
 
-    rootResourceHeb = rdflib.term.URIRef(heb_inventory+"root_"+root)
-    rootResource = rdflib.term.URIRef(heb_inventory+"root_"+heb2lat(rootDashed))
+    rootResource = rdflib.term.URIRef(heb_inventory+"root_"+root)
+    #rootResource = rdflib.term.URIRef(heb_inventory+"root_"+heb2lat(rootDashed))
     rootliteral = rdflib.term.Literal(root, lang="he")
 
-    graph.add((rootResourceHeb, RDF.type, classResource))
-    graph.add((rootResourceHeb, OWL.sameAs, rootResource))
-    graph.add((rootResourceHeb, RDFS.seeAlso, rootResource))
-
     graph.add((rootResource, RDF.type, classResource))
+    graph.add((rootResource, RDF.type, mmoon_heb.Root))
     graph.add((rootResource, RDFS.label, rootliteral))
+
+    if primaryRoot:
+        primaryRootResource = addRootResource(graph, primaryRoot, mmoon_heb.PrimaryRoot)
+        graph.add((rootResource, mmoon_heb.derivedFromRoot, primaryRootResource))
 
     return rootResource
 
