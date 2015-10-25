@@ -15,14 +15,16 @@ import rdflib
 from rdflib import RDF
 from rdflib import RDFS
 from rdflib import OWL
+#from rdflib import DC
 from rdflib import Namespace
 import hashlib
 import regex
 
-mmoon = Namespace("http://mmoon.org/mmoon#")
+mmoon = Namespace("http://mmoon.org/mmoon/")
 mmoon_heb = Namespace("http://mmoon.org/lang/heb/schema/oh/")
-# TODO: Irgendwo verwendet bettina auch oh#
 heb_inventory = Namespace("http://mmoon.org/lang/heb/inventory/oh/")
+gold = Namespace("http://purl.org/linguistics/gold/")
+DC = Namespace("http://purl.org/dc/elements/1.1/")
 
 
 FORMAT = '%(asctime)-15s %(clientip)s %(user)-8s %(message)s'
@@ -62,6 +64,8 @@ def main(args=sys.argv[1:]):
     csvReader = csv.DictReader(file_fd)
 
     forbiddenChars = [" ", "(", ")", "[", "]", "/", "—"]
+
+    lexemeKategorie = [mmoon_heb.CommonNoun, mmoon_heb.Verb, mmoon_heb.Adjective]
 
     charTranslation = str.maketrans("\"","״")
     removeTranslation = str.maketrans("?!","  ")
@@ -123,9 +127,11 @@ def main(args=sys.argv[1:]):
 
     graph = rdflib.Graph()
     graph.bind("mmoon", mmoon)
-    graph.bind("mmoon_heb", mmoon_heb)
+    graph.bind("heb_schema", mmoon_heb)
     graph.bind("heb_inventory", heb_inventory)
+    graph.bind("gold", gold)
     graph.bind("owl", OWL)
+    graph.bind("dc", DC)
 
     for row in filteredRows:
         #if row['Kategorie']:
@@ -133,65 +139,22 @@ def main(args=sys.argv[1:]):
 
         lexeme = None
         roots = []
+        wordclassResource = None
+        inflectionalCategories = []
+        binjan = None
+        rdfType = None
 
         # TODO
-        # - Genus/Binjan
-        # - Kategorie
-        # - Übersetzungen
-
-        # http://mmoon.org/lang/heb/schema/oh/OrthographicRepresentation
-        if row['vocalized']:
-            # urllib.parse.urlencode()
-            #voc = hashlib.md5(row['vocalized'].encode('utf-8')).hexdigest()
-            voc = row['vocalized']
-            lexeme = rdflib.term.URIRef(heb_inventory+"Lexeme/"+voc)
-            vocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/"+voc)
-            vocliteral = rdflib.term.Literal(row['vocalized'], lang="he")
-
-            graph.add((vocrep, RDF.type, mmoon_heb.OrthographicRepresentation))
-            graph.add((vocrep, RDFS.label, vocliteral))
-            graph.add((lexeme, mmoon_heb.hasVocalizedOrthographicRepresentation, vocrep))
-            graph.add((lexeme, RDF.type, mmoon_heb.Lexeme))
-            graph.add((lexeme, RDFS.label, vocliteral))
-
-        if row['unvocalized']:
-            # urllib.parse.urlencode()
-            #unvoc = hashlib.md5(row['unvocalized'].encode('utf-8')).hexdigest()
-            unvoc = row['unvocalized']
-            unvocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/"+unvoc)
-            unvocliteral = rdflib.term.Literal(row['unvocalized'], lang="he")
-
-            graph.add((unvocrep, RDF.type, mmoon_heb.OrthographicRepresentation))
-            graph.add((unvocrep, RDFS.label, unvocliteral))
-
-            if lexeme:
-                graph.add((lexeme, mmoon_heb.hasUnvocalizedOrthographicRepresentation, unvocrep))
-
-        if row['root'] or row['secundaryRoot']:
-            # secondary-root -> secondary-root
-            # root -> primary-root
-            # nur eins von beiden -> root
-            if (row['root'] == row['secundaryRoot'] or not row['root'] or not row['secundaryRoot']):
-                root = row['secundaryRoot']
-                if not root:
-                    root = row['root']
-                rootResource = addRootResource(graph, root, mmoon_heb.PrimaryRoot)
-                roots.append(rootResource)
-            else :
-                #rootResourceA = addRootResource(graph, row['root'], mmoon_heb.PrimaryRoot)
-                rootResource = addRootResource(graph, row['secundaryRoot'], mmoon_heb.SecondaryRoot, row['root'])
-                roots.append(rootResource)
+        # - Übersetzungen: http://linguistics-ontology.org/gold/2010/translation
+        # - Nur Lexeme für substantiv, verb und adjektiv bzw. auch binjan checken
 
         if row['Kategorie']:
             # Ignoriere, weil zu unspezifisch oder weil ich es nicht zuordnen kann: "מילים", "מילת הסבר", "מילת קישור",
             # TODO: "מלת חיבור", "מילת חיבור", "מילת קריאה", "מילת שאלה"
-            classResource = None
-            inflectionalCategories = []
-            binjan = []
 
             if row['Kategorie'] == "פועל":
                 # TODO ist in OpenHebrewInstances.ttl noch als http://mmoon.org/lang/heb/inventory/oh#Verb angegeben
-                classResource = mmoon_heb.Verb
+                wordclassResource = mmoon_heb.Verb
                 if row['Genus/Binjan'] == "פעל":
                     binjan = mmoon_heb.term("pa%27al")
                 elif row['Genus/Binjan'] == "נפעל":
@@ -213,7 +176,7 @@ def main(args=sys.argv[1:]):
                 elif row['Genus/Binjan'] == "התפעל":
                     binjan = mmoon_heb.term("hitpa%27el")
             elif row['Kategorie'] == "שם עצם":
-                classResource = mmoon_heb.Noun
+                wordclassResource = mmoon_heb.CommonNoun
                 if row['Genus/Binjan'] == "ז״ר" or row['Genus/Binjan'] == "זכר רבים":
                     # masc. plur.
                     inflectionalCategories.append(mmoon_heb.Masculine)
@@ -237,29 +200,104 @@ def main(args=sys.argv[1:]):
                     # fem.
                     inflectionalCategories.append(mmoon_heb.Feminine)
             elif row['Kategorie'] == "שם תואר":
-                classResource = mmoon_heb.Adjectiv
+                wordclassResource = mmoon_heb.Adjective
             elif row['Kategorie'] == "תואר פועל":
-                classResource = mmoon_heb.Adverb
+                wordclassResource = mmoon_heb.Adverb
             elif row['Kategorie'] == "מילת יחס" or row['Kategorie'] == "מלת יחס":
-                classResource = mmoon_heb.Preposition
+                wordclassResource = mmoon_heb.Preposition
+            elif row['Kategorie'] == "סופית":
+                rdfType = mmoon_heb.Suffix
             elif row['Kategorie'] == "מילת יחס":
                 true
 
+        if row['vocalized']:
+            voc = row['vocalized']
+            if any(wordclassResource == kategorie for kategorie in lexemeKategorie):
+                lexeme = rdflib.term.URIRef(heb_inventory+"Lexeme/"+voc)
+                graph.add((lexeme, RDF.type, mmoon_heb.Lexeme))
+            elif rdfType and rdfType == mmoon_heb.Suffix:
+                lexeme = rdflib.term.URIRef(heb_inventory+"Suffix/"+voc)
+                graph.add((lexeme, RDF.type, rdfType))
+            else:
+                lexeme = rdflib.term.URIRef(heb_inventory+"Word/"+voc)
+                graph.add((lexeme, RDF.type, mmoon.Word))
+            vocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/"+voc)
+            vocliteral = rdflib.term.Literal(row['vocalized'], lang="he")
+
+            graph.add((vocrep, RDF.type, mmoon_heb.VocalizedRepresentation))
+            graph.add((vocrep, RDFS.label, vocliteral))
             if lexeme:
-                if classResource:
-                    graph.add((lexeme, RDF.type, classResource))
-                for inflectionalCategory in inflectionalCategories :
-                    graph.add((lexeme, mmoon.hasInflectionalCategory, inflectionalCategory))
-                if binjan:
-                    graph.add((lexeme, mmoon.hasBinjan, binjan))
+                graph.add((lexeme, RDFS.label, vocliteral))
+                graph.add((lexeme, mmoon.hasOrthographicRepresentation, vocrep))
+
+        if row['unvocalized']:
+            unvoc = row['unvocalized']
+            unvocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/"+unvoc)
+            unvocliteral = rdflib.term.Literal(row['unvocalized'], lang="he")
+
+            graph.add((unvocrep, RDF.type, mmoon_heb.UnvocalizedRepresentation))
+            graph.add((unvocrep, RDFS.label, unvocliteral))
+
+            if lexeme:
+                graph.add((lexeme, mmoon.hasOrthographicRepresentation, unvocrep))
+
+        if row['deutsch']:
+            translation = addTranslation(graph, row['deutsch'], "de")
+            if lexeme:
+                graph.add((lexeme, gold.translation, translation))
+
+        if row['englisch']:
+            translation = addTranslation(graph, row['englisch'], "en")
+            if lexeme:
+                graph.add((lexeme, gold.translation, translation))
+
+        if row['russisch']:
+            translation = addTranslation(graph, row['russisch'], "ru")
+            if lexeme:
+                graph.add((lexeme, gold.translation, translation))
+
+        if row['root'] or row['secundaryRoot']:
+            # secondary-root -> secondary-root
+            # root -> primary-root
+            # nur eins von beiden -> root
+            if (row['root'] == row['secundaryRoot'] or not row['root'] or not row['secundaryRoot']):
+                root = row['secundaryRoot']
+                if not root:
+                    root = row['root']
+                rootResource = addRootResource(graph, root, mmoon_heb.PrimaryRoot)
+                roots.append(rootResource)
+            else :
+                #rootResourceA = addRootResource(graph, row['root'], mmoon_heb.PrimaryRoot)
+                rootResource = addRootResource(graph, row['secundaryRoot'], mmoon_heb.SecondaryRoot, row['root'])
+                roots.append(rootResource)
+
+        #######
 
         if lexeme:
+            if wordclassResource:
+                graph.add((lexeme, mmoon.hasWordclassAffiliation, wordclassResource))
+            for inflectionalCategory in inflectionalCategories :
+                graph.add((lexeme, mmoon.hasInflectionalCategory, inflectionalCategory))
+            if binjan:
+                graph.add((lexeme, mmoon.consistsOfMorph, binjan))
+
             for root in roots :
                 graph.add((lexeme, mmoon_heb.consistsOfMorph, root))
-                graph.add((root, mmoon_heb.belongsToWord, lexeme))
+                graph.add((root, mmoon_heb.belongsToLexeme, lexeme))
 
     graph.add((heb_inventory.term(""), OWL.imports, mmoon_heb.term("")))
     graph.serialize(out_file_rdf, "turtle")
+
+def addTranslation(graph, translationStr, language):
+    translationStr = translationStr.strip()
+    translationStrQuoted = urllib.parse.quote(translationStr)
+
+    translation = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/" + language + "/"+translationStrQuoted)
+
+    graph.add((translation, RDF.type, mmoon.OrthographicRepresentation))
+    graph.add((translation, RDFS.label, rdflib.term.Literal(translationStr, lang=language)))
+    graph.add((translation, DC.language, rdflib.term.Literal("en")))
+    return translation
 
 def addRootResource(graph, root, classResource, primaryRoot=None):
     # https://stackoverflow.com/questions/33068727/how-to-split-unicode-strings-character-by-character-in-python
@@ -276,7 +314,7 @@ def addRootResource(graph, root, classResource, primaryRoot=None):
 
     if primaryRoot:
         primaryRootResource = addRootResource(graph, primaryRoot, mmoon_heb.PrimaryRoot)
-        graph.add((rootResource, mmoon_heb.derivedFromRoot, primaryRootResource))
+        graph.add((rootResource, mmoon_heb.consistsOfRoot, primaryRootResource))
 
     return rootResource
 
