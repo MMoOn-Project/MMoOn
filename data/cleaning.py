@@ -137,6 +137,7 @@ def main(args=sys.argv[1:]):
         #if row['Kategorie']:
         #    store.add()
 
+        isLexeme = False
         lexeme = None
         roots = []
         wordclassResource = None
@@ -145,8 +146,7 @@ def main(args=sys.argv[1:]):
         rdfType = None
 
         # TODO
-        # - Übersetzungen: http://linguistics-ontology.org/gold/2010/translation
-        # - Nur Lexeme für substantiv, verb und adjektiv bzw. auch binjan checken
+        # - wenn Kategorie shoresh ist, dann nur explizit wurzeln anlegen
 
         if row['Kategorie']:
             # Ignoriere, weil zu unspezifisch oder weil ich es nicht zuordnen kann: "מילים", "מילת הסבר", "מילת קישור",
@@ -213,6 +213,7 @@ def main(args=sys.argv[1:]):
         if row['vocalized']:
             voc = row['vocalized']
             if any(wordclassResource == kategorie for kategorie in lexemeKategorie):
+                isLexeme = True
                 lexeme = rdflib.term.URIRef(heb_inventory+"Lexeme/"+voc)
                 graph.add((lexeme, RDF.type, mmoon_heb.Lexeme))
             elif rdfType and rdfType == mmoon_heb.Suffix:
@@ -283,7 +284,10 @@ def main(args=sys.argv[1:]):
 
             for root in roots :
                 graph.add((lexeme, mmoon_heb.consistsOfMorph, root))
-                graph.add((root, mmoon_heb.belongsToLexeme, lexeme))
+                if isLexeme:
+                    graph.add((root, mmoon_heb.belongsToLexeme, lexeme))
+                else:
+                    graph.add((root, mmoon.belongsToWord, lexeme))
 
     graph.add((heb_inventory.term(""), OWL.imports, mmoon_heb.term("")))
     graph.serialize(out_file_rdf, "turtle")
