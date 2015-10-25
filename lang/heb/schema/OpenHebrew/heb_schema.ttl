@@ -1,0 +1,826 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mmoon: <http://mmoon.org/mmoon/> .
+@prefix heb_schema: <http://mmoon.org/lang/heb/schema/oh/> .
+@base <http://mmoon.org/lang/heb/schema/oh/> .
+
+<http://mmoon.org/lang/heb/schema/oh/> rdf:type owl:Ontology ;
+                                       
+                                       rdfs:comment """This is the schema ontology for the Open Hebrew Morpheme Inventory, built by using the MMoOn core ontology, version 0.1, 2015
+
+The vocabulary provided describes the morphological elements of Hebrew, including words, morphs, roots and vowel patterns as well as their underlying meanings, representations and relations."""@en ;
+                                       
+                                       owl:imports mmoon: .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://purl.org/dc/elements/1.1/language
+
+<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://lexvo.org/ontology#Transfix
+
+<http://lexvo.org/ontology#Transfix> rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Binyan
+
+heb_schema:Binyan rdf:type owl:Class ;
+                  
+                  rdfs:label "Binyan"@en ,
+                             "בִּנְיָנִים"@he ;
+                  
+                  rdfs:subClassOf mmoon:LinguisticCategory .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/GrammaticalWord
+
+heb_schema:GrammaticalWord rdf:type owl:Class ;
+                           
+                           rdfs:label "Grammatical word"@en ;
+                           
+                           rdfs:subClassOf mmoon:GrammaticalWord .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Infix
+
+heb_schema:Infix rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf mmoon:Infix .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/LatinTranscription
+
+heb_schema:LatinTranscription rdf:type owl:Class ;
+                              
+                              rdfs:label "Latin transcription"@en ;
+                              
+                              rdfs:subClassOf heb_schema:OrthographicRepresentation .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Lexeme
+
+heb_schema:Lexeme rdf:type owl:Class ;
+                  
+                  rdfs:label "Lexeme"@en ;
+                  
+                  rdfs:subClassOf mmoon:Lexeme .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Mishkal
+
+heb_schema:Mishkal rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf mmoon:DerivationalMeaning .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Morpheme
+
+heb_schema:Morpheme rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf mmoon:Morpheme .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/MorphemicRepresentation
+
+heb_schema:MorphemicRepresentation rdf:type owl:Class ;
+                                   
+                                   rdfs:label "Morphemic representation"@en ;
+                                   
+                                   rdfs:subClassOf mmoon:MorphemicRepresentation .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/NoInflection
+
+heb_schema:NoInflection rdf:type owl:Class ;
+                        
+                        rdfs:label "No inflection"@en ;
+                        
+                        rdfs:subClassOf mmoon:NoInflection .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/OrthographicRepresentation
+
+heb_schema:OrthographicRepresentation rdf:type owl:Class ;
+                                      
+                                      rdfs:label "Orthographic representation"@en ;
+                                      
+                                      rdfs:subClassOf mmoon:OrthographicRepresentation .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/PhoneticRepresentation
+
+heb_schema:PhoneticRepresentation rdf:type owl:Class ;
+                                  
+                                  rdfs:label "Phonetic representation"@en ;
+                                  
+                                  rdfs:subClassOf mmoon:PhoneticRepresentation .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Prefix
+
+heb_schema:Prefix rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf mmoon:Prefix .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/PrimaryRoot
+
+heb_schema:PrimaryRoot rdf:type owl:Class ;
+                       
+                       rdfs:label "Primary root"@en ;
+                       
+                       rdfs:subClassOf heb_schema:Root .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Root
+
+heb_schema:Root rdf:type owl:Class ;
+                
+                rdfs:label "Root"@en ,
+                           "שורש"@he ;
+                
+                rdfs:subClassOf mmoon:Root .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/SecondaryRoot
+
+heb_schema:SecondaryRoot rdf:type owl:Class ;
+                         
+                         rdfs:label "Secondary root"@en ;
+                         
+                         rdfs:subClassOf heb_schema:Root .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Suffix
+
+heb_schema:Suffix rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf mmoon:Suffix .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Transfix
+
+heb_schema:Transfix rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf <http://lexvo.org/ontology#Transfix> .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/UnvocalizedRepresentation
+
+heb_schema:UnvocalizedRepresentation rdf:type owl:Class ;
+                                     
+                                     rdfs:subClassOf heb_schema:OrthographicRepresentation .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/VocalizedRepresentation
+
+heb_schema:VocalizedRepresentation rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf heb_schema:OrthographicRepresentation .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Wordform
+
+heb_schema:Wordform rdf:type owl:Class ;
+                    
+                    rdfs:label "Wordform"@en ,
+                               "צורה"@he ;
+                    
+                    rdfs:subClassOf mmoon:Wordform .
+
+
+
+###  http://mmoon.org/mmoon/Active
+
+mmoon:Active rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Adjective
+
+mmoon:Adjective rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Adjectivization
+
+mmoon:Adjectivization rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Adverb
+
+mmoon:Adverb rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/AgentNominalizer
+
+mmoon:AgentNominalizer rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/CommonNoun
+
+mmoon:CommonNoun rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/DerivationalMeaning
+
+mmoon:DerivationalMeaning rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Dual
+
+mmoon:Dual rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Feminine
+
+mmoon:Feminine rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/FirstPerson
+
+mmoon:FirstPerson rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Future
+
+mmoon:Future rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/GrammaticalWord
+
+mmoon:GrammaticalWord rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Imperative
+
+mmoon:Imperative rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Infix
+
+mmoon:Infix rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Intensification
+
+mmoon:Intensification rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Lexeme
+
+mmoon:Lexeme rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/LinguisticCategory
+
+mmoon:LinguisticCategory rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Masculine
+
+mmoon:Masculine rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Morpheme
+
+mmoon:Morpheme rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/MorphemeInventory
+
+mmoon:MorphemeInventory rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/MorphemicRepresentation
+
+mmoon:MorphemicRepresentation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/NoInflection
+
+mmoon:NoInflection rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Nominalization
+
+mmoon:Nominalization rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/OrthographicRepresentation
+
+mmoon:OrthographicRepresentation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Passive
+
+mmoon:Passive rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Past
+
+mmoon:Past rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/PhoneticRepresentation
+
+mmoon:PhoneticRepresentation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Plural
+
+mmoon:Plural rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Prefix
+
+mmoon:Prefix rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Preposition
+
+mmoon:Preposition rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Repetitive
+
+mmoon:Repetitive rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Root
+
+mmoon:Root rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/SecondPerson
+
+mmoon:SecondPerson rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Singular
+
+mmoon:Singular rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Suffix
+
+mmoon:Suffix rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/ThirdPerson
+
+mmoon:ThirdPerson rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Transitive
+
+mmoon:Transitive rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Verb
+
+mmoon:Verb rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Wordform
+
+mmoon:Wordform rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://lexvo.org/id/iso639-3/heb
+
+<http://lexvo.org/id/iso639-3/heb> rdf:type owl:NamedIndividual .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Active
+
+heb_schema:Active rdf:type mmoon:Active ,
+                           owl:NamedIndividual ;
+                  
+                  rdfs:label "Active"@en ,
+                             "בניין"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Adjective
+
+heb_schema:Adjective rdf:type mmoon:Adjective ,
+                              owl:NamedIndividual ;
+                     
+                     rdfs:label "Adjective"@en ,
+                                "שם תואר"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Adjectivization
+
+heb_schema:Adjectivization rdf:type mmoon:Adjectivization ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "Adjectivization"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Adverb
+
+heb_schema:Adverb rdf:type mmoon:Adverb ,
+                           owl:NamedIndividual .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/AgentNominalizer
+
+heb_schema:AgentNominalizer rdf:type mmoon:AgentNominalizer ,
+                                     owl:NamedIndividual ;
+                            
+                            rdfs:label "Agent nominalizer"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/CommonNoun
+
+heb_schema:CommonNoun rdf:type mmoon:CommonNoun ,
+                               owl:NamedIndividual ;
+                      
+                      rdfs:label "Common noun"@en ,
+                                 "שם עצם"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Dual
+
+heb_schema:Dual rdf:type mmoon:Dual ,
+                         owl:NamedIndividual .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Feminine
+
+heb_schema:Feminine rdf:type mmoon:Feminine ,
+                             owl:NamedIndividual ;
+                    
+                    rdfs:label "Feminine"@en ,
+                               "נקבה"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/FirstPerson
+
+heb_schema:FirstPerson rdf:type mmoon:FirstPerson ,
+                                owl:NamedIndividual ;
+                       
+                       rdfs:label "First person"@en ,
+                                  "גזרה"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Future
+
+heb_schema:Future rdf:type mmoon:Future ,
+                           owl:NamedIndividual ;
+                  
+                  rdfs:label "Future"@en ,
+                             "עתיד"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Imperative
+
+heb_schema:Imperative rdf:type mmoon:Imperative ,
+                               owl:NamedIndividual ;
+                      
+                      rdfs:label "Imperative"@en ,
+                                 "ציווי"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Intensification
+
+heb_schema:Intensification rdf:type mmoon:Intensification ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "Intensification"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Masculine
+
+heb_schema:Masculine rdf:type mmoon:Masculine ,
+                              owl:NamedIndividual ;
+                     
+                     rdfs:label "Masculine"@en ,
+                                "זכר"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/MorphemeInventory
+
+heb_schema:MorphemeInventory rdf:type mmoon:MorphemeInventory ,
+                                      owl:NamedIndividual ;
+                             
+                             rdfs:label "Morpheme inventory"@en ;
+                             
+                             <http://purl.org/dc/elements/1.1/language> <http://lexvo.org/id/iso639-3/heb> .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Nominalization
+
+heb_schema:Nominalization rdf:type mmoon:Nominalization ,
+                                   owl:NamedIndividual ;
+                          
+                          rdfs:label "Nominalization"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Passive
+
+heb_schema:Passive rdf:type mmoon:Passive ,
+                            owl:NamedIndividual ;
+                   
+                   rdfs:label "Passive"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Past
+
+heb_schema:Past rdf:type mmoon:Past ,
+                         owl:NamedIndividual ;
+                
+                rdfs:label "Past"@en ,
+                           "עבר"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Plural
+
+heb_schema:Plural rdf:type mmoon:Plural ,
+                           owl:NamedIndividual ;
+                  
+                  rdfs:label "Plural"@en ,
+                             "רבים"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Preposition
+
+heb_schema:Preposition rdf:type mmoon:Preposition ,
+                                owl:NamedIndividual .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Repetitive
+
+heb_schema:Repetitive rdf:type mmoon:Repetitive ,
+                               owl:NamedIndividual .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/SecondPerson
+
+heb_schema:SecondPerson rdf:type mmoon:SecondPerson ,
+                                 owl:NamedIndividual ;
+                        
+                        rdfs:label "Second person"@en ,
+                                   "גוף שני"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Singular
+
+heb_schema:Singular rdf:type mmoon:Singular ,
+                             owl:NamedIndividual ;
+                    
+                    rdfs:label "Singular"@en ,
+                               "יחיד"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/ThirdPerson
+
+heb_schema:ThirdPerson rdf:type mmoon:ThirdPerson ,
+                                owl:NamedIndividual ;
+                       
+                       rdfs:label "Third peson"@en ,
+                                  "גוף שלישי"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Transitive
+
+heb_schema:Transitive rdf:type mmoon:Transitive ,
+                               owl:NamedIndividual ;
+                      
+                      rdfs:label "Transitive"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Verb
+
+heb_schema:Verb rdf:type mmoon:Verb ,
+                         owl:NamedIndividual ;
+                
+                rdfs:label "Verb"@en ,
+                           "פועל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/polel
+
+heb_schema:polel rdf:type heb_schema:Binyan ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "polel"@en ,
+                            "פולל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/hif%27il
+
+<http://mmoon.org/lang/heb/schema/oh/hif%27il> rdf:type heb_schema:Binyan ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "hif'il"@en ,
+                                                          "הִפְעִיל"@he ,
+                                                          "הפעיל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/hitpa%27el
+
+<http://mmoon.org/lang/heb/schema/oh/hitpa%27el> rdf:type heb_schema:Binyan ,
+                                                          owl:NamedIndividual ;
+                                                 
+                                                 rdfs:label "hitpa'el"@en ,
+                                                            "הִתְפַּעֵל"@he ,
+                                                            "התפעל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/huf%27al
+
+<http://mmoon.org/lang/heb/schema/oh/huf%27al> rdf:type heb_schema:Binyan ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "huf'al"@en ,
+                                                          "הֻפְעַל"@he ,
+                                                          "הופעל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/nif%27al
+
+<http://mmoon.org/lang/heb/schema/oh/nif%27al> rdf:type heb_schema:Binyan ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "nif'al"@en ,
+                                                          "נִפְעַל"@he ,
+                                                          "נפעל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/pa%27al
+
+<http://mmoon.org/lang/heb/schema/oh/pa%27al> rdf:type heb_schema:Binyan ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "pa'al"@en ,
+                                                         "פָּעַל"@he ,
+                                                         "פעל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/pa%27lel
+
+<http://mmoon.org/lang/heb/schema/oh/pa%27lel> rdf:type heb_schema:Binyan ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "pa'lel"@en ,
+                                                          "פעלל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/pi%27el
+
+<http://mmoon.org/lang/heb/schema/oh/pi%27el> rdf:type heb_schema:Binyan ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "pi'el"@en ,
+                                                         "פִּעֵל"@he ,
+                                                         "פיעל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/pu%27al
+
+<http://mmoon.org/lang/heb/schema/oh/pu%27al> rdf:type heb_schema:Binyan ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "pu'al"@en ,
+                                                         "פֻּעַל"@he ,
+                                                         "פועל"@he .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/pu%27lel
+
+<http://mmoon.org/lang/heb/schema/oh/pu%27lel> rdf:type heb_schema:Binyan ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "pu'lel"@en ,
+                                                          "פועלל"@he .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
