@@ -1,0 +1,670 @@
+@prefix : <http://mmoon.org/mmoon/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gold: <http://purl.org/linguistics/gold/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix lexvo: <http://lexvo.org/ontology#> .
+@prefix mmoon: <http://mmoon.org/mmoon/> .
+@base <http://mmoon.org/mmoon/> .
+
+<http://mmoon.org/mmoon/> rdf:type owl:Ontology ;
+                          
+                          rdfs:label "Multilingual Morpheme Ontology"@en ;
+                          
+                          rdfs:comment """The Multilingual Morpheme Ontology (MMoOn) is  an ontological model that contains the vocabulary needed to describe the morphological elements, meanings and representations of natural languages. 
+
+This is the reference ontology from which various language specific MMoOn Inventories can be derived."""@en ;
+                          
+                          owl:versionInfo "Version 1.0, 2016"@en .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://mmoon.org/mmoon/example
+
+:example rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://mmoon.org/mmoon/belongsToLexeme
+
+:belongsToLexeme rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "belongs to lexeme"@en ;
+                 
+                 rdfs:comment "hier vielleicht die default gramm. kategorien (also infinitiv für verben usw.) oder weglassen?" ;
+                 
+                 rdfs:range :Lexeme ;
+                 
+                 rdfs:domain :Wordform .
+
+
+
+###  http://mmoon.org/mmoon/belongsToWord
+
+:belongsToWord rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "belongs to word"@en ;
+               
+               rdfs:domain :Morph ;
+               
+               rdfs:range :Word .
+
+
+
+###  http://mmoon.org/mmoon/consistsOfMorph
+
+:consistsOfMorph rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "consists of morph"@en ;
+                 
+                 rdfs:range :Morph ;
+                 
+                 rdfs:domain :Word .
+
+
+
+###  http://mmoon.org/mmoon/consistsOfRoot
+
+:consistsOfRoot rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "consists of root"@en ;
+                
+                rdfs:domain :Base ,
+                            :Root ;
+                
+                rdfs:range :Root ;
+                
+                rdfs:domain :Stem ,
+                            :Word .
+
+
+
+###  http://mmoon.org/mmoon/consistsOfWord
+
+:consistsOfWord rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "consists of word"@en ;
+                
+                rdfs:domain :AnalyticWordform ;
+                
+                rdfs:range :Word .
+
+
+
+###  http://mmoon.org/mmoon/hasMeaning
+
+:hasMeaning rdf:type owl:ObjectProperty ;
+            
+            rdfs:range :Meaning ;
+            
+            rdfs:domain :Morph ,
+                        :Word .
+
+
+
+###  http://mmoon.org/mmoon/hasMorphemicEntry
+
+:hasMorphemicEntry rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "has morphemic entry"@en ;
+                   
+                   rdfs:comment "This property states that a morpheme inventory resource has morphemes as morphemic entries, thus building the intension of the morpheme inventory."@en ;
+                   
+                   rdfs:range :Morpheme ;
+                   
+                   rdfs:domain :MorphemeInventory .
+
+
+
+###  http://mmoon.org/mmoon/hasMorphologicalRelationship
+
+:hasMorphologicalRelationship rdf:type owl:ObjectProperty ;
+                              
+                              rdfs:label "has morphological relationship"@en ;
+                              
+                              rdfs:range :MorphologicalRelationship ;
+                              
+                              rdfs:domain :Word .
+
+
+
+###  http://mmoon.org/mmoon/hasMorphosyntacticFeature
+
+:hasMorphosyntacticFeature rdf:type owl:ObjectProperty .
+
+
+
+###  http://mmoon.org/mmoon/hasRepresentation
+
+:hasRepresentation rdf:type owl:ObjectProperty ;
+                   
+                   rdfs:label "has representation"@en ;
+                   
+                   rdfs:domain :Morph ;
+                   
+                   rdfs:range :Representation ;
+                   
+                   rdfs:domain :Word .
+
+
+
+###  http://mmoon.org/mmoon/hasWordclassAffiliation
+
+:hasWordclassAffiliation rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:label "has wordclass affiliation"@en ;
+                         
+                         rdfs:domain :Morph ,
+                                     :Word ;
+                         
+                         rdfs:range :WordclassAffiliation ;
+                         
+                         rdfs:subPropertyOf :hasMorphosyntacticFeature .
+
+
+
+###  http://mmoon.org/mmoon/hasWordform
+
+:hasWordform rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "has wordform"@en ;
+             
+             rdfs:domain :GrammaticalWord ,
+                         :Lexeme ;
+             
+             rdfs:range :Wordform .
+
+
+
+###  http://mmoon.org/mmoon/isDerivedFrom
+
+:isDerivedFrom rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "is derived from"@en ;
+               
+               rdfs:domain :GrammaticalWord ;
+               
+               rdfs:range :GrammaticalWord ;
+               
+               rdfs:domain :Lexeme ;
+               
+               rdfs:range :Lexeme .
+
+
+
+###  http://purl.org/dc/elements/1.1/language
+
+dc:language rdf:type owl:ObjectProperty ;
+            
+            rdfs:label "language"@en ;
+            
+            rdfs:range lexvo:Language ;
+            
+            rdfs:domain :MorphemeInventory .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://lexvo.org/ontology#Language
+
+lexvo:Language rdf:type owl:Class ;
+               
+               rdfs:label "Language"@en ;
+               
+               rdfs:isDefinedBy "http://lexvo.org/ontology#Language"@en .
+
+
+
+###  http://mmoon.org/mmoon/AdjectivalInflection
+
+:AdjectivalInflection rdf:type owl:Class ;
+                      
+                      rdfs:label "Adjectival inflection"@en ;
+                      
+                      rdfs:subClassOf :Inflection ;
+                      
+                      rdfs:comment "Is the process of generating word-forms of adjectival stems."@en .
+
+
+
+###  http://mmoon.org/mmoon/Agreement
+
+:Agreement rdf:type owl:Class ;
+           
+           rdfs:label "Agreement"@en ;
+           
+           rdfs:subClassOf :MorphologicalRelationship ;
+           
+           rdfs:comment """Unter Kongruenz versteht man die Übereinstimmung zwischen zwei oder mehreren Satzelementen hinsichtlich ihrer morpho-syntaktischen Kategorien (Kasus, Numerus, Genus).
+
+die grammatischen kategorien wonach kongruiert wird, müssen hier nicht spezifiziert werden. das geschieht auf der wortformebene durch die spezifizierung der morphe und deren bedeutungen."""@en .
+
+
+
+###  http://mmoon.org/mmoon/AnalyticWordform
+
+:AnalyticWordform rdf:type owl:Class ;
+                  
+                  rdfs:label "Analytic word-form"@en ;
+                  
+                  rdfs:subClassOf :Wordform ;
+                  
+                  rdfs:comment """A word form is analytic iff it consists of more than one word form such that the lexical meaning provides the root of one of them, while the grammatical meaning components are coded in the other word forms (some of them possibly in the lexical word form).
+An inflection is analytic to the extent that it consists of analytic word forms.
+
+Delimitation and History:
+’analytic’ is extensionally equivalent to ‚periphrastic’, but is also used to characterize a whole language type.
+An analytic system has grammatical words; an isolating system does not.
+
+Periphrastic conjugation is the formation of a verbal inflectional paradigm which consists of periphrastic forms.
+Periphrastic conjugation is the formation of a verbal inflectional paradigm which consists of periphrastic forms.
+
+Periphrasis is the combination of a grammatical word G with a lexical word L such that the result is equivalent to a morphological form of L inflected for the category of G.
+
+Analytic Procedures:
+Within one language, periphrasis is recognized by a paradigmatic relation between a periphrastic and a synthetic expression. Across languages or stages of one language, periphrasis in a looser sense is recognized on the basis of functional similarity. [Christian Lehmann, under \"analytic structure\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                  
+                  :example """The comparison of adjectives in English involves both inflectional forms (e.g. bigger) and periphrastic constructions (e.g. more interesting).
+Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"periphrasis\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Base
+
+:Base rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/CompoundWord
+
+:CompoundWord rdf:type owl:Class ;
+              
+              rdfs:label "Compound Word"@en ;
+              
+              owl:equivalentClass gold:Compound ;
+              
+              rdfs:subClassOf :Lexeme ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasMorphologicalRelationship ;
+                                owl:onClass :Compounding ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                              ] ;
+              
+              rdfs:comment """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+Is a kind of lexeme which is formed by the combination of two stems."""@en ;
+              
+              :example "Engl. \"playground\"."@en .
+
+
+
+###  http://mmoon.org/mmoon/Compounding
+
+:Compounding rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Conjugation
+
+:Conjugation rdf:type owl:Class ;
+             
+             rdfs:label "Conjugation"@en ;
+             
+             rdfs:subClassOf :VerbalInflection ;
+             
+             rdfs:comment "Is the inflection of a verb. Conjugation categories commonly include person, number, gender, aspect, tense, mood, voice and non-finite subcategories. [Christian Lehmann, under \"conjugation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Declension
+
+:Declension rdf:type owl:Class ;
+            
+            rdfs:label "Declension"@en ;
+            
+            rdfs:subClassOf :NominalInflection ;
+            
+            rdfs:comment "Is the inflection of a noun. Relevant categories commonly include gender, number, case, possessive and definiteness. [Christian Lehmann, under \"declension\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Degree
+
+:Degree rdf:type owl:Class ;
+        
+        rdfs:label "Degree"@en ;
+        
+        rdfs:subClassOf :AdjectivalInflection ;
+        
+        rdfs:comment "Attributively used adjectives inflect for the category degree of comparison. In agreement with the noun it modifies and can also be marked for nominal inflectional categories such as gender, case and number."@en .
+
+
+
+###  http://mmoon.org/mmoon/Derivation
+
+:Derivation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/DerivedWord
+
+:DerivedWord rdf:type owl:Class ;
+             
+             rdfs:label "Derived word"@en ;
+             
+             rdfs:subClassOf :Lexeme ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMorphologicalRelationship ;
+                               owl:onClass :Derivation ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                             ] ;
+             
+             :example "\"replay\" is a derived word from the lexeme \"play\"."@en ;
+             
+             rdfs:comment """A derivate is a stem generated by derivation [derivatio]. [Christian Lehmann, under \"derivate\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+Is a kind of lexeme which is formed by the morphological modification of a base."""@en .
+
+
+
+###  http://mmoon.org/mmoon/GrammaticalWord
+
+:GrammaticalWord rdf:type owl:Class ;
+                 
+                 rdfs:label "Grammatical word"@en ;
+                 
+                 rdfs:subClassOf :Word ;
+                 
+                 rdfs:comment "A grammatical word is a word which is a grammatical formative. [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 
+                 :example "Engl. «be», «of».  [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Inflection
+
+:Inflection rdf:type owl:Class ;
+            
+            rdfs:label "Inflection"@en ;
+            
+            rdfs:subClassOf :MorphologicalRelationship ;
+            
+            rdfs:comment """Inflection [flexio] is the syntactically relevant part of morphology. It generates word forms (inflectional forms) of word stems.
+
+In contrast to derivation, inflection  never results in a change of word class and produces a predictable, regular change of meaning.
+Its expression is typically located farther from the root than that of derivation. [Christian Lehmann, under \"inflection\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+Is the process of generating word-forms of lexical stems. This class can be extended to describe the inflectional classes of a language."""@en .
+
+
+
+###  http://mmoon.org/mmoon/IrregularConjugation
+
+:IrregularConjugation rdf:type owl:Class ;
+                      
+                      rdfs:label "Irregular conjugation"@en ;
+                      
+                      rdfs:subClassOf :Conjugation ;
+                      
+                      rdfs:comment "Conjugation that deviates from the regular inflectional pattern."@en .
+
+
+
+###  http://mmoon.org/mmoon/Lexeme
+
+:Lexeme rdf:type owl:Class ;
+        
+        rdfs:label "Lexeme"@en ;
+        
+        owl:equivalentClass gold:LexicalItem ;
+        
+        rdfs:subClassOf :Word ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :consistsOfMorph ;
+                          owl:someValuesFrom :Root
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :consistsOfMorph ;
+                          owl:someValuesFrom :Base
+                        ] ;
+        
+        rdfs:comment """A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text, it appears in form of diverse word forms. [Christian Lehmann, under \"lexeme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+A lexeme is a word as it appears as an entry in a dictionary. It has a holistic abstract sense representing the core meaning shared by a set of closely-related word-forms. A lexeme can only be a word that inflects."""@en .
+
+
+
+###  http://mmoon.org/mmoon/Meaning
+
+:Meaning rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Morph
+
+:Morph rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Morpheme
+
+:Morpheme rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/MorphemeInventory
+
+:MorphemeInventory rdf:type owl:Class ;
+                   
+                   rdfs:label "Morpheme inventory"@en ;
+                   
+                   rdfs:comment "The morpheme inventory is the object that contains morphemic entries. It is specified for the natural language it describes."@en .
+
+
+
+###  http://mmoon.org/mmoon/MorphologicalRelationship
+
+:MorphologicalRelationship rdf:type owl:Class ;
+                           
+                           rdfs:label "Morphological Relationship"@en ;
+                           
+                           rdfs:comment """Is the relationship between word-forms of a lexeme (inflection) or the relationship between lexemes of a word family (derivation). [Haspelmath and Sims: Understanding morphology. 2002:18]
+
+Words can exhibit:
+a) inflection only, then they are prototypically simple (e.g. non-derived or lexicalized words) lexemes, such as \"house\", \"go\", \"small\".
+
+b) inflection and word-formation, then it is a complex, i.e. a derived word, which adheres to some kind of word-formation and an inflection type. E.g. Engl. verb \"rewrite\".
+
+c) inflection and agreement, e.g. attributive adjectives in German which are marked for degree and the agreement categories of the noun. 
+
+d) inflection, word-formation and agreement, i.e. a derived word, which adheres to some kind of word-formation, an inflection type and is marked for agreement. E.g. German adjective \"uninteressant\" (Eng. \"uninteresting\").
+
+e) no inflection, i.e most of the grammatical words.
+
+f) no inflection and agreement, e.g. non-gradable adjectives in German, such as \"tot\" (eng. \"dead\") which are not inflected for degree but must be morpho-syntactically marked with the agreeing noun categories."""@en .
+
+
+
+###  http://mmoon.org/mmoon/NoInflection
+
+:NoInflection rdf:type owl:Class ;
+              
+              rdfs:label "No inflection"@en ;
+              
+              rdfs:subClassOf :MorphologicalRelationship ;
+              
+              rdfs:comment """This class marks words which do not inflect. This holds for most grammatical words. 
+If a lexeme does not exhibit inflection but some kind of agreement marking then the morphological relationship is \"NoInflection\" and \"Agreement\". (e.g. German \"toter\" (engl. \"dead\") is a non-gradable adjective, thus not inflecting for degree, but marked for case, number and gender in agreement with the noun it modifies)"""@en .
+
+
+
+###  http://mmoon.org/mmoon/NominalInflection
+
+:NominalInflection rdf:type owl:Class ;
+                   
+                   rdfs:label "Nominal inflection"@en ;
+                   
+                   rdfs:subClassOf :Inflection ;
+                   
+                   rdfs:comment "Is the process of generating word-forms of nominal stems."@en .
+
+
+
+###  http://mmoon.org/mmoon/RegularConjugation
+
+:RegularConjugation rdf:type owl:Class ;
+                    
+                    rdfs:label "Regular conjugation"@en ;
+                    
+                    rdfs:subClassOf :Conjugation ;
+                    
+                    rdfs:comment "Conjugation that exhibits a regular inflectional pattern."@en .
+
+
+
+###  http://mmoon.org/mmoon/Representation
+
+:Representation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Root
+
+:Root rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Stem
+
+:Stem rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/SyntheticWordform
+
+:SyntheticWordform rdf:type owl:Class ;
+                   
+                   rdfs:label "Synthetic word-form"@en ;
+                   
+                   rdfs:subClassOf :Wordform ;
+                   
+                   rdfs:comment "A word form is synthetic 1 iff it is not analytic [i.e. all its semantic and grammatical components are represented in one word form]. [Christian Lehmann, under \"synthesis\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :example "«went» is a synthetic word-form of the lexeme «go»."@en .
+
+
+
+###  http://mmoon.org/mmoon/VerbalInflection
+
+:VerbalInflection rdf:type owl:Class ;
+                  
+                  rdfs:label "Verbal inflection"@en ;
+                  
+                  rdfs:subClassOf :Inflection ;
+                  
+                  rdfs:comment "Is the process of generating word-forms of verbal stems."@en .
+
+
+
+###  http://mmoon.org/mmoon/Word
+
+:Word rdf:type owl:Class ;
+      
+      rdfs:label "Word"@en ;
+      
+      rdfs:comment """A word is a unit which is a constituent at the phrase level and above. It is sometimes identifiable according to such criteria as a) being the minimal possible unit in a reply, b) having features such as a regular stress pattern, and phonological changes conditioned by or blocked at word boundaries, c) being the largest unit resistant to insertion of new constituents within its boundaries, or d)  being the smallest constituent that can be moved within a sentence without making the sentence ungrammatical.
+A word is sometimes placed, in a hierarchy of grammatical constituents, above the morpheme level and below the phrase level. [http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAWord.htm]
+
+A word is a (grammatical) unit that enjoys a moderate degree of autonomy. I.e. while its parts tend to occupy fixed (morphological) positions, to be welded phonologically, to contract well-defined paradigmatic relations, all this is true to a lesser extent for the word itself and to an even lesser extent for the syntagm.
+The cognitive counterpart of a word in general is a mental representation. [Christian Lehmann, under \"word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/WordFormation
+
+:WordFormation rdf:type owl:Class ;
+               
+               rdfs:label "Word-formation"@en ;
+               
+               rdfs:subClassOf :MorphologicalRelationship ;
+               
+               rdfs:comment """Stem formation is the lexical part of morphology.
+Stem formation is the formation of stems, normally on the basis of at least one component stem. Each stem thus generated potentially constitutes a lexeme [lexema] of its own.  [Christian Lehmann, under \"word formation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/WordclassAffiliation
+
+:WordclassAffiliation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Wordform
+
+:Wordform rdf:type owl:Class ;
+          
+          rdfs:label "Word-form"@en ;
+          
+          rdfs:subClassOf :Word ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :consistsOfMorph ;
+                            owl:someValuesFrom :Root
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMorphologicalRelationship ;
+                            owl:someValuesFrom :Inflection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :consistsOfMorph ;
+                            owl:someValuesFrom :Stem
+                          ] ;
+          
+          rdfs:comment """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+It expresses the combination of a lexeme and a set of grammatical meanings. A word-form always is an inflectional variant of a lexeme."""@en ;
+          
+          :example "«said» is a word form of «say». [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://purl.org/linguistics/gold/Compound
+
+gold:Compound rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/LexicalItem
+
+gold:LexicalItem rdf:type owl:Class .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
