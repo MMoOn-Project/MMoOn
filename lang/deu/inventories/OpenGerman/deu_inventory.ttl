@@ -1,0 +1,696 @@
+@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix gold: <http://purl.org/linguistics/gold/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mmoon: <http://mmoon.org/mmoon/> .
+@prefix deu_schema: <http://mmoon.org/lang/deu/schema/og/> .
+@prefix deu_inventory: <http://mmoon.org/lang/deu/inventory/og/> .
+@base <http://mmoon.org/lang/deu/inventory/og/> .
+
+<http://mmoon.org/lang/deu/inventory/og/> rdf:type owl:Ontology ;
+                                          
+                                          owl:imports deu_schema: ,
+                                                      mmoon: .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://mmoon.org/mmoon/hasWordform
+
+mmoon:hasWordform rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://mmoon.org/lang/deu/schema/og/Lexeme
+
+deu_schema:Lexeme rdf:type owl:Class ;
+                  
+                  rdfs:subClassOf deu_schema:Word ,
+                                  mmoon:Lexeme .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/SyntheticWordform
+
+deu_schema:SyntheticWordform rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf deu_schema:Wordform ,
+                                             mmoon:SyntheticWordform .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Word
+
+deu_schema:Word rdf:type owl:Class ;
+                
+                rdfs:subClassOf mmoon:Word .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Wordform
+
+deu_schema:Wordform rdf:type owl:Class ;
+                    
+                    rdfs:subClassOf deu_schema:Word ,
+                                    mmoon:Wordform .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://mmoon.org/lang/deu/inventory/SyntheticWordform/og/kleinster1
+
+<http://mmoon.org/lang/deu/inventory/SyntheticWordform/og/kleinster1> rdf:type deu_schema:SyntheticWordform ,
+                                                                               owl:NamedIndividual ;
+                                                                      
+                                                                      rdfs:label "kleinster1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Lexeme/Kauf
+
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/Kauf> rdf:type deu_schema:Lexeme ,
+                                                              owl:NamedIndividual ;
+                                                     
+                                                     rdfs:label "Kauf"@de ,
+                                                                """the buying,
+the purchase"""@en ;
+                                                     
+                                                     mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf2> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf3> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufe> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufes> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufs> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe1> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe2> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe3> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufen> ,
+                                                                       <ttp://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Lexeme/Schlaf
+
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/Schlaf> rdf:type deu_schema:Lexeme ,
+                                                                owl:NamedIndividual ;
+                                                       
+                                                       rdfs:label "Schlaf"@de ,
+                                                                  "the sleep"@en ;
+                                                       
+                                                       mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf1> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf2> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf3> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafe> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafes> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafs> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Lexeme/kaufen
+
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/kaufen> rdf:type deu_schema:Lexeme ,
+                                                                owl:NamedIndividual ;
+                                                       
+                                                       rdfs:label "kaufen"@de ,
+                                                                  "to buy"@en ;
+                                                       
+                                                       mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauf> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufe> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufen1> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufen2> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufst> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft1> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft2> ,
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft3> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Lexeme/klein
+
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/klein> rdf:type deu_schema:Lexeme ,
+                                                               owl:NamedIndividual ;
+                                                      
+                                                      rdfs:label "klein"@de ,
+                                                                 """little,
+small"""@en ;
+                                                      
+                                                      mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/SyntheticWordform/og/kleinster1> ,
+                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleiner1> ,
+                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleinerer1> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Lexeme/schlafen
+
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/schlafen> rdf:type deu_schema:Lexeme ,
+                                                                  owl:NamedIndividual ;
+                                                         
+                                                         rdfs:label "schlafen"@de ,
+                                                                    "to sleep"@en ;
+                                                         
+                                                         mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaf> ,
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafe1> ,
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafe2> ,
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafen1> ,
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafen2> ,
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft1> ,
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft2> ,
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläfst> ,
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläft> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Lexeme/sein
+
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/sein> rdf:type deu_schema:Lexeme ,
+                                                              owl:NamedIndividual ;
+                                                     
+                                                     rdfs:label "sein"@de ,
+                                                                "to be"@en ;
+                                                     
+                                                     mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/bin> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/bist> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/ist> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sei> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid1> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid2> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind1> ,
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind2> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Lexeme/verkaufen
+
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/verkaufen> rdf:type deu_schema:Lexeme ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          rdfs:label "verkaufen"@de ,
+                                                                     "to sell"@en ;
+                                                          
+                                                          mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauf> ,
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufe1> ,
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufe2> ,
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufen1> ,
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufen2> ,
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufst> ,
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft1> ,
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft2> ,
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft3> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf2> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "Kauf2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf3
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf3> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "Kauf3"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufe
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufe> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "Kaufe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufes
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufes> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "Kaufes"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufs
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufs> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "Kaufs"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe1> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "Käufe1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe2> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "Käufe2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe3
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe3> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "Käufe3"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufen
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufen> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "Käufen"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf1> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "Schlaf1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf2> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "Schlaf2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf3
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf3> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "Schlaf3"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafe
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafe> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "Schlafe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafes
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafes> rdf:type deu_schema:SyntheticWordform ,
+                                                                             owl:NamedIndividual ;
+                                                                    
+                                                                    rdfs:label "Schlafes"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafs
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafs> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "Schlafs"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/bin
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/bin> rdf:type deu_schema:SyntheticWordform ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               rdfs:label "bin"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/bist
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/bist> rdf:type deu_schema:SyntheticWordform ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                rdfs:label "bist"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/ist
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/ist> rdf:type deu_schema:SyntheticWordform ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               rdfs:label "ist"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauf
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauf> rdf:type deu_schema:SyntheticWordform ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                rdfs:label "kauf"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufe
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufe> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "kaufe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufen1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufen1> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "kaufen1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufen2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufen2> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "kaufen2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufst
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufst> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "kaufst"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft1> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "kauft1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft2> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "kauft2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft3
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft3> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "kauft3"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleiner1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleiner1> rdf:type deu_schema:SyntheticWordform ,
+                                                                             owl:NamedIndividual ;
+                                                                    
+                                                                    rdfs:label "kleiner1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleinerer1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleinerer1> rdf:type deu_schema:SyntheticWordform ,
+                                                                               owl:NamedIndividual ;
+                                                                      
+                                                                      rdfs:label "kleinerer1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaf
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaf> rdf:type deu_schema:SyntheticWordform ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  rdfs:label "schlaf"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafe1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafe1> rdf:type deu_schema:SyntheticWordform ,
+                                                                             owl:NamedIndividual ;
+                                                                    
+                                                                    rdfs:label "schlafe1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafe2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafe2> rdf:type deu_schema:SyntheticWordform ,
+                                                                             owl:NamedIndividual ;
+                                                                    
+                                                                    rdfs:label "schlafe2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafen1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafen1> rdf:type deu_schema:SyntheticWordform ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     rdfs:label "schlafen1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafen2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafen2> rdf:type deu_schema:SyntheticWordform ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     rdfs:label "schlafen2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft1> rdf:type deu_schema:SyntheticWordform ,
+                                                                             owl:NamedIndividual ;
+                                                                    
+                                                                    rdfs:label "schlaft1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft2> rdf:type deu_schema:SyntheticWordform ,
+                                                                             owl:NamedIndividual ;
+                                                                    
+                                                                    rdfs:label "schlaft2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläfst
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläfst> rdf:type deu_schema:SyntheticWordform ,
+                                                                             owl:NamedIndividual ;
+                                                                    
+                                                                    rdfs:label "schläfst"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläft
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläft> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "schläft"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sei
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sei> rdf:type deu_schema:SyntheticWordform ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               rdfs:label "sei"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid1> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "seid1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid2> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "seid2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind1> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "sind1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind2> rdf:type deu_schema:SyntheticWordform ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 rdfs:label "sind2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauf
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauf> rdf:type deu_schema:SyntheticWordform ,
+                                                                            owl:NamedIndividual ;
+                                                                   
+                                                                   rdfs:label "verkauf"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufe1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufe1> rdf:type deu_schema:SyntheticWordform ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     rdfs:label "verkaufe1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufe2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufe2> rdf:type deu_schema:SyntheticWordform ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     rdfs:label "verkaufe2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufen1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufen1> rdf:type deu_schema:SyntheticWordform ,
+                                                                               owl:NamedIndividual ;
+                                                                      
+                                                                      rdfs:label "verkaufen1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufen2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufen2> rdf:type deu_schema:SyntheticWordform ,
+                                                                               owl:NamedIndividual ;
+                                                                      
+                                                                      rdfs:label "verkaufen2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufst
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufst> rdf:type deu_schema:SyntheticWordform ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     rdfs:label "verkaufst"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft1> rdf:type deu_schema:SyntheticWordform ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     rdfs:label "verkauft1"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft2
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft2> rdf:type deu_schema:SyntheticWordform ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     rdfs:label "verkauft2"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft3
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft3> rdf:type deu_schema:SyntheticWordform ,
+                                                                              owl:NamedIndividual ;
+                                                                     
+                                                                     rdfs:label "verkauft3"@de .
+
+
+
+###  ttp://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1
+
+<ttp://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1> rdf:type deu_schema:SyntheticWordform ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                rdfs:label "Kauf1"@de .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
