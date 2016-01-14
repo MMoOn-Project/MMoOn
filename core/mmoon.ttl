@@ -49,7 +49,7 @@ This is the reference ontology from which various language specific MMoOn Invent
                  
                  rdfs:label "belongs to lexeme"@en ;
                  
-                 rdfs:comment "hier vielleicht die default gramm. kategorien (also infinitiv für verben usw.) oder weglassen?" ;
+                 rdfs:comment "This property states that a word-form resource belongs into the inflectional paradigm of a lexeme resource."@en ;
                  
                  rdfs:range :Lexeme ;
                  
@@ -103,6 +103,8 @@ This is the reference ontology from which various language specific MMoOn Invent
                 
                 rdfs:label "consists of word"@en ;
                 
+                rdfs:comment "This property states that an analytic word-form (such as \"more big\" being the comparative form of the adjective \"big\") consists of of other word resources."@en ;
+                
                 rdfs:domain :AnalyticWordform ;
                 
                 rdfs:range :Word .
@@ -139,6 +141,8 @@ This is the reference ontology from which various language specific MMoOn Invent
 :hasMorphologicalRelationship rdf:type owl:ObjectProperty ;
                               
                               rdfs:label "has morphological relationship"@en ;
+                              
+                              rdfs:comment "Specifies the morphological relationship of a word."@en ;
                               
                               rdfs:range :MorphologicalRelationship ;
                               
@@ -186,6 +190,8 @@ This is the reference ontology from which various language specific MMoOn Invent
 :hasWordform rdf:type owl:ObjectProperty ;
              
              rdfs:label "has wordform"@en ;
+             
+             rdfs:comment "This property states that (typically) a lexeme resource has and associated word-form resource."@en ;
              
              rdfs:domain :GrammaticalWord ,
                          :Lexeme ;
@@ -241,6 +247,20 @@ lexvo:Language rdf:type owl:Class ;
 
 
 
+###  http://mmoon.org/mmoon/ActionNoun
+
+:ActionNoun rdf:type owl:Class ;
+            
+            rdfs:label "Action noun"@en ;
+            
+            rdfs:subClassOf :DeverbalNoun ;
+            
+            rdfs:comment "An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one which designates the same kind of thing as a (finite) verb, viz. a situation core, except that this is hypostatized as an entity. [Christian Lehmann, under \"action noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :example "Eng. \"to arrive\"(V) --> \"arrival\"(N)."@en .
+
+
+
 ###  http://mmoon.org/mmoon/AdjectivalInflection
 
 :AdjectivalInflection rdf:type owl:Class ;
@@ -253,17 +273,87 @@ lexvo:Language rdf:type owl:Class ;
 
 
 
-###  http://mmoon.org/mmoon/Agreement
+###  http://mmoon.org/mmoon/AdjectiveCompound
 
-:Agreement rdf:type owl:Class ;
-           
-           rdfs:label "Agreement"@en ;
-           
-           rdfs:subClassOf :MorphologicalRelationship ;
-           
-           rdfs:comment """Unter Kongruenz versteht man die Übereinstimmung zwischen zwei oder mehreren Satzelementen hinsichtlich ihrer morpho-syntaktischen Kategorien (Kasus, Numerus, Genus).
+:AdjectiveCompound rdf:type owl:Class ;
+                   
+                   rdfs:label "Adjective compound"@en ;
+                   
+                   rdfs:subClassOf :Compounding ;
+                   
+                   rdfs:comment "An adjective compound is an adjective formed by composition of an adjective stem and another stem."@en ;
+                   
+                   :example "Eng.: \"man-eating\"(Adj) = \"man\"(N) + \"eating\"(Adj)."@en .
 
-die grammatischen kategorien wonach kongruiert wird, müssen hier nicht spezifiziert werden. das geschieht auf der wortformebene durch die spezifizierung der morphe und deren bedeutungen."""@en .
+
+
+###  http://mmoon.org/mmoon/AdjectiveNoun
+
+:AdjectiveNoun rdf:type owl:Class ;
+               
+               rdfs:label "Adjective noun"@en ;
+               
+               rdfs:subClassOf :Conversion ;
+               
+               rdfs:comment "An adjective noun is a noun which is fomed by conversion from an adjective and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+               
+               :example "Engl.: \"old\"(Adj) --> \"the old\"(N)."@en .
+
+
+
+###  http://mmoon.org/mmoon/AdjectiveVerb
+
+:AdjectiveVerb rdf:type owl:Class ;
+               
+               rdfs:label "Adjective verb"@en ;
+               
+               rdfs:subClassOf :Conversion ;
+               
+               :example "German: \"dicht\"(Adj.) 'impermeable' --> \"dichten\"(V) 'seal'."@de ;
+               
+               rdfs:comment "An adjective verb is a verb which is fomed by conversion from an adjective and which entails no further derivational meaning except the entailed wordclass-change."@en .
+
+
+
+###  http://mmoon.org/mmoon/AdverbCompound
+
+:AdverbCompound rdf:type owl:Class ;
+                
+                rdfs:label "Adverb compound"@en ;
+                
+                rdfs:subClassOf :Compounding ;
+                
+                rdfs:comment "An adverb compound is an adverb formed by composition of an adverb stem and another stem."@en ;
+                
+                :example "Eng.: \"downstream\"(Adv) = \"down\"(Adv) + \"stream\"(N)."@en .
+
+
+
+###  http://mmoon.org/mmoon/AgentNominalizer
+
+:AgentNominalizer rdf:type owl:Class ;
+                  
+                  rdfs:label "Agent nominalizer"@en ;
+                  
+                  rdfs:subClassOf :SemanticDerivation ;
+                  
+                  rdfs:comment "An agent nominalizer is a nominalizer which derives agent nouns. [Christian Lehmann, under \"agent nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                  
+                  :example "Engl. \"drive\" --> \"driver\""@en .
+
+
+
+###  http://mmoon.org/mmoon/AgentNoun
+
+:AgentNoun rdf:type owl:Class ;
+           
+           rdfs:label "Agent noun"@en ;
+           
+           rdfs:subClassOf :DeverbalNoun ;
+           
+           rdfs:comment "A noun which is derived from a verb base denoting someone or something that performs the action of the verb base."@en ;
+           
+           :example "Eng. \"to work\"(V) --> \"worker\"(N)."@en .
 
 
 
@@ -295,9 +385,76 @@ Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"
 
 
 
+###  http://mmoon.org/mmoon/ApplicativeVerb
+
+:ApplicativeVerb rdf:type owl:Class ;
+                 
+                 rdfs:label "Applicative verb"@en ;
+                 
+                 rdfs:subClassOf :DeverbalVerb ;
+                 
+                 :example "German: \"steigen\"(V) 'rise' --> \"besteigen\"(V) 'climb'."@de ;
+                 
+                 rdfs:comment """An applicative verb is a derived transitive verb whose direct object has been promoted to this function from a more peripheral syntactic function that it has with the base verb.
+
+The base may be transitive, in which case its direct object is demoted upon the derivation of the applicative verb.
+[Christian Lehmann, under \"applicative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/AugmentativeNoun
+
+:AugmentativeNoun rdf:type owl:Class ;
+                  
+                  rdfs:label "Augmentative noun"@en ;
+                  
+                  rdfs:subClassOf :DenominalNoun ;
+                  
+                  rdfs:seeAlso "http://purl.org/olia/olia.owl#Augmentative" ;
+                  
+                  rdfs:comment """Augmentation is the derivational modification of a noun by the concept „big, large“. Possible connotations include „strong, imposing, ugly“.
+A noun is augmentative 1 iff it is derived by augmentation. [Christian Lehmann, under \"augmentation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                  
+                  rdfs:seeAlso "http://purl.org/linguistics/gold/AugmentativeSize" ;
+                  
+                  rdfs:comment "A noun which is derived from a noun base that denotes big or large size. Possible connotations include strong, imposing, ugly."@en .
+
+
+
 ###  http://mmoon.org/mmoon/Base
 
 :Base rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/CausativeVerb
+
+:CausativeVerb rdf:type owl:Class ;
+               
+               rdfs:label "Causative verb"@en ;
+               
+               rdfs:subClassOf :DeverbalVerb ;
+               
+               rdfs:comment """A causative verb is an n-place verb (with n > 1) which is derived from an n-1-place verb in such a way that the additional semantic slot is mapped onto the subject slot and is occupied by a superordinate agent which causes the situation designated by the base.
+
+An underived verb cannot be causative by this definition. However, the paradigmatic lexical relation of Engl. «kill» to «die» may be called ‚semantically causative’. [Christian Lehmann, under \"causative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+               
+               :example """Eng.: \"fall\"(V) --> \"fell\"(V).
+[Christian Lehmann, under \"causative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/CollectivePersonNoun
+
+:CollectivePersonNoun rdf:type owl:Class ;
+                      
+                      rdfs:label "Collective person noun"@en ;
+                      
+                      rdfs:subClassOf :DenominalNoun ;
+                      
+                      :example "German: \"Lehrer\"(N) 'teacher' --> \"Lehrerschaft\"(N) 'body of teachers'."@de ;
+                      
+                      rdfs:comment "A noun which is derived from a noun base that denotes group of persons."@en .
 
 
 
@@ -326,7 +483,17 @@ Is a kind of lexeme which is formed by the combination of two stems."""@en ;
 
 ###  http://mmoon.org/mmoon/Compounding
 
-:Compounding rdf:type owl:Class .
+:Compounding rdf:type owl:Class ;
+             
+             rdfs:label "Compounding"@en ;
+             
+             rdfs:subClassOf :WordFormation ;
+             
+             rdfs:comment """Compounding [compositio thematum] is the formation of a stem by combination of two stems. Both stems may already be complex.[Christian Lehmann, under \"compounding\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+Compounds, in English and some other languages, can be written as one word or two separate words, and they can be hyphenated as well. [http://www.glottopedia.org/index.php/Compound]
+
+Is the process of lexeme-formation by combining two stems."""@en .
 
 
 
@@ -339,6 +506,89 @@ Is a kind of lexeme which is formed by the combination of two stems."""@en ;
              rdfs:subClassOf :VerbalInflection ;
              
              rdfs:comment "Is the inflection of a verb. Conjugation categories commonly include person, number, gender, aspect, tense, mood, voice and non-finite subcategories. [Christian Lehmann, under \"conjugation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Conversion
+
+:Conversion rdf:type owl:Class ;
+            
+            rdfs:label "Conversion"@en ;
+            
+            rdfs:subClassOf :Derivation ;
+            
+            rdfs:comment """Conversion, also called zero-derivation, is the formation of a lexeme from another part of speech which entails no further derivational meaning except that which is entailed in the wordclass-change. All other derivations which include an affix marking the wordclass-change but also do not entail further derivational meaning belong into the according mmoon:Derived[Wordclass] subclasses.
+
+In morphology, conversion is a process which derives words without changing the phonological shape of the base. [http://www.glottopedia.org/index.php/Conversion]
+
+Conversion [recategorizatio] is the implicit change of the word class of a stem.
+Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conceived as involving a morphological process. At the level of formal representation, however, conversion [recategorizatio] may be conceived as dependency of a stem on a zero affix.  [Christian Lehmann, under \"conversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/DeadjectivalAdjective
+
+:DeadjectivalAdjective rdf:type owl:Class ;
+                       
+                       rdfs:label "Deadjectival adjective"@en ;
+                       
+                       rdfs:subClassOf :DerivedAdjective ;
+                       
+                       rdfs:comment "Is an adjective which derived from an adjective base."@en .
+
+
+
+###  http://mmoon.org/mmoon/DeadjectivalAdverb
+
+:DeadjectivalAdverb rdf:type owl:Class ;
+                    
+                    rdfs:label "DeadjectivalAdverb"@en ;
+                    
+                    rdfs:subClassOf :DerivedAdverb ;
+                    
+                    rdfs:comment """Is an adverb which derived from an adjective base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DeadjectivalNoun
+
+:DeadjectivalNoun rdf:type owl:Class ;
+                  
+                  rdfs:label "Deadjectival noun"@en ;
+                  
+                  rdfs:subClassOf :DerivedNoun ;
+                  
+                  rdfs:comment """Is a noun which derived from an adjective base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DeadjectivalVerb
+
+:DeadjectivalVerb rdf:type owl:Class ;
+                  
+                  rdfs:label "Deadjectival verb"@en ;
+                  
+                  rdfs:subClassOf :DerivedVerb ;
+                  
+                  rdfs:comment """Is a verb which derived from an adjective base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DeadverbalAdverb
+
+:DeadverbalAdverb rdf:type owl:Class ;
+                  
+                  rdfs:label "Deadverbal adverb"@en ;
+                  
+                  rdfs:subClassOf :DerivedAdverb ;
+                  
+                  rdfs:comment "Is an adverb which derived from an adverb base."@en .
 
 
 
@@ -362,13 +612,121 @@ Is a kind of lexeme which is formed by the combination of two stems."""@en ;
         
         rdfs:subClassOf :AdjectivalInflection ;
         
-        rdfs:comment "Attributively used adjectives inflect for the category degree of comparison. In agreement with the noun it modifies and can also be marked for nominal inflectional categories such as gender, case and number."@en .
+        rdfs:comment "Attributively used adjectives inflect for the category degree of comparison. In agreement with the noun it modifies they can also be marked for nominal inflectional categories such as gender, case and number."@en .
+
+
+
+###  http://mmoon.org/mmoon/DenominalAdjective
+
+:DenominalAdjective rdf:type owl:Class ;
+                    
+                    rdfs:label "Denominal adjective"@en ;
+                    
+                    rdfs:subClassOf :DerivedAdjective ;
+                    
+                    rdfs:comment """Is an adjective which derived from a noun base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DenominalAdverb
+
+:DenominalAdverb rdf:type owl:Class ;
+                 
+                 rdfs:label "Denominal adverb"@en ;
+                 
+                 rdfs:subClassOf :DerivedAdverb ;
+                 
+                 rdfs:comment """Is an adverb which derived from a noun base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DenominalNoun
+
+:DenominalNoun rdf:type owl:Class ;
+               
+               rdfs:label "Denominal noun"@en ;
+               
+               rdfs:subClassOf :DerivedNoun ;
+               
+               rdfs:comment "Is a noun which derived from a noun base."@en .
+
+
+
+###  http://mmoon.org/mmoon/DenominalVerb
+
+:DenominalVerb rdf:type owl:Class ;
+               
+               rdfs:label "Denominal verb"@en ;
+               
+               rdfs:subClassOf :DerivedVerb ;
+               
+               rdfs:comment """Is a verb which derived from a noun base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
 
 
 
 ###  http://mmoon.org/mmoon/Derivation
 
-:Derivation rdf:type owl:Class .
+:Derivation rdf:type owl:Class ;
+            
+            rdfs:label "Derivation"@en ;
+            
+            rdfs:subClassOf :WordFormation ;
+            
+            rdfs:comment "Is the process of lexeme-formation which is morphologically conditioned and involves the modification of a base."@en .
+
+
+
+###  http://mmoon.org/mmoon/DerivedAdjective
+
+:DerivedAdjective rdf:type owl:Class ;
+                  
+                  rdfs:label "Derived adjective"@en ;
+                  
+                  rdfs:subClassOf :Derivation ;
+                  
+                  rdfs:comment "Is an adjective which derived from a base."@en .
+
+
+
+###  http://mmoon.org/mmoon/DerivedAdverb
+
+:DerivedAdverb rdf:type owl:Class ;
+               
+               rdfs:label "Derived adverb"@en ;
+               
+               rdfs:subClassOf :Derivation ;
+               
+               rdfs:comment "Is an adverb which derived from a base."@en .
+
+
+
+###  http://mmoon.org/mmoon/DerivedNoun
+
+:DerivedNoun rdf:type owl:Class ;
+             
+             rdfs:label "Derived noun"@en ;
+             
+             rdfs:subClassOf :Derivation ;
+             
+             rdfs:comment "Is a noun which derived from a base."@en .
+
+
+
+###  http://mmoon.org/mmoon/DerivedVerb
+
+:DerivedVerb rdf:type owl:Class ;
+             
+             rdfs:label "Derived verb"@en ;
+             
+             rdfs:subClassOf :Derivation ;
+             
+             rdfs:comment "Is a verb which derived from a base."@en .
 
 
 
@@ -390,6 +748,144 @@ Is a kind of lexeme which is formed by the combination of two stems."""@en ;
              rdfs:comment """A derivate is a stem generated by derivation [derivatio]. [Christian Lehmann, under \"derivate\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
 
 Is a kind of lexeme which is formed by the morphological modification of a base."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DesiderativeVerb
+
+:DesiderativeVerb rdf:type owl:Class ;
+                  
+                  rdfs:label "Desiderative verb"@en ;
+                  
+                  rdfs:subClassOf :DeverbalVerb ;
+                  
+                  rdfs:comment "A verb which is derived from a verb base denoting to want the meaning of the verb base."@en ;
+                  
+                  :example "Sanskrit: \"‚s:r.no-ti\" (V) 'hears' --> \"‚su-’sr¡u-.sa-ti\"(V) (RED-hear-DES-3.SG) 'wants to hear'."@sa .
+
+
+
+###  http://mmoon.org/mmoon/DeverbalAdjective
+
+:DeverbalAdjective rdf:type owl:Class ;
+                   
+                   rdfs:label "Deverbal Adjective"@en ;
+                   
+                   rdfs:subClassOf :DerivedAdjective ;
+                   
+                   rdfs:comment """Is an adjective which derived from a verb base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DeverbalAdverb
+
+:DeverbalAdverb rdf:type owl:Class ;
+                
+                rdfs:label "Deverbal adverb"@en ;
+                
+                rdfs:subClassOf :DerivedAdverb ;
+                
+                rdfs:comment """Is an adverb which derived from a verb base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DeverbalNoun
+
+:DeverbalNoun rdf:type owl:Class ;
+              
+              rdfs:label "Deverbal noun"@en ;
+              
+              rdfs:subClassOf :DerivedNoun ;
+              
+              rdfs:comment """Is a noun which derived from a verb base.
+
+Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."""@en .
+
+
+
+###  http://mmoon.org/mmoon/DeverbalVerb
+
+:DeverbalVerb rdf:type owl:Class ;
+              
+              rdfs:label "Deverbal verb"@en ;
+              
+              rdfs:subClassOf :DerivedVerb ;
+              
+              rdfs:comment "Is a verb which derived from a verb base."@en .
+
+
+
+###  http://mmoon.org/mmoon/DiminutiveAdjective
+
+:DiminutiveAdjective rdf:type owl:Class ;
+                     
+                     rdfs:label "Diminutive adjective"@en ;
+                     
+                     rdfs:subClassOf :DeadjectivalAdjective ;
+                     
+                     rdfs:seeAlso "http://purl.org/linguistics/gold/DiminuativeSize" ;
+                     
+                     rdfs:comment "An adjective which is derived from an adjective base that denotes a smaller intensity than the adjective base."@en ;
+                     
+                     :example "Eng. \"small\"(ADJ) --> \"smallish\"(ADJ)"@en .
+
+
+
+###  http://mmoon.org/mmoon/DiminutiveNoun
+
+:DiminutiveNoun rdf:type owl:Class ;
+                
+                rdfs:label "Diminutive noun"@en ;
+                
+                rdfs:subClassOf :DenominalNoun ;
+                
+                :example "German \"Kind\"(N) --> \"Kindchen\"(N)"@de ,
+                         "Eng. \"duck\"(N) --> \"duckling\"(N)"@en ;
+                
+                rdfs:seeAlso "http://purl.org/linguistics/gold/DiminuativeSize" ;
+                
+                rdfs:comment "A noun which is derived from a noun base that denotes endearment, small size or small intensity."@en ;
+                
+                rdfs:seeAlso <http://purl.org/olia/olia.owl#DiminutiveNoun> .
+
+
+
+###  http://mmoon.org/mmoon/FactitiveVerb
+
+:FactitiveVerb rdf:type owl:Class ;
+               
+               rdfs:label "Factitive verb"@en ;
+               
+               rdfs:subClassOf :DeadjectivalVerb ;
+               
+               :example """German: \"tot\"(Adj) 'dead' --> \"töten\"(V) 'to kill'.
+ [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@de ;
+               
+               rdfs:comment """A factitive verb is a causative verb based on an adjective (or a stative intransitive verb).
+
+Delimitation and History:
+While there may be a subordinate agent in a causative construction, there may be none in a factitive one. This has sometimes been a reason for not subsuming factitive under causative. [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+               
+               :example """Engl.:\"black\"(Adj) --> \"blacken\"(Vtr.).
+ [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/FemaleNoun
+
+:FemaleNoun rdf:type owl:Class ;
+            
+            rdfs:label "Female noun"@en ;
+            
+            rdfs:subClassOf :DenominalNoun ;
+            
+            :example "German: \"Fahrer\"(N) 'male driver' --> \"Fahrerin\"(N) 'female driver'."@de ;
+            
+            rdfs:comment "A noun which is derived from a noun base that denotes a female person."@en .
 
 
 
@@ -416,11 +912,36 @@ Is a kind of lexeme which is formed by the morphological modification of a base.
             rdfs:subClassOf :MorphologicalRelationship ;
             
             rdfs:comment """Inflection [flexio] is the syntactically relevant part of morphology. It generates word forms (inflectional forms) of word stems.
-
-In contrast to derivation, inflection  never results in a change of word class and produces a predictable, regular change of meaning.
+In contrast to derivation, inflection  never results in a change of word class and produces a predictable, regular change of meaning (for regular word-forms only).
 Its expression is typically located farther from the root than that of derivation. [Christian Lehmann, under \"inflection\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
 
-Is the process of generating word-forms of lexical stems. This class can be extended to describe the inflectional classes of a language."""@en .
+Is the process of generating word-forms of lexical stems. This class can be extended to describe the inflectional classes of the lexemes of a language."""@en .
+
+
+
+###  http://mmoon.org/mmoon/InstrumentNoun
+
+:InstrumentNoun rdf:type owl:Class ;
+                
+                rdfs:label "Instrument noun"@en ;
+                
+                rdfs:subClassOf :DeverbalNoun ;
+                
+                :example "German: \"lenken\"(V) 'to steer'--> \"Lenker\"(N) 'handle-bar, steering wheel'. [Christian Lehmann, under \"instrument noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@de ;
+                
+                rdfs:comment "An instrument noun is an oriented deverbal noun that designates something that functions as an instrument in the situation designated by the base verb. [Christian Lehmann, under \"instrument noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Introflection
+
+:Introflection rdf:type owl:Class ;
+               
+               rdfs:label "Introflection"@en ;
+               
+               rdfs:subClassOf :MorphologicalRelationship ;
+               
+               rdfs:comment "Nonconcatenative morphology, also called discontinuous morphology and introflection, is a form of word-formation [and inflection] in which the root is modified and does not involve stringing morphemes together. [Haspelmath and Sims: Understanding morphology. 2002, Sections 3.1.2 - 3.1.4]"@en .
 
 
 
@@ -460,6 +981,20 @@ A lexeme is a word as it appears as an entry in a dictionary. It has a holistic 
 
 
 
+###  http://mmoon.org/mmoon/MaterialAdjective
+
+:MaterialAdjective rdf:type owl:Class ;
+                   
+                   rdfs:label "Material adjective"@en ;
+                   
+                   rdfs:subClassOf :DenominalAdjective ;
+                   
+                   :example "German: Holz 'wood' --> hölzern 'wooden'."@de ;
+                   
+                   rdfs:comment "An adjective which is derived from a noun base denoting some kind of material and means 'being made of this material'."@en .
+
+
+
 ###  http://mmoon.org/mmoon/Meaning
 
 :Meaning rdf:type owl:Class .
@@ -496,18 +1031,19 @@ A lexeme is a word as it appears as an entry in a dictionary. It has a holistic 
                            
                            rdfs:comment """Is the relationship between word-forms of a lexeme (inflection) or the relationship between lexemes of a word family (derivation). [Haspelmath and Sims: Understanding morphology. 2002:18]
 
-Words can exhibit:
-a) inflection only, then they are prototypically simple (e.g. non-derived or lexicalized words) lexemes, such as \"house\", \"go\", \"small\".
+NOTE: In all subclasses of \"MorphologicalRelationship\" the semantic or grammatic categories are not specified. They only declare what kind of morphological relationship(s) is/are expressed on a word."""@en .
 
-b) inflection and word-formation, then it is a complex, i.e. a derived word, which adheres to some kind of word-formation and an inflection type. E.g. Engl. verb \"rewrite\".
 
-c) inflection and agreement, e.g. attributive adjectives in German which are marked for degree and the agreement categories of the noun. 
 
-d) inflection, word-formation and agreement, i.e. a derived word, which adheres to some kind of word-formation, an inflection type and is marked for agreement. E.g. German adjective \"uninteressant\" (Eng. \"uninteresting\").
+###  http://mmoon.org/mmoon/NoDegree
 
-e) no inflection, i.e most of the grammatical words.
-
-f) no inflection and agreement, e.g. non-gradable adjectives in German, such as \"tot\" (eng. \"dead\") which are not inflected for degree but must be morpho-syntactically marked with the agreeing noun categories."""@en .
+:NoDegree rdf:type owl:Class ;
+          
+          rdfs:label "No degree"@en ;
+          
+          rdfs:subClassOf :AdjectivalInflection ;
+          
+          rdfs:comment "Some adjectives do not inflect for the category degree of comparison, e.g. \"dead\", \"absolute\", \"pregnant\". In agreement with the noun it modifies it can still be marked for nominal inflectional categories such as gender, case and number."@en .
 
 
 
@@ -519,8 +1055,35 @@ f) no inflection and agreement, e.g. non-gradable adjectives in German, such as 
               
               rdfs:subClassOf :MorphologicalRelationship ;
               
-              rdfs:comment """This class marks words which do not inflect. This holds for most grammatical words. 
-If a lexeme does not exhibit inflection but some kind of agreement marking then the morphological relationship is \"NoInflection\" and \"Agreement\". (e.g. German \"toter\" (engl. \"dead\") is a non-gradable adjective, thus not inflecting for degree, but marked for case, number and gender in agreement with the noun it modifies)"""@en .
+              rdfs:comment "This class marks words which do not inflect. This holds for most grammatical words but also for some lexemes (e.g. the invariable adjective \"super\" in German)."@en .
+
+
+
+###  http://mmoon.org/mmoon/NominalAdverb
+
+:NominalAdverb rdf:type owl:Class ;
+               
+               rdfs:label "Nominal adverb"@en ;
+               
+               rdfs:subClassOf :Conversion ;
+               
+               rdfs:comment "A nominal adverb is an adverb which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+               
+               :example "Engl.: \"backstage\"(N) --> \"backstage\"(Adv)."@en .
+
+
+
+###  http://mmoon.org/mmoon/NominalCompound
+
+:NominalCompound rdf:type owl:Class ;
+                 
+                 rdfs:label "Nominal compound"@en ;
+                 
+                 rdfs:subClassOf :Compounding ;
+                 
+                 rdfs:comment "A nominal compound is a noun formed by composition of a nominal stem and another stem."@en ;
+                 
+                 :example "Engl.: \"blackboard\"(N) = \"black\"(Adj) + \"board\"(N)."@en .
 
 
 
@@ -533,6 +1096,48 @@ If a lexeme does not exhibit inflection but some kind of agreement marking then 
                    rdfs:subClassOf :Inflection ;
                    
                    rdfs:comment "Is the process of generating word-forms of nominal stems."@en .
+
+
+
+###  http://mmoon.org/mmoon/NominalVerb
+
+:NominalVerb rdf:type owl:Class ;
+             
+             rdfs:label "Nominal verb"@en ;
+             
+             rdfs:subClassOf :Conversion ;
+             
+             rdfs:comment "A nominal verb is a verb which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+             
+             :example "Engl.: \"the steam\"(N) --> \"to steam\"(V)."@en .
+
+
+
+###  http://mmoon.org/mmoon/NounAdjective
+
+:NounAdjective rdf:type owl:Class ;
+               
+               rdfs:label "Noun adjective"@en ;
+               
+               rdfs:subClassOf :Conversion ;
+               
+               rdfs:comment "A noun adjective is an adjective which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+               
+               :example "Engl.: \"Swiss\"(NPr) --> \"Swiss\"(Adj)."@en .
+
+
+
+###  http://mmoon.org/mmoon/PatientNoun
+
+:PatientNoun rdf:type owl:Class ;
+             
+             rdfs:label "Patient noun"@en ;
+             
+             rdfs:subClassOf :DeverbalNoun ;
+             
+             :example "German: \"bestellen\"(V) 'to order' --> \"Bestellung\"(N) 'the thing you ordered'."@de ;
+             
+             rdfs:comment "A patient noun is an oriented verbal noun designating the undergoer of the verbal base. [Christian Lehmann, under \"patient noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -560,6 +1165,12 @@ If a lexeme does not exhibit inflection but some kind of agreement marking then 
 
 
 
+###  http://mmoon.org/mmoon/SemanticDerivation
+
+:SemanticDerivation rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/Stem
 
 :Stem rdf:type owl:Class .
@@ -580,6 +1191,34 @@ If a lexeme does not exhibit inflection but some kind of agreement marking then 
 
 
 
+###  http://mmoon.org/mmoon/VerbalAdjective
+
+:VerbalAdjective rdf:type owl:Class ;
+                 
+                 rdfs:label "Verbal adjective"@en ;
+                 
+                 rdfs:subClassOf :Conversion ;
+                 
+                 :example "German: \"regierend\"(VParticiple) 'to reign' --> \"regierend\"(Adj) 'reigning'."@de ;
+                 
+                 rdfs:comment "A verbal adjective is an adjective which is fomed by conversion from a verb and which entails no further derivational meaning except the entailed wordclass-change."@en .
+
+
+
+###  http://mmoon.org/mmoon/VerbalCompound
+
+:VerbalCompound rdf:type owl:Class ;
+                
+                rdfs:label "Verbal compound"@en ;
+                
+                rdfs:subClassOf :Compounding ;
+                
+                rdfs:comment "A verbal compound is a verb formed by composition of a verbal stem and another stem."@en ;
+                
+                :example "Eng.: \"force feed\"(V) = \"force\"(N) + \"feed\"(V)."@en .
+
+
+
 ###  http://mmoon.org/mmoon/VerbalInflection
 
 :VerbalInflection rdf:type owl:Class ;
@@ -589,6 +1228,20 @@ If a lexeme does not exhibit inflection but some kind of agreement marking then 
                   rdfs:subClassOf :Inflection ;
                   
                   rdfs:comment "Is the process of generating word-forms of verbal stems."@en .
+
+
+
+###  http://mmoon.org/mmoon/VerbalNoun
+
+:VerbalNoun rdf:type owl:Class ;
+            
+            rdfs:label "Verbal noun"@en ;
+            
+            rdfs:subClassOf :Conversion ;
+            
+            rdfs:comment "A verbal noun is a noun which is fomed by conversion from a verb and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+            
+            :example "Engl.: \"to call\"(V) --> \"the call\"(N)."@en .
 
 
 
