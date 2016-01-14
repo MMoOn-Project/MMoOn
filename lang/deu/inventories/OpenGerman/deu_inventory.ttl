@@ -1,4 +1,4 @@
-@prefix : <http://www.semanticweb.org/owl/owlapi/turtle#> .
+@prefix deu_inventory: <http://mmoon.org/lang/deu/inventory/og/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -7,7 +7,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix mmoon: <http://mmoon.org/mmoon/> .
 @prefix deu_schema: <http://mmoon.org/lang/deu/schema/og/> .
-@prefix deu_inventory: <http://mmoon.org/lang/deu/inventory/og/> .
 @base <http://mmoon.org/lang/deu/inventory/og/> .
 
 <http://mmoon.org/lang/deu/inventory/og/> rdf:type owl:Ontology ;
@@ -21,6 +20,12 @@
 #    Annotation properties
 #
 #################################################################
+
+
+###  http://mmoon.org/mmoon/hasMorphologicalRelationship
+
+mmoon:hasMorphologicalRelationship rdf:type owl:AnnotationProperty .
+
 
 
 ###  http://mmoon.org/mmoon/hasWordform
@@ -82,18 +87,9 @@ deu_schema:Wordform rdf:type owl:Class ;
 #################################################################
 
 
-###  http://mmoon.org/lang/deu/inventory/SyntheticWordform/og/kleinster1
-
-<http://mmoon.org/lang/deu/inventory/SyntheticWordform/og/kleinster1> rdf:type deu_schema:SyntheticWordform ,
-                                                                               owl:NamedIndividual ;
-                                                                      
-                                                                      rdfs:label "kleinster1"@de .
-
-
-
 ###  http://mmoon.org/lang/deu/inventory/og/Lexeme/Kauf
 
-<http://mmoon.org/lang/deu/inventory/og/Lexeme/Kauf> rdf:type deu_schema:Lexeme ,
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/Kauf> rdf:type deu_schema:DerivedWord ,
                                                               owl:NamedIndividual ;
                                                      
                                                      rdfs:label "Kauf"@de ,
@@ -109,13 +105,14 @@ the purchase"""@en ;
                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe2> ,
                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe3> ,
                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufen> ,
-                                                                       <ttp://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1> .
-
-
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1> ;
+																	   
+													mmoon:hasMorphologicalRelationship deu_schema:VerbalNoun ,
+																						deu_schema:NounDeclension1 .
 
 ###  http://mmoon.org/lang/deu/inventory/og/Lexeme/Schlaf
 
-<http://mmoon.org/lang/deu/inventory/og/Lexeme/Schlaf> rdf:type deu_schema:Lexeme ,
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/Schlaf> rdf:type deu_schema:DerivedWord ,
                                                                 owl:NamedIndividual ;
                                                        
                                                        rdfs:label "Schlaf"@de ,
@@ -126,7 +123,10 @@ the purchase"""@en ;
                                                                          <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf3> ,
                                                                          <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafe> ,
                                                                          <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafes> ,
-                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafs> .
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafs> ;
+														
+													   mmoon:hasMorphologicalRelationship deu_schema:VerbalNoun ,
+							 deu_schema:NounDeclension1 .						   
 
 
 
@@ -145,7 +145,9 @@ the purchase"""@en ;
                                                                          <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufst> ,
                                                                          <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft1> ,
                                                                          <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft2> ,
-                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft3> .
+                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft3> ;
+                                                       
+                                                       mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -160,7 +162,10 @@ small"""@en ;
                                                       
                                                       mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/SyntheticWordform/og/kleinster1> ,
                                                                         <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleiner1> ,
-                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleinerer1> .
+                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleinerer1> ;
+                                                      
+                                                      mmoon:hasMorphologicalRelationship deu_schema:AdjDeclension ,
+                                                                                         deu_schema:Degree .
 
 
 
@@ -180,7 +185,9 @@ small"""@en ;
                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft1> ,
                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft2> ,
                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläfst> ,
-                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläft> .
+                                                                           <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläft> ;
+                                                         
+                                                         mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -199,13 +206,15 @@ small"""@en ;
                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid1> ,
                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid2> ,
                                                                        <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind1> ,
-                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind2> .
+                                                                       <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind2> ;
+                                                     
+                                                     mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
 ###  http://mmoon.org/lang/deu/inventory/og/Lexeme/verkaufen
 
-<http://mmoon.org/lang/deu/inventory/og/Lexeme/verkaufen> rdf:type deu_schema:Lexeme ,
+<http://mmoon.org/lang/deu/inventory/og/Lexeme/verkaufen> rdf:type deu_schema:DerivedWord ,
                                                                    owl:NamedIndividual ;
                                                           
                                                           rdfs:label "verkaufen"@de ,
@@ -219,7 +228,10 @@ small"""@en ;
                                                                             <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufst> ,
                                                                             <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft1> ,
                                                                             <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft2> ,
-                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft3> .
+                                                                            <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft3> ;
+                                                          
+                                                          mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ,
+																							 deu_schema:ResultativeVerb .
 
 
 
@@ -228,7 +240,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf2> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "Kauf2"@de .
+                                                                 rdfs:label "Kauf2"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -237,7 +251,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf3> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "Kauf3"@de .
+                                                                 rdfs:label "Kauf3"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -246,7 +262,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufe> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "Kaufe"@de .
+                                                                 rdfs:label "Kaufe"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -255,7 +273,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufes> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "Kaufes"@de .
+                                                                  rdfs:label "Kaufes"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -264,7 +284,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kaufs> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "Kaufs"@de .
+                                                                 rdfs:label "Kaufs"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -273,7 +295,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe1> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "Käufe1"@de .
+                                                                  rdfs:label "Käufe1"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -282,7 +306,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe2> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "Käufe2"@de .
+                                                                  rdfs:label "Käufe2"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -291,7 +317,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufe3> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "Käufe3"@de .
+                                                                  rdfs:label "Käufe3"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -300,7 +328,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Käufen> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "Käufen"@de .
+                                                                  rdfs:label "Käufen"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -309,7 +339,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf1> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "Schlaf1"@de .
+                                                                   rdfs:label "Schlaf1"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -318,7 +350,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf2> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "Schlaf2"@de .
+                                                                   rdfs:label "Schlaf2"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -327,7 +361,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf3> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "Schlaf3"@de .
+                                                                   rdfs:label "Schlaf3"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -336,7 +372,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafe> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "Schlafe"@de .
+                                                                   rdfs:label "Schlafe"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -345,7 +383,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafes> rdf:type deu_schema:SyntheticWordform ,
                                                                              owl:NamedIndividual ;
                                                                     
-                                                                    rdfs:label "Schlafes"@de .
+                                                                    rdfs:label "Schlafes"@de ;
+																	
+																	mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -354,7 +394,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlafs> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "Schlafs"@de .
+                                                                   rdfs:label "Schlafs"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
@@ -363,7 +405,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/bin> rdf:type deu_schema:SyntheticWordform ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               rdfs:label "bin"@de .
+                                                               rdfs:label "bin"@de ;
+															   
+															   mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -372,7 +416,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/bist> rdf:type deu_schema:SyntheticWordform ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                rdfs:label "bist"@de .
+                                                                rdfs:label "bist"@de ;
+																
+																mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -381,7 +427,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/ist> rdf:type deu_schema:SyntheticWordform ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               rdfs:label "ist"@de .
+                                                               rdfs:label "ist"@de ;
+															   
+															   mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -390,7 +438,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauf> rdf:type deu_schema:SyntheticWordform ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                rdfs:label "kauf"@de .
+                                                                rdfs:label "kauf"@de ;
+																
+																mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .	
 
 
 
@@ -399,7 +449,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufe> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "kaufe"@de .
+                                                                 rdfs:label "kaufe"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .	
 
 
 
@@ -408,7 +460,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufen1> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "kaufen1"@de .
+                                                                   rdfs:label "kaufen1"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .	
 
 
 
@@ -417,7 +471,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufen2> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "kaufen2"@de .
+                                                                   rdfs:label "kaufen2"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .	
 
 
 
@@ -426,7 +482,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kaufst> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "kaufst"@de .
+                                                                  rdfs:label "kaufst"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .	
 
 
 
@@ -435,7 +493,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft1> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "kauft1"@de .
+                                                                  rdfs:label "kauft1"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .	
 
 
 
@@ -444,7 +504,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft2> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "kauft2"@de .
+                                                                  rdfs:label "kauft2"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .	
 
 
 
@@ -453,7 +515,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kauft3> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "kauft3"@de .
+                                                                  rdfs:label "kauft3"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .	
 
 
 
@@ -462,7 +526,10 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleiner1> rdf:type deu_schema:SyntheticWordform ,
                                                                              owl:NamedIndividual ;
                                                                     
-                                                                    rdfs:label "kleiner1"@de .
+                                                                    rdfs:label "kleiner1"@de ;
+																	
+																	mmoon:hasMorphologicalRelationship deu_schema:AdjDeclension ,
+                                                                                         deu_schema:Degree .
 
 
 
@@ -471,7 +538,22 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleinerer1> rdf:type deu_schema:SyntheticWordform ,
                                                                                owl:NamedIndividual ;
                                                                       
-                                                                      rdfs:label "kleinerer1"@de .
+                                                                      rdfs:label "kleinerer1"@de ;
+																	  
+																	  mmoon:hasMorphologicalRelationship deu_schema:AdjDeclension ,
+                                                                                         deu_schema:Degree .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleinster1
+
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleinster1> rdf:type deu_schema:SyntheticWordform ,
+                                                                               owl:NamedIndividual ;
+                                                                      
+                                                                      rdfs:label "kleinster1"@de ;
+																	  
+																	  mmoon:hasMorphologicalRelationship deu_schema:AdjDeclension ,
+                                                                                         deu_schema:Degree .
 
 
 
@@ -480,7 +562,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaf> rdf:type deu_schema:SyntheticWordform ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  rdfs:label "schlaf"@de .
+                                                                  rdfs:label "schlaf"@de ;
+																  
+																  mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -489,7 +573,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafe1> rdf:type deu_schema:SyntheticWordform ,
                                                                              owl:NamedIndividual ;
                                                                     
-                                                                    rdfs:label "schlafe1"@de .
+                                                                    rdfs:label "schlafe1"@de ;
+																	
+																	mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -498,7 +584,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafe2> rdf:type deu_schema:SyntheticWordform ,
                                                                              owl:NamedIndividual ;
                                                                     
-                                                                    rdfs:label "schlafe2"@de .
+                                                                    rdfs:label "schlafe2"@de ;
+																	
+																	mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -507,7 +595,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafen1> rdf:type deu_schema:SyntheticWordform ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     rdfs:label "schlafen1"@de .
+                                                                     rdfs:label "schlafen1"@de ;
+																	 
+																	 mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -516,7 +606,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlafen2> rdf:type deu_schema:SyntheticWordform ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     rdfs:label "schlafen2"@de .
+                                                                     rdfs:label "schlafen2"@de ;
+																	 
+																	 mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -525,7 +617,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft1> rdf:type deu_schema:SyntheticWordform ,
                                                                              owl:NamedIndividual ;
                                                                     
-                                                                    rdfs:label "schlaft1"@de .
+                                                                    rdfs:label "schlaft1"@de ;
+																	
+																	mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -534,7 +628,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schlaft2> rdf:type deu_schema:SyntheticWordform ,
                                                                              owl:NamedIndividual ;
                                                                     
-                                                                    rdfs:label "schlaft2"@de .
+                                                                    rdfs:label "schlaft2"@de ;
+																	
+																	mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -543,7 +639,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläfst> rdf:type deu_schema:SyntheticWordform ,
                                                                              owl:NamedIndividual ;
                                                                     
-                                                                    rdfs:label "schläfst"@de .
+                                                                    rdfs:label "schläfst"@de ;
+																	
+																	mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -552,7 +650,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/schläft> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "schläft"@de .
+                                                                   rdfs:label "schläft"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -561,7 +661,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sei> rdf:type deu_schema:SyntheticWordform ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               rdfs:label "sei"@de .
+                                                               rdfs:label "sei"@de ;
+															   
+															   mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -570,7 +672,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid1> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "seid1"@de .
+                                                                 rdfs:label "seid1"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -579,8 +683,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/seid2> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "seid2"@de .
-
+                                                                 rdfs:label "seid2"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 ###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind1
@@ -588,7 +693,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind1> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "sind1"@de .
+                                                                 rdfs:label "sind1"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -597,7 +704,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/sind2> rdf:type deu_schema:SyntheticWordform ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 rdfs:label "sind2"@de .
+                                                                 rdfs:label "sind2"@de ;
+																 
+																 mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation .
 
 
 
@@ -606,7 +715,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauf> rdf:type deu_schema:SyntheticWordform ,
                                                                             owl:NamedIndividual ;
                                                                    
-                                                                   rdfs:label "verkauf"@de .
+                                                                   rdfs:label "verkauf"@de ;
+																   
+																   mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -615,7 +726,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufe1> rdf:type deu_schema:SyntheticWordform ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     rdfs:label "verkaufe1"@de .
+                                                                     rdfs:label "verkaufe1"@de ;
+																	 
+																	 mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -624,7 +737,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufe2> rdf:type deu_schema:SyntheticWordform ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     rdfs:label "verkaufe2"@de .
+                                                                     rdfs:label "verkaufe2"@de ;
+																	 
+																	 mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -633,7 +748,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufen1> rdf:type deu_schema:SyntheticWordform ,
                                                                                owl:NamedIndividual ;
                                                                       
-                                                                      rdfs:label "verkaufen1"@de .
+                                                                      rdfs:label "verkaufen1"@de ;
+																	  
+																	  mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -642,7 +759,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufen2> rdf:type deu_schema:SyntheticWordform ,
                                                                                owl:NamedIndividual ;
                                                                       
-                                                                      rdfs:label "verkaufen2"@de .
+                                                                      rdfs:label "verkaufen2"@de ;
+																	  
+																	  mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -651,7 +770,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkaufst> rdf:type deu_schema:SyntheticWordform ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     rdfs:label "verkaufst"@de .
+                                                                     rdfs:label "verkaufst"@de ;
+																	 
+																	 mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -660,7 +781,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft1> rdf:type deu_schema:SyntheticWordform ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     rdfs:label "verkauft1"@de .
+                                                                     rdfs:label "verkauft1"@de ;
+																	 
+																	 mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -669,7 +792,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft2> rdf:type deu_schema:SyntheticWordform ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     rdfs:label "verkauft2"@de .
+                                                                     rdfs:label "verkauft2"@de ;
+																	 
+																	 mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
@@ -678,16 +803,20 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/verkauft3> rdf:type deu_schema:SyntheticWordform ,
                                                                               owl:NamedIndividual ;
                                                                      
-                                                                     rdfs:label "verkauft3"@de .
+                                                                     rdfs:label "verkauft3"@de ;
+																	 
+																	 mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation .
 
 
 
-###  ttp://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1
+###  http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1
 
-<ttp://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1> rdf:type deu_schema:SyntheticWordform ,
+<http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1> rdf:type deu_schema:SyntheticWordform ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                rdfs:label "Kauf1"@de .
+                                                                rdfs:label "Kauf1"@de ;
+																
+																mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
 
 
