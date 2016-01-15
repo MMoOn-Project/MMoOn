@@ -528,8 +528,8 @@ small"""@en ;
                                                                     
                                                                     rdfs:label "kleiner1"@de ;
 																	
-																	mmoon:hasMorphologicalRelationship deu_schema:AdjDeclension ,
-                                                                                         deu_schema:Degree .
+																	mmoon:hasMorphologicalRelationship deu_schema:StrongAdjDeclension ,
+                                                                                         deu_schema:RegPositiveDegree .
 
 
 
@@ -540,8 +540,8 @@ small"""@en ;
                                                                       
                                                                       rdfs:label "kleinerer1"@de ;
 																	  
-																	  mmoon:hasMorphologicalRelationship deu_schema:AdjDeclension ,
-                                                                                         deu_schema:Degree .
+																	  mmoon:hasMorphologicalRelationship deu_schema:StrongAdjDeclension ,
+                                                                                         deu_schema:RegComparativeDegree .
 
 
 
@@ -552,8 +552,8 @@ small"""@en ;
                                                                       
                                                                       rdfs:label "kleinster1"@de ;
 																	  
-																	  mmoon:hasMorphologicalRelationship deu_schema:AdjDeclension ,
-                                                                                         deu_schema:Degree .
+																	  mmoon:hasMorphologicalRelationship deu_schema:StrongAdjDeclension ,
+                                                                                         deu_schema:RegSuperlativeDegree .
 
 
 

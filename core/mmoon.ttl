@@ -410,14 +410,12 @@ The base may be transitive, in which case its direct object is demoted upon the 
                   
                   rdfs:subClassOf :DenominalNoun ;
                   
-                  rdfs:seeAlso "http://purl.org/olia/olia.owl#Augmentative" ;
+                  rdfs:seeAlso "http://purl.org/olia/olia.owl#Augmentative" ,
+                               "http://purl.org/linguistics/gold/AugmentativeSize" ;
                   
-                  rdfs:comment """Augmentation is the derivational modification of a noun by the concept „big, large“. Possible connotations include „strong, imposing, ugly“.
-A noun is augmentative 1 iff it is derived by augmentation. [Christian Lehmann, under \"augmentation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
-                  
-                  rdfs:seeAlso "http://purl.org/linguistics/gold/AugmentativeSize" ;
-                  
-                  rdfs:comment "A noun which is derived from a noun base that denotes big or large size. Possible connotations include strong, imposing, ugly."@en .
+                  rdfs:comment "A noun which is derived from a noun base that denotes big or large size. Possible connotations include strong, imposing, ugly."@en ,
+                               """Augmentation is the derivational modification of a noun by the concept „big, large“. Possible connotations include „strong, imposing, ugly“.
+A noun is augmentative 1 iff it is derived by augmentation. [Christian Lehmann, under \"augmentation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
 
@@ -1286,12 +1284,12 @@ Stem formation is the formation of stems, normally on the basis of at least one 
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :consistsOfMorph ;
-                            owl:someValuesFrom :Root
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :hasMorphologicalRelationship ;
                             owl:someValuesFrom :Inflection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :consistsOfMorph ;
+                            owl:someValuesFrom :Root
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :consistsOfMorph ;

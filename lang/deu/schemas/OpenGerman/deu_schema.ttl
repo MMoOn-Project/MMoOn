@@ -82,12 +82,12 @@
         
         rdfs:subClassOf mmoon:Degree ;
         
-        rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-A/Texte/Stem-Suffix.html?MenuId=Word3122" ;
-        
         rdfs:comment """Relationale Adjektive flektieren nach Steiterungsgrad und treten immer in einer der folgenden Formen auf: Positiv, Komparativ, Superlativ. Die Flexionsform kann regelmäßig und unregelmäßig gebildet sein. 
 Die flektierte Form eines Adjektivs besteht aus:
 
-Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung"""@de .
+Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung"""@de ;
+        
+        rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-A/Texte/Stem-Suffix.html?MenuId=Word3122" .
 
 
 
@@ -136,10 +136,10 @@ Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung"""@de .
                 
                 rdfs:subClassOf mmoon:Declension ;
                 
-                rdfs:comment """Nominaldeklination ist die Flexion von Substantiven nach Kasus, Numerus und Genus.
-Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular und des Nominativ Plural in mehrere Deklinationsklassen (1-12) unterteilen."""@de ;
+                rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/Texte/Flexionskl.html?MenuId=Word111" ;
                 
-                rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/Texte/Flexionskl.html?MenuId=Word111" .
+                rdfs:comment """Nominaldeklination ist die Flexion von Substantiven nach Kasus, Numerus und Genus.
+Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular und des Nominativ Plural in mehrere Deklinationsklassen (1-12) unterteilen."""@de .
 
 
 
@@ -391,10 +391,10 @@ Es gibt eine Reihe von Verben, für die sowohl eine regelmäßige als auch eine 
                  rdfs:label "Substantivdeklination 1"@de ,
                             "Noun declension 1"@en ;
                  
-                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-es-e1.html?MenuId=Word1110" ;
-                 
                  rdfs:comment """Endung Genitiv Singular: -es und -s
-Endung Nominativ Plural: -e"""@de .
+Endung Nominativ Plural: -e"""@de ;
+                 
+                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-es-e1.html?MenuId=Word1110" .
 
 
 
@@ -406,10 +406,10 @@ Endung Nominativ Plural: -e"""@de .
                   rdfs:label "Substantivdeklination 10"@de ,
                              "Noun declension 10"@en ;
                   
-                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse---en1.html?MenuId=Word1119" ;
-                  
                   rdfs:comment """Endung Genitiv Singular: keine
-Endung Nominativ Plural: -en"""@de .
+Endung Nominativ Plural: -en"""@de ;
+                  
+                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse---en1.html?MenuId=Word1119" .
 
 
 
@@ -556,10 +556,10 @@ Endung Nominativ Plural: -e"""@de ;
                  rdfs:label "Substantivdeklination 9"@de ,
                             "Noun declension 9"@en ;
                  
-                 rdfs:comment """Endung Genitiv Singular: keine
-Endung Nominativ Plural: keine"""@de ;
+                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse----1.html?MenuId=Word1118" ;
                  
-                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse----1.html?MenuId=Word1118" .
+                 rdfs:comment """Endung Genitiv Singular: keine
+Endung Nominativ Plural: keine"""@de .
 
 
 
