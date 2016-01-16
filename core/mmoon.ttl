@@ -136,6 +136,22 @@ This is the reference ontology from which various language specific MMoOn Invent
 
 
 
+###  http://mmoon.org/mmoon/hasMorphemicRepresention
+
+:hasMorphemicRepresention rdf:type owl:ObjectProperty ;
+                          
+                          rdfs:label "has morphemic representation"@en ;
+                          
+                          rdfs:comment "The morphemic form is the canonical form of a Morph in the morpheme inventory and serves as an entry of the morpheme inventory. It consists of a hyphen and the conventional orthographic representation of it even if it has more than one orthographic surface forms. E.g. the genetive Morph \"-s\" in English has two orthographic surface forms, 1) for all words not ending on <s> it is apostrophe and <s> and 2) for all words ending on <s> the apostrophe alone renders the genetive Morph." ;
+                          
+                          rdfs:domain :Morph ;
+                          
+                          rdfs:range :MorphemicRepresentation ;
+                          
+                          rdfs:subPropertyOf :hasRepresentation .
+
+
+
 ###  http://mmoon.org/mmoon/hasMorphologicalRelationship
 
 :hasMorphologicalRelationship rdf:type owl:ObjectProperty ;
@@ -153,6 +169,38 @@ This is the reference ontology from which various language specific MMoOn Invent
 ###  http://mmoon.org/mmoon/hasMorphosyntacticFeature
 
 :hasMorphosyntacticFeature rdf:type owl:ObjectProperty .
+
+
+
+###  http://mmoon.org/mmoon/hasOrthographicRepresentation
+
+:hasOrthographicRepresentation rdf:type owl:ObjectProperty ;
+                               
+                               rdfs:label "has orthographic representation"@en ;
+                               
+                               rdfs:domain :Morph ;
+                               
+                               rdfs:range :OrthographicRepresentation ;
+                               
+                               rdfs:domain :Word ;
+                               
+                               rdfs:subPropertyOf :hasRepresentation .
+
+
+
+###  http://mmoon.org/mmoon/hasPhoneticRepresentation
+
+:hasPhoneticRepresentation rdf:type owl:ObjectProperty ;
+                           
+                           rdfs:label "has phonetic representation"@en ;
+                           
+                           rdfs:domain :Morph ;
+                           
+                           rdfs:range :PhoneticRepresentation ;
+                           
+                           rdfs:domain :Word ;
+                           
+                           rdfs:subPropertyOf :hasRepresentation .
 
 
 
@@ -225,6 +273,25 @@ dc:language rdf:type owl:ObjectProperty ;
             rdfs:range lexvo:Language ;
             
             rdfs:domain :MorphemeInventory .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://mmoon.org/mmoon/representation
+
+:representation rdf:type owl:DatatypeProperty ;
+                
+                rdfs:domain :Representation ;
+                
+                rdfs:range xsd:string .
 
 
 
@@ -966,11 +1033,11 @@ Is the process of generating word-forms of lexical stems. This class can be exte
         rdfs:subClassOf :Word ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :consistsOfMorph ;
-                          owl:someValuesFrom :Root
+                          owl:someValuesFrom :Base
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :consistsOfMorph ;
-                          owl:someValuesFrom :Base
+                          owl:someValuesFrom :Root
                         ] ;
         
         rdfs:comment """A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text, it appears in form of diverse word forms. [Christian Lehmann, under \"lexeme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1001,7 +1068,13 @@ A lexeme is a word as it appears as an entry in a dictionary. It has a holistic 
 
 ###  http://mmoon.org/mmoon/Morph
 
-:Morph rdf:type owl:Class .
+:Morph rdf:type owl:Class ;
+       
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasOrthographicRepresentation ;
+                         owl:onClass :OrthographicRepresentation ;
+                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                       ] .
 
 
 
@@ -1021,6 +1094,18 @@ A lexeme is a word as it appears as an entry in a dictionary. It has a holistic 
 
 
 
+###  http://mmoon.org/mmoon/MorphemicRepresentation
+
+:MorphemicRepresentation rdf:type owl:Class ;
+                         
+                         rdfs:label "Morphemic representation"@en ;
+                         
+                         rdfs:subClassOf :Representation ;
+                         
+                         rdfs:comment "The standard representation of a morph including the marking of the morpheme boundary with a hyphen."@en .
+
+
+
 ###  http://mmoon.org/mmoon/MorphologicalRelationship
 
 :MorphologicalRelationship rdf:type owl:Class ;
@@ -1029,7 +1114,7 @@ A lexeme is a word as it appears as an entry in a dictionary. It has a holistic 
                            
                            rdfs:comment """Is the relationship between word-forms of a lexeme (inflection) or the relationship between lexemes of a word family (derivation). [Haspelmath and Sims: Understanding morphology. 2002:18]
 
-NOTE: In all subclasses of \"MorphologicalRelationship\" the semantic or grammatic categories are not specified. They only declare what kind of morphological relationship(s) is/are expressed on a word."""@en .
+NOTE: In the subclasses of \"MorphologicalRelationship\" the semantic or grammatic categories are not always specified. They only serve to declare what kind of morphological relationship(s) is/are expressed on a word."""@en .
 
 
 
@@ -1125,6 +1210,18 @@ NOTE: In all subclasses of \"MorphologicalRelationship\" the semantic or grammat
 
 
 
+###  http://mmoon.org/mmoon/OrthographicRepresentation
+
+:OrthographicRepresentation rdf:type owl:Class ;
+                            
+                            rdfs:label "Orthographic representation"@en ;
+                            
+                            rdfs:subClassOf :Representation ;
+                            
+                            rdfs:comment "Representation of a morph in the orthographic signs of the language of the MMoOn inventory."@en .
+
+
+
 ###  http://mmoon.org/mmoon/PatientNoun
 
 :PatientNoun rdf:type owl:Class ;
@@ -1136,6 +1233,18 @@ NOTE: In all subclasses of \"MorphologicalRelationship\" the semantic or grammat
              :example "German: \"bestellen\"(V) 'to order' --> \"Bestellung\"(N) 'the thing you ordered'."@de ;
              
              rdfs:comment "A patient noun is an oriented verbal noun designating the undergoer of the verbal base. [Christian Lehmann, under \"patient noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/PhoneticRepresentation
+
+:PhoneticRepresentation rdf:type owl:Class ;
+                        
+                        rdfs:label "Phonetic representation"@en ;
+                        
+                        rdfs:subClassOf :Representation ;
+                        
+                        rdfs:comment "Representation of a morph in IPA signs."@en .
 
 
 
@@ -1153,7 +1262,17 @@ NOTE: In all subclasses of \"MorphologicalRelationship\" the semantic or grammat
 
 ###  http://mmoon.org/mmoon/Representation
 
-:Representation rdf:type owl:Class .
+:Representation rdf:type owl:Class ;
+                
+                rdfs:label "Representation"@en ;
+                
+                rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty :representation ;
+                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:string
+                                ] ;
+                
+                rdfs:comment "A linguistic representation of a word or morph.."@en .
 
 
 
@@ -1248,6 +1367,12 @@ NOTE: In all subclasses of \"MorphologicalRelationship\" the semantic or grammat
 :Word rdf:type owl:Class ;
       
       rdfs:label "Word"@en ;
+      
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasOrthographicRepresentation ;
+                        owl:onClass :OrthographicRepresentation ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                      ] ;
       
       rdfs:comment """A word is a unit which is a constituent at the phrase level and above. It is sometimes identifiable according to such criteria as a) being the minimal possible unit in a reply, b) having features such as a regular stress pattern, and phonological changes conditioned by or blocked at word boundaries, c) being the largest unit resistant to insertion of new constituents within its boundaries, or d)  being the smallest constituent that can be moved within a sentence without making the sentence ungrammatical.
 A word is sometimes placed, in a hierarchy of grammatical constituents, above the morpheme level and below the phrase level. [http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAWord.htm]

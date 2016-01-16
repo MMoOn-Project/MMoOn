@@ -127,6 +127,15 @@ Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung"""@de ;
 
 
 
+###  http://mmoon.org/lang/deu/schema/og/MorphemicRepresentation
+
+:MorphemicRepresentation rdf:type owl:Class ;
+                         
+                         rdfs:subClassOf :Representation ,
+                                         mmoon:MorphemicRepresentation .
+
+
+
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension
 
 :NounDeclension rdf:type owl:Class ;
@@ -140,6 +149,32 @@ Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung"""@de ;
                 
                 rdfs:comment """Nominaldeklination ist die Flexion von Substantiven nach Kasus, Numerus und Genus.
 Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular und des Nominativ Plural in mehrere Deklinationsklassen (1-12) unterteilen."""@de .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/OrthographicRepresentation
+
+:OrthographicRepresentation rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :Representation ,
+                                            mmoon:OrthographicRepresentation .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/PhoneticRepresentation
+
+:PhoneticRepresentation rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :Representation ,
+                                        mmoon:PhoneticRepresentation .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Representation
+
+:Representation rdf:type owl:Class ;
+                
+                rdfs:subClassOf mmoon:Representation .
 
 
 
