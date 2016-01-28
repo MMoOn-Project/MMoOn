@@ -118,9 +118,11 @@ This is the reference ontology from which various language specific MMoOn Invent
                  
                  rdfs:range :Affix ;
                  
+                 rdfs:subPropertyOf :consistsOfMorph ;
+                 
                  rdfs:domain [ rdf:type owl:Class ;
-                               owl:unionOf ( :Root
-                                             :Stem
+                               owl:unionOf ( :Stem
+                                             :Word
                                            )
                              ] .
 
@@ -150,7 +152,21 @@ This is the reference ontology from which various language specific MMoOn Invent
                 
                 rdfs:range :Root ;
                 
-                rdfs:domain :Stem .
+                rdfs:subPropertyOf :consistsOfMorph ;
+                
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Stem
+                                            :Word
+                                          )
+                            ] .
+
+
+
+###  http://mmoon.org/mmoon/consistsOfStem
+
+:consistsOfStem rdf:type owl:ObjectProperty ;
+                
+                rdfs:subPropertyOf :consistsOfMorph .
 
 
 
@@ -189,6 +205,8 @@ This is the reference ontology from which various language specific MMoOn Invent
                       rdfs:label "States which kind of derivational morphological relationship applies to a derived word."@en ,
                                  "derivational morphological relationship"@en ;
                       
+                      :usageNote "This property is also used to state that a simple lexeme which cannot be further segmented with respect to word-formation has the morphological relationship mmoon:NoWordFormation."@en ;
+                      
                       rdfs:range :Derivation ;
                       
                       rdfs:domain :DerivedWord ;
@@ -206,7 +224,7 @@ This is the reference ontology from which various language specific MMoOn Invent
             rdfs:range :Meaning ;
             
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Morph
+                          owl:unionOf ( :Morpheme
                                         :Word
                                       )
                         ] .
@@ -707,16 +725,17 @@ An underived verb cannot be causative by this definition. However, the paradigma
               
               rdfs:subClassOf :Lexeme ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty :isComposedOf ;
+                                owl:onClass [ rdf:type owl:Class ;
+                                              owl:unionOf ( :GrammaticalWord
+                                                            :Lexeme
+                                                          )
+                                            ] ;
+                                owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :compoundingRelation ;
                                 owl:someValuesFrom :Compounding
-                              ] ,
-                              [ rdf:type owl:Class ;
-                                owl:unionOf ( :Lexeme
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :isComposedOf ;
-                                                owl:someValuesFrom :GrammaticalWord
-                                              ]
-                                            )
                               ] ;
               
               rdfs:comment """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -990,13 +1009,14 @@ In morphology, conversion is a process which derives words without changing the 
              rdfs:label "Derived word"@en ;
              
              rdfs:subClassOf :Lexeme ,
-                             [ rdf:type owl:Class ;
-                               owl:unionOf ( :Lexeme
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty :isDerivedFrom ;
-                                               owl:someValuesFrom :GrammaticalWord
-                                             ]
-                                           )
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isDerivedFrom ;
+                               owl:onClass [ rdf:type owl:Class ;
+                                             owl:unionOf ( :GrammaticalWord
+                                                           :Lexeme
+                                                         )
+                                           ] ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :derivationalRelation ;
@@ -1281,6 +1301,18 @@ An instrument noun is an oriented deverbal noun that designates something that f
 
 
 
+###  http://mmoon.org/mmoon/IrregularDegree
+
+:IrregularDegree rdf:type owl:Class ;
+                 
+                 rdfs:label "Irregular degree"@en ;
+                 
+                 rdfs:subClassOf :Degree ;
+                 
+                 rdfs:comment "Formation of degree of comparison that deviates from the regular inflectional pattern."@en .
+
+
+
 ###  http://mmoon.org/mmoon/Lexeme
 
 :Lexeme rdf:type owl:Class ;
@@ -1330,8 +1362,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
        
        rdfs:subClassOf [ rdf:type owl:Restriction ;
                          owl:onProperty :hasOrthographicRepresentation ;
-                         owl:onClass :OrthographicRepresentation ;
-                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                         owl:someValuesFrom :OrthographicRepresentation
                        ] ;
        
        rdfs:comment "A morph is a concrete realization of a single morpheme which usually results from segmentation."@en .
@@ -1582,6 +1613,18 @@ All other plural morphs in English will thus correspond to the same morpheme res
 
 
 
+###  http://mmoon.org/mmoon/RegularDegree
+
+:RegularDegree rdf:type owl:Class ;
+               
+               rdfs:label "Regular degree"@en ;
+               
+               rdfs:subClassOf :Degree ;
+               
+               rdfs:comment "Formation of degree of comparison that exhibits a regular inflectional pattern."@en .
+
+
+
 ###  http://mmoon.org/mmoon/Representation
 
 :Representation rdf:type owl:Class ;
@@ -1757,8 +1800,7 @@ In a compound word: The stem is the morphological representative of one of the t
       
       rdfs:subClassOf [ rdf:type owl:Restriction ;
                         owl:onProperty :hasOrthographicRepresentation ;
-                        owl:onClass :OrthographicRepresentation ;
-                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                        owl:someValuesFrom :OrthographicRepresentation
                       ] ;
       
       rdfs:comment """A word is a unit which is a constituent at the phrase level and above. It is sometimes identifiable according to such criteria as a) being the minimal possible unit in a reply, b) having features such as a regular stress pattern, and phonological changes conditioned by or blocked at word boundaries, c) being the largest unit resistant to insertion of new constituents within its boundaries, or d)  being the smallest constituent that can be moved within a sentence without making the sentence ungrammatical.
@@ -1796,12 +1838,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :inflectionalRelation ;
-                            owl:someValuesFrom :Inflection
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :consistsOfMorph ;
                             owl:someValuesFrom :Stem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :inflectionalRelation ;
+                            owl:someValuesFrom :Inflection
                           ] ;
           
           rdfs:comment """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1820,11 +1862,17 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
            
            rdfs:label "Zero morph"@en ;
            
-           rdfs:subClassOf :Affix ;
+           rdfs:subClassOf :Affix ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAllomorphTo ;
+                             owl:someValuesFrom :Morph
+                           ] ;
            
            rdfs:comment """A morpheme that has a morphological meaning that corresponds to no overt form.  [Haspelmath and Sims: Understanding morphology. 2002:64]
 
-A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+           
+           :usageNote "A zero morpheme is posited only if it is in equipollent opposition to overt morphemes. If the term in question is, instead, the unmarked member of a privative opposition, no morpheme is posited. Conversion  can be conceived as derivation using a zero morpheme.  [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
