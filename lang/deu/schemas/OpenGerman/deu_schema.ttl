@@ -49,6 +49,18 @@
 
 
 
+###  http://mmoon.org/lang/deu/schema/og/Affix
+
+:Affix rdf:type owl:Class ;
+       
+       rdfs:label "Affix"@de ,
+                  "Affix"@en ;
+       
+       rdfs:subClassOf :Morph ,
+                       mmoon:Affix .
+
+
+
 ###  http://mmoon.org/lang/deu/schema/og/AnalyticWordform
 
 :AnalyticWordform rdf:type owl:Class ;
@@ -58,6 +70,18 @@
                   
                   rdfs:subClassOf :Wordform ,
                                   mmoon:AnalyticWordform .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Circumfix
+
+:Circumfix rdf:type owl:Class ;
+           
+           rdfs:label "Zirkumfix"@de ,
+                      "Circumfix"@en ;
+           
+           rdfs:subClassOf :Affix ,
+                           mmoon:Circumfix .
 
 
 
@@ -73,24 +97,6 @@
 
 
 
-###  http://mmoon.org/lang/deu/schema/og/Degree
-
-:Degree rdf:type owl:Class ;
-        
-        rdfs:label "Steigerungsgrad"@de ,
-                   "Degree"@en ;
-        
-        rdfs:subClassOf mmoon:Degree ;
-        
-        rdfs:comment """Relationale Adjektive flektieren nach Steiterungsgrad und treten immer in einer der folgenden Formen auf: Positiv, Komparativ, Superlativ. Die Flexionsform kann regelmäßig und unregelmäßig gebildet sein. 
-Die flektierte Form eines Adjektivs besteht aus:
-
-Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung"""@de ;
-        
-        rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-A/Texte/Stem-Suffix.html?MenuId=Word3122" .
-
-
-
 ###  http://mmoon.org/lang/deu/schema/og/DerivedWord
 
 :DerivedWord rdf:type owl:Class ;
@@ -100,6 +106,18 @@ Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung"""@de ;
              
              rdfs:subClassOf :Lexeme ,
                              mmoon:DerivedWord .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/EmptyMorph
+
+:EmptyMorph rdf:type owl:Class ;
+            
+            rdfs:label "Leeres Morphem"@de ,
+                       "Empty morph"@en ;
+            
+            rdfs:subClassOf :Morph ,
+                            mmoon:EmptyMorph .
 
 
 
@@ -124,6 +142,17 @@ Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung"""@de ;
         
         rdfs:subClassOf :Word ,
                         mmoon:Lexeme .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Morph
+
+:Morph rdf:type owl:Class ;
+       
+       rdfs:label "Morph"@de ,
+                  "Morph"@en ;
+       
+       rdfs:subClassOf mmoon:Morph .
 
 
 
@@ -170,11 +199,71 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 
 
+###  http://mmoon.org/lang/deu/schema/og/Prefix
+
+:Prefix rdf:type owl:Class ;
+        
+        rdfs:label "Präfix"@de ,
+                   "Prefix"@en ;
+        
+        rdfs:subClassOf :Affix ,
+                        mmoon:Prefix .
+
+
+
 ###  http://mmoon.org/lang/deu/schema/og/Representation
 
 :Representation rdf:type owl:Class ;
                 
                 rdfs:subClassOf mmoon:Representation .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Root
+
+:Root rdf:type owl:Class ;
+      
+      rdfs:label "Wurzel"@de ,
+                 "Root"@en ;
+      
+      rdfs:subClassOf :Morph ,
+                      mmoon:Root .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Simulfix
+
+:Simulfix rdf:type owl:Class ;
+          
+          rdfs:label "Simulfix"@de ,
+                     "Simulfix"@en ;
+          
+          rdfs:subClassOf :Affix ,
+                          mmoon:Simulfix .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Stem
+
+:Stem rdf:type owl:Class ;
+      
+      rdfs:label "Stamm"@de ,
+                 "Stem"@en ;
+      
+      rdfs:subClassOf :Morph ,
+                      mmoon:Stem .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Suffix
+
+:Suffix rdf:type owl:Class ;
+        
+        rdfs:label "Suffix"@de ,
+                   "Suffix"@en ;
+        
+        rdfs:subClassOf :Affix ,
+                        mmoon:Suffix .
 
 
 
@@ -213,15 +302,39 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 
 
+###  http://mmoon.org/lang/deu/schema/og/ZeroMorph
+
+:ZeroMorph rdf:type owl:Class ;
+           
+           rdfs:label "Nullmorphem"@de ,
+                      "Zero morph"@en ;
+           
+           rdfs:subClassOf :Morph ,
+                           mmoon:ZeroMorph .
+
+
+
 ###  http://mmoon.org/mmoon/AdjectivalInflection
 
 mmoon:AdjectivalInflection rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/mmoon/Affix
+
+mmoon:Affix rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/AnalyticWordform
 
 mmoon:AnalyticWordform rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Circumfix
+
+mmoon:Circumfix rdf:type owl:Class .
 
 
 
@@ -255,6 +368,12 @@ mmoon:DeverbalVerb rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/mmoon/EmptyMorph
+
+mmoon:EmptyMorph rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/GrammaticalWord
 
 mmoon:GrammaticalWord rdf:type owl:Class .
@@ -267,9 +386,21 @@ mmoon:IrregularConjugation rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/mmoon/IrregularDegree
+
+mmoon:IrregularDegree rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/Lexeme
 
 mmoon:Lexeme rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Morph
+
+mmoon:Morph rdf:type owl:Class .
 
 
 
@@ -280,15 +411,87 @@ mmoon:MorphemeInventory rdfs:label "Morpheminventar"@de ,
 
 
 
+###  http://mmoon.org/mmoon/MorphemicRepresentation
+
+mmoon:MorphemicRepresentation rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/NoDegree
 
 mmoon:NoDegree rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/mmoon/NoWordFormation
+
+mmoon:NoWordFormation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/OrthographicRepresentation
+
+mmoon:OrthographicRepresentation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/PhoneticRepresentation
+
+mmoon:PhoneticRepresentation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/PredicativeAdj
+
+mmoon:PredicativeAdj rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Prefix
+
+mmoon:Prefix rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/RegularConjugation
 
 mmoon:RegularConjugation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/RegularDegree
+
+mmoon:RegularDegree rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Representation
+
+mmoon:Representation rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Root
+
+mmoon:Root rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Simulfix
+
+mmoon:Simulfix rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Stem
+
+mmoon:Stem rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Suffix
+
+mmoon:Suffix rdf:type owl:Class .
 
 
 
@@ -316,6 +519,12 @@ mmoon:Wordform rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/mmoon/ZeroMorph
+
+mmoon:ZeroMorph rdf:type owl:Class .
+
+
+
 
 
 #################################################################
@@ -333,30 +542,6 @@ mmoon:Wordform rdf:type owl:Class .
                                               "New High German"@en ;
                                    
                                    rdfs:comment "New High German (NHG) is the term used for the most recent period in the history of the German language. It is a translation of the German Neuhochdeutsch (Nhd). It includes all of the modern High German dialects since the Baroque period, but is often used as a synonym for Standard German. ('en' language string)"@de .
-
-
-
-###  http://mmoon.org/lang/deu/schema/og/IrregComparativeDegree
-
-:IrregComparativeDegree rdf:type :Degree ,
-                                 owl:NamedIndividual ;
-                        
-                        rdfs:label "Unregelmäßiger komparativer Steigerungsgrad"@de ,
-                                   "Irregular comparative degree"@en ;
-                        
-                        rdfs:seeAlso """Der Adjektivstamm weicht von der regelmäßigen Koparativbildung ab.
-(z.b. gut (Positiv) --> besser (Komparativ))"""@en .
-
-
-
-###  http://mmoon.org/lang/deu/schema/og/IrregSuperlativeDegree
-
-:IrregSuperlativeDegree rdf:type :Degree ,
-                                 owl:NamedIndividual ;
-                        
-                        rdfs:label """Der Adjektivstamm weicht von der regelmäßigen Superlativbildung ab.
-(z.b. gut (Positiv) --> besten (Superlativ))"""@de ,
-                                   "Irregular superlative degree"@en .
 
 
 
@@ -379,6 +564,26 @@ mmoon:Wordform rdf:type owl:Class .
 [https://de.wikipedia.org/wiki/Unregelmäßiges_Verb]
 
 Es gibt eine Reihe von Verben, für die sowohl eine regelmäßige als auch eine unregelmäßge Konjugation möglich ist (z.B \"backen\"). Für diese Lexeme sollte \"RegularConjugation\" UND \"IrregularConjugation\" angegeben werden."""@de .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/IrregularDegree
+
+:IrregularDegree rdf:type mmoon:IrregularDegree ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Unregelmäßige Steigerung"@de ,
+                            "Irregular degree"@en ;
+                 
+                 rdfs:comment """Die flektierte Form eines Adjektivs besteht aus:
+
+Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung
+
+Der Adjektivstamm weicht von der regelmäßigen Koparativbildung ab.
+(z.b. gut (Positiv) --> besser (Komparativ))
+
+Der Adjektivstamm weicht von der regelmäßigen Superlativbildung ab.
+(z.b. gut (Positiv) --> besten (Superlativ))"""@de .
 
 
 
@@ -415,6 +620,13 @@ Es gibt eine Reihe von Verben, für die sowohl eine regelmäßige als auch eine 
                      "No degree"@en ;
           
           rdfs:comment "Einige Adjektive sind nicht steigerbar, z.B. \"tot\", \"schwanger\" und haben dementsprechend keine komparative oder superlative Stammform."@de .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/NoWordFormation
+
+:NoWordFormation rdf:type mmoon:NoWordFormation ,
+                          owl:NamedIndividual .
 
 
 
@@ -598,39 +810,13 @@ Endung Nominativ Plural: keine"""@de .
 
 
 
-###  http://mmoon.org/lang/deu/schema/og/RegComparativeDegree
+###  http://mmoon.org/lang/deu/schema/og/PredicativeAdj
 
-:RegComparativeDegree rdf:type :Degree ,
-                               owl:NamedIndividual ;
-                      
-                      rdfs:label "Regelmäßiger komparativer Steigerungsgrad"@de ,
-                                 "Regular comparative degree"@en ;
-                      
-                      rdfs:comment "Der Adjektivstamm im Komparativ wird meist mit dem Suffix  \"-er\" gebildet. Bei einigen Adjektiven wird zusätzlich der Stammvokal umgelautet (z.b. alt (Positiv) --> älter (Komparativ))"@de .
-
-
-
-###  http://mmoon.org/lang/deu/schema/og/RegPositiveDegree
-
-:RegPositiveDegree rdf:type :Degree ,
-                            owl:NamedIndividual ;
-                   
-                   rdfs:label "Regelmäßiger positiver Steigerungsgrad"@de ,
-                              "Regular positive degree"@en ;
-                   
-                   rdfs:comment "Der Adjektivstamm wird im Positiv nicht markiert."@de .
-
-
-
-###  http://mmoon.org/lang/deu/schema/og/RegSuperlativeDegree
-
-:RegSuperlativeDegree rdf:type :Degree ,
-                               owl:NamedIndividual ;
-                      
-                      rdfs:label "Regelmäßiger superlativer Steigerungsgrad"@de ,
-                                 "Regular superlative degree"@en ;
-                      
-                      rdfs:comment "Der Adjektivstamm im Superlativ wird meist mit dem Suffix  \"-st\" gebildet. Bei einigen Adjektiven wird zusätzlich der Stammvokal umgelautet (z.b. alt (Positiv) --> älteste (Superlativ))"@de .
+:PredicativeAdj rdf:type mmoon:PredicativeAdj ,
+                         owl:NamedIndividual ;
+                
+                rdfs:label "Prädikatives Adjektiv"@de ,
+                           "Predicative adjective"@en .
 
 
 
@@ -645,6 +831,27 @@ Endung Nominativ Plural: keine"""@de .
                     rdfs:comment """Die regelmäßige Konjugation zeichnet sich dadurch aus, dass der Verbstamm in allen Zeitformen und Modi gleich bleibt. 
 
 Es gibt eine Reihe von Verben, für die sowohl eine regelmäßige als auch eine unregelmäßge Konjugation möglich ist (z.B \"backen\"). Für diese Lexeme sollte \"RegularConjugation\" UND \"IrregularConjugation\" angegeben werden."""@de .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/RegularDegree
+
+:RegularDegree rdf:type mmoon:RegularDegree ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "Regelmäßige Steigerung"@de ,
+                          "Regular degree"@en ;
+               
+               rdfs:comment """Relationale Adjektive in attributivischer Verwendung flektieren nach Steigerungsgrad und treten in einer der folgenden Formen auf: Positiv, Komparativ, Superlativ. 
+Die flektierte Form eines Adjektivs besteht aus:
+
+Adjektivstamm + Markierung des Steigerunsgrades + Deklinationsendung
+
+Der Adjektivstamm wird im Positiv nicht markiert.
+
+Der Adjektivstamm im Komparativ wird meist mit dem Suffix  \"-er\" gebildet. Bei einigen Adjektiven wird zusätzlich der Stammvokal umgelautet (z.b. alt (Positiv) --> älter (Komparativ))
+
+Der Adjektivstamm im Superlativ wird meist mit dem Suffix  \"-st\" gebildet. Bei einigen Adjektiven wird zusätzlich der Stammvokal umgelautet (z.b. alt (Positiv) --> älteste (Superlativ))"""@de .
 
 
 

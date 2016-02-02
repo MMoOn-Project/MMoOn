@@ -100,17 +100,15 @@ skos:definition rdf:type owl:AnnotationProperty .
 #################################################################
 
 
-###  http://mmoon.org/mmoon/attachedToHost
+###  http://mmoon.org/mmoon/associatedToLanguage
 
-:attachedToHost rdf:type owl:ObjectProperty ;
-                
-                rdfs:label "attached to host"@en ;
-                
-                rdfs:comment "States that a clitic is attached to some host."@en ;
-                
-                rdfs:domain :Clitic ;
-                
-                rdfs:range :Host .
+:associatedToLanguage rdf:type owl:ObjectProperty ;
+                      
+                      rdfs:label "associated to language"@en ;
+                      
+                      rdfs:comment "States that a morpheme inventory, morph or word is associated to a specific langauge."@en ;
+                      
+                      rdfs:range lexvo:Language .
 
 
 
@@ -142,6 +140,38 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://mmoon.org/mmoon/belongsToLexeme
+
+:belongsToLexeme rdf:type owl:ObjectProperty ;
+                 
+                 rdfs:label "belongs to lexeme"@en ;
+                 
+                 rdfs:comment "States that a word-form resource belongs to a lexeme resource."@en ;
+                 
+                 rdfs:range :Lexeme ;
+                 
+                 rdfs:domain :Wordform ;
+                 
+                 owl:inverseOf :hasWordform .
+
+
+
+###  http://mmoon.org/mmoon/belongsToWord
+
+:belongsToWord rdf:type owl:ObjectProperty ;
+               
+               rdfs:label "belongs to word"@en ;
+               
+               rdfs:comment "States that a morph belongs to some word."@en ;
+               
+               rdfs:domain :Morph ;
+               
+               rdfs:range :Word ;
+               
+               owl:inverseOf :consistsOfMorph .
+
+
+
 ###  http://mmoon.org/mmoon/compoundingRelation
 
 :compoundingRelation rdf:type owl:ObjectProperty ;
@@ -163,13 +193,16 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  rdfs:label "consists of affix"@en ;
                  
-                 rdfs:comment "States that a stem or root consists of some affix."@en ;
+                 rdfs:comment "States that a  word, stem or root consists of some affix."@en ;
                  
                  rdfs:range :Affix ;
+                 
+                 rdfs:subPropertyOf :consistsOfMorph ;
                  
                  rdfs:domain [ rdf:type owl:Class ;
                                owl:unionOf ( :Root
                                              :Stem
+                                             :Word
                                            )
                              ] .
 
@@ -189,17 +222,61 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://mmoon.org/mmoon/consistsOfMorpheme
+
+:consistsOfMorpheme rdf:type owl:ObjectProperty ;
+                    
+                    rdfs:label "States that a complex morpheme consists of fusional and/or atomic and/or empty morphemes."@en ,
+                               "consist of morpheme"@en ;
+                    
+                    rdfs:domain :ComplexMorpheme ;
+                    
+                    rdfs:range [ rdf:type owl:Class ;
+                                 owl:unionOf ( :AtomicMorpheme
+                                               :EmptyMorpheme
+                                               :FusionalMorpheme
+                                             )
+                               ] .
+
+
+
 ###  http://mmoon.org/mmoon/consistsOfRoot
 
 :consistsOfRoot rdf:type owl:ObjectProperty ;
                 
                 rdfs:label "consists of root"@en ;
                 
-                rdfs:comment "States that a stem consists of some root."@en ;
+                rdfs:comment "States that a stem or word consists of some root."@en ;
                 
                 rdfs:range :Root ;
                 
-                rdfs:domain :Stem .
+                rdfs:subPropertyOf :consistsOfMorph ;
+                
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Stem
+                                            :Word
+                                          )
+                            ] .
+
+
+
+###  http://mmoon.org/mmoon/consistsOfStem
+
+:consistsOfStem rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "consists of stem"@en ;
+                
+                rdfs:comment "States that a word or stem consists of some stem."@en ;
+                
+                rdfs:range :Stem ;
+                
+                rdfs:subPropertyOf :consistsOfMorph ;
+                
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Stem
+                                            :Word
+                                          )
+                            ] .
 
 
 
@@ -238,11 +315,27 @@ skos:definition rdf:type owl:AnnotationProperty .
                       rdfs:label "States which kind of derivational morphological relationship applies to a derived word."@en ,
                                  "derivational morphological relationship"@en ;
                       
+                      :usageNote "This property is also used to state that a simple lexeme which cannot be further segmented with respect to word-formation has the morphological relationship mmoon:NoWordFormation."@en ;
+                      
                       rdfs:range :Derivation ;
                       
                       rdfs:domain :DerivedWord ;
                       
                       rdfs:subPropertyOf :hasMorphologicalRelationship .
+
+
+
+###  http://mmoon.org/mmoon/forLanguage
+
+:forLanguage rdf:type owl:ObjectProperty ;
+             
+             rdfs:label "for language"@en ;
+             
+             rdfs:comment "States that a MMoOn morpheme inventory is specified for a certain language."@en ;
+             
+             rdfs:domain :MorphemeInventory ;
+             
+             rdfs:subPropertyOf :associatedToLanguage .
 
 
 
@@ -255,7 +348,7 @@ skos:definition rdf:type owl:AnnotationProperty .
             rdfs:range :Meaning ;
             
             rdfs:domain [ rdf:type owl:Class ;
-                          owl:unionOf ( :Morph
+                          owl:unionOf ( :Morpheme
                                         :Word
                                       )
                         ] .
@@ -276,22 +369,6 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://mmoon.org/mmoon/hasMorphemicRepresention
-
-:hasMorphemicRepresention rdf:type owl:ObjectProperty ;
-                          
-                          rdfs:label "has morphemic representation"@en ;
-                          
-                          rdfs:comment "The morphemic form is the canonical form of a Morph in the morpheme inventory and serves as an entry of the morpheme inventory. It consists of a hyphen and the conventional orthographic representation of it even if it has more than one orthographic surface forms. E.g. the genetive Morph \"-s\" in English has two orthographic surface forms, 1) for all words not ending on <s> it is apostrophe and <s> and 2) for all words ending on <s> the apostrophe alone renders the genetive Morph." ;
-                          
-                          rdfs:domain :Morph ;
-                          
-                          rdfs:range :MorphemicRepresentation ;
-                          
-                          rdfs:subPropertyOf :hasRepresentation .
-
-
-
 ###  http://mmoon.org/mmoon/hasMorphologicalRelationship
 
 :hasMorphologicalRelationship rdf:type owl:ObjectProperty ;
@@ -306,35 +383,19 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
-###  http://mmoon.org/mmoon/hasOrthographicRepresentation
+###  http://mmoon.org/mmoon/hasRealization
 
-:hasOrthographicRepresentation rdf:type owl:ObjectProperty ;
-                               
-                               rdfs:label "has orthographic representation"@en ;
-                               
-                               rdfs:domain :Morph ;
-                               
-                               rdfs:range :OrthographicRepresentation ;
-                               
-                               rdfs:domain :Word ;
-                               
-                               rdfs:subPropertyOf :hasRepresentation .
-
-
-
-###  http://mmoon.org/mmoon/hasPhoneticRepresentation
-
-:hasPhoneticRepresentation rdf:type owl:ObjectProperty ;
-                           
-                           rdfs:label "has phonetic representation"@en ;
-                           
-                           rdfs:domain :Morph ;
-                           
-                           rdfs:range :PhoneticRepresentation ;
-                           
-                           rdfs:domain :Word ;
-                           
-                           rdfs:subPropertyOf :hasRepresentation .
+:hasRealization rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "has realization"@en ;
+                
+                rdfs:comment "States that a morpheme is realized by some morph."@en ;
+                
+                rdfs:range :Morph ;
+                
+                rdfs:domain :Morpheme ;
+                
+                owl:inverseOf :correspondsToMorpheme .
 
 
 
@@ -455,15 +516,21 @@ An allomorph is one of two or more complementary morphs which manifest a morphem
 
 
 
-###  http://purl.org/dc/elements/1.1/language
+###  http://mmoon.org/mmoon/partOfLanguage
 
-dc:language rdf:type owl:ObjectProperty ;
-            
-            rdfs:label "language"@en ;
-            
-            rdfs:range lexvo:Language ;
-            
-            rdfs:domain :MorphemeInventory .
+:partOfLanguage rdf:type owl:ObjectProperty ;
+                
+                rdfs:label "part of language"@en ;
+                
+                rdfs:comment "States that a morph or word resources is a linguistic entity as part of a certain language."@en ;
+                
+                rdfs:subPropertyOf :associatedToLanguage ;
+                
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Morph
+                                            :Word
+                                          )
+                            ] .
 
 
 
@@ -476,13 +543,72 @@ dc:language rdf:type owl:ObjectProperty ;
 #################################################################
 
 
-###  http://mmoon.org/mmoon/representation
+###  http://mmoon.org/mmoon/morphemicRepresentation
 
-:representation rdf:type owl:DatatypeProperty ;
-                
-                rdfs:domain :Representation ;
-                
-                rdfs:range xsd:string .
+:morphemicRepresentation rdf:type owl:DatatypeProperty ;
+                         
+                         rdfs:label "morphemic representation"@en ;
+                         
+                         rdfs:comment """The morphemic representation of a morph.
+It includes:
+a) marking of the prefix  boundary with a hyphen, eg. prefix-
+b) marking of the suffix boundary with a hyphen, e.g. -suffix
+c) marking of the infix boundry inclosed in angled brackets, e.g. <infix>
+d) marking of the circumfix boundary by setting them off by angled brackets, e.g. circumfix prefix><circumfix suffix
+e) marking of the transfix and simulfix boundary with a backslash, e.g. \\transfix or simulfix
+g) marking of the zero morph and empty morph according to the position they take, e.g. in prefix position: zero/empty morph- , in suffix position: -zero/empty morph
+
+The morphemic representation consists of a morphemic boundary marking and the conventional orthographic representation of it. It differs from the orthographic representation in that it is marked by one of the typographic conventions a) - g). It differs from the morphemic gloss in that it renders the orthographic representation of the morph instead of the corresponding meaning glosses. I.e. for the English genetive \"-s\" morph the three representations are as follows:
+
+orthographic rep.: \"s\"
+morphemic rep.: \"-s\"
+morphemic gloss: \"GEN\""""@en ;
+                         
+                         rdfs:domain :Representation ;
+                         
+                         rdfs:range xsd:string .
+
+
+
+###  http://mmoon.org/mmoon/orthographicRepresentation
+
+:orthographicRepresentation rdf:type owl:DatatypeProperty ;
+                            
+                            rdfs:label "orthographic representation"@en ;
+                            
+                            rdfs:comment "Is the representation adhering to the charactersof the writing system (graphemes) according to the language of the MMoOn inventory."@en ;
+                            
+                            rdfs:domain :Representation ;
+                            
+                            rdfs:range xsd:string .
+
+
+
+###  http://mmoon.org/mmoon/phoneticRepresentation
+
+:phoneticRepresentation rdf:type owl:DatatypeProperty ;
+                        
+                        rdfs:label "phonetic representation"@en ;
+                        
+                        rdfs:comment "Is the phonetic representation according to the IPA. symbols."@en ;
+                        
+                        rdfs:domain :Representation ;
+                        
+                        rdfs:range xsd:string .
+
+
+
+###  http://mmoon.org/mmoon/transliteration
+
+:transliteration rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:label "transliteration"@en ;
+                 
+                 :usageNote "A reference to the mapping relation of the two writing system involved is highly recommended."@en ;
+                 
+                 rdfs:comment "This property renders orthographic representations of the writing system of the language of the morpheme inventory in symbols of another writing system, which ideally adheres to the latin alphabet."@en ;
+                 
+                 rdfs:seeAlso <https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet> .
 
 
 
@@ -665,6 +791,22 @@ The base may be transitive, in which case its direct object is demoted upon the 
 
 
 
+###  http://mmoon.org/mmoon/AtomicMorpheme
+
+:AtomicMorpheme rdf:type owl:Class ;
+                
+                rdfs:label "Atomic morpheme"@en ;
+                
+                rdfs:subClassOf :Morpheme ;
+                
+                rdfs:comment """A morpheme is atomic if the morph by which it is realized encodes exactly one meaning. Hence, an atomic morpheme has one mmon:Meaning. 
+
+An exception is made for person and number morphemes, e.g. the third person singular \"-s\" suffix in English corresponds to the atomic morpheme \"1SG\"."""@en ;
+                
+                :example "The English \"-s\" plural morpheme."@en .
+
+
+
 ###  http://mmoon.org/mmoon/AugmentativeNoun
 
 :AugmentativeNoun rdf:type owl:Class ;
@@ -673,14 +815,13 @@ The base may be transitive, in which case its direct object is demoted upon the 
                   
                   rdfs:subClassOf :DenominalNoun ;
                   
-                  rdfs:seeAlso "http://purl.org/olia/olia.owl#Augmentative" ;
-                  
                   rdfs:comment "A noun which is derived from another noun stem that denotes big or large size. Possible connotations include strong, imposing, ugly."@en ;
                   
                   rdfs:seeAlso """Christian Lehmann, under \"augmentation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 Augmentation is the derivational modification of a noun by the concept „big, large“. Possible connotations include „strong, imposing, ugly“.
 A noun is augmentative 1 iff it is derived by augmentation."""@en ,
-                               "http://purl.org/linguistics/gold/AugmentativeSize" .
+                               gold:AugmentativeSize ,
+                               <http://purl.org/olia/olia.owl#Augmentative> .
 
 
 
@@ -718,20 +859,6 @@ An underived verb cannot be causative by this definition. However, the paradigma
 
 
 
-###  http://mmoon.org/mmoon/Clitic
-
-:Clitic rdf:type owl:Class ;
-        
-        rdfs:label "Clitic"@en ;
-        
-        owl:equivalentClass gold:Clitic ;
-        
-        rdfs:subClassOf :Morph ;
-        
-        rdfs:comment "Is a bound form variant of a word. A word is clitic iff it exhibits syntactic characteristics - and typically also phonotactic properties - of a word but forms a phonological word with another grammatical word, its host, which has a word stress. [Christian Lehmann, under \"clitic\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
-
-
-
 ###  http://mmoon.org/mmoon/CollectivePersonNoun
 
 :CollectivePersonNoun rdf:type owl:Class ;
@@ -746,6 +873,23 @@ An underived verb cannot be causative by this definition. However, the paradigma
 
 
 
+###  http://mmoon.org/mmoon/ComplexMorpheme
+
+:ComplexMorpheme rdf:type owl:Class ;
+                 
+                 rdfs:label "Complex morpheme"@en ;
+                 
+                 rdfs:subClassOf :Morpheme ;
+                 
+                 rdfs:comment "A  morpheme is complex if it corresponds to more than one morph, and therefore consists of fusional and/or atomic and/or empty morphemes."@en ;
+                 
+                 :example "The English noun stem \"driver\" consists of the verbal stem \"drive\" and the derivational suffix \"-er\". The corresponding complex morpheme is \"drive.PRS-AG.NMLZ\", which consists of the two fusional morphemes \"drive.PRS\" and \"AG.NMLZ\"."@en ;
+                 
+                 :usageNote """The declaration of such a morpheme is somewhat contrary to the definition of morpheme as \"smallest meaning-bearing units of a language\". Since each mmoon:Morph resource should be able to correspond to some morpheme the construct of a complex morpheme is established. This is often the case for derived stems.
+ In the URI of the complex morpheme the morphemes of which it consists are separated by a hyphen."""@en .
+
+
+
 ###  http://mmoon.org/mmoon/CompoundWord
 
 :CompoundWord rdf:type owl:Class ;
@@ -756,16 +900,17 @@ An underived verb cannot be causative by this definition. However, the paradigma
               
               rdfs:subClassOf :Lexeme ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty :isComposedOf ;
+                                owl:onClass [ rdf:type owl:Class ;
+                                              owl:unionOf ( :GrammaticalWord
+                                                            :Lexeme
+                                                          )
+                                            ] ;
+                                owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :compoundingRelation ;
                                 owl:someValuesFrom :Compounding
-                              ] ,
-                              [ rdf:type owl:Class ;
-                                owl:unionOf ( :Lexeme
-                                              [ rdf:type owl:Restriction ;
-                                                owl:onProperty :isComposedOf ;
-                                                owl:someValuesFrom :GrammaticalWord
-                                              ]
-                                            )
                               ] ;
               
               rdfs:comment """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -823,8 +968,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
             
             rdfs:comment "Conversion, also called zero-derivation, is the formation of a lexeme from another part of speech which entails no further derivational meaning except that which is entailed in the wordclass-change."@en ;
             
-            rdfs:seeAlso """http://www.glottopedia.org/index.php/Conversion :
-In morphology, conversion is a process which derives words without changing the phonological shape of the base."""@en .
+            rdfs:seeAlso <http://www.glottopedia.org/index.php/Conversion> .
 
 
 
@@ -1039,17 +1183,18 @@ In morphology, conversion is a process which derives words without changing the 
              rdfs:label "Derived word"@en ;
              
              rdfs:subClassOf :Lexeme ,
-                             [ rdf:type owl:Class ;
-                               owl:unionOf ( :Lexeme
-                                             [ rdf:type owl:Restriction ;
-                                               owl:onProperty :isDerivedFrom ;
-                                               owl:someValuesFrom :GrammaticalWord
-                                             ]
-                                           )
-                             ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :derivationalRelation ;
                                owl:someValuesFrom :Derivation
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isDerivedFrom ;
+                               owl:onClass [ rdf:type owl:Class ;
+                                             owl:unionOf ( :GrammaticalWord
+                                                           :Lexeme
+                                                         )
+                                           ] ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
                              ] ;
              
              :example "\"replay\" is a derived word from the lexeme \"play\"."@en ;
@@ -1160,7 +1305,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
                 
                 :example "Eng. \"duck\"(N) --> \"duckling\"(N)"@en ;
                 
-                rdfs:seeAlso "http://purl.org/linguistics/gold/DiminuativeSize" ,
+                rdfs:seeAlso gold:DiminuativeSize ,
                              <http://purl.org/olia/olia.owl#DiminutiveNoun> .
 
 
@@ -1171,23 +1316,27 @@ Is a kind of lexeme which is formed by the morphological modification of another
             
             rdfs:label "Empty morph"@en ;
             
-            rdfs:subClassOf :Affix ;
+            rdfs:subClassOf :Affix ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :correspondsToMorpheme ;
+                              owl:allValuesFrom :EmptyMorpheme
+                            ] ;
             
             rdfs:comment "A morph that has no meaning but that must be posited for the sake of descriptive elegance. [Haspelmath and Sims: Understanding morphology. 2002:327]"@en .
 
 
 
-###  http://mmoon.org/mmoon/Enclitic
+###  http://mmoon.org/mmoon/EmptyMorpheme
 
-:Enclitic rdf:type owl:Class ;
-          
-          rdfs:label "Enclitic"@en ;
-          
-          owl:equivalentClass gold:Enclitic ;
-          
-          rdfs:subClassOf :Clitic ;
-          
-          rdfs:comment "Is a clitic that follows its host. [Christian Lehmann, under \"enclitic\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+:EmptyMorpheme rdf:type owl:Class ;
+               
+               rdfs:label "Empty morpheme"@en ;
+               
+               rdfs:subClassOf :Morpheme ;
+               
+               :usageNote "An empty morpheme is realized by an empty morph. Often an empty morph is realized for the sake of euphony."@en ;
+               
+               rdfs:comment "An empty morpheme serves as means to state that a morph (except for the zero morph) corresponds to no meaning."@en .
 
 
 
@@ -1229,6 +1378,21 @@ While there may be a subordinate agent in a causative construction, there may be
 
 
 
+###  http://mmoon.org/mmoon/FusionalMorpheme
+
+:FusionalMorpheme rdf:type owl:Class ;
+                  
+                  rdfs:label "Fusional morpheme"@en ;
+                  
+                  rdfs:subClassOf :Morpheme ;
+                  
+                  rdfs:comment """A morpheme is fusional if it entails more than one meaning and if these meanings are expressed in one un-analyzable morph. Hence, a fusional morpheme has at least two mmon:Meaning(s). Each meaning is separated by a period in the URI of a fusional morpheme instance.
+This often the case for inherent meanings such as number for nouns or tense for verbs."""@en ;
+                  
+                  :example "The English stem \"go\" of the verb \"to go\"  is a morph encoding the meaning of the root \"go\" and inherently also present tense. It corresponds to the fusional morpheme \"go.PRS\""@en .
+
+
+
 ###  http://mmoon.org/mmoon/GrammaticalWord
 
 :GrammaticalWord rdf:type owl:Class ;
@@ -1240,18 +1404,6 @@ While there may be a subordinate agent in a causative construction, there may be
                  rdfs:comment "A grammatical word is a word which is a grammatical formative. [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                  
                  :example "Engl. «be», «of».  [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
-
-
-
-###  http://mmoon.org/mmoon/Host
-
-:Host rdf:type owl:Class ;
-      
-      rdfs:label "Host"@en ;
-      
-      rdfs:subClassOf :Morph ;
-      
-      rdfs:comment "Is the full word which the clitic attaches to phonologically. [Christian Lehmann, under \"host\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -1330,6 +1482,18 @@ An instrument noun is an oriented deverbal noun that designates something that f
 
 
 
+###  http://mmoon.org/mmoon/IrregularDegree
+
+:IrregularDegree rdf:type owl:Class ;
+                 
+                 rdfs:label "Irregular degree"@en ;
+                 
+                 rdfs:subClassOf :Degree ;
+                 
+                 rdfs:comment "Formation of degree of comparison that deviates from the regular inflectional pattern."@en .
+
+
+
 ###  http://mmoon.org/mmoon/Lexeme
 
 :Lexeme rdf:type owl:Class ;
@@ -1378,12 +1542,13 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
        rdfs:label "Morph"@en ;
        
        rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasOrthographicRepresentation ;
-                         owl:onClass :OrthographicRepresentation ;
-                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                         owl:onProperty :hasRepresentation ;
+                         owl:someValuesFrom :Representation
                        ] ;
        
-       rdfs:comment "A morph is a concrete realization of a single morpheme which usually results from segmentation."@en .
+       rdfs:comment "A morph is a concrete realization of a single morpheme which usually results from segmentation."@en ;
+       
+       :usageNote "A morph resource describes only the perceptible side of a morpheme, i.e. the significans. As such it is not directly associated with a meaning but with a corresponding morpheme resource."@en .
 
 
 
@@ -1393,17 +1558,19 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
           
           rdfs:label "Morpheme"@en ;
           
-          :usageNote """Instances in this class represent only the meaning side of the morpheme which are connected to its specific morph realization via the property :correspondsToMorpheme. 
-
-For convenience the morpheme instances are rendered by the same notatinal means as the morphemic glosse, i.e. the plural morpheme is rendered in short as \"PL\"."""@en ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasMeaning ;
+                            owl:onClass :Meaning ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                          ] ;
           
-          rdfs:comment "The morpheme class contains the smallest meaning-bearing units of language. These comprise all semantically or grammatically distinct parts contained within a word or a word-form."@en ;
+          :usageNote """A morpheme resource describes only the conceptual side, i.e. the significatum, which is realized by one or more morphs in a certain language. Thus, the meaning(s) it conveys must be always stated via the mmoon:hasMeaning property.
+
+For convenience the morpheme instances are rendered by the same notatinal means as the morphemic glosses, i.e. the plural morpheme is rendered in short as \"PL\"."""@en ;
           
-          :example """The plural \"-s\" morpheme in English is expressed within the triple:
+          rdfs:comment """The morpheme class usually contains the smallest meaning-bearing units of a language. These comprise all semantically or grammatically distinct parts which are identifiable by segmentation of  the morphs of which a word or a word-form consists.
 
-mmoon_suffix:s mmoon:correspondsToMorpheme mmoon_morpheme:PL .
-
-All other plural morphs in English will thus correspond to the same morpheme resource."""@en .
+Depending on the kind of correspondence betweene a morpheme its morph realization, four kinds of morphemes are established: 1) atomic morphemes, 2) fusional morphemes, 3) Empty morphemes and 4) complex morphemes."""@en .
 
 
 
@@ -1423,19 +1590,7 @@ All other plural morphs in English will thus correspond to the same morpheme res
                 
                 rdfs:label "Morphemic gloss"@en ;
                 
-                rdfs:comment "The gloss is the abstract identity of a morpheme. It serves as a metalinguistic representation of morphological meanings. Most of the glosses used for grammatical concepts are taken from the Leipzig Glossing Rules  (https://www.eva.mpg.de/lingua/pdf/LGR08.02.05.pdf) or from Lehmann 2004 (http://christianlehmann.eu/publ/img.pdf). Lexical senses are usually glossed in English by using the orthographic representation of the lexical element (such as stems, roots and hosts) but can be also given in the language of the MMoOn language inventory."@en .
-
-
-
-###  http://mmoon.org/mmoon/MorphemicRepresentation
-
-:MorphemicRepresentation rdf:type owl:Class ;
-                         
-                         rdfs:label "Morphemic representation"@en ;
-                         
-                         rdfs:subClassOf :Representation ;
-                         
-                         rdfs:comment "The standard representation of a morph including the marking of the morpheme boundary with a hyphen."@en .
+                rdfs:comment "The gloss is the abstract identity of a morpheme. It serves as a metalinguistic representation of morphological meanings. Most of the glosses used for grammatical concepts are taken from the Leipzig Glossing Rules  (https://www.eva.mpg.de/lingua/pdf/LGR08.02.05.pdf) or from Lehmann 2004 (http://christianlehmann.eu/publ/img.pdf). Lexical senses are usually glossed in English by using the orthographic representation of the lexical element (such as stems and roots) but can be also given in the language of the MMoOn language inventory."@en .
 
 
 
@@ -1477,11 +1632,9 @@ All other plural morphs in English will thus correspond to the same morpheme res
 
 :NoWordFormation rdf:type owl:Class ;
                  
+                 rdfs:label "No word-formation"@en ;
+                 
                  rdfs:subClassOf :WordFormation ;
-                 
-                 :usageNote ""@en ;
-                 
-                 rdfs:seeAlso "No word-formation"@en ;
                  
                  rdfs:comment "Simple lexemes that cannot be further segmented into derivational or compositional components exhibit no kind of word-formation. Rather, they serve as the derivational or compositional basis for derived words and compound words."@en .
 
@@ -1555,30 +1708,6 @@ All other plural morphs in English will thus correspond to the same morpheme res
 
 
 
-###  http://mmoon.org/mmoon/OrthographicRepresentation
-
-:OrthographicRepresentation rdf:type owl:Class ;
-                            
-                            rdfs:label "Orthographic representation"@en ;
-                            
-                            rdfs:subClassOf :Representation ;
-                            
-                            rdfs:comment "Representation of a morph in the orthographic signs of the language of the MMoOn inventory."@en .
-
-
-
-###  http://mmoon.org/mmoon/PhoneticRepresentation
-
-:PhoneticRepresentation rdf:type owl:Class ;
-                        
-                        rdfs:label "Phonetic representation"@en ;
-                        
-                        rdfs:subClassOf :Representation ;
-                        
-                        rdfs:comment "Representation of a morph in IPA signs."@en .
-
-
-
 ###  http://mmoon.org/mmoon/PredicativeAdj
 
 :PredicativeAdj rdf:type owl:Class ;
@@ -1605,20 +1734,6 @@ All other plural morphs in English will thus correspond to the same morpheme res
 
 
 
-###  http://mmoon.org/mmoon/Proclitic
-
-:Proclitic rdf:type owl:Class ;
-           
-           rdfs:label "Proclitic"@en ;
-           
-           owl:equivalentClass gold:Proclitic ;
-           
-           rdfs:subClassOf :Clitic ;
-           
-           rdfs:comment "Is a clitic that precedes its host. [Christian Lehmann, under \"proclitic\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
-
-
-
 ###  http://mmoon.org/mmoon/RegularConjugation
 
 :RegularConjugation rdf:type owl:Class ;
@@ -1631,16 +1746,36 @@ All other plural morphs in English will thus correspond to the same morpheme res
 
 
 
+###  http://mmoon.org/mmoon/RegularDegree
+
+:RegularDegree rdf:type owl:Class ;
+               
+               rdfs:label "Regular degree"@en ;
+               
+               rdfs:subClassOf :Degree ;
+               
+               rdfs:comment "Formation of degree of comparison that exhibits a regular inflectional pattern."@en .
+
+
+
 ###  http://mmoon.org/mmoon/Representation
 
 :Representation rdf:type owl:Class ;
                 
                 rdfs:label "Representation"@en ;
                 
-                rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                  owl:onProperty :representation ;
-                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onDataRange xsd:string
+                rdfs:subClassOf [ rdf:type owl:Class ;
+                                  owl:unionOf ( [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :orthographicRepresentation ;
+                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:string
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :phoneticRepresentation ;
+                                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:string
+                                                ]
+                                              )
                                 ] ;
                 
                 rdfs:comment "A linguistic representation of a word or morph.."@en .
@@ -1676,11 +1811,7 @@ All other plural morphs in English will thus correspond to the same morpheme res
 A replacive morph is a descriptive construct representing an internal modification.
 Delimitation and History:
 The replacive morph is a construct of taxonomic structuralism.
-[Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
-
-
-Examples:
-In ‚man - men’, the latter contains the replacive morph ‚a -> e’. [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+[Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
           
           :example "In ‚man - men’, the latter contains the replacive morph ‚a -> e’. [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
@@ -1805,9 +1936,8 @@ In a compound word: The stem is the morphological representative of one of the t
       rdfs:label "Word"@en ;
       
       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                        owl:onProperty :hasOrthographicRepresentation ;
-                        owl:onClass :OrthographicRepresentation ;
-                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger
+                        owl:onProperty :hasRepresentation ;
+                        owl:someValuesFrom :Representation
                       ] ;
       
       rdfs:comment """A word is a unit which is a constituent at the phrase level and above. It is sometimes identifiable according to such criteria as a) being the minimal possible unit in a reply, b) having features such as a regular stress pattern, and phonological changes conditioned by or blocked at word boundaries, c) being the largest unit resistant to insertion of new constituents within its boundaries, or d)  being the smallest constituent that can be moved within a sentence without making the sentence ungrammatical.
@@ -1845,12 +1975,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :inflectionalRelation ;
-                            owl:someValuesFrom :Inflection
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :consistsOfMorph ;
                             owl:someValuesFrom :Stem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :inflectionalRelation ;
+                            owl:someValuesFrom :Inflection
                           ] ;
           
           rdfs:comment """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1869,11 +1999,17 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
            
            rdfs:label "Zero morph"@en ;
            
-           rdfs:subClassOf :Affix ;
+           rdfs:subClassOf :Affix ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAllomorphTo ;
+                             owl:someValuesFrom :Morph
+                           ] ;
            
            rdfs:comment """A morpheme that has a morphological meaning that corresponds to no overt form.  [Haspelmath and Sims: Understanding morphology. 2002:64]
 
-A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+           
+           :usageNote "A zero morpheme is posited only if it is in equipollent opposition to overt morphemes. If the term in question is, instead, the unmarked member of a privative opposition, no morpheme is posited. Conversion  can be conceived as derivation using a zero morpheme.  [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -1889,21 +2025,9 @@ gold:Circumfix rdf:type owl:Class .
 
 
 
-###  http://purl.org/linguistics/gold/Clitic
-
-gold:Clitic rdf:type owl:Class .
-
-
-
 ###  http://purl.org/linguistics/gold/Compound
 
 gold:Compound rdf:type owl:Class .
-
-
-
-###  http://purl.org/linguistics/gold/Enclitic
-
-gold:Enclitic rdf:type owl:Class .
 
 
 
@@ -1925,12 +2049,6 @@ gold:Prefix rdf:type owl:Class .
 
 
 
-###  http://purl.org/linguistics/gold/Proclitic
-
-gold:Proclitic rdf:type owl:Class .
-
-
-
 ###  http://purl.org/linguistics/gold/Root
 
 gold:Root rdf:type owl:Class .
@@ -1946,6 +2064,21 @@ gold:Stem rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Suffix
 
 gold:Suffix rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://mmoon.org/mmoon/0
+
+<http://mmoon.org/mmoon/0> rdf:type owl:NamedIndividual .
 
 
 
