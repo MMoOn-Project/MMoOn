@@ -15,7 +15,7 @@
                           
                           rdfs:label "Multilingual Morpheme Ontology"@en ;
                           
-                          rdfs:comment """The Multilingual Morpheme Ontology (MMoOn) is  an ontological model that contains the vocabulary needed to describe the morphological elements, meanings and representations of natural languages. 
+                          :definition """The Multilingual Morpheme Ontology (MMoOn) is  an ontological model that contains the vocabulary needed to describe the morphological elements, meanings and representations of natural languages. 
 
 This is the reference ontology from which various language specific MMoOn Inventories can be derived."""@en ;
                           
@@ -33,7 +33,7 @@ This is the reference ontology from which various language specific MMoOn Invent
 
 :definition rdf:type owl:AnnotationProperty ;
             
-            rdfs:comment "A definition for MMoOn vocabulary item (classes, properties, also possibly individuals)."@en ;
+            :definition "A definition for MMoOn vocabulary item (classes, properties, also possibly individuals)."@en ;
             
             rdfs:subPropertyOf rdfs:comment ,
                                skos:definition .
@@ -52,7 +52,7 @@ This is the reference ontology from which various language specific MMoOn Invent
 
 :externalDefinition rdf:type owl:AnnotationProperty ;
                     
-                    rdfs:comment """A reference to an (typically alternative) definition for MMoOn vocabulary items. 
+                    :definition """A reference to an (typically alternative) definition for MMoOn vocabulary items. 
 
 Solely to be used to refer to Web Resources identified by their URI/IRI (which ideally should be Linked Data)."""@en ;
                     
@@ -66,7 +66,7 @@ Solely to be used to refer to Web Resources identified by their URI/IRI (which i
 
 :externalDefinitionDesc rdf:type owl:AnnotationProperty ;
                         
-                        rdfs:comment """A reference to an (typically alternative) definition for MMoOn vocabulary items. 
+                        :definition """A reference to an (typically alternative) definition for MMoOn vocabulary items. 
 
 To be used when no URI/IRI can be provided as
 reference point or when additional textual information has to be provided for an URI/IRI reference to be sufficiently specific."""@en ;
@@ -106,7 +106,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                       
                       rdfs:label "associated to language"@en ;
                       
-                      rdfs:comment "States that a morpheme inventory, morph or word is associated to a specific langauge."@en ;
+                      :definition "States that a morpheme inventory, morph or word is associated to a specific langauge."@en ;
                       
                       rdfs:range lexvo:Language .
 
@@ -118,7 +118,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "attached to root"@en ;
                 
-                rdfs:comment "States that an affix is attached to some root."@en ;
+                :definition "States that an affix is attached to some root."@en ;
                 
                 rdfs:domain :Affix ;
                 
@@ -132,7 +132,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "attached to stem"@en ;
                 
-                rdfs:comment "States that an affix is attached to some stem."@en ;
+                :definition "States that an affix is attached to some stem."@en ;
                 
                 rdfs:domain :Affix ;
                 
@@ -146,7 +146,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  rdfs:label "belongs to lexeme"@en ;
                  
-                 rdfs:comment "States that a word-form resource belongs to a lexeme resource."@en ;
+                 :definition "States that a word-form resource belongs to a lexeme resource."@en ;
                  
                  rdfs:range :Lexeme ;
                  
@@ -162,7 +162,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                rdfs:label "belongs to word"@en ;
                
-               rdfs:comment "States that a morph belongs to some word."@en ;
+               :definition "States that a morph belongs to some word."@en ;
                
                rdfs:domain :Morph ;
                
@@ -193,7 +193,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  rdfs:label "consists of affix"@en ;
                  
-                 rdfs:comment "States that a  word, stem or root consists of some affix."@en ;
+                 :definition "States that a  word, stem or root consists of some affix."@en ;
                  
                  rdfs:range :Affix ;
                  
@@ -214,7 +214,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                  
                  rdfs:label "consists of morph"@en ;
                  
-                 rdfs:comment "States that a word consists of some morph."@en ;
+                 :definition "States that a word consists of some morph."@en ;
                  
                  rdfs:range :Morph ;
                  
@@ -246,7 +246,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "consists of root"@en ;
                 
-                rdfs:comment "States that a stem or word consists of some root."@en ;
+                :definition "States that a stem or word consists of some root."@en ;
                 
                 rdfs:range :Root ;
                 
@@ -266,7 +266,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "consists of stem"@en ;
                 
-                rdfs:comment "States that a word or stem consists of some stem."@en ;
+                :definition "States that a word or stem consists of some stem."@en ;
                 
                 rdfs:range :Stem ;
                 
@@ -286,7 +286,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "consists of word"@en ;
                 
-                rdfs:comment "States that an analytic word-form (such as \"more big\" being the comparative form of the adjective \"big\") consists of other word resources."@en ;
+                :definition "States that an analytic word-form (such as \"more big\" being the comparative form of the adjective \"big\") consists of other word resources."@en ;
                 
                 rdfs:domain :AnalyticWordform ;
                 
@@ -300,7 +300,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                        
                        rdfs:label "corresponds to morpheme"@en ;
                        
-                       rdfs:comment "States that a given morph corresponds to a certain morpheme."@en ;
+                       :definition "States that a given morph corresponds to a certain morpheme."@en ;
                        
                        rdfs:domain :Morph ;
                        
@@ -331,7 +331,7 @@ skos:definition rdf:type owl:AnnotationProperty .
              
              rdfs:label "for language"@en ;
              
-             rdfs:comment "States that a MMoOn morpheme inventory is specified for a certain language."@en ;
+             :definition "States that a MMoOn morpheme inventory is specified for a certain language."@en ;
              
              rdfs:domain :MorphemeInventory ;
              
@@ -361,7 +361,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                    
                    rdfs:label "has morphemic entry"@en ;
                    
-                   rdfs:comment "States that a morpheme inventory resource has morphemes as morphemic entries, thus building the intension of the morpheme inventory."@en ;
+                   :definition "States that a morpheme inventory resource has morphemes as morphemic entries, thus building the intension of the morpheme inventory."@en ;
                    
                    rdfs:range :Morpheme ;
                    
@@ -375,7 +375,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                               
                               rdfs:label "has morphological relationship"@en ;
                               
-                              rdfs:comment "Specifies the morphological relationship of a word."@en ;
+                              :definition "Specifies the morphological relationship of a word."@en ;
                               
                               rdfs:range :MorphologicalRelationship ;
                               
@@ -389,7 +389,7 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "has realization"@en ;
                 
-                rdfs:comment "States that a morpheme is realized by some morph."@en ;
+                :definition "States that a morpheme is realized by some morph."@en ;
                 
                 rdfs:range :Morph ;
                 
@@ -421,7 +421,7 @@ skos:definition rdf:type owl:AnnotationProperty .
              
              rdfs:label "has wordform"@en ;
              
-             rdfs:comment "States that (typically) a lexeme resource has an associated word-form resource."@en ;
+             :definition "States that (typically) a lexeme resource has an associated word-form resource."@en ;
              
              rdfs:range :Wordform ;
              
@@ -455,9 +455,9 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                rdfs:label "is allomorph to"@en ;
                
-               rdfs:comment "States that a morph is an allomorph to another morph which are both realizations of the same morpheme and which occur in complementary or free distribution."@en ;
+               :definition "States that a morph is an allomorph to another morph which are both realizations of the same morpheme and which occur in complementary or free distribution."@en ;
                
-               rdfs:seeAlso """http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAnAllomorph.htm: 
+               :externalDefinitionDesc """http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAnAllomorph.htm: 
 An allomorph is one of two or more complementary morphs which manifest a morpheme in its different phonological or morphological environments."""@en ;
                
                rdfs:range :Morph ;
@@ -472,7 +472,7 @@ An allomorph is one of two or more complementary morphs which manifest a morphem
               
               rdfs:label "is composed of"@en ;
               
-              rdfs:comment "States of which lexemes or grammatical words the compound word is composed."@en ;
+              :definition "States of which lexemes or grammatical words the compound word is composed."@en ;
               
               rdfs:domain :CompoundWord ;
               
@@ -508,7 +508,7 @@ An allomorph is one of two or more complementary morphs which manifest a morphem
              
              rdfs:label "is homonym to"@en ;
              
-             rdfs:comment "States that a morph is homonym to another morph, i.e. although sharing the same orthographic and/or morphemic representation both morphs encode different meanings and thus realize different morphemes."@en ;
+             :definition "States that a morph is homonym to another morph, i.e. although sharing the same orthographic and/or morphemic representation both morphs encode different meanings and thus realize different morphemes."@en ;
              
              rdfs:range :Morph ;
              
@@ -522,7 +522,7 @@ An allomorph is one of two or more complementary morphs which manifest a morphem
                 
                 rdfs:label "part of language"@en ;
                 
-                rdfs:comment "States that a morph or word resources is a linguistic entity as part of a certain language."@en ;
+                :definition "States that a morph or word resources is a linguistic entity as part of a certain language."@en ;
                 
                 rdfs:subPropertyOf :associatedToLanguage ;
                 
@@ -549,7 +549,7 @@ An allomorph is one of two or more complementary morphs which manifest a morphem
                          
                          rdfs:label "morphemic representation"@en ;
                          
-                         rdfs:comment """The morphemic representation of a morph.
+                         :definition """The morphemic representation of a morph.
 It includes:
 a) marking of the prefix  boundary with a hyphen, eg. prefix-
 b) marking of the suffix boundary with a hyphen, e.g. -suffix
@@ -576,7 +576,7 @@ morphemic gloss: \"GEN\""""@en ;
                             
                             rdfs:label "orthographic representation"@en ;
                             
-                            rdfs:comment "Is the representation adhering to the charactersof the writing system (graphemes) according to the language of the MMoOn inventory."@en ;
+                            :definition "Is the representation adhering to the charactersof the writing system (graphemes) according to the language of the MMoOn inventory."@en ;
                             
                             rdfs:domain :Representation ;
                             
@@ -590,7 +590,7 @@ morphemic gloss: \"GEN\""""@en ;
                         
                         rdfs:label "phonetic representation"@en ;
                         
-                        rdfs:comment "Is the phonetic representation according to the IPA. symbols."@en ;
+                        :definition "Is the phonetic representation according to the IPA. symbols."@en ;
                         
                         rdfs:domain :Representation ;
                         
@@ -606,9 +606,9 @@ morphemic gloss: \"GEN\""""@en ;
                  
                  :usageNote "A reference to the mapping relation of the two writing system involved is highly recommended."@en ;
                  
-                 rdfs:comment "This property renders orthographic representations of the writing system of the language of the morpheme inventory in symbols of another writing system, which ideally adheres to the latin alphabet."@en ;
+                 :definition "This property renders orthographic representations of the writing system of the language of the morpheme inventory in symbols of another writing system, which ideally adheres to the latin alphabet."@en ;
                  
-                 rdfs:seeAlso <https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet> .
+                 :externalDefinition <https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet> .
 
 
 
@@ -625,9 +625,7 @@ morphemic gloss: \"GEN\""""@en ;
 
 lexvo:Language rdf:type owl:Class ;
                
-               rdfs:label "Language"@en ;
-               
-               rdfs:isDefinedBy "http://lexvo.org/ontology#Language"@en .
+               rdfs:label "Language"@en .
 
 
 
@@ -639,9 +637,9 @@ lexvo:Language rdf:type owl:Class ;
             
             rdfs:subClassOf :DeverbalNoun ;
             
-            rdfs:comment "A noun which is derived from a verb stem denoting the action of the deriving verb stem."@en ;
+            :definition "A noun which is derived from a verb stem denoting the action of the deriving verb stem."@en ;
             
-            rdfs:seeAlso """Christian Lehmann, under \"action noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+            :externalDefinitionDesc """Christian Lehmann, under \"action noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one which designates the same kind of thing as a (finite) verb, viz. a situation core, except that this is hypostatized as an entity. An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one which designates the same kind of thing as a (finite) verb, viz. a situation core, except that this is hypostatized as an entity."""@en ;
             
             :example "Eng. \"to arrive\"(V) --> \"arrival\"(N)."@en .
@@ -656,7 +654,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
                       
                       rdfs:subClassOf :Inflection ;
                       
-                      rdfs:comment "Is the process of generating word-forms of adjectival stems."@en .
+                      :definition "Is the process of generating word-forms of adjectival stems."@en .
 
 
 
@@ -668,7 +666,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
                    
                    rdfs:subClassOf :Compounding ;
                    
-                   rdfs:comment "An adjective compound is an adjective formed by composition of an adjective stem and another stem."@en ;
+                   :definition "An adjective compound is an adjective formed by composition of an adjective stem and another stem."@en ;
                    
                    :example "Eng.: \"man-eating\"(Adj) = \"man\"(N) + \"eating\"(Adj)."@en .
 
@@ -682,7 +680,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
                
                rdfs:subClassOf :Conversion ;
                
-               rdfs:comment "An adjective noun is a noun which is fomed by conversion from an adjective and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+               :definition "An adjective noun is a noun which is fomed by conversion from an adjective and which entails no further derivational meaning except the entailed wordclass-change."@en ;
                
                :example "Engl.: \"old\"(Adj) --> \"the old\"(N)."@en .
 
@@ -698,7 +696,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
                
                :example "German: \"dicht\"(Adj.) 'impermeable' --> \"dichten\"(V) 'seal'."@de ;
                
-               rdfs:comment "An adjective verb is a verb which is fomed by conversion from an adjective and which entails no further derivational meaning except the entailed wordclass-change."@en .
+               :definition "An adjective verb is a verb which is fomed by conversion from an adjective and which entails no further derivational meaning except the entailed wordclass-change."@en .
 
 
 
@@ -710,7 +708,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
                 
                 rdfs:subClassOf :Compounding ;
                 
-                rdfs:comment "An adverb compound is an adverb formed by composition of an adverb stem and another stem."@en ;
+                :definition "An adverb compound is an adverb formed by composition of an adverb stem and another stem."@en ;
                 
                 :example "Eng.: \"downstream\"(Adv) = \"down\"(Adv) + \"stream\"(N)."@en .
 
@@ -726,7 +724,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
        
        rdfs:subClassOf :Morph ;
        
-       rdfs:comment "An affix is a bound segmental morph that is joined to a stem or root before, after, or within it, in the formation of a derived or inflected form. [Christian Lehmann, under \"affix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+       :definition "An affix is a bound segmental morph that is joined to a stem or root before, after, or within it, in the formation of a derived or inflected form. [Christian Lehmann, under \"affix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -738,7 +736,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
            
            rdfs:subClassOf :DeverbalNoun ;
            
-           rdfs:comment "A noun which is derived from a verb stem denoting someone or something that performs the action of the verb base."@en ;
+           :definition "A noun which is derived from a verb stem denoting someone or something that performs the action of the verb base."@en ;
            
            :example "Eng. \"to work\"(V) --> \"worker\"(N)."@en .
 
@@ -752,7 +750,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
                   
                   rdfs:subClassOf :Wordform ;
                   
-                  rdfs:comment """A word form is analytic iff it consists of more than one word form such that the lexical meaning provides the root of one of them, while the grammatical meaning components are coded in the other word forms (some of them possibly in the lexical word form).
+                  :definition """A word form is analytic iff it consists of more than one word form such that the lexical meaning provides the root of one of them, while the grammatical meaning components are coded in the other word forms (some of them possibly in the lexical word form).
 An inflection is analytic to the extent that it consists of analytic word forms.
 
 Delimitation and History:
@@ -782,9 +780,9 @@ Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"
                  
                  :example "German: \"steigen\"(V) 'rise' --> \"besteigen\"(V) 'climb'."@de ;
                  
-                 rdfs:comment "A verb which is derived from another intransitive verb stem resulting in a transitive verb."@en ;
+                 :definition "A verb which is derived from another intransitive verb stem resulting in a transitive verb."@en ;
                  
-                 rdfs:seeAlso """Christian Lehmann, under \"applicative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+                 :externalDefinitionDesc """Christian Lehmann, under \"applicative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 An applicative verb is a derived transitive verb whose direct object has been promoted to this function from a more peripheral syntactic function that it has with the base verb.
 
 The base may be transitive, in which case its direct object is demoted upon the derivation of the applicative verb."""@en .
@@ -799,7 +797,7 @@ The base may be transitive, in which case its direct object is demoted upon the 
                 
                 rdfs:subClassOf :Morpheme ;
                 
-                rdfs:comment """A morpheme is atomic if the morph by which it is realized encodes exactly one meaning. Hence, an atomic morpheme has one mmon:Meaning. 
+                :definition """A morpheme is atomic if the morph by which it is realized encodes exactly one meaning. Hence, an atomic morpheme has one mmon:Meaning. 
 
 An exception is made for person and number morphemes, e.g. the third person singular \"-s\" suffix in English corresponds to the atomic morpheme \"1SG\"."""@en ;
                 
@@ -815,13 +813,14 @@ An exception is made for person and number morphemes, e.g. the third person sing
                   
                   rdfs:subClassOf :DenominalNoun ;
                   
-                  rdfs:comment "A noun which is derived from another noun stem that denotes big or large size. Possible connotations include strong, imposing, ugly."@en ;
+                  :definition "A noun which is derived from another noun stem that denotes big or large size. Possible connotations include strong, imposing, ugly."@en ;
                   
-                  rdfs:seeAlso """Christian Lehmann, under \"augmentation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+                  :externalDefinitionDesc """Christian Lehmann, under \"augmentation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 Augmentation is the derivational modification of a noun by the concept „big, large“. Possible connotations include „strong, imposing, ugly“.
-A noun is augmentative 1 iff it is derived by augmentation."""@en ,
-                               gold:AugmentativeSize ,
-                               <http://purl.org/olia/olia.owl#Augmentative> .
+A noun is augmentative 1 iff it is derived by augmentation."""@en ;
+                  
+                  :externalDefinition gold:AugmentativeSize ,
+                                      <http://purl.org/olia/olia.owl#Augmentative> .
 
 
 
@@ -833,9 +832,9 @@ A noun is augmentative 1 iff it is derived by augmentation."""@en ,
                
                rdfs:subClassOf :DeverbalVerb ;
                
-               rdfs:comment "A verb which is derived from another verb stem denoting  the causal role of a referent in relation to an event or state expressed by the deriving verb stem."@en ;
+               :definition "A verb which is derived from another verb stem denoting  the causal role of a referent in relation to an event or state expressed by the deriving verb stem."@en ;
                
-               rdfs:seeAlso """Christian Lehmann, under \"causative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido : 
+               :externalDefinitionDesc """Christian Lehmann, under \"causative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido : 
 A causative verb is an n-place verb (with n > 1) which is derived from an n-1-place verb in such a way that the additional semantic slot is mapped onto the subject slot and is occupied by a superordinate agent which causes the situation designated by the base.
 
 An underived verb cannot be causative by this definition. However, the paradigmatic lexical relation of Engl. «kill» to «die» may be called ‚semantically causative’."""@en ;
@@ -855,7 +854,7 @@ An underived verb cannot be causative by this definition. However, the paradigma
            
            rdfs:subClassOf :Affix ;
            
-           rdfs:comment "A circumfix is an affix which consits of a prefix and a suffix. [Christian Lehmann, under \"circumfix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+           :definition "A circumfix is an affix which consits of a prefix and a suffix. [Christian Lehmann, under \"circumfix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -869,7 +868,7 @@ An underived verb cannot be causative by this definition. However, the paradigma
                       
                       :example "German: \"Lehrer\"(N) 'teacher' --> \"Lehrerschaft\"(N) 'body of teachers'."@de ;
                       
-                      rdfs:comment "A noun which is derived from another noun stem that denotes group of persons."@en .
+                      :definition "A noun which is derived from another noun stem that denotes group of persons."@en .
 
 
 
@@ -881,7 +880,7 @@ An underived verb cannot be causative by this definition. However, the paradigma
                  
                  rdfs:subClassOf :Morpheme ;
                  
-                 rdfs:comment "A  morpheme is complex if it corresponds to more than one morph, and therefore consists of fusional and/or atomic and/or empty morphemes."@en ;
+                 :definition "A  morpheme is complex if it corresponds to more than one morph, and therefore consists of fusional and/or atomic and/or empty morphemes."@en ;
                  
                  :example "The English noun stem \"driver\" consists of the verbal stem \"drive\" and the derivational suffix \"-er\". The corresponding complex morpheme is \"drive.PRS-AG.NMLZ\", which consists of the two fusional morphemes \"drive.PRS\" and \"AG.NMLZ\"."@en ;
                  
@@ -900,6 +899,10 @@ An underived verb cannot be causative by this definition. However, the paradigma
               
               rdfs:subClassOf :Lexeme ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty :compoundingRelation ;
+                                owl:someValuesFrom :Compounding
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :isComposedOf ;
                                 owl:onClass [ rdf:type owl:Class ;
                                               owl:unionOf ( :GrammaticalWord
@@ -907,13 +910,9 @@ An underived verb cannot be causative by this definition. However, the paradigma
                                                           )
                                             ] ;
                                 owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :compoundingRelation ;
-                                owl:someValuesFrom :Compounding
                               ] ;
               
-              rdfs:comment """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+              :definition """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
 
 Is a kind of lexeme which is formed by the combination of two stems."""@en ;
               
@@ -931,12 +930,12 @@ Is a kind of lexeme which is formed by the combination of two stems."""@en ;
              
              rdfs:subClassOf :WordFormation ;
              
-             rdfs:seeAlso """Christian Lehmann, under \"compounding\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+             :externalDefinitionDesc """Christian Lehmann, under \"compounding\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 Compounding [compositio thematum] is the formation of a stem by combination of two stems. Both stems may already be complex."""@en ;
              
              :usageNote "Compounds, in English and some other languages, can be written as one word or two separate words, and they can be hyphenated as well. [http://www.glottopedia.org/index.php/Compound]"@en ;
              
-             rdfs:comment "Is the process of lexeme-formation by combining two stems."@en .
+             :definition "Is the process of lexeme-formation by combining two stems."@en .
 
 
 
@@ -948,7 +947,7 @@ Compounding [compositio thematum] is the formation of a stem by combination of t
              
              rdfs:subClassOf :VerbalInflection ;
              
-             rdfs:comment "Is the inflection of a verb. Conjugation categories commonly include person, number, gender, aspect, tense, mood, voice and non-finite subcategories. [Christian Lehmann, under \"conjugation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+             :definition "Is the inflection of a verb. Conjugation categories commonly include person, number, gender, aspect, tense, mood, voice and non-finite subcategories. [Christian Lehmann, under \"conjugation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -962,13 +961,13 @@ Compounding [compositio thematum] is the formation of a stem by combination of t
             
             :usageNote "All other derivations which include an affix marking the wordclass-change but also do not entail further derivational meaning belong into the according mmoon:Derived[Wordclass] subclasses."@en ;
             
-            rdfs:seeAlso """Christian Lehmann, under \"conversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+            :externalDefinitionDesc """Christian Lehmann, under \"conversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 Conversion [recategorizatio] is the implicit change of the word class of a stem.
 Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conceived as involving a morphological process. At the level of formal representation, however, conversion [recategorizatio] may be conceived as dependency of a stem on a zero affix."""@en ;
             
-            rdfs:comment "Conversion, also called zero-derivation, is the formation of a lexeme from another part of speech which entails no further derivational meaning except that which is entailed in the wordclass-change."@en ;
+            :definition "Conversion, also called zero-derivation, is the formation of a lexeme from another part of speech which entails no further derivational meaning except that which is entailed in the wordclass-change."@en ;
             
-            rdfs:seeAlso <http://www.glottopedia.org/index.php/Conversion> .
+            :externalDefinition <http://www.glottopedia.org/index.php/Conversion> .
 
 
 
@@ -980,7 +979,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                        
                        rdfs:subClassOf :DerivedAdjective ;
                        
-                       rdfs:comment "Is an adjective lexeme which derived from another adjective stem."@en .
+                       :definition "Is an adjective lexeme which derived from another adjective stem."@en .
 
 
 
@@ -994,7 +993,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                     
                     :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
                     
-                    rdfs:comment "Is an adverb lexeme which derived from an adjective stem."@en .
+                    :definition "Is an adverb lexeme which derived from an adjective stem."@en .
 
 
 
@@ -1008,7 +1007,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                   
                   :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
                   
-                  rdfs:comment "Is a noun lexeme which derived from an adjective stem."@en .
+                  :definition "Is a noun lexeme which derived from an adjective stem."@en .
 
 
 
@@ -1022,7 +1021,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                   
                   :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
                   
-                  rdfs:comment "Is a verb lexeme which derived from an adjective stem."@en .
+                  :definition "Is a verb lexeme which derived from an adjective stem."@en .
 
 
 
@@ -1034,7 +1033,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                   
                   rdfs:subClassOf :DerivedAdverb ;
                   
-                  rdfs:comment "Is an adverb lexeme which derived from another adverb stem."@en .
+                  :definition "Is an adverb lexeme which derived from another adverb stem."@en .
 
 
 
@@ -1046,7 +1045,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
             
             rdfs:subClassOf :NominalInflection ;
             
-            rdfs:comment "Is the inflection of a noun. Relevant categories commonly include gender, number, case, possessive and definiteness. [Christian Lehmann, under \"declension\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+            :definition "Is the inflection of a noun. Relevant categories commonly include gender, number, case, possessive and definiteness. [Christian Lehmann, under \"declension\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -1058,7 +1057,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
         
         rdfs:subClassOf :AdjectivalInflection ;
         
-        rdfs:comment "Attributively (but also predicatively) used adjectives inflect for the category degree of comparison. In agreement with the noun it modifies it can also be marked for nominal inflectional categories such as gender, case and number."@en .
+        :definition "Attributively (but also predicatively) used adjectives inflect for the category degree of comparison. In agreement with the noun it modifies it can also be marked for nominal inflectional categories such as gender, case and number."@en .
 
 
 
@@ -1072,7 +1071,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                     
                     :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
                     
-                    rdfs:comment "Is an adjective lexeme which derived from noun stem."@en .
+                    :definition "Is an adjective lexeme which derived from noun stem."@en .
 
 
 
@@ -1086,7 +1085,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                  
                  :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
                  
-                 rdfs:comment "Is an adverb lexeme which derived from a noun stem."@en .
+                 :definition "Is an adverb lexeme which derived from a noun stem."@en .
 
 
 
@@ -1098,7 +1097,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                
                rdfs:subClassOf :DerivedNoun ;
                
-               rdfs:comment "Is a noun lexeme which derived from another noun stem."@en .
+               :definition "Is a noun lexeme which derived from another noun stem."@en .
 
 
 
@@ -1112,7 +1111,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                
                :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
                
-               rdfs:comment "Is a verb lexeme which derived from a noun stem."@en .
+               :definition "Is a verb lexeme which derived from a noun stem."@en .
 
 
 
@@ -1124,7 +1123,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
             
             rdfs:subClassOf :WordFormation ;
             
-            rdfs:comment "Is the process of lexeme-formation which is morphologically conditioned and involves the modification of a stem."@en .
+            :definition "Is the process of lexeme-formation which is morphologically conditioned and involves the modification of a stem."@en .
 
 
 
@@ -1136,7 +1135,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                   
                   rdfs:subClassOf :Derivation ;
                   
-                  rdfs:comment "Is an adjective lexeme which derived from another stem."@en .
+                  :definition "Is an adjective lexeme which derived from another stem."@en .
 
 
 
@@ -1148,7 +1147,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                
                rdfs:subClassOf :Derivation ;
                
-               rdfs:comment "Is an adverb lexeme which derived from another stem."@en .
+               :definition "Is an adverb lexeme which derived from another stem."@en .
 
 
 
@@ -1160,7 +1159,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
              
              rdfs:subClassOf :Derivation ;
              
-             rdfs:comment "Is a noun lexeme which derived from another stem."@en .
+             :definition "Is a noun lexeme which derived from another stem."@en .
 
 
 
@@ -1172,7 +1171,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
              
              rdfs:subClassOf :Derivation ;
              
-             rdfs:comment "Is a verb lexeme which derived from another stem."@en .
+             :definition "Is a verb lexeme which derived from another stem."@en .
 
 
 
@@ -1199,7 +1198,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
              
              :example "\"replay\" is a derived word from the lexeme \"play\"."@en ;
              
-             rdfs:comment """A derivate is a stem generated by derivation [derivatio]. [Christian Lehmann, under \"derivate\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+             :definition """A derivate is a stem generated by derivation [derivatio]. [Christian Lehmann, under \"derivate\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
 
 Is a kind of lexeme which is formed by the morphological modification of another lexical stem."""@en ;
              
@@ -1215,7 +1214,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
                   
                   rdfs:subClassOf :DeverbalVerb ;
                   
-                  rdfs:comment "A verb which is derived from another verb stem denoting to want the meaning of the deriving verb stem."@en ;
+                  :definition "A verb which is derived from another verb stem denoting to want the meaning of the deriving verb stem."@en ;
                   
                   :example "Sanskrit: \"‚s:r.no-ti\" (V) 'hears' --> \"‚su-’sr¡u-.sa-ti\"(V) (RED-hear-DES-3.SG) 'wants to hear'."@sa .
 
@@ -1231,7 +1230,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
                    
                    :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
                    
-                   rdfs:comment "Is an adjective lexeme which derived from a verb stem."@en .
+                   :definition "Is an adjective lexeme which derived from a verb stem."@en .
 
 
 
@@ -1245,7 +1244,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
                 
                 :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
                 
-                rdfs:comment "Is an adverb lexeme which derived from a verb stem."@en .
+                :definition "Is an adverb lexeme which derived from a verb stem."@en .
 
 
 
@@ -1259,7 +1258,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
               
               :usageNote "Add instance here, if the language of the given morpheme inventory exhibits affixal marking for word-class change but adds NO further derivational meaning(s). For all derived lexemes that consist of a derivational affix denoting some additional meaning, the respective subclass must be instantiated or newly created."@en ;
               
-              rdfs:comment "Is a noun lexeme which derived from a verb stem."@en .
+              :definition "Is a noun lexeme which derived from a verb stem."@en .
 
 
 
@@ -1271,7 +1270,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
               
               rdfs:subClassOf :DerivedVerb ;
               
-              rdfs:comment "Is a verb lexeme which derived from another verb stem."@en .
+              :definition "Is a verb lexeme which derived from another verb stem."@en .
 
 
 
@@ -1283,11 +1282,11 @@ Is a kind of lexeme which is formed by the morphological modification of another
                      
                      rdfs:subClassOf :DeadjectivalAdjective ;
                      
-                     rdfs:seeAlso "http://purl.org/linguistics/gold/DiminuativeSize" ;
+                     :definition "An adjective which is derived from another adjective stem that denotes a smaller intensity than the deriving adjective stem."@en ;
                      
-                     rdfs:comment "An adjective which is derived from another adjective stem that denotes a smaller intensity than the deriving adjective stem."@en ;
+                     :example "Eng. \"small\"(ADJ) --> \"smallish\"(ADJ)"@en ;
                      
-                     :example "Eng. \"small\"(ADJ) --> \"smallish\"(ADJ)"@en .
+                     :externalDefinition gold:DiminuativeSize .
 
 
 
@@ -1301,12 +1300,12 @@ Is a kind of lexeme which is formed by the morphological modification of another
                 
                 :example "German \"Kind\"(N) --> \"Kindchen\"(N)"@de ;
                 
-                rdfs:comment "A noun which is derived from another noun stem that denotes endearment, small size or small intensity."@en ;
+                :definition "A noun which is derived from another noun stem that denotes endearment, small size or small intensity."@en ;
                 
                 :example "Eng. \"duck\"(N) --> \"duckling\"(N)"@en ;
                 
-                rdfs:seeAlso gold:DiminuativeSize ,
-                             <http://purl.org/olia/olia.owl#DiminutiveNoun> .
+                :externalDefinition gold:DiminuativeSize ,
+                                    <http://purl.org/olia/olia.owl#DiminutiveNoun> .
 
 
 
@@ -1322,7 +1321,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
                               owl:allValuesFrom :EmptyMorpheme
                             ] ;
             
-            rdfs:comment "A morph that has no meaning but that must be posited for the sake of descriptive elegance. [Haspelmath and Sims: Understanding morphology. 2002:327]"@en .
+            :definition "A morph that has no meaning but that must be posited for the sake of descriptive elegance. [Haspelmath and Sims: Understanding morphology. 2002:327]"@en .
 
 
 
@@ -1336,7 +1335,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
                
                :usageNote "An empty morpheme is realized by an empty morph. Often an empty morph is realized for the sake of euphony."@en ;
                
-               rdfs:comment "An empty morpheme serves as means to state that a morph (except for the zero morph) corresponds to no meaning."@en .
+               :definition "An empty morpheme serves as means to state that a morph (except for the zero morph) corresponds to no meaning."@en .
 
 
 
@@ -1351,9 +1350,9 @@ Is a kind of lexeme which is formed by the morphological modification of another
                :example """German: \"tot\"(Adj) 'dead' --> \"töten\"(V) 'to kill'.
  [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@de ;
                
-               rdfs:comment "A verb which is derived from an adjective stem denoting causation."@en ;
+               :definition "A verb which is derived from an adjective stem denoting causation."@en ;
                
-               rdfs:seeAlso """Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+               :externalDefinitionDesc """Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 A factitive verb is a causative verb based on an adjective (or a stative intransitive verb).
 
 Delimitation and History:
@@ -1374,7 +1373,7 @@ While there may be a subordinate agent in a causative construction, there may be
             
             :example "German: \"Fahrer\"(N) 'male driver' --> \"Fahrerin\"(N) 'female driver'."@de ;
             
-            rdfs:comment "A noun which is derived from another noun stem and that denotes a female person."@en .
+            :definition "A noun which is derived from another noun stem and that denotes a female person."@en .
 
 
 
@@ -1386,7 +1385,7 @@ While there may be a subordinate agent in a causative construction, there may be
                   
                   rdfs:subClassOf :Morpheme ;
                   
-                  rdfs:comment """A morpheme is fusional if it entails more than one meaning and if these meanings are expressed in one un-analyzable morph. Hence, a fusional morpheme has at least two mmon:Meaning(s). Each meaning is separated by a period in the URI of a fusional morpheme instance.
+                  :definition """A morpheme is fusional if it entails more than one meaning and if these meanings are expressed in one un-analyzable morph. Hence, a fusional morpheme has at least two mmon:Meaning(s). Each meaning is separated by a period in the URI of a fusional morpheme instance.
 This often the case for inherent meanings such as number for nouns or tense for verbs."""@en ;
                   
                   :example "The English stem \"go\" of the verb \"to go\"  is a morph encoding the meaning of the root \"go\" and inherently also present tense. It corresponds to the fusional morpheme \"go.PRS\""@en .
@@ -1401,7 +1400,7 @@ This often the case for inherent meanings such as number for nouns or tense for 
                  
                  rdfs:subClassOf :Word ;
                  
-                 rdfs:comment "A grammatical word is a word which is a grammatical formative. [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 :definition "A grammatical word is a word which is a grammatical formative. [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                  
                  :example "Engl. «be», «of».  [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
@@ -1417,7 +1416,7 @@ This often the case for inherent meanings such as number for nouns or tense for 
        
        rdfs:subClassOf :Affix ;
        
-       rdfs:comment "An infix is an affix that is added within an otherwise unanalysable root and disrupts this. [Christian Lehmann, under \"infix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+       :definition "An infix is an affix that is added within an otherwise unanalysable root and disrupts this. [Christian Lehmann, under \"infix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -1429,14 +1428,14 @@ This often the case for inherent meanings such as number for nouns or tense for 
             
             rdfs:subClassOf :MorphologicalRelationship ;
             
-            rdfs:seeAlso """Christian Lehmann, under \"inflection\" at http://linguistik.uni-erfurt.de:8080/lido/Lido] :
+            :externalDefinitionDesc """Christian Lehmann, under \"inflection\" at http://linguistik.uni-erfurt.de:8080/lido/Lido] :
 Inflection [flexio] is the syntactically relevant part of morphology. It generates word forms (inflectional forms) of word stems.
 In contrast to derivation, inflection  never results in a change of word class and produces a predictable, regular change of meaning (for regular word-forms only).
 Its expression is typically located farther from the root than that of derivation."""@en ;
             
             :usageNote "In the subclasses of \"Inflection\" the semantic or grammatic categories are not extensively specified. They only serve to declare what kind of morphological relationship(s) is/are expressed on a word-form."@en ;
             
-            rdfs:comment "Is the process of generating word-forms of lexical stems. This class can be extended to describe the inflectional classes of the lexemes of a language."@en .
+            :definition "Is the process of generating word-forms of lexical stems. This class can be extended to describe the inflectional classes of the lexemes of a language."@en .
 
 
 
@@ -1450,9 +1449,9 @@ Its expression is typically located farther from the root than that of derivatio
                 
                 :example "German: \"lenken\"(V) 'to steer'--> \"Lenker\"(N) 'handle-bar, steering wheel'. [Christian Lehmann, under \"instrument noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@de ;
                 
-                rdfs:comment "A noun which is derived from a verb stem denoting that some thing/instrument is used to carry out the meaning of the verb stem."@en ;
+                :definition "A noun which is derived from a verb stem denoting that some thing/instrument is used to carry out the meaning of the verb stem."@en ;
                 
-                rdfs:seeAlso """Christian Lehmann, under \"instrument noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+                :externalDefinitionDesc """Christian Lehmann, under \"instrument noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 An instrument noun is an oriented deverbal noun that designates something that functions as an instrument in the situation designated by the base verb. [Christian Lehmann, under \"instrument noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
@@ -1466,7 +1465,7 @@ An instrument noun is an oriented deverbal noun that designates something that f
                rdfs:subClassOf :Inflection ,
                                :WordFormation ;
                
-               rdfs:comment "Nonconcatenative morphology, also called discontinuous morphology and introflection, is a form of word-formation [and inflection] in which the root is modified and does not involve stringing morphemes together. [Haspelmath and Sims: Understanding morphology. 2002, Sections 3.1.2 - 3.1.4]"@en .
+               :definition "Nonconcatenative morphology, also called discontinuous morphology and introflection, is a form of word-formation [and inflection] in which the root is modified and does not involve stringing morphemes together. [Haspelmath and Sims: Understanding morphology. 2002, Sections 3.1.2 - 3.1.4]"@en .
 
 
 
@@ -1478,7 +1477,7 @@ An instrument noun is an oriented deverbal noun that designates something that f
                       
                       rdfs:subClassOf :Conjugation ;
                       
-                      rdfs:comment "Conjugation that deviates from the regular inflectional pattern."@en .
+                      :definition "Conjugation that deviates from the regular inflectional pattern."@en .
 
 
 
@@ -1490,7 +1489,7 @@ An instrument noun is an oriented deverbal noun that designates something that f
                  
                  rdfs:subClassOf :Degree ;
                  
-                 rdfs:comment "Formation of degree of comparison that deviates from the regular inflectional pattern."@en .
+                 :definition "Formation of degree of comparison that deviates from the regular inflectional pattern."@en .
 
 
 
@@ -1504,9 +1503,9 @@ An instrument noun is an oriented deverbal noun that designates something that f
         
         rdfs:subClassOf :Word ;
         
-        rdfs:comment "A lexeme is a word as it appears as an entry in a dictionary. It has a holistic abstract sense representing the core meaning shared by a set of closely-related word-forms. A lexeme can only be a word that inflects."@en ;
+        :definition "A lexeme is a word as it appears as an entry in a dictionary. It has a holistic abstract sense representing the core meaning shared by a set of closely-related word-forms. A lexeme can only be a word that inflects."@en ;
         
-        rdfs:seeAlso """Christian Lehmann, under \"lexeme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+        :externalDefinitionDesc """Christian Lehmann, under \"lexeme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text, it appears in form of diverse word forms."""@en .
 
 
@@ -1521,7 +1520,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
                    
                    :example "German: Holz 'wood' --> hölzern 'wooden'."@de ;
                    
-                   rdfs:comment "An adjective which is derived from a noun stem denoting some kind of material and means 'being made of this material'."@en .
+                   :definition "An adjective which is derived from a noun stem denoting some kind of material and means 'being made of this material'."@en .
 
 
 
@@ -1531,7 +1530,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
          
          rdfs:label "Meaning"@en ;
          
-         rdfs:comment "This class comprises a wide range of meanings a linguistic sign can be associated with, e.g. linguistic categories, morphosyntactic features, lexical senses, derivational meanings."@en .
+         :definition "This class comprises a wide range of meanings a linguistic sign can be associated with, e.g. linguistic categories, morphosyntactic features, lexical senses, derivational meanings."@en .
 
 
 
@@ -1546,7 +1545,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
                          owl:someValuesFrom :Representation
                        ] ;
        
-       rdfs:comment "A morph is a concrete realization of a single morpheme which usually results from segmentation."@en ;
+       :definition "A morph is a concrete realization of a single morpheme which usually results from segmentation."@en ;
        
        :usageNote "A morph resource describes only the perceptible side of a morpheme, i.e. the significans. As such it is not directly associated with a meaning but with a corresponding morpheme resource."@en .
 
@@ -1568,7 +1567,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
 
 For convenience the morpheme instances are rendered by the same notatinal means as the morphemic glosses, i.e. the plural morpheme is rendered in short as \"PL\"."""@en ;
           
-          rdfs:comment """The morpheme class usually contains the smallest meaning-bearing units of a language. These comprise all semantically or grammatically distinct parts which are identifiable by segmentation of  the morphs of which a word or a word-form consists.
+          :definition """The morpheme class usually contains the smallest meaning-bearing units of a language. These comprise all semantically or grammatically distinct parts which are identifiable by segmentation of  the morphs of which a word or a word-form consists.
 
 Depending on the kind of correspondence betweene a morpheme its morph realization, four kinds of morphemes are established: 1) atomic morphemes, 2) fusional morphemes, 3) Empty morphemes and 4) complex morphemes."""@en .
 
@@ -1580,7 +1579,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                    
                    rdfs:label "Morpheme inventory"@en ;
                    
-                   rdfs:comment "The morpheme inventory is the object that contains morphemic entries. It is specified for the natural language it describes."@en .
+                   :definition "The morpheme inventory is the object that contains morphemic entries. It is specified for the natural language it describes."@en .
 
 
 
@@ -1590,7 +1589,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                 
                 rdfs:label "Morphemic gloss"@en ;
                 
-                rdfs:comment "The gloss is the abstract identity of a morpheme. It serves as a metalinguistic representation of morphological meanings. Most of the glosses used for grammatical concepts are taken from the Leipzig Glossing Rules  (https://www.eva.mpg.de/lingua/pdf/LGR08.02.05.pdf) or from Lehmann 2004 (http://christianlehmann.eu/publ/img.pdf). Lexical senses are usually glossed in English by using the orthographic representation of the lexical element (such as stems and roots) but can be also given in the language of the MMoOn language inventory."@en .
+                :definition "The gloss is the abstract identity of a morpheme. It serves as a metalinguistic representation of morphological meanings. Most of the glosses used for grammatical concepts are taken from the Leipzig Glossing Rules  (https://www.eva.mpg.de/lingua/pdf/LGR08.02.05.pdf) or from Lehmann 2004 (http://christianlehmann.eu/publ/img.pdf). Lexical senses are usually glossed in English by using the orthographic representation of the lexical element (such as stems and roots) but can be also given in the language of the MMoOn language inventory."@en .
 
 
 
@@ -1600,7 +1599,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                            
                            rdfs:label "Morphological Relationship"@en ;
                            
-                           rdfs:comment "Is the relationship between word-forms of a lexeme (inflection) or the relationship between lexemes of a word family (derivation and compounding). [Haspelmath and Sims: Understanding morphology. 2002:18]"@en .
+                           :definition "Is the relationship between word-forms of a lexeme (inflection) or the relationship between lexemes of a word family (derivation and compounding). [Haspelmath and Sims: Understanding morphology. 2002:18]"@en .
 
 
 
@@ -1612,7 +1611,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
           
           rdfs:subClassOf :AdjectivalInflection ;
           
-          rdfs:comment "Some adjectives do not inflect for the category degree of comparison, e.g. \"dead\", \"absolute\", \"pregnant\". In agreement with the noun it modifies it can still be marked for nominal inflectional categories such as gender, case and number."@en .
+          :definition "Some adjectives do not inflect for the category degree of comparison, e.g. \"dead\", \"absolute\", \"pregnant\". In agreement with the noun it modifies it can still be marked for nominal inflectional categories such as gender, case and number."@en .
 
 
 
@@ -1624,7 +1623,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
               
               rdfs:subClassOf :Inflection ;
               
-              rdfs:comment "This class marks words which do not inflect. This holds for most grammatical words but also for some lexemes (e.g. the invariable adjective \"super\" in German)."@en .
+              :definition "This class marks words which do not inflect. This holds for most grammatical words but also for some lexemes (e.g. the invariable adjective \"super\" in German)."@en .
 
 
 
@@ -1636,7 +1635,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                  
                  rdfs:subClassOf :WordFormation ;
                  
-                 rdfs:comment "Simple lexemes that cannot be further segmented into derivational or compositional components exhibit no kind of word-formation. Rather, they serve as the derivational or compositional basis for derived words and compound words."@en .
+                 :definition "Simple lexemes that cannot be further segmented into derivational or compositional components exhibit no kind of word-formation. Rather, they serve as the derivational or compositional basis for derived words and compound words."@en .
 
 
 
@@ -1648,7 +1647,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                
                rdfs:subClassOf :Conversion ;
                
-               rdfs:comment "A nominal adverb is an adverb which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+               :definition "A nominal adverb is an adverb which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
                
                :example "Engl.: \"backstage\"(N) --> \"backstage\"(Adv)."@en .
 
@@ -1662,7 +1661,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                  
                  rdfs:subClassOf :Compounding ;
                  
-                 rdfs:comment "A nominal compound is a noun formed by composition of a nominal stem and another stem."@en ;
+                 :definition "A nominal compound is a noun formed by composition of a nominal stem and another stem."@en ;
                  
                  :example "Engl.: \"blackboard\"(N) = \"black\"(Adj) + \"board\"(N)."@en .
 
@@ -1676,7 +1675,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                    
                    rdfs:subClassOf :Inflection ;
                    
-                   rdfs:comment "Is the process of generating word-forms of nominal stems."@en .
+                   :definition "Is the process of generating word-forms of nominal stems."@en .
 
 
 
@@ -1688,7 +1687,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
              
              rdfs:subClassOf :Conversion ;
              
-             rdfs:comment "A nominal verb is a verb which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+             :definition "A nominal verb is a verb which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
              
              :example "Engl.: \"the steam\"(N) --> \"to steam\"(V)."@en .
 
@@ -1702,7 +1701,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                
                rdfs:subClassOf :Conversion ;
                
-               rdfs:comment "A noun adjective is an adjective which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+               :definition "A noun adjective is an adjective which is fomed by conversion from a noun and which entails no further derivational meaning except the entailed wordclass-change."@en ;
                
                :example "Engl.: \"Swiss\"(NPr) --> \"Swiss\"(Adj)."@en .
 
@@ -1716,7 +1715,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                 
                 rdfs:subClassOf :AdjectivalInflection ;
                 
-                rdfs:comment "Predicatively used adjectives (in sentences such as \"Peter is small.\") charactarize the noun when occuring with copula verbs like \"be\" and do not inflect for nominal agreement. Relational adjectives (i.e. gradable adjectives) do still inflect for degree."@en .
+                :definition "Predicatively used adjectives (in sentences such as \"Peter is small.\") charactarize the noun when occuring with copula verbs like \"be\" and do not inflect for nominal agreement. Relational adjectives (i.e. gradable adjectives) do still inflect for degree."@en .
 
 
 
@@ -1730,7 +1729,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
         
         rdfs:subClassOf :Affix ;
         
-        rdfs:comment "A prefix is an affix that precedes its stem or root. [Christian Lehmann, under \"prefix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+        :definition "A prefix is an affix that precedes its stem or root. [Christian Lehmann, under \"prefix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -1742,7 +1741,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                     
                     rdfs:subClassOf :Conjugation ;
                     
-                    rdfs:comment "Conjugation that exhibits a regular inflectional pattern."@en .
+                    :definition "Conjugation that exhibits a regular inflectional pattern."@en .
 
 
 
@@ -1754,7 +1753,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                
                rdfs:subClassOf :Degree ;
                
-               rdfs:comment "Formation of degree of comparison that exhibits a regular inflectional pattern."@en .
+               :definition "Formation of degree of comparison that exhibits a regular inflectional pattern."@en .
 
 
 
@@ -1778,7 +1777,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                                               )
                                 ] ;
                 
-                rdfs:comment "A linguistic representation of a word or morph.."@en .
+                :definition "A linguistic representation of a word or morph.."@en .
 
 
 
@@ -1792,7 +1791,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
       
       rdfs:subClassOf :Morph ;
       
-      rdfs:comment "A morph that constitutes the semantic nucleus of a stem. It cannot be further segmented and is often not specified for a part of speech. There are lexical roots, like Engl. «get», and grammatical roots, like Engl. «wh-». [Christian Lehmann, under \"root\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+      :definition "A morph that constitutes the semantic nucleus of a stem. It cannot be further segmented and is often not specified for a part of speech. There are lexical roots, like Engl. «get», and grammatical roots, like Engl. «wh-». [Christian Lehmann, under \"root\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -1804,16 +1803,17 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
           
           rdfs:subClassOf :Affix ;
           
-          rdfs:isDefinedBy "http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsASimulfix.htm" ;
+          :definition "A simulfix is a change or replacement of vowels or consonants (usually vowels) which changes the meaning of a word, e.g. \"eat\" in past tense becomes \"ate \"tooth\" becomes \"teeth\" when plural. [http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsASimulfix.htm]"@en ;
           
-          rdfs:comment "A simulfix is a change or replacement of vowels or consonants (usually vowels) which changes the meaning of a word, e.g. \"eat\" in past tense becomes \"ate \"tooth\" becomes \"teeth\" when plural. [http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsASimulfix.htm]"@en ,
-                       """Also known as replacive morph: 
+          :externalDefinitionDesc """Also known as replacive morph: 
 A replacive morph is a descriptive construct representing an internal modification.
 Delimitation and History:
 The replacive morph is a construct of taxonomic structuralism.
 [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
           
-          :example "In ‚man - men’, the latter contains the replacive morph ‚a -> e’. [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+          :example "In ‚man - men’, the latter contains the replacive morph ‚a -> e’. [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+          
+          :externalDefinition <http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsASimulfix.htm> .
 
 
 
@@ -1827,7 +1827,7 @@ The replacive morph is a construct of taxonomic structuralism.
       
       rdfs:subClassOf :Morph ;
       
-      rdfs:comment """In a word-form: The stem is the morph to which inflectional marking applies. It is the morphological representative of the lexeme in a given word-form and is specified for part of speech.
+      :definition """In a word-form: The stem is the morph to which inflectional marking applies. It is the morphological representative of the lexeme in a given word-form and is specified for part of speech.
 
 In a derived word: The stem is the morphological representative of the lexical basis from which it is derived. 
 
@@ -1845,7 +1845,7 @@ In a compound word: The stem is the morphological representative of one of the t
         
         rdfs:subClassOf :Affix ;
         
-        rdfs:comment "A suffix is an affix that follows its stem or root. [Christian Lehmann, under \"suffix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+        :definition "A suffix is an affix that follows its stem or root. [Christian Lehmann, under \"suffix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -1857,7 +1857,7 @@ In a compound word: The stem is the morphological representative of one of the t
                    
                    rdfs:subClassOf :Wordform ;
                    
-                   rdfs:comment "A word form is synthetic 1 iff it is not analytic [i.e. all its semantic and grammatical components are represented in one word form]. [Christian Lehmann, under \"synthesis\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   :definition "A word form is synthetic 1 iff it is not analytic [i.e. all its semantic and grammatical components are represented in one word form]. [Christian Lehmann, under \"synthesis\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                    
                    :example "«went» is a synthetic word-form of the lexeme «go»."@en .
 
@@ -1871,7 +1871,7 @@ In a compound word: The stem is the morphological representative of one of the t
           
           rdfs:subClassOf :Affix ;
           
-          rdfs:comment "A transfix is a discontinuous affix at least one of whose components is an infix.  [Christian Lehmann, under \"transfix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+          :definition "A transfix is a discontinuous affix at least one of whose components is an infix.  [Christian Lehmann, under \"transfix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -1885,7 +1885,7 @@ In a compound word: The stem is the morphological representative of one of the t
                  
                  :example "German: \"regierend\"(VParticiple) 'to reign' --> \"regierend\"(Adj) 'reigning'."@de ;
                  
-                 rdfs:comment "A verbal adjective is an adjective which is fomed by conversion from a verb and which entails no further derivational meaning except the entailed wordclass-change."@en .
+                 :definition "A verbal adjective is an adjective which is fomed by conversion from a verb and which entails no further derivational meaning except the entailed wordclass-change."@en .
 
 
 
@@ -1897,7 +1897,7 @@ In a compound word: The stem is the morphological representative of one of the t
                 
                 rdfs:subClassOf :Compounding ;
                 
-                rdfs:comment "A verbal compound is a verb formed by composition of a verbal stem and another stem."@en ;
+                :definition "A verbal compound is a verb formed by composition of a verbal stem and another stem."@en ;
                 
                 :example "Eng.: \"force feed\"(V) = \"force\"(N) + \"feed\"(V)."@en .
 
@@ -1911,7 +1911,7 @@ In a compound word: The stem is the morphological representative of one of the t
                   
                   rdfs:subClassOf :Inflection ;
                   
-                  rdfs:comment "Is the process of generating word-forms of verbal stems."@en .
+                  :definition "Is the process of generating word-forms of verbal stems."@en .
 
 
 
@@ -1923,7 +1923,7 @@ In a compound word: The stem is the morphological representative of one of the t
             
             rdfs:subClassOf :Conversion ;
             
-            rdfs:comment "A verbal noun is a noun which is fomed by conversion from a verb and which entails no further derivational meaning except the entailed wordclass-change."@en ;
+            :definition "A verbal noun is a noun which is fomed by conversion from a verb and which entails no further derivational meaning except the entailed wordclass-change."@en ;
             
             :example "Engl.: \"to call\"(V) --> \"the call\"(N)."@en .
 
@@ -1940,10 +1940,10 @@ In a compound word: The stem is the morphological representative of one of the t
                         owl:someValuesFrom :Representation
                       ] ;
       
-      rdfs:comment """A word is a unit which is a constituent at the phrase level and above. It is sometimes identifiable according to such criteria as a) being the minimal possible unit in a reply, b) having features such as a regular stress pattern, and phonological changes conditioned by or blocked at word boundaries, c) being the largest unit resistant to insertion of new constituents within its boundaries, or d)  being the smallest constituent that can be moved within a sentence without making the sentence ungrammatical.
+      :definition """A word is a unit which is a constituent at the phrase level and above. It is sometimes identifiable according to such criteria as a) being the minimal possible unit in a reply, b) having features such as a regular stress pattern, and phonological changes conditioned by or blocked at word boundaries, c) being the largest unit resistant to insertion of new constituents within its boundaries, or d)  being the smallest constituent that can be moved within a sentence without making the sentence ungrammatical.
 A word is sometimes placed, in a hierarchy of grammatical constituents, above the morpheme level and below the phrase level. [http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAWord.htm]"""@en ;
       
-      rdfs:seeAlso """Christian Lehmann, under \"word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+      :externalDefinitionDesc """Christian Lehmann, under \"word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 A word is a (grammatical) unit that enjoys a moderate degree of autonomy. I.e. while its parts tend to occupy fixed (morphological) positions, to be welded phonologically, to contract well-defined paradigmatic relations, all this is true to a lesser extent for the word itself and to an even lesser extent for the syntagm.
 The cognitive counterpart of a word in general is a mental representation."""@en .
 
@@ -1957,11 +1957,11 @@ The cognitive counterpart of a word in general is a mental representation."""@en
                
                rdfs:subClassOf :MorphologicalRelationship ;
                
-               rdfs:seeAlso """Christian Lehmann, under \"word formation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
+               :externalDefinitionDesc """Christian Lehmann, under \"word formation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
 Stem formation is the lexical part of morphology.
 Stem formation is the formation of stems, normally on the basis of at least one component stem. Each stem thus generated potentially constitutes a lexeme [lexema] of its own."""@en ;
                
-               rdfs:comment """Is the formation of words based on other words by the means of derivation and compounding. 
+               :definition """Is the formation of words based on other words by the means of derivation and compounding. 
 
 Word-formation is also called lexeme-formation and stem-formation ."""@en .
 
@@ -1983,7 +1983,7 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
                             owl:someValuesFrom :Inflection
                           ] ;
           
-          rdfs:comment """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+          :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
 
 It expresses the combination of a lexeme and a set of grammatical meanings. A word-form always is an inflectional variant of a lexeme."""@en ;
           
@@ -2005,7 +2005,7 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
                              owl:someValuesFrom :Morph
                            ] ;
            
-           rdfs:comment """A morpheme that has a morphological meaning that corresponds to no overt form.  [Haspelmath and Sims: Understanding morphology. 2002:64]
+           :definition """A morpheme that has a morphological meaning that corresponds to no overt form.  [Haspelmath and Sims: Understanding morphology. 2002:64]
 
 A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
            
