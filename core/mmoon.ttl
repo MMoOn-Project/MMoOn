@@ -280,10 +280,6 @@ This is the reference ontology from which various language specific MMoOn Invent
 
 :forLanguage rdf:type owl:ObjectProperty ;
              
-             rdfs:label "for language"@en ;
-             
-             rdfs:comment "States that a MMoOn morpheme inventory is specified for a certain language."@en ;
-             
              rdfs:domain :MorphemeInventory ;
              
              rdfs:subPropertyOf :associatedToLanguage .
@@ -1729,7 +1725,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                                               )
                                 ] ;
                 
-                rdfs:comment "A linguistic representation of a word or morph.."@en .
+                rdfs:comment "A linguistic representation of a word or morph."@en .
 
 
 
@@ -1926,12 +1922,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :consistsOfMorph ;
-                            owl:someValuesFrom :Stem
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :inflectionalRelation ;
                             owl:someValuesFrom :Inflection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :consistsOfMorph ;
+                            owl:someValuesFrom :Stem
                           ] ;
           
           rdfs:comment """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]

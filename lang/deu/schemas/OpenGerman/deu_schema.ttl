@@ -19,6 +19,12 @@
 #################################################################
 
 
+###  http://mmoon.org/mmoon/forLanguage
+
+mmoon:forLanguage rdf:type owl:AnnotationProperty .
+
+
+
 ###  http://purl.org/dc/elements/1.1/language
 
 <http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
@@ -116,7 +122,7 @@
             rdfs:label "Leeres Morphem"@de ,
                        "Empty morph"@en ;
             
-            rdfs:subClassOf :Morph ,
+            rdfs:subClassOf :Affix ,
                             mmoon:EmptyMorph .
 
 
@@ -309,7 +315,7 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
            rdfs:label "Nullmorphem"@de ,
                       "Zero morph"@en ;
            
-           rdfs:subClassOf :Morph ,
+           rdfs:subClassOf :Affix ,
                            mmoon:ZeroMorph .
 
 
@@ -607,7 +613,7 @@ Der Adjektivstamm weicht von der regelmäßigen Superlativbildung ab.
                    rdfs:label "Morpheminventar"@de ,
                               "Morpheme inventory"@en ;
                    
-                   <http://purl.org/dc/elements/1.1/language> <http://lexvo.org/id/iso639-3/deu> .
+                   mmoon:forLanguage <http://lexvo.org/id/iso639-3/deu> .
 
 
 
