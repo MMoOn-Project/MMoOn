@@ -85,14 +85,6 @@ reference point or when additional textual information has to be provided for an
 
 
 
-###  http://www.w3.org/2004/02/skos/core#definition
-
-skos:definition rdf:type owl:AnnotationProperty .
-
-
-
-
-
 #################################################################
 #
 #    Object Properties
@@ -1777,7 +1769,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                                               )
                                 ] ;
                 
-                :definition "A linguistic representation of a word or morph.."@en .
+                :definition "A linguistic representation of a word or morph."@en .
 
 
 
@@ -2065,20 +2057,6 @@ gold:Stem rdf:type owl:Class .
 
 gold:Suffix rdf:type owl:Class .
 
-
-
-
-
-#################################################################
-#
-#    Individuals
-#
-#################################################################
-
-
-###  http://mmoon.org/mmoon/0
-
-<http://mmoon.org/mmoon/0> rdf:type owl:NamedIndividual .
 
 
 
