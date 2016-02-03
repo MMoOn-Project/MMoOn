@@ -7,7 +7,7 @@
 @prefix gold: <http://purl.org/linguistics/gold/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix lexvo: <http://lexvo.org/ontology#> .f
+@prefix lexvo: <http://lexvo.org/ontology#> .
 @prefix mmoon: <http://mmoon.org/mmoon/> .
 @base <http://mmoon.org/mmoon/> .
 
