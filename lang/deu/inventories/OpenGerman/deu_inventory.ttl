@@ -581,7 +581,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Kauf> rdf:type deu_schema:Representation ,
                                                                       owl:NamedIndividual ;
                                                              
-                                                             mmoon:orthographicRepresentation "Kauf"@de .
+                                                             mmoon:orthographicRepresentation "Kauf" .
 
 
 
@@ -590,7 +590,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Kaufe> rdf:type deu_schema:Representation ,
                                                                        owl:NamedIndividual ;
                                                               
-                                                              mmoon:orthographicRepresentation "Kaufe"@de .
+                                                              mmoon:orthographicRepresentation "Kaufe" .
 
 
 
@@ -599,7 +599,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Kaufes> rdf:type deu_schema:Representation ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               mmoon:orthographicRepresentation "Kaufes"@de .
+                                                               mmoon:orthographicRepresentation "Kaufes" .
 
 
 
@@ -608,7 +608,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Kaufs> rdf:type deu_schema:Representation ,
                                                                        owl:NamedIndividual ;
                                                               
-                                                              mmoon:orthographicRepresentation "Kaufs"@de .
+                                                              mmoon:orthographicRepresentation "Kaufs" .
 
 
 
@@ -617,7 +617,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Käufe> rdf:type deu_schema:Representation ,
                                                                        owl:NamedIndividual ;
                                                               
-                                                              mmoon:orthographicRepresentation "Käufe"@de .
+                                                              mmoon:orthographicRepresentation "Käufe" .
 
 
 
@@ -626,7 +626,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Käufen> rdf:type deu_schema:Representation ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               mmoon:orthographicRepresentation "Käufen"@de .
+                                                               mmoon:orthographicRepresentation "Käufen" .
 
 
 
@@ -635,7 +635,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf> rdf:type deu_schema:Representation ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               mmoon:orthographicRepresentation "Schlaf"@de .
+                                                               mmoon:orthographicRepresentation "Schlaf" .
 
 
 
@@ -644,7 +644,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Schlafe> rdf:type deu_schema:Representation ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                mmoon:orthographicRepresentation "Schlafe"@de .
+                                                                mmoon:orthographicRepresentation "Schlafe" .
 
 
 
@@ -653,7 +653,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Schlafes> rdf:type deu_schema:Representation ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 mmoon:orthographicRepresentation "Schlafes"@de .
+                                                                 mmoon:orthographicRepresentation "Schlafes" .
 
 
 
@@ -662,7 +662,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/Schlafs> rdf:type deu_schema:Representation ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                mmoon:orthographicRepresentation "Schlafs"@de .
+                                                                mmoon:orthographicRepresentation "Schlafs" .
 
 
 
@@ -671,7 +671,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/bin> rdf:type deu_schema:Representation ,
                                                                      owl:NamedIndividual ;
                                                             
-                                                            mmoon:orthographicRepresentation "bin"@de .
+                                                            mmoon:orthographicRepresentation "bin" .
 
 
 
@@ -680,7 +680,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/bist> rdf:type deu_schema:Representation ,
                                                                       owl:NamedIndividual ;
                                                              
-                                                             mmoon:orthographicRepresentation "bist"@de .
+                                                             mmoon:orthographicRepresentation "bist" .
 
 
 
@@ -698,7 +698,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/ist> rdf:type deu_schema:Representation ,
                                                                      owl:NamedIndividual ;
                                                             
-                                                            mmoon:orthographicRepresentation "ist"@de .
+                                                            mmoon:orthographicRepresentation "ist" .
 
 
 
@@ -707,7 +707,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> rdf:type deu_schema:Representation ,
                                                                       owl:NamedIndividual ;
                                                              
-                                                             mmoon:orthographicRepresentation "kauf"@de .
+                                                             mmoon:orthographicRepresentation "kauf" .
 
 
 
@@ -716,7 +716,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/kaufe> rdf:type deu_schema:Representation ,
                                                                        owl:NamedIndividual ;
                                                               
-                                                              mmoon:orthographicRepresentation "kaufe"@de .
+                                                              mmoon:orthographicRepresentation "kaufe" .
 
 
 
@@ -725,7 +725,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/kaufen> rdf:type deu_schema:Representation ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               mmoon:orthographicRepresentation "kaufen"@de .
+                                                               mmoon:orthographicRepresentation "kaufen" .
 
 
 
@@ -734,7 +734,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/kaufst> rdf:type deu_schema:Representation ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               mmoon:orthographicRepresentation "kaufst"@de .
+                                                               mmoon:orthographicRepresentation "kaufst" .
 
 
 
@@ -743,7 +743,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/kauft> rdf:type deu_schema:Representation ,
                                                                        owl:NamedIndividual ;
                                                               
-                                                              mmoon:orthographicRepresentation "kauft"@de .
+                                                              mmoon:orthographicRepresentation "kauft" .
 
 
 
@@ -752,7 +752,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/kleiner> rdf:type deu_schema:Representation ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                mmoon:orthographicRepresentation "kleiner"@de .
+                                                                mmoon:orthographicRepresentation "kleiner" .
 
 
 
@@ -761,7 +761,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/kleinerer> rdf:type deu_schema:Representation ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  mmoon:orthographicRepresentation "kleinerer"@de .
+                                                                  mmoon:orthographicRepresentation "kleinerer" .
 
 
 
@@ -770,7 +770,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/kleinster> rdf:type deu_schema:Representation ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  mmoon:orthographicRepresentation "kleinster"@de .
+                                                                  mmoon:orthographicRepresentation "kleinster" .
 
 
 
@@ -779,7 +779,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/schlaf> rdf:type deu_schema:Representation ,
                                                                         owl:NamedIndividual ;
                                                                
-                                                               mmoon:orthographicRepresentation "schlaf"@de .
+                                                               mmoon:orthographicRepresentation "schlaf" .
 
 
 
@@ -788,7 +788,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/schlafe> rdf:type deu_schema:Representation ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                mmoon:orthographicRepresentation "schlafe"@de .
+                                                                mmoon:orthographicRepresentation "schlafe" .
 
 
 
@@ -797,7 +797,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/schlafen> rdf:type deu_schema:Representation ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 mmoon:orthographicRepresentation "schlafen"@de .
+                                                                 mmoon:orthographicRepresentation "schlafen" .
 
 
 
@@ -806,7 +806,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/schlaft> rdf:type deu_schema:Representation ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                mmoon:orthographicRepresentation "schlaft"@de .
+                                                                mmoon:orthographicRepresentation "schlaft" .
 
 
 
@@ -815,7 +815,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/schläfst> rdf:type deu_schema:Representation ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 mmoon:orthographicRepresentation "schläfst"@de .
+                                                                 mmoon:orthographicRepresentation "schläfst" .
 
 
 
@@ -824,7 +824,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/schläft> rdf:type deu_schema:Representation ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                mmoon:orthographicRepresentation "schläft"@de .
+                                                                mmoon:orthographicRepresentation "schläft" .
 
 
 
@@ -833,7 +833,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/sei> rdf:type deu_schema:Representation ,
                                                                      owl:NamedIndividual ;
                                                             
-                                                            mmoon:orthographicRepresentation "sei"@de .
+                                                            mmoon:orthographicRepresentation "sei" .
 
 
 
@@ -842,7 +842,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/seid> rdf:type deu_schema:Representation ,
                                                                       owl:NamedIndividual ;
                                                              
-                                                             mmoon:orthographicRepresentation "seid"@de .
+                                                             mmoon:orthographicRepresentation "seid" .
 
 
 
@@ -851,7 +851,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/sind> rdf:type deu_schema:Representation ,
                                                                       owl:NamedIndividual ;
                                                              
-                                                             mmoon:orthographicRepresentation "sind"@de .
+                                                             mmoon:orthographicRepresentation "sind" .
 
 
 
@@ -860,7 +860,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/verkauf> rdf:type deu_schema:Representation ,
                                                                          owl:NamedIndividual ;
                                                                 
-                                                                mmoon:orthographicRepresentation "verkauf"@de .
+                                                                mmoon:orthographicRepresentation "verkauf" .
 
 
 
@@ -869,7 +869,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufe> rdf:type deu_schema:Representation ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 mmoon:orthographicRepresentation "verkaufe"@de .
+                                                                 mmoon:orthographicRepresentation "verkaufe" .
 
 
 
@@ -878,7 +878,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufen> rdf:type deu_schema:Representation ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  mmoon:orthographicRepresentation "verkaufen"@de .
+                                                                  mmoon:orthographicRepresentation "verkaufen" .
 
 
 
@@ -887,7 +887,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufst> rdf:type deu_schema:Representation ,
                                                                            owl:NamedIndividual ;
                                                                   
-                                                                  mmoon:orthographicRepresentation "verkaufst"@de .
+                                                                  mmoon:orthographicRepresentation "verkaufst" .
 
 
 
@@ -896,7 +896,7 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Representation/verkauft> rdf:type deu_schema:Representation ,
                                                                           owl:NamedIndividual ;
                                                                  
-                                                                 mmoon:orthographicRepresentation "verkauft"@de .
+                                                                 mmoon:orthographicRepresentation "verkauft" .
 
 
 
