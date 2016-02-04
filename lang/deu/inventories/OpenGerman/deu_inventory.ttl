@@ -279,6 +279,30 @@ deu_inventory:AtomicMorpheme_sei rdf:type deu_schema:AtomicMorpheme ,
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/ComplexMorpheme_RES-kauf.IMP
+
+deu_inventory:ComplexMorpheme_RES-kauf.IMP rdf:type deu_schema:ComplexMorpheme ,
+                                                    owl:NamedIndividual ;
+                                           
+                                           rdfs:label "RES-kauf.IMP "@de ;
+                                           
+                                           mmoon:consistsOfMorpheme deu_inventory:AtomicMorpheme_RES ,
+                                                                    deu_inventory:FusionalMorpheme_kauf.IMP .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/ComplexMorpheme_RES-kauf.PRS.IND
+
+deu_inventory:ComplexMorpheme_RES-kauf.PRS.IND rdf:type deu_schema:ComplexMorpheme ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "RES-kauf.PRS.IND"@de ;
+                                               
+                                               mmoon:consistsOfMorpheme deu_inventory:AtomicMorpheme_RES ,
+                                                                        deu_inventory:FusionalMorpheme_kauf.PRS.IND .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/ComplexMorpheme_klein-COMPR
 
 deu_inventory:ComplexMorpheme_klein-COMPR rdf:type deu_schema:ComplexMorpheme ,
@@ -286,8 +310,8 @@ deu_inventory:ComplexMorpheme_klein-COMPR rdf:type deu_schema:ComplexMorpheme ,
                                           
                                           rdfs:label "klein-COMPR"@de ;
                                           
-                                          mmoon:consistsOfAtMorpheme <http://mmoon.org/lang/deu/inventory/og/AtomicMorpheme/COMPR> ,
-                                                                     <http://mmoon.org/lang/deu/inventory/og/AtomicMorpheme/klein> .
+                                          mmoon:consistsOfMorpheme deu_inventory:AtomicMorpheme_COMPR ,
+                                                                   deu_inventory:AtomicMorpheme_klein .
 
 
 
@@ -298,8 +322,17 @@ deu_inventory:ComplexMorpheme_klein-SUP rdf:type deu_schema:ComplexMorpheme ,
                                         
                                         rdfs:label "klein-SUP"@de ;
                                         
-                                        mmoon:consistsOfAtMorpheme <http://mmoon.org/lang/deu/inventory/og/AtomicMorpheme/SUP> ,
-                                                                   <http://mmoon.org/lang/deu/inventory/og/AtomicMorpheme/klein> .
+                                        mmoon:consistsOfMorpheme deu_inventory:AtomicMorpheme_SUP ,
+                                                                 deu_inventory:AtomicMorpheme_klein .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_1.PL
+
+deu_inventory:FusionalMorpheme_1.PL rdf:type deu_schema:FusionalMorpheme ,
+                                             owl:NamedIndividual ;
+                                    
+                                    rdfs:label "1.PL"@de .
 
 
 
@@ -330,12 +363,39 @@ deu_inventory:FusionalMorpheme_2.SG rdf:type deu_schema:FusionalMorpheme ,
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_3.PL
+
+deu_inventory:FusionalMorpheme_3.PL rdf:type deu_schema:FusionalMorpheme ,
+                                             owl:NamedIndividual ;
+                                    
+                                    rdfs:label "3.PL"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_3.SG
+
+deu_inventory:FusionalMorpheme_3.SG rdf:type deu_schema:FusionalMorpheme ,
+                                             owl:NamedIndividual ;
+                                    
+                                    rdfs:label "3.SG"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_ACC.PL
+
+deu_inventory:FusionalMorpheme_ACC.PL rdf:type deu_schema:FusionalMorpheme ,
+                                               owl:NamedIndividual ;
+                                      
+                                      rdfs:label "ACC.PL"@de .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_ACC.SG
 
 deu_inventory:FusionalMorpheme_ACC.SG rdf:type deu_schema:FusionalMorpheme ,
                                                owl:NamedIndividual ;
                                       
-                                      rdfs:label "AC.SG"@de .
+                                      rdfs:label "ACC.SG"@de .
 
 
 
@@ -348,12 +408,30 @@ deu_inventory:FusionalMorpheme_AG.NMLZ rdf:type deu_schema:FusionalMorpheme ,
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_DAT.PL
+
+deu_inventory:FusionalMorpheme_DAT.PL rdf:type deu_schema:FusionalMorpheme ,
+                                               owl:NamedIndividual ;
+                                      
+                                      rdfs:label "DAT.PL"@de .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_DAT.SG
 
 deu_inventory:FusionalMorpheme_DAT.SG rdf:type deu_schema:FusionalMorpheme ,
                                                owl:NamedIndividual ;
                                       
                                       rdfs:label "DAT.SG"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_GEN.PL
+
+deu_inventory:FusionalMorpheme_GEN.PL rdf:type deu_schema:FusionalMorpheme ,
+                                               owl:NamedIndividual ;
+                                      
+                                      rdfs:label "GEN.PL"@de .
 
 
 
@@ -366,6 +444,15 @@ deu_inventory:FusionalMorpheme_GEN.SG rdf:type deu_schema:FusionalMorpheme ,
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_NOM.PL
+
+deu_inventory:FusionalMorpheme_NOM.PL rdf:type deu_schema:FusionalMorpheme ,
+                                               owl:NamedIndividual ;
+                                      
+                                      rdfs:label "NOM.PL"@de .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_NOM.SG.M
 
 deu_inventory:FusionalMorpheme_NOM.SG.M rdf:type deu_schema:FusionalMorpheme ,
@@ -375,12 +462,156 @@ deu_inventory:FusionalMorpheme_NOM.SG.M rdf:type deu_schema:FusionalMorpheme ,
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_kauf.IMP
+
+deu_inventory:FusionalMorpheme_kauf.IMP rdf:type deu_schema:FusionalMorpheme ,
+                                                 owl:NamedIndividual ;
+                                        
+                                        rdfs:label "kauf.IMP"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_kauf.M.SG
+
+deu_inventory:FusionalMorpheme_kauf.M.SG rdf:type deu_schema:FusionalMorpheme ,
+                                                  owl:NamedIndividual ;
+                                         
+                                         rdfs:label "kauf.M.SG"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_kauf.M.SG.NOM
+
+deu_inventory:FusionalMorpheme_kauf.M.SG.NOM rdf:type deu_schema:FusionalMorpheme ,
+                                                      owl:NamedIndividual ;
+                                             
+                                             rdfs:label "kauf.M.SG.NOM"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_kauf.PL.M
+
+deu_inventory:FusionalMorpheme_kauf.PL.M rdf:type deu_schema:FusionalMorpheme ,
+                                                  owl:NamedIndividual ;
+                                         
+                                         rdfs:label "kauf.PL.M"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_kauf.PRS.IND
+
+deu_inventory:FusionalMorpheme_kauf.PRS.IND rdf:type deu_schema:FusionalMorpheme ,
+                                                     owl:NamedIndividual ;
+                                            
+                                            rdfs:label "kauf.PRS.IND"@de .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_klein.POS
 
 deu_inventory:FusionalMorpheme_klein.POS rdf:type deu_schema:FusionalMorpheme ,
                                                   owl:NamedIndividual ;
                                          
                                          rdfs:label "klein.POS"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_schlaf.IMP
+
+deu_inventory:FusionalMorpheme_schlaf.IMP rdf:type deu_schema:FusionalMorpheme ,
+                                                   owl:NamedIndividual ;
+                                          
+                                          rdfs:label "schlaf.IMP"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_schlaf.PRS.IND
+
+deu_inventory:FusionalMorpheme_schlaf.PRS.IND rdf:type deu_schema:FusionalMorpheme ,
+                                                       owl:NamedIndividual ;
+                                              
+                                              rdfs:label "schlaf.PRS.IND"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_schlaf.SG.M
+
+deu_inventory:FusionalMorpheme_schlaf.SG.M rdf:type deu_schema:FusionalMorpheme ,
+                                                    owl:NamedIndividual ;
+                                           
+                                           rdfs:label "schlaf.SG.M"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_schlaf.SG.M.NOM
+
+deu_inventory:FusionalMorpheme_schlaf.SG.M.NOM rdf:type deu_schema:FusionalMorpheme ,
+                                                        owl:NamedIndividual ;
+                                               
+                                               rdfs:label "schlaf.SG.M.NOM"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_sei.1.PL.PRS.IND
+
+deu_inventory:FusionalMorpheme_sei.1.PL.PRS.IND rdf:type deu_schema:FusionalMorpheme ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                rdfs:label "sei.1.PL.PRS.IND"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_sei.1.SG.PRS.IND
+
+deu_inventory:FusionalMorpheme_sei.1.SG.PRS.IND rdf:type deu_schema:FusionalMorpheme ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                rdfs:label "sei.1.SG.PRS.IND"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_sei.2.PL.PRS.IND
+
+deu_inventory:FusionalMorpheme_sei.2.PL.PRS.IND rdf:type deu_schema:FusionalMorpheme ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                rdfs:label "sei.2.PL.PRS.IND"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_sei.2.SG.PRS.IND
+
+deu_inventory:FusionalMorpheme_sei.2.SG.PRS.IND rdf:type deu_schema:FusionalMorpheme ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                rdfs:label "sei.2.SG.PRS.IND"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_sei.3.PL.PRS.IND
+
+deu_inventory:FusionalMorpheme_sei.3.PL.PRS.IND rdf:type deu_schema:FusionalMorpheme ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                rdfs:label "sei.3.PL.PRS.IND"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_sei.3.SG.PRS.IND
+
+deu_inventory:FusionalMorpheme_sei.3.SG.PRS.IND rdf:type deu_schema:FusionalMorpheme ,
+                                                         owl:NamedIndividual ;
+                                                
+                                                rdfs:label "sei.3.SG.PRS.IND"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/FusionalMorpheme_sei.IMP
+
+deu_inventory:FusionalMorpheme_sei.IMP rdf:type deu_schema:FusionalMorpheme ,
+                                                owl:NamedIndividual ;
+                                       
+                                       rdfs:label "sei.IMP"@de .
 
 
 
@@ -964,6 +1195,8 @@ small"""@en ;
                                                     
                                                     rdfs:label "Kauf1"@de ;
                                                     
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_kauf.M.SG ;
+                                                    
                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf> ;
                                                     
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf2> .
@@ -976,6 +1209,8 @@ small"""@en ;
                                                              owl:NamedIndividual ;
                                                     
                                                     rdfs:label "Kauf2"@de ;
+                                                    
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_kauf.M.SG.NOM ;
                                                     
                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf> .
 
@@ -994,14 +1229,29 @@ small"""@en ;
 
 
 
-###  http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf
+###  http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1
 
-<http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf> rdf:type deu_schema:Stem ,
-                                                              owl:NamedIndividual ;
-                                                     
-                                                     rdfs:label "Schlaf"@de ;
-                                                     
-                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> .
+<http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> rdf:type deu_schema:Stem ,
+                                                               owl:NamedIndividual ;
+                                                      
+                                                      rdfs:label "Schlaf1"@de ;
+                                                      
+                                                      mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.SG.M ;
+                                                      
+                                                      mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf2
+
+<http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf2> rdf:type deu_schema:Stem ,
+                                                               owl:NamedIndividual ;
+                                                      
+                                                      rdfs:label "Schlaf2"@de ;
+                                                      
+                                                      mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.SG.M.NOM ;
+                                                      
+                                                      mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> .
 
 
 
@@ -1010,7 +1260,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Stem/bin> rdf:type deu_schema:Stem ,
                                                            owl:NamedIndividual ;
                                                   
-                                                  rdfs:label "bin"@de .
+                                                  rdfs:label "bin"@de ;
+                                                  
+                                                  mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.1.SG.PRS.IND .
 
 
 
@@ -1019,7 +1271,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Stem/bist> rdf:type deu_schema:Stem ,
                                                             owl:NamedIndividual ;
                                                    
-                                                   rdfs:label "bist"@de .
+                                                   rdfs:label "bist"@de ;
+                                                   
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.2.SG.PRS.IND .
 
 
 
@@ -1028,7 +1282,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Stem/ist> rdf:type deu_schema:Stem ,
                                                            owl:NamedIndividual ;
                                                   
-                                                  rdfs:label "ist"@de .
+                                                  rdfs:label "ist"@de ;
+                                                  
+                                                  mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.3.SG.PRS.IND .
 
 
 
@@ -1038,6 +1294,8 @@ small"""@en ;
                                                              owl:NamedIndividual ;
                                                     
                                                     rdfs:label "kauf1"@de ;
+                                                    
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_kauf.PRS.IND ;
                                                     
                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf1> ;
                                                     
@@ -1051,6 +1309,8 @@ small"""@en ;
                                                              owl:NamedIndividual ;
                                                     
                                                     rdfs:label "kauf2"@de ;
+                                                    
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_kauf.IMP ;
                                                     
                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf2> .
 
@@ -1106,6 +1366,8 @@ small"""@en ;
                                                       
                                                       rdfs:label "schlaf1"@de ;
                                                       
+                                                      mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.PRS.IND ;
+                                                      
                                                       mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> ;
                                                       
                                                       mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Stem/schläf> .
@@ -1118,6 +1380,8 @@ small"""@en ;
                                                                owl:NamedIndividual ;
                                                       
                                                       rdfs:label "schlaf2"@de ;
+                                                      
+                                                      mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.IMP ;
                                                       
                                                       mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> ;
                                                       
@@ -1133,6 +1397,8 @@ small"""@en ;
                                                      
                                                      rdfs:label "schläf"@de ;
                                                      
+                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.PRS.IND ;
+                                                     
                                                      mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> .
 
 
@@ -1144,6 +1410,8 @@ small"""@en ;
                                                    
                                                    rdfs:label "sei"@de ;
                                                    
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.IMP ;
+                                                   
                                                    mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/sei> .
 
 
@@ -1153,7 +1421,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Stem/seid> rdf:type deu_schema:Stem ,
                                                             owl:NamedIndividual ;
                                                    
-                                                   rdfs:label "seid"@de .
+                                                   rdfs:label "seid"@de ;
+                                                   
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.2.PL.PRS.IND .
 
 
 
@@ -1164,6 +1434,8 @@ small"""@en ;
                                                     
                                                     rdfs:label "sind1"@de ;
                                                     
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.1.PL.PRS.IND ;
+                                                    
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Stem/sind2> .
 
 
@@ -1173,7 +1445,9 @@ small"""@en ;
 <http://mmoon.org/lang/deu/inventory/og/Stem/sind2> rdf:type deu_schema:Stem ,
                                                              owl:NamedIndividual ;
                                                     
-                                                    rdfs:label "sind2"@de .
+                                                    rdfs:label "sind2"@de ;
+                                                    
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.3.PL.PRS.IND .
 
 
 
@@ -1183,6 +1457,8 @@ small"""@en ;
                                                                 owl:NamedIndividual ;
                                                        
                                                        rdfs:label "verkauf1"@de ;
+                                                       
+                                                       mmoon:correspondsToMorpheme deu_inventory:ComplexMorpheme_RES-kauf.PRS.IND ;
                                                        
                                                        mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Prefix/ver1> ;
                                                        
@@ -1198,6 +1474,8 @@ small"""@en ;
                                                                 owl:NamedIndividual ;
                                                        
                                                        rdfs:label "verkauf2"@de ;
+                                                       
+                                                       mmoon:correspondsToMorpheme deu_inventory:ComplexMorpheme_RES-kauf.IMP ;
                                                        
                                                        mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Prefix/ver1> ;
                                                        
@@ -1276,6 +1554,8 @@ small"""@en ;
                                                    
                                                    rdfs:label "e4"@de ;
                                                    
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_NOM.PL ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ,
@@ -1291,6 +1571,8 @@ small"""@en ;
                                                    
                                                    rdfs:label "e5"@de ;
                                                    
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_ACC.PL ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ,
@@ -1305,6 +1587,8 @@ small"""@en ;
                                                             owl:NamedIndividual ;
                                                    
                                                    rdfs:label "e6"@de ;
+                                                   
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_GEN.PL ;
                                                    
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
@@ -1338,6 +1622,8 @@ small"""@en ;
                                                     
                                                     rdfs:label "en2"@de ;
                                                     
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_1.PL ;
+                                                    
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/en1> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en3> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en4> .
@@ -1351,6 +1637,8 @@ small"""@en ;
                                                     
                                                     rdfs:label "en3"@de ;
                                                     
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_3.PL ;
+                                                    
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/en1> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en4> .
 
@@ -1362,6 +1650,8 @@ small"""@en ;
                                                              owl:NamedIndividual ;
                                                     
                                                     rdfs:label "en4"@de ;
+                                                    
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_DAT.PL ;
                                                     
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/en1> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en2> ,
@@ -1494,6 +1784,8 @@ small"""@en ;
                                                    
                                                    rdfs:label "t1"@de ;
                                                    
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_3.SG ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/t2> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/t3> .
 
@@ -1519,6 +1811,8 @@ small"""@en ;
                                                             owl:NamedIndividual ;
                                                    
                                                    rdfs:label "t3"@de ;
+                                                   
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_2.PL ;
                                                    
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/t1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/t2> .
@@ -1566,7 +1860,7 @@ small"""@en ;
                                                                  
                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kauf1> ;
                                                                  
-                                                                 mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf> ;
+                                                                 mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf1> ;
                                                                  
                                                                  mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/ZeroMorph/03> ;
                                                                  
@@ -1583,7 +1877,7 @@ small"""@en ;
                                                                  
                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufe1> ;
                                                                  
-                                                                 mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf> ;
+                                                                 mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf1> ;
                                                                  
                                                                  mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ;
                                                                  
@@ -1702,9 +1996,7 @@ small"""@en ;
                                                                    
                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlaf> ;
                                                                    
-                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf> ;
-                                                                   
-                                                                   mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/ZeroMorph/05> ;
+                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf2> ;
                                                                    
                                                                    mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 .
 
@@ -1719,7 +2011,7 @@ small"""@en ;
                                                                    
                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlaf> ;
                                                                    
-                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf> ;
+                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                    
                                                                    mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/ZeroMorph/02> ;
                                                                    
@@ -1736,7 +2028,7 @@ small"""@en ;
                                                                    
                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlaf> ;
                                                                    
-                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf> ;
+                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                    
                                                                    mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/ZeroMorph/03> ;
                                                                    
@@ -1753,7 +2045,7 @@ small"""@en ;
                                                                    
                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafe> ;
                                                                    
-                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf> ;
+                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                    
                                                                    mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ;
                                                                    
@@ -1770,7 +2062,7 @@ small"""@en ;
                                                                     
                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafes> ;
                                                                     
-                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf> ;
+                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                     
                                                                     mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Suffix/es1> ;
                                                                     
@@ -1787,7 +2079,7 @@ small"""@en ;
                                                                    
                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafs> ;
                                                                    
-                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf> ;
+                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                    
                                                                    mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Suffix/s1> ;
                                                                    
@@ -2502,5 +2794,5 @@ small"""@en ;
 
 
 
-###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
 
