@@ -565,321 +565,6 @@ small"""@en ;
 
 
 
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kauf
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kauf> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                  owl:NamedIndividual ;
-                                                                         
-                                                                         mmoon:representation "Kauf"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufe
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufe> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                   owl:NamedIndividual ;
-                                                                          
-                                                                          mmoon:representation "Kaufe"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufes
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufes> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                    owl:NamedIndividual ;
-                                                                           
-                                                                           mmoon:representation "Kaufes"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufs
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufs> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                   owl:NamedIndividual ;
-                                                                          
-                                                                          mmoon:representation "Kaufs"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Käufe
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Käufe> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                   owl:NamedIndividual ;
-                                                                          
-                                                                          mmoon:representation "Käufe"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Käufen
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Käufen> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                    owl:NamedIndividual ;
-                                                                           
-                                                                           mmoon:representation "Käufen"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlaf
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlaf> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                    owl:NamedIndividual ;
-                                                                           
-                                                                           mmoon:representation "Schlaf"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafe
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafe> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                     owl:NamedIndividual ;
-                                                                            
-                                                                            mmoon:representation "Schlafe"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafes
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafes> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                      owl:NamedIndividual ;
-                                                                             
-                                                                             mmoon:representation "Schlafes"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafs
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafs> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                     owl:NamedIndividual ;
-                                                                            
-                                                                            mmoon:representation "Schlafs"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/bin
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/bin> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                 owl:NamedIndividual ;
-                                                                        
-                                                                        mmoon:representation "bin"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/bist
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/bist> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                  owl:NamedIndividual ;
-                                                                         
-                                                                         mmoon:representation "bist"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/ist
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/ist> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                 owl:NamedIndividual ;
-                                                                        
-                                                                        mmoon:representation "ist"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kauf
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kauf> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                  owl:NamedIndividual ;
-                                                                         
-                                                                         mmoon:representation "kauf"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufe
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufe> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                   owl:NamedIndividual ;
-                                                                          
-                                                                          mmoon:representation "kaufe"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufen
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufen> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                    owl:NamedIndividual ;
-                                                                           
-                                                                           mmoon:representation "kaufen"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufst
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufst> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                    owl:NamedIndividual ;
-                                                                           
-                                                                           mmoon:representation "kaufst"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kauft
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kauft> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                   owl:NamedIndividual ;
-                                                                          
-                                                                          mmoon:representation "kauft"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleiner
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleiner> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                     owl:NamedIndividual ;
-                                                                            
-                                                                            mmoon:representation "kleiner"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleinerer
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleinerer> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                       owl:NamedIndividual ;
-                                                                              
-                                                                              mmoon:representation "kleinerer"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleinster
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleinster> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                       owl:NamedIndividual ;
-                                                                              
-                                                                              mmoon:representation "kleinster"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlaf
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlaf> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                    owl:NamedIndividual ;
-                                                                           
-                                                                           mmoon:representation "schlaf"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlafe
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlafe> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                     owl:NamedIndividual ;
-                                                                            
-                                                                            mmoon:representation "schlafe"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlafen
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlafen> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                      owl:NamedIndividual ;
-                                                                             
-                                                                             mmoon:representation "schlafen"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlaft
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlaft> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                     owl:NamedIndividual ;
-                                                                            
-                                                                            mmoon:representation "schlaft"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schläfst
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schläfst> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                      owl:NamedIndividual ;
-                                                                             
-                                                                             mmoon:representation "schläfst"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schläft
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schläft> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                     owl:NamedIndividual ;
-                                                                            
-                                                                            mmoon:representation "schläft"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/sei
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/sei> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                 owl:NamedIndividual ;
-                                                                        
-                                                                        mmoon:representation "sei"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/seid
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/seid> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                  owl:NamedIndividual ;
-                                                                         
-                                                                         mmoon:representation "seid"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/sind
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/sind> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                  owl:NamedIndividual ;
-                                                                         
-                                                                         mmoon:representation "sind"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkauf
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkauf> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                     owl:NamedIndividual ;
-                                                                            
-                                                                            mmoon:representation "verkauf"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufe
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufe> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                      owl:NamedIndividual ;
-                                                                             
-                                                                             mmoon:representation "verkaufe"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufen
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufen> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                       owl:NamedIndividual ;
-                                                                              
-                                                                              mmoon:representation "verkaufen"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufst
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufst> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                       owl:NamedIndividual ;
-                                                                              
-                                                                              mmoon:representation "verkaufst"@de .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkauft
-
-<http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkauft> rdf:type deu_schema:OrthographicRepresentation ,
-                                                                                      owl:NamedIndividual ;
-                                                                             
-                                                                             mmoon:representation "verkauft"@de .
-
-
-
 ###  http://mmoon.org/lang/deu/inventory/og/Prefix/ver1
 
 <http://mmoon.org/lang/deu/inventory/og/Prefix/ver1> rdf:type deu_schema:Prefix ,
@@ -891,12 +576,327 @@ small"""@en ;
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Kauf
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Kauf> rdf:type deu_schema:Representation ,
+                                                                      owl:NamedIndividual ;
+                                                             
+                                                             mmoon:orthographicRepresentation "Kauf"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Kaufe
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Kaufe> rdf:type deu_schema:Representation ,
+                                                                       owl:NamedIndividual ;
+                                                              
+                                                              mmoon:orthographicRepresentation "Kaufe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Kaufes
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Kaufes> rdf:type deu_schema:Representation ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               mmoon:orthographicRepresentation "Kaufes"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Kaufs
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Kaufs> rdf:type deu_schema:Representation ,
+                                                                       owl:NamedIndividual ;
+                                                              
+                                                              mmoon:orthographicRepresentation "Kaufs"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Käufe
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Käufe> rdf:type deu_schema:Representation ,
+                                                                       owl:NamedIndividual ;
+                                                              
+                                                              mmoon:orthographicRepresentation "Käufe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Käufen
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Käufen> rdf:type deu_schema:Representation ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               mmoon:orthographicRepresentation "Käufen"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf> rdf:type deu_schema:Representation ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               mmoon:orthographicRepresentation "Schlaf"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Schlafe
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Schlafe> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "Schlafe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Schlafes
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Schlafes> rdf:type deu_schema:Representation ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 mmoon:orthographicRepresentation "Schlafes"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Schlafs
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Schlafs> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "Schlafs"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/bin
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/bin> rdf:type deu_schema:Representation ,
+                                                                     owl:NamedIndividual ;
+                                                            
+                                                            mmoon:orthographicRepresentation "bin"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/bist
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/bist> rdf:type deu_schema:Representation ,
+                                                                      owl:NamedIndividual ;
+                                                             
+                                                             mmoon:orthographicRepresentation "bist"@de .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/Representation/es
 
 <http://mmoon.org/lang/deu/inventory/og/Representation/es> rdf:type deu_schema:Representation ,
                                                                     owl:NamedIndividual ;
                                                            
-                                                           mmoon:orthographicRepresentation "es"^^xsd:string .
+                                                           mmoon:orthographicRepresentation "es" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/ist
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/ist> rdf:type deu_schema:Representation ,
+                                                                     owl:NamedIndividual ;
+                                                            
+                                                            mmoon:orthographicRepresentation "ist"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kauf
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kauf> rdf:type deu_schema:Representation ,
+                                                                      owl:NamedIndividual ;
+                                                             
+                                                             mmoon:orthographicRepresentation "kauf"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kaufe
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kaufe> rdf:type deu_schema:Representation ,
+                                                                       owl:NamedIndividual ;
+                                                              
+                                                              mmoon:orthographicRepresentation "kaufe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kaufen
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kaufen> rdf:type deu_schema:Representation ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               mmoon:orthographicRepresentation "kaufen"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kaufst
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kaufst> rdf:type deu_schema:Representation ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               mmoon:orthographicRepresentation "kaufst"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kauft
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kauft> rdf:type deu_schema:Representation ,
+                                                                       owl:NamedIndividual ;
+                                                              
+                                                              mmoon:orthographicRepresentation "kauft"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kleiner
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kleiner> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "kleiner"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kleinerer
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kleinerer> rdf:type deu_schema:Representation ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  mmoon:orthographicRepresentation "kleinerer"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kleinster
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kleinster> rdf:type deu_schema:Representation ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  mmoon:orthographicRepresentation "kleinster"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/schlaf
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/schlaf> rdf:type deu_schema:Representation ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               mmoon:orthographicRepresentation "schlaf"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/schlafe
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/schlafe> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "schlafe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/schlafen
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/schlafen> rdf:type deu_schema:Representation ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 mmoon:orthographicRepresentation "schlafen"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/schlaft
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/schlaft> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "schlaft"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/schläfst
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/schläfst> rdf:type deu_schema:Representation ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 mmoon:orthographicRepresentation "schläfst"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/schläft
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/schläft> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "schläft"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/sei
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/sei> rdf:type deu_schema:Representation ,
+                                                                     owl:NamedIndividual ;
+                                                            
+                                                            mmoon:orthographicRepresentation "sei"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/seid
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/seid> rdf:type deu_schema:Representation ,
+                                                                      owl:NamedIndividual ;
+                                                             
+                                                             mmoon:orthographicRepresentation "seid"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/sind
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/sind> rdf:type deu_schema:Representation ,
+                                                                      owl:NamedIndividual ;
+                                                             
+                                                             mmoon:orthographicRepresentation "sind"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/verkauf
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/verkauf> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "verkauf"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/verkaufe
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/verkaufe> rdf:type deu_schema:Representation ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 mmoon:orthographicRepresentation "verkaufe"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/verkaufen
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/verkaufen> rdf:type deu_schema:Representation ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  mmoon:orthographicRepresentation "verkaufen"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/verkaufst
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/verkaufst> rdf:type deu_schema:Representation ,
+                                                                           owl:NamedIndividual ;
+                                                                  
+                                                                  mmoon:orthographicRepresentation "verkaufst"@de .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/verkauft
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/verkauft> rdf:type deu_schema:Representation ,
+                                                                          owl:NamedIndividual ;
+                                                                 
+                                                                 mmoon:orthographicRepresentation "verkauft"@de .
 
 
 
@@ -2502,5 +2502,5 @@ small"""@en ;
 
 
 
-###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
 
