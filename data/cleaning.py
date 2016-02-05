@@ -214,15 +214,15 @@ def main(args=sys.argv[1:]):
             voc = row['vocalized']
             if any(wordclassResource == kategorie for kategorie in lexemeKategorie):
                 isLexeme = True
-                lexeme = rdflib.term.URIRef(heb_inventory+"Lexeme/"+voc)
+                lexeme = rdflib.term.URIRef(heb_inventory+"Lexeme_"+voc)
                 graph.add((lexeme, RDF.type, mmoon_heb.Lexeme))
             elif rdfType and rdfType == mmoon_heb.Suffix:
-                lexeme = rdflib.term.URIRef(heb_inventory+"Suffix/"+voc)
+                lexeme = rdflib.term.URIRef(heb_inventory+"Suffix_"+voc)
                 graph.add((lexeme, RDF.type, rdfType))
             else:
-                lexeme = rdflib.term.URIRef(heb_inventory+"Word/"+voc)
+                lexeme = rdflib.term.URIRef(heb_inventory+"Word_"+voc)
                 graph.add((lexeme, RDF.type, mmoon.Word))
-            vocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/"+voc)
+            vocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation_"+voc)
             vocliteral = rdflib.term.Literal(row['vocalized'], lang="he")
 
             graph.add((vocrep, RDF.type, mmoon_heb.VocalizedRepresentation))
@@ -233,7 +233,7 @@ def main(args=sys.argv[1:]):
 
         if row['unvocalized']:
             unvoc = row['unvocalized']
-            unvocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/"+unvoc)
+            unvocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation_"+unvoc)
             unvocliteral = rdflib.term.Literal(row['unvocalized'], lang="he")
 
             graph.add((unvocrep, RDF.type, mmoon_heb.UnvocalizedRepresentation))
