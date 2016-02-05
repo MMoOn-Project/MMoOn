@@ -19,14 +19,32 @@ The vocabulary provided describes the morphological elements of Hebrew, includin
 
 #################################################################
 #
-#    Annotation properties
+#    Data properties
 #
 #################################################################
 
 
-###  http://purl.org/dc/elements/1.1/language
+###  http://mmoon.org/lang/heb/schema/oh/unvocalizedRepresentation
 
-<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
+heb_schema:unvocalizedRepresentation rdf:type owl:DatatypeProperty ;
+                                     
+                                     rdfs:domain heb_schema:Representation ;
+                                     
+                                     rdfs:subPropertyOf mmoon:orthographicRepresentation ;
+                                     
+                                     rdfs:range xsd:string .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/vocalizedRepresentation
+
+heb_schema:vocalizedRepresentation rdf:type owl:DatatypeProperty ;
+                                   
+                                   rdfs:domain heb_schema:Representation ;
+                                   
+                                   rdfs:subPropertyOf mmoon:orthographicRepresentation ;
+                                   
+                                   rdfs:range xsd:string .
 
 
 
@@ -39,9 +57,21 @@ The vocabulary provided describes the morphological elements of Hebrew, includin
 #################################################################
 
 
-###  http://lexvo.org/ontology#Transfix
+###  http://mmoon.org/lang/heb/schema/oh/Affix
 
-<http://lexvo.org/ontology#Transfix> rdf:type owl:Class .
+heb_schema:Affix rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf heb_schema:Morph ,
+                                 mmoon:Affix .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/AnalyticWordform
+
+heb_schema:AnalyticWordform rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf heb_schema:Wordform ,
+                                            mmoon:AnalyticWordform .
 
 
 
@@ -52,7 +82,25 @@ heb_schema:Binyan rdf:type owl:Class ;
                   rdfs:label "Binyan"@en ,
                              "בִּנְיָנִים"@he ;
                   
-                  rdfs:subClassOf mmoon:LinguisticCategory .
+                  rdfs:subClassOf mmoon:Introflection .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/CompoundWord
+
+heb_schema:CompoundWord rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf heb_schema:Lexeme ,
+                                        mmoon:CompoundWord .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/DerivedWord
+
+heb_schema:DerivedWord rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf heb_schema:Lexeme ,
+                                       mmoon:DerivedWord .
 
 
 
@@ -62,25 +110,8 @@ heb_schema:GrammaticalWord rdf:type owl:Class ;
                            
                            rdfs:label "Grammatical word"@en ;
                            
-                           rdfs:subClassOf mmoon:GrammaticalWord .
-
-
-
-###  http://mmoon.org/lang/heb/schema/oh/Infix
-
-heb_schema:Infix rdf:type owl:Class ;
-                 
-                 rdfs:subClassOf mmoon:Infix .
-
-
-
-###  http://mmoon.org/lang/heb/schema/oh/LatinTranscription
-
-heb_schema:LatinTranscription rdf:type owl:Class ;
-                              
-                              rdfs:label "Latin transcription"@en ;
-                              
-                              rdfs:subClassOf heb_schema:OrthographicRepresentation .
+                           rdfs:subClassOf heb_schema:Word ,
+                                           mmoon:GrammaticalWord .
 
 
 
@@ -90,7 +121,8 @@ heb_schema:Lexeme rdf:type owl:Class ;
                   
                   rdfs:label "Lexeme"@en ;
                   
-                  rdfs:subClassOf mmoon:Lexeme .
+                  rdfs:subClassOf heb_schema:Word ,
+                                  mmoon:Lexeme .
 
 
 
@@ -102,21 +134,19 @@ heb_schema:Mishkal rdf:type owl:Class ;
 
 
 
+###  http://mmoon.org/lang/heb/schema/oh/Morph
+
+heb_schema:Morph rdf:type owl:Class ;
+                 
+                 rdfs:subClassOf mmoon:Morph .
+
+
+
 ###  http://mmoon.org/lang/heb/schema/oh/Morpheme
 
 heb_schema:Morpheme rdf:type owl:Class ;
                     
                     rdfs:subClassOf mmoon:Morpheme .
-
-
-
-###  http://mmoon.org/lang/heb/schema/oh/MorphemicRepresentation
-
-heb_schema:MorphemicRepresentation rdf:type owl:Class ;
-                                   
-                                   rdfs:label "Morphemic representation"@en ;
-                                   
-                                   rdfs:subClassOf mmoon:MorphemicRepresentation .
 
 
 
@@ -130,31 +160,12 @@ heb_schema:NoInflection rdf:type owl:Class ;
 
 
 
-###  http://mmoon.org/lang/heb/schema/oh/OrthographicRepresentation
-
-heb_schema:OrthographicRepresentation rdf:type owl:Class ;
-                                      
-                                      rdfs:label "Orthographic representation"@en ;
-                                      
-                                      rdfs:subClassOf mmoon:OrthographicRepresentation .
-
-
-
-###  http://mmoon.org/lang/heb/schema/oh/PhoneticRepresentation
-
-heb_schema:PhoneticRepresentation rdf:type owl:Class ;
-                                  
-                                  rdfs:label "Phonetic representation"@en ;
-                                  
-                                  rdfs:subClassOf mmoon:PhoneticRepresentation .
-
-
-
 ###  http://mmoon.org/lang/heb/schema/oh/Prefix
 
 heb_schema:Prefix rdf:type owl:Class ;
                   
-                  rdfs:subClassOf mmoon:Prefix .
+                  rdfs:subClassOf heb_schema:Affix ,
+                                  mmoon:Prefix .
 
 
 
@@ -168,6 +179,14 @@ heb_schema:PrimaryRoot rdf:type owl:Class ;
 
 
 
+###  http://mmoon.org/lang/heb/schema/oh/Representation
+
+heb_schema:Representation rdf:type owl:Class ;
+                          
+                          rdfs:subClassOf mmoon:Representation .
+
+
+
 ###  http://mmoon.org/lang/heb/schema/oh/Root
 
 heb_schema:Root rdf:type owl:Class ;
@@ -175,7 +194,8 @@ heb_schema:Root rdf:type owl:Class ;
                 rdfs:label "Root"@en ,
                            "שורש"@he ;
                 
-                rdfs:subClassOf mmoon:Root .
+                rdfs:subClassOf heb_schema:Morph ,
+                                mmoon:Root .
 
 
 
@@ -189,11 +209,30 @@ heb_schema:SecondaryRoot rdf:type owl:Class ;
 
 
 
+###  http://mmoon.org/lang/heb/schema/oh/Stem
+
+heb_schema:Stem rdf:type owl:Class ;
+                
+                rdfs:subClassOf heb_schema:Morph ,
+                                mmoon:Stem .
+
+
+
 ###  http://mmoon.org/lang/heb/schema/oh/Suffix
 
 heb_schema:Suffix rdf:type owl:Class ;
                   
-                  rdfs:subClassOf mmoon:Suffix .
+                  rdfs:subClassOf heb_schema:Affix ,
+                                  mmoon:Suffix .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/SyntheticWordform
+
+heb_schema:SyntheticWordform rdf:type owl:Class ;
+                             
+                             rdfs:subClassOf heb_schema:Wordform ,
+                                             mmoon:SyntheticWordform .
 
 
 
@@ -201,23 +240,18 @@ heb_schema:Suffix rdf:type owl:Class ;
 
 heb_schema:Transfix rdf:type owl:Class ;
                     
-                    rdfs:subClassOf <http://lexvo.org/ontology#Transfix> .
+                    rdfs:subClassOf heb_schema:Affix ,
+                                    mmoon:Transfix .
 
 
 
-###  http://mmoon.org/lang/heb/schema/oh/UnvocalizedRepresentation
+###  http://mmoon.org/lang/heb/schema/oh/Word
 
-heb_schema:UnvocalizedRepresentation rdf:type owl:Class ;
-                                     
-                                     rdfs:subClassOf heb_schema:OrthographicRepresentation .
-
-
-
-###  http://mmoon.org/lang/heb/schema/oh/VocalizedRepresentation
-
-heb_schema:VocalizedRepresentation rdf:type owl:Class ;
-                                   
-                                   rdfs:subClassOf heb_schema:OrthographicRepresentation .
+heb_schema:Word rdf:type owl:Class ;
+                
+                rdfs:label "Word" ;
+                
+                rdfs:subClassOf mmoon:Word .
 
 
 
@@ -228,7 +262,8 @@ heb_schema:Wordform rdf:type owl:Class ;
                     rdfs:label "Wordform"@en ,
                                "צורה"@he ;
                     
-                    rdfs:subClassOf mmoon:Wordform .
+                    rdfs:subClassOf heb_schema:Word ,
+                                    mmoon:Wordform .
 
 
 
@@ -259,6 +294,12 @@ mmoon:Adverb rdf:type owl:Class .
 ###  http://mmoon.org/mmoon/AgentNominalizer
 
 mmoon:AgentNominalizer rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Common
+
+mmoon:Common rdf:type owl:Class .
 
 
 
@@ -300,7 +341,9 @@ mmoon:Future rdf:type owl:Class .
 
 ###  http://mmoon.org/mmoon/GrammaticalWord
 
-mmoon:GrammaticalWord rdf:type owl:Class .
+mmoon:GrammaticalWord rdf:type owl:Class ;
+                      
+                      rdfs:subClassOf heb_schema:Word .
 
 
 
@@ -324,7 +367,9 @@ mmoon:Intensification rdf:type owl:Class .
 
 ###  http://mmoon.org/mmoon/Lexeme
 
-mmoon:Lexeme rdf:type owl:Class .
+mmoon:Lexeme rdf:type owl:Class ;
+             
+             rdfs:subClassOf heb_schema:Word .
 
 
 
@@ -352,12 +397,6 @@ mmoon:MorphemeInventory rdf:type owl:Class .
 
 
 
-###  http://mmoon.org/mmoon/MorphemicRepresentation
-
-mmoon:MorphemicRepresentation rdf:type owl:Class .
-
-
-
 ###  http://mmoon.org/mmoon/NoInflection
 
 mmoon:NoInflection rdf:type owl:Class .
@@ -370,12 +409,6 @@ mmoon:Nominalization rdf:type owl:Class .
 
 
 
-###  http://mmoon.org/mmoon/OrthographicRepresentation
-
-mmoon:OrthographicRepresentation rdf:type owl:Class .
-
-
-
 ###  http://mmoon.org/mmoon/Passive
 
 mmoon:Passive rdf:type owl:Class .
@@ -385,12 +418,6 @@ mmoon:Passive rdf:type owl:Class .
 ###  http://mmoon.org/mmoon/Past
 
 mmoon:Past rdf:type owl:Class .
-
-
-
-###  http://mmoon.org/mmoon/PhoneticRepresentation
-
-mmoon:PhoneticRepresentation rdf:type owl:Class .
 
 
 
@@ -409,6 +436,12 @@ mmoon:Prefix rdf:type owl:Class .
 ###  http://mmoon.org/mmoon/Preposition
 
 mmoon:Preposition rdf:type owl:Class .
+
+
+
+###  http://mmoon.org/mmoon/Present
+
+mmoon:Present rdf:type owl:Class .
 
 
 
@@ -462,7 +495,9 @@ mmoon:Verb rdf:type owl:Class .
 
 ###  http://mmoon.org/mmoon/Wordform
 
-mmoon:Wordform rdf:type owl:Class .
+mmoon:Wordform rdf:type owl:Class ;
+               
+               rdfs:subClassOf heb_schema:Word .
 
 
 
@@ -523,6 +558,15 @@ heb_schema:AgentNominalizer rdf:type mmoon:AgentNominalizer ,
                                      owl:NamedIndividual ;
                             
                             rdfs:label "Agent nominalizer"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Common
+
+heb_schema:Common rdf:type mmoon:Common ,
+                           owl:NamedIndividual ;
+                  
+                  rdfs:label "Common"@en .
 
 
 
@@ -609,7 +653,7 @@ heb_schema:MorphemeInventory rdf:type mmoon:MorphemeInventory ,
                              
                              rdfs:label "Morpheme inventory"@en ;
                              
-                             <http://purl.org/dc/elements/1.1/language> <http://lexvo.org/id/iso639-3/heb> .
+                             mmoon:forLanguage <http://lexvo.org/id/iso639-3/heb> .
 
 
 
@@ -655,6 +699,15 @@ heb_schema:Plural rdf:type mmoon:Plural ,
 
 heb_schema:Preposition rdf:type mmoon:Preposition ,
                                 owl:NamedIndividual .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Present
+
+heb_schema:Present rdf:type mmoon:Present ,
+                            owl:NamedIndividual ;
+                   
+                   rdfs:label "Present"@en .
 
 
 
