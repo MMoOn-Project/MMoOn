@@ -79,6 +79,18 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 
 
+###  http://mmoon.org/lang/deu/schema/og/AtomicMorpheme
+
+:AtomicMorpheme rdf:type owl:Class ;
+                
+                rdfs:label "Atomares Morphem"@de ,
+                           "Atomic Morpheme"@en ;
+                
+                rdfs:subClassOf :Morpheme ,
+                                mmoon:AtomicMorpheme .
+
+
+
 ###  http://mmoon.org/lang/deu/schema/og/Circumfix
 
 :Circumfix rdf:type owl:Class ;
@@ -88,6 +100,18 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
            
            rdfs:subClassOf :Affix ,
                            mmoon:Circumfix .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/ComplexMorpheme
+
+:ComplexMorpheme rdf:type owl:Class ;
+                 
+                 rdfs:label "Komplexes Morphem"@de ,
+                            "Complex Morpheme"@en ;
+                 
+                 rdfs:subClassOf :Morpheme ,
+                                 mmoon:ComplexMorpheme .
 
 
 
@@ -119,11 +143,35 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :EmptyMorph rdf:type owl:Class ;
             
-            rdfs:label "Leeres Morphem"@de ,
+            rdfs:label "Leeres Morph"@de ,
                        "Empty morph"@en ;
             
             rdfs:subClassOf :Affix ,
                             mmoon:EmptyMorph .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/EmptyMorpheme
+
+:EmptyMorpheme rdf:type owl:Class ;
+               
+               rdfs:label "Leeres Morphem"@de ,
+                          "Empty Morpheme"@en ;
+               
+               rdfs:subClassOf :Morpheme ,
+                               mmoon:EmptyMorpheme .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/FusionalMorpheme
+
+:FusionalMorpheme rdf:type owl:Class ;
+                  
+                  rdfs:label "Fusionierendes Morphem"@de ,
+                             "Fusional Morpheme"@en ;
+                  
+                  rdfs:subClassOf :Morpheme ,
+                                  mmoon:FusionalMorpheme .
 
 
 
@@ -162,12 +210,14 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 
 
-###  http://mmoon.org/lang/deu/schema/og/MorphemicRepresentation
+###  http://mmoon.org/lang/deu/schema/og/Morpheme
 
-:MorphemicRepresentation rdf:type owl:Class ;
-                         
-                         rdfs:subClassOf :Representation ,
-                                         mmoon:MorphemicRepresentation .
+:Morpheme rdf:type owl:Class ;
+          
+          rdfs:label "Morphem"@de ,
+                     "Morpheme"@en ;
+          
+          rdfs:subClassOf mmoon:Morpheme .
 
 
 
@@ -184,24 +234,6 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
                 
                 rdfs:comment """Nominaldeklination ist die Flexion von Substantiven nach Kasus, Numerus und Genus.
 Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular und des Nominativ Plural in mehrere Deklinationsklassen (1-12) unterteilen."""@de .
-
-
-
-###  http://mmoon.org/lang/deu/schema/og/OrthographicRepresentation
-
-:OrthographicRepresentation rdf:type owl:Class ;
-                            
-                            rdfs:subClassOf :Representation ,
-                                            mmoon:OrthographicRepresentation .
-
-
-
-###  http://mmoon.org/lang/deu/schema/og/PhoneticRepresentation
-
-:PhoneticRepresentation rdf:type owl:Class ;
-                        
-                        rdfs:subClassOf :Representation ,
-                                        mmoon:PhoneticRepresentation .
 
 
 
@@ -312,7 +344,7 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :ZeroMorph rdf:type owl:Class ;
            
-           rdfs:label "Nullmorphem"@de ,
+           rdfs:label "Nullmorph"@de ,
                       "Zero morph"@en ;
            
            rdfs:subClassOf :Affix ,
@@ -417,12 +449,6 @@ mmoon:MorphemeInventory rdfs:label "Morpheminventar"@de ,
 
 
 
-###  http://mmoon.org/mmoon/MorphemicRepresentation
-
-mmoon:MorphemicRepresentation rdf:type owl:Class .
-
-
-
 ###  http://mmoon.org/mmoon/NoDegree
 
 mmoon:NoDegree rdf:type owl:Class .
@@ -432,18 +458,6 @@ mmoon:NoDegree rdf:type owl:Class .
 ###  http://mmoon.org/mmoon/NoWordFormation
 
 mmoon:NoWordFormation rdf:type owl:Class .
-
-
-
-###  http://mmoon.org/mmoon/OrthographicRepresentation
-
-mmoon:OrthographicRepresentation rdf:type owl:Class .
-
-
-
-###  http://mmoon.org/mmoon/PhoneticRepresentation
-
-mmoon:PhoneticRepresentation rdf:type owl:Class .
 
 
 

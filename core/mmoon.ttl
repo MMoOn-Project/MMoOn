@@ -52,7 +52,7 @@ This is the reference ontology from which various language specific MMoOn Invent
 
 :externalDefinition rdf:type owl:AnnotationProperty ;
                     
-                    :definition """A reference to an (typically alternative) definition for MMoOn vocabulary items. 
+                    :definition """A reference to a (typically alternative) definition for MMoOn vocabulary items. 
 
 Solely to be used to refer to Web Resources identified by their URI/IRI (which ideally should be Linked Data)."""@en ;
                     
@@ -82,6 +82,14 @@ reference point or when additional textual information has to be provided for an
 :usageNote rdf:type owl:AnnotationProperty ;
            
            rdfs:subPropertyOf rdfs:comment .
+
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+
+skos:definition rdf:type owl:AnnotationProperty .
+
+
 
 
 
@@ -168,8 +176,9 @@ reference point or when additional textual information has to be provided for an
 
 :compoundingRelation rdf:type owl:ObjectProperty ;
                      
-                     rdfs:label "States which kind of compounding morphological relationship applies to a compound word."@en ,
-                                "compounding morphological relationship"@en ;
+                     rdfs:label "compounding morphological relationship"@en ;
+                     
+                     :definition "States which kind of compounding morphological relationship applies to a compound word."@en ;
                      
                      rdfs:domain :CompoundWord ;
                      
@@ -218,8 +227,9 @@ reference point or when additional textual information has to be provided for an
 
 :consistsOfMorpheme rdf:type owl:ObjectProperty ;
                     
-                    rdfs:label "States that a complex morpheme consists of fusional and/or atomic and/or empty morphemes."@en ,
-                               "consist of morpheme"@en ;
+                    rdfs:label "consist of morpheme"@en ;
+                    
+                    :definition "States that a complex morpheme consists of fusional and/or atomic and/or empty morphemes."@en ;
                     
                     rdfs:domain :ComplexMorpheme ;
                     
@@ -304,8 +314,9 @@ reference point or when additional textual information has to be provided for an
 
 :derivationalRelation rdf:type owl:ObjectProperty ;
                       
-                      rdfs:label "States which kind of derivational morphological relationship applies to a derived word."@en ,
-                                 "derivational morphological relationship"@en ;
+                      rdfs:label "derivational morphological relationship"@en ;
+                      
+                      :definition "States which kind of derivational morphological relationship applies to a derived word."@en ;
                       
                       :usageNote "This property is also used to state that a simple lexeme which cannot be further segmented with respect to word-formation has the morphological relationship mmoon:NoWordFormation."@en ;
                       
@@ -397,6 +408,8 @@ reference point or when additional textual information has to be provided for an
                    
                    rdfs:label "has representation"@en ;
                    
+                   :definition "States that a word or morph has some linguistic representation."@en ;
+                   
                    rdfs:range :Representation ;
                    
                    rdfs:domain [ rdf:type owl:Class ;
@@ -429,8 +442,9 @@ reference point or when additional textual information has to be provided for an
 
 :inflectionalRelation rdf:type owl:ObjectProperty ;
                       
-                      rdfs:label "States which kind of inflectional morphological relationship applies to a word-form."@en ,
-                                 "inflectional morphological relationship"@en ;
+                      rdfs:label "inflectional morphological relationship"@en ;
+                      
+                      :definition "States which kind of inflectional morphological relationship applies to a word-form."@en ;
                       
                       rdfs:range :Inflection ;
                       
@@ -480,8 +494,9 @@ An allomorph is one of two or more complementary morphs which manifest a morphem
 
 :isDerivedFrom rdf:type owl:ObjectProperty ;
                
-               rdfs:label "States from which lexeme or grammatical word the derived word is derived."@en ,
-                          "is derived from"@en ;
+               rdfs:label "is derived from"@en ;
+               
+               :definition "States from which lexeme or grammatical word the derived word is derived."@en ;
                
                rdfs:domain :DerivedWord ;
                
@@ -743,9 +758,9 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
                   rdfs:subClassOf :Wordform ;
                   
                   :definition """A word form is analytic iff it consists of more than one word form such that the lexical meaning provides the root of one of them, while the grammatical meaning components are coded in the other word forms (some of them possibly in the lexical word form).
-An inflection is analytic to the extent that it consists of analytic word forms.
-
-Delimitation and History:
+An inflection is analytic to the extent that it consists of analytic word forms.[Christian Lehmann, under \"analytic structure\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                  
+                  :externalDefinitionDesc """Delimitation and History:
 ’analytic’ is extensionally equivalent to ‚periphrastic’, but is also used to characterize a whole language type.
 An analytic system has grammatical words; an isolating system does not.
 
@@ -1569,8 +1584,6 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
 
 :MorphemeInventory rdf:type owl:Class ;
                    
-                   rdfs:label "Morpheme inventory"@en ;
-                   
                    :definition "The morpheme inventory is the object that contains morphemic entries. It is specified for the natural language it describes."@en .
 
 
@@ -1967,12 +1980,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :inflectionalRelation ;
-                            owl:someValuesFrom :Inflection
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :consistsOfMorph ;
                             owl:someValuesFrom :Stem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :inflectionalRelation ;
+                            owl:someValuesFrom :Inflection
                           ] ;
           
           :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1997,9 +2010,9 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
                              owl:someValuesFrom :Morph
                            ] ;
            
-           :definition """A morpheme that has a morphological meaning that corresponds to no overt form.  [Haspelmath and Sims: Understanding morphology. 2002:64]
-
-A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+           :definition "A morpheme that has a morphological meaning that corresponds to no overt form.  [Haspelmath and Sims: Understanding morphology. 2002:64]"@en ;
+           
+           :externalDefinitionDesc "A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
            
            :usageNote "A zero morpheme is posited only if it is in equipollent opposition to overt morphemes. If the term in question is, instead, the unmarked member of a privative opposition, no morpheme is posited. Conversion  can be conceived as derivation using a zero morpheme.  [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
@@ -2060,6 +2073,5 @@ gold:Suffix rdf:type owl:Class .
 
 
 
-
-###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
 
