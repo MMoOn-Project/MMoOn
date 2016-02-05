@@ -222,25 +222,25 @@ def main(args=sys.argv[1:]):
             else:
                 lexeme = rdflib.term.URIRef(heb_inventory+"Word_"+voc)
                 graph.add((lexeme, RDF.type, mmoon.Word))
-            vocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation_"+voc)
+            vocrep = rdflib.term.URIRef(heb_inventory+"Representation_"+voc)
             vocliteral = rdflib.term.Literal(row['vocalized'], lang="he")
 
-            graph.add((vocrep, RDF.type, mmoon_heb.VocalizedRepresentation))
-            graph.add((vocrep, RDFS.label, vocliteral))
+            graph.add((vocrep, RDF.type, mmoon_heb.Representation))
+            graph.add((vocrep, mmoon_heb.vocalizedRepresentation, vocliteral))
             if lexeme:
                 graph.add((lexeme, RDFS.label, vocliteral))
-                graph.add((lexeme, mmoon.hasOrthographicRepresentation, vocrep))
+                graph.add((lexeme, mmoon.hasRepresentation, vocrep))
 
         if row['unvocalized']:
             unvoc = row['unvocalized']
-            unvocrep = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation_"+unvoc)
+            unvocrep = rdflib.term.URIRef(heb_inventory+"Representation_"+unvoc)
             unvocliteral = rdflib.term.Literal(row['unvocalized'], lang="he")
 
-            graph.add((unvocrep, RDF.type, mmoon_heb.UnvocalizedRepresentation))
-            graph.add((unvocrep, RDFS.label, unvocliteral))
+            graph.add((unvocrep, RDF.type, mmoon_heb.Representation))
+            graph.add((unvocrep, mmoon_heb.unvocalizedRepresentation, unvocliteral))
 
             if lexeme:
-                graph.add((lexeme, mmoon.hasOrthographicRepresentation, unvocrep))
+                graph.add((lexeme, mmoon.hasRepresentation, unvocrep))
 
         if row['deutsch']:
             translation = addTranslation(graph, row['deutsch'], "de")
@@ -296,11 +296,11 @@ def addTranslation(graph, translationStr, language):
     translationStr = translationStr.strip()
     translationStrQuoted = urllib.parse.quote(translationStr)
 
-    translation = rdflib.term.URIRef(heb_inventory+"OrthographicRepresentation/" + language + "/"+translationStrQuoted)
+    translation = rdflib.term.URIRef(heb_inventory+"Representation/" + language + "/"+translationStrQuoted)
 
-    graph.add((translation, RDF.type, mmoon.OrthographicRepresentation))
-    graph.add((translation, RDFS.label, rdflib.term.Literal(translationStr, lang=language)))
-    graph.add((translation, DC.language, rdflib.term.Literal("en")))
+    graph.add((translation, RDF.type, mmoon.Representation))
+    graph.add((translation, mmoon.orthographicRepresentation, rdflib.term.Literal(translationStr, lang=language)))
+    graph.add((translation, DC.language, rdflib.term.Literal(language)))
     return translation
 
 def addRootResource(graph, root, classResource, primaryRoot=None):
