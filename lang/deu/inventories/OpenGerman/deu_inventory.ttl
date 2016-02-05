@@ -830,15 +830,6 @@ small"""@en ;
 
 
 
-###  http://mmoon.org/lang/deu/inventory/og/Representation/es
-
-<http://mmoon.org/lang/deu/inventory/og/Representation/es> rdf:type deu_schema:Representation ,
-                                                                    owl:NamedIndividual ;
-                                                           
-                                                           mmoon:orthographicRepresentation "es" .
-
-
-
 ###  http://mmoon.org/lang/deu/inventory/og/Representation/ist
 
 <http://mmoon.org/lang/deu/inventory/og/Representation/ist> rdf:type deu_schema:Representation ,
@@ -890,6 +881,15 @@ small"""@en ;
                                                                        owl:NamedIndividual ;
                                                               
                                                               mmoon:orthographicRepresentation "kauft" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/klein
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/klein> rdf:type deu_schema:Representation ,
+                                                                       owl:NamedIndividual ;
+                                                              
+                                                              mmoon:orthographicRepresentation "klein" .
 
 
 
@@ -989,6 +989,15 @@ small"""@en ;
                                                                       owl:NamedIndividual ;
                                                              
                                                              mmoon:orthographicRepresentation "seid" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/sein
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/sein> rdf:type deu_schema:Representation ,
+                                                                      owl:NamedIndividual ;
+                                                             
+                                                             mmoon:orthographicRepresentation "sein" .
 
 
 
@@ -1624,8 +1633,6 @@ small"""@en ;
                                                     rdfs:label "es1"@de ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_GEN.SG ;
-                                                    
-                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/es> ;
                                                     
                                                     mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/s1> .
 
