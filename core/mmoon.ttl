@@ -288,11 +288,15 @@ skos:definition rdf:type owl:AnnotationProperty .
                 
                 rdfs:label "consists of word"@en ;
                 
-                :definition "States that an analytic word-form (such as \"more big\" being the comparative form of the adjective \"big\") consists of other word resources."@en ;
+                :definition "States that an analytic word-form (such as \"more big\" being the comparative form of the adjective \"big\") or compound word consists of other word resources."@en ;
                 
-                rdfs:domain :AnalyticWordform ;
+                rdfs:range :Word ;
                 
-                rdfs:range :Word .
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :AnalyticWordform
+                                            :CompoundWord
+                                          )
+                            ] .
 
 
 
@@ -906,10 +910,6 @@ An underived verb cannot be causative by this definition. However, the paradigma
               
               rdfs:subClassOf :Lexeme ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty :compoundingRelation ;
-                                owl:someValuesFrom :Compounding
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :isComposedOf ;
                                 owl:onClass [ rdf:type owl:Class ;
                                               owl:unionOf ( :GrammaticalWord
@@ -917,6 +917,10 @@ An underived verb cannot be causative by this definition. However, the paradigma
                                                           )
                                             ] ;
                                 owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :compoundingRelation ;
+                                owl:someValuesFrom :Compounding
                               ] ;
               
               :definition """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1190,10 +1194,6 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
              
              rdfs:subClassOf :Lexeme ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty :derivationalRelation ;
-                               owl:someValuesFrom :Derivation
-                             ] ,
-                             [ rdf:type owl:Restriction ;
                                owl:onProperty :isDerivedFrom ;
                                owl:onClass [ rdf:type owl:Class ;
                                              owl:unionOf ( :GrammaticalWord
@@ -1201,6 +1201,10 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                                                          )
                                            ] ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :derivationalRelation ;
+                               owl:someValuesFrom :Derivation
                              ] ;
              
              :example "\"replay\" is a derived word from the lexeme \"play\"."@en ;
@@ -1980,12 +1984,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :consistsOfMorph ;
-                            owl:someValuesFrom :Stem
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :inflectionalRelation ;
                             owl:someValuesFrom :Inflection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :consistsOfMorph ;
+                            owl:someValuesFrom :Stem
                           ] ;
           
           :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
