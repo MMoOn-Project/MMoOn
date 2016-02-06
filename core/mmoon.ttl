@@ -346,6 +346,24 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://mmoon.org/mmoon/hasAbstractIdentity
+
+:hasAbstractIdentity rdf:type owl:ObjectProperty ;
+                     
+                     rdfs:label "has abstract identity"@en ;
+                     
+                     rdfs:comment "This property states that a morpheme or meaning resource is assigned to one (ore more) morphemic gloss(es)."@en ;
+                     
+                     rdfs:range :MorphemicGloss ;
+                     
+                     rdfs:domain [ rdf:type owl:Class ;
+                                   owl:unionOf ( :Meaning
+                                                 :Morpheme
+                                               )
+                                 ] .
+
+
+
 ###  http://mmoon.org/mmoon/hasMeaning
 
 :hasMeaning rdf:type owl:ObjectProperty ;
@@ -910,6 +928,10 @@ An underived verb cannot be causative by this definition. However, the paradigma
               
               rdfs:subClassOf :Lexeme ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty :compoundingRelation ;
+                                owl:someValuesFrom :Compounding
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :isComposedOf ;
                                 owl:onClass [ rdf:type owl:Class ;
                                               owl:unionOf ( :GrammaticalWord
@@ -917,10 +939,6 @@ An underived verb cannot be causative by this definition. However, the paradigma
                                                           )
                                             ] ;
                                 owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :compoundingRelation ;
-                                owl:someValuesFrom :Compounding
                               ] ;
               
               :definition """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1194,6 +1212,10 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
              
              rdfs:subClassOf :Lexeme ,
                              [ rdf:type owl:Restriction ;
+                               owl:onProperty :derivationalRelation ;
+                               owl:someValuesFrom :Derivation
+                             ] ,
+                             [ rdf:type owl:Restriction ;
                                owl:onProperty :isDerivedFrom ;
                                owl:onClass [ rdf:type owl:Class ;
                                              owl:unionOf ( :GrammaticalWord
@@ -1201,10 +1223,6 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                                                          )
                                            ] ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
-                             ] ,
-                             [ rdf:type owl:Restriction ;
-                               owl:onProperty :derivationalRelation ;
-                               owl:someValuesFrom :Derivation
                              ] ;
              
              :example "\"replay\" is a derived word from the lexeme \"play\"."@en ;
@@ -2073,6 +2091,3098 @@ gold:Stem rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Suffix
 
 gold:Suffix rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://mmoon.org/mmoon/A
+
+:A rdf:type :MorphemicGloss ,
+            owl:NamedIndividual ;
+   
+   rdfs:label "A"^^xsd:string ;
+   
+   rdfs:comment "Transitive subject gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ABESS
+
+:ABESS rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "ABESS"^^xsd:string ;
+       
+       rdfs:comment "Abessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ABL
+
+:ABL rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ABL"^^xsd:string ;
+     
+     rdfs:comment "Ablative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ABS
+
+:ABS rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ABS"^^xsd:string ;
+     
+     rdfs:comment "Absolutive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ACAUS
+
+:ACAUS rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "ACAUS"^^xsd:string ;
+       
+       rdfs:comment "Anticausative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ACC
+
+:ACC rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ACC"^^xsd:string ;
+     
+     rdfs:comment "Accusative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ACN
+
+:ACN rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ACN"^^xsd:string ;
+     
+     rdfs:comment "Action noun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ACT
+
+:ACT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ACT"^^xsd:string ;
+     
+     rdfs:comment "Active gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ACTR
+
+:ACTR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "ACTR"^^xsd:string ;
+      
+      rdfs:comment "Actor gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ADESS
+
+:ADESS rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "ADESS"^^xsd:string ;
+       
+       rdfs:comment "Adessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ADJ
+
+:ADJ rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ADJ"^^xsd:string ;
+     
+     rdfs:comment "Adjective gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ADJZ
+
+:ADJZ rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "ADJZ"^^xsd:string ;
+      
+      rdfs:comment "Adjectivization gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ADM
+
+:ADM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ADM"^^xsd:string ;
+     
+     rdfs:comment "Admonitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ADP
+
+:ADP rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ADP"^^xsd:string ;
+     
+     rdfs:comment "Adposition gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ADV
+
+:ADV rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ADV"^^xsd:string ;
+     
+     rdfs:comment "Adverb gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ADVRS
+
+:ADVRS rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "ADVRS"^^xsd:string ;
+       
+       rdfs:comment "Adversative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ADVZ
+
+:ADVZ rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "ADVZ"^^xsd:string ;
+      
+      rdfs:comment "Adverbialization gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AFFMT
+
+:AFFMT rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "AFFMT"^^xsd:string ;
+       
+       rdfs:comment "Affirmation gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AG
+
+:AG rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "AG"^^xsd:string ;
+    
+    rdfs:comment "Agent gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AGR
+
+:AGR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "AGR"^^xsd:string ;
+     
+     rdfs:comment "Agreement gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AL
+
+:AL rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "AL"^^xsd:string ;
+    
+    rdfs:comment "Alienable gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ALL
+
+:ALL rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ALL"^^xsd:string ;
+     
+     rdfs:comment "Allative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AN
+
+:AN rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "AN"^^xsd:string ;
+    
+    rdfs:comment "Animate gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ANML
+
+:ANML rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "ANML"^^xsd:string ;
+      
+      rdfs:comment "Animal gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ANT
+
+:ANT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ANT"^^xsd:string ;
+     
+     rdfs:comment "Anterior gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ANTIP
+
+:ANTIP rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "ANTIP"^^xsd:string ;
+       
+       rdfs:comment "Antipassive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AOR
+
+:AOR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "AOR"^^xsd:string ;
+     
+     rdfs:comment "Aorist gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/APPL
+
+:APPL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "APPL"^^xsd:string ;
+      
+      rdfs:comment "Applicative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/APPR
+
+:APPR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "APPR"^^xsd:string ;
+      
+      rdfs:comment "Apprehensional gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ART
+
+:ART rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ART"^^xsd:string ;
+     
+     rdfs:comment "Article gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ASSUM
+
+:ASSUM rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "ASSUM"^^xsd:string ;
+       
+       rdfs:comment "Assumed gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ATTEN
+
+:ATTEN rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "ATTEN"^^xsd:string ;
+       
+       rdfs:comment "Attenuation gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AUD
+
+:AUD rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "AUD"^^xsd:string ;
+     
+     rdfs:comment "Auditory gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AUG
+
+:AUG rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "AUG"^^xsd:string ;
+     
+     rdfs:comment "Augmentation gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AUX
+
+:AUX rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "AUX"^^xsd:string ;
+     
+     rdfs:comment "Auxiliary gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AVAL
+
+:AVAL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "AVAL"^^xsd:string ;
+      
+      rdfs:comment "Avalence gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/AVERS
+
+:AVERS rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "AVERS"^^xsd:string ;
+       
+       rdfs:comment "Aversive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/BEN
+
+:BEN rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "BEN"^^xsd:string ;
+     
+     rdfs:comment "Benefactive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CARD
+
+:CARD rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CARD"^^xsd:string ;
+      
+      rdfs:comment "Cardinal number gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CAUS
+
+:CAUS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CAUS"^^xsd:string ;
+      
+      rdfs:comment "Causative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CAUSV
+
+:CAUSV rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "CAUSV"^^xsd:string ;
+       
+       rdfs:comment "Causative verb gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CIRC
+
+:CIRC rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CIRC"^^xsd:string ;
+      
+      rdfs:comment "Circumstantial gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CIRP
+
+:CIRP rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CIRP"^^xsd:string ;
+      
+      rdfs:comment "Cicumposition gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CLF
+
+:CLF rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "CLF"^^xsd:string ;
+     
+     rdfs:comment "Classifier gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CNTV
+
+:CNTV rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CNTV"^^xsd:string ;
+      
+      rdfs:comment "Conative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/COM
+
+:COM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "COM"^^xsd:string ;
+     
+     rdfs:comment "Comitative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/COMM
+
+:COMM rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "COMM"^^xsd:string ;
+      
+      rdfs:comment "Common gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/COMP
+
+:COMP rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "COMP"^^xsd:string ;
+      
+      rdfs:comment "Complementizer gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/COMPL
+
+:COMPL rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "COMPL"^^xsd:string ;
+       
+       rdfs:comment "Completive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/COMPR
+
+:COMPR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "COMPR"^^xsd:string ;
+       
+       rdfs:comment "Comparative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CONC
+
+:CONC rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CONC"^^xsd:string ;
+      
+      rdfs:comment "Concessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/COND
+
+:COND rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "COND"^^xsd:string ;
+      
+      rdfs:comment "Conditional gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CONJ
+
+:CONJ rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CONJ"^^xsd:string ;
+      
+      rdfs:comment "Conjunction gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CONJC
+
+:CONJC rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "CONJC"^^xsd:string ;
+       
+       rdfs:comment "Conjectural gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CONSEC
+
+:CONSEC rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "CONSEC"^^xsd:string ;
+        
+        rdfs:comment "Consecutive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CONT
+
+:CONT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CONT"^^xsd:string ;
+      
+      rdfs:comment "Continuative and continuous gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/COP
+
+:COP rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "COP"^^xsd:string ;
+     
+     rdfs:comment "Copula gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CRAS
+
+:CRAS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "CRAS"^^xsd:string ;
+      
+      rdfs:comment "Crastinal gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CTB
+
+:CTB rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "CTB"^^xsd:string ;
+     
+     rdfs:comment "Countable gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/CVB
+
+:CVB rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "CVB"^^xsd:string ;
+     
+     rdfs:comment "Converb gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DAT
+
+:DAT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DAT"^^xsd:string ;
+     
+     rdfs:comment "Dative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DECL
+
+:DECL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "DECL"^^xsd:string ;
+      
+      rdfs:comment "Declarative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DEF
+
+:DEF rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DEF"^^xsd:string ;
+     
+     rdfs:comment "Definite gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DEL
+
+:DEL rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DEL"^^xsd:string ;
+     
+     rdfs:comment "Delative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DEM
+
+:DEM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DEM"^^xsd:string ;
+     
+     rdfs:comment "Demonstrative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DEMPR
+
+:DEMPR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "DEMPR"^^xsd:string ;
+       
+       rdfs:comment "Demonstrative pronoun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DES
+
+:DES rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DES"^^xsd:string ;
+     
+     rdfs:comment "Desiderative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DET
+
+:DET rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DET"^^xsd:string ;
+     
+     rdfs:comment "Determiner gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DIM
+
+:DIM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DIM"^^xsd:string ;
+     
+     rdfs:comment "Diminuition gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DIREV
+
+:DIREV rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "DIREV"^^xsd:string ;
+       
+       rdfs:comment "Direct evidential gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DIST
+
+:DIST rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "DIST"^^xsd:string ;
+      
+      rdfs:comment "Distal gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DISTR
+
+:DISTR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "DISTR"^^xsd:string ;
+       
+       rdfs:comment "Distributive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DITR
+
+:DITR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "DITR"^^xsd:string ;
+      
+      rdfs:comment "Ditransitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DO
+
+:DO rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "DO"^^xsd:string ;
+    
+    rdfs:comment "Direct object gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DR
+
+:DR rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "DR"^^xsd:string ;
+    
+    rdfs:comment "Direct voice gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DS
+
+:DS rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "DS"^^xsd:string ;
+    
+    rdfs:comment "Different subject marker gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DU
+
+:DU rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "DU"^^xsd:string ;
+    
+    rdfs:comment "Dual gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DUB
+
+:DUB rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DUB"^^xsd:string ;
+     
+     rdfs:comment "Dubitative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DUR
+
+:DUR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DUR"^^xsd:string ;
+     
+     rdfs:comment "Durative (aspect and aktionsart)gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/DYN
+
+:DYN rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "DYN"^^xsd:string ;
+     
+     rdfs:comment "Dynamic gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/EGR
+
+:EGR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "EGR"^^xsd:string ;
+     
+     rdfs:comment "Egressive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ELAT
+
+:ELAT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "ELAT"^^xsd:string ;
+      
+      rdfs:comment "Elative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/EMPH
+
+:EMPH rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "EMPH"^^xsd:string ;
+      
+      rdfs:comment "Emphasizer gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/EQT
+
+:EQT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "EQT"^^xsd:string ;
+     
+     rdfs:comment "Equative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ERG
+
+:ERG rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ERG"^^xsd:string ;
+     
+     rdfs:comment "Ergative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ESS
+
+:ESS rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ESS"^^xsd:string ;
+     
+     rdfs:comment "Essive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/EVID
+
+:EVID rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "EVID"^^xsd:string ;
+      
+      rdfs:comment "Evidential gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/EXCL
+
+:EXCL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "EXCL"^^xsd:string ;
+      
+      rdfs:comment "Exclusive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/EXCLA
+
+:EXCLA rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "EXCLA"^^xsd:string ;
+       
+       rdfs:comment "Exclamative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/F
+
+:F rdf:type :MorphemicGloss ,
+            owl:NamedIndividual ;
+   
+   rdfs:label "F"^^xsd:string ;
+   
+   rdfs:comment "Feminine gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FACT
+
+:FACT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "FACT"^^xsd:string ;
+      
+      rdfs:comment "Factitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FEM
+
+:FEM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "FEM"^^xsd:string ;
+     
+     rdfs:comment "Female gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FEMN
+
+:FEMN rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "FEMN"^^xsd:string ;
+      
+      rdfs:comment "Female noun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FFUT
+
+:FFUT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "FFUT"^^xsd:string ;
+      
+      rdfs:comment "Future in future gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FOC
+
+:FOC rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "FOC"^^xsd:string ;
+     
+     rdfs:comment "Focus marker gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FPST
+
+:FPST rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "FPST"^^xsd:string ;
+      
+      rdfs:comment "Future in past gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FREQ
+
+:FREQ rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "FREQ"^^xsd:string ;
+      
+      rdfs:comment "Frequentative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FUT
+
+:FUT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "FUT"^^xsd:string ;
+     
+     rdfs:comment "Future gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/FUTPRF
+
+:FUTPRF rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "FUTPRF"^^xsd:string ;
+        
+        rdfs:comment "Future perfect gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/GEN
+
+:GEN rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "GEN"^^xsd:string ;
+     
+     rdfs:comment "Genitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/GER
+
+:GER rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "GER"^^xsd:string ;
+     
+     rdfs:comment "Gerundive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/GNR
+
+:GNR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "GNR"^^xsd:string ;
+     
+     rdfs:comment "Generic gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/HABIT
+
+:HABIT rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "HABIT"^^xsd:string ;
+       
+       rdfs:comment "Habitual gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/HEST
+
+:HEST rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "HEST"^^xsd:string ;
+      
+      rdfs:comment "Hesternal past gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/HODFUT
+
+:HODFUT rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "HODFUT"^^xsd:string ;
+        
+        rdfs:comment "Hodiernal future gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/HODPST
+
+:HODPST rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "HODPST"^^xsd:string ;
+        
+        rdfs:comment "Hodiernal past gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/HON
+
+:HON rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "HON"^^xsd:string ;
+     
+     rdfs:comment "Honorific gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/HORT
+
+:HORT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "HORT"^^xsd:string ;
+      
+      rdfs:comment "Hortative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/HUM
+
+:HUM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "HUM"^^xsd:string ;
+     
+     rdfs:comment "Human gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ILL
+
+:ILL rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ILL"^^xsd:string ;
+     
+     rdfs:comment "Illative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IMMFUT
+
+:IMMFUT rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "IMMFUT"^^xsd:string ;
+        
+        rdfs:comment "Immediate future gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IMMPST
+
+:IMMPST rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "IMMPST"^^xsd:string ;
+        
+        rdfs:comment "Immediate past gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IMP
+
+:IMP rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "IMP"^^xsd:string ;
+     
+     rdfs:comment "Imperative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IMPF
+
+:IMPF rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "IMPF"^^xsd:string ;
+      
+      rdfs:comment "Imperfect gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INABL
+
+:INABL rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "INABL"^^xsd:string ;
+       
+       rdfs:comment "Inablative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INAL
+
+:INAL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INAL"^^xsd:string ;
+      
+      rdfs:comment "Inalienable gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INALL
+
+:INALL rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "INALL"^^xsd:string ;
+       
+       rdfs:comment "Inallative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INAN
+
+:INAN rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INAN"^^xsd:string ;
+      
+      rdfs:comment "Inanimate gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INCH
+
+:INCH rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INCH"^^xsd:string ;
+      
+      rdfs:comment "Inchoative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INCL
+
+:INCL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INCL"^^xsd:string ;
+      
+      rdfs:comment "Inclusive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IND
+
+:IND rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "IND"^^xsd:string ;
+     
+     rdfs:comment "Indicative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INDEF
+
+:INDEF rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "INDEF"^^xsd:string ;
+       
+       rdfs:comment "Indefinite gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INDPR
+
+:INDPR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "INDPR"^^xsd:string ;
+       
+       rdfs:comment "Indefinite pronoun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INESS
+
+:INESS rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "INESS"^^xsd:string ;
+       
+       rdfs:comment "Inessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INF
+
+:INF rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "INF"^^xsd:string ;
+     
+     rdfs:comment "Infinitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INFR
+
+:INFR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INFR"^^xsd:string ;
+      
+      rdfs:comment "Inferential gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INGR
+
+:INGR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INGR"^^xsd:string ;
+      
+      rdfs:comment "Ingressive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INH
+
+:INH rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "INH"^^xsd:string ;
+     
+     rdfs:comment "Inhabitant gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INS
+
+:INS rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "INS"^^xsd:string ;
+     
+     rdfs:comment "Instrumental gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INST
+
+:INST rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INST"^^xsd:string ;
+      
+      rdfs:comment "Instrument gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INT
+
+:INT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "INT"^^xsd:string ;
+     
+     rdfs:comment "Interrogative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTABL
+
+:INTABL rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "INTABL"^^xsd:string ;
+        
+        rdfs:comment "Interablative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTALL
+
+:INTALL rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "INTALL"^^xsd:string ;
+        
+        rdfs:comment "Interallative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTERM
+
+:INTERM rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "INTERM"^^xsd:string ;
+        
+        rdfs:comment "Interminative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTESS
+
+:INTESS rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "INTESS"^^xsd:string ;
+        
+        rdfs:comment "Interessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTJ
+
+:INTJ rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INTJ"^^xsd:string ;
+      
+      rdfs:comment "Interjection gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTLAT
+
+:INTLAT rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "INTLAT"^^xsd:string ;
+        
+        rdfs:comment "Interlative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTPR
+
+:INTPR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "INTPR"^^xsd:string ;
+       
+       rdfs:comment "Interrogative pronoun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTR
+
+:INTR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INTR"^^xsd:string ;
+      
+      rdfs:comment "Intransitive gloss."@en ,
+                   "Intransitivizer gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTRANS
+
+:INTRANS rdf:type :MorphemicGloss ,
+                  owl:NamedIndividual ;
+         
+         rdfs:label "INTRANS"^^xsd:string ;
+         
+         rdfs:comment "Intranslative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTRV
+
+:INTRV rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "INTRV"^^xsd:string ;
+       
+       rdfs:comment "Introversive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTS
+
+:INTS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "INTS"^^xsd:string ;
+      
+      rdfs:comment "Intensification"@en .
+
+
+
+###  http://mmoon.org/mmoon/INTTERM
+
+:INTTERM rdf:type :MorphemicGloss ,
+                  owl:NamedIndividual ;
+         
+         rdfs:label "INTTERM"^^xsd:string ;
+         
+         rdfs:comment "Interterminative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTTRANS
+
+:INTTRANS rdf:type :MorphemicGloss ,
+                   owl:NamedIndividual ;
+          
+          rdfs:label "INTTRANS"^^xsd:string ;
+          
+          rdfs:comment "Intertranslative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IO
+
+:IO rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "IO"^^xsd:string ;
+    
+    rdfs:comment "Indirect object gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IPFV
+
+:IPFV rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "IPFV"^^xsd:string ;
+      
+      rdfs:comment "Imperfective gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IPS
+
+:IPS rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "IPS"^^xsd:string ;
+     
+     rdfs:comment "Impersonal passive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/IRR
+
+:IRR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "IRR"^^xsd:string ;
+     
+     rdfs:comment "Irrealis gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ITER
+
+:ITER rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "ITER"^^xsd:string ;
+      
+      rdfs:comment "Iterative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/JUSS
+
+:JUSS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "JUSS"^^xsd:string ;
+      
+      rdfs:comment "Jussive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/LAT
+
+:LAT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "LAT"^^xsd:string ;
+     
+     rdfs:comment "Lative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/LOC
+
+:LOC rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "LOC"^^xsd:string ;
+     
+     rdfs:comment "Locative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/LOCNR
+
+:LOCNR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "LOCNR"^^xsd:string ;
+       
+       rdfs:comment "Place nominalizer gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/M
+
+:M rdf:type :MorphemicGloss ,
+            owl:NamedIndividual ;
+   
+   rdfs:label "M"^^xsd:string ;
+   
+   rdfs:comment "Masculine gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/MAL
+
+:MAL rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "MAL"^^xsd:string ;
+     
+     rdfs:comment "Malefactive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/MALE
+
+:MALE rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "MALE"^^xsd:string ;
+      
+      rdfs:comment "Male gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/MAT
+
+:MAT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "MAT"^^xsd:string ;
+     
+     rdfs:comment "Material gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/MED
+
+:MED rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "MED"^^xsd:string ;
+     
+     rdfs:comment "Medial gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/MEDP
+
+:MEDP rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "MEDP"^^xsd:string ;
+      
+      rdfs:comment "Mediopassive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/MEDT
+
+:MEDT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "MEDT"^^xsd:string ;
+      
+      rdfs:comment "Mediative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/MID
+
+:MID rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "MID"^^xsd:string ;
+     
+     rdfs:comment "Middle voice gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/N
+
+:N rdf:type :MorphemicGloss ,
+            owl:NamedIndividual ;
+   
+   rdfs:label "N"^^xsd:string ;
+   
+   rdfs:comment "Neuter gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/N-
+
+:N- rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "N-"^^xsd:string ;
+    
+    rdfs:comment "Negative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NARR
+
+:NARR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "NARR"^^xsd:string ;
+      
+      rdfs:comment "Narrative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NEG
+
+:NEG rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "NEG"^^xsd:string ;
+     
+     rdfs:comment "Negation gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NMLZ
+
+:NMLZ rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "NMLZ"^^xsd:string ;
+      
+      rdfs:comment "Nominalization gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NN
+
+:NN rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "NN"^^xsd:string ;
+    
+    rdfs:comment "Noun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NNC
+
+:NNC rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "NNC"^^xsd:string ;
+     
+     rdfs:comment "Common noun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NNP
+
+:NNP rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "NNP"^^xsd:string ;
+     
+     rdfs:comment "Proper noun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NOM
+
+:NOM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "NOM"^^xsd:string ;
+     
+     rdfs:comment "Nominative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NREFL
+
+:NREFL rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "NREFL"^^xsd:string ;
+       
+       rdfs:comment "Non reflexive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NRFUT
+
+:NRFUT rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "NRFUT"^^xsd:string ;
+       
+       rdfs:comment "Near future gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NSPEC
+
+:NSPEC rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "NSPEC"^^xsd:string ;
+       
+       rdfs:comment "Non-specific determination gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NUM
+
+:NUM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "NUM"^^xsd:string ;
+     
+     rdfs:comment "Numeral gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/NVIS
+
+:NVIS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "NVIS"^^xsd:string ;
+      
+      rdfs:comment "Nonvisual gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/OBJ
+
+:OBJ rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "OBJ"^^xsd:string ;
+     
+     rdfs:comment "Object gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/OBL
+
+:OBL rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "OBL"^^xsd:string ;
+     
+     rdfs:comment "Oblique gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/OBLG
+
+:OBLG rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "OBLG"^^xsd:string ;
+      
+      rdfs:comment "Obligative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/OPT
+
+:OPT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "OPT"^^xsd:string ;
+     
+     rdfs:comment "Optative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ORD
+
+:ORD rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "ORD"^^xsd:string ;
+     
+     rdfs:comment "Ordinal number gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/P
+
+:P rdf:type :MorphemicGloss ,
+            owl:NamedIndividual ;
+   
+   rdfs:label "P"^^xsd:string ;
+   
+   rdfs:comment "Transitive patient gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PASS
+
+:PASS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PASS"^^xsd:string ;
+      
+      rdfs:comment "Passive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PATNR
+
+:PATNR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "PATNR"^^xsd:string ;
+       
+       rdfs:comment "Patient nominalizer gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PAU
+
+:PAU rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "PAU"^^xsd:string ;
+     
+     rdfs:comment "Paucal gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PERL
+
+:PERL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PERL"^^xsd:string ;
+      
+      rdfs:comment "Perlative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PFUT
+
+:PFUT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PFUT"^^xsd:string ;
+      
+      rdfs:comment "Past in future gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PFV
+
+:PFV rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "PFV"^^xsd:string ;
+     
+     rdfs:comment "Perfective gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PHODFUT
+
+:PHODFUT rdf:type :MorphemicGloss ,
+                  owl:NamedIndividual ;
+         
+         rdfs:label "PHODFUT"^^xsd:string ;
+         
+         rdfs:comment "Post-hodiernal future gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PL
+
+:PL rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "PL"^^xsd:string ;
+    
+    rdfs:comment "Plural gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PLUP
+
+:PLUP rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PLUP"^^xsd:string ;
+      
+      rdfs:comment "Pluperfect gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PNCT
+
+:PNCT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PNCT"^^xsd:string ;
+      
+      rdfs:comment "Punctual gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/POS
+
+:POS rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "POS"^^xsd:string ;
+     
+     rdfs:comment "Positive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/POSS
+
+:POSS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "POSS"^^xsd:string ;
+      
+      rdfs:comment "Possessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/POSSPR
+
+:POSSPR rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "POSSPR"^^xsd:string ;
+        
+        rdfs:comment "Possessive pronoun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/POST
+
+:POST rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "POST"^^xsd:string ;
+      
+      rdfs:comment "Posterior gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/POSTEL
+
+:POSTEL rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "POSTEL"^^xsd:string ;
+        
+        rdfs:comment "Postelative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/POSTESS
+
+:POSTESS rdf:type :MorphemicGloss ,
+                  owl:NamedIndividual ;
+         
+         rdfs:label "POSTESS"^^xsd:string ;
+         
+         rdfs:comment "Postessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/POT
+
+:POT rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "POT"^^xsd:string ;
+     
+     rdfs:comment "Potential gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PPOS
+
+:PPOS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PPOS"^^xsd:string ;
+      
+      rdfs:comment "Postposition gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PPR
+
+:PPR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "PPR"^^xsd:string ;
+     
+     rdfs:comment "Personal pronoun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PPRF
+
+:PPRF rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PPRF"^^xsd:string ;
+      
+      rdfs:comment "Past perfect gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PR
+
+:PR rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "PR"^^xsd:string ;
+    
+    rdfs:comment "Pronoun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PREC
+
+:PREC rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PREC"^^xsd:string ;
+      
+      rdfs:comment "Precative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRED
+
+:PRED rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PRED"^^xsd:string ;
+      
+      rdfs:comment "Predicative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRF
+
+:PRF rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "PRF"^^xsd:string ;
+     
+     rdfs:comment "Perfect gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRIV
+
+:PRIV rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PRIV"^^xsd:string ;
+      
+      rdfs:comment "Privative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PROC
+
+:PROC rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PROC"^^xsd:string ;
+      
+      rdfs:comment "Processive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PROG
+
+:PROG rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PROG"^^xsd:string ;
+      
+      rdfs:comment "Progressive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PROH
+
+:PROH rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PROH"^^xsd:string ;
+      
+      rdfs:comment "Prohibitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PROLAT
+
+:PROLAT rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "PROLAT"^^xsd:string ;
+        
+        rdfs:comment "Prolative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PROPR
+
+:PROPR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "PROPR"^^xsd:string ;
+       
+       rdfs:comment "Proprietive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PROSP
+
+:PROSP rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "PROSP"^^xsd:string ;
+       
+       rdfs:comment "Prospective gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PROX
+
+:PROX rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PROX"^^xsd:string ;
+      
+      rdfs:comment "Proximal gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRPOS
+
+:PRPOS rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "PRPOS"^^xsd:string ;
+       
+       rdfs:comment "Preposition gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRS
+
+:PRS rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "PRS"^^xsd:string ;
+     
+     rdfs:comment "Present gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRSN
+
+:PRSN rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PRSN"^^xsd:string ;
+      
+      rdfs:comment "Person noun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRTC
+
+:PRTC rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PRTC"^^xsd:string ;
+      
+      rdfs:comment "Particle gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRTV
+
+:PRTV rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PRTV"^^xsd:string ;
+      
+      rdfs:comment "Partitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PST
+
+:PST rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "PST"^^xsd:string ;
+     
+     rdfs:comment "Past gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PTCP
+
+:PTCP rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PTCP"^^xsd:string ;
+      
+      rdfs:comment "Participle gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PURP
+
+:PURP rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PURP"^^xsd:string ;
+      
+      rdfs:comment "Purposive case gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/Q
+
+:Q rdf:type :MorphemicGloss ,
+            owl:NamedIndividual ;
+   
+   rdfs:label "Q"^^xsd:string ;
+   
+   rdfs:comment "Question particle gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/QUAL
+
+:QUAL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "QUAL"^^xsd:string ;
+      
+      rdfs:comment "Quality gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/QUOT
+
+:QUOT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "QUOT"^^xsd:string ;
+      
+      rdfs:comment "Quotative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RECPR
+
+:RECPR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "RECPR"^^xsd:string ;
+       
+       rdfs:comment "Reciprocal pronoun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RECPST
+
+:RECPST rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "RECPST"^^xsd:string ;
+        
+        rdfs:comment "Recent past gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/REFL
+
+:REFL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "REFL"^^xsd:string ;
+      
+      rdfs:comment "Reflexive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RELL
+
+:RELL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "RELL"^^xsd:string ;
+      
+      rdfs:comment "Relational gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RELPR
+
+:RELPR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "RELPR"^^xsd:string ;
+       
+       rdfs:comment "Relative pronoun gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RELPRS
+
+:RELPRS rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "RELPRS"^^xsd:string ;
+        
+        rdfs:comment "Relative present gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RELPST
+
+:RELPST rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "RELPST"^^xsd:string ;
+        
+        rdfs:comment "Relative past gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/REMPST
+
+:REMPST rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "REMPST"^^xsd:string ;
+        
+        rdfs:comment "Remote past gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/REP
+
+:REP rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "REP"^^xsd:string ;
+     
+     rdfs:comment "Repetitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RES
+
+:RES rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "RES"^^xsd:string ;
+     
+     rdfs:comment "Resultative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RLS
+
+:RLS rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "RLS"^^xsd:string ;
+     
+     rdfs:comment "Realis gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RPRT
+
+:RPRT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "RPRT"^^xsd:string ;
+      
+      rdfs:comment "Reportative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/RVRS
+
+:RVRS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "RVRS"^^xsd:string ;
+      
+      rdfs:comment "Reversion gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/S
+
+:S rdf:type :MorphemicGloss ,
+            owl:NamedIndividual ;
+   
+   rdfs:label "S"^^xsd:string ;
+   
+   rdfs:comment "Intransitive subject gloss."@en ;
+   
+   rdfs:isDefinedBy "http://purl.org/olia/olia.owl#IntransitiveSubject" .
+
+
+
+###  http://mmoon.org/mmoon/SBJ
+
+:SBJ rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "SBJ"^^xsd:string ;
+     
+     rdfs:comment "Subject gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SBJV
+
+:SBJV rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "SBJV"^^xsd:string ;
+      
+      rdfs:comment "Subjunctive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SC
+
+:SC rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "SC"^^xsd:string ;
+    
+    rdfs:comment "Status constructus gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SENS
+
+:SENS rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "SENS"^^xsd:string ;
+      
+      rdfs:comment "Sensory gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SG
+
+:SG rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "SG"^^xsd:string ;
+    
+    rdfs:comment "Singular gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SMLF
+
+:SMLF rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "SMLF"^^xsd:string ;
+      
+      rdfs:comment "Semelfactive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SPEC
+
+:SPEC rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "SPEC"^^xsd:string ;
+      
+      rdfs:comment "Specific gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SPECL
+
+:SPECL rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "SPECL"^^xsd:string ;
+       
+       rdfs:comment "Speculative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SS
+
+:SS rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "SS"^^xsd:string ;
+    
+    rdfs:comment "Same subject marker gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/STA
+
+:STA rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "STA"^^xsd:string ;
+     
+     rdfs:comment "Status gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/STAT
+
+:STAT rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "STAT"^^xsd:string ;
+      
+      rdfs:comment "Stative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUBABL
+
+:SUBABL rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "SUBABL"^^xsd:string ;
+        
+        rdfs:comment "Subablative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUBALL
+
+:SUBALL rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "SUBALL"^^xsd:string ;
+        
+        rdfs:comment "Suballative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUBESS
+
+:SUBESS rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "SUBESS"^^xsd:string ;
+        
+        rdfs:comment "Subessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUBL
+
+:SUBL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "SUBL"^^xsd:string ;
+      
+      rdfs:comment "Sublative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUBTERM
+
+:SUBTERM rdf:type :MorphemicGloss ,
+                  owl:NamedIndividual ;
+         
+         rdfs:label "SUBTERM"^^xsd:string ;
+         
+         rdfs:comment "Subterminative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUBTRANS
+
+:SUBTRANS rdf:type :MorphemicGloss ,
+                   owl:NamedIndividual ;
+          
+          rdfs:label "SUBTRANS"^^xsd:string ;
+          
+          rdfs:comment "Subtranslative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUP
+
+:SUP rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "SUP"^^xsd:string ;
+     
+     rdfs:comment "Superlative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUPABL
+
+:SUPABL rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "SUPABL"^^xsd:string ;
+        
+        rdfs:comment "Superablative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUPALL
+
+:SUPALL rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "SUPALL"^^xsd:string ;
+        
+        rdfs:comment "Superallative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUPEL
+
+:SUPEL rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "SUPEL"^^xsd:string ;
+       
+       rdfs:comment "Superelative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUPESS
+
+:SUPESS rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "SUPESS"^^xsd:string ;
+        
+        rdfs:comment "Superessive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUPL
+
+:SUPL rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "SUPL"^^xsd:string ;
+      
+      rdfs:comment "Superlative case gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUPTERM
+
+:SUPTERM rdf:type :MorphemicGloss ,
+                  owl:NamedIndividual ;
+         
+         rdfs:label "SUPTERM"^^xsd:string ;
+         
+         rdfs:comment "Superterminative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/SUPTRANS
+
+:SUPTRANS rdf:type :MorphemicGloss ,
+                   owl:NamedIndividual ;
+          
+          rdfs:label "SUPTRANS"^^xsd:string ;
+          
+          rdfs:comment "Supertranslative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/TERM
+
+:TERM rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "TERM"^^xsd:string ;
+      
+      rdfs:comment "Terminative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/TOP
+
+:TOP rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "TOP"^^xsd:string ;
+     
+     rdfs:comment "Topic marker gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/TR
+
+:TR rdf:type :MorphemicGloss ,
+             owl:NamedIndividual ;
+    
+    rdfs:label "TR"^^xsd:string ;
+    
+    rdfs:comment "Transitive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/TRANS
+
+:TRANS rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "TRANS"^^xsd:string ;
+       
+       rdfs:comment "Translative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/TRR
+
+:TRR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "TRR"^^xsd:string ;
+     
+     rdfs:comment "Transitiviser gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/UGR
+
+:UGR rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "UGR"^^xsd:string ;
+     
+     rdfs:comment "Undergoer gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/UNCTB
+
+:UNCTB rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "UNCTB"^^xsd:string ;
+       
+       rdfs:comment "Uncountable gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/V
+
+:V rdf:type :MorphemicGloss ,
+            owl:NamedIndividual ;
+   
+   rdfs:label "V"^^xsd:string ;
+   
+   rdfs:comment "Verb gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/VBZ
+
+:VBZ rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "VBZ"^^xsd:string ;
+     
+     rdfs:comment "Verbalization gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/VFIN
+
+:VFIN rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "VFIN"^^xsd:string ;
+      
+      rdfs:comment "Finite verb gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/VIS
+
+:VIS rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "VIS"^^xsd:string ;
+     
+     rdfs:comment "Visual gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/VNFIN
+
+:VNFIN rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "VNFIN"^^xsd:string ;
+       
+       rdfs:comment "Non-finite verb gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/VOC
+
+:VOC rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "VOC"^^xsd:string ;
+     
+     rdfs:comment "Vocative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/1
+
+<http://mmoon.org/mmoon/1> rdf:type :MorphemicGloss ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "1"^^xsd:string ;
+                           
+                           rdfs:comment "First person gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/2
+
+<http://mmoon.org/mmoon/2> rdf:type :MorphemicGloss ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "2"^^xsd:string ;
+                           
+                           rdfs:comment "Second person gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/3
+
+<http://mmoon.org/mmoon/3> rdf:type :MorphemicGloss ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "3"^^xsd:string ;
+                           
+                           rdfs:comment "Third person gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/∅
+
+<http://mmoon.org/mmoon/∅> rdf:type :MorphemicGloss ,
+                                    owl:NamedIndividual ;
+                           
+                           rdfs:label "∅"^^xsd:string ;
+                           
+                           rdfs:comment "Empty morph gloss."@en .
 
 
 
