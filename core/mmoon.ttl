@@ -1212,10 +1212,6 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
              
              rdfs:subClassOf :Lexeme ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty :derivationalRelation ;
-                               owl:someValuesFrom :Derivation
-                             ] ,
-                             [ rdf:type owl:Restriction ;
                                owl:onProperty :isDerivedFrom ;
                                owl:onClass [ rdf:type owl:Class ;
                                              owl:unionOf ( :GrammaticalWord
@@ -1223,6 +1219,10 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                                                          )
                                            ] ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :derivationalRelation ;
+                               owl:someValuesFrom :Derivation
                              ] ;
              
              :example "\"replay\" is a derived word from the lexeme \"play\"."@en ;
@@ -1616,7 +1616,9 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                 
                 rdfs:label "Morphemic gloss"@en ;
                 
-                :definition "The gloss is the abstract identity of a morpheme. It serves as a metalinguistic representation of morphological meanings. Most of the glosses used for grammatical concepts are taken from the Leipzig Glossing Rules  (https://www.eva.mpg.de/lingua/pdf/LGR08.02.05.pdf) or from Lehmann 2004 (http://christianlehmann.eu/publ/img.pdf). Lexical senses are usually glossed in English by using the orthographic representation of the lexical element (such as stems and roots) but can be also given in the language of the MMoOn language inventory."@en .
+                :usageNote "Most of the glosses used for grammatical concepts are taken from the Leipzig Glossing Rules  (https://www.eva.mpg.de/lingua/pdf/LGR08.02.05.pdf) or from Lehmann 2004 (http://christianlehmann.eu/publ/img.pdf). Lexical senses are usually glossed in English by using the orthographic representation of the lexical element (such as stems and roots) but can be also given in the language of the MMoOn language inventory."@en ;
+                
+                :definition "The gloss is the abstract identity of a morpheme. It serves as a metalinguistic representation of morphological meanings."@en .
 
 
 
