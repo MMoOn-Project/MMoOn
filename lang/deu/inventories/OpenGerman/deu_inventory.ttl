@@ -16,8 +16,6 @@
                                                       mmoon: .
 
 
-
-
 #################################################################
 #
 #    Classes
@@ -541,6 +539,8 @@ the purchase"""@en ;
                                                      
                                                      mmoon:isDerivedFrom <http://mmoon.org/lang/deu/inventory/og/Lexeme/kaufen> ;
                                                      
+                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kauf> ;
+                                                     
                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                      
                                                      mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Kauf1> ,
@@ -570,6 +570,8 @@ the purchase"""@en ;
                                                        
                                                        mmoon:isDerivedFrom <http://mmoon.org/lang/deu/inventory/og/Lexeme/schlafen> ;
                                                        
+                                                       mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf> ;
+                                                       
                                                        mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schlaf1> ;
                                                        
                                                        mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/Schlaf1> ,
@@ -592,6 +594,8 @@ the purchase"""@en ;
                                                        
                                                        rdfs:label "kaufen"@de ,
                                                                   "to buy"@en ;
+                                                       
+                                                       mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kaufen> ;
                                                        
                                                        mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf> ;
                                                        
@@ -620,6 +624,8 @@ the purchase"""@en ;
                                                                  """little,
 small"""@en ;
                                                       
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/klein> ;
+                                                      
                                                       mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/klein> ;
                                                       
                                                       mmoon:hasWordform <http://mmoon.org/lang/deu/inventory/og/SyntheticWordform/kleiner1> ,
@@ -637,6 +643,8 @@ small"""@en ;
                                                          
                                                          rdfs:label "schlafen"@de ,
                                                                     "to sleep"@en ;
+                                                         
+                                                         mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlafen> ;
                                                          
                                                          mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> ;
                                                          
@@ -663,6 +671,8 @@ small"""@en ;
                                                      
                                                      rdfs:label "sein"@de ,
                                                                 "to be"@en ;
+                                                     
+                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sein> ;
                                                      
                                                      mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/sei> ;
                                                      
@@ -693,6 +703,8 @@ small"""@en ;
                                                           
                                                           mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Prefix/ver1> ;
                                                           
+                                                          mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufen> ;
+                                                          
                                                           mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                           
                                                           mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Suffix/en1> ;
@@ -718,7 +730,9 @@ small"""@en ;
                                                      
                                                      rdfs:label "ver"@de ;
                                                      
-                                                     mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_RES .
+                                                     mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_RES ;
+                                                     
+                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/ver> .
 
 
 
@@ -755,6 +769,15 @@ small"""@en ;
                                                                        owl:NamedIndividual ;
                                                               
                                                               mmoon:orthographicRepresentation "Kaufs" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/Käuf
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/Käuf> rdf:type deu_schema:Representation ,
+                                                                      owl:NamedIndividual ;
+                                                             
+                                                             mmoon:orthographicRepresentation "Käuf" .
 
 
 
@@ -827,6 +850,51 @@ small"""@en ;
                                                                       owl:NamedIndividual ;
                                                              
                                                              mmoon:orthographicRepresentation "bist" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/d
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/d> rdf:type deu_schema:Representation ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          mmoon:orthographicRepresentation "d" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/e
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/e> rdf:type deu_schema:Representation ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          mmoon:orthographicRepresentation "e" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/en
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/en> rdf:type deu_schema:Representation ,
+                                                                    owl:NamedIndividual ;
+                                                           
+                                                           mmoon:orthographicRepresentation "en" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/er
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/er> rdf:type deu_schema:Representation ,
+                                                                    owl:NamedIndividual ;
+                                                           
+                                                           mmoon:orthographicRepresentation "er" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/es
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/es> rdf:type deu_schema:Representation ,
+                                                                    owl:NamedIndividual ;
+                                                           
+                                                           mmoon:orthographicRepresentation "es" .
 
 
 
@@ -911,12 +979,39 @@ small"""@en ;
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation/kleinst
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/kleinst> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "kleinst" .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/Representation/kleinster
 
 <http://mmoon.org/lang/deu/inventory/og/Representation/kleinster> rdf:type deu_schema:Representation ,
                                                                            owl:NamedIndividual ;
                                                                   
                                                                   mmoon:orthographicRepresentation "kleinster" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/n
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/n> rdf:type deu_schema:Representation ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          mmoon:orthographicRepresentation "n" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/s
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/s> rdf:type deu_schema:Representation ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          mmoon:orthographicRepresentation "s" .
 
 
 
@@ -953,6 +1048,15 @@ small"""@en ;
                                                                          owl:NamedIndividual ;
                                                                 
                                                                 mmoon:orthographicRepresentation "schlaft" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/schläf
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/schläf> rdf:type deu_schema:Representation ,
+                                                                        owl:NamedIndividual ;
+                                                               
+                                                               mmoon:orthographicRepresentation "schläf" .
 
 
 
@@ -1010,6 +1114,33 @@ small"""@en ;
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation/st
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/st> rdf:type deu_schema:Representation ,
+                                                                    owl:NamedIndividual ;
+                                                           
+                                                           mmoon:orthographicRepresentation "st" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/t
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/t> rdf:type deu_schema:Representation ,
+                                                                   owl:NamedIndividual ;
+                                                          
+                                                          mmoon:orthographicRepresentation "t" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/ver
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/ver> rdf:type deu_schema:Representation ,
+                                                                     owl:NamedIndividual ;
+                                                            
+                                                            mmoon:orthographicRepresentation "ver" .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/Representation/verkauf
 
 <http://mmoon.org/lang/deu/inventory/og/Representation/verkauf> rdf:type deu_schema:Representation ,
@@ -1055,6 +1186,24 @@ small"""@en ;
 
 
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation/äu
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/äu> rdf:type deu_schema:Representation ,
+                                                                    owl:NamedIndividual ;
+                                                           
+                                                           mmoon:orthographicRepresentation "äu" .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation/*empty*
+
+<http://mmoon.org/lang/deu/inventory/og/Representation/*empty*> rdf:type deu_schema:Representation ,
+                                                                         owl:NamedIndividual ;
+                                                                
+                                                                mmoon:orthographicRepresentation "" .
+
+
+
 ###  http://mmoon.org/lang/deu/inventory/og/Root/kauf
 
 <http://mmoon.org/lang/deu/inventory/og/Root/kauf> rdf:type deu_schema:Root ,
@@ -1062,7 +1211,25 @@ small"""@en ;
                                                    
                                                    rdfs:label "kauf"@de ;
                                                    
-                                                   mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_kauf .
+                                                   mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_kauf ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Root/kauf1
+
+<http://mmoon.org/lang/deu/inventory/og/Root/kauf1> rdf:type owl:NamedIndividual ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Root/kauf2
+
+<http://mmoon.org/lang/deu/inventory/og/Root/kauf2> rdf:type owl:NamedIndividual ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> .
 
 
 
@@ -1073,7 +1240,9 @@ small"""@en ;
                                                     
                                                     rdfs:label "klein"@de ;
                                                     
-                                                    mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_klein .
+                                                    mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_klein ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/klein> .
 
 
 
@@ -1084,7 +1253,9 @@ small"""@en ;
                                                      
                                                      rdfs:label "schlaf"@de ;
                                                      
-                                                     mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_schlaf .
+                                                     mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_schlaf ;
+                                                     
+                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlaf> .
 
 
 
@@ -1095,7 +1266,9 @@ small"""@en ;
                                                   
                                                   rdfs:label "sei"@de ;
                                                   
-                                                  mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_sei .
+                                                  mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_sei ;
+                                                  
+                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sei> .
 
 
 
@@ -1107,6 +1280,8 @@ small"""@en ;
                                                      rdfs:label "äu"@de ;
                                                      
                                                      mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_PL ;
+                                                     
+                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/äu> ;
                                                      
                                                      mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e4> .
 
@@ -1120,6 +1295,8 @@ small"""@en ;
                                                     rdfs:label "Kauf1"@de ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_kauf.M.SG ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kauf> ;
                                                     
                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf> ;
                                                     
@@ -1136,6 +1313,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_kauf.M.SG.NOM ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kauf> ;
+                                                    
                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf> .
 
 
@@ -1146,6 +1325,8 @@ small"""@en ;
                                                             owl:NamedIndividual ;
                                                    
                                                    rdfs:label "Käuf"@de ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Käuf> ;
                                                    
                                                    mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf> ;
                                                    
@@ -1162,6 +1343,8 @@ small"""@en ;
                                                       
                                                       mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.SG.M ;
                                                       
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf> ;
+                                                      
                                                       mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> .
 
 
@@ -1175,6 +1358,8 @@ small"""@en ;
                                                       
                                                       mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.SG.M.NOM ;
                                                       
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf> ;
+                                                      
                                                       mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> .
 
 
@@ -1186,7 +1371,9 @@ small"""@en ;
                                                   
                                                   rdfs:label "bin"@de ;
                                                   
-                                                  mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.1.SG.PRS.IND .
+                                                  mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.1.SG.PRS.IND ;
+                                                  
+                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/bin> .
 
 
 
@@ -1197,7 +1384,9 @@ small"""@en ;
                                                    
                                                    rdfs:label "bist"@de ;
                                                    
-                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.2.SG.PRS.IND .
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.2.SG.PRS.IND ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/bist> .
 
 
 
@@ -1208,7 +1397,9 @@ small"""@en ;
                                                   
                                                   rdfs:label "ist"@de ;
                                                   
-                                                  mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.3.SG.PRS.IND .
+                                                  mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.3.SG.PRS.IND ;
+                                                  
+                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/ist> .
 
 
 
@@ -1220,6 +1411,8 @@ small"""@en ;
                                                     rdfs:label "kauf1"@de ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_kauf.PRS.IND ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> ;
                                                     
                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf1> ;
                                                     
@@ -1236,6 +1429,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_kauf.IMP ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> ;
+                                                    
                                                     mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf2> .
 
 
@@ -1249,6 +1444,8 @@ small"""@en ;
                                                      
                                                      mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_klein.POS ;
                                                      
+                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/klein> ;
+                                                     
                                                      mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/klein> .
 
 
@@ -1261,6 +1458,8 @@ small"""@en ;
                                                        rdfs:label "kleiner1"@de ;
                                                        
                                                        mmoon:correspondsToMorpheme deu_inventory:ComplexMorpheme_klein-COMPR ;
+                                                       
+                                                       mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kleiner> ;
                                                        
                                                        mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/klein> ;
                                                        
@@ -1277,6 +1476,8 @@ small"""@en ;
                                                        
                                                        mmoon:correspondsToMorpheme deu_inventory:ComplexMorpheme_klein-SUP ;
                                                        
+                                                       mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kleinst> ;
+                                                       
                                                        mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/klein> ;
                                                        
                                                        mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Suffix/st1> .
@@ -1292,6 +1493,8 @@ small"""@en ;
                                                       
                                                       mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.PRS.IND ;
                                                       
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlaf> ;
+                                                      
                                                       mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> ;
                                                       
                                                       mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Stem/schläf> .
@@ -1306,6 +1509,8 @@ small"""@en ;
                                                       rdfs:label "schlaf2"@de ;
                                                       
                                                       mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.IMP ;
+                                                      
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlaf> ;
                                                       
                                                       mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> ;
                                                       
@@ -1323,7 +1528,17 @@ small"""@en ;
                                                      
                                                      mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_schlaf.PRS.IND ;
                                                      
+                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schläf> ;
+                                                     
                                                      mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/schlaf> .
+
+
+
+###  http://mmoon.org/lang/deu/inventory/og/Stem/sei
+
+<http://mmoon.org/lang/deu/inventory/og/Stem/sei> rdf:type owl:NamedIndividual ;
+                                                  
+                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sei> .
 
 
 
@@ -1336,6 +1551,8 @@ small"""@en ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.IMP ;
                                                    
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sei> ;
+                                                   
                                                    mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/sei> .
 
 
@@ -1347,7 +1564,9 @@ small"""@en ;
                                                    
                                                    rdfs:label "seid"@de ;
                                                    
-                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.2.PL.PRS.IND .
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.2.PL.PRS.IND ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/seid> .
 
 
 
@@ -1360,6 +1579,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.1.PL.PRS.IND ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sind> ;
+                                                    
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Stem/sind2> .
 
 
@@ -1371,7 +1592,9 @@ small"""@en ;
                                                     
                                                     rdfs:label "sind2"@de ;
                                                     
-                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.3.PL.PRS.IND .
+                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_sei.3.PL.PRS.IND ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sind> .
 
 
 
@@ -1385,6 +1608,8 @@ small"""@en ;
                                                        mmoon:correspondsToMorpheme deu_inventory:ComplexMorpheme_RES-kauf.PRS.IND ;
                                                        
                                                        mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Prefix/ver1> ;
+                                                       
+                                                       mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkauf> ;
                                                        
                                                        mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                        
@@ -1403,6 +1628,8 @@ small"""@en ;
                                                        
                                                        mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Prefix/ver1> ;
                                                        
+                                                       mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkauf> ;
+                                                       
                                                        mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf2> .
 
 
@@ -1416,6 +1643,8 @@ small"""@en ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_2.PL ;
                                                    
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/d> ;
+                                                   
                                                    mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/t2> .
 
 
@@ -1428,6 +1657,8 @@ small"""@en ;
                                                    rdfs:label "e1"@de ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_1.SG ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/e> ;
                                                    
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ,
@@ -1446,6 +1677,8 @@ small"""@en ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_2.SG ;
                                                    
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/e> ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e4> ,
@@ -1462,6 +1695,8 @@ small"""@en ;
                                                    rdfs:label "e3"@de ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_DAT.SG ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/e> ;
                                                    
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
@@ -1480,6 +1715,8 @@ small"""@en ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_NOM.PL ;
                                                    
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/e> ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ,
@@ -1496,6 +1733,8 @@ small"""@en ;
                                                    rdfs:label "e5"@de ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_ACC.PL ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/e> ;
                                                    
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
@@ -1514,6 +1753,8 @@ small"""@en ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_GEN.PL ;
                                                    
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/e> ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ,
@@ -1530,6 +1771,8 @@ small"""@en ;
                                                     rdfs:label "en1"@de ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_INF ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/en> ;
                                                     
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/en2> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en3> ,
@@ -1548,6 +1791,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_1.PL ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/en> ;
+                                                    
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/en1> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en3> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en4> .
@@ -1563,6 +1808,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_3.PL ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/en> ;
+                                                    
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/en1> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en4> .
 
@@ -1576,6 +1823,8 @@ small"""@en ;
                                                     rdfs:label "en4"@de ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_DAT.PL ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/en> ;
                                                     
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/en1> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/en2> ,
@@ -1592,6 +1841,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_NOM.SG.M ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/er> ;
+                                                    
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/er2> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/er3> .
 
@@ -1605,6 +1856,8 @@ small"""@en ;
                                                     rdfs:label "er2"@de ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_COMPR ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/er> ;
                                                     
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/er1> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/er3> .
@@ -1620,6 +1873,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_AG.NMLZ ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/er> ;
+                                                    
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/er1> ,
                                                                       <http://mmoon.org/lang/deu/inventory/og/Suffix/er2> .
 
@@ -1634,6 +1889,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_GEN.SG ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/es> ;
+                                                    
                                                     mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/s1> .
 
 
@@ -1647,6 +1904,8 @@ small"""@en ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_INF ;
                                                    
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/n> ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/n2> .
 
 
@@ -1658,7 +1917,9 @@ small"""@en ;
                                                    
                                                    rdfs:label "n2"@de ;
                                                    
-                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_ACC.SG .
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_ACC.SG ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/n> .
 
 
 
@@ -1669,7 +1930,9 @@ small"""@en ;
                                                    
                                                    rdfs:label "s1"@de ;
                                                    
-                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_GEN.SG .
+                                                   mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_GEN.SG ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/s> .
 
 
 
@@ -1681,6 +1944,8 @@ small"""@en ;
                                                     rdfs:label "st1"@de ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_SUP ;
+                                                    
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/st> ;
                                                     
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/st2> .
 
@@ -1695,6 +1960,8 @@ small"""@en ;
                                                     
                                                     mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_2.SG ;
                                                     
+                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/st> ;
+                                                    
                                                     mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> .
 
 
@@ -1707,6 +1974,8 @@ small"""@en ;
                                                    rdfs:label "t1"@de ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_3.SG ;
+                                                   
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/t> ;
                                                    
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/t2> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/t3> .
@@ -1722,6 +1991,8 @@ small"""@en ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_2.PL ;
                                                    
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/t> ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/t1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/t3> .
 
@@ -1736,6 +2007,8 @@ small"""@en ;
                                                    
                                                    mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_2.PL ;
                                                    
+                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/t> ;
+                                                   
                                                    mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Suffix/t1> ,
                                                                      <http://mmoon.org/lang/deu/inventory/og/Suffix/t2> .
 
@@ -1748,7 +2021,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "Kauf1"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kauf> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kauf> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf2> ;
                                                                  
@@ -1763,7 +2036,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "Kauf2"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kauf> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kauf> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf1> ;
                                                                  
@@ -1780,7 +2053,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "Kauf3"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kauf1> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kauf> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf1> ;
                                                                  
@@ -1797,7 +2070,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "Kaufe"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufe1> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kaufe> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf1> ;
                                                                  
@@ -1814,7 +2087,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "Kaufes"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufes> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kaufes> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf1> ;
                                                                   
@@ -1831,7 +2104,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "Kaufs"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Kaufs> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Kaufs> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Kauf1> ;
                                                                  
@@ -1848,7 +2121,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "Käufe1"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Käufe> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Käufe> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Käuf> ;
                                                                   
@@ -1865,7 +2138,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "Käufe2"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Käufe> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Käufe> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Käuf> ;
                                                                   
@@ -1882,7 +2155,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "Käufe3"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Käufe> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Käufe> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Käuf> ;
                                                                   
@@ -1899,7 +2172,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "Käufen"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Käufen> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Käufen> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Käuf> ;
                                                                   
@@ -1916,7 +2189,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "Schlaf1"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlaf> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf2> ;
                                                                    
@@ -1931,7 +2204,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "Schlaf2"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlaf> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                    
@@ -1948,7 +2221,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "Schlaf3"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlaf> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlaf> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                    
@@ -1965,7 +2238,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "Schlafe"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafe> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlafe> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                    
@@ -1982,7 +2255,7 @@ small"""@en ;
                                                                     
                                                                     rdfs:label "Schlafes"@de ;
                                                                     
-                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafes> ;
+                                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlafes> ;
                                                                     
                                                                     mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                     
@@ -1999,7 +2272,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "Schlafs"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/Schlafs> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/Schlafs> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/Schlaf1> ;
                                                                    
@@ -2016,7 +2289,7 @@ small"""@en ;
                                                                
                                                                rdfs:label "bin"@de ;
                                                                
-                                                               mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/bin> ;
+                                                               mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/bin> ;
                                                                
                                                                mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/bin> ;
                                                                
@@ -2031,7 +2304,7 @@ small"""@en ;
                                                                 
                                                                 rdfs:label "bist"@de ;
                                                                 
-                                                                mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/bist> ;
+                                                                mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/bist> ;
                                                                 
                                                                 mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/bist> ;
                                                                 
@@ -2046,7 +2319,7 @@ small"""@en ;
                                                                
                                                                rdfs:label "ist"@de ;
                                                                
-                                                               mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/ist> ;
+                                                               mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/ist> ;
                                                                
                                                                mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/ist> ;
                                                                
@@ -2061,7 +2334,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "kaufe"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kauf> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf2> ;
                                                                  
@@ -2078,7 +2351,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "kauf"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufe> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kaufe> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                                   
@@ -2095,7 +2368,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "kaufe"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufe> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kaufe> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf2> ;
                                                                   
@@ -2112,7 +2385,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "kaufen1"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufen> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kaufen> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                                    
@@ -2129,7 +2402,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "kaufen2"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufen> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kaufen> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                                    
@@ -2146,7 +2419,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "kaufst"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kaufst> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kaufst> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                                   
@@ -2163,7 +2436,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "kauft1"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kauft> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauft> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                                   
@@ -2180,7 +2453,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "kauft2"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kauft> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauft> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf1> ;
                                                                   
@@ -2197,7 +2470,7 @@ small"""@en ;
                                                                   
                                                                   rdfs:label "kauft3"@de ;
                                                                   
-                                                                  mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kauft> ;
+                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauft> ;
                                                                   
                                                                   mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kauf2> ;
                                                                   
@@ -2214,7 +2487,7 @@ small"""@en ;
                                                                     
                                                                     rdfs:label "kleiner1"@de ;
                                                                     
-                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleiner> ;
+                                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kleiner> ;
                                                                     
                                                                     mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/klein1> ;
                                                                     
@@ -2232,7 +2505,7 @@ small"""@en ;
                                                                       
                                                                       rdfs:label "kleinerer1"@de ;
                                                                       
-                                                                      mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleinerer> ;
+                                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kleinerer> ;
                                                                       
                                                                       mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kleiner1> ;
                                                                       
@@ -2250,7 +2523,7 @@ small"""@en ;
                                                                       
                                                                       rdfs:label "kleinster1"@de ;
                                                                       
-                                                                      mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/kleinster> ;
+                                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kleinster> ;
                                                                       
                                                                       mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/kleinst1> ;
                                                                       
@@ -2268,7 +2541,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "schlaf"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlaf> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlaf> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schlaf2> ;
                                                                    
@@ -2285,7 +2558,7 @@ small"""@en ;
                                                                     
                                                                     rdfs:label "schlafe1"@de ;
                                                                     
-                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlafe> ;
+                                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlafe> ;
                                                                     
                                                                     mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schlaf1> ;
                                                                     
@@ -2302,7 +2575,7 @@ small"""@en ;
                                                                     
                                                                     rdfs:label "schlafe2"@de ;
                                                                     
-                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlafe> ;
+                                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlafe> ;
                                                                     
                                                                     mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schlaf2> ;
                                                                     
@@ -2319,7 +2592,7 @@ small"""@en ;
                                                                      
                                                                      rdfs:label "schlafen1"@de ;
                                                                      
-                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlafen> ;
+                                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlafen> ;
                                                                      
                                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schlaf1> ;
                                                                      
@@ -2336,7 +2609,7 @@ small"""@en ;
                                                                      
                                                                      rdfs:label "schlafen2"@de ;
                                                                      
-                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlafen> ;
+                                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlafen> ;
                                                                      
                                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schlaf1> ;
                                                                      
@@ -2353,7 +2626,7 @@ small"""@en ;
                                                                     
                                                                     rdfs:label "schlaft1"@de ;
                                                                     
-                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlaft> ;
+                                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlaft> ;
                                                                     
                                                                     mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schlaf1> ;
                                                                     
@@ -2370,7 +2643,7 @@ small"""@en ;
                                                                     
                                                                     rdfs:label "schlaft2"@de ;
                                                                     
-                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schlaft> ;
+                                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schlaft> ;
                                                                     
                                                                     mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schlaf2> ;
                                                                     
@@ -2387,7 +2660,7 @@ small"""@en ;
                                                                     
                                                                     rdfs:label "schläfst"@de ;
                                                                     
-                                                                    mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schläfst> ;
+                                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schläfst> ;
                                                                     
                                                                     mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schläf> ;
                                                                     
@@ -2404,7 +2677,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "schläft"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/schläft> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/schläft> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/schläf> ;
                                                                    
@@ -2421,7 +2694,7 @@ small"""@en ;
                                                                
                                                                rdfs:label "sei"@de ;
                                                                
-                                                               mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/sei> ;
+                                                               mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sei> ;
                                                                
                                                                mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/sei1> ;
                                                                
@@ -2438,7 +2711,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "seid1"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/seid> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/seid> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/seid> ;
                                                                  
@@ -2453,7 +2726,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "seid2"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/seid1> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/seid> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/sei> ;
                                                                  
@@ -2470,7 +2743,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "sind1"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/sind> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sind> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/sind1> ;
                                                                  
@@ -2485,7 +2758,7 @@ small"""@en ;
                                                                  
                                                                  rdfs:label "sind2"@de ;
                                                                  
-                                                                 mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/sind> ;
+                                                                 mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sind> ;
                                                                  
                                                                  mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/sind2> ;
                                                                  
@@ -2500,7 +2773,7 @@ small"""@en ;
                                                                    
                                                                    rdfs:label "verkauf"@de ;
                                                                    
-                                                                   mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkauf> ;
+                                                                   mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkauf> ;
                                                                    
                                                                    mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf2> ;
                                                                    
@@ -2517,7 +2790,7 @@ small"""@en ;
                                                                      
                                                                      rdfs:label "verkaufe1"@de ;
                                                                      
-                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufe> ;
+                                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufe> ;
                                                                      
                                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf1> ;
                                                                      
@@ -2534,7 +2807,7 @@ small"""@en ;
                                                                      
                                                                      rdfs:label "verkaufe2"@de ;
                                                                      
-                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufe> ;
+                                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufe> ;
                                                                      
                                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf2> ;
                                                                      
@@ -2551,7 +2824,7 @@ small"""@en ;
                                                                       
                                                                       rdfs:label "verkaufen1"@de ;
                                                                       
-                                                                      mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufen> ;
+                                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufen> ;
                                                                       
                                                                       mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf1> ;
                                                                       
@@ -2568,7 +2841,7 @@ small"""@en ;
                                                                       
                                                                       rdfs:label "verkaufen2"@de ;
                                                                       
-                                                                      mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufen> ;
+                                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufen> ;
                                                                       
                                                                       mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf1> ;
                                                                       
@@ -2585,7 +2858,7 @@ small"""@en ;
                                                                      
                                                                      rdfs:label "verkaufst"@de ;
                                                                      
-                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkaufst> ;
+                                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkaufst> ;
                                                                      
                                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf1> ;
                                                                      
@@ -2602,7 +2875,7 @@ small"""@en ;
                                                                      
                                                                      rdfs:label "verkauft1"@de ;
                                                                      
-                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkauft> ;
+                                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkauft> ;
                                                                      
                                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf1> ;
                                                                      
@@ -2619,7 +2892,7 @@ small"""@en ;
                                                                      
                                                                      rdfs:label "verkauft2"@de ;
                                                                      
-                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkauft> ;
+                                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkauft> ;
                                                                      
                                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf1> ;
                                                                      
@@ -2636,7 +2909,7 @@ small"""@en ;
                                                                      
                                                                      rdfs:label "verkauft3"@de ;
                                                                      
-                                                                     mmoon:hasOrthographicRepresentation <http://mmoon.org/lang/deu/inventory/og/OrthographicRepresentation/verkauft> ;
+                                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/verkauft> ;
                                                                      
                                                                      mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/verkauf2> ;
                                                                      
@@ -2655,6 +2928,8 @@ small"""@en ;
                                                       
                                                       mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_NMLZ ;
                                                       
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/*empty*> ;
+                                                      
                                                       mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/er3> ;
                                                       
                                                       mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/ZeroMorph/02> ,
@@ -2671,6 +2946,8 @@ small"""@en ;
                                                       rdfs:label "02"@de ;
                                                       
                                                       mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_ACC.SG ;
+                                                      
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/*empty*> ;
                                                       
                                                       mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/n2> ;
                                                       
@@ -2689,6 +2966,8 @@ small"""@en ;
                                                       
                                                       mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_DAT.SG ;
                                                       
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/*empty*> ;
+                                                      
                                                       mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e3> ;
                                                       
                                                       mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/ZeroMorph/01> ,
@@ -2706,6 +2985,8 @@ small"""@en ;
                                                       
                                                       mmoon:correspondsToMorpheme deu_inventory:FusionalMorpheme_2.SG ;
                                                       
+                                                      mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/*empty*> ;
+                                                      
                                                       mmoon:isAllomorphTo <http://mmoon.org/lang/deu/inventory/og/Suffix/e2> ,
                                                                           <http://mmoon.org/lang/deu/inventory/og/Suffix/st2> ;
                                                       
@@ -2716,5 +2997,5 @@ small"""@en ;
 
 
 
-###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
 
