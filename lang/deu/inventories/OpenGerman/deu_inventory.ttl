@@ -1440,12 +1440,6 @@ small"""@en ;
 
 
 
-###  http://mmoon.org/lang/deu/inventory/og/Stem/sei
-
-<http://mmoon.org/lang/deu/inventory/og/Stem/sei> rdf:type owl:NamedIndividual ;
-                                                  
-                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/sei> .
-
 
 
 ###  http://mmoon.org/lang/deu/inventory/og/Stem/sei1
@@ -2634,7 +2628,7 @@ small"""@en ;
                                                                  
                                                                  mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/seid> ;
                                                                  
-                                                                 mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/sei> ;
+                                                                 mmoon:consistsOfStem <http://mmoon.org/lang/deu/inventory/og/Stem/sei1> ;
                                                                  
                                                                  mmoon:consistsOfAffix <http://mmoon.org/lang/deu/inventory/og/Suffix/d1> ;
                                                                  
