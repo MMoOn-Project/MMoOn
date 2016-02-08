@@ -1139,22 +1139,6 @@ small"""@en ;
 
 
 
-###  http://mmoon.org/lang/deu/inventory/og/Root/kauf1
-
-<http://mmoon.org/lang/deu/inventory/og/Root/kauf1> rdf:type owl:NamedIndividual ;
-                                                    
-                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> .
-
-
-
-###  http://mmoon.org/lang/deu/inventory/og/Root/kauf2
-
-<http://mmoon.org/lang/deu/inventory/og/Root/kauf2> rdf:type owl:NamedIndividual ;
-                                                    
-                                                    mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> .
-
-
-
 ###  http://mmoon.org/lang/deu/inventory/og/Root/klein
 
 <http://mmoon.org/lang/deu/inventory/og/Root/klein> rdf:type deu_schema:Root ,
@@ -1336,7 +1320,7 @@ small"""@en ;
                                                     
                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> ;
                                                     
-                                                    mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf1> ;
+                                                    mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf> ;
                                                     
                                                     mmoon:isHomonymTo <http://mmoon.org/lang/deu/inventory/og/Stem/kauf2> .
 
@@ -1353,7 +1337,7 @@ small"""@en ;
                                                     
                                                     mmoon:hasRepresentation <http://mmoon.org/lang/deu/inventory/og/Representation/kauf> ;
                                                     
-                                                    mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf2> .
+                                                    mmoon:consistsOfRoot <http://mmoon.org/lang/deu/inventory/og/Root/kauf> .
 
 
 
