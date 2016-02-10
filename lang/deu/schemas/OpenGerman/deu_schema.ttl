@@ -44,12 +44,12 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :AdjDeclension rdf:type owl:Class ;
                
+               rdfs:label "Adjektivdeklination"@de ,
+                          "Adjectival declension"@en ;
+               
                rdfs:subClassOf mmoon:AdjectivalInflection ;
                
                rdfs:comment "Die Adjektivdeklination bezeichnet die Deklination attributivisch verwendeter Adjektive in Kongruenz zum begleiteten Substantiv."@de ;
-               
-               rdfs:label "Adjectival declension"@en ,
-                          "Adjektivdeklination"@de ;
                
                rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/Wort/Adjektiv/Deklinationstyp/index.html?MenuId=Word313#Anchor-Deklinationstypen-35882" .
 
@@ -59,11 +59,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :Affix rdf:type owl:Class ;
        
-       rdfs:subClassOf :Morph ,
-                       mmoon:Affix ;
-       
        rdfs:label "Affix"@de ,
-                  "Affix"@en .
+                  "Affix"@en ;
+       
+       rdfs:subClassOf :Morph ,
+                       mmoon:Affix .
 
 
 
@@ -71,11 +71,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :AnalyticWordform rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :Wordform ,
-                                  mmoon:AnalyticWordform ;
+                  rdfs:label "Analytische Wortform"@de ,
+                             "Analytic word-form"@en ;
                   
-                  rdfs:label "Analytic word-form"@en ,
-                             "Analytische Wortform"@de .
+                  rdfs:subClassOf :Wordform ,
+                                  mmoon:AnalyticWordform .
 
 
 
@@ -83,11 +83,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :AtomicMorpheme rdf:type owl:Class ;
                 
-                rdfs:subClassOf :Morpheme ,
-                                mmoon:AtomicMorpheme ;
-                
                 rdfs:label "Atomares Morphem"@de ,
-                           "Atomic Morpheme"@en .
+                           "Atomic Morpheme"@en ;
+                
+                rdfs:subClassOf :Morpheme ,
+                                mmoon:AtomicMorpheme .
 
 
 
@@ -95,11 +95,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :Circumfix rdf:type owl:Class ;
            
-           rdfs:subClassOf :Affix ,
-                           mmoon:Circumfix ;
+           rdfs:label "Zirkumfix"@de ,
+                      "Circumfix"@en ;
            
-           rdfs:label "Circumfix"@en ,
-                      "Zirkumfix"@de .
+           rdfs:subClassOf :Affix ,
+                           mmoon:Circumfix .
 
 
 
@@ -107,11 +107,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :ComplexMorpheme rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Morpheme ,
-                                 mmoon:ComplexMorpheme ;
+                 rdfs:label "Komplexes Morphem"@de ,
+                            "Complex Morpheme"@en ;
                  
-                 rdfs:label "Complex Morpheme"@en ,
-                            "Komplexes Morphem"@de .
+                 rdfs:subClassOf :Morpheme ,
+                                 mmoon:ComplexMorpheme .
 
 
 
@@ -119,11 +119,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :CompoundWord rdf:type owl:Class ;
               
-              rdfs:subClassOf :Lexeme ,
-                              mmoon:CompoundWord ;
+              rdfs:label "Kompositum"@de ,
+                         "Compound word"@en ;
               
-              rdfs:label "Compound word"@en ,
-                         "Kompositum"@de .
+              rdfs:subClassOf :Lexeme ,
+                              mmoon:CompoundWord .
 
 
 
@@ -131,11 +131,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :DerivedWord rdf:type owl:Class ;
              
-             rdfs:subClassOf :Lexeme ,
-                             mmoon:DerivedWord ;
-             
              rdfs:label "Abgeleitetes Wort"@de ,
-                        "Derived word"@en .
+                        "Derived word"@en ;
+             
+             rdfs:subClassOf :Lexeme ,
+                             mmoon:DerivedWord .
 
 
 
@@ -143,11 +143,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :EmptyMorph rdf:type owl:Class ;
             
-            rdfs:subClassOf :Affix ,
-                            mmoon:EmptyMorph ;
+            rdfs:label "Leeres Morph"@de ,
+                       "Empty morph"@en ;
             
-            rdfs:label "Empty morph"@en ,
-                       "Leeres Morph"@de .
+            rdfs:subClassOf :Affix ,
+                            mmoon:EmptyMorph .
 
 
 
@@ -155,11 +155,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :EmptyMorpheme rdf:type owl:Class ;
                
-               rdfs:subClassOf :Morpheme ,
-                               mmoon:EmptyMorpheme ;
+               rdfs:label "Leeres Morphem"@de ,
+                          "Empty Morpheme"@en ;
                
-               rdfs:label "Empty Morpheme"@en ,
-                          "Leeres Morphem"@de .
+               rdfs:subClassOf :Morpheme ,
+                               mmoon:EmptyMorpheme .
 
 
 
@@ -167,11 +167,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :FusionalMorpheme rdf:type owl:Class ;
                   
-                  rdfs:subClassOf :Morpheme ,
-                                  mmoon:FusionalMorpheme ;
+                  rdfs:label "Fusionierendes Morphem"@de ,
+                             "Fusional Morpheme"@en ;
                   
-                  rdfs:label "Fusional Morpheme"@en ,
-                             "Fusionierendes Morphem"@de .
+                  rdfs:subClassOf :Morpheme ,
+                                  mmoon:FusionalMorpheme .
 
 
 
@@ -179,11 +179,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :GrammaticalWord rdf:type owl:Class ;
                  
-                 rdfs:subClassOf :Word ,
-                                 mmoon:GrammaticalWord ;
+                 rdfs:label "Grammatisches Wort"@de ,
+                            "Grammatical word"@en ;
                  
-                 rdfs:label "Grammatical word"@en ,
-                            "Grammatisches Wort"@de .
+                 rdfs:subClassOf :Word ,
+                                 mmoon:GrammaticalWord .
 
 
 
@@ -191,11 +191,11 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :Lexeme rdf:type owl:Class ;
         
-        rdfs:subClassOf :Word ,
-                        mmoon:Lexeme ;
-        
         rdfs:label "Lexem"@de ,
-                   "Lexeme"@en .
+                   "Lexeme"@en ;
+        
+        rdfs:subClassOf :Word ,
+                        mmoon:Lexeme .
 
 
 
@@ -203,10 +203,10 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :Morph rdf:type owl:Class ;
        
-       rdfs:subClassOf mmoon:Morph ;
-       
        rdfs:label "Morph"@de ,
-                  "Morph"@en .
+                  "Morph"@en ;
+       
+       rdfs:subClassOf mmoon:Morph .
 
 
 
@@ -214,10 +214,10 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :Morpheme rdf:type owl:Class ;
           
-          rdfs:subClassOf mmoon:Morpheme ;
-          
           rdfs:label "Morphem"@de ,
-                     "Morpheme"@en .
+                     "Morpheme"@en ;
+          
+          rdfs:subClassOf mmoon:Morpheme .
 
 
 
@@ -225,15 +225,15 @@ mmoon:forLanguage rdf:type owl:AnnotationProperty .
 
 :NounDeclension rdf:type owl:Class ;
                 
+                rdfs:label "Substantivdeklination"@de ,
+                           "Noun declension"@en ;
+                
                 rdfs:subClassOf mmoon:Declension ;
                 
+                rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/Texte/Flexionskl.html?MenuId=Word111" ;
+                
                 rdfs:comment """Nominaldeklination ist die Flexion von Substantiven nach Kasus, Numerus und Genus.
-Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular und des Nominativ Plural in mehrere Deklinationsklassen (1-12) unterteilen."""@de ;
-                
-                rdfs:label "Noun declension"@en ,
-                           "Substantivdeklination"@de ;
-                
-                rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/Texte/Flexionskl.html?MenuId=Word111" .
+Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular und des Nominativ Plural in mehrere Deklinationsklassen (1-12) unterteilen."""@de .
 
 
 
@@ -241,11 +241,11 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :Prefix rdf:type owl:Class ;
         
-        rdfs:subClassOf :Affix ,
-                        mmoon:Prefix ;
+        rdfs:label "Präfix"@de ,
+                   "Prefix"@en ;
         
-        rdfs:label "Prefix"@en ,
-                   "Präfix"@de .
+        rdfs:subClassOf :Affix ,
+                        mmoon:Prefix .
 
 
 
@@ -261,11 +261,11 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :Root rdf:type owl:Class ;
       
-      rdfs:subClassOf :Morph ,
-                      mmoon:Root ;
+      rdfs:label "Wurzel"@de ,
+                 "Root"@en ;
       
-      rdfs:label "Root"@en ,
-                 "Wurzel"@de .
+      rdfs:subClassOf :Morph ,
+                      mmoon:Root .
 
 
 
@@ -273,11 +273,11 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :Simulfix rdf:type owl:Class ;
           
-          rdfs:subClassOf :Affix ,
-                          mmoon:Simulfix ;
-          
           rdfs:label "Simulfix"@de ,
-                     "Simulfix"@en .
+                     "Simulfix"@en ;
+          
+          rdfs:subClassOf :Affix ,
+                          mmoon:Simulfix .
 
 
 
@@ -285,11 +285,11 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :Stem rdf:type owl:Class ;
       
-      rdfs:subClassOf :Morph ,
-                      mmoon:Stem ;
-      
       rdfs:label "Stamm"@de ,
-                 "Stem"@en .
+                 "Stem"@en ;
+      
+      rdfs:subClassOf :Morph ,
+                      mmoon:Stem .
 
 
 
@@ -297,11 +297,11 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :Suffix rdf:type owl:Class ;
         
-        rdfs:subClassOf :Affix ,
-                        mmoon:Suffix ;
-        
         rdfs:label "Suffix"@de ,
-                   "Suffix"@en .
+                   "Suffix"@en ;
+        
+        rdfs:subClassOf :Affix ,
+                        mmoon:Suffix .
 
 
 
@@ -309,11 +309,11 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :SyntheticWordform rdf:type owl:Class ;
                    
-                   rdfs:subClassOf :Wordform ,
-                                   mmoon:SyntheticWordform ;
+                   rdfs:label "Synthetische Wortform"@de ,
+                              "Synthetic word-form"@en ;
                    
-                   rdfs:label "Synthetic word-form"@en ,
-                              "Synthetische Wortform"@de .
+                   rdfs:subClassOf :Wordform ,
+                                   mmoon:SyntheticWordform .
 
 
 
@@ -321,10 +321,10 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :Word rdf:type owl:Class ;
       
-      rdfs:subClassOf mmoon:Word ;
+      rdfs:label "Wort"@de ,
+                 "Word"@en ;
       
-      rdfs:label "Word"@en ,
-                 "Wort"@de .
+      rdfs:subClassOf mmoon:Word .
 
 
 
@@ -332,11 +332,11 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :Wordform rdf:type owl:Class ;
           
-          rdfs:subClassOf :Word ,
-                          mmoon:Wordform ;
+          rdfs:label "Wortform"@de ,
+                     "Word-form"@en ;
           
-          rdfs:label "Word-form"@en ,
-                     "Wortform"@de .
+          rdfs:subClassOf :Word ,
+                          mmoon:Wordform .
 
 
 
@@ -344,11 +344,11 @@ Die Substantivdeklination lässt sich anhand der Endungen des Genitiv Singular u
 
 :ZeroMorph rdf:type owl:Class ;
            
-           rdfs:subClassOf :Affix ,
-                           mmoon:ZeroMorph ;
-           
            rdfs:label "Nullmorph"@de ,
-                      "Zero morph"@en .
+                      "Zero morph"@en ;
+           
+           rdfs:subClassOf :Affix ,
+                           mmoon:ZeroMorph .
 
 
 
@@ -444,8 +444,8 @@ mmoon:Morph rdf:type owl:Class .
 
 ###  http://mmoon.org/mmoon/MorphemeInventory
 
-mmoon:MorphemeInventory rdfs:label "Morpheme inventory"@en ,
-                                   "Morpheminventar"@de .
+mmoon:MorphemeInventory rdfs:label "Morpheminventar"@de ,
+                                   "Morpheme inventory"@en .
 
 
 
@@ -558,17 +558,22 @@ mmoon:ZeroMorph rdf:type owl:Class .
 
 <http://lexvo.org/id/iso639-3/deu> rdf:type owl:NamedIndividual ;
                                    
-                                   rdfs:comment "New High German (NHG) is the term used for the most recent period in the history of the German language. It is a translation of the German Neuhochdeutsch (Nhd). It includes all of the modern High German dialects since the Baroque period, but is often used as a synonym for Standard German. ('en' language string)"@de ;
-                                   
                                    rdfs:label "Deutsch"@de ,
-                                              "New High German"@en .
+                                              "New High German"@en ;
+                                   
+                                   rdfs:comment "New High German (NHG) is the term used for the most recent period in the history of the German language. It is a translation of the German Neuhochdeutsch (Nhd). It includes all of the modern High German dialects since the Baroque period, but is often used as a synonym for Standard German. ('en' language string)"@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/IrregularConjugation
 
-:IrregularConjugation rdf:type owl:NamedIndividual ,
-                               mmoon:IrregularConjugation ;
+:IrregularConjugation rdf:type mmoon:IrregularConjugation ,
+                               owl:NamedIndividual ;
+                      
+                      rdfs:label "Unregelmäßige Konjugation"@de ,
+                                 "Irregular conjugation"@en ;
+                      
+                      rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-V/Texte/Unregelm-Verben.html?MenuId=Word21111" ;
                       
                       rdfs:comment """Die unregelmäßige Konjugation enthält Verben, die folgendermaßen von der regelmäßigen Konjugation abweichen:
 
@@ -578,19 +583,17 @@ mmoon:ZeroMorph rdf:type owl:Class .
 4) deren Verbstamm sich mindestens im Präteritum vom Präsensstamm unterscheidet.
 [https://de.wikipedia.org/wiki/Unregelmäßiges_Verb]
 
-Es gibt eine Reihe von Verben, für die sowohl eine regelmäßige als auch eine unregelmäßge Konjugation möglich ist (z.B \"backen\"). Für diese Lexeme sollte \"RegularConjugation\" UND \"IrregularConjugation\" angegeben werden."""@de ;
-                      
-                      rdfs:label "Irregular conjugation"@en ,
-                                 "Unregelmäßige Konjugation"@de ;
-                      
-                      rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-V/Texte/Unregelm-Verben.html?MenuId=Word21111" .
+Es gibt eine Reihe von Verben, für die sowohl eine regelmäßige als auch eine unregelmäßge Konjugation möglich ist (z.B \"backen\"). Für diese Lexeme sollte \"RegularConjugation\" UND \"IrregularConjugation\" angegeben werden."""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/IrregularDegree
 
-:IrregularDegree rdf:type owl:NamedIndividual ,
-                          mmoon:IrregularDegree ;
+:IrregularDegree rdf:type mmoon:IrregularDegree ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Unregelmäßige Steigerung"@de ,
+                            "Irregular degree"@en ;
                  
                  rdfs:comment """Die flektierte Form eines Adjektivs besteht aus:
 
@@ -600,66 +603,63 @@ Der Adjektivstamm weicht von der regelmäßigen Koparativbildung ab.
 (z.b. gut (Positiv) --> besser (Komparativ))
 
 Der Adjektivstamm weicht von der regelmäßigen Superlativbildung ab.
-(z.b. gut (Positiv) --> besten (Superlativ))"""@de ;
-                 
-                 rdfs:label "Irregular degree"@en ,
-                            "Unregelmäßige Steigerung"@de .
+(z.b. gut (Positiv) --> besten (Superlativ))"""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/MixedAdjDeclension
 
-:MixedAdjDeclension rdf:type owl:NamedIndividual ,
-                             :AdjDeclension ;
-                    
-                    rdfs:comment "Adjektive, die nach dem unbestimmten Artikel oder einer vergleichbaren deklinierenden Einheit stehen, deklinieren gemischt."@de ;
+:MixedAdjDeclension rdf:type :AdjDeclension ,
+                             owl:NamedIndividual ;
                     
                     rdfs:label "Gemischte Adjektivdeklination"@de ,
-                               "Mixed adjectival declension"@en .
+                               "Mixed adjectival declension"@en ;
+                    
+                    rdfs:comment "Adjektive, die nach dem unbestimmten Artikel oder einer vergleichbaren deklinierenden Einheit stehen, deklinieren gemischt."@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/MorphemeInventory
 
-:MorphemeInventory rdf:type owl:NamedIndividual ,
-                            mmoon:MorphemeInventory ;
+:MorphemeInventory rdf:type mmoon:MorphemeInventory ,
+                            owl:NamedIndividual ;
                    
-                   mmoon:forLanguage <http://lexvo.org/id/iso639-3/deu> ;
+                   rdfs:label "Morpheminventar"@de ,
+                              "Morpheme inventory"@en ;
                    
-                   rdfs:label "Morpheme inventory"@en ,
-                              "Morpheminventar"@de .
+                   mmoon:forLanguage <http://lexvo.org/id/iso639-3/deu> .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/NoDegree
 
-:NoDegree rdf:type owl:NamedIndividual ,
-                   mmoon:NoDegree ;
-          
-          rdfs:comment "Einige Adjektive sind nicht steigerbar, z.B. \"tot\", \"schwanger\" und haben dementsprechend keine komparative oder superlative Stammform."@de ;
+:NoDegree rdf:type mmoon:NoDegree ,
+                   owl:NamedIndividual ;
           
           rdfs:label "Kein Steigerungsgrad"@de ,
-                     "No degree"@en .
+                     "No degree"@en ;
+          
+          rdfs:comment "Einige Adjektive sind nicht steigerbar, z.B. \"tot\", \"schwanger\" und haben dementsprechend keine komparative oder superlative Stammform."@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/NoWordFormation
 
-:NoWordFormation rdf:type owl:NamedIndividual ,
-                          mmoon:NoWordFormation .
+:NoWordFormation rdf:type mmoon:NoWordFormation ,
+                          owl:NamedIndividual .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension1
 
-:NounDeclension1 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension1 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 1"@de ,
+                            "Noun declension 1"@en ;
                  
                  rdfs:comment """Endung Genitiv Singular: -es und -s
 Endung Nominativ Plural: -e"""@de ;
-                 
-                 rdfs:label "Noun declension 1"@en ,
-                            "Substantivdeklination 1"@de ;
                  
                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-es-e1.html?MenuId=Word1110" .
 
@@ -667,14 +667,14 @@ Endung Nominativ Plural: -e"""@de ;
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension10
 
-:NounDeclension10 rdf:type owl:NamedIndividual ,
-                           :NounDeclension ;
+:NounDeclension10 rdf:type :NounDeclension ,
+                           owl:NamedIndividual ;
+                  
+                  rdfs:label "Substantivdeklination 10"@de ,
+                             "Noun declension 10"@en ;
                   
                   rdfs:comment """Endung Genitiv Singular: keine
 Endung Nominativ Plural: -en"""@de ;
-                  
-                  rdfs:label "Noun declension 10"@en ,
-                             "Substantivdeklination 10"@de ;
                   
                   rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse---en1.html?MenuId=Word1119" .
 
@@ -682,44 +682,44 @@ Endung Nominativ Plural: -en"""@de ;
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension11
 
-:NounDeclension11 rdf:type owl:NamedIndividual ,
-                           :NounDeclension ;
+:NounDeclension11 rdf:type :NounDeclension ,
+                           owl:NamedIndividual ;
+                  
+                  rdfs:label "Substantivdeklination 11"@de ,
+                             "Noun declension 11"@en ;
+                  
+                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse---s1.html?MenuId=Word11110" ;
                   
                   rdfs:comment """Endung Genitiv Singular: keine
-Endung Nominativ Plural: -s"""@de ;
-                  
-                  rdfs:label "Noun declension 11"@en ,
-                             "Substantivdeklination 11"@de ;
-                  
-                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse---s1.html?MenuId=Word11110" .
+Endung Nominativ Plural: -s"""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension12
 
-:NounDeclension12 rdf:type owl:NamedIndividual ,
-                           :NounDeclension ;
+:NounDeclension12 rdf:type :NounDeclension ,
+                           owl:NamedIndividual ;
+                  
+                  rdfs:label "Substantivdeklination 12"@de ,
+                             "Noun declension 12"@en ;
+                  
+                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-ens-en1.html?MenuId=Word11111" ;
                   
                   rdfs:comment """Endung Genitiv Singular:  -[e]ns
-Endung Nominativ Plural: -[e]n"""@de ;
-                  
-                  rdfs:label "Noun declension 12"@en ,
-                             "Substantivdeklination 12"@de ;
-                  
-                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-ens-en1.html?MenuId=Word11111" .
+Endung Nominativ Plural: -[e]n"""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension2
 
-:NounDeclension2 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension2 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 2"@de ,
+                            "Noun declension 2"@en ;
                  
                  rdfs:comment """Endung Genitiv Singular: -s
 Endung Nominativ Plural: -e"""@de ;
-                 
-                 rdfs:label "Noun declension 2"@en ,
-                            "Substantivdeklination 2"@de ;
                  
                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-s-e1.html?MenuId=Word1111" .
 
@@ -727,14 +727,14 @@ Endung Nominativ Plural: -e"""@de ;
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension3
 
-:NounDeclension3 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension3 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 3"@de ,
+                            "Noun declension 3"@en ;
                  
                  rdfs:comment """Endung Genitiv Singular: -s
 Endung Nominativ Plural: keine"""@de ;
-                 
-                 rdfs:label "Noun declension 3"@en ,
-                            "Substantivdeklination 3"@de ;
                  
                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-s--1.html?MenuId=Word1112" .
 
@@ -742,14 +742,14 @@ Endung Nominativ Plural: keine"""@de ;
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension4
 
-:NounDeclension4 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension4 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 4"@de ,
+                            "Noun declension 4"@en ;
                  
                  rdfs:comment """Endung Genitiv Singular: -es und -s
 Endung Nominativ Plural: -en"""@de ;
-                 
-                 rdfs:label "Noun declension 4"@en ,
-                            "Substantivdeklination 4"@de ;
                  
                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-es-en1.html?MenuId=Word1113" .
 
@@ -757,14 +757,14 @@ Endung Nominativ Plural: -en"""@de ;
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension5
 
-:NounDeclension5 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension5 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 5"@de ,
+                            "Noun declension 5"@en ;
                  
                  rdfs:comment """Endung Genitiv Singular: -es und -s
 Endung Nominativ Plural: -er"""@de ;
-                 
-                 rdfs:label "Noun declension 5"@en ,
-                            "Substantivdeklination 5"@de ;
                  
                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-es-er1.html?MenuId=Word1114" .
 
@@ -772,44 +772,44 @@ Endung Nominativ Plural: -er"""@de ;
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension6
 
-:NounDeclension6 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension6 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 6"@de ,
+                            "Noun declension 6"@en ;
+                 
+                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-en-en1.html?MenuId=Word1115" ;
                  
                  rdfs:comment """Endung Genitiv Singular: -en
-Endung Nominativ Plural: -en"""@de ;
-                 
-                 rdfs:label "Noun declension 6"@en ,
-                            "Substantivdeklination 6"@de ;
-                 
-                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-en-en1.html?MenuId=Word1115" .
+Endung Nominativ Plural: -en"""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension7
 
-:NounDeclension7 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension7 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 7"@de ,
+                            "Noun declension 7"@en ;
+                 
+                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-s-s1.html?MenuId=Word1116" ;
                  
                  rdfs:comment """Endung Genitiv Singular: -s
-Endung Nominativ Plural: -s"""@de ;
-                 
-                 rdfs:label "Noun declension 7"@en ,
-                            "Substantivdeklination 7"@de ;
-                 
-                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse-s-s1.html?MenuId=Word1116" .
+Endung Nominativ Plural: -s"""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension8
 
-:NounDeclension8 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension8 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 8"@de ,
+                            "Noun declension 8"@en ;
                  
                  rdfs:comment """Endung Genitiv Singular: keine
 Endung Nominativ Plural: -e"""@de ;
-                 
-                 rdfs:label "Noun declension 8"@en ,
-                            "Substantivdeklination 8"@de ;
                  
                  rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse---e1.html?MenuId=Word1117" .
 
@@ -817,47 +817,50 @@ Endung Nominativ Plural: -e"""@de ;
 
 ###  http://mmoon.org/lang/deu/schema/og/NounDeclension9
 
-:NounDeclension9 rdf:type owl:NamedIndividual ,
-                          :NounDeclension ;
+:NounDeclension9 rdf:type :NounDeclension ,
+                          owl:NamedIndividual ;
+                 
+                 rdfs:label "Substantivdeklination 9"@de ,
+                            "Noun declension 9"@en ;
+                 
+                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse----1.html?MenuId=Word1118" ;
                  
                  rdfs:comment """Endung Genitiv Singular: keine
-Endung Nominativ Plural: keine"""@de ;
-                 
-                 rdfs:label "Noun declension 9"@en ,
-                            "Substantivdeklination 9"@de ;
-                 
-                 rdfs:seeAlso "http://canoo.net/services/OnlineGrammar/InflectionRules/FRegeln-N/FKlassen/Klasse----1.html?MenuId=Word1118" .
+Endung Nominativ Plural: keine"""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/PredicativeAdj
 
-:PredicativeAdj rdf:type owl:NamedIndividual ,
-                         mmoon:PredicativeAdj ;
+:PredicativeAdj rdf:type mmoon:PredicativeAdj ,
+                         owl:NamedIndividual ;
                 
-                rdfs:label "Predicative adjective"@en ,
-                           "Prädikatives Adjektiv"@de .
+                rdfs:label "Prädikatives Adjektiv"@de ,
+                           "Predicative adjective"@en .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/RegularConjugation
 
-:RegularConjugation rdf:type owl:NamedIndividual ,
-                             mmoon:RegularConjugation ;
+:RegularConjugation rdf:type mmoon:RegularConjugation ,
+                             owl:NamedIndividual ;
+                    
+                    rdfs:label "Relmäßige Konjugation"@de ,
+                               "Regular conjugation"@en ;
                     
                     rdfs:comment """Die regelmäßige Konjugation zeichnet sich dadurch aus, dass der Verbstamm in allen Zeitformen und Modi gleich bleibt. 
 
-Es gibt eine Reihe von Verben, für die sowohl eine regelmäßige als auch eine unregelmäßge Konjugation möglich ist (z.B \"backen\"). Für diese Lexeme sollte \"RegularConjugation\" UND \"IrregularConjugation\" angegeben werden."""@de ;
-                    
-                    rdfs:label "Regular conjugation"@en ,
-                               "Relmäßige Konjugation"@de .
+Es gibt eine Reihe von Verben, für die sowohl eine regelmäßige als auch eine unregelmäßge Konjugation möglich ist (z.B \"backen\"). Für diese Lexeme sollte \"RegularConjugation\" UND \"IrregularConjugation\" angegeben werden."""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/RegularDegree
 
-:RegularDegree rdf:type owl:NamedIndividual ,
-                        mmoon:RegularDegree ;
+:RegularDegree rdf:type mmoon:RegularDegree ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "Regelmäßige Steigerung"@de ,
+                          "Regular degree"@en ;
                
                rdfs:comment """Relationale Adjektive in attributivischer Verwendung flektieren nach Steigerungsgrad und treten in einer der folgenden Formen auf: Positiv, Komparativ, Superlativ. 
 Die flektierte Form eines Adjektivs besteht aus:
@@ -868,63 +871,60 @@ Der Adjektivstamm wird im Positiv nicht markiert.
 
 Der Adjektivstamm im Komparativ wird meist mit dem Suffix  \"-er\" gebildet. Bei einigen Adjektiven wird zusätzlich der Stammvokal umgelautet (z.b. alt (Positiv) --> älter (Komparativ))
 
-Der Adjektivstamm im Superlativ wird meist mit dem Suffix  \"-st\" gebildet. Bei einigen Adjektiven wird zusätzlich der Stammvokal umgelautet (z.b. alt (Positiv) --> älteste (Superlativ))"""@de ;
-               
-               rdfs:label "Regelmäßige Steigerung"@de ,
-                          "Regular degree"@en .
+Der Adjektivstamm im Superlativ wird meist mit dem Suffix  \"-st\" gebildet. Bei einigen Adjektiven wird zusätzlich der Stammvokal umgelautet (z.b. alt (Positiv) --> älteste (Superlativ))"""@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/ResultativeVerb
 
-:ResultativeVerb rdf:type owl:NamedIndividual ,
-                          mmoon:DeverbalVerb ;
+:ResultativeVerb rdf:type mmoon:DeverbalVerb ,
+                          owl:NamedIndividual ;
                  
-                 rdfs:comment "Resultative Verben werden durch Derivationsaffixe wie \"zer-\" und \"ver-\" gebildet und bezeichnen im weitesten Sinne den Abschluss eines Vorgangs."@en ;
+                 rdfs:label "Resultatives Verb"@de ,
+                            "Resultative Verb"@en ;
                  
-                 rdfs:label "Resultative Verb"@en ,
-                            "Resultatives Verb"@de ;
+                 rdfs:seeAlso "Für eine genauere semantische Klassifikation der resultativen Bedeutungen von Verben mit dem Präfix ver- siehe: Stiebels, Barbara (1996): “Lexikalische Argumente und Adjunkte: Zum semantischen Beitrag von verbalen Präfixen und Partikeln” (Studia grammatica, Band 39)."@en ;
                  
-                 rdfs:seeAlso "Für eine genauere semantische Klassifikation der resultativen Bedeutungen von Verben mit dem Präfix ver- siehe: Stiebels, Barbara (1996): “Lexikalische Argumente und Adjunkte: Zum semantischen Beitrag von verbalen Präfixen und Partikeln” (Studia grammatica, Band 39)."@en .
+                 rdfs:comment "Resultative Verben werden durch Derivationsaffixe wie \"zer-\" und \"ver-\" gebildet und bezeichnen im weitesten Sinne den Abschluss eines Vorgangs."@en .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/StrongAdjDeclension
 
-:StrongAdjDeclension rdf:type owl:NamedIndividual ,
-                              :AdjDeclension ;
-                     
-                     rdfs:comment "Adjektive, die ohne Artikel beim Substantiv stehen, deklinieren stark."@de ;
+:StrongAdjDeclension rdf:type :AdjDeclension ,
+                              owl:NamedIndividual ;
                      
                      rdfs:label "Starke Adjektivdeklination"@de ,
-                                "Strong adjectival declension"@en .
+                                "Strong adjectival declension"@en ;
+                     
+                     rdfs:comment "Adjektive, die ohne Artikel beim Substantiv stehen, deklinieren stark."@de .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/VerbalNoun
 
-:VerbalNoun rdf:type owl:NamedIndividual ,
-                     mmoon:VerbalNoun ;
+:VerbalNoun rdf:type mmoon:VerbalNoun ,
+                     owl:NamedIndividual ;
             
-            rdfs:comment "Ist ein durch Konversion von einem Verbstamm abgeleitetes Substantiv."@en ;
+            rdfs:label "Verbalnomen"@de ,
+                       "Verbal noun"@en ;
             
-            rdfs:label "Verbal noun"@en ,
-                       "Verbalnomen"@de .
+            rdfs:comment "Ist ein durch Konversion von einem Verbstamm abgeleitetes Substantiv."@en .
 
 
 
 ###  http://mmoon.org/lang/deu/schema/og/WeakAdjDeclension
 
-:WeakAdjDeclension rdf:type owl:NamedIndividual ,
-                            :AdjDeclension ;
-                   
-                   rdfs:comment "Adjektive, die nach dem bestimmten Artikel oder einer vergleichbar deklinierenden Einheit stehen, deklinieren schwach."@de ;
+:WeakAdjDeclension rdf:type :AdjDeclension ,
+                            owl:NamedIndividual ;
                    
                    rdfs:label "Schwache Adjektivdeklination"@de ,
-                              "Weak adjectival declension"@en .
+                              "Weak adjectival declension"@en ;
+                   
+                   rdfs:comment "Adjektive, die nach dem bestimmten Artikel oder einer vergleichbar deklinierenden Einheit stehen, deklinieren schwach."@de .
 
 
 
 
-###  Generated by the OWL API (version 4.1.3.20151118-2017) https://github.com/owlcs/owlapi
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
 
