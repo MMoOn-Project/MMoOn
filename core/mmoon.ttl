@@ -1511,6 +1511,58 @@ Is a kind of lexeme which is formed by the morphological modification of another
 
 
 
+###  http://mmoon.org/mmoon/Distributive
+
+:Distributive rdf:type owl:Class ;
+              
+              rdfs:label "Distributive"@en ;
+              
+              rdfs:subClassOf :Iterative ;
+              
+              :definition "Is an iterative that expresses the application of an event to members of a group one after another, typically to the referents named by the subject of an intransitive verb or the object of a transitive verb. [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :example "the Russian „po-“ in „On po-zapiral dveri“ ‚He locked the doors one at a time’ (example from Comrie 1985a: 344).  [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Durative
+
+:Durative rdf:type owl:Class ;
+          
+          rdfs:label "Durative"@en ;
+          
+          rdfs:subClassOf :Aktionsart ;
+          
+          :definition "The durative is a verbal category - generally an aktionsart - designating durativity. [Christian Lehmann, under \"durative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Dynamic
+
+:Dynamic rdf:type owl:Class ;
+         
+         rdfs:label "Dynamic"@en ;
+         
+         rdfs:subClassOf :Aktionsart ;
+         
+         :definition """A phenomenon - especially a situation - is dynamic to the extent that it changes during the time that it obtains. This generally requires an input of energy.
+Derivatively, a linguistic sign designating such a phenomenon is called dynamic.
+[Christian Lehmann, under \"dynamicity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Egressive
+
+:Egressive rdf:type owl:Class ;
+           
+           rdfs:label "Egressive"@en ;
+           
+           rdfs:subClassOf :Aktionsart ;
+           
+           :definition "A situation is egressive iff it consists in a catastrophe after a preparatory process which it may presuppose, but which does not necessarily reach such an end. Derivatively, an expression, esp. a verb designating such a situation is egressive. [Christian Lehmann, under \"egressiveness\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/EmptyMorph
 
 :EmptyMorph rdf:type owl:Class ;
@@ -1607,6 +1659,18 @@ While there may be a subordinate agent in a causative construction, there may be
 
 
 
+###  http://mmoon.org/mmoon/Frequentative
+
+:Frequentative rdf:type owl:Class ;
+               
+               rdfs:label "Frequentative"@en ;
+               
+               rdfs:subClassOf :Iterative ;
+               
+               :definition "Is a kind of iterative. [Christian Lehmann, under \"frequentative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/FusionalMorpheme
 
 :FusionalMorpheme rdf:type owl:Class ;
@@ -1633,6 +1697,21 @@ This often the case for inherent meanings such as number for nouns or tense for 
                  :definition "A grammatical word is a word which is a grammatical formative. [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                  
                  :example "Engl. «be», «of».  [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Inchoative
+
+:Inchoative rdf:type owl:Class ;
+            
+            rdfs:label "Inchoative"@en ;
+            
+            rdfs:subClassOf :Aktionsart ;
+            
+            :example "Lat. alb-us „white“ - alb-esc-ere „become white“. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :definition """The inchoative is the aktionsart of a durative(-terminative) verb derived from a stative base. It designates transition into the state designated by the base.
+Its application in a language is sometimes so general that it is a general device of deriving dynamic from stative predicates, of verbs from non-verbal bases. It can then be called „processive“. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
 
@@ -1666,6 +1745,24 @@ Its expression is typically located farther from the root than that of derivatio
             :usageNote "In the subclasses of \"Inflection\" the semantic or grammatic categories are not extensively specified. They only serve to declare what kind of morphological relationship(s) is/are expressed on a word-form."@en ;
             
             :definition "Is the process of generating word-forms of lexical stems. This class can be extended to describe the inflectional classes of the lexemes of a language."@en .
+
+
+
+###  http://mmoon.org/mmoon/Ingressive
+
+:Ingressive rdf:type owl:Class ;
+            
+            rdfs:label "Ingressive"@en ;
+            
+            rdfs:subClassOf :Aktionsart ;
+            
+            :example "German: entbrennen ‚inflame’ < brennen ‚burn’."@de ;
+            
+            :definition "A verb is ingressive if it is derived in such a way as to designate the start of a process. [Christian Lehmann, under \"ingressivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinitionDesc """An ingressive verb derived from an atelic verb V may roughly be paraphrased by ‚start to V’. However, the implication from imperfective to perfect is invalid for ingressives. This shows that they designate not the incipient phase of a process, but rather the phase preceding (the start of) a process. 
+
+English only has lexical contrasts such as stative ‚know’ vs. ingressive ‚realize’. Russian may form ingressive verbs by the preverb za, govorit’ ‚speak’ - zagovorit’ ‚start to speak’[Christian Lehmann, under \"ingressivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
 
@@ -1732,6 +1829,21 @@ An instrument noun is an oriented deverbal noun that designates something that f
                  rdfs:subClassOf :Degree ;
                  
                  :definition "Formation of degree of comparison that deviates from the regular inflectional pattern."@en .
+
+
+
+###  http://mmoon.org/mmoon/Iterative
+
+:Iterative rdf:type owl:Class ;
+           
+           rdfs:label "Iterative"@en ;
+           
+           rdfs:subClassOf :Aktionsart ;
+           
+           :definition """A verb is iterative iff it designates a sequence of instances of a given elementary situation.
+The notion will normally be relevant only if there is an iterative derivation. [Christian Lehmann, under \"iterative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+           
+           :example "Latin derivation by a -ta-suffix, cf. nuere ‚nod’ - nutare ‚nod’; salire ‚jump’ - saltare ‚dance’. [Christian Lehmann, under \"iterative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2027,6 +2139,18 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
 
 
 
+###  http://mmoon.org/mmoon/Punctual
+
+:Punctual rdf:type owl:Class ;
+          
+          rdfs:label "Punctual"@en ;
+          
+          rdfs:subClassOf :Aktionsart ;
+          
+          :definition "With respect to telicity, there are two alternative conceptions of a punctual situation. On the momentary view, it is bilateral telic. This implies that start and end of the situation are distinct and that there is a moment between them. On the transgressive view, start and end of the punctual situation coincide. It consists in the transition from a situation preceding it to a situation following it and thus has no extension in time. [Christian Lehmann, under \"punctual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/RegularConjugation
 
 :RegularConjugation rdf:type owl:Class ;
@@ -2075,6 +2199,14 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
 
 
 
+###  http://mmoon.org/mmoon/ResultativeAktionsart
+
+:ResultativeAktionsart rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf :Aktionsart .
+
+
+
 ###  http://mmoon.org/mmoon/Root
 
 :Root rdf:type owl:Class ;
@@ -2086,6 +2218,20 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
       rdfs:subClassOf :Morph ;
       
       :definition "A morph that constitutes the semantic nucleus of a stem. It cannot be further segmented and is often not specified for a part of speech. There are lexical roots, like Engl. «get», and grammatical roots, like Engl. «wh-». [Christian Lehmann, under \"root\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Semelfactive
+
+:Semelfactive rdf:type owl:Class ;
+              
+              rdfs:label "Semelfactive"@en ;
+              
+              rdfs:subClassOf :Aktionsart ;
+              
+              :definition "Is an Aktionsart of verbs designating one instance of a typically durative or iterative situation. The notion will normally be relevant only if there is a semelfactive derivation converting durative into punctual predicates. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :example "the Russian suffix -nu, cf. kolot’ ‚chop’ - kol’nut’ ‚cleave’. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2132,6 +2278,20 @@ The replacive morph is a construct of taxonomic structuralism.
        :definition "Designates the stativity of the derived base."@en ;
        
        :example "E.g. the English suffix \"-hood\" in \"childhood\"."@en .
+
+
+
+###  http://mmoon.org/mmoon/Stative
+
+:Stative rdf:type owl:Class ;
+         
+         rdfs:label "Stative"@en ;
+         
+         rdfs:subClassOf :Aktionsart ;
+         
+         :definition """A phenomenon - especially a situation - is stative to the extent that it does not change during the time that it obtains.
+Derivatively, a linguistic sign designating such a phenomenon is called stative.
+Christian Lehmann, under \"stativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
 
@@ -2305,12 +2465,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :inflectionalRelation ;
-                            owl:someValuesFrom :Inflection
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :consistsOfMorph ;
                             owl:someValuesFrom :Stem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :inflectionalRelation ;
+                            owl:someValuesFrom :Inflection
                           ] ;
           
           :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
