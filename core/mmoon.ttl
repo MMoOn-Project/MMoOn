@@ -469,6 +469,26 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://mmoon.org/mmoon/hasSense
+
+:hasSense rdf:type owl:ObjectProperty ;
+          
+          rdfs:label "has sense"@en ;
+          
+          :definition "States that a lexeme or morpheme has some sense."@en ;
+          
+          rdfs:range :Sense ;
+          
+          rdfs:subPropertyOf :hasMeaning ;
+          
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Lexeme
+                                      :Morpheme
+                                    )
+                      ] .
+
+
+
 ###  http://mmoon.org/mmoon/hasWordform
 
 :hasWordform rdf:type owl:ObjectProperty ;
@@ -592,9 +612,13 @@ An allomorph is one of two or more complementary morphs which manifest a morphem
            
            rdfs:label "sense link"@en ;
            
-           rdfs:comment "Points to an external sense resource defining the meaning of a lexeme."@en ;
+           :definition "Points to an external sense resource defining the meaning of a lexeme or morpheme."@en ;
            
-           rdfs:domain :Sense .
+           rdfs:domain :Sense ;
+           
+           rdfs:range rdfs:Resource ;
+           
+           rdfs:subPropertyOf owl:topObjectProperty .
 
 
 
@@ -668,7 +692,11 @@ morphemic gloss: \"GEN\""""@en ;
                  
                  rdfs:label "sense definition"@en ;
                  
-                 rdfs:comment "Is some definition of the lexical meaning of a lexeme."@en ;
+                 :usageNote "All string values for this property must carry a language tag."@en ;
+                 
+                 :definition "Is some definition of a sense resource."@en ;
+                 
+                 rdfs:domain :Sense ;
                  
                  rdfs:range xsd:string .
 
@@ -683,6 +711,10 @@ morphemic gloss: \"GEN\""""@en ;
                  :usageNote "A reference to the mapping relation of the two writing system involved is highly recommended."@en ;
                  
                  :definition "This property renders orthographic representations of the writing system of the language of the morpheme inventory in symbols of another writing system, which ideally adheres to the latin alphabet."@en ;
+                 
+                 rdfs:domain :Representation ;
+                 
+                 rdfs:range xsd:string ;
                  
                  :externalDefinition <https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet> .
 
@@ -870,6 +902,27 @@ Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"
 
 
 
+###  http://mmoon.org/mmoon/Applicative
+
+:Applicative rdf:type owl:Class ;
+             
+             rdfs:label "Applicative"@en ;
+             
+             rdfs:subClassOf :VerbExpansion ;
+             
+             :example """German: «Erna antwortet auf die Frage» -> «Erna beantwortet die Frage».
+German «Erna arbeitet im Feld» ‚Erna works in the field’ -> «Erna bearbeitet das Feld» ‚Erna works the field’. [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@de ;
+             
+             skos:definition "A common semantic effect of the derivation is therefore a higher degree of affection of that participant.  [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :externalDefinitionDesc """A verb AV derived from a verb BV is applicative 1 iff:
+- AV is transitive,
+- the direct object of AV has been promoted from a lower position in the valency frame of BV (or even from outside it).
+The participant promoted to direct object is then the undergoer. A common semantic effect of the derivation is therefore a higher degree of affection of that participant.
+The applicative 2 is a (normally derivational) verbal category which marks the verb as applicative 1. [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
 ###  http://mmoon.org/mmoon/ApplicativeVerb
 
 :ApplicativeVerb rdf:type owl:Class ;
@@ -1003,6 +1056,21 @@ An underived verb cannot be causative by this definition. However, the paradigma
 
 
 
+###  http://mmoon.org/mmoon/Causativization
+
+:Causativization rdf:type owl:Class ;
+                 
+                 rdfs:label "Causativization"@en ;
+                 
+                 rdfs:subClassOf :ValencyChange ;
+                 
+                 skos:definition """Causativization is a valency increase which renders a verb causative.
+Since the causer occupies the subject slot of the causative verb and the base verb already had a subject (representing a different participant), causativization generally involves more valency changes than just the addition of a subject slot. [Christian Lehmann, under \"causativization\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                 
+                 :example "Korean: \"cwuk-\" ('verb 'die') --> \"cwuk-i-\" (verb 'kill')"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Circumfix
 
 :Circumfix rdf:type owl:Class ;
@@ -1058,10 +1126,6 @@ An underived verb cannot be causative by this definition. However, the paradigma
               
               rdfs:subClassOf :Lexeme ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty :compoundingRelation ;
-                                owl:someValuesFrom :Compounding
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :isComposedOf ;
                                 owl:onClass [ rdf:type owl:Class ;
                                               owl:unionOf ( :GrammaticalWord
@@ -1069,6 +1133,10 @@ An underived verb cannot be causative by this definition. However, the paradigma
                                                           )
                                             ] ;
                                 owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :compoundingRelation ;
+                                owl:someValuesFrom :Compounding
                               ] ;
               
               :definition """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1405,6 +1473,20 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
 Is a kind of lexeme which is formed by the morphological modification of another lexical stem."""@en ;
              
              :usageNote "The derived word is specified for the stem from which it is derived as well as for the affix that is involved in the derivation by using the property :consistsOfMorph, thus explicating the morphs which are involved in the word-formation of the derived word."@en .
+
+
+
+###  http://mmoon.org/mmoon/Desiderative
+
+:Desiderative rdf:type owl:Class ;
+              
+              rdfs:label "Desiderative"@en ;
+              
+              rdfs:subClassOf :VerbExpansion ;
+              
+              :example "Sanskrit ‚s:r.no-ti ‚hears’, ‚su-’sr¡u-.sa-ti (RED-hear-DES-3.SG) ‚wants to hear’. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              skos:definition "The desiderative is a category deriving a verb Vd from a verbal base Vb such that Vd means ‚to want to Vb’. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -1795,6 +1877,23 @@ An instrument noun is an oriented deverbal noun that designates something that f
 
 
 
+###  http://mmoon.org/mmoon/Intransitivizer
+
+:Intransitivizer rdf:type owl:Class ;
+                 
+                 rdfs:label "Intransitivizer"@en ;
+                 
+                 owl:equivalentClass gold:Intransitivizer ;
+                 
+                 rdfs:subClassOf :ValencyChange ;
+                 
+                 :externalDefinitionDesc """A verb is intransitive iff it does not govern a direct object. Derivatively, a construction is intransitive iff it is based on such a verb.
+An intransitive verb is not necessarily monovalent, as it can take other kinds of complements different from a direct object.  [Christian Lehmann, under \"intransiviation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                 
+                 skos:definition "Intransitivation is a valency decrease which renders a verb intransitive. [Christian Lehmann, under \"intransiviation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Introflection
 
 :Introflection rdf:type owl:Class ;
@@ -1805,6 +1904,22 @@ An instrument noun is an oriented deverbal noun that designates something that f
                                :WordFormation ;
                
                :definition "Nonconcatenative morphology, also called discontinuous morphology and introflection, is a form of word-formation [and inflection] in which the root is modified and does not involve stringing morphemes together. [Haspelmath and Sims: Understanding morphology. 2002, Sections 3.1.2 - 3.1.4]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Introversion
+
+:Introversion rdf:type owl:Class ;
+              
+              rdfs:label "Introversion"@en ;
+              
+              rdfs:subClassOf :Intransitivizer ;
+              
+              :definition """A verb is introversive iff it is derived from a transitive verb by blocking of the undergoer position.
+Introversion is an intransitivation which suppresses the direct object slot of the base. [Christian Lehmann, under \"introversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+              
+              :example """Russ. sobaka kusaet proxozhego ‚the dog bites a by-passer’ ->
+sobaka ksaetsja ‚the dog bites’.  [Christian Lehmann, under \"introversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
 
@@ -1898,7 +2013,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
          
          rdfs:label "Meaning"@en ;
          
-         :definition "This class comprises a wide range of meanings a linguistic sign can be associated with, e.g. linguistic categories, morphosyntactic features, lexical senses, derivational meanings."@en .
+         :definition "This class comprises a wide range of meanings a word or morpheme can be associated with, e.g. linguistic categories, morphosyntactic features, lexical senses, derivational meanings."@en .
 
 
 
@@ -1937,7 +2052,7 @@ For convenience the morpheme instances are rendered by the same notatinal means 
           
           :definition """The morpheme class usually contains the smallest meaning-bearing units of a language. These comprise all semantically or grammatically distinct parts which are identifiable by segmentation of  the morphs of which a word or a word-form consists.
 
-Depending on the kind of correspondence betweene a morpheme its morph realization, four kinds of morphemes are established: 1) atomic morphemes, 2) fusional morphemes, 3) Empty morphemes and 4) complex morphemes."""@en .
+Depending on the kind of correspondence between a morpheme and its morph realization, four kinds of morphemes are established: 1) atomic morphemes, 2) fusional morphemes, 3) empty morphemes and 4) complex morphemes."""@en .
 
 
 
@@ -1955,7 +2070,7 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
                 
                 rdfs:label "Morphemic gloss"@en ;
                 
-                :usageNote "Most of the glosses used for grammatical concepts are taken from the Leipzig Glossing Rules  (https://www.eva.mpg.de/lingua/pdf/LGR08.02.05.pdf) or from Lehmann 2004 (http://christianlehmann.eu/publ/img.pdf). Lexical senses are usually glossed in English by using the orthographic representation of the lexical element (such as stems and roots) but can be also given in the language of the MMoOn language inventory."@en ;
+                :usageNote "Most of the glosses used for grammatical concepts are taken from the Leipzig Glossing Rules  (https://www.eva.mpg.de/lingua/pdf/LGR08.02.05.pdf) or from Lehmann 2004 (http://christianlehmann.eu/publ/img.pdf). Lexical senses are usually glossed in English by using the orthographic representation of the lexical element (such as stems and roots) but can be also given in the language of the MMoOn morpheme inventory."@en ;
                 
                 :definition "The gloss is the abstract identity of a morpheme. It serves as a metalinguistic representation of morphological meanings."@en .
 
@@ -2175,6 +2290,22 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
 
 
 
+###  http://mmoon.org/mmoon/Repetitive
+
+:Repetitive rdf:type owl:Class ;
+            
+            rdfs:label "Repetitive"@en ;
+            
+            owl:equivalentClass gold:Repetitive ;
+            
+            rdfs:subClassOf :VerbExpansion ;
+            
+            :example "English, Spanish and Portuguese use the prefix re-, cf. Engl.: replay, rewrite; Spanish/Portuguese: readaptar ‚readapt’, reutilizar ‚use again’.  [Christian Lehmann, under \"repetitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            skos:definition "The repetitive derivation indicates that the process designated by the base occurs once again.  [Christian Lehmann, under \"repetitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Representation
 
 :Representation rdf:type owl:Class ;
@@ -2204,6 +2335,20 @@ Depending on the kind of correspondence betweene a morpheme its morph realizatio
 :ResultativeAktionsart rdf:type owl:Class ;
                        
                        rdfs:subClassOf :Aktionsart .
+
+
+
+###  http://mmoon.org/mmoon/Reversion
+
+:Reversion rdf:type owl:Class ;
+           
+           rdfs:label "Reversion"@en ;
+           
+           rdfs:subClassOf :VerbExpansion ;
+           
+           :example "English uses the prefixes un- and dis- for the reversive derivation, as in uncover, unravel; disarm, disengage. [Christian Lehmann, under \"reversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           
+           skos:definition "Reversion is the property of being reversive. The reversive derivation indicates that the process designated by the base is reversed or its effect undone.  [Christian Lehmann, under \"reversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2350,6 +2495,32 @@ In a compound word: The stem is the morphological representative of one of the t
           rdfs:subClassOf :Affix ;
           
           :definition "A transfix is a discontinuous affix at least one of whose components is an infix.  [Christian Lehmann, under \"transfix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Transitivizer
+
+:Transitivizer rdf:type owl:Class ;
+               
+               rdfs:label "Transitivizer"@en ;
+               
+               owl:equivalentClass gold:Transitivizer ;
+               
+               rdfs:subClassOf :ValencyChange ;
+               
+               skos:definition "A transitiviser is an affix which changes the transitivity of an intransitive verb into a transitive one. [Christian Lehmann, under \"transitivizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/ValencyChange
+
+:ValencyChange rdf:type owl:Class ;
+               
+               rdfs:label "Valency change"@en ;
+               
+               rdfs:subClassOf :VerbExpansion ;
+               
+               skos:definition "Valency-changing derivation is any derivation which changes the valency of a stem. [Christian Lehmann, under \"valency-changing derivation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2527,6 +2698,12 @@ gold:Infix rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/Intransitivizer
+
+gold:Intransitivizer rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/LexicalItem
 
 gold:LexicalItem rdf:type owl:Class .
@@ -2536,6 +2713,12 @@ gold:LexicalItem rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Prefix
 
 gold:Prefix rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Repetitive
+
+gold:Repetitive rdf:type owl:Class .
 
 
 
@@ -2554,6 +2737,18 @@ gold:Stem rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Suffix
 
 gold:Suffix rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Transitivizer
+
+gold:Transitivizer rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/2000/01/rdf-schema#Resource
+
+rdfs:Resource rdf:type owl:Class .
 
 
 
@@ -4115,6 +4310,17 @@ gold:Suffix rdf:type owl:Class .
          rdfs:label "INTRANS"^^xsd:string ;
          
          rdfs:comment "Intranslative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/INTRR
+
+:INTRR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+				
+	     rdfs:label "INTRR"^^xsd:string ;
+         
+         rdfs:comment "Intransitivizer gloss."@en .
 
 
 
