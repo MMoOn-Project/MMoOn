@@ -737,6 +737,20 @@ lexvo:Language rdf:type owl:Class ;
 
 
 
+###  http://mmoon.org/mmoon/ActionNominalizer
+
+:ActionNominalizer rdf:type owl:Class ;
+                   
+                   rdfs:label "Action Nominalizer"@en ;
+                   
+                   rdfs:subClassOf :SemanticDerivation ;
+                   
+                   skos:definition "An action nominalizer is a nominalizer which derives a noun referring to the situation itself from an action predicate. [Christian Lehmann, under \"action nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :example "German -ung, as in Versuchung „tempt-ation“. [Christian Lehmann, under \"action nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/ActionNoun
 
 :ActionNoun rdf:type owl:Class ;
@@ -820,6 +834,18 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
 
 
 
+###  http://mmoon.org/mmoon/Adjectivization
+
+:Adjectivization rdf:type owl:Class ;
+                 
+                 rdfs:label "Adjectivization"@en ;
+                 
+                 rdfs:subClassOf :FunctionalDerivation ;
+                 
+                 :definition "Adjectivization is the derivation of an adjective from another word-class by means of a derivational morpheme."@en .
+
+
+
 ###  http://mmoon.org/mmoon/AdverbCompound
 
 :AdverbCompound rdf:type owl:Class ;
@@ -834,6 +860,18 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
 
 
 
+###  http://mmoon.org/mmoon/Adverbialization
+
+:Adverbialization rdf:type owl:Class ;
+                  
+                  rdfs:label "Adverbialization"@en ;
+                  
+                  rdfs:subClassOf :FunctionalDerivation ;
+                  
+                  :definition "The derivation of an adverb from another part of speech, especially from an adjective [by means of a derivational morpheme]. [Christian Lehmann, under \"adverbialization\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Affix
 
 :Affix rdf:type owl:Class ;
@@ -845,6 +883,20 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
        rdfs:subClassOf :Morph ;
        
        :definition "An affix is a bound segmental morph that is joined to a stem or root before, after, or within it, in the formation of a derived or inflected form. [Christian Lehmann, under \"affix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/AgentNominalizer
+
+:AgentNominalizer rdf:type owl:Class ;
+                  
+                  rdfs:label "Agent Nominalizer"@en ;
+                  
+                  rdfs:subClassOf :SemanticDerivation ;
+                  
+                  skos:definition "An agent nominalizer is a nominalizer which derives agent nouns. [Christian Lehmann, under \"agent nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                  
+                  :example "Engl. \"drive\" --> \"driver\""@en .
 
 
 
@@ -1713,6 +1765,22 @@ While there may be a subordinate agent in a causative construction, there may be
 
 
 
+###  http://mmoon.org/mmoon/Factitivity
+
+:Factitivity rdf:type owl:Class ;
+             
+             rdfs:label "Factitivity"@en ;
+             
+             rdfs:subClassOf :SemanticDerivation ;
+             
+             :example """Engl. «blacken» (tr.) from «black»,
+German «schwärzen» from «schwarz»
+German «töten» ‚kill’ from «tot» ‚dead’ [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+             
+             skos:definition "Factitivity is the property of a verb to be factitive. [Christian Lehmann, under \"factitivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/FemaleNominalizer
 
 :FemaleNominalizer rdf:type owl:Class ;
@@ -1750,6 +1818,20 @@ While there may be a subordinate agent in a causative construction, there may be
                rdfs:subClassOf :Iterative ;
                
                :definition "Is a kind of iterative. [Christian Lehmann, under \"frequentative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/FunctionalDerivation
+
+:FunctionalDerivation rdf:type owl:Class ;
+                      
+                      rdfs:label "Functional Derivation"@en ;
+                      
+                      owl:equivalentClass gold:CategoryChanger ;
+                      
+                      rdfs:subClassOf :WordclassChangingDerivation ;
+                      
+                      :definition "Functional derivation involves a grammatical function of the derivational morpheme, i.e. it designates the assignment to a word-class without addditional semantic content."@en .
 
 
 
@@ -1857,6 +1939,18 @@ English only has lexical contrasts such as stative ‚know’ vs. ingressive ‚
             rdfs:subClassOf :NounExpansion ;
             
             :definition "Denotes the inhabitant of a country or region noun."@en .
+
+
+
+###  http://mmoon.org/mmoon/InstrumentNominalizer
+
+:InstrumentNominalizer rdf:type owl:Class ;
+                       
+                       rdfs:label "Instrument Nominalizer"@en ;
+                       
+                       rdfs:subClassOf :SemanticDerivation ;
+                       
+                       skos:definition "A nominalizer which derives a noun designating the participant of the underlying situation with the semantic role of instrument. [Christian Lehmann, under \"instrument nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -1993,17 +2087,18 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
 
 
 
-###  http://mmoon.org/mmoon/MaterialAdjective
+###  http://mmoon.org/mmoon/MaterialAdjectivizer
 
-:MaterialAdjective rdf:type owl:Class ;
-                   
-                   rdfs:label "Material adjective"@en ;
-                   
-                   rdfs:subClassOf :DenominalAdjective ;
-                   
-                   :example "German: Holz 'wood' --> hölzern 'wooden'."@de ;
-                   
-                   :definition "An adjective which is derived from a noun stem denoting some kind of material and means 'being made of this material'."@en .
+:MaterialAdjectivizer rdf:type owl:Class ;
+                      
+                      rdfs:label "Material Adjectivizer"@en ;
+                      
+                      rdfs:subClassOf :DenominalAdjective ,
+                                      :SemanticDerivation ;
+                      
+                      :example "German: Holz 'wood' --> hölzern 'wooden'."@de ;
+                      
+                      :definition "An adjective which is derived from a noun stem denoting some kind of material and means 'being made of this material'."@en .
 
 
 
@@ -2202,6 +2297,20 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
 
 
 
+###  http://mmoon.org/mmoon/Nominalization
+
+:Nominalization rdf:type owl:Class ;
+                
+                rdfs:label "Nominalization"@en ;
+                
+                owl:equivalentClass gold:Nominalizer ;
+                
+                rdfs:subClassOf :FunctionalDerivation ;
+                
+                :definition "Nominalization is the derivation of nouns from other parts of speech, especially from verbs and adjectives [by means of a derivational morpheme]. [Christian Lehmann, under \"nominalization\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/NounAdjective
 
 :NounAdjective rdf:type owl:Class ;
@@ -2225,6 +2334,44 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
                rdfs:subClassOf :Expansion ;
                
                :definition "Is the expansion of the semantic content of a noun by a derivational morpheme."@en .
+
+
+
+###  http://mmoon.org/mmoon/PatientNominalizer
+
+:PatientNominalizer rdf:type owl:Class ;
+                    
+                    rdfs:label "Patient Nominalizer"@en ;
+                    
+                    rdfs:subClassOf :SemanticDerivation ;
+                    
+                    skos:definition "An patient nominalizer is a nominalizer which derives patient nouns. [Christian Lehmann, under \"patient nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                    
+                    :example "Eng. \"invite' (verb) --> \"invitee\" (noun)"@en .
+
+
+
+###  http://mmoon.org/mmoon/PersonNoun
+
+:PersonNoun rdf:type owl:Class ;
+            
+            rdfs:label "Person Noun"@en ;
+            
+            rdfs:subClassOf :SemanticDerivation ;
+            
+            :example "Russ. \"umn-yj\" (adjective 'smart/clever') --> \"umn-ik\" (noun 'clever guy')"@en .
+
+
+
+###  http://mmoon.org/mmoon/PlaceNominalizer
+
+:PlaceNominalizer rdf:type owl:Class ;
+                  
+                  rdfs:label "Place Nominalizer"@en ;
+                  
+                  rdfs:subClassOf :SemanticDerivation ;
+                  
+                  skos:definition "A place nominalizer is a nominalizer that derives place nouns from verbal bases. [Christian Lehmann, under \"place nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2254,6 +2401,48 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
 
 
 
+###  http://mmoon.org/mmoon/Privative
+
+:Privative rdf:type owl:Class ;
+           
+           rdfs:label "Privative"@en ;
+           
+           rdfs:subClassOf :SemanticDerivation ;
+           
+           skos:definition "'lacking N'"@en ;
+           
+           :example "Russ.: \"vod-a\" (noun 'water') --> \"bez-vod-nyj\" (adjective 'waterless')"@en .
+
+
+
+###  http://mmoon.org/mmoon/Processive
+
+:Processive rdf:type owl:Class ;
+            
+            rdfs:label "Processive"@en ;
+            
+            rdfs:subClassOf :SemanticDerivation ;
+            
+            skos:definition "The processive is a derivation which converts a stative base (an adjective or a noun) meaning X into a verb meaning ‚be/become/act as X’. [Christian Lehmann, under \"processive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition gold:Versive .
+
+
+
+###  http://mmoon.org/mmoon/Proprietive
+
+:Proprietive rdf:type owl:Class ;
+             
+             rdfs:label "Proprietive"@en ;
+             
+             rdfs:subClassOf :SemanticDerivation ;
+             
+             skos:definition "'having N'"@en ;
+             
+             :example "Ponapean: \"pihl\" (noun 'water') --> \"pil-en\" (adjective 'waterly')"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Punctual
 
 :Punctual rdf:type owl:Class ;
@@ -2263,6 +2452,21 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
           rdfs:subClassOf :Aktionsart ;
           
           :definition "With respect to telicity, there are two alternative conceptions of a punctual situation. On the momentary view, it is bilateral telic. This implies that start and end of the situation are distinct and that there is a moment between them. On the transgressive view, start and end of the punctual situation coincide. It consists in the transition from a situation preceding it to a situation following it and thus has no extension in time. [Christian Lehmann, under \"punctual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Quality
+
+:Quality rdf:type owl:Class ;
+         
+         rdfs:label "Quality"@en ;
+         
+         rdfs:subClassOf :SemanticDerivation ;
+         
+         :definition "A derivational meaning resulting in the meaning 'to have the quality of X'."@en ;
+         
+         :example """Engl. \"poison\" (noun) --> \"poisonous\" (adjective)
+Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
 
 
 
@@ -2287,6 +2491,20 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
                rdfs:subClassOf :Degree ;
                
                :definition "Formation of degree of comparison that exhibits a regular inflectional pattern."@en .
+
+
+
+###  http://mmoon.org/mmoon/Relational
+
+:Relational rdf:type owl:Class ;
+            
+            rdfs:label "Relational"@en ;
+            
+            rdfs:subClassOf :SemanticDerivation ;
+            
+            skos:definition "'related to N'"@en ;
+            
+            :example "Russ.: \"korol\" (noun 'king') --> \"korol-evskij\" (adjective 'royal')"@en .
 
 
 
@@ -2363,6 +2581,18 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
       rdfs:subClassOf :Morph ;
       
       :definition "A morph that constitutes the semantic nucleus of a stem. It cannot be further segmented and is often not specified for a part of speech. There are lexical roots, like Engl. «get», and grammatical roots, like Engl. «wh-». [Christian Lehmann, under \"root\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/SemanticDerivation
+
+:SemanticDerivation rdf:type owl:Class ;
+                    
+                    rdfs:label "Semantic Derivation"@en ;
+                    
+                    rdfs:subClassOf :WordclassChangingDerivation ;
+                    
+                    :definition "Semantic derivation involves a grammatical and a semantic function of the derivational morpheme, i.e. a change of the word-class and some additional semantic content."@en .
 
 
 
@@ -2590,6 +2820,18 @@ In a compound word: The stem is the morphological representative of one of the t
 
 
 
+###  http://mmoon.org/mmoon/Verbalization
+
+:Verbalization rdf:type owl:Class ;
+               
+               rdfs:label "Verbalization"@en ;
+               
+               rdfs:subClassOf :FunctionalDerivation ;
+               
+               rdfs:comment "Verbalization is the derivation of a verb from another part of speech [by means of a derivational morpheme]. [Christian Lehmann, under \"verbalization\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Word
 
 :Word rdf:type owl:Class ;
@@ -2628,6 +2870,18 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
 
 
 
+###  http://mmoon.org/mmoon/WordclassChangingDerivation
+
+:WordclassChangingDerivation rdf:type owl:Class ;
+                             
+                             rdfs:label "Word-class Changing Derivaion"@en ;
+                             
+                             rdfs:subClassOf :DerivationalMeaning ;
+                             
+                             skos:definition "Is a type of derivation which involves a) a change of the word-class without additional semantic content or b) a change of the of the word-class and additional semantic content by adding a derivational morpheme."@en .
+
+
+
 ###  http://mmoon.org/mmoon/Wordform
 
 :Wordform rdf:type owl:Class ;
@@ -2636,12 +2890,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :consistsOfMorph ;
-                            owl:someValuesFrom :Stem
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :inflectionalRelation ;
                             owl:someValuesFrom :Inflection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :consistsOfMorph ;
+                            owl:someValuesFrom :Stem
                           ] ;
           
           :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -2680,6 +2934,12 @@ gold:Affix rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/CategoryChanger
+
+gold:CategoryChanger rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Circumfix
 
 gold:Circumfix rdf:type owl:Class .
@@ -2707,6 +2967,12 @@ gold:Intransitivizer rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/LexicalItem
 
 gold:LexicalItem rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Nominalizer
+
+gold:Nominalizer rdf:type owl:Class .
 
 
 
@@ -4317,10 +4583,10 @@ rdfs:Resource rdf:type owl:Class .
 
 :INTRR rdf:type :MorphemicGloss ,
                 owl:NamedIndividual ;
-				
-	     rdfs:label "INTRR"^^xsd:string ;
-         
-         rdfs:comment "Intransitivizer gloss."@en .
+       
+       rdfs:label "INTRR"^^xsd:string ;
+       
+       rdfs:comment "Intransitivizer gloss."@en .
 
 
 
