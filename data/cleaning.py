@@ -6,7 +6,6 @@ import csv
 import sys
 import getopt
 import string
-from heb2lat import heb2lat
 
 
 # http://mmoon.org/lang/heb/schema/oh/PrimaryRoot
@@ -243,19 +242,19 @@ def main(args=sys.argv[1:]):
                 graph.add((lexeme, mmoon.hasRepresentation, unvocrep))
 
         if row['deutsch']:
-            translation = addTranslation(graph, row['deutsch'], "de")
+            sense = addSense(graph, row['deutsch'], "de")
             if lexeme:
-                graph.add((lexeme, gold.translation, translation))
+                graph.add((lexeme, mmoon.hasSense, sense))
 
         if row['englisch']:
-            translation = addTranslation(graph, row['englisch'], "en")
+            sense = addSense(graph, row['englisch'], "en")
             if lexeme:
-                graph.add((lexeme, gold.translation, translation))
+                graph.add((lexeme, mmoon.hasSense, sense))
 
         if row['russisch']:
-            translation = addTranslation(graph, row['russisch'], "ru")
+            sense = addSense(graph, row['russisch'], "ru")
             if lexeme:
-                graph.add((lexeme, gold.translation, translation))
+                graph.add((lexeme, mmoon.hasSense, sense))
 
         if row['root'] or row['secundaryRoot']:
             # secondary-root -> secondary-root
@@ -284,37 +283,41 @@ def main(args=sys.argv[1:]):
 
             for root in roots :
                 graph.add((lexeme, mmoon_heb.consistsOfMorph, root))
-                if isLexeme:
-                    graph.add((root, mmoon_heb.belongsToLexeme, lexeme))
-                else:
-                    graph.add((root, mmoon.belongsToWord, lexeme))
+                graph.add((root, mmoon.belongsTo, lexeme))
 
     graph.add((heb_inventory.term(""), OWL.imports, mmoon_heb.term("")))
     graph.serialize(out_file_rdf, "turtle")
 
-def addTranslation(graph, translationStr, language):
-    translationStr = translationStr.strip()
-    translationStrQuoted = urllib.parse.quote(translationStr)
+def addSense(graph, senseDefinitionString, language):
+    senseDefinitionString = senseDefinitionString.strip()
+    senseDefinitionStringQuoted = urllib.parse.quote(senseDefinitionString)
 
-    translation = rdflib.term.URIRef(heb_inventory+"Representation/" + language + "/"+translationStrQuoted)
+    sense = rdflib.term.URIRef(heb_inventory+"Sense_" + language + "_"+senseDefinitionStringQuoted)
 
-    graph.add((translation, RDF.type, mmoon.Representation))
-    graph.add((translation, mmoon.orthographicRepresentation, rdflib.term.Literal(translationStr, lang=language)))
-    graph.add((translation, DC.language, rdflib.term.Literal(language)))
-    return translation
+    graph.add((sense, RDF.type, mmoon.Sense))
+    graph.add((sense, mmoon.senseDefinition, rdflib.term.Literal(senseDefinitionString, lang=language)))
+    graph.add((sense, DC.language, rdflib.term.Literal(language)))
+    return sense
 
 def addRootResource(graph, root, classResource, primaryRoot=None):
     # https://stackoverflow.com/questions/33068727/how-to-split-unicode-strings-character-by-character-in-python
     #rootDashed = "-".join(regex.findall('\p{L}\p{M}*', root))
     rootDashed = "-".join(regex.findall('\X', root))
 
-    rootResource = rdflib.term.URIRef(heb_inventory+"root_"+root)
-    #rootResource = rdflib.term.URIRef(heb_inventory+"root_"+heb2lat(rootDashed))
+    rootResource = rdflib.term.URIRef(heb_inventory+"Root_"+root)
+    #rootResource = rdflib.term.URIRef(heb_inventory+"root_"+heb2latComp(rootDashed))
     rootliteral = rdflib.term.Literal(root, lang="he")
+
+    rootDashedRepresentation = rdflib.term.URIRef(heb_inventory+"Representation_"+rootDashed)
+    rootDashedLiteral = rdflib.term.Literal(rootDashed, lang="he")
 
     graph.add((rootResource, RDF.type, classResource))
     graph.add((rootResource, RDF.type, mmoon_heb.Root))
     graph.add((rootResource, RDFS.label, rootliteral))
+    graph.add((rootResource, mmoon.hasRepresentation, rootDashedRepresentation))
+
+    graph.add((rootDashedRepresentation, RDF.type, mmoon_heb.Representation))
+    graph.add((rootDashedRepresentation, mmoon.orthographicRepresentation, rootDashedLiteral))
 
     if primaryRoot:
         primaryRootResource = addRootResource(graph, primaryRoot, mmoon_heb.PrimaryRoot)
@@ -324,13 +327,15 @@ def addRootResource(graph, root, classResource, primaryRoot=None):
 
 def normalizeRoot(root):
 
-    forbiddenChars = ["(", ")", "[", "]", "/"]
+    forbiddenChars = ["(", ")", "[", "]", "/", "."]
     root = root.strip()
 
     if not root or root == "—" or root == "—" or any(char in root for char in forbiddenChars):
         return ""
 
-    return root.replace(" ", "").replace("-", "")
+    root = regex.sub('[a-zA-Z]', '', root)
+    root = regex.sub('[1-9]', '', root)
+    return root.replace(" ", "").replace("-", "").replace("־", "")
 
 
 if __name__ == "__main__":
