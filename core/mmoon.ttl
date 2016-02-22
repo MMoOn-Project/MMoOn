@@ -1088,6 +1088,18 @@ A noun is augmentative 1 iff it is derived by augmentation."""@en ;
 
 
 
+###  http://mmoon.org/mmoon/Case
+
+:Case rdf:type owl:Class ;
+      
+      rdfs:label "Case"@en ;
+      
+      rdfs:subClassOf :LinguisticCategory ;
+      
+      :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#CaseFeature> .
+
+
+
 ###  http://mmoon.org/mmoon/CausativeVerb
 
 :CausativeVerb rdf:type owl:Class ;
@@ -1773,11 +1785,13 @@ While there may be a subordinate agent in a causative construction, there may be
              
              rdfs:subClassOf :SemanticDerivation ;
              
-             :example """Engl. «blacken» (tr.) from «black»,
+             :example """Engl. «blacken» (tr.) from «black», 
 German «schwärzen» from «schwarz»
 German «töten» ‚kill’ from «tot» ‚dead’ [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
              
-             skos:definition "Factitivity is the property of a verb to be factitive. [Christian Lehmann, under \"factitivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+             :externalDefinitionDesc "Factitivity is the property of a verb to be factitive. [Christian Lehmann, under \"factitivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :definition "The derivation of a transitive verb from an adjective involving a meaning of  'to make  ADJ'."@en .
 
 
 
@@ -1847,6 +1861,18 @@ German «töten» ‚kill’ from «tot» ‚dead’ [Christian Lehmann, under \
 This often the case for inherent meanings such as number for nouns or tense for verbs."""@en ;
                   
                   :example "The English stem \"go\" of the verb \"to go\"  is a morph encoding the meaning of the root \"go\" and inherently also present tense. It corresponds to the fusional morpheme \"go.PRS\""@en .
+
+
+
+###  http://mmoon.org/mmoon/Gender
+
+:Gender rdf:type owl:Class ;
+        
+        rdfs:label "Gender"@en ;
+        
+        rdfs:subClassOf :LinguisticCategory ;
+        
+        :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#GenderFeature> .
 
 
 
@@ -2098,7 +2124,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
                       
                       :example "German: Holz 'wood' --> hölzern 'wooden'."@de ;
                       
-                      :definition "An adjective which is derived from a noun stem denoting some kind of material and means 'being made of this material'."@en .
+                      :definition "An adjective which is derived from a noun denoting some kind of material and means 'being made of this material'."@en .
 
 
 
@@ -2109,6 +2135,20 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
          rdfs:label "Meaning"@en ;
          
          :definition "This class comprises a wide range of meanings a word or morpheme can be associated with, e.g. linguistic categories, morphosyntactic features, lexical senses, derivational meanings."@en .
+
+
+
+###  http://mmoon.org/mmoon/Mood
+
+:Mood rdf:type owl:Class ;
+      
+      rdfs:label "Mood"@en ;
+      
+      rdfs:subClassOf :LinguisticCategory ;
+      
+      skos:definition "Mood is an inflectional category expressing modality. [Christian Lehmann, under \"mood\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+      
+      :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#Moodfeature> .
 
 
 
@@ -2337,6 +2377,18 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
 
 
 
+###  http://mmoon.org/mmoon/Number
+
+:Number rdf:type owl:Class ;
+        
+        rdfs:label "Number"@en ;
+        
+        rdfs:subClassOf :LinguisticCategory ;
+        
+        :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#NumberFeature> .
+
+
+
 ###  http://mmoon.org/mmoon/PatientNominalizer
 
 :PatientNominalizer rdf:type owl:Class ;
@@ -2351,15 +2403,29 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
 
 
 
-###  http://mmoon.org/mmoon/PersonNoun
+###  http://mmoon.org/mmoon/Person
 
-:PersonNoun rdf:type owl:Class ;
-            
-            rdfs:label "Person Noun"@en ;
-            
-            rdfs:subClassOf :SemanticDerivation ;
-            
-            :example "Russ. \"umn-yj\" (adjective 'smart/clever') --> \"umn-ik\" (noun 'clever guy')"@en .
+:Person rdf:type owl:Class ;
+        
+        rdfs:label "Person"@en ;
+        
+        rdfs:subClassOf :LinguisticCategory ;
+        
+        :externalDefinitionDesc <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#PersonFeature> .
+
+
+
+###  http://mmoon.org/mmoon/PersonNominalizer
+
+:PersonNominalizer rdf:type owl:Class ;
+                   
+                   rdfs:label "Person Nominalizer"@en ;
+                   
+                   rdfs:subClassOf :SemanticDerivation ;
+                   
+                   skos:definition "A nominalizer which derives a noun from an adjective designating a person that is characterized by the adjective's meaning."@en ;
+                   
+                   :example "Russ. \"umn-yj\" (adjective 'smart/clever') --> \"umn-ik\" (noun 'clever guy')"@en .
 
 
 
@@ -2401,17 +2467,17 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
 
 
 
-###  http://mmoon.org/mmoon/Privative
+###  http://mmoon.org/mmoon/PrivativeAdjectivizer
 
-:Privative rdf:type owl:Class ;
-           
-           rdfs:label "Privative"@en ;
-           
-           rdfs:subClassOf :SemanticDerivation ;
-           
-           skos:definition "'lacking N'"@en ;
-           
-           :example "Russ.: \"vod-a\" (noun 'water') --> \"bez-vod-nyj\" (adjective 'waterless')"@en .
+:PrivativeAdjectivizer rdf:type owl:Class ;
+                       
+                       rdfs:label "Privative Adjectivizer"@en ;
+                       
+                       rdfs:subClassOf :SemanticDerivation ;
+                       
+                       skos:definition "An adjective which is derived from a noun meaning 'lacking N'."@en ;
+                       
+                       :example "Russ.: \"vod-a\" (noun 'water') --> \"bez-vod-nyj\" (adjective 'waterless')"@en .
 
 
 
@@ -2437,7 +2503,7 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
              
              rdfs:subClassOf :SemanticDerivation ;
              
-             skos:definition "'having N'"@en ;
+             skos:definition "A derivational meaning resulting in the meaning 'having N'."@en ;
              
              :example "Ponapean: \"pihl\" (noun 'water') --> \"pil-en\" (adjective 'waterly')"@en .
 
@@ -2502,7 +2568,7 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
             
             rdfs:subClassOf :SemanticDerivation ;
             
-            skos:definition "'related to N'"@en ;
+            skos:definition "A derivational meaning resulting in the meaning 'related to N'."@en ;
             
             :example "Russ.: \"korol\" (noun 'king') --> \"korol-evskij\" (adjective 'royal')"@en .
 
@@ -2716,6 +2782,18 @@ In a compound word: The stem is the morphological representative of one of the t
 
 
 
+###  http://mmoon.org/mmoon/Tense
+
+:Tense rdf:type owl:Class ;
+       
+       rdfs:label "Tense"@en ;
+       
+       rdfs:subClassOf :LinguisticCategory ;
+       
+       :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#TenseFeature> .
+
+
+
 ###  http://mmoon.org/mmoon/Transfix
 
 :Transfix rdf:type owl:Class ;
@@ -2832,6 +2910,18 @@ In a compound word: The stem is the morphological representative of one of the t
 
 
 
+###  http://mmoon.org/mmoon/Voice
+
+:Voice rdf:type owl:Class ;
+       
+       rdfs:label "Voice"@en ;
+       
+       rdfs:subClassOf :LinguisticCategory ;
+       
+       :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#VoiceFeature> .
+
+
+
 ###  http://mmoon.org/mmoon/Word
 
 :Word rdf:type owl:Class ;
@@ -2890,12 +2980,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :inflectionalRelation ;
-                            owl:someValuesFrom :Inflection
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :consistsOfMorph ;
                             owl:someValuesFrom :Stem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :inflectionalRelation ;
+                            owl:someValuesFrom :Inflection
                           ] ;
           
           :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -3093,14 +3183,14 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  http://mmoon.org/mmoon/ACN
+###  http://mmoon.org/mmoon/ACNR
 
-:ACN rdf:type :MorphemicGloss ,
-              owl:NamedIndividual ;
-     
-     rdfs:label "ACN"^^xsd:string ;
-     
-     rdfs:comment "Action noun gloss."@en .
+:ACNR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "ACNR"^^xsd:string ;
+      
+      rdfs:comment "Action nominalizer gloss."@en .
 
 
 
@@ -3225,14 +3315,14 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  http://mmoon.org/mmoon/AG
+###  http://mmoon.org/mmoon/AGNR
 
-:AG rdf:type :MorphemicGloss ,
-             owl:NamedIndividual ;
-    
-    rdfs:label "AG"^^xsd:string ;
-    
-    rdfs:comment "Agent gloss."@en .
+:AGNR rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "AGNR"^^xsd:string ;
+      
+      rdfs:comment "Agent nominalizer gloss."@en .
 
 
 
@@ -4457,14 +4547,14 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  http://mmoon.org/mmoon/INST
+###  http://mmoon.org/mmoon/INSTNR
 
-:INST rdf:type :MorphemicGloss ,
-               owl:NamedIndividual ;
-      
-      rdfs:label "INST"^^xsd:string ;
-      
-      rdfs:comment "Instrument gloss."@en .
+:INSTNR rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "INSTNR"^^xsd:string ;
+        
+        rdfs:comment "Instrument nominalizer gloss."@en .
 
 
 
@@ -4766,14 +4856,14 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  http://mmoon.org/mmoon/MAT
+###  http://mmoon.org/mmoon/MATAR
 
-:MAT rdf:type :MorphemicGloss ,
-              owl:NamedIndividual ;
-     
-     rdfs:label "MAT"^^xsd:string ;
-     
-     rdfs:comment "Material gloss."@en .
+:MATAR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "MATAR"^^xsd:string ;
+       
+       rdfs:comment "Material adjectivizer gloss."@en .
 
 
 
@@ -5305,14 +5395,14 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  http://mmoon.org/mmoon/PRIV
+###  http://mmoon.org/mmoon/PRIVAR
 
-:PRIV rdf:type :MorphemicGloss ,
-               owl:NamedIndividual ;
-      
-      rdfs:label "PRIV"^^xsd:string ;
-      
-      rdfs:comment "Privative gloss."@en .
+:PRIVAR rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "PRIVAR"^^xsd:string ;
+        
+        rdfs:comment "Privative adjectivizer gloss."@en .
 
 
 
@@ -5357,6 +5447,17 @@ rdfs:Resource rdf:type owl:Class .
         rdfs:label "PROLAT"^^xsd:string ;
         
         rdfs:comment "Prolative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PROP
+
+:PROP rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "PROP"^^xsd:string ;
+      
+      rdfs:comment "Proprietive case gloss."@en .
 
 
 
@@ -5415,14 +5516,14 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  http://mmoon.org/mmoon/PRSN
+###  http://mmoon.org/mmoon/PRSNR
 
-:PRSN rdf:type :MorphemicGloss ,
-               owl:NamedIndividual ;
-      
-      rdfs:label "PRSN"^^xsd:string ;
-      
-      rdfs:comment "Person noun gloss."@en .
+:PRSNR rdf:type :MorphemicGloss ,
+                owl:NamedIndividual ;
+       
+       rdfs:label "PRSNR"^^xsd:string ;
+       
+       rdfs:comment "Person nominalizer gloss."@en .
 
 
 
