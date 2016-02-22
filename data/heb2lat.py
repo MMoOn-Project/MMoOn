@@ -100,13 +100,13 @@ def heb2lat(text):
             #  if no punctuation write "-"
             #  find punctuation
             if (name[1] == "LETTER"):
-                #print(unicodedata.category(c), unicodedata.name(c),  end="\n")
+                print(unicodedata.category(c), unicodedata.name(c),  end="\n")
                 if c in consonants:
                     g.consonant = consonants[c]
                 if (name[2] == "FINAL"):
                     g.position = 9
             elif (name[1] == "POINT"):
-                #print(unicodedata.category(c), unicodedata.name(c),  end="\n")
+                print(unicodedata.category(c), unicodedata.name(c),  end="\n")
                 if c in vowel:
                     g.vowel = vowel[c]
                 elif c == "\u05bc":
@@ -121,4 +121,4 @@ def heb2lat(text):
     return text
 
 
-heb2lat("hallo äöü ÄÖÜ HALLO לכד אָכּלֻץ אָאּגּהּ ְ ◌");
+heb2lat("hallo äöü ÄÖÜ HALLO לכד אָכּלֻץ אָאּגּהּ ְ ◌ שׁ שׂ ש");
