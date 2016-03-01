@@ -55,13 +55,13 @@ class glyph:
     consonant = '_'     # a-z
     position = 0        # 0-2,89
     vowel = '-'         # a-z
-    length = None       # 3-7
+    length = 3          # 3-7
     stress = False      # (True, False) "."
     def __repr__(self):
-        if (self.length == None):
+        if (self.length == 3):
             length = ""
         else:
-            length = self.length
+            length = str(self.length)
         if (self.stress):
             stress = "."
         else:
@@ -70,7 +70,11 @@ class glyph:
             position = ""
         else:
             position = str(self.position)
-        return self.consonant + position + self.vowel + length + stress
+        return self.consonant.upper() + position + self.vowel + length + stress
+    def isNothing(self):
+        if (self.consonant == '_' and self.vowel == '-'):
+            return True
+        return False
 
 
 def heb2latComp(text):
@@ -81,17 +85,21 @@ def heb2latComp(text):
 
     return text
 
-def heb2lat(text):
+def heb2lat(text, withSpace=False):
     text = unicodedata.normalize("NFKD", text)
+    transliteration = ''
     # iterate through text
     g = None
+    line = ""
     for c in text:
         #  find placeholder Kringel replace by "_"
         name = unicodedata.name(c).split(" ")
         category = unicodedata.category(c)
         if category != 'Mn':
-            if (g != None):
-                print (g)
+            if (g != None and (withSpace or not g.isNothing())):
+                    transliteration += str(g)
+                    print(line.ljust(90), g, end="\n")
+                    line = ""
             g = glyph()
         if (name[0] == "HEBREW"):
             #  replace letter according to alephbet, caution for shin
@@ -100,25 +108,48 @@ def heb2lat(text):
             #  if no punctuation write "-"
             #  find punctuation
             if (name[1] == "LETTER"):
-                print(unicodedata.category(c), unicodedata.name(c),  end="\n")
+                line += unicodedata.category(c) + "  " + unicodedata.name(c) + "   "
                 if c in consonants:
                     g.consonant = consonants[c]
                 if (name[2] == "FINAL"):
                     g.position = 9
             elif (name[1] == "POINT"):
-                print(unicodedata.category(c), unicodedata.name(c),  end="\n")
+                line += unicodedata.category(c) + "  " + unicodedata.name(c) + "   "
                 if c in vowel:
                     g.vowel = vowel[c]
                 elif c == "\u05bc":
+                    # dagesh or mapiq
                     g.position = 8
-    print (g)
+                elif c == "\u05c1":
+                    # shin
+                    g.position = 1
+                elif c == "\u05c2":
+                    # sin
+                    g.position = 2
+    if (g != None and (withSpace or not g.isNothing())):
+        print(line.ljust(90), g, end="\n")
+        line = ""
+        transliteration += str(g)
+    return transliteration
 
-    #for k,v in consonants.items():
-    #    text = text.replace(k,v)
-    # shin sin and without dot has to be treated separately because of the order of iterating the alephbet list
-    # text = text.replace("ש", "sh")
+text = "hallo äöü ÄÖÜ HALLO לכד אָכּלֻץ אָאּגּהּ ְ ◌ שׁ שׂ ש"
+text2 = "Schulter כָּתֵף"
+text2 = "Schulter כָּ"
+text3 = "Schulter כָּ"
+trans = heb2lat(text);
+print("\n")
+trans2 = heb2lat(text2);
+print("\n")
+trans2 = heb2lat(text3);
 
-    return text
+print(text)
+print(trans)
 
+print(text2)
+print(trans2)
 
-heb2lat("hallo äöü ÄÖÜ HALLO לכד אָכּלֻץ אָאּגּהּ ְ ◌ שׁ שׂ ש");
+# TODO 4 Eindeutigkeits-Modi:
+# Maximale Eindeutigkeit (Breite 4-5) K0t3
+# Cases Sensitive Eindeutigkeit (Breite 2-5)  Kt
+# Cases Insensitive Eindeutigkeit (Breite 4-5)  k0t3
+# Kompakt (auch eindeutig, Breite 2-5) kt
