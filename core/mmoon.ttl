@@ -769,6 +769,22 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
 
 
 
+###  http://mmoon.org/mmoon/Active
+
+:Active rdf:type owl:Class ;
+        
+        rdfs:label "Active"@en ;
+        
+        owl:equivalentClass gold:ActiveVoice ;
+        
+        rdfs:subClassOf :Voice ;
+        
+        skos:definition "Active is the basic voice. While other voices indicate that the subject does not have the semantic function of actor, the active indicates nothing of the kind and thus by default maps the actor on the subject.  [Christian Lehmann, under \"active\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia.owl#ActiveVoice> .
+
+
+
 ###  http://mmoon.org/mmoon/AdjectivalInflection
 
 :AdjectivalInflection rdf:type owl:Class ;
@@ -975,6 +991,41 @@ Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"
 
 
 
+###  http://mmoon.org/mmoon/Anticausative
+
+:Anticausative rdf:type owl:Class ;
+               
+               rdfs:label "Anticausative"@en ;
+               
+               rdfs:subClassOf :Intransitivizer ;
+               
+               skos:definition "A verb is deagentive iff it is derived by a valency decrease which deletes the agent from the participant frame of the underlying base. The situation designated by the verb happens by itself, without the intervention of an agent. [Christian Lehmann, under \"anticausativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :example """Engl. \"The door closed.\"
+Russ. On razbil ÷ca÷sku. -> ÷Ca÷ska razbilas’.
+Svan: adgäri ‚kills’ -> idgäri ‚dies’, ibne ‚begins (tr.)’ -> ibni ‚begins (itr,)’, aswe ‚burns (tr.)’ -> iswi ‚burns (itr.)  [Christian Lehmann, under \"anticausativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+               
+               :externalDefinition gold:AntiCausativeVoice ,
+                                   <http://purl.org/olia/olia.owl#Anticausative> .
+
+
+
+###  http://mmoon.org/mmoon/Antipassive
+
+:Antipassive rdf:type owl:Class ;
+             
+             rdfs:label "Antipassive"@en ;
+             
+             owl:equivalentClass gold:AntiPassiveVoice ;
+             
+             rdfs:subClassOf :Voice ;
+             
+             :definition "The antipassive is a voice of an ergative system which demotes the undergoer (in absolutive function) to an adjunct - e.g. an instrumental or a locative or dative - and promotes the actor (in ergative function) to absolutive function. [Christian Lehmann, under \"antipassive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@de ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#Antipassive> .
+
+
+
 ###  http://mmoon.org/mmoon/Applicative
 
 :Applicative rdf:type owl:Class ;
@@ -1132,7 +1183,7 @@ A noun is augmentative 1 iff it is derived by augmentation."""@en ;
       
       rdfs:subClassOf :LinguisticCategory ;
       
-      :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#CaseFeature> .
+      :externalDefinition <http://purl.org/olia/olia.owl#CaseFeature> .
 
 
 
@@ -1153,6 +1204,22 @@ An underived verb cannot be causative by this definition. However, the paradigma
                
                :example """Eng.: \"fall\"(V) --> \"fell\"(V).
 [Christian Lehmann, under \"causative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/CausativeVoice
+
+:CausativeVoice rdf:type owl:Class ;
+                
+                rdfs:label "Causative"@en ;
+                
+                owl:equivalentClass gold:CausativeVoice ;
+                
+                rdfs:subClassOf :Voice ;
+                
+                :definition "The causative [vox causativa] is a grammatical category, generally an analytic or synthetic verbal category, which renders the respective construction causative.  [Christian Lehmann, under \"causative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :externalDefinition <http://purl.org/olia/olia.owl#CausativeVoice> .
 
 
 
@@ -1207,7 +1274,7 @@ Since the causer occupies the subject slot of the causative verb and the base ve
            
            rdfs:subClassOf :LinguisticCategory ;
            
-           rdfs:isDefinedBy "http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#ClusivityFeature" .
+           :externalDefinition <http://purl.org/olia/olia.owl#ClusivityFeature> .
 
 
 
@@ -1232,6 +1299,11 @@ Since the causer occupies the subject slot of the causative verb and the base ve
         rdfs:label "Common"@en ;
         
         rdfs:subClassOf :Gender ;
+        
+        :definition "A noun has common gender iff it has either masculine or feminine gender without any morphological change on the noun itself.  [Christian Lehmann, under \"common gender\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+        
+        :example """Ancient Greek hippos (m/f) ‚horse’, Lat. sacerdos (m/f) ‚priest/priestess’, Pt. intérprete (m/f) ‚interpreter’, turista (m/f) ‚tourist’
+ [Christian Lehmann, under \"common gender\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
         
         :externalDefinition <http://purl.org/olia/olia.owl#CommonGender> .
 
@@ -1487,7 +1559,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                     
                     skos:definition "Is a grammatical category of the adjective or adverb which allows a comparison between the extent to which whatever is modified by the adjective/adverb possesses the quality designated by it, and something else. [Christian Lehmann, under \"degree of comparison\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                     
-                    :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#DegreeFeature> .
+                    :externalDefinition <http://purl.org/olia/olia.owl#DegreeFeature> .
 
 
 
@@ -1625,10 +1697,6 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
              
              rdfs:subClassOf :Lexeme ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty :derivationalRelation ;
-                               owl:someValuesFrom :Derivation
-                             ] ,
-                             [ rdf:type owl:Restriction ;
                                owl:onProperty :isDerivedFrom ;
                                owl:onClass [ rdf:type owl:Class ;
                                              owl:unionOf ( :GrammaticalWord
@@ -1636,6 +1704,10 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                                                          )
                                            ] ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :derivationalRelation ;
+                               owl:someValuesFrom :Derivation
                              ] ;
              
              :example "\"replay\" is a derived word from the lexeme \"play\"."@en ;
@@ -1752,7 +1824,8 @@ Is a kind of lexeme which is formed by the morphological modification of another
             
             :definition "The diminution of a noun is its derivational modification by the concept „little“. Possible connotations include „cute, dear, weak, unimportant, contemptuous“. [Christian Lehmann, under \"diminution\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
-            :externalDefinition <http://purl.org/olia/olia.owl#Diminuitive> .
+            :externalDefinition gold:DiminuativeSize ,
+                                <http://purl.org/olia/olia.owl#Diminuitive> .
 
 
 
@@ -1772,6 +1845,22 @@ Is a kind of lexeme which is formed by the morphological modification of another
                 
                 :externalDefinition gold:DiminuativeSize ,
                                     <http://purl.org/olia/olia.owl#DiminutiveNoun> .
+
+
+
+###  http://mmoon.org/mmoon/DirectVoice
+
+:DirectVoice rdf:type owl:Class ;
+             
+             rdfs:label "Direct voice"@en ;
+             
+             owl:equivalentClass gold:DirectVoice ;
+             
+             rdfs:subClassOf :Active ;
+             
+             :definition "Direct voice signals that the action proceeds in an ontologically salient way, i.e. that salience is assigned to nominals based on their referent's relative real-world capacities to control situations. [Klaiman 1991: 32]"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#DirectVoice> .
 
 
 
@@ -1795,9 +1884,11 @@ Is a kind of lexeme which is formed by the morphological modification of another
       
       rdfs:label "Dual"@en ;
       
+      owl:equivalentClass gold:DualNumber ;
+      
       rdfs:subClassOf :Number ;
       
-      :externalDefinition gold:DualNumber .
+      :definition "The dual is a number forming a subset of two elements of the designated class. The dual is most common with natural pairs such as paired body parts. [Christian Lehmann, under \"dual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -1969,10 +2060,16 @@ German «töten» ‚kill’ from «tot» ‚dead’ [Christian Lehmann, under \
           
           rdfs:label "Feminine"@en ;
           
+          owl:equivalentClass gold:FeminineGender ;
+          
           rdfs:subClassOf :Gender ;
           
-          :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#Feminine> ,
-                              gold:FeminineGender .
+          skos:definition """Feminine gender is a grammatical gender that marks nouns that have human or animal female referents, and often marks nouns that have referents that do not carry distinctions of sex.
+(http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsFeminineGender.htm)"""@en ;
+          
+          :externalDefinitionDesc "The feminine is a gender such that if born by an animate noun, this typically designates a female being.  [Christian Lehmann, under \"feminine\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+          
+          :externalDefinition <http://purl.org/olia/olia.owl#Feminine> .
 
 
 
@@ -1982,12 +2079,13 @@ German «töten» ‚kill’ from «tot» ‚dead’ [Christian Lehmann, under \
              
              rdfs:label "First person"@en ;
              
+             owl:equivalentClass gold:FirstPerson ;
+             
              rdfs:subClassOf :Person ;
              
              :definition "The fist person is the value of the category person which prototypically represents the speaker. [Christian Lehmann, under \"first person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              
-             :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#First> ,
-                                 gold:FirstPerson .
+             :externalDefinition <http://purl.org/olia/olia.owl#First> .
 
 
 
@@ -2052,12 +2150,13 @@ This often the case for inherent meanings such as number for nouns or tense for 
         
         rdfs:label "Gender"@en ;
         
+        owl:equivalentClass gold:GenderProperty ;
+        
         rdfs:subClassOf :LinguisticCategory ;
         
         :definition "Gender is a category of nominal classification based on the cognitive category of sex. Since there are two natural sexes, two-gender systems with a masculine and a feminine gender are frequent, besides such with a further, asexual subcategory, scil. the neuter.  [Christian Lehmann, under \"gender\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
         
-        :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#GenderFeature> ,
-                            gold:GenderProperty .
+        :externalDefinition <http://purl.org/olia/olia.owl#GenderFeature> .
 
 
 
@@ -2072,6 +2171,24 @@ This often the case for inherent meanings such as number for nouns or tense for 
                  :definition "A grammatical word is a word which is a grammatical formative. [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                  
                  :example "Engl. «be», «of».  [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/ImpersonalPassive
+
+:ImpersonalPassive rdf:type owl:Class ;
+                   
+                   rdfs:label "Impersonal passive"@en ;
+                   
+                   owl:equivalentClass gold:ImpersonalPassiveVoice ;
+                   
+                   rdfs:subClassOf :Passive ;
+                   
+                   :definition "An impersonal passive is a passive construction which has no subject.  [Christian Lehmann, under \"impersonal passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+                   
+                   :example "Germ. Hier wird getanzt. ‚There is dancing here.’ [Christian Lehmann, under \"impersonal passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+                   
+                   :externalDefinition <http://purl.org/olia/olia.owl#ImpersonalPassive> .
 
 
 
@@ -2294,7 +2411,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
                     
                     rdfs:subClassOf :Meaning ;
                     
-                    rdfs:comment "ist eine inhärente kategorie, also transitive hier heißt, dass ein verb inhärent transitive ist, transitivizer als derivational category heißt, dass sie ihre inhärente valenz durch derivation verändert haben"@en .
+                    skos:definition "ist eine inhärente kategorie, also transitive hier heißt, dass ein verb inhärent transitive ist, transitivizer als derivational category heißt, dass sie ihre inhärente valenz durch derivation verändert haben"@en .
 
 
 
@@ -2304,10 +2421,16 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
            
            rdfs:label "Masculine"@en ;
            
+           owl:equivalentClass gold:MasculineGender ;
+           
            rdfs:subClassOf :Gender ;
            
-           :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#Masculine> ,
-                               gold:MasculineGender .
+           :definition """Masculine gender is a grammatical gender that marks nouns having human or animal male referents, and often marks nouns having referents that do not have distinctions of sex.
+(http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsMasculineGender.htm)"""@en ;
+           
+           :externalDefinitionDesc "The masculine is a gender such that if born by an animate noun, this typically designates a male being.  [Christian Lehmann, under \"masculine\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia.owl#Masculine> .
 
 
 
@@ -2333,6 +2456,40 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
          rdfs:label "Meaning"@en ;
          
          :definition "This class comprises a wide range of meanings a word or morpheme can be associated with, e.g. linguistic categories, morphosyntactic features, lexical senses, derivational meanings."@en .
+
+
+
+###  http://mmoon.org/mmoon/Mediopassive
+
+:Mediopassive rdf:type owl:Class ;
+              
+              rdfs:label "Mediopassive"@en ;
+              
+              rdfs:subClassOf :Passive ;
+              
+              :example """Chichewa Bantu:
+mwana wangu wapandi-ka
+child my beat -MEDIOPASSIVE
+‘My child has been beaten.’
+(http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsMediopassiveVoice.htm)"""@en ;
+              
+              skos:definition "a variety of passive in which the verb has stative meaning and the actor is not expressed, cf. the Chichewa Bantu example with the suffix „-ka“ as a mediopassive-marker in ISE 144.[Christian Lehmann, under \"mediopassive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+              
+              :externalDefinition <http://purl.org/olia/olia.owl#MediopassiveVoice> .
+
+
+
+###  http://mmoon.org/mmoon/MiddleVoice
+
+:MiddleVoice rdf:type owl:Class ;
+             
+             rdfs:label "Middle voice"@en ;
+             
+             rdfs:subClassOf :Voice ;
+             
+             :definition "Middle voice is a voice that indicates that the subject is the actor and acts upon himself or herself reflexively, or for his or her own benefit. (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsMiddleVoice.htm)"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#MiddleVoice> .
 
 
 
@@ -2451,10 +2608,16 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
         
         rdfs:label "Neuter"@en ;
         
+        owl:equivalentClass gold:NeuterGender ;
+        
         rdfs:subClassOf :Gender ;
         
-        :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#Neuter> ,
-                            gold:NeuterGender .
+        skos:definition """Neuter gender is a grammatical gender that includes those nouns having referents which do not have distinctions of sex, and often includes some which do have a natural sex distinction.
+(http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsNeuterGender.htm)"""@en ;
+        
+        :externalDefinitionDesc "The neuter is that gender of a three-gender system which is born by propositions and typically not born by animate nouns. [Christian Lehmann, under \"neuter\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia.owl#Neuter> .
 
 
 
@@ -2594,11 +2757,30 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
         
         rdfs:label "Number"@en ;
         
+        owl:equivalentClass gold:NumberProperty ;
+        
         rdfs:subClassOf :LinguisticCategory ;
         
         :definition "Number is a grammatical category encoding the cardinality of a referent. A minimal number system distinguishes between one item and more than one item.  [Christian Lehmann, under \"number\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
         
-        :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#NumberFeature> .
+        :externalDefinition <http://purl.org/olia/olia.owl#NumberFeature> .
+
+
+
+###  http://mmoon.org/mmoon/Passive
+
+:Passive rdf:type owl:Class ;
+         
+         rdfs:label "Passive"@en ;
+         
+         owl:equivalentClass gold:PassiveVoice ;
+         
+         rdfs:subClassOf :Voice ;
+         
+         :definition """The passive is a voice which demotes the actor (in subject function) to an adjunct (e.g. a ‚by-phrase’). If there is an undergoer (in direct object function), it is promoted to subject function.
+The passive can generally only be formed from agentive verbs. [Christian Lehmann, under \"passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
+         
+         :externalDefinition <http://purl.org/olia/olia.owl#PassiveVoice> .
 
 
 
@@ -2622,10 +2804,13 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
         
         rdfs:label "Paucal"@en ;
         
+        owl:equivalentClass gold:PaucalNumber ;
+        
         rdfs:subClassOf :Number ;
         
-        :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#Paucal> ,
-                            gold:PaucalNumber .
+        :definition "The paucal is a number that forms a subset of „few“ members of the designated class. The exact cardinality may vary contextually, but must be more than one and must not be unlimited. [Christian Lehmann, under \"paucal\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia.owl#Paucal> .
 
 
 
@@ -2635,13 +2820,13 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
         
         rdfs:label "Person"@en ;
         
+        owl:equivalentClass gold:PersonProperty ;
+        
         rdfs:subClassOf :LinguisticCategory ;
         
         :definition "Person is a deictic category encoding the speech participant role, including the non-speech-act-participation, of a referent. [Christian Lehmann, under \"person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
         
-        :externalDefinitionDesc <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#PersonFeature> ;
-        
-        :externalDefinition gold:PersonProperty .
+        :externalDefinition <http://purl.org/olia/olia.owl#PersonFeature> .
 
 
 
@@ -2677,10 +2862,14 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
         
         rdfs:label "Plural"@en ;
         
+        owl:equivalentClass gold:PluralNumber ;
+        
         rdfs:subClassOf :Number ;
         
-        :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#Plural> ,
-                            gold:PluralNumber .
+        :definition """The plural is a number indicating a plurality of elements of the designated class. The lower limit is two, but may be higher depending on whether the language has a dual and a trial in addition to singular and plural.
+In some languages the plural is also used for generics and objects that always occur in groups. [Christian Lehmann, under \"plural\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia.owl#Plural> .
 
 
 
@@ -2776,6 +2965,24 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
          
          :example """Engl. \"poison\" (noun) --> \"poisonous\" (adjective)
 Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
+
+
+
+###  http://mmoon.org/mmoon/ReflexiveVoice
+
+:ReflexiveVoice rdf:type owl:Class ;
+                
+                rdfs:label "Reflexive Voice"@en ;
+                
+                rdfs:subClassOf :Reflexivity ;
+                
+                :externalDefinition <http://purl.org/olia/olia.owl#ReflexiveVoice> .
+
+
+
+###  http://mmoon.org/mmoon/Reflexivity
+
+:Reflexivity rdf:type owl:Class .
 
 
 
@@ -2899,12 +3106,13 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
               
               rdfs:label "Second person"@en ;
               
+              owl:equivalentClass gold:SecondPerson ;
+              
               rdfs:subClassOf :Person ;
               
               skos:definition "The second person is the value of the category person which prototypically represents the addressee of the speech act. In nonsingular forms it can include addtional addressees and/or other persons. It normally requires the inclusion of at least one addressee and the exclusion of the speaker. [Christian Lehmann, under \"second person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
               
-              :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#Second> ,
-                                  gold:SecondPerson .
+              :externalDefinition <http://purl.org/olia/olia.owl#Second> .
 
 
 
@@ -2972,10 +3180,13 @@ The replacive morph is a construct of taxonomic structuralism.
           
           rdfs:label "Singular"@en ;
           
+          owl:equivalentClass gold:SingularNumber ;
+          
           rdfs:subClassOf :Number ;
           
-          :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#Singular> ,
-                              gold:SingularNumber .
+          :definition "The singular is a number selecting one element of the designated class. Since it is unmarked as against all other numbers, it may also be used when the cardinality of the referent set is left open or specified elsewhere in the context (e.g. by a numeral). It may also be used for generics and unbounded masses. [Christian Lehmann, under \"singular\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+          
+          :externalDefinition <http://purl.org/olia/olia.owl#Singular> .
 
 
 
@@ -3071,12 +3282,13 @@ In a compound word: The stem is the morphological representative of one of the t
              
              rdfs:label "Thirdmmoon_deu:Morph_er person"@en ;
              
+             owl:equivalentClass gold:ThirdPerson ;
+             
              rdfs:subClassOf :Person ;
              
              :definition "The third person is the value of the category person which prototypically represents a non-speech act participant and functions anaphorically. [Christian Lehmann, under \"third person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              
-             :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia.owl#Third> ,
-                                 gold:ThirdPerson .
+             :externalDefinition <http://purl.org/olia/olia.owl#Third> .
 
 
 
@@ -3202,9 +3414,13 @@ In a compound word: The stem is the morphological representative of one of the t
        
        rdfs:label "Voice"@en ;
        
+       owl:equivalentClass gold:VoiceProperty ;
+       
        rdfs:subClassOf :LinguisticCategory ;
        
-       :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#VoiceFeature> .
+       :definition "Voice is a grammatical category that expresses the semantic functions attributed to the referents of a clause. It indicates whether the subject is an actor, patient, or recipient.  (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsVoice.htm)"@en ;
+       
+       :externalDefinition <http://purl.org/olia/olia.owl#VoiceFeature> .
 
 
 
@@ -3266,12 +3482,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :inflectionalRelation ;
-                            owl:someValuesFrom :Inflection
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :consistsOfMorph ;
                             owl:someValuesFrom :Stem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :inflectionalRelation ;
+                            owl:someValuesFrom :Inflection
                           ] ;
           
           :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -3304,9 +3520,21 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
 
 
 
+###  http://purl.org/linguistics/gold/ActiveVoice
+
+gold:ActiveVoice rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Affix
 
 gold:Affix rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/AntiPassiveVoice
+
+gold:AntiPassiveVoice rdf:type owl:Class .
 
 
 
@@ -3322,6 +3550,12 @@ gold:CategoryChanger rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/CausativeVoice
+
+gold:CausativeVoice rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Circumfix
 
 gold:Circumfix rdf:type owl:Class .
@@ -3331,6 +3565,42 @@ gold:Circumfix rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Compound
 
 gold:Compound rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/DirectVoice
+
+gold:DirectVoice rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/DualNumber
+
+gold:DualNumber rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/FeminineGender
+
+gold:FeminineGender rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/FirstPerson
+
+gold:FirstPerson rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/GenderProperty
+
+gold:GenderProperty rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/ImpersonalPassiveVoice
+
+gold:ImpersonalPassiveVoice rdf:type owl:Class .
 
 
 
@@ -3352,9 +3622,51 @@ gold:LexicalItem rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/MasculineGender
+
+gold:MasculineGender rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/NeuterGender
+
+gold:NeuterGender rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Nominalizer
 
 gold:Nominalizer rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/NumberProperty
+
+gold:NumberProperty rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/PassiveVoice
+
+gold:PassiveVoice rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/PaucalNumber
+
+gold:PaucalNumber rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/PersonProperty
+
+gold:PersonProperty rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/PluralNumber
+
+gold:PluralNumber rdf:type owl:Class .
 
 
 
@@ -3376,6 +3688,18 @@ gold:Root rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/SecondPerson
+
+gold:SecondPerson rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/SingularNumber
+
+gold:SingularNumber rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Stem
 
 gold:Stem rdf:type owl:Class .
@@ -3388,9 +3712,21 @@ gold:Suffix rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/ThirdPerson
+
+gold:ThirdPerson rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Transitivizer
 
 gold:Transitivizer rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/VoiceProperty
+
+gold:VoiceProperty rdf:type owl:Class .
 
 
 
@@ -6515,5 +6851,5 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
 
