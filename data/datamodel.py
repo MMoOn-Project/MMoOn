@@ -5,19 +5,13 @@ import urllib
 import rdflib
 from rdflib import RDF
 from rdflib import RDFS
-from rdflib import OWL
-#from rdflib import DC
 from rdflib import Namespace
 import hashlib
 import regex
-import sys
-import getopt
 
 mmoon = Namespace("http://mmoon.org/mmoon/")
 mmoon_heb = Namespace("http://mmoon.org/lang/heb/schema/oh/")
 heb_inventory = Namespace("http://mmoon.org/lang/heb/inventory/oh/")
-gold = Namespace("http://purl.org/linguistics/gold/")
-DC = Namespace("http://purl.org/dc/elements/1.1/")
 
 class Lexeme:
     lexeme = ''
@@ -74,62 +68,16 @@ class Root:
 
 class Affix:
     affix = ''
-    def __init__(self, affix):
+    morpheme = None
+    def __init__(self, affix, morpheme):
         self.affix = affix
+        self.morpheme = morpheme
     def getIri(self):
-        return rdflib.term.URIRef(heb_inventory+"Affix_"+self.affix)
+        return rdflib.term.URIRef(heb_inventory+"Transfix_"+self.affix)
     def toRDF(self, graph):
         # TODO use heb2lat
         affix = self.getIri()
         graph.add((affix, RDF.type, mmoon_heb.Transfix))
         graph.add((affix, RDFS.label, rdflib.term.Literal(self.affix)))
-        # TODO add AtomicMorpheme and so on
-
-def main(args=sys.argv[1:]):
-    try:
-        opts, args = getopt.getopt(args, "hf:c:r:", ["help", "file=", "csvoutfile=", "rdfoutfile="])
-    except getopt.GetoptError as err:
-        # print help information and exit:
-        LOG.error(err)  # will print something like "option -a not recognized"
-        usage()
-        sys.exit(2)
-
-    out_file_rdf = None
-
-    for opt, opt_val in opts:
-        if opt in ("-h", "--help"):
-            usage()
-            sys.exit()
-        elif opt in ("-r", "--rdfoutfile"):
-            out_file_rdf = opt_val
-        else:
-            assert False, "unhandled option"
-
-    graph = rdflib.Graph()
-    graph.bind("mmoon", mmoon)
-    graph.bind("heb_schema", mmoon_heb)
-    graph.bind("heb_inventory", heb_inventory)
-    graph.bind("gold", gold)
-    graph.bind("owl", OWL)
-    graph.bind("dc", DC)
-
-    wordclassResource = mmoon_heb.Verb
-    #mmoon_heb.Lexeme
-
-    lexeme = Lexeme("דִּבֵּר", mmoon_heb.binjan_piel_1, mmoon_heb.Verb)
-    root = Root("דבר")
-    #"◌ִּ◌ֵּ◌"
-    affix = Affix("◌ִּ◌ֵּ◌")
-    wordform = Wordform("דְּבֵּר", root, affix)
-    lexeme.addWordform(wordform)
-
-    lexeme.toRDF(graph)
-    root.toRDF(graph)
-    affix.toRDF(graph)
-    wordform.toRDF(graph)
-
-    graph.add((heb_inventory.term(""), OWL.imports, mmoon_heb.term("")))
-    graph.serialize(out_file_rdf, "turtle")
-
-if __name__ == "__main__":
-    main()
+        graph.add((affix, mmoon.correspondsToMorpheme, self.morpheme))
+        graph.add((self.morpheme, mmoon.hasRealization, affix))
