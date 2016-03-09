@@ -37,16 +37,16 @@ consonants = {
 }
 
 vowel = {
-    "\u05b0": "m",
-    "\u05b4": "i",
-    "\u05b5": "e",
-    "\u05b6": "n",
-    "\u05b1": "n",
-    "\u05b2": "a",
-    "\u05b7": "a",
-    "\u05b8": "t",
-    "\u05b9": "o",
-    "\u05bb": "u",
+    "\u05b0": "m",  # SHEVA (:)
+    "\u05b4": "i",  # HIRIQ (.)
+    "\u05b5": "e",  # TSERE (..)
+    "\u05b6": "n",  # SEGOL (:. dots in a T shape)
+    "\u05b1": "n",  # HATAF SEGOL (:. :)
+    "\u05b2": "a",  # HATAF PATAH (- :)
+    "\u05b7": "a",  # PATAH (-)
+    "\u05b8": "t",  # QAMATS (T)
+    "\u05b9": "o",  # HOLAM (. on the top)
+    "\u05bb": "u",  # QUBUTS (...)
 }
 
 alephbetOne = consonants
@@ -132,15 +132,15 @@ def heb2lat(text, withSpace=False):
         transliteration += str(g)
     return transliteration
 
+def lat2heb(text):
+    None
+
 text = "hallo äöü ÄÖÜ HALLO לכד אָכּלֻץ אָאּגּהּ ְ ◌ שׁ שׂ ש"
 text2 = "Schulter כָּתֵף"
-text2 = "Schulter כָּ"
-text3 = "Schulter כָּ"
+text2 = "דבר"
 trans = heb2lat(text);
 print("\n")
 trans2 = heb2lat(text2);
-print("\n")
-trans2 = heb2lat(text3);
 
 print(text)
 print(trans)
