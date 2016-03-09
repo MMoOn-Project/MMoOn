@@ -64,6 +64,8 @@ def main(args=sys.argv[1:]):
     wordform_1.toRDF(graph)
     affix_2.toRDF(graph)
     wordform_2.toRDF(graph)
+    affix_3.toRDF(graph)
+    wordform_3.toRDF(graph)
 
     datamodel.writeGraphToFile(graph, out_file_rdf)
 
