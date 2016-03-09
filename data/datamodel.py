@@ -114,7 +114,7 @@ def main(args=sys.argv[1:]):
     graph.bind("dc", DC)
 
     wordclassResource = mmoon_heb.Verb
-    mmoon_heb.Lexeme
+    #mmoon_heb.Lexeme
 
     lexeme = Lexeme("דִּבֵּר", mmoon_heb.binjan_piel_1, mmoon_heb.Verb)
     root = Root("דבר")
