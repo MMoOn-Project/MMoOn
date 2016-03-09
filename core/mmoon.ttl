@@ -748,7 +748,7 @@ lexvo:Language rdf:type owl:Class ;
                    
                    skos:definition "An action nominalizer is a nominalizer which derives a noun referring to the situation itself from an action predicate. [Christian Lehmann, under \"action nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                    
-                   :example "German -ung, as in Versuchung „tempt-ation“. [Christian Lehmann, under \"action nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+                   :example "German -ung, as in Versuchung â€žtempt-ationâ€œ. [Christian Lehmann, under \"action nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -775,11 +775,11 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
         
         rdfs:label "Active"@en ;
         
+        owl:equivalentClass gold:ActiveVoice ;
+        
         rdfs:subClassOf :Voice ;
         
         skos:definition "Active is the basic voice. While other voices indicate that the subject does not have the semantic function of actor, the active indicates nothing of the kind and thus by default maps the actor on the subject.  [Christian Lehmann, under \"active\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-		
-		owl:equivalentClass gold:ActiveVoice ;
         
         :externalDefinition <http://purl.org/olia/olia.owl#ActiveVoice> .
 
@@ -965,7 +965,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
 An inflection is analytic to the extent that it consists of analytic word forms.[Christian Lehmann, under \"analytic structure\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
                   
                   :externalDefinitionDesc """Delimitation and History:
-’analytic’ is extensionally equivalent to ‚periphrastic’, but is also used to characterize a whole language type.
+â€™analyticâ€™ is extensionally equivalent to â€šperiphrasticâ€™, but is also used to characterize a whole language type.
 An analytic system has grammatical words; an isolating system does not.
 
 Periphrastic conjugation is the formation of a verbal inflectional paradigm which consists of periphrastic forms.
@@ -1002,8 +1002,8 @@ Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"
                skos:definition "A verb is deagentive iff it is derived by a valency decrease which deletes the agent from the participant frame of the underlying base. The situation designated by the verb happens by itself, without the intervention of an agent. [Christian Lehmann, under \"anticausativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                
                :example """Engl. \"The door closed.\"
-Russ. On razbil ÷ca÷sku. -> ÷Ca÷ska razbilas’.
-Svan: adgäri ‚kills’ -> idgäri ‚dies’, ibne ‚begins (tr.)’ -> ibni ‚begins (itr,)’, aswe ‚burns (tr.)’ -> iswi ‚burns (itr.)  [Christian Lehmann, under \"anticausativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+Russ. On razbil Ã·caÃ·sku. -> Ã·CaÃ·ska razbilasâ€™.
+Svan: adgÃ¤ri â€škillsâ€™ -> idgÃ¤ri â€šdiesâ€™, ibne â€šbegins (tr.)â€™ -> ibni â€šbegins (itr,)â€™, aswe â€šburns (tr.)â€™ -> iswi â€šburns (itr.)  [Christian Lehmann, under \"anticausativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
                
                :externalDefinition gold:AntiCausativeVoice ,
                                    <http://purl.org/olia/olia.owl#Anticausative> .
@@ -1016,12 +1016,12 @@ Svan: adgäri ‚kills’ -> idgäri ‚dies’, ibne ‚begins (tr.)’ -> ibni
              
              rdfs:label "Antipassive"@en ;
              
+             owl:equivalentClass gold:AntiPassiveVoice ;
+             
              rdfs:subClassOf :Voice ;
              
              :definition "The antipassive is a voice of an ergative system which demotes the undergoer (in absolutive function) to an adjunct - e.g. an instrumental or a locative or dative - and promotes the actor (in ergative function) to absolutive function. [Christian Lehmann, under \"antipassive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@de ;
              
-			 owl:equivalentClass gold:AntiPassiveVoice ;
-			 
              :externalDefinition <http://purl.org/olia/olia.owl#Antipassive> .
 
 
@@ -1034,8 +1034,8 @@ Svan: adgäri ‚kills’ -> idgäri ‚dies’, ibne ‚begins (tr.)’ -> ibni
              
              rdfs:subClassOf :VerbExpansion ;
              
-             :example """German: «Erna antwortet auf die Frage» -> «Erna beantwortet die Frage».
-German «Erna arbeitet im Feld» ‚Erna works in the field’ -> «Erna bearbeitet das Feld» ‚Erna works the field’. [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@de ;
+             :example """German: Â«Erna antwortet auf die FrageÂ» -> Â«Erna beantwortet die FrageÂ».
+German Â«Erna arbeitet im FeldÂ» â€šErna works in the fieldâ€™ -> Â«Erna bearbeitet das FeldÂ» â€šErna works the fieldâ€™. [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@de ;
              
              skos:definition "A common semantic effect of the derivation is therefore a higher degree of affection of that participant.  [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              
@@ -1107,7 +1107,7 @@ An exception is made for person and number morphemes, e.g. the third person sing
              
              :example "Engl. \"yellow\" -> \"yellowish\". [Christian Lehmann, under \"attenuation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              
-             :definition "The attenuation of a verb or adjective is its derivational modification by concepts such as „a little, lightly“. [Christian Lehmann, under \"attenuation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+             :definition "The attenuation of a verb or adjective is its derivational modification by concepts such as â€ža little, lightlyâ€œ. [Christian Lehmann, under \"attenuation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -1133,7 +1133,7 @@ An exception is made for person and number morphemes, e.g. the third person sing
                  
                  rdfs:subClassOf :DeverbalVerb ;
                  
-                 :example "German: lachen \"to laugh\"(V) --> lächeln \"to smile\"(V)"@de ;
+                 :example "German: lachen \"to laugh\"(V) --> lÃ¤cheln \"to smile\"(V)"@de ;
                  
                  :definition "A verb which is derived from another verb stem that denotes a smaller intensity than the deriving verb stem."@en .
 
@@ -1147,7 +1147,7 @@ An exception is made for person and number morphemes, e.g. the third person sing
               
               rdfs:subClassOf :NounExpansion ;
               
-              :definition """Augmentation is the derivational modification of a noun by the concept „big, large“. Possible connotations include „strong, imposing, ugly“.
+              :definition """Augmentation is the derivational modification of a noun by the concept â€žbig, largeâ€œ. Possible connotations include â€žstrong, imposing, uglyâ€œ.
 A noun is augmentative 1 iff it is derived by augmentation. [Christian Lehmann, under \"augmentation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
               
               :example "Russ.: \"borod-a (noun 'beard') --> \"borod-isca\" (noun 'huge beard')"@en ;
@@ -1167,7 +1167,7 @@ A noun is augmentative 1 iff it is derived by augmentation. [Christian Lehmann, 
                   :definition "A noun which is derived from another noun stem that denotes big or large size. Possible connotations include 'strong', 'imposing', 'ugly'."@en ;
                   
                   :externalDefinitionDesc """Christian Lehmann, under \"augmentation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
-Augmentation is the derivational modification of a noun by the concept „big, large“. Possible connotations include „strong, imposing, ugly“.
+Augmentation is the derivational modification of a noun by the concept â€žbig, largeâ€œ. Possible connotations include â€žstrong, imposing, uglyâ€œ.
 A noun is augmentative 1 iff it is derived by augmentation."""@en ;
                   
                   :externalDefinition gold:AugmentativeSize ,
@@ -1200,7 +1200,7 @@ A noun is augmentative 1 iff it is derived by augmentation."""@en ;
                :externalDefinitionDesc """Christian Lehmann, under \"causative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido : 
 A causative verb is an n-place verb (with n > 1) which is derived from an n-1-place verb in such a way that the additional semantic slot is mapped onto the subject slot and is occupied by a superordinate agent which causes the situation designated by the base.
 
-An underived verb cannot be causative by this definition. However, the paradigmatic lexical relation of Engl. «kill» to «die» may be called ‚semantically causative’."""@en ;
+An underived verb cannot be causative by this definition. However, the paradigmatic lexical relation of Engl. Â«killÂ» to Â«dieÂ» may be called â€šsemantically causativeâ€™."""@en ;
                
                :example """Eng.: \"fall\"(V) --> \"fell\"(V).
 [Christian Lehmann, under \"causative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
@@ -1213,11 +1213,11 @@ An underived verb cannot be causative by this definition. However, the paradigma
                 
                 rdfs:label "Causative"@en ;
                 
+                owl:equivalentClass gold:CausativeVoice ;
+                
                 rdfs:subClassOf :Voice ;
                 
                 :definition "The causative [vox causativa] is a grammatical category, generally an analytic or synthetic verbal category, which renders the respective construction causative.  [Christian Lehmann, under \"causative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-				
-				owl:equivalentClass gold:CausativeVoice ;
                 
                 :externalDefinition <http://purl.org/olia/olia.owl#CausativeVoice> .
 
@@ -1302,7 +1302,7 @@ Since the causer occupies the subject slot of the causative verb and the base ve
         
         :definition "A noun has common gender iff it has either masculine or feminine gender without any morphological change on the noun itself.  [Christian Lehmann, under \"common gender\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
         
-        :example """Ancient Greek hippos (m/f) ‚horse’, Lat. sacerdos (m/f) ‚priest/priestess’, Pt. intérprete (m/f) ‚interpreter’, turista (m/f) ‚tourist’
+        :example """Ancient Greek hippos (m/f) â€šhorseâ€™, Lat. sacerdos (m/f) â€špriest/priestessâ€™, Pt. intÃ©rprete (m/f) â€šinterpreterâ€™, turista (m/f) â€štouristâ€™
  [Christian Lehmann, under \"common gender\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
         
         :externalDefinition <http://purl.org/olia/olia.owl#CommonGender> .
@@ -1387,7 +1387,7 @@ Compounding [compositio thematum] is the formation of a stem by combination of t
           :definition """Definition:
 The conative is a verbal aspect or aktionsart which means that the agent of the situation tries to achieve the action desginated by the verb stem. [Christian Lehmann, under \"conative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
           
-          :example """«John kicked at the wall.» [implying that he did not hit it]
+          :example """Â«John kicked at the wall.Â» [implying that he did not hit it]
 [Christian Lehmann, under \"conative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
@@ -1414,7 +1414,7 @@ The conative is a verbal aspect or aktionsart which means that the agent of the 
               
               :definition "Continuative is an imperfective aktionsart which indicates that the situation designated is prolonged.  [Christian Lehmann, under \"continuative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
               
-              :example """Quechua Continuative „-sa“, which is applicable to states and events, as in „rik’’usan“, ‚He sees it’, lit. ‚He is seeing it’ (example from Bills et al., 1969: 21).
+              :example """Quechua Continuative â€ž-saâ€œ, which is applicable to states and events, as in â€žrikâ€™â€™usanâ€œ, â€šHe sees itâ€™, lit. â€šHe is seeing itâ€™ (example from Bills et al., 1969: 21).
 [Christian Lehmann, under \"continuative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
@@ -1697,10 +1697,6 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
              
              rdfs:subClassOf :Lexeme ,
                              [ rdf:type owl:Restriction ;
-                               owl:onProperty :derivationalRelation ;
-                               owl:someValuesFrom :Derivation
-                             ] ,
-                             [ rdf:type owl:Restriction ;
                                owl:onProperty :isDerivedFrom ;
                                owl:onClass [ rdf:type owl:Class ;
                                              owl:unionOf ( :GrammaticalWord
@@ -1708,6 +1704,10 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                                                          )
                                            ] ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :derivationalRelation ;
+                               owl:someValuesFrom :Derivation
                              ] ;
              
              :example "\"replay\" is a derived word from the lexeme \"play\"."@en ;
@@ -1728,9 +1728,9 @@ Is a kind of lexeme which is formed by the morphological modification of another
               
               rdfs:subClassOf :VerbExpansion ;
               
-              :example "Sanskrit ‚s:r.no-ti ‚hears’, ‚su-’sr¡u-.sa-ti (RED-hear-DES-3.SG) ‚wants to hear’. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              :example "Sanskrit â€šs:r.no-ti â€šhearsâ€™, â€šsu-â€™srÂ¡u-.sa-ti (RED-hear-DES-3.SG) â€šwants to hearâ€™. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
               
-              skos:definition "The desiderative is a category deriving a verb Vd from a verbal base Vb such that Vd means ‚to want to Vb’. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+              skos:definition "The desiderative is a category deriving a verb Vd from a verbal base Vb such that Vd means â€što want to Vbâ€™. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -1744,7 +1744,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
                   
                   :definition "A verb which is derived from another verb stem denoting to want the meaning of the deriving verb stem."@en ;
                   
-                  :example "Sanskrit: \"‚s:r.no-ti\" (V) 'hears' --> \"‚su-’sr¡u-.sa-ti\"(V) (RED-hear-DES-3.SG) 'wants to hear'."@sa .
+                  :example "Sanskrit: \"â€šs:r.no-ti\" (V) 'hears' --> \"â€šsu-â€™srÂ¡u-.sa-ti\"(V) (RED-hear-DES-3.SG) 'wants to hear'."@sa .
 
 
 
@@ -1822,7 +1822,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
             
             :usageNote "Dminution is the nominal counterpart to attenuation."@en ;
             
-            :definition "The diminution of a noun is its derivational modification by the concept „little“. Possible connotations include „cute, dear, weak, unimportant, contemptuous“. [Christian Lehmann, under \"diminution\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            :definition "The diminution of a noun is its derivational modification by the concept â€žlittleâ€œ. Possible connotations include â€žcute, dear, weak, unimportant, contemptuousâ€œ. [Christian Lehmann, under \"diminution\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             :externalDefinition gold:DiminuativeSize ,
                                 <http://purl.org/olia/olia.owl#Diminuitive> .
@@ -1854,11 +1854,11 @@ Is a kind of lexeme which is formed by the morphological modification of another
              
              rdfs:label "Direct voice"@en ;
              
+             owl:equivalentClass gold:DirectVoice ;
+             
              rdfs:subClassOf :Active ;
              
              :definition "Direct voice signals that the action proceeds in an ontologically salient way, i.e. that salience is assigned to nominals based on their referent's relative real-world capacities to control situations. [Klaiman 1991: 32]"@en ;
-			 
-			 owl:equivalentClass gold:DirectVoice ;
              
              :externalDefinition <http://purl.org/olia/olia.owl#DirectVoice> .
 
@@ -1874,7 +1874,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
               
               :definition "Is an iterative that expresses the application of an event to members of a group one after another, typically to the referents named by the subject of an intransitive verb or the object of a transitive verb. [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
               
-              :example "the Russian „po-“ in „On po-zapiral dveri“ ‚He locked the doors one at a time’ (example from Comrie 1985a: 344).  [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+              :example "the Russian â€žpo-â€œ in â€žOn po-zapiral dveriâ€œ â€šHe locked the doors one at a timeâ€™ (example from Comrie 1985a: 344).  [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -1992,7 +1992,7 @@ Derivatively, a linguistic sign designating such a phenomenon is called dynamic.
                
                rdfs:subClassOf :DeadjectivalVerb ;
                
-               :example """German: \"tot\"(Adj) 'dead' --> \"töten\"(V) 'to kill'.
+               :example """German: \"tot\"(Adj) 'dead' --> \"tÃ¶ten\"(V) 'to kill'.
  [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@de ;
                
                :definition "A verb which is derived from an adjective stem denoting causation."@en ;
@@ -2016,9 +2016,9 @@ While there may be a subordinate agent in a causative construction, there may be
              
              rdfs:subClassOf :SemanticDerivation ;
              
-             :example """Engl. «blacken» (tr.) from «black», 
-German «schwärzen» from «schwarz»
-German «töten» ‚kill’ from «tot» ‚dead’ [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+             :example """Engl. Â«blackenÂ» (tr.) from Â«blackÂ», 
+German Â«schwÃ¤rzenÂ» from Â«schwarzÂ»
+German Â«tÃ¶tenÂ» â€škillâ€™ from Â«totÂ» â€šdeadâ€™ [Christian Lehmann, under \"factitive verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
              
              :externalDefinitionDesc "Factitivity is the property of a verb to be factitive. [Christian Lehmann, under \"factitivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              
@@ -2034,7 +2034,7 @@ German «töten» ‚kill’ from «tot» ‚dead’ [Christian Lehmann, under \
                    
                    rdfs:subClassOf :NounExpansion ;
                    
-                   :example "German: König 'king' --> Königin 'queen'"@de ;
+                   :example "German: KÃ¶nig 'king' --> KÃ¶nigin 'queen'"@de ;
                    
                    :definition "Is the derivational modification of a noun rendering a female noun."@en .
 
@@ -2078,6 +2078,8 @@ German «töten» ‚kill’ from «tot» ‚dead’ [Christian Lehmann, under \
 :FirstPerson rdf:type owl:Class ;
              
              rdfs:label "First person"@en ;
+             
+             owl:equivalentClass gold:FirstPerson ;
              
              rdfs:subClassOf :Person ;
              
@@ -2170,7 +2172,7 @@ This often the case for inherent meanings such as number for nouns or tense for 
                  
                  :definition "A grammatical word is a word which is a grammatical formative. [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                  
-                 :example "Engl. «be», «of».  [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+                 :example "Engl. Â«beÂ», Â«ofÂ».  [Christian Lehmann, under \"grammatical word\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2180,11 +2182,13 @@ This often the case for inherent meanings such as number for nouns or tense for 
                    
                    rdfs:label "Impersonal passive"@en ;
                    
+                   owl:equivalentClass gold:ImpersonalPassiveVoice ;
+                   
                    rdfs:subClassOf :Passive ;
                    
                    :definition "An impersonal passive is a passive construction which has no subject.  [Christian Lehmann, under \"impersonal passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
                    
-                   :example "Germ. Hier wird getanzt. ‚There is dancing here.’ [Christian Lehmann, under \"impersonal passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+                   :example "Germ. Hier wird getanzt. â€šThere is dancing here.â€™ [Christian Lehmann, under \"impersonal passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
 				   
 				   owl:equivalentClass gold:ImpersonalPassiveVoice ;
                    
@@ -2200,10 +2204,10 @@ This often the case for inherent meanings such as number for nouns or tense for 
             
             rdfs:subClassOf :Aktionsart ;
             
-            :example "Lat. alb-us „white“ - alb-esc-ere „become white“. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            :example "Lat. alb-us â€žwhiteâ€œ - alb-esc-ere â€žbecome whiteâ€œ. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             :definition """The inchoative is the aktionsart of a durative(-terminative) verb derived from a stative base. It designates transition into the state designated by the base.
-Its application in a language is sometimes so general that it is a general device of deriving dynamic from stative predicates, of verbs from non-verbal bases. It can then be called „processive“. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+Its application in a language is sometimes so general that it is a general device of deriving dynamic from stative predicates, of verbs from non-verbal bases. It can then be called â€žprocessiveâ€œ. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
 
@@ -2248,13 +2252,13 @@ Its expression is typically located farther from the root than that of derivatio
             
             rdfs:subClassOf :Aktionsart ;
             
-            :example "German: entbrennen ‚inflame’ < brennen ‚burn’."@de ;
+            :example "German: entbrennen â€šinflameâ€™ < brennen â€šburnâ€™."@de ;
             
             :definition "A verb is ingressive if it is derived in such a way as to designate the start of a process. [Christian Lehmann, under \"ingressivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
-            :externalDefinitionDesc """An ingressive verb derived from an atelic verb V may roughly be paraphrased by ‚start to V’. However, the implication from imperfective to perfect is invalid for ingressives. This shows that they designate not the incipient phase of a process, but rather the phase preceding (the start of) a process. 
+            :externalDefinitionDesc """An ingressive verb derived from an atelic verb V may roughly be paraphrased by â€šstart to Vâ€™. However, the implication from imperfective to perfect is invalid for ingressives. This shows that they designate not the incipient phase of a process, but rather the phase preceding (the start of) a process. 
 
-English only has lexical contrasts such as stative ‚know’ vs. ingressive ‚realize’. Russian may form ingressive verbs by the preverb za, govorit’ ‚speak’ - zagovorit’ ‚start to speak’[Christian Lehmann, under \"ingressivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+English only has lexical contrasts such as stative â€šknowâ€™ vs. ingressive â€šrealizeâ€™. Russian may form ingressive verbs by the preverb za, govoritâ€™ â€šspeakâ€™ - zagovoritâ€™ â€šstart to speakâ€™[Christian Lehmann, under \"ingressivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
 
@@ -2340,8 +2344,8 @@ An intransitive verb is not necessarily monovalent, as it can take other kinds o
               :definition """A verb is introversive iff it is derived from a transitive verb by blocking of the undergoer position.
 Introversion is an intransitivation which suppresses the direct object slot of the base. [Christian Lehmann, under \"introversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
               
-              :example """Russ. sobaka kusaet proxozhego ‚the dog bites a by-passer’ ->
-sobaka ksaetsja ‚the dog bites’.  [Christian Lehmann, under \"introversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+              :example """Russ. sobaka kusaet proxozhego â€šthe dog bites a by-passerâ€™ ->
+sobaka ksaetsja â€šthe dog bitesâ€™.  [Christian Lehmann, under \"introversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
 
@@ -2380,7 +2384,7 @@ sobaka ksaetsja ‚the dog bites’.  [Christian Lehmann, under \"introversion\"
            :definition """A verb is iterative iff it designates a sequence of instances of a given elementary situation.
 The notion will normally be relevant only if there is an iterative derivation. [Christian Lehmann, under \"iterative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
            
-           :example "Latin derivation by a -ta-suffix, cf. nuere ‚nod’ - nutare ‚nod’; salire ‚jump’ - saltare ‚dance’. [Christian Lehmann, under \"iterative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+           :example "Latin derivation by a -ta-suffix, cf. nuere â€šnodâ€™ - nutare â€šnodâ€™; salire â€šjumpâ€™ - saltare â€šdanceâ€™. [Christian Lehmann, under \"iterative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2411,7 +2415,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
                     
                     rdfs:subClassOf :Meaning ;
                     
-                    skos:definition "ist eine inhärente kategorie, also transitive hier heißt, dass ein verb inhärent transitive ist, transitivizer als derivational category heißt, dass sie ihre inhärente valenz durch derivation verändert haben"@en .
+                    skos:definition "ist eine inhÃ¤rente kategorie, also transitive hier heiÃŸt, dass ein verb inhÃ¤rent transitive ist, transitivizer als derivational category heiÃŸt, dass sie ihre inhÃ¤rente valenz durch derivation verÃ¤ndert haben"@en .
 
 
 
@@ -2443,7 +2447,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
                       rdfs:subClassOf :DenominalAdjective ,
                                       :SemanticDerivation ;
                       
-                      :example "German: Holz 'wood' --> hölzern 'wooden'."@de ;
+                      :example "German: Holz 'wood' --> hÃ¶lzern 'wooden'."@de ;
                       
                       :definition "An adjective which is derived from a noun denoting some kind of material and means 'being made of this material'."@en .
 
@@ -2470,10 +2474,10 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
               :example """Chichewa Bantu:
 mwana wangu wapandi-ka
 child my beat -MEDIOPASSIVE
-‘My child has been beaten.’
+â€˜My child has been beaten.â€™
 (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsMediopassiveVoice.htm)"""@en ;
               
-              skos:definition "a variety of passive in which the verb has stative meaning and the actor is not expressed, cf. the Chichewa Bantu example with the suffix „-ka“ as a mediopassive-marker in ISE 144.[Christian Lehmann, under \"mediopassive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+              skos:definition "a variety of passive in which the verb has stative meaning and the actor is not expressed, cf. the Chichewa Bantu example with the suffix â€ž-kaâ€œ as a mediopassive-marker in ISE 144.[Christian Lehmann, under \"mediopassive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
               
               :externalDefinition <http://purl.org/olia/olia.owl#MediopassiveVoice> .
 
@@ -2773,12 +2777,12 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
          
          rdfs:label "Passive"@en ;
          
+         owl:equivalentClass gold:PassiveVoice ;
+         
          rdfs:subClassOf :Voice ;
          
-         :definition """The passive is a voice which demotes the actor (in subject function) to an adjunct (e.g. a ‚by-phrase’). If there is an undergoer (in direct object function), it is promoted to subject function.
+         :definition """The passive is a voice which demotes the actor (in subject function) to an adjunct (e.g. a â€šby-phraseâ€™). If there is an undergoer (in direct object function), it is promoted to subject function.
 The passive can generally only be formed from agentive verbs. [Christian Lehmann, under \"passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
-
-owl:equivalentClass gold:PassiveVoice ;
          
          :externalDefinition <http://purl.org/olia/olia.owl#PassiveVoice> .
 
@@ -2808,7 +2812,7 @@ owl:equivalentClass gold:PassiveVoice ;
         
         rdfs:subClassOf :Number ;
         
-        :definition "The paucal is a number that forms a subset of „few“ members of the designated class. The exact cardinality may vary contextually, but must be more than one and must not be unlimited. [Christian Lehmann, under \"paucal\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+        :definition "The paucal is a number that forms a subset of â€žfewâ€œ members of the designated class. The exact cardinality may vary contextually, but must be more than one and must not be unlimited. [Christian Lehmann, under \"paucal\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
         
         :externalDefinition <http://purl.org/olia/olia.owl#Paucal> .
 
@@ -2921,7 +2925,7 @@ In some languages the plural is also used for generics and objects that always o
             
             rdfs:subClassOf :SemanticDerivation ;
             
-            skos:definition "The processive is a derivation which converts a stative base (an adjective or a noun) meaning X into a verb meaning ‚be/become/act as X’. [Christian Lehmann, under \"processive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            skos:definition "The processive is a derivation which converts a stative base (an adjective or a noun) meaning X into a verb meaning â€šbe/become/act as Xâ€™. [Christian Lehmann, under \"processive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             :externalDefinition gold:Versive .
 
@@ -3034,7 +3038,7 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
             
             rdfs:subClassOf :VerbExpansion ;
             
-            :example "English, Spanish and Portuguese use the prefix re-, cf. Engl.: replay, rewrite; Spanish/Portuguese: readaptar ‚readapt’, reutilizar ‚use again’.  [Christian Lehmann, under \"repetitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            :example "English, Spanish and Portuguese use the prefix re-, cf. Engl.: replay, rewrite; Spanish/Portuguese: readaptar â€šreadaptâ€™, reutilizar â€šuse againâ€™.  [Christian Lehmann, under \"repetitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             skos:definition "The repetitive derivation indicates that the process designated by the base occurs once again.  [Christian Lehmann, under \"repetitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
@@ -3096,7 +3100,7 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
       
       rdfs:subClassOf :Morph ;
       
-      :definition "A morph that constitutes the semantic nucleus of a stem. It cannot be further segmented and is often not specified for a part of speech. There are lexical roots, like Engl. «get», and grammatical roots, like Engl. «wh-». [Christian Lehmann, under \"root\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+      :definition "A morph that constitutes the semantic nucleus of a stem. It cannot be further segmented and is often not specified for a part of speech. There are lexical roots, like Engl. Â«getÂ», and grammatical roots, like Engl. Â«wh-Â». [Christian Lehmann, under \"root\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
 
 
 
@@ -3105,6 +3109,8 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
 :SecondPerson rdf:type owl:Class ;
               
               rdfs:label "Second person"@en ;
+              
+              owl:equivalentClass gold:SecondPerson ;
               
               rdfs:subClassOf :Person ;
               
@@ -3138,7 +3144,7 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
               
               :definition "Is an Aktionsart of verbs designating one instance of a typically durative or iterative situation. The notion will normally be relevant only if there is a semelfactive derivation converting durative into punctual predicates. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
               
-              :example "the Russian suffix -nu, cf. kolot’ ‚chop’ - kol’nut’ ‚cleave’. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+              :example "the Russian suffix -nu, cf. kolotâ€™ â€šchopâ€™ - kolâ€™nutâ€™ â€šcleaveâ€™. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -3168,7 +3174,7 @@ Delimitation and History:
 The replacive morph is a construct of taxonomic structuralism.
 [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
           
-          :example "In ‚man - men’, the latter contains the replacive morph ‚a -> e’. [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+          :example "In â€šman - menâ€™, the latter contains the replacive morph â€ša -> eâ€™. [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
           
           :externalDefinition <http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsASimulfix.htm> .
 
@@ -3260,7 +3266,7 @@ In a compound word: The stem is the morphological representative of one of the t
                    
                    :definition "A word form is synthetic 1 iff it is not analytic [i.e. all its semantic and grammatical components are represented in one word form]. [Christian Lehmann, under \"synthesis\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                    
-                   :example "«went» is a synthetic word-form of the lexeme «go»."@en .
+                   :example "Â«wentÂ» is a synthetic word-form of the lexeme Â«goÂ»."@en .
 
 
 
@@ -3281,6 +3287,8 @@ In a compound word: The stem is the morphological representative of one of the t
 :ThirdPerson rdf:type owl:Class ;
              
              rdfs:label "Thirdmmoon_deu:Morph_er person"@en ;
+             
+             owl:equivalentClass gold:ThirdPerson ;
              
              rdfs:subClassOf :Person ;
              
@@ -3496,7 +3504,7 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
           
           :usageNote "The word-form is specified for the stem to which the inflectional or agreement markings apply and for the inflectional and agreement affixes which are involved by using the property :consistsOfMorph, thus explicating the morphs which are involved in the inflectional pattern of the word-form."@en ;
           
-          :example "«said» is a word form of «say». [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+          :example "Â«saidÂ» is a word form of Â«sayÂ». [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -3520,9 +3528,21 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
 
 
 
+###  http://purl.org/linguistics/gold/ActiveVoice
+
+gold:ActiveVoice rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Affix
 
 gold:Affix rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/AntiPassiveVoice
+
+gold:AntiPassiveVoice rdf:type owl:Class .
 
 
 
@@ -3538,6 +3558,12 @@ gold:CategoryChanger rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/CausativeVoice
+
+gold:CausativeVoice rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Circumfix
 
 gold:Circumfix rdf:type owl:Class .
@@ -3547,6 +3573,12 @@ gold:Circumfix rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Compound
 
 gold:Compound rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/DirectVoice
+
+gold:DirectVoice rdf:type owl:Class .
 
 
 
@@ -3562,11 +3594,21 @@ gold:FeminineGender rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/FirstPerson
+
+gold:FirstPerson rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/GenderProperty
 
 gold:GenderProperty rdf:type owl:Class .
 
 
+
+###  http://purl.org/linguistics/gold/ImpersonalPassiveVoice
+
+gold:ImpersonalPassiveVoice rdf:type owl:Class .
 
 ###  http://purl.org/linguistics/gold/Infix
 
@@ -3610,6 +3652,11 @@ gold:NumberProperty rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/PassiveVoice
+
+gold:PassiveVoice rdf:type owl:Class .
+
+
 ###  http://purl.org/linguistics/gold/PaucalNumber
 
 gold:PaucalNumber rdf:type owl:Class .
@@ -3646,6 +3693,11 @@ gold:Root rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/SecondPerson
+
+gold:SecondPerson rdf:type owl:Class .
+
+
 ###  http://purl.org/linguistics/gold/SingularNumber
 
 gold:SingularNumber rdf:type owl:Class .
@@ -3661,6 +3713,12 @@ gold:Stem rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Suffix
 
 gold:Suffix rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/ThirdPerson
+
+gold:ThirdPerson rdf:type owl:Class .
 
 
 
@@ -6797,5 +6855,5 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
 
