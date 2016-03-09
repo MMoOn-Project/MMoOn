@@ -143,7 +143,6 @@ class Glyph:
             else:
                 heb += consonantsReverse[self.consonant.lower()]
         if (self.position == 8):
-            print ("add dagesh")
             heb += "\u05bc"
         if (not self.vowel == "-"):
             heb += vowelReverse[self.vowel.lower()]
@@ -211,16 +210,8 @@ def heb2lat(text, withSpace=False):
 
 def lat2heb(text):
     iterator = Glyph.pattern.finditer(text)
-    string = []
     heb = ''
-    lat = ''
     for match in iterator:
-        print(match.group())
-        string.append(Glyph(match.group()))
-    for a in string:
-        lat += str(a)
-        print (a.position)
-        heb += a.toHebrew()
-
-    print(lat)
+        glyph = Glyph(match.group())
+        heb += glyph.toHebrew()
     return heb
