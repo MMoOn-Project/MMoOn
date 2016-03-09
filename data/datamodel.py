@@ -7,6 +7,7 @@ from rdflib import RDF
 from rdflib import RDFS
 from rdflib import OWL
 from rdflib import Namespace
+from heb2lat import lat2heb
 import hashlib
 
 mmoon = Namespace("http://mmoon.org/mmoon/")
@@ -32,6 +33,7 @@ class Lexeme:
         lexeme = rdflib.term.URIRef(heb_inventory+"Lexeme_"+self.lexeme)
         graph.add((lexeme, RDF.type, mmoon_heb.Lexeme))
         graph.add((lexeme, RDFS.label, rdflib.term.Literal(self.lexeme)))
+        graph.add((lexeme, RDFS.label, rdflib.term.Literal(lat2heb(self.lexeme), lang="he")))
         graph.add((lexeme, mmoon.hasWordclassAffiliation, self.wordClass))
         graph.add((lexeme, mmoon.hasMorphologicalRelationship, self.binjan))
         # TODO add representations
@@ -54,6 +56,7 @@ class Wordform:
         wordform = self.getIri()
         graph.add((wordform, RDF.type, mmoon_heb.Wordform))
         graph.add((wordform, RDFS.label, rdflib.term.Literal(self.wordform)))
+        graph.add((wordform, RDFS.label, rdflib.term.Literal(lat2heb(self.wordform), lang="he")))
         graph.add((wordform, mmoon.consistsOfRoot, self.root.getIri()))
         graph.add((wordform, mmoon.consistsOfAffix, self.affix.getIri()))
 
@@ -68,6 +71,7 @@ class Root:
         root = self.getIri()
         graph.add((root, RDF.type, mmoon_heb.Root))
         graph.add((root, RDFS.label, rdflib.term.Literal(self.root)))
+        graph.add((root, RDFS.label, rdflib.term.Literal(lat2heb(self.root), lang="he")))
 
 class Affix:
     affix = ''
@@ -82,6 +86,7 @@ class Affix:
         affix = self.getIri()
         graph.add((affix, RDF.type, mmoon_heb.Transfix))
         graph.add((affix, RDFS.label, rdflib.term.Literal(self.affix)))
+        graph.add((affix, RDFS.label, rdflib.term.Literal(lat2heb(self.affix), lang="he")))
         graph.add((affix, mmoon.correspondsToMorpheme, self.morpheme))
         graph.add((self.morpheme, mmoon.hasRealization, affix))
 
