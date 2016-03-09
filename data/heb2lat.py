@@ -1,8 +1,15 @@
 #!/usr/bin/python3
 
-
 import string
 import unicodedata
+import re       # regex
+
+# TODO 4 Eindeutigkeits-Modi:
+# Maximale Eindeutigkeit (Breite 4-5) K0t3
+# Cases Sensitive Eindeutigkeit (Breite 2-5)  Kt
+# Cases Insensitive Eindeutigkeit (Breite 4-5)  k0t3
+# Kompakt (auch eindeutig, Breite 2-5) kt
+
 
 consonants = {
     "א": "a",   # e
@@ -36,6 +43,39 @@ consonants = {
     "ת": "f"   # t     f
 }
 
+consonantsReverse = {
+     "a" : "א",    # e
+     "b" : "ב",
+     "g" : "ג",
+     "d" : "ד",
+     "h" : "ה",    # ch
+     "w" : "ו",
+     "z" : "ז",
+     "x" : "ח",   # h     x
+     "t" : "ט",    # th
+     "j" : "י",
+     "k" : "כ",
+     "l" : "ל",
+     "m" : "מ",
+     "n" : "נ",
+     "s" : "ס",    # sz
+     "y" : "ע",    # a
+     "p" : "פ",
+     "c" : "צ",   #       c
+     "q" : "ק",
+     "r" : "ר",
+     "v" : "ש",   #       v
+     "f" : "ת",   # t     f
+}
+
+consonantsReverseFinal = {
+     "k" : "ך",
+     "m" : "ם",
+     "n" : "ן",
+     "p" : "ף",
+     "c" : "ץ",
+}
+
 vowel = {
     "\u05b0": "m",  # SHEVA (:)
     "\u05b4": "i",  # HIRIQ (.)
@@ -49,14 +89,36 @@ vowel = {
     "\u05bb": "u",  # QUBUTS (...)
 }
 
+vowelReverse = {
+    "m": "\u05b0",  # SHEVA (:)
+    "i": "\u05b4",  # HIRIQ (.)
+    "e": "\u05b5",  # TSERE (..)
+    "n": "\u05b6",  # SEGOL (:. dots in a T shape)
+    "a": "\u05b7",  # PATAH (-)
+    "t": "\u05b8",  # QAMATS (T)
+    "o": "\u05b9",  # HOLAM (. on the top)
+    "u": "\u05bb",  # QUBUTS (...)
+}
+
 alephbetOne = consonants
 
-class glyph:
+class Glyph:
+    pattern = re.compile('(?P<consonant>[_a-df-hj-np-tb-z])(?P<position>[0-289]{0,1})(?P<vowel>[-aeioutmn])(?P<length>[3-7]{0,1})(?P<stress>[\.]{0,1})', re.IGNORECASE)
     consonant = '_'     # a-z
     position = 0        # 0-2,89
     vowel = '-'         # a-z
     length = 3          # 3-7
     stress = False      # (True, False) "."
+    def __init__(self, glyph="_0-3"):
+        match = self.pattern.match(glyph)
+        self.consonant = match.group('consonant').lower()
+        if (not match.group('position') == ""):
+            self.position = int(match.group('position'))
+        self.vowel = match.group('vowel').lower()
+        if (not match.group('length') == ""):
+            self.length = int(match.group('length'))
+        if (match.group('stress') == "."):
+            self.stress = True
     def __repr__(self):
         if (self.length == 3):
             length = ""
@@ -71,6 +133,21 @@ class glyph:
         else:
             position = str(self.position)
         return self.consonant.upper() + position + self.vowel + length + stress
+    def toHebrew(self):
+        heb = ""
+        if self.consonant == "_":
+            heb += "\u25cc"    # circle "◌"
+        else:
+            if (self.position == 9):
+                heb += consonantsReverseFinal[self.consonant.lower()]
+            else:
+                heb += consonantsReverse[self.consonant.lower()]
+        if (self.position == 8):
+            print ("add dagesh")
+            heb += "\u05bc"
+        if (not self.vowel == "-"):
+            heb += vowelReverse[self.vowel.lower()]
+        return heb
     def isNothing(self):
         if (self.consonant == '_' and self.vowel == '-'):
             return True
@@ -100,7 +177,7 @@ def heb2lat(text, withSpace=False):
                     transliteration += str(g)
                     print(line.ljust(90), g, end="\n")
                     line = ""
-            g = glyph()
+            g = Glyph()
         if (name[0] == "HEBREW"):
             #  replace letter according to alephbet, caution for shin
             #   check if sofit letter add 9, else 0
@@ -133,23 +210,17 @@ def heb2lat(text, withSpace=False):
     return transliteration
 
 def lat2heb(text):
-    None
+    iterator = Glyph.pattern.finditer(text)
+    string = []
+    heb = ''
+    lat = ''
+    for match in iterator:
+        print(match.group())
+        string.append(Glyph(match.group()))
+    for a in string:
+        lat += str(a)
+        print (a.position)
+        heb += a.toHebrew()
 
-text = "hallo äöü ÄÖÜ HALLO לכד אָכּלֻץ אָאּגּהּ ְ ◌ שׁ שׂ ש"
-text2 = "Schulter כָּתֵף"
-text2 = "דבר"
-trans = heb2lat(text);
-print("\n")
-trans2 = heb2lat(text2);
-
-print(text)
-print(trans)
-
-print(text2)
-print(trans2)
-
-# TODO 4 Eindeutigkeits-Modi:
-# Maximale Eindeutigkeit (Breite 4-5) K0t3
-# Cases Sensitive Eindeutigkeit (Breite 2-5)  Kt
-# Cases Insensitive Eindeutigkeit (Breite 4-5)  k0t3
-# Kompakt (auch eindeutig, Breite 2-5) kt
+    print(lat)
+    return heb
