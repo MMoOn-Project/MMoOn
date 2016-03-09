@@ -29,14 +29,18 @@ def main(args=sys.argv[1:]):
         else:
             assert False, "unhandled option"
 
+    # TODO maybe we should use the latin code for the strings especially the  transfixes, because of the dagesh issue
+    #
+    # Lexeme takes the binjan as second argument:
+    #   e.g. datamodel.schema.Barkali_piel_1
+    # The third argument is the word class:
+    #   e.g. datamodel.schema.Verb
+    # For th affix/transfix its relation to a morpheme has to be specified:
+    #   e.g. mmoon.ABSINF, mmoon.KAFINF, or mmoon.BETINF, …
+    # The wordform has to be provided with the relations to the root and the affix it consists of
+
     lexeme = Lexeme("דִּבֵּר", datamodel.schema.Barkali_piel_1, datamodel.schema.Verb)
     root = Root("דבר")
-
-    # TODO maybe we should use the latin code for the transfixes, because of the dagesh
-    # mmoon.ABSINF
-    # mmoon.KAFINF
-    # mmoon.BETINF
-    # …
     affix = Affix("◌ִּ◌ֵּ◌", datamodel.inventory.ABSINF)
     wordform = Wordform("דְּבֵּר", root, affix)
     lexeme.addWordform(wordform)
