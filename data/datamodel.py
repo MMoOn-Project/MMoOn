@@ -5,6 +5,7 @@ import urllib
 import rdflib
 from rdflib import RDF
 from rdflib import RDFS
+from rdflib import OWL
 from rdflib import Namespace
 import hashlib
 import regex
@@ -12,6 +13,9 @@ import regex
 mmoon = Namespace("http://mmoon.org/mmoon/")
 mmoon_heb = Namespace("http://mmoon.org/lang/heb/schema/oh/")
 heb_inventory = Namespace("http://mmoon.org/lang/heb/inventory/oh/")
+
+schema = mmoon_heb
+inventory = heb_inventory
 
 class Lexeme:
     lexeme = ''
@@ -81,3 +85,16 @@ class Affix:
         graph.add((affix, RDFS.label, rdflib.term.Literal(self.affix)))
         graph.add((affix, mmoon.correspondsToMorpheme, self.morpheme))
         graph.add((self.morpheme, mmoon.hasRealization, affix))
+
+def getNewGraph():
+
+    graph = rdflib.Graph()
+    graph.bind("mmoon", mmoon)
+    graph.bind("heb_schema", mmoon_heb)
+    graph.bind("heb_inventory", heb_inventory)
+
+    return graph
+
+def writeGraphToFile(graph, filename):
+    graph.add((heb_inventory.term(""), OWL.imports, mmoon_heb.term("")))
+    graph.serialize(filename, "turtle")

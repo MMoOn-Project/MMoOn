@@ -3,10 +3,6 @@
 import sys
 import getopt
 
-import rdflib
-from rdflib import OWL
-from rdflib import Namespace
-
 import datamodel
 from datamodel import Lexeme
 from datamodel import Root
@@ -33,16 +29,7 @@ def main(args=sys.argv[1:]):
         else:
             assert False, "unhandled option"
 
-    mmoon = Namespace("http://mmoon.org/mmoon/")
-    mmoon_heb = Namespace("http://mmoon.org/lang/heb/schema/oh/")
-    heb_inventory = Namespace("http://mmoon.org/lang/heb/inventory/oh/")
-
-    graph = rdflib.Graph()
-    graph.bind("mmoon", mmoon)
-    graph.bind("heb_schema", mmoon_heb)
-    graph.bind("heb_inventory", heb_inventory)
-
-    lexeme = Lexeme("דִּבֵּר", mmoon_heb.Barkali_piel_1, mmoon_heb.Verb)
+    lexeme = Lexeme("דִּבֵּר", datamodel.schema.Barkali_piel_1, datamodel.schema.Verb)
     root = Root("דבר")
 
     # TODO maybe we should use the latin code for the transfixes, because of the dagesh
@@ -50,17 +37,18 @@ def main(args=sys.argv[1:]):
     # mmoon.KAFINF
     # mmoon.BETINF
     # …
-    affix = Affix("◌ִּ◌ֵּ◌", heb_inventory.ABSINF)
+    affix = Affix("◌ִּ◌ֵּ◌", datamodel.inventory.ABSINF)
     wordform = Wordform("דְּבֵּר", root, affix)
     lexeme.addWordform(wordform)
+
+    graph = datamodel.getNewGraph()
 
     lexeme.toRDF(graph)
     root.toRDF(graph)
     affix.toRDF(graph)
     wordform.toRDF(graph)
 
-    graph.add((heb_inventory.term(""), OWL.imports, mmoon_heb.term("")))
-    graph.serialize(out_file_rdf, "turtle")
+    datamodel.writeGraphToFile(graph, out_file_rdf)
 
 if __name__ == "__main__":
     main()
