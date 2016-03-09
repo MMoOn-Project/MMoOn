@@ -8,7 +8,6 @@ from rdflib import RDFS
 from rdflib import OWL
 from rdflib import Namespace
 import hashlib
-import regex
 
 mmoon = Namespace("http://mmoon.org/mmoon/")
 mmoon_heb = Namespace("http://mmoon.org/lang/heb/schema/oh/")
