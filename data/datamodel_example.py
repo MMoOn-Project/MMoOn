@@ -46,7 +46,7 @@ def main(args=sys.argv[1:]):
     wordform_1 = Wordform("D8iB8eR-", root, affix_1)    # "דְּבֵּר"
     lexeme.addWordform(wordform_1)
 
-    affix_2 = Affix("_8a_8e_-", datamodel.inventory.term("ABSINF"))
+    affix_2 = Affix("_8a_8e_-", datamodel.inventory.term("AtomicMorpheme_ABSINF"))
     wordform_2 = Wordform("D8aB8eR-", root, affix_2)
     lexeme.addWordform(wordform_2)
 
