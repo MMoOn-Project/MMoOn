@@ -6,7 +6,7 @@ import getopt
 import datamodel
 from datamodel import Lexeme
 from datamodel import Root
-from datamodel import Affix
+from datamodel import Transfix
 from datamodel import Wordform
 
 def main(args=sys.argv[1:]):
@@ -42,17 +42,17 @@ def main(args=sys.argv[1:]):
     lexeme = Lexeme("D8iB8eR-", datamodel.schema.Barkali_piel_1, datamodel.schema.Verb)   # "דִּבֵּר"
     root = Root("D-B-R-")   # "דבר"
 
-    affix_1 = Affix("_8i_8e_-", datamodel.inventory.term("3_SG_M"))    # "◌ִּ◌ֵּ◌"  # TODO stimmt 3_SG_M ?
+    affix_1 = Transfix("_8i_8e_-", datamodel.inventory.term("3_SG_M"))    # "◌ִּ◌ֵּ◌"  # TODO stimmt 3_SG_M ?
     wordform_1 = Wordform("D8iB8eR-", root, affix_1)    # "דְּבֵּר"
     lexeme.addWordform(wordform_1)
 
-    affix_2 = Affix("_8a_8e_-", datamodel.inventory.term("AtomicMorpheme_ABSINF"))
+    affix_2 = Transfix("_8a_8e_-", datamodel.inventory.term("AtomicMorpheme_ABSINF"))
     wordform_2 = Wordform("D8aB8eR-", root, affix_2)
     lexeme.addWordform(wordform_2)
 
     # "_8i_8m_-H-"
     # "_i_8m_-H-"
-    affix_3 = Affix("_8i_8m_tH-", datamodel.inventory.term("3_SG_F_PST"))
+    affix_3 = Transfix("_8i_8m_tH-", datamodel.inventory.term("3_SG_F_PST"))
     wordform_3 = Wordform("D8iB8mRtH-", root, affix_3)
     lexeme.addWordform(wordform_3)
 

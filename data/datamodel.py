@@ -49,11 +49,11 @@ class Lexeme:
 class Wordform:
     wordform = ''
     root = None
-    affix = None
-    def __init__(self, wordform, root, affix):
+    transfix = None
+    def __init__(self, wordform, root, transfix):
         self.root = root
         self.wordform = wordform
-        self.affix = affix
+        self.transfix = transfix
     def getIri(self):
         return rdflib.term.URIRef(heb_inventory+"Wordform_"+self.wordform)
     def getHebIri(self):
@@ -67,7 +67,7 @@ class Wordform:
         graph.add((wordform, RDFS.label, rdflib.term.Literal(self.wordform)))
         graph.add((wordform, RDFS.label, rdflib.term.Literal(lat2heb(self.wordform), lang="he")))
         graph.add((wordform, mmoon.consistsOfRoot, self.root.getIri()))
-        graph.add((wordform, mmoon.consistsOfAffix, self.affix.getIri()))
+        graph.add((wordform, mmoon.consistsOfTransfix, self.transfix.getIri()))
         graph.add((wordformHeb, RDF.type, mmoon_heb.Wordform))
         graph.add((wordformHeb, OWL.sameAs, wordform))
         graph.add((wordformHeb, RDFS.label, rdflib.term.Literal(hebString, lang="he")))
@@ -93,30 +93,30 @@ class Root:
         graph.add((rootHeb, OWL.sameAs, root))
         graph.add((rootHeb, RDFS.label, rdflib.term.Literal(hebString, lang="he")))
 
-class Affix:
-    affix = ''
+class Transfix:
+    transfix = ''
     morpheme = None
-    def __init__(self, affix, morpheme):
-        self.affix = affix
+    def __init__(self, transfix, morpheme):
+        self.transfix = transfix
         self.morpheme = morpheme
     def getIri(self):
-        return rdflib.term.URIRef(heb_inventory+"Transfix_"+self.affix)
+        return rdflib.term.URIRef(heb_inventory+"Transfix_"+self.transfix)
     def getHebIri(self):
-        heb = lat2heb(self.affix)
+        heb = lat2heb(self.transfix)
         return rdflib.term.URIRef(heb_inventory+"Transfix_"+heb)
     def toRDF(self, graph):
         # TODO use heb2lat
-        affix = self.getIri()
-        affixHeb = self.getHebIri()
-        hebString = lat2heb(self.affix)
-        graph.add((affix, RDF.type, mmoon_heb.Transfix))
-        graph.add((affix, RDFS.label, rdflib.term.Literal(self.affix)))
-        graph.add((affix, RDFS.label, rdflib.term.Literal(hebString, lang="he")))
-        graph.add((affix, mmoon.correspondsToMorpheme, self.morpheme))
-        graph.add((self.morpheme, mmoon.hasRealization, affix))
-        graph.add((affixHeb, RDF.type, mmoon_heb.Transfix))
-        graph.add((affixHeb, OWL.sameAs, affix))
-        graph.add((affixHeb, RDFS.label, rdflib.term.Literal(hebString, lang="he")))
+        transfix = self.getIri()
+        transfixHeb = self.getHebIri()
+        hebString = lat2heb(self.transfix)
+        graph.add((transfix, RDF.type, mmoon_heb.Transfix))
+        graph.add((transfix, RDFS.label, rdflib.term.Literal(self.transfix)))
+        graph.add((transfix, RDFS.label, rdflib.term.Literal(hebString, lang="he")))
+        graph.add((transfix, mmoon.correspondsToMorpheme, self.morpheme))
+        graph.add((self.morpheme, mmoon.hasRealization, transfix))
+        graph.add((transfixHeb, RDF.type, mmoon_heb.Transfix))
+        graph.add((transfixHeb, OWL.sameAs, transfix))
+        graph.add((transfixHeb, RDFS.label, rdflib.term.Literal(hebString, lang="he")))
 
 def getNewGraph():
 
