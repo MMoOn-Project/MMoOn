@@ -10,6 +10,11 @@ import re       # regex
 # Cases Insensitive Eindeutigkeit (Breite 4-5)  k0t3
 # Kompakt (auch eindeutig, Breite 2-5) kt
 
+# ISSUES:
+# - What about dagesh in final letters? (position = 8 and 9)
+# - How to distiguish dagesh qal and dagesh hazak
+# - What about sin or shin with dagesh? (position = 1 or 2 and 8)
+# - How can we distinguish SEGOL and HATAF SEGOL resp. PATAH and HATAF PATAH
 
 consonants = {
     "א": "a",   # e
