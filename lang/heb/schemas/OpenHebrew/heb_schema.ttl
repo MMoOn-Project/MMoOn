@@ -638,6 +638,42 @@ heb_schema:AgentNominalizer rdf:type mmoon:AgentNominalizer ,
 
 
 
+###  http://mmoon.org/lang/heb/schema/oh/Barkali_Mishkal_118
+
+heb_schema:Barkali_Mishkal_118 rdf:type heb_schema:Mishkal ,
+                                        owl:NamedIndividual ;
+                               
+                               rdfs:label "Barkali Mishkal 118"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Barkali_Mishkal_144
+
+heb_schema:Barkali_Mishkal_144 rdf:type heb_schema:Mishkal ,
+                                        owl:NamedIndividual ;
+                               
+                               rdfs:label "Barkali Mishkal 144"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Barkali_Mishkal_274
+
+heb_schema:Barkali_Mishkal_274 rdf:type heb_schema:Mishkal ,
+                                        owl:NamedIndividual ;
+                               
+                               rdfs:label "Barkali Mishkal 274"@en .
+
+
+
+###  http://mmoon.org/lang/heb/schema/oh/Barkali_Mishkal_91
+
+heb_schema:Barkali_Mishkal_91 rdf:type heb_schema:Mishkal ,
+                                       owl:NamedIndividual ;
+                              
+                              rdfs:label "Barkali Mishkal 91"@en .
+
+
+
 ###  http://mmoon.org/lang/heb/schema/oh/Barkali_hifil_1
 
 heb_schema:Barkali_hifil_1 rdf:type heb_schema:Binyan ,
