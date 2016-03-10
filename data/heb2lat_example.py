@@ -15,5 +15,12 @@ print(trans)
 print(text2)
 print(trans2)
 
-heb = heb2lat.lat2heb("D8iB8mRtH-")
-print (heb)
+
+lat1 = heb2lat.heb2lat("בִּשַּׁלְתִּי");
+heb1 = heb2lat.lat2heb("B8iV1aLmF8iJ-")
+
+print (lat1)
+print (heb1)
+
+heb2 = heb2lat.lat2heb("D8iB8mRtH-")
+print (heb2)

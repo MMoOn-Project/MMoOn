@@ -138,7 +138,18 @@ class Glyph:
         if self.consonant == "_":
             heb += "\u25cc"    # circle "◌"
         else:
-            if (self.position == 9):
+            if (self.consonant.lower() == "v"):
+                if self.position == 1:
+                    # shin
+                    #heb += "ש" + "\u05c1"
+                    heb += "שׁ"
+                elif self.position == 2:
+                    # sin
+                    #heb += "ש" + "\u05c2"
+                    heb += "שׂ"
+                else:
+                    heb += "ש"
+            elif (self.position == 9):
                 heb += consonantsReverseFinal[self.consonant.lower()]
             else:
                 heb += consonantsReverse[self.consonant.lower()]
