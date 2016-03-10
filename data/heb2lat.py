@@ -184,7 +184,7 @@ def heb2lat(text, withSpace=False):
     g = None
     line = ""
     for c in text:
-        #  find placeholder Kringel replace by "_"
+        # find placeholder Circle replace by "_"
         name = unicodedata.name(c).split(" ")
         category = unicodedata.category(c)
         if category != 'Mn':
@@ -194,11 +194,6 @@ def heb2lat(text, withSpace=False):
                     line = ""
             g = Glyph()
         if (name[0] == "HEBREW"):
-            #  replace letter according to alephbet, caution for shin
-            #   check if sofit letter add 9, else 0
-            # get punctuation
-            #  if no punctuation write "-"
-            #  find punctuation
             if (name[1] == "LETTER"):
                 line += unicodedata.category(c) + "  " + unicodedata.name(c) + "   "
                 if c in consonants:
