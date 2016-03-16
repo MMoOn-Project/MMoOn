@@ -615,8 +615,6 @@ An allomorph is one of two or more complementary morphs which manifest a morphem
            
            :definition "Points to an external sense resource defining the meaning of a lexeme or morpheme."@en ;
            
-           rdfs:domain :Sense ;
-           
            rdfs:range rdfs:Resource ;
            
            rdfs:subPropertyOf owl:topObjectProperty .
@@ -738,6 +736,34 @@ lexvo:Language rdf:type owl:Class ;
 
 
 
+###  http://mmoon.org/mmoon/AbsoluteRelativeTense
+
+:AbsoluteRelativeTense rdf:type owl:Class ;
+                       
+                       rdfs:label "Absolute-Relative Tense"@en ;
+                       
+                       rdfs:subClassOf :Tense ;
+                       
+                       :definition "a tense that refers to a time in relation to a temporal reference point that in turn is referred to in relation to the moment of utterance, i.e. in which the reference point and the moment of utterance are not identical.   [Christian Lehmann, under \"absolute-relative tense\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                       
+                       :externalDefinition <http://purl.org/olia/olia.owll#AbsoluteRelativeTense> .
+
+
+
+###  http://mmoon.org/mmoon/AbsoluteTense
+
+:AbsoluteTense rdf:type owl:Class ;
+               
+               rdfs:label "Absolute Tense"@en ;
+               
+               rdfs:subClassOf :Tense ;
+               
+               :definition "An absolute tense is a tense that has the point of time of the speech act as its immediate point of reference.  [Christian Lehmann, under \"absolute tense\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :externalDefinition <http://purl.org/olia/olia.owll#AbsoluteTense> .
+
+
+
 ###  http://mmoon.org/mmoon/ActionNominalizer
 
 :ActionNominalizer rdf:type owl:Class ;
@@ -746,7 +772,7 @@ lexvo:Language rdf:type owl:Class ;
                    
                    rdfs:subClassOf :SemanticDerivation ;
                    
-                   skos:definition "An action nominalizer is a nominalizer which derives a noun referring to the situation itself from an action predicate. [Christian Lehmann, under \"action nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   :definition "An action nominalizer is a nominalizer which derives a noun referring to the situation itself from an action predicate. [Christian Lehmann, under \"action nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                    
                    :example "German -ung, as in Versuchung â€žtempt-ationâ€œ. [Christian Lehmann, under \"action nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
@@ -779,7 +805,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
         
         rdfs:subClassOf :Voice ;
         
-        skos:definition "Active is the basic voice. While other voices indicate that the subject does not have the semantic function of actor, the active indicates nothing of the kind and thus by default maps the actor on the subject.  [Christian Lehmann, under \"active\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+        :definition "Active is the basic voice. While other voices indicate that the subject does not have the semantic function of actor, the active indicates nothing of the kind and thus by default maps the actor on the subject.  [Christian Lehmann, under \"active\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
         
         :externalDefinition <http://purl.org/olia/olia.owl#ActiveVoice> .
 
@@ -863,6 +889,18 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
 
 
 
+###  http://mmoon.org/mmoon/Admonitive
+
+:Admonitive rdf:type owl:Class ;
+            
+            rdfs:label "Admonitive"@en ;
+            
+            rdfs:subClassOf :Mood ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#AdmonitiveModality> .
+
+
+
 ###  http://mmoon.org/mmoon/AdverbCompound
 
 :AdverbCompound rdf:type owl:Class ;
@@ -911,7 +949,7 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
                   
                   rdfs:subClassOf :SemanticDerivation ;
                   
-                  skos:definition "An agent nominalizer is a nominalizer which derives agent nouns. [Christian Lehmann, under \"agent nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                  :definition "An agent nominalizer is a nominalizer which derives agent nouns. [Christian Lehmann, under \"agent nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                   
                   :example "Engl. \"drive\" --> \"driver\""@en .
 
@@ -991,6 +1029,18 @@ Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"
 
 
 
+###  http://mmoon.org/mmoon/Anterior
+
+:Anterior rdf:type owl:Class ;
+          
+          rdfs:label "Anterior"@en ;
+          
+          rdfs:subClassOf :RelativeTense ;
+          
+          :definition "Anteriority is the temporal relation of a proposition P to a point of reference iff the moment of the event which is described by P precedes the period of time of the point of reference.   [Christian Lehmann, under \"anteriority\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Anticausative
 
 :Anticausative rdf:type owl:Class ;
@@ -999,7 +1049,7 @@ Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"
                
                rdfs:subClassOf :Intransitivizer ;
                
-               skos:definition "A verb is deagentive iff it is derived by a valency decrease which deletes the agent from the participant frame of the underlying base. The situation designated by the verb happens by itself, without the intervention of an agent. [Christian Lehmann, under \"anticausativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               :definition "A verb is deagentive iff it is derived by a valency decrease which deletes the agent from the participant frame of the underlying base. The situation designated by the verb happens by itself, without the intervention of an agent. [Christian Lehmann, under \"anticausativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                
                :example """Engl. \"The door closed.\"
 Russ. On razbil Ã·caÃ·sku. -> Ã·CaÃ·ska razbilasâ€™.
@@ -1026,6 +1076,20 @@ Svan: adgÃ¤ri â€škillsâ€™ -> idgÃ¤ri â€šdiesâ€™, ibne â�
 
 
 
+###  http://mmoon.org/mmoon/Aorist
+
+:Aorist rdf:type owl:Class ;
+        
+        rdfs:label "Aorist"@en ;
+        
+        rdfs:subClassOf :Past ;
+        
+        :definition "perfective past, as opposed to imperfect and durative. [Christian Lehmann, under \"aorist\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia.owl#Aorist> .
+
+
+
 ###  http://mmoon.org/mmoon/Applicative
 
 :Applicative rdf:type owl:Class ;
@@ -1037,7 +1101,7 @@ Svan: adgÃ¤ri â€škillsâ€™ -> idgÃ¤ri â€šdiesâ€™, ibne â�
              :example """German: Â«Erna antwortet auf die FrageÂ» -> Â«Erna beantwortet die FrageÂ».
 German Â«Erna arbeitet im FeldÂ» â€šErna works in the fieldâ€™ -> Â«Erna bearbeitet das FeldÂ» â€šErna works the fieldâ€™. [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@de ;
              
-             skos:definition "A common semantic effect of the derivation is therefore a higher degree of affection of that participant.  [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             :definition "A common semantic effect of the derivation is therefore a higher degree of affection of that participant.  [Christian Lehmann, under \"applicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              
              :externalDefinitionDesc """A verb AV derived from a verb BV is applicative 1 iff:
 - AV is transitive,
@@ -1076,7 +1140,7 @@ The base may be transitive, in which case its direct object is demoted upon the 
         
         rdfs:subClassOf :LinguisticCategory ;
         
-        skos:definition """Aspect is an inflectional category concerning the internal temporal structure, particularly the initial and final temporal boundaries, of the situation designated by the verb.
+        :definition """Aspect is an inflectional category concerning the internal temporal structure, particularly the initial and final temporal boundaries, of the situation designated by the verb.
 Aspect treats a situation as bounded or non-bounded with respect to other situations in the universe-of-discourse, so that syntagmatic relations of taxis can be established among them. [Christian Lehmann, under \"aspect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
@@ -1231,7 +1295,7 @@ An underived verb cannot be causative by this definition. However, the paradigma
                  
                  rdfs:subClassOf :ValencyChange ;
                  
-                 skos:definition """Causativization is a valency increase which renders a verb causative.
+                 :definition """Causativization is a valency increase which renders a verb causative.
 Since the causer occupies the subject slot of the causative verb and the base verb already had a subject (representing a different participant), causativization generally involves more valency changes than just the addition of a subject slot. [Christian Lehmann, under \"causativization\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
                  
                  :example "Korean: \"cwuk-\" ('verb 'die') --> \"cwuk-i-\" (verb 'kill')"@en .
@@ -1260,7 +1324,7 @@ Since the causer occupies the subject slot of the causative verb and the base ve
             
             rdfs:subClassOf :LinguisticCategory ;
             
-            skos:definition "a word or morpheme that indicates that a linguistic unit (typically a noun) belongs to a certain class of units. (CL, lido)"@en ;
+            :definition "a word or morpheme that indicates that a linguistic unit (typically a noun) belongs to a certain class of units. (CL, lido)"@en ;
             
             :externalDefinition <http://purl.org/olia/olia.owl#Classifier> .
 
@@ -1392,6 +1456,24 @@ The conative is a verbal aspect or aktionsart which means that the agent of the 
 
 
 
+###  http://mmoon.org/mmoon/Conditional
+
+:Conditional rdf:type owl:Class ;
+             
+             rdfs:label "Conditional"@en ;
+             
+             rdfs:subClassOf :InterpropositionalRelation ,
+                             :Mood ;
+             
+             :example """Engl. «I wouldn’t do it» (if some relevant condition were fulfilled, e.g. if I were you).
+ [Christian Lehmann, under \"conditional\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+             
+             :definition "The conditional is a mood marking a sentence that is, or is construed as, the apodosis of an unreal condition. [Christian Lehmann, under \"conditional\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#ConditionalMood> .
+
+
+
 ###  http://mmoon.org/mmoon/Conjugation
 
 :Conjugation rdf:type owl:Class ;
@@ -1401,6 +1483,34 @@ The conative is a verbal aspect or aktionsart which means that the agent of the 
              rdfs:subClassOf :VerbalInflection ;
              
              :definition "Is the inflection of a verb. Conjugation categories commonly include person, number, gender, aspect, tense, mood, voice and non-finite subcategories. [Christian Lehmann, under \"conjugation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Conjunction
+
+:Conjunction rdf:type owl:Class ;
+             
+             rdfs:label "Conjunction"@en ;
+             
+             rdfs:subClassOf :WordclassAffiliation ;
+             
+             rdfs:comment """A conjunction is a word that syntactically links words or larger constituents and expresses a relationship between them.
+
+Prototypically, a conjunction links two clauses. However, coordinative conjunctions may also link subclausal expressions. (CL LIDO)"""@en ;
+             
+             rdfs:isDefinedBy "http://purl.org/olia/olia.owl#Conjunction" .
+
+
+
+###  http://mmoon.org/mmoon/Consecutive
+
+:Consecutive rdf:type owl:Class ;
+             
+             rdfs:label "Consecutive"@en ;
+             
+             rdfs:subClassOf :InterpropositionalRelation ;
+             
+             rdfs:comment "'so that'"@en .
 
 
 
@@ -1414,8 +1524,41 @@ The conative is a verbal aspect or aktionsart which means that the agent of the 
               
               :definition "Continuative is an imperfective aktionsart which indicates that the situation designated is prolonged.  [Christian Lehmann, under \"continuative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
               
+              rdfs:comment "Continuative is an imperfective aktionsart which indicates that the situation designated is prolonged.  [Christian Lehmann, under \"continuative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
               :example """Quechua Continuative â€ž-saâ€œ, which is applicable to states and events, as in â€žrikâ€™â€™usanâ€œ, â€šHe sees itâ€™, lit. â€šHe is seeing itâ€™ (example from Bills et al., 1969: 21).
+[Christian Lehmann, under \"continuative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ,
+                       """Quechua Continuative „-sa“, which is applicable to states and events, as in „rik’’usan“, ‚He sees it’, lit. ‚He is seeing it’ (example from Bills et al., 1969: 21).
 [Christian Lehmann, under \"continuative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Continuous
+
+:Continuous rdf:type owl:Class ;
+            
+            rdfs:label "Continuous"@en ;
+            
+            owl:equivalentClass gold:ContinuousAspect ;
+            
+            rdfs:subClassOf :Aspect ;
+            
+            rdfs:comment """A situation is continuous 1 iff it is ongoing.
+Derivatively,a verb designating such a situation is continuous 1.
+Continuitas situationis is the property of being continuous 1.
+[Christian Lehmann, under \"continuity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Converb
+
+:Converb rdf:type owl:Class ;
+         
+         rdfs:label "Converb"@en ;
+         
+         rdfs:subClassOf :NonInflectingWord ;
+         
+         rdfs:comment "A converb is a non-finite verb form such that the subordinate clause whose head the converb is is neither a complement (“argument“) of the main verb nor an attribute to some nominal, but typically an adjunct to the main verb. (CL, lido)"@en .
 
 
 
@@ -1439,6 +1582,19 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
 
 
 
+###  http://mmoon.org/mmoon/Copula
+
+:Copula rdf:type owl:Class ;
+        
+        rdfs:label "Copula"@en ;
+        
+        rdfs:subClassOf :Verb ;
+        
+        rdfs:comment """A copula is a bivalent intransitive verb which converts a nominal into a verbal predicate.
+It thus „links“ a predicate nominal to the subject. (CL LIDO)"""@en .
+
+
+
 ###  http://mmoon.org/mmoon/Countability
 
 :Countability rdf:type owl:Class ;
@@ -1446,6 +1602,48 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
               rdfs:label "Countability"@en ;
               
               rdfs:subClassOf :LinguisticCategory .
+
+
+
+###  http://mmoon.org/mmoon/Countable
+
+:Countable rdf:type owl:Class ;
+           
+           rdfs:label "Countable"@en ;
+           
+           rdfs:subClassOf :Countability .
+
+
+
+###  http://mmoon.org/mmoon/Crastinal
+
+:Crastinal rdf:type owl:Class ;
+           
+           rdfs:label "Crastinal"@en ;
+           
+           rdfs:subClassOf :Future ;
+           
+           :definition "a future tense referring to tomorrow. [Christian Lehmann, under \"crastinal future\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/CrossReferencePosition
+
+:CrossReferencePosition rdf:type owl:Class ;
+                        
+                        rdfs:subClassOf :MorphosyntacticFeature .
+
+
+
+###  http://mmoon.org/mmoon/Dative
+
+:Dative rdf:type owl:Class ;
+        
+        rdfs:label "Dative"@en ;
+        
+        rdfs:subClassOf :Case ;
+        
+        rdfs:isDefinedBy "http://linguistics-ontology.org/gold/2010/DativeCase" .
 
 
 
@@ -1515,6 +1713,21 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
 
 
 
+###  http://mmoon.org/mmoon/Declarative
+
+:Declarative rdf:type owl:Class ;
+             
+             rdfs:label "Declarative"@en ;
+             
+             rdfs:subClassOf :Mood ,
+                             :SentenceType ;
+             
+             :definition "Declarative mood is an epistemic mood that signals that the proposition expressed by a speaker’s utterance is offered as an unqualified statement of fact. (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsDeclarativeMood.htm)"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#DeclarativeMood> .
+
+
+
 ###  http://mmoon.org/mmoon/Declension
 
 :Declension rdf:type owl:Class ;
@@ -1557,7 +1770,7 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
                     
                     rdfs:subClassOf :LinguisticCategory ;
                     
-                    skos:definition "Is a grammatical category of the adjective or adverb which allows a comparison between the extent to which whatever is modified by the adjective/adverb possesses the quality designated by it, and something else. [Christian Lehmann, under \"degree of comparison\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                    :definition "Is a grammatical category of the adjective or adverb which allows a comparison between the extent to which whatever is modified by the adjective/adverb possesses the quality designated by it, and something else. [Christian Lehmann, under \"degree of comparison\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                     
                     :externalDefinition <http://purl.org/olia/olia.owl#DegreeFeature> .
 
@@ -1730,7 +1943,7 @@ Is a kind of lexeme which is formed by the morphological modification of another
               
               :example "Sanskrit â€šs:r.no-ti â€šhearsâ€™, â€šsu-â€™srÂ¡u-.sa-ti (RED-hear-DES-3.SG) â€šwants to hearâ€™. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
               
-              skos:definition "The desiderative is a category deriving a verb Vd from a verbal base Vb such that Vd means â€što want to Vbâ€™. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+              :definition "The desiderative is a category deriving a verb Vd from a verbal base Vb such that Vd means â€što want to Vbâ€™. [Christian Lehmann, under \"desiderative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -1892,6 +2105,30 @@ Is a kind of lexeme which is formed by the morphological modification of another
 
 
 
+###  http://mmoon.org/mmoon/Dubitative
+
+:Dubitative rdf:type owl:Class ;
+            
+            rdfs:label "Dubitative"@en ;
+            
+            owl:equivalentClass gold:DubitiveMood ;
+            
+            rdfs:subClassOf :Mood ;
+            
+            :definition """Dubitative mood is an epistemic mood which signals a speaker’s reservation about the accuracy of his or her statement.
+(http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsDubitativeMood.htm)"""@en ;
+            
+            :example """The Ojibwa suffix -tik expresses dubitative mood, as in the following construction:
+
+kenapac uwaya pieya:tik ‘someone seems to be coming here’
+(Leonard Bloomfield, cited by Bybee 1985 179)
+
+(http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsDubitativeMood.htm)"""@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#DubitativeMood> .
+
+
+
 ###  http://mmoon.org/mmoon/Durative
 
 :Durative rdf:type owl:Class ;
@@ -1930,6 +2167,12 @@ Derivatively, a linguistic sign designating such a phenomenon is called dynamic.
 
 
 
+###  http://mmoon.org/mmoon/Elative
+
+:Elative rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/EmptyMorph
 
 :EmptyMorph rdf:type owl:Class ;
@@ -1960,6 +2203,12 @@ Derivatively, a linguistic sign designating such a phenomenon is called dynamic.
 
 
 
+###  http://mmoon.org/mmoon/Essive
+
+:Essive rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/Evidentiality
 
 :Evidentiality rdf:type owl:Class ;
@@ -1967,6 +2216,18 @@ Derivatively, a linguistic sign designating such a phenomenon is called dynamic.
                rdfs:label "Evidentiality"@en ;
                
                rdfs:subClassOf :LinguisticCategory .
+
+
+
+###  http://mmoon.org/mmoon/Exclamative
+
+:Exclamative rdf:type owl:Class ;
+             
+             rdfs:label "Exclamative"@en ;
+             
+             rdfs:subClassOf :Mood ;
+             
+             :definition "The exclamative is a mood typically used to express exclamation, a vehement expression of strong emotion.  [Christian Lehmann, under \"exclamative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2064,7 +2325,7 @@ German Â«tÃ¶tenÂ» â€škillâ€™ from Â«totÂ» â€šdeadâ€™
           
           rdfs:subClassOf :Gender ;
           
-          skos:definition """Feminine gender is a grammatical gender that marks nouns that have human or animal female referents, and often marks nouns that have referents that do not carry distinctions of sex.
+          :definition """Feminine gender is a grammatical gender that marks nouns that have human or animal female referents, and often marks nouns that have referents that do not carry distinctions of sex.
 (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsFeminineGender.htm)"""@en ;
           
           :externalDefinitionDesc "The feminine is a gender such that if born by an animate noun, this typically designates a female being.  [Christian Lehmann, under \"feminine\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
@@ -2084,8 +2345,6 @@ German Â«tÃ¶tenÂ» â€škillâ€™ from Â«totÂ» â€šdeadâ€™
              rdfs:subClassOf :Person ;
              
              :definition "The fist person is the value of the category person which prototypically represents the speaker. [Christian Lehmann, under \"first person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-			 
-			 owl:equivalentClass gold:FirstPerson ;
              
              :externalDefinition <http://purl.org/olia/olia.owl#First> .
 
@@ -2099,7 +2358,7 @@ German Â«tÃ¶tenÂ» â€škillâ€™ from Â«totÂ» â€šdeadâ€™
              
              rdfs:subClassOf :LinguisticCategory ;
              
-             skos:definition "A focus marker is a marker - generally a morpheme - indicating the focus of a sentence. (CL, lido)"@en ;
+             :definition "A focus marker is a marker - generally a morpheme - indicating the focus of a sentence. (CL, lido)"@en ;
              
              :externalDefinition <http://purl.org/olia/olia.owl#FocusMarker> .
 
@@ -2146,6 +2405,76 @@ This often the case for inherent meanings such as number for nouns or tense for 
 
 
 
+###  http://mmoon.org/mmoon/Future
+
+:Future rdf:type owl:Class ;
+        
+        rdfs:label "Future"@en ;
+        
+        owl:equivalentClass gold:FutureTense ;
+        
+        rdfs:subClassOf :AbsoluteTense ;
+        
+        :definition "an absolute tense that refers to a time as located after the moment of utterance. [Christian Lehmann, under \"future\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia.owl#Future> .
+
+
+
+###  http://mmoon.org/mmoon/FutureInFuture
+
+:FutureInFuture rdf:type owl:Class ;
+                
+                rdfs:label "Future-in-Future"@en ;
+                
+                owl:equivalentClass gold:FutureInFutureTense ;
+                
+                rdfs:subClassOf :AbsoluteRelativeTense ;
+                
+                :example "Latin „venturus erit“ ‚he will be about to come’. [Christian Lehmann, under \"future-in-future\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]" ;
+                
+                :definition "an absolute-relative tense that refers to a time located in the future relative to a temporal reference point which itself is located in the future relative to the moment of utterance. [Christian Lehmann, under \"future-in-future\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :externalDefinition <http://purl.org/olia/olia.owl#FutureInFuture> .
+
+
+
+###  http://mmoon.org/mmoon/FutureInPast
+
+:FutureInPast rdf:type owl:Class ;
+              
+              rdfs:label "Future-in-Past"@en ;
+              
+              owl:equivalentClass gold:FutureInPastTense ;
+              
+              rdfs:subClassOf :AbsoluteRelativeTense ;
+              
+              :definition "an absolute-relative tense that refers to a time located in the future relative to a contextually determined temporal reference point which itself must be located in the past relative to the moment of utterance. [Christian Lehmann, under \"future-in-past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :example "engl. „would“ in „John left for the front; he would never return“. [Christian Lehmann, under \"future-in-past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :externalDefinition <http://purl.org/olia/olia.owl#FutureInPast> .
+
+
+
+###  http://mmoon.org/mmoon/FuturePerfect
+
+:FuturePerfect rdf:type owl:Class ;
+               
+               rdfs:label "Future Perfect"@en ;
+               
+               owl:equivalentClass gold:FuturePerfectTense ;
+               
+               rdfs:subClassOf :AbsoluteRelativeTense ;
+               
+               :definition "an absolute-relative tense that refers to a time located before a contextually determined temporal reference point which in turn must be located in the future relative to the moment of utterance.  [Christian Lehmann, under \"future perfect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :example "engl. future perfect „will have“ in „By that time, he will have returned“.  [Christian Lehmann, under \"future perfect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :externalDefinition <http://purl.org/olia/olia.owl#FuturePerfect> .
+
+
+
 ###  http://mmoon.org/mmoon/Gender
 
 :Gender rdf:type owl:Class ;
@@ -2176,6 +2505,161 @@ This often the case for inherent meanings such as number for nouns or tense for 
 
 
 
+###  http://mmoon.org/mmoon/Habitual
+
+:Habitual rdf:type owl:Class ;
+          
+          rdfs:label "Habitual"@en ;
+          
+          owl:equivalentClass gold:HabitualAspect ;
+          
+          rdfs:subClassOf :Aspect ;
+          
+          :example "http://linguistics-ontology.org/gold/2010/HabitualAspect#examples"^^xsd:anyURI ;
+          
+          rdfs:comment "Habitual is an imperfective that expresses the occurrence of an event or state as a characteristic of a period of time. [Christian Lehmann, under \"habitual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+          
+          :example "The English expression „used to“ in „He used to live here“.  [Christian Lehmann, under \"habitual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/HesternalPast
+
+:HesternalPast rdf:type owl:Class ;
+               
+               rdfs:label "Hesternal Past"@en ;
+               
+               owl:equivalentClass gold:HesternalPastTense ;
+               
+               rdfs:subClassOf :Past ;
+               
+               :definition "a past tense that refers to a time located somewhere in the span beginning with the period defined culturally as ‚yesterday’ and extending back through some period that is considered nonremote.  [Christian Lehmann, under \"hesternal past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :externalDefinition <http://purl.org/olia/olia.owl#HesternalPast> .
+
+
+
+###  http://mmoon.org/mmoon/HodiernalFuture
+
+:HodiernalFuture rdf:type owl:Class ;
+                 
+                 rdfs:label "Hodiernal Future"@en ;
+                 
+                 owl:equivalentClass gold:HodiernalFutureTense ;
+                 
+                 rdfs:subClassOf :Future ;
+                 
+                 :definition "a future tense that refers to a time during the span culturally defined as ‚today’ in relation to the moment of utterance.  [Christian Lehmann, under \"hodiernal future\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 
+                 :externalDefinition <http://purl.org/olia/olia.owl#HodiernalFuture> .
+
+
+
+###  http://mmoon.org/mmoon/HodiernalPast
+
+:HodiernalPast rdf:type owl:Class ;
+               
+               rdfs:label "Hodiernal Past"@en ;
+               
+               owl:equivalentClass gold:HodiernalPastTense ;
+               
+               rdfs:subClassOf :Past ;
+               
+               :definition "The hodiernal past is a past tense that refers to a situation having taken place earlier the same day. [Christian Lehmann, under \"hodiernal past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :externalDefinition <http://purl.org/olia/olia.owl#HodiernalPast> .
+
+
+
+###  http://mmoon.org/mmoon/Hortative
+
+:Hortative rdf:type owl:Class ;
+           
+           rdfs:label "Hortative"@en ;
+           
+           rdfs:subClassOf :Mood ;
+           
+           :definition "The hortative is a grammatical category - commonly a mood -that encodes directive modality directed to the first person, usually plural.  [Christian Lehmann, under \"hortative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia.owl#HortativeModality> .
+
+
+
+###  http://mmoon.org/mmoon/Illative
+
+:Illative rdf:type owl:Class ;
+          
+          rdfs:label "Illative"@en ;
+          
+          rdfs:subClassOf :Lative ;
+          
+          rdfs:isDefinedBy "http://purl.org/linguistics/gold/IllativeCase" .
+
+
+
+###  http://mmoon.org/mmoon/ImmediateFuture
+
+:ImmediateFuture rdf:type owl:Class ;
+                 
+                 rdfs:label "Immediate Future"@en ;
+                 
+                 owl:equivalentClass gold:ImmediateFutureTense ;
+                 
+                 rdfs:subClassOf :Future ;
+                 
+                 :definition "The immediate future is a future tense that locates a situation in the span starting with the moment of utterance and typically ending when ‚tomorrow’ ends. [Christian Lehmann, under \"near future\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 
+                 :externalDefinition <http://purl.org/olia/olia.owl#ImmediateFuture> .
+
+
+
+###  http://mmoon.org/mmoon/ImmediatePast
+
+:ImmediatePast rdf:type owl:Class ;
+               
+               rdfs:label "Immediate Past"@en ;
+               
+               owl:equivalentClass gold:ImmediatePastTense ;
+               
+               rdfs:subClassOf :Past ;
+               
+               :definition "The immediate past is a past tense that refers to a time considered as immediately preceding the moment of utterance. [Christian Lehmann, under \"immediate past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :example "Span. «acabo de hacerlo» ‚I just did it a moment ago’.  [Christian Lehmann, under \"immediate past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@es ;
+               
+               :externalDefinition <http://purl.org/olia/olia.owl#ImmediatePast> .
+
+
+
+###  http://mmoon.org/mmoon/Imperative
+
+:Imperative rdf:type owl:Class ;
+            
+            rdfs:label "Imperative"@en ;
+            
+            rdfs:subClassOf :Mood ;
+            
+            :definition """The imperative is the mood that encodes directive modality, especially demands, directed towards a speech act participant.
+The imperative in the strict sense is of second person. The imperative in the wide sense includes the hortative and the jussive.  [Christian Lehmann, under \"imperative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#ImperativeMood> .
+
+
+
+###  http://mmoon.org/mmoon/Imperfect
+
+:Imperfect rdf:type owl:Class ;
+           
+           rdfs:label "Imperfect"@en ;
+           
+           rdfs:subClassOf :Past ;
+           
+           :definition "The imperfect is an imperfective past (as opposed to aorist). [Christian Lehmann, under \"imperfect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia.owl#Imperfect> .
+
+
+
 ###  http://mmoon.org/mmoon/ImpersonalPassive
 
 :ImpersonalPassive rdf:type owl:Class ;
@@ -2189,8 +2673,6 @@ This often the case for inherent meanings such as number for nouns or tense for 
                    :definition "An impersonal passive is a passive construction which has no subject.  [Christian Lehmann, under \"impersonal passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
                    
                    :example "Germ. Hier wird getanzt. â€šThere is dancing here.â€™ [Christian Lehmann, under \"impersonal passive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
-				   
-				   owl:equivalentClass gold:ImpersonalPassiveVoice ;
                    
                    :externalDefinition <http://purl.org/olia/olia.owl#ImpersonalPassive> .
 
@@ -2208,6 +2690,22 @@ This often the case for inherent meanings such as number for nouns or tense for 
             
             :definition """The inchoative is the aktionsart of a durative(-terminative) verb derived from a stative base. It designates transition into the state designated by the base.
 Its application in a language is sometimes so general that it is a general device of deriving dynamic from stative predicates, of verbs from non-verbal bases. It can then be called â€žprocessiveâ€œ. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Indicative
+
+:Indicative rdf:type owl:Class ;
+            
+            rdfs:label "Indicative"@en ;
+            
+            owl:equivalentClass gold:IndicativeMood ;
+            
+            rdfs:subClassOf :Mood ;
+            
+            :definition "The indicative is the unmarked mood. It is used when no special modal nuance in the clause or sentence is intended. It is the default mood of independent declarative and often also of interrogative sentences.  [Christian Lehmann, under \"indicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#IndicativeMood> .
 
 
 
@@ -2282,7 +2780,7 @@ English only has lexical contrasts such as stative â€šknowâ€™ vs. ingre
                        
                        rdfs:subClassOf :SemanticDerivation ;
                        
-                       skos:definition "A nominalizer which derives a noun designating the participant of the underlying situation with the semantic role of instrument. [Christian Lehmann, under \"instrument nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+                       :definition "A nominalizer which derives a noun designating the participant of the underlying situation with the semantic role of instrument. [Christian Lehmann, under \"instrument nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2303,6 +2801,14 @@ An instrument noun is an oriented deverbal noun that designates something that f
 
 
 
+###  http://mmoon.org/mmoon/InterpropositionalRelation
+
+:InterpropositionalRelation rdf:type owl:Class ;
+                            
+                            rdfs:subClassOf :MorphosyntacticFeature .
+
+
+
 ###  http://mmoon.org/mmoon/Intransitivizer
 
 :Intransitivizer rdf:type owl:Class ;
@@ -2316,7 +2822,7 @@ An instrument noun is an oriented deverbal noun that designates something that f
                  :externalDefinitionDesc """A verb is intransitive iff it does not govern a direct object. Derivatively, a construction is intransitive iff it is based on such a verb.
 An intransitive verb is not necessarily monovalent, as it can take other kinds of complements different from a direct object.  [Christian Lehmann, under \"intransiviation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
                  
-                 skos:definition "Intransitivation is a valency decrease which renders a verb intransitive. [Christian Lehmann, under \"intransiviation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+                 :definition "Intransitivation is a valency decrease which renders a verb intransitive. [Christian Lehmann, under \"intransiviation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2346,6 +2852,22 @@ Introversion is an intransitivation which suppresses the direct object slot of t
               
               :example """Russ. sobaka kusaet proxozhego â€šthe dog bites a by-passerâ€™ ->
 sobaka ksaetsja â€šthe dog bitesâ€™.  [Christian Lehmann, under \"introversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Irrealis
+
+:Irrealis rdf:type owl:Class ;
+          
+          rdfs:label "Irrealis"@en ;
+          
+          owl:equivalentClass gold:IrrealisMood ;
+          
+          rdfs:subClassOf :Mood ;
+          
+          :definition "Irrealis is a modality which conveys that the proposition is counterfactual.  [Christian Lehmann, under \"irrealis\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+          
+          :externalDefinition <http://purl.org/olia/olia.owl#IrrealisMood> .
 
 
 
@@ -2388,6 +2910,31 @@ The notion will normally be relevant only if there is an iterative derivation. [
 
 
 
+###  http://mmoon.org/mmoon/Jussive
+
+:Jussive rdf:type owl:Class ;
+         
+         rdfs:label "Jussive"@en ;
+         
+         rdfs:subClassOf :Mood ;
+         
+         :example "Latin «abeat!» ‚Let him go!’, i.e. „I want him to go.“ [Christian Lehmann, under \"jussive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]" ;
+         
+         :definition """Definition:
+The jussive is a grammatical category - commonly a mood -encoding directive modality.
+[Christian Lehmann, under \"jussive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+Phenomenology:
+The jussive may, in principle, be directed to any of the three persons. This is the case of the Amharic jussive and of the Latin jussive subjunctive. However, the first person jussive is normally called hortative. Moreover, since all languages have an imperative, there is often no second person jussive as distinct from the imperative."""@en .
+
+
+
+###  http://mmoon.org/mmoon/Lative
+
+:Lative rdf:type owl:Class .
+
+
+
 ###  http://mmoon.org/mmoon/Lexeme
 
 :Lexeme rdf:type owl:Class ;
@@ -2415,7 +2962,7 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
                     
                     rdfs:subClassOf :Meaning ;
                     
-                    skos:definition "ist eine inhÃ¤rente kategorie, also transitive hier heiÃŸt, dass ein verb inhÃ¤rent transitive ist, transitivizer als derivational category heiÃŸt, dass sie ihre inhÃ¤rente valenz durch derivation verÃ¤ndert haben"@en .
+                    :definition "ist eine inhÃ¤rente kategorie, also transitive hier heiÃŸt, dass ein verb inhÃ¤rent transitive ist, transitivizer als derivational category heiÃŸt, dass sie ihre inhÃ¤rente valenz durch derivation verÃ¤ndert haben"@en .
 
 
 
@@ -2477,7 +3024,7 @@ child my beat -MEDIOPASSIVE
 â€˜My child has been beaten.â€™
 (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsMediopassiveVoice.htm)"""@en ;
               
-              skos:definition "a variety of passive in which the verb has stative meaning and the actor is not expressed, cf. the Chichewa Bantu example with the suffix â€ž-kaâ€œ as a mediopassive-marker in ISE 144.[Christian Lehmann, under \"mediopassive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+              :definition "a variety of passive in which the verb has stative meaning and the actor is not expressed, cf. the Chichewa Bantu example with the suffix â€ž-kaâ€œ as a mediopassive-marker in ISE 144.[Christian Lehmann, under \"mediopassive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
               
               :externalDefinition <http://purl.org/olia/olia.owl#MediopassiveVoice> .
 
@@ -2503,11 +3050,13 @@ child my beat -MEDIOPASSIVE
       
       rdfs:label "Mood"@en ;
       
+      owl:equivalentClass gold:MoodProperty ;
+      
       rdfs:subClassOf :LinguisticCategory ;
       
-      skos:definition "Mood is an inflectional category expressing modality. [Christian Lehmann, under \"mood\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+      :definition "Mood is an inflectional category expressing modality. [Christian Lehmann, under \"mood\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
       
-      :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#Moodfeature> .
+      :externalDefinition <http://purl.org/olia/olia.owl#Moodfeature> .
 
 
 
@@ -2592,6 +3141,33 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
 
 
 
+###  http://mmoon.org/mmoon/Narrative
+
+:Narrative rdf:type owl:Class ;
+           
+           rdfs:label "Narrative"@en ;
+           
+           rdfs:subClassOf :Past ;
+           
+           :definition "a TAM-form which can be prototypically used in narrative discourse.  [Christian Lehmann, under \"narrative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Negation
+
+:Negation rdf:type owl:Class ;
+          
+          rdfs:label "Negation"@en ;
+          
+          owl:equivalentClass gold:NegativePolarity ;
+          
+          rdfs:subClassOf :Polarity ;
+          
+          rdfs:comment """A linguistic sign - prototypically a clause - is negative iff negation has applied to it.
+Negation is an operation on a linguistic sign which converts its meaning into the contradictory one. Its prototypical instance is a speech act which declares false the proposition which constitutes the operand. However, negation may apply at all linguistic levels from the sentence down to the word."""@en .
+
+
+
 ###  http://mmoon.org/mmoon/Negative
 
 :Negative rdf:type owl:Class ;
@@ -2616,7 +3192,7 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
         
         rdfs:subClassOf :Gender ;
         
-        skos:definition """Neuter gender is a grammatical gender that includes those nouns having referents which do not have distinctions of sex, and often includes some which do have a natural sex distinction.
+        :definition """Neuter gender is a grammatical gender that includes those nouns having referents which do not have distinctions of sex, and often includes some which do have a natural sex distinction.
 (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsNeuterGender.htm)"""@en ;
         
         :externalDefinitionDesc "The neuter is that gender of a three-gender system which is born by propositions and typically not born by animate nouns. [Christian Lehmann, under \"neuter\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
@@ -2729,6 +3305,42 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
 
 
 
+###  http://mmoon.org/mmoon/NonFuture
+
+:NonFuture rdf:type owl:Class ;
+           
+           rdfs:label "Non-Future"@en ;
+           
+           owl:equivalentClass gold:NonFutureTense ;
+           
+           rdfs:subClassOf :AbsoluteTense ;
+           
+           :definition "an absolute tense that refers to a time that may be anywhere in a range at or before the moment of utterance. [Christian Lehmann, under \"nonfuture\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/NonInflectingWord
+
+:NonInflectingWord rdf:type owl:Class ;
+                   
+                   rdfs:subClassOf :MorphosyntacticFeature .
+
+
+
+###  http://mmoon.org/mmoon/NonPast
+
+:NonPast rdf:type owl:Class ;
+         
+         rdfs:label "Non-Past"@en ;
+         
+         owl:equivalentClass gold:NonPastTense ;
+         
+         rdfs:subClassOf :AbsoluteTense ;
+         
+         skos:definition "an absolute tense that refers to a time that may be anywhere in a range at or after the moment of utterance. [Christian Lehmann, under \"nonpast\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/NounAdjective
 
 :NounAdjective rdf:type owl:Class ;
@@ -2771,6 +3383,36 @@ Depending on the kind of correspondence between a morpheme and its morph realiza
 
 
 
+###  http://mmoon.org/mmoon/Obligative
+
+:Obligative rdf:type owl:Class ;
+            
+            rdfs:label "Obligative"@en ;
+            
+            rdfs:subClassOf :Mood ;
+            
+            :definition "The obligative is a mood or modality of a proposition that (according to its controller) has to be brought about, i.e. that its subject has to do or to undergo. [Christian Lehmann, under \"obligative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :example "“must“ in „You must do as I say“ or „has to“ in „Paul has to be shaved“. [Christian Lehmann, under \"obligative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#ObligativeModality> .
+
+
+
+###  http://mmoon.org/mmoon/Optative
+
+:Optative rdf:type owl:Class ;
+          
+          rdfs:label "Optative"@en ;
+          
+          owl:equivalentClass gold:OptativeMood ;
+          
+          rdfs:subClassOf :Mood ;
+          
+          :externalDefinition <http://purl.org/olia/olia.owl#OptativeMood> .
+
+
+
 ###  http://mmoon.org/mmoon/Passive
 
 :Passive rdf:type owl:Class ;
@@ -2788,6 +3430,54 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
 
 
 
+###  http://mmoon.org/mmoon/Past
+
+:Past rdf:type owl:Class ;
+      
+      rdfs:label "Past"@en ;
+      
+      owl:equivalentClass gold:PastTense ;
+      
+      rdfs:subClassOf :AbsoluteTense ;
+      
+      :definition "Past is an absolute tense that refers to a time preceding the moment of utterance. [Christian Lehmann, under \"past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+      
+      :externalDefinition <http://purl.org/olia/olia.owl#Past> .
+
+
+
+###  http://mmoon.org/mmoon/PastInFuture
+
+:PastInFuture rdf:type owl:Class ;
+              
+              rdfs:label "Past in Future"@en ;
+              
+              rdfs:subClassOf :AbsoluteRelativeTense ;
+              
+              :externalDefinition <http://purl.org/olia/olia.owl#PastInFuture> .
+
+
+
+###  http://mmoon.org/mmoon/PastPerfect
+
+:PastPerfect rdf:type owl:Class ;
+             
+             rdfs:label "Past Perfect"@en ;
+             
+             owl:equivalentClass gold:PastPerfectTense ;
+             
+             rdfs:subClassOf :AbsoluteRelativeTense ;
+             
+             :usageNote "Also used for past-in-past and pluperfect tense."@en ;
+             
+             :example "English „had + verb“ in „By that time, nearly everyone had left“, where the leaving is in the past relative to „that time“, which due to the use of the past perfect, must itself be in the past relative to the moment of utterance. [Christian Lehmann, under \"past perfect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :definition "an absolute-relative tense that refers to a time that is in the past relative to a contextually determined reference point that must itself be in the past relative to the moment of utterance.  [Christian Lehmann, under \"past perfect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#PastPerfectTense> .
+
+
+
 ###  http://mmoon.org/mmoon/PatientNominalizer
 
 :PatientNominalizer rdf:type owl:Class ;
@@ -2796,7 +3486,7 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
                     
                     rdfs:subClassOf :SemanticDerivation ;
                     
-                    skos:definition "An patient nominalizer is a nominalizer which derives patient nouns. [Christian Lehmann, under \"patient nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                    :definition "An patient nominalizer is a nominalizer which derives patient nouns. [Christian Lehmann, under \"patient nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                     
                     :example "Eng. \"invite' (verb) --> \"invitee\" (noun)"@en .
 
@@ -2815,6 +3505,22 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
         :definition "The paucal is a number that forms a subset of â€žfewâ€œ members of the designated class. The exact cardinality may vary contextually, but must be more than one and must not be unlimited. [Christian Lehmann, under \"paucal\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
         
         :externalDefinition <http://purl.org/olia/olia.owl#Paucal> .
+
+
+
+###  http://mmoon.org/mmoon/Perfect
+
+:Perfect rdf:type owl:Class ;
+         
+         rdfs:label "Perfect"@en ;
+         
+         owl:equivalentClass gold:PerfectTense ;
+         
+         rdfs:subClassOf :RelativeTense ;
+         
+         :definition "The perfect is a tense encoding present relevance of the result of a situation that terminated in the past. With telic verbs, it indicates that the result state still holds.  [Christian Lehmann, under \"perfect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+         
+         :externalDefinition <http://purl.org/olia/olia.owl#Perfect> .
 
 
 
@@ -2842,7 +3548,7 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
                    
                    rdfs:subClassOf :SemanticDerivation ;
                    
-                   skos:definition "A nominalizer which derives a noun from an adjective designating a person that is characterized by the adjective's meaning."@en ;
+                   :definition "A nominalizer which derives a noun from an adjective designating a person that is characterized by the adjective's meaning."@en ;
                    
                    :example "Russ. \"umn-yj\" (adjective 'smart/clever') --> \"umn-ik\" (noun 'clever guy')"@en .
 
@@ -2856,7 +3562,7 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
                   
                   rdfs:subClassOf :SemanticDerivation ;
                   
-                  skos:definition "A place nominalizer is a nominalizer that derives place nouns from verbal bases. [Christian Lehmann, under \"place nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+                  :definition "A place nominalizer is a nominalizer that derives place nouns from verbal bases. [Christian Lehmann, under \"place nominalizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2874,6 +3580,127 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
 In some languages the plural is also used for generics and objects that always occur in groups. [Christian Lehmann, under \"plural\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
         
         :externalDefinition <http://purl.org/olia/olia.owl#Plural> .
+
+
+
+###  http://mmoon.org/mmoon/Polarity
+
+:Polarity rdf:type owl:Class ;
+          
+          rdfs:subClassOf :LinguisticCategory .
+
+
+
+###  http://mmoon.org/mmoon/Positive
+
+:Positive rdf:type owl:Class ;
+          
+          rdfs:subClassOf :DegreeOfComparison .
+
+
+
+###  http://mmoon.org/mmoon/Possessive
+
+:Possessive rdf:type owl:Class ;
+            
+            rdfs:label "Possessive"@en ;
+            
+            rdfs:subClassOf :CrossReferencePosition ;
+            
+            rdfs:comment "a relation of possession between two entities. (CL, lido)"@en .
+
+
+
+###  http://mmoon.org/mmoon/PossessivePronoun
+
+:PossessivePronoun rdf:type owl:Class ;
+                   
+                   rdfs:label "Possessive pronoun"@en ;
+                   
+                   rdfs:subClassOf :Pronoun ;
+                   
+                   rdfs:isDefinedBy "http://purl.org/olia/olia.owl#PossessivePronoun" .
+
+
+
+###  http://mmoon.org/mmoon/PostHodiernalFuture
+
+:PostHodiernalFuture rdf:type owl:Class ;
+                     
+                     rdfs:label "Post-Hodiernal Future"@en ;
+                     
+                     owl:equivalentClass gold:PostHodiernalFutureTense ;
+                     
+                     rdfs:subClassOf :Future ;
+                     
+                     :definition "a future tense that refers to a time after the span culturally defined as ‚today’ in relation to the moment of utterance. [Christian Lehmann, under \"post-hodiernal future\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                     
+                     :externalDefinition <http://purl.org/olia/olia.owl#PostHodiernalFuture> .
+
+
+
+###  http://mmoon.org/mmoon/Postelative
+
+:Postelative rdf:type owl:Class ;
+             
+             rdfs:label "Postelative"@en ;
+             
+             rdfs:subClassOf :Elative ;
+             
+             rdfs:comment "The postelative is a case that signals spatial orientation, esp. motion, away from the back side or from the domain behind of the referent of its carrier."@en .
+
+
+
+###  http://mmoon.org/mmoon/Posterior
+
+:Posterior rdf:type owl:Class ;
+           
+           rdfs:label "Posterior"@en ;
+           
+           rdfs:subClassOf :RelativeTense ;
+           
+           :definition "Posteriority is a temporal orientation of a proposition P referring to a point of reference (proposition) R iff the period of time of P follows the point of time of R.  [Christian Lehmann, under \"posteriority\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Postessive
+
+:Postessive rdf:type owl:Class ;
+            
+            rdfs:label "Postessive"@en ;
+            
+            rdfs:subClassOf :Essive ;
+            
+            rdfs:comment "The postessive is a case that expresses location behind the referent of its carrier. (CL, lido)"@en .
+
+
+
+###  http://mmoon.org/mmoon/Potential
+
+:Potential rdf:type owl:Class ;
+           
+           rdfs:label "Potential"@en ;
+           
+           rdfs:subClassOf :Mood ;
+           
+           :definition """The potential is a mood or modality that expresses that the situation designated may be realized.
+
+Phenomenology:
+In Ancient Greek, potential modality is an intepretation of the optative mood. [Christian Lehmann, under \"obligative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Precative
+
+:Precative rdf:type owl:Class ;
+           
+           rdfs:label "Precative"@en ;
+           
+           rdfs:subClassOf :Mood ;
+           
+           :example "Sanskrit «bhav-ati» ‚becomes’ - «bhu-ya-t» ‚may become’.  [Christian Lehmann, under \"precative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           
+           :definition "The precative is a mood encoding requests. [Christian Lehmann, under \"precative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -2903,6 +3730,36 @@ In some languages the plural is also used for generics and objects that always o
 
 
 
+###  http://mmoon.org/mmoon/PrehodiernalPast
+
+:PrehodiernalPast rdf:type owl:Class ;
+                  
+                  rdfs:label "Prehodiernal Past"@en ;
+                  
+                  owl:equivalentClass gold:PreHodiernalPastTense ;
+                  
+                  rdfs:subClassOf :Past ;
+                  
+                  :definition "a past tense that refers to a time in some span before that of a contrasting hodiernal past. [Christian Lehmann, under \"prehodiernal past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Present
+
+:Present rdf:type owl:Class ;
+         
+         rdfs:label "Present"@en ;
+         
+         owl:equivalentClass gold:PresentTense ;
+         
+         rdfs:subClassOf :AbsoluteTense ;
+         
+         :definition "an absolute tense which refers to the moment of utterance.  [Christian Lehmann, under \"present\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+         
+         :externalDefinition <http://purl.org/olia/olia.owl#Present> .
+
+
+
 ###  http://mmoon.org/mmoon/PrivativeAdjectivizer
 
 :PrivativeAdjectivizer rdf:type owl:Class ;
@@ -2911,7 +3768,7 @@ In some languages the plural is also used for generics and objects that always o
                        
                        rdfs:subClassOf :SemanticDerivation ;
                        
-                       skos:definition "An adjective which is derived from a noun meaning 'lacking N'."@en ;
+                       :definition "An adjective which is derived from a noun meaning 'lacking N'."@en ;
                        
                        :example "Russ.: \"vod-a\" (noun 'water') --> \"bez-vod-nyj\" (adjective 'waterless')"@en .
 
@@ -2925,9 +3782,34 @@ In some languages the plural is also used for generics and objects that always o
             
             rdfs:subClassOf :SemanticDerivation ;
             
-            skos:definition "The processive is a derivation which converts a stative base (an adjective or a noun) meaning X into a verb meaning â€šbe/become/act as Xâ€™. [Christian Lehmann, under \"processive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            :definition "The processive is a derivation which converts a stative base (an adjective or a noun) meaning X into a verb meaning â€šbe/become/act as Xâ€™. [Christian Lehmann, under \"processive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             :externalDefinition gold:Versive .
+
+
+
+###  http://mmoon.org/mmoon/Prohibitive
+
+:Prohibitive rdf:type owl:Class ;
+             
+             rdfs:label "Prohibitive"@en ;
+             
+             owl:equivalentClass gold:ProhibitiveMood ;
+             
+             rdfs:subClassOf :Mood ;
+             
+             :definition """The prohibitive is a mood that signals prohibition. It is the negative counterpart to the imperative.
+
+Phenomenology:
+Many languages have a prohibitive allomorph of the negator at the clause level. [Christian Lehmann, under \"prohibitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Pronoun
+
+:Pronoun rdf:type owl:Class ;
+         
+         rdfs:subClassOf :WordclassAffiliation .
 
 
 
@@ -2939,7 +3821,7 @@ In some languages the plural is also used for generics and objects that always o
              
              rdfs:subClassOf :SemanticDerivation ;
              
-             skos:definition "A derivational meaning resulting in the meaning 'having N'."@en ;
+             :definition "A derivational meaning resulting in the meaning 'having N'."@en ;
              
              :example "Ponapean: \"pihl\" (noun 'water') --> \"pil-en\" (adjective 'waterly')"@en .
 
@@ -2972,6 +3854,36 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
 
 
 
+###  http://mmoon.org/mmoon/Realis
+
+:Realis rdf:type owl:Class ;
+        
+        rdfs:label "Realis"@en ;
+        
+        owl:equivalentClass gold:RealisMood ;
+        
+        rdfs:subClassOf :Mood ;
+        
+        :definition "Realis is a - normally unmarked - modality that connotes the factuality of the proposition.  [Christian Lehmann, under \"realis\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/RecentPast
+
+:RecentPast rdf:type owl:Class ;
+            
+            rdfs:label "Recent Past"@en ;
+            
+            owl:equivalentClass gold:RecentPastTense ;
+            
+            rdfs:subClassOf :Past ;
+            
+            :definition "a past that refers to a time in a span including the period culturally defined as ‚yesterday’ and a period ranging backwards, on a cultural and situational basis, to a time a week previous or a few months previous. [Christian Lehmann, under \"recent past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#RecentPast> .
+
+
+
 ###  http://mmoon.org/mmoon/ReflexiveVoice
 
 :ReflexiveVoice rdf:type owl:Class ;
@@ -2986,7 +3898,9 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
 
 ###  http://mmoon.org/mmoon/Reflexivity
 
-:Reflexivity rdf:type owl:Class .
+:Reflexivity rdf:type owl:Class ;
+             
+             rdfs:subClassOf :LinguisticCategory .
 
 
 
@@ -3022,9 +3936,75 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
             
             rdfs:subClassOf :SemanticDerivation ;
             
-            skos:definition "A derivational meaning resulting in the meaning 'related to N'."@en ;
+            :definition "A derivational meaning resulting in the meaning 'related to N'."@en ;
             
             :example "Russ.: \"korol\" (noun 'king') --> \"korol-evskij\" (adjective 'royal')"@en .
+
+
+
+###  http://mmoon.org/mmoon/RelativePast
+
+:RelativePast rdf:type owl:Class ;
+              
+              rdfs:label "Relative Past"@en ;
+              
+              owl:equivalentClass gold:RelativePastTense ;
+              
+              rdfs:subClassOf :RelativeTense ;
+              
+              :example "English forms „having + verb“, as „Having spoken, he sat down“ and „Having spoken, he will sit down“, in which the speaking occurs before a reference point determined by the context [here, the time of sitting], which reference point may itself have differing relations to the moment of utterance. [Christian Lehmann, under \"relative past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :definition "a relative tense that refers to a time as located before that of a contextually determined reference point. [Christian Lehmann, under \"relative past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :externalDefinition <http://purl.org/olia/olia.owl#RelativePast> .
+
+
+
+###  http://mmoon.org/mmoon/RelativePresent
+
+:RelativePresent rdf:type owl:Class ;
+                 
+                 rdfs:label "Relative Present"@en ;
+                 
+                 owl:equivalentClass gold:RelativePresentTense ;
+                 
+                 rdfs:subClassOf :RelativeTense ;
+                 
+                 :example "English „-ing“ forms in certain subordinate clauses; as „Walking in the woods, he saw a squirrel“ or „Walking in the woods, he will find buried treasure“, where „walking“ in both cases is understood as simultaneous with the time of the action of the main verb, which time may bear different temporal relations [before, during, after] to the moment of utterance.  [Christian Lehmann, under \"relative present\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 
+                 :definition "a relative tense that refers to a time as simultaneous with some contextually determined temporal reference point. [Christian Lehmann, under \"relative present\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 
+                 :externalDefinition <http://purl.org/olia/olia.owl#RelativePresent> .
+
+
+
+###  http://mmoon.org/mmoon/RelativeTense
+
+:RelativeTense rdf:type owl:Class ;
+               
+               rdfs:label "Relative Tense"@en ;
+               
+               rdfs:subClassOf :Tense ;
+               
+               :definition "A relative tense is a tense that refers to a time in relation to a contextually determined reference point that may itself bear any temporal relation to the moment of utterance.  [Christian Lehmann, under \"relative tense\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :externalDefinition <http://purl.org/olia/olia.owl#RelativeTense> .
+
+
+
+###  http://mmoon.org/mmoon/RemotePast
+
+:RemotePast rdf:type owl:Class ;
+            
+            rdfs:label "Remote Past"@en ;
+            
+            owl:equivalentClass gold:RemotePastTense ;
+            
+            rdfs:subClassOf :Past ;
+            
+            :definition "a past that refers to a time in a span considered as more than a few days ago. [Christian Lehmann, under \"remote past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#RemotePast> .
 
 
 
@@ -3040,7 +4020,7 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
             
             :example "English, Spanish and Portuguese use the prefix re-, cf. Engl.: replay, rewrite; Spanish/Portuguese: readaptar â€šreadaptâ€™, reutilizar â€šuse againâ€™.  [Christian Lehmann, under \"repetitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
-            skos:definition "The repetitive derivation indicates that the process designated by the base occurs once again.  [Christian Lehmann, under \"repetitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+            :definition "The repetitive derivation indicates that the process designated by the base occurs once again.  [Christian Lehmann, under \"repetitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -3086,7 +4066,7 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
            
            :example "English uses the prefixes un- and dis- for the reversive derivation, as in uncover, unravel; disarm, disengage. [Christian Lehmann, under \"reversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
            
-           skos:definition "Reversion is the property of being reversive. The reversive derivation indicates that the process designated by the base is reversed or its effect undone.  [Christian Lehmann, under \"reversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+           :definition "Reversion is the property of being reversive. The reversive derivation indicates that the process designated by the base is reversed or its effect undone.  [Christian Lehmann, under \"reversion\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -3114,9 +4094,7 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
               
               rdfs:subClassOf :Person ;
               
-              skos:definition "The second person is the value of the category person which prototypically represents the addressee of the speech act. In nonsingular forms it can include addtional addressees and/or other persons. It normally requires the inclusion of at least one addressee and the exclusion of the speaker. [Christian Lehmann, under \"second person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-			  
-			  owl:equivalentClass gold:SecondPerson ;
+              :definition "The second person is the value of the category person which prototypically represents the addressee of the speech act. In nonsingular forms it can include addtional addressees and/or other persons. It normally requires the inclusion of at least one addressee and the exclusion of the speaker. [Christian Lehmann, under \"second person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
               
               :externalDefinition <http://purl.org/olia/olia.owl#Second> .
 
@@ -3155,6 +4133,14 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
        rdfs:label "Sense"@en ;
        
        rdfs:subClassOf :Meaning .
+
+
+
+###  http://mmoon.org/mmoon/SentenceType
+
+:SentenceType rdf:type owl:Class ;
+              
+              rdfs:subClassOf :MorphosyntacticFeature .
 
 
 
@@ -3242,6 +4228,22 @@ In a compound word: The stem is the morphological representative of one of the t
 
 
 
+###  http://mmoon.org/mmoon/Subjunctive
+
+:Subjunctive rdf:type owl:Class ;
+             
+             rdfs:label "Subjunctive"@en ;
+             
+             owl:equivalentClass gold:SubjunctiveMood ;
+             
+             rdfs:subClassOf :Mood ;
+             
+             :definition "The subjunctive is the mood that is minimally marked as opposed to the indicative and that marks a clause as not directly representing an assertion of the speaker’s.  [Christian Lehmann, under \"subjunctive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#SubjunctiveMood> .
+
+
+
 ###  http://mmoon.org/mmoon/Suffix
 
 :Suffix rdf:type owl:Class ;
@@ -3276,9 +4278,14 @@ In a compound word: The stem is the morphological representative of one of the t
        
        rdfs:label "Tense"@en ;
        
+       owl:equivalentClass gold:TenseProperty ;
+       
        rdfs:subClassOf :LinguisticCategory ;
        
-       :externalDefinition <http://acoli.cs.uni-frankfurt.de/resources/olia/olia-top.owl#TenseFeature> .
+       :definition """Tense is a grammatical category that manifests the time at which a situation holds. This is done by relating the time meant to some reference point, which is by default the time of the speech act. Therefore, tense is a deictic category.
+The most important temporal relations between the two time-points are simultaneity, anteriority and posteriority. They found the tenses present, past and future.  [Christian Lehmann, under \"tense\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+       
+       :externalDefinition <http://purl.org/olia/olia.owl#TenseFeature> .
 
 
 
@@ -3293,10 +4300,24 @@ In a compound word: The stem is the morphological representative of one of the t
              rdfs:subClassOf :Person ;
              
              :definition "The third person is the value of the category person which prototypically represents a non-speech act participant and functions anaphorically. [Christian Lehmann, under \"third person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-			 
-			 owl:equivalentClass gold:ThirdPerson ;
              
              :externalDefinition <http://purl.org/olia/olia.owl#Third> .
+
+
+
+###  http://mmoon.org/mmoon/Timitive
+
+:Timitive rdf:type owl:Class ;
+          
+          rdfs:label "Timitive"@en ;
+          
+          owl:equivalentClass gold:TimitiveMood ;
+          
+          rdfs:subClassOf :Mood ;
+          
+          :example "the Turkish suffix „-esi“.  [Christian Lehmann, under \"timitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]" ;
+          
+          :definition "The timitive is a mood encoding the speaker’s fear that the unfavorable proposition expressed by his utterance will come about.  [Christian Lehmann, under \"timitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -3322,7 +4343,7 @@ In a compound word: The stem is the morphological representative of one of the t
                
                rdfs:subClassOf :ValencyChange ;
                
-               skos:definition "A transitiviser is an affix which changes the transitivity of an intransitive verb into a transitive one. [Christian Lehmann, under \"transitivizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+               :definition "A transitiviser is an affix which changes the transitivity of an intransitive verb into a transitive one. [Christian Lehmann, under \"transitivizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -3334,7 +4355,15 @@ In a compound word: The stem is the morphological representative of one of the t
                
                rdfs:subClassOf :VerbExpansion ;
                
-               skos:definition "Valency-changing derivation is any derivation which changes the valency of a stem. [Christian Lehmann, under \"valency-changing derivation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+               :definition "Valency-changing derivation is any derivation which changes the valency of a stem. [Christian Lehmann, under \"valency-changing derivation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Verb
+
+:Verb rdf:type owl:Class ;
+      
+      rdfs:subClassOf :WordclassAffiliation .
 
 
 
@@ -3470,6 +4499,16 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
 
 
 
+###  http://mmoon.org/mmoon/WordclassAffiliation
+
+:WordclassAffiliation rdf:type owl:Class ;
+                      
+                      rdfs:label "Wordcalss affiliation"@en ;
+                      
+                      rdfs:subClassOf :MorphosyntacticFeature .
+
+
+
 ###  http://mmoon.org/mmoon/WordclassChangingDerivation
 
 :WordclassChangingDerivation rdf:type owl:Class ;
@@ -3478,7 +4517,7 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
                              
                              rdfs:subClassOf :DerivationalMeaning ;
                              
-                             skos:definition "Is a type of derivation which involves a) a change of the word-class without additional semantic content or b) a change of the of the word-class and additional semantic content by adding a derivational morpheme."@en .
+                             :definition "Is a type of derivation which involves a) a change of the word-class without additional semantic content or b) a change of the of the word-class and additional semantic content by adding a derivational morpheme."@en .
 
 
 
@@ -3490,12 +4529,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :consistsOfMorph ;
-                            owl:someValuesFrom :Stem
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :inflectionalRelation ;
                             owl:someValuesFrom :Inflection
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :consistsOfMorph ;
+                            owl:someValuesFrom :Stem
                           ] ;
           
           :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -3576,6 +4615,12 @@ gold:Compound rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/ContinuousAspect
+
+gold:ContinuousAspect rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/DirectVoice
 
 gold:DirectVoice rdf:type owl:Class .
@@ -3585,6 +4630,12 @@ gold:DirectVoice rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/DualNumber
 
 gold:DualNumber rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/DubitiveMood
+
+gold:DubitiveMood rdf:type owl:Class .
 
 
 
@@ -3600,15 +4651,83 @@ gold:FirstPerson rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/FutureInFutureTense
+
+gold:FutureInFutureTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/FutureInPastTense
+
+gold:FutureInPastTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/FuturePerfectTense
+
+gold:FuturePerfectTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/FutureTense
+
+gold:FutureTense rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/GenderProperty
 
 gold:GenderProperty rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/HabitualAspect
+
+gold:HabitualAspect rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/HesternalPastTense
+
+gold:HesternalPastTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/HodiernalFutureTense
+
+gold:HodiernalFutureTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/HodiernalPastTense
+
+gold:HodiernalPastTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/ImmediateFutureTense
+
+gold:ImmediateFutureTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/ImmediatePastTense
+
+gold:ImmediatePastTense rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/ImpersonalPassiveVoice
 
 gold:ImpersonalPassiveVoice rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/IndicativeMood
+
+gold:IndicativeMood rdf:type owl:Class .
+
+
 
 ###  http://purl.org/linguistics/gold/Infix
 
@@ -3619,6 +4738,12 @@ gold:Infix rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Intransitivizer
 
 gold:Intransitivizer rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/IrrealisMood
+
+gold:IrrealisMood rdf:type owl:Class .
 
 
 
@@ -3634,6 +4759,18 @@ gold:MasculineGender rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/MoodProperty
+
+gold:MoodProperty rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/NegativePolarity
+
+gold:NegativePolarity rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/NeuterGender
 
 gold:NeuterGender rdf:type owl:Class .
@@ -3646,9 +4783,27 @@ gold:Nominalizer rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/NonFutureTense
+
+gold:NonFutureTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/NonPastTense
+
+gold:NonPastTense rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/NumberProperty
 
 gold:NumberProperty rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/OptativeMood
+
+gold:OptativeMood rdf:type owl:Class .
 
 
 
@@ -3657,9 +4812,28 @@ gold:NumberProperty rdf:type owl:Class .
 gold:PassiveVoice rdf:type owl:Class .
 
 
+
+###  http://purl.org/linguistics/gold/PastPerfectTense
+
+gold:PastPerfectTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/PastTense
+
+gold:PastTense rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/PaucalNumber
 
 gold:PaucalNumber rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/PerfectTense
+
+gold:PerfectTense rdf:type owl:Class .
 
 
 
@@ -3675,9 +4849,63 @@ gold:PluralNumber rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/PostHodiernalFutureTense
+
+gold:PostHodiernalFutureTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/PreHodiernalPastTense
+
+gold:PreHodiernalPastTense rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Prefix
 
 gold:Prefix rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/PresentTense
+
+gold:PresentTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/ProhibitiveMood
+
+gold:ProhibitiveMood rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/RealisMood
+
+gold:RealisMood rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/RecentPastTense
+
+gold:RecentPastTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/RelativePastTense
+
+gold:RelativePastTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/RelativePresentTense
+
+gold:RelativePresentTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/RemotePastTense
+
+gold:RemotePastTense rdf:type owl:Class .
 
 
 
@@ -3698,6 +4926,7 @@ gold:Root rdf:type owl:Class .
 gold:SecondPerson rdf:type owl:Class .
 
 
+
 ###  http://purl.org/linguistics/gold/SingularNumber
 
 gold:SingularNumber rdf:type owl:Class .
@@ -3710,15 +4939,33 @@ gold:Stem rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/SubjunctiveMood
+
+gold:SubjunctiveMood rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Suffix
 
 gold:Suffix rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/TenseProperty
+
+gold:TenseProperty rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/ThirdPerson
 
 gold:ThirdPerson rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/TimitiveMood
+
+gold:TimitiveMood rdf:type owl:Class .
 
 
 
@@ -5642,6 +6889,17 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/mmoon/NPST
+
+:NPST rdf:type :MorphemicGloss ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "NPST"^^xsd:string ;
+      
+      rdfs:comment "Non-Past gloss."@en .
+
+
+
 ###  http://mmoon.org/mmoon/NREFL
 
 :NREFL rdf:type :MorphemicGloss ,
@@ -5655,8 +6913,7 @@ rdfs:Resource rdf:type owl:Class .
 
 ###  http://mmoon.org/mmoon/NRFUT
 
-:NRFUT rdf:type :MorphemicGloss ,
-                owl:NamedIndividual ;
+:NRFUT rdf:type owl:NamedIndividual ;
        
        rdfs:label "NRFUT"^^xsd:string ;
        
@@ -5853,8 +7110,7 @@ rdfs:Resource rdf:type owl:Class .
 
 ###  http://mmoon.org/mmoon/PLUP
 
-:PLUP rdf:type :MorphemicGloss ,
-               owl:NamedIndividual ;
+:PLUP rdf:type owl:NamedIndividual ;
       
       rdfs:label "PLUP"^^xsd:string ;
       
@@ -6024,6 +7280,17 @@ rdfs:Resource rdf:type owl:Class .
      rdfs:label "PRF"^^xsd:string ;
      
      rdfs:comment "Perfect gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/PRHODPST
+
+:PRHODPST rdf:type :MorphemicGloss ,
+                   owl:NamedIndividual ;
+          
+          rdfs:label "PRHODPST"^^xsd:string ;
+          
+          rdfs:comment "Prehodiernal Past gloss."@en .
 
 
 
@@ -6689,6 +7956,17 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/mmoon/TIM
+
+:TIM rdf:type :MorphemicGloss ,
+              owl:NamedIndividual ;
+     
+     rdfs:label "TIM"^^xsd:string ;
+     
+     rdfs:comment "Timitive gloss."@en .
+
+
+
 ###  http://mmoon.org/mmoon/TOP
 
 :TOP rdf:type :MorphemicGloss ,
@@ -6855,5 +8133,5 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
-###  Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
 
