@@ -242,19 +242,22 @@ def main(args=sys.argv[1:]):
                 graph.add((lexeme, mmoon.hasRepresentation, unvocrep))
 
         if row['deutsch']:
-            sense = addSense(graph, row['deutsch'], "de")
-            if lexeme:
-                graph.add((lexeme, mmoon.hasSense, sense))
+            for senseDefinition in row['deutsch'].split(","):
+                sense = addSense(graph, senseDefinition, "de")
+                if lexeme:
+                    graph.add((lexeme, mmoon.hasSense, sense))
 
         if row['englisch']:
-            sense = addSense(graph, row['englisch'], "en")
-            if lexeme:
-                graph.add((lexeme, mmoon.hasSense, sense))
+            for senseDefinition in row['englisch'].split(","):
+                sense = addSense(graph, senseDefinition, "en")
+                if lexeme:
+                    graph.add((lexeme, mmoon.hasSense, sense))
 
         if row['russisch']:
-            sense = addSense(graph, row['russisch'], "ru")
-            if lexeme:
-                graph.add((lexeme, mmoon.hasSense, sense))
+            for senseDefinition in row['russisch'].split(","):
+                sense = addSense(graph, senseDefinition, "ru")
+                if lexeme:
+                    graph.add((lexeme, mmoon.hasSense, sense))
 
         if row['root'] or row['secundaryRoot']:
             # secondary-root -> secondary-root
