@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Repo Redirect" name="http://www.w3.org/2000/01/rdf-schema#" uri="../external-imports/rdfs.rdf"/>
+    <uri id="Repo Redirect" name="http://purl.org/linguistics/gold/" uri="../external-imports/gold-2010.rdf"/>
+    <uri id="Repo Redirect" name="http://www.w3.org/2004/02/skos/core#" uri="../external-imports/skos.rdf"/>
+    <uri id="Repo Redirect" name="http://lexvo.org/ontology#" uri="../external-imports/lexvo.rdf"/>
+</catalog>
