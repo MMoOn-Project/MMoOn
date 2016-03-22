@@ -736,6 +736,22 @@ lexvo:Language rdf:type owl:Class ;
 
 
 
+###  http://mmoon.org/mmoon/AbsoluteAdjective
+
+:AbsoluteAdjective rdf:type owl:Class ;
+                   
+                   rdfs:label "Absolute Adjective"@en ;
+                   
+                   rdfs:subClassOf :Adjective ;
+                   
+                   :definition "Absolute adjective are non-gradable and express properties or states which can not be compared in a more or less degree."@en ;
+                   
+                   :example "Engl. adjectives: \"dead\", \"unique\"."@en ;
+                   
+                   :externalDefinition <http://www.canoo.net/services/OnlineGrammar/Wort/Adjektiv/Komparation/Steigerungslos.html?MenuId=Word325&lang=en#Anchor-49575> .
+
+
+
 ###  http://mmoon.org/mmoon/AbsoluteRelativeTense
 
 :AbsoluteRelativeTense rdf:type owl:Class ;
@@ -823,6 +839,25 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
 
 
 
+###  http://mmoon.org/mmoon/Adjective
+
+:Adjective rdf:type owl:Class ;
+           
+           rdfs:label "Adjective"@en ;
+           
+           owl:equivalentClass gold:Adjectival ;
+           
+           rdfs:subClassOf :WordclassAffiliation ;
+           
+           :externalDefinitionDesc """An Adjective is a noun-modifying expression that specifies the properties or attributes of the nominal referent.
+		(http://www.sil.org/linguistics/GlossaryOfLinguisticTerms/WhatIsAnAdjective.htm  18.9.06)"""@en ;
+           
+           :definition "An adjective is a word that is a member of a part of speech whose prototypical members designate properties and, less prototypically, states. [Christian Lehmann, under \"adjective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia.owl#Adjective> .
+
+
+
 ###  http://mmoon.org/mmoon/AdjectiveCompound
 
 :AdjectiveCompound rdf:type owl:Class ;
@@ -898,6 +933,40 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
             rdfs:subClassOf :Mood ;
             
             :externalDefinition <http://purl.org/olia/olia.owl#AdmonitiveModality> .
+
+
+
+###  http://mmoon.org/mmoon/Adposition
+
+:Adposition rdf:type owl:Class ;
+            
+            rdfs:label "Adposition"@en ;
+            
+            owl:equivalentClass gold:Adposition ;
+            
+            rdfs:subClassOf :WordclassAffiliation ;
+            
+            :definition "An adposition is a more or less grammaticalized relator word that takes a noun phrase as a complement and forms with it an adposition phrase. Its meaning is the grammatical or semantic relation between the dependent noun phrase and whatever the adposition phrase depends on.  [Christian Lehmann, under \"adposition\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#Adposition> .
+
+
+
+###  http://mmoon.org/mmoon/Adverb
+
+:Adverb rdf:type owl:Class ;
+        
+        rdfs:label "Adverb"@en ;
+        
+        owl:equivalentClass gold:Adverbial ;
+        
+        rdfs:subClassOf :WordclassAffiliation ;
+        
+        :definition """An adverb is a word that is a member of a part of speech whose prototypical members (by themselves) modify clauses.
+In many descriptions, any word with lexical content (i.e., other than grammatical particles) that isn’t clearly a noun, a verb or an adjective is put into the class of adverb. Semantically, forms that have been called adverbs cover an extremely wide range of concepts, hence they cannot be identified in terms of time-stability or any other well-defined semantic parameter.
+The unit modified by an adverb is typically a clause, but may be any other category (sentence, verb phrase, verb, nominal, adjective, adverb). [Christian Lehmann, under \"adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia.owl#Adverb> .
 
 
 
@@ -1123,10 +1192,39 @@ The applicative 2 is a (normally derivational) verbal category which marks the v
                  
                  :definition "A verb which is derived from another intransitive verb stem resulting in a transitive verb."@en ;
                  
-                 :externalDefinitionDesc """Christian Lehmann, under \"applicative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido :
-An applicative verb is a derived transitive verb whose direct object has been promoted to this function from a more peripheral syntactic function that it has with the base verb.
+                 :externalDefinitionDesc """An applicative verb is a derived transitive verb whose direct object has been promoted to this function from a more peripheral syntactic function that it has with the base verb.
 
-The base may be transitive, in which case its direct object is demoted upon the derivation of the applicative verb."""@en .
+The base may be transitive, in which case its direct object is demoted upon the derivation of the applicative verb.
+ [Christian Lehmann, under \"applicative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Apprehensional
+
+:Apprehensional rdf:type owl:Class ;
+                
+                rdfs:label "'lest'"@en ,
+                           "Apprehensional"@en ;
+                
+                rdfs:subClassOf :InterpropositionalRelation .
+
+
+
+###  http://mmoon.org/mmoon/Article
+
+:Article rdf:type owl:Class ;
+         
+         rdfs:label "Article"@en ;
+         
+         owl:equivalentClass gold:Article ;
+         
+         rdfs:subClassOf :Determiner ;
+         
+         :definition "An article is a highly grammaticalized determiner that expresses one or a few of the basic determinations (definite/indefinite, generic/specific, given/new). [Christian Lehmann, under \"article\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+         
+         :example "The definite article „the“ and the indefinite article „a/an“ in English. [Christian Lehmann, under \"article\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+         
+         :externalDefinition <http://purl.org/olia/olia.owl#Article> .
 
 
 
@@ -1239,6 +1337,40 @@ A noun is augmentative 1 iff it is derived by augmentation."""@en ;
 
 
 
+###  http://mmoon.org/mmoon/AuxiliaryVerb
+
+:AuxiliaryVerb rdf:type owl:Class ;
+               
+               rdfs:label "Auxiliary Verb"@en ;
+               
+               owl:equivalentClass gold:Auxiliary ;
+               
+               rdfs:subClassOf :Verb ;
+               
+               :definition "Although the auxiliary, in many languages, takes a subject and a non-finite verb as dependents, it has no selection restrictions for the subject. In other words, it is transparent for the selection restrictions of the non-finite full verb that it auxiliates. [Christian Lehmann, under \"auxiliary verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :externalDefinition <http://purl.org/olia/olia.owl#AuxiliaryVerb> .
+
+
+
+###  http://mmoon.org/mmoon/CardinalNumber
+
+:CardinalNumber rdf:type owl:Class ;
+                
+                rdfs:label "Cardinal Number"@en ;
+                
+                owl:equivalentClass gold:CardinalNumeral ;
+                
+                rdfs:subClassOf :Numeral ;
+                
+                :definition "A cardinal numeral is a numeral which designates the cardinality of a set; i.e. it is used for counting and for expressing how many objects are referred to. [Christian Lehmann, under \"cardinal numeral\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :example "Engl. one, two, three ... [Christian Lehmann, under \"cardinal numeral\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :externalDefinition <http://purl.org/olia/olia.owl#CardinalNumber> .
+
+
+
 ###  http://mmoon.org/mmoon/Case
 
 :Case rdf:type owl:Class ;
@@ -1316,6 +1448,34 @@ Since the causer occupies the subject slot of the causative verb and the base ve
 
 
 
+###  http://mmoon.org/mmoon/Circumposition
+
+:Circumposition rdf:type owl:Class ;
+                
+                rdfs:label "Cicumposition"@en ;
+                
+                rdfs:subClassOf :Adposition ;
+                
+                :example "German: \"um des Friedens willen\"  'for the sake of peace'  [Christian Lehmann, under \"circumposition\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@de ;
+                
+                :definition "A circumposition is a discontinuous adposition whose first part precedes and whose second part follows the complement. [Christian Lehmann, under \"circumposition\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :externalDefinition <http://purl.org/olia/olia.owl#Circumposition> .
+
+
+
+###  http://mmoon.org/mmoon/Circumstantial
+
+:Circumstantial rdf:type owl:Class ;
+                
+                rdfs:label "Circumstantial"@en ;
+                
+                rdfs:subClassOf :InterpropositionalRelation ;
+                
+                rdfs:comment "'in, by'"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Classifier
 
 :Classifier rdf:type owl:Class ;
@@ -1323,6 +1483,10 @@ Since the causer occupies the subject slot of the causative verb and the base ve
             rdfs:label "Classifier"@en ;
             
             rdfs:subClassOf :LinguisticCategory ;
+            
+            rdfs:comment "a word or morpheme that indicates that a linguistic unit (typically a noun) belongs to a certain class of units. (CL, lido)"@en ;
+            
+            rdfs:isDefinedBy "http://purl.org/olia/olia.owl#Classifier" ;
             
             :definition "a word or morpheme that indicates that a linguistic unit (typically a noun) belongs to a certain class of units. (CL, lido)"@en ;
             
@@ -1373,6 +1537,38 @@ Since the causer occupies the subject slot of the causative verb and the base ve
 
 
 
+###  http://mmoon.org/mmoon/CommonNoun
+
+:CommonNoun rdf:type owl:Class ;
+            
+            rdfs:label "Common Noun"@en ;
+            
+            owl:equivalentClass gold:CommonNoun ;
+            
+            rdfs:subClassOf :Noun ;
+            
+            :definition "A common noun (as opposed to a proper noun) is a noun which designates a concept (as opposed to an individual). [Christian Lehmann, under \"common noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#CommonNoun> .
+
+
+
+###  http://mmoon.org/mmoon/Complementizer
+
+:Complementizer rdf:type owl:Class ;
+                
+                rdfs:label "Complementizer"@en ;
+                
+                owl:equivalentClass gold:Complementizer ;
+                
+                rdfs:subClassOf :Conjunction ;
+                
+                :definition "A complementizer is a subordinator that marks a complement clause.  [Christian Lehmann, under \"complementizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :example "“that“ in „I know that he is here“, „I refuted the supposition that he is here“, or „I am doubtful that he is here“. [Christian Lehmann, under \"complementizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/ComplexMorpheme
 
 :ComplexMorpheme rdf:type owl:Class ;
@@ -1400,6 +1596,10 @@ Since the causer occupies the subject slot of the causative verb and the base ve
               
               rdfs:subClassOf :Lexeme ,
                               [ rdf:type owl:Restriction ;
+                                owl:onProperty :compoundingRelation ;
+                                owl:someValuesFrom :Compounding
+                              ] ,
+                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :isComposedOf ;
                                 owl:onClass [ rdf:type owl:Class ;
                                               owl:unionOf ( :GrammaticalWord
@@ -1407,10 +1607,6 @@ Since the causer occupies the subject slot of the causative verb and the base ve
                                                           )
                                             ] ;
                                 owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
-                              ] ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :compoundingRelation ;
-                                owl:someValuesFrom :Compounding
                               ] ;
               
               :definition """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1492,13 +1688,14 @@ The conative is a verbal aspect or aktionsart which means that the agent of the 
              
              rdfs:label "Conjunction"@en ;
              
+             owl:equivalentClass gold:Conjunction ;
+             
              rdfs:subClassOf :WordclassAffiliation ;
              
-             rdfs:comment """A conjunction is a word that syntactically links words or larger constituents and expresses a relationship between them.
-
-Prototypically, a conjunction links two clauses. However, coordinative conjunctions may also link subclausal expressions. (CL LIDO)"""@en ;
+             :definition """A conjunction is a word that syntactically links words or larger constituents and expresses a relationship between them.
+Prototypically, a conjunction links two clauses. However, coordinative conjunctions may also link subclausal expressions.  [Christian Lehmann, under \"conjunction\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
              
-             rdfs:isDefinedBy "http://purl.org/olia/olia.owl#Conjunction" .
+             :externalDefinition <http://purl.org/olia/olia.owl#Conjunction> .
 
 
 
@@ -1588,10 +1785,14 @@ Conversion [recategorizatio] is not a kind of derivation 1 if the latter is conc
         
         rdfs:label "Copula"@en ;
         
+        owl:equivalentClass gold:Copula ;
+        
         rdfs:subClassOf :Verb ;
         
-        rdfs:comment """A copula is a bivalent intransitive verb which converts a nominal into a verbal predicate.
-It thus „links“ a predicate nominal to the subject. (CL LIDO)"""@en .
+        :definition """A copula is a bivalent intransitive verb which converts a nominal into a verbal predicate.
+It thus „links“ a predicate nominal to the subject. [Christian Lehmann, under \"copula\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia.owl#Copula> .
 
 
 
@@ -1773,6 +1974,22 @@ It thus „links“ a predicate nominal to the subject. (CL LIDO)"""@en .
                     :definition "Is a grammatical category of the adjective or adverb which allows a comparison between the extent to which whatever is modified by the adjective/adverb possesses the quality designated by it, and something else. [Christian Lehmann, under \"degree of comparison\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                     
                     :externalDefinition <http://purl.org/olia/olia.owl#DegreeFeature> .
+
+
+
+###  http://mmoon.org/mmoon/DemonstrativePronoun
+
+:DemonstrativePronoun rdf:type owl:Class ;
+                      
+                      rdfs:label "Demonstrative Pronoun"@en ;
+                      
+                      owl:equivalentClass gold:Demonstrative ;
+                      
+                      rdfs:subClassOf :Pronoun ;
+                      
+                      :definition "a pronoun with deictic function. [Christian Lehmann, under \"demonstrative pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                      
+                      :externalDefinition <http://purl.org/olia/olia.owl#DemonstrativePronoun> .
 
 
 
@@ -1968,6 +2185,24 @@ Is a kind of lexeme which is formed by the morphological modification of another
                rdfs:label "Determination"@en ;
                
                rdfs:subClassOf :LinguisticCategory .
+
+
+
+###  http://mmoon.org/mmoon/Determiner
+
+:Determiner rdf:type owl:Class ;
+            
+            rdfs:label "Determiner"@en ;
+            
+            owl:equivalentClass gold:Determiner ;
+            
+            rdfs:subClassOf :WordclassAffiliation ;
+            
+            :definition "A determiner is a word or affix that modifies a nominal and forms a noun phrase with it. It functions as an operator of determination of this noun phrase.  [Christian Lehmann, under \"determiner\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :example "Engl.:“all“ and „these“ in the phrase „all these houses“. [Christian Lehmann, under \"determiner\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#Determiner> .
 
 
 
@@ -2334,6 +2569,18 @@ German Â«tÃ¶tenÂ» â€škillâ€™ from Â«totÂ» â€šdeadâ€™
 
 
 
+###  http://mmoon.org/mmoon/FiniteVerb
+
+:FiniteVerb rdf:type owl:Class ;
+            
+            rdfs:label "Finite Verb"@en ;
+            
+            rdfs:subClassOf :Verb ;
+            
+            :definition "A finite verb is a verb form which is finite. [Christian Lehmann, under \"finite verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/FirstPerson
 
 :FirstPerson rdf:type owl:Class ;
@@ -2693,6 +2940,25 @@ Its application in a language is sometimes so general that it is a general devic
 
 
 
+###  http://mmoon.org/mmoon/IndefinitePronoun
+
+:IndefinitePronoun rdf:type owl:Class ;
+                   
+                   rdfs:label "Indefinite Pronoun"@en ;
+                   
+                   owl:equivalentClass gold:IndefinitePronoun ;
+                   
+                   rdfs:subClassOf :Pronoun ;
+                   
+                   :example "Engl.: somebody, nobody.  [Christian Lehmann, under \"indefinite pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :definition """a pronoun which belongs to a class whose members make indefinite reference. An indefinite pronoun may be specific or nonspecific. In the latter case, it may be generic.
+An indefinite pronoun may be negative. [Christian Lehmann, under \"indefinite pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                   
+                   :externalDefinition <http://purl.org/olia/olia.owl#IndefinitePronoun> .
+
+
+
 ###  http://mmoon.org/mmoon/Indicative
 
 :Indicative rdf:type owl:Class ;
@@ -2801,11 +3067,54 @@ An instrument noun is an oriented deverbal noun that designates something that f
 
 
 
+###  http://mmoon.org/mmoon/Interjection
+
+:Interjection rdf:type owl:Class ;
+              
+              rdfs:label "Interjection"@en ;
+              
+              owl:equivalentClass gold:Interjection ;
+              
+              rdfs:subClassOf :WordclassAffiliation ;
+              
+              :definition """An interjection is a particle 1 which may represent a sentence. Thus, it is not syntactically related to other sentence components.
+An interjection is typically brief, used most often as an exclamation or as part of an exclamation and typically expresses an emotional reaction, often with respect to an accompanying sentence. It may include a combination of sounds not otherwise found it the language. [Christian Lehmann, under \"interjection\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+              
+              :example "Engl. „psst!“, „ugh!“, „well, well!“, „yes“, „no“. [Christian Lehmann, under \"interjection\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :externalDefinition <http://purl.org/olia/olia.owl#Interjection> .
+
+
+
 ###  http://mmoon.org/mmoon/InterpropositionalRelation
 
 :InterpropositionalRelation rdf:type owl:Class ;
                             
                             rdfs:subClassOf :MorphosyntacticFeature .
+
+
+
+###  http://mmoon.org/mmoon/Interrogative
+
+:Interrogative rdf:type owl:Class ;
+               
+               rdfs:subClassOf :SentenceType .
+
+
+
+###  http://mmoon.org/mmoon/InterrogativePronoun
+
+:InterrogativePronoun rdf:type owl:Class ;
+                      
+                      rdfs:label "Interrogative Pronoun"@en ;
+                      
+                      rdfs:subClassOf :Pronoun ;
+                      
+                      :definition "An interrogative pronoun is a pronoun which is an interrogative pro-form. [Christian Lehmann, under \"interrogative pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                      
+                      :example "Engl. who, which. [Christian Lehmann, under \"interrogative pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                      
+                      :externalDefinition <http://purl.org/olia/olia.owl#IWHPronoun> .
 
 
 
@@ -2966,6 +3275,38 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
 
 
 
+###  http://mmoon.org/mmoon/LocalAdverb
+
+:LocalAdverb rdf:type owl:Class ;
+             
+             rdfs:label "Local Adverb"@en ;
+             
+             rdfs:subClassOf :Adverb ;
+             
+             :definition "A local adverb is an adverb designating location or direction. [Christian Lehmann, under \"local adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :example "Engl. up/downriver, up/downhill, up/down(ward), north(ward), south(ward), east(ward), west(ward), left(ward), right(ward), hither, thither, etc   [Christian Lehmann, under \"local adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#LocationAdverb> .
+
+
+
+###  http://mmoon.org/mmoon/MannerAdverb
+
+:MannerAdverb rdf:type owl:Class ;
+              
+              rdfs:label "Manner Adverb"@en ;
+              
+              rdfs:subClassOf :Adverb ;
+              
+              :example "Engl.: quickly, slowly, patiently, etc.  [Christian Lehmann, under \"manner adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :definition "an adverb expressing manner. This is the largest subcategory of adverbs in every language.  [Christian Lehmann, under \"manner adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :externalDefinition <http://purl.org/olia/ilposts.owl#MannerAdverb> .
+
+
+
 ###  http://mmoon.org/mmoon/Masculine
 
 :Masculine rdf:type owl:Class ;
@@ -2985,18 +3326,18 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
 
 
 
-###  http://mmoon.org/mmoon/MaterialAdjectivizer
+###  http://mmoon.org/mmoon/MaterialAdjective
 
-:MaterialAdjectivizer rdf:type owl:Class ;
-                      
-                      rdfs:label "Material Adjectivizer"@en ;
-                      
-                      rdfs:subClassOf :DenominalAdjective ,
-                                      :SemanticDerivation ;
-                      
-                      :example "German: Holz 'wood' --> hÃ¶lzern 'wooden'."@de ;
-                      
-                      :definition "An adjective which is derived from a noun denoting some kind of material and means 'being made of this material'."@en .
+:MaterialAdjective rdf:type owl:Class ;
+                   
+                   rdfs:label "Material Adjectivizer"@en ;
+                   
+                   rdfs:subClassOf :DenominalAdjective ,
+                                   :SemanticDerivation ;
+                   
+                   :example "German: Holz 'wood' --> hÃ¶lzern 'wooden'."@de ;
+                   
+                   :definition "An adjective which is derived from a noun denoting some kind of material and means 'being made of this material'."@en .
 
 
 
@@ -3305,6 +3646,30 @@ Negation is an operation on a linguistic sign which converts its meaning into th
 
 
 
+###  http://mmoon.org/mmoon/Nominative
+
+:Nominative rdf:type owl:Class ;
+            
+            rdfs:label "Nominative"@en ;
+            
+            rdfs:subClassOf :Case ;
+            
+            rdfs:isDefinedBy "http://purl.org/linguistics/gold/NominativeCase" .
+
+
+
+###  http://mmoon.org/mmoon/NonFiniteVerb
+
+:NonFiniteVerb rdf:type owl:Class ;
+               
+               rdfs:label "Non-Finite Verb"@en ;
+               
+               rdfs:subClassOf :Verb ;
+               
+               :definition "A nonfinite verb is a verb which is nonfinite. [Christian Lehmann, under \"nonfinite verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/NonFuture
 
 :NonFuture rdf:type owl:Class ;
@@ -3338,6 +3703,22 @@ Negation is an operation on a linguistic sign which converts its meaning into th
          rdfs:subClassOf :AbsoluteTense ;
          
          skos:definition "an absolute tense that refers to a time that may be anywhere in a range at or after the moment of utterance. [Christian Lehmann, under \"nonpast\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Noun
+
+:Noun rdf:type owl:Class ;
+      
+      rdfs:label "Noun"@en ;
+      
+      owl:equivalentClass gold:Noun ;
+      
+      rdfs:subClassOf :WordclassAffiliation ;
+      
+      :definition "A noun s.s. is a word that is a member of a part of speech whose prototypical members designate physical objects. [Christian Lehmann, under \"noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+      
+      :externalDefinition <http://purl.org/olia/olia.owl#Noun> .
 
 
 
@@ -3383,6 +3764,22 @@ Negation is an operation on a linguistic sign which converts its meaning into th
 
 
 
+###  http://mmoon.org/mmoon/Numeral
+
+:Numeral rdf:type owl:Class ;
+         
+         rdfs:label "Numeral"@en ;
+         
+         owl:equivalentClass gold:Numeral ;
+         
+         rdfs:subClassOf :WordclassAffiliation ;
+         
+         :definition "A numeral is a word which either expresses a number or a relation to a number, such as quantity, sequence, frequency, or fraction. [Christian Lehmann, under \"numeral\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+         
+         :externalDefinition <http://purl.org/olia/olia.owl#Numeral> .
+
+
+
 ###  http://mmoon.org/mmoon/Obligative
 
 :Obligative rdf:type owl:Class ;
@@ -3410,6 +3807,40 @@ Negation is an operation on a linguistic sign which converts its meaning into th
           rdfs:subClassOf :Mood ;
           
           :externalDefinition <http://purl.org/olia/olia.owl#OptativeMood> .
+
+
+
+###  http://mmoon.org/mmoon/OrdinalNumber
+
+:OrdinalNumber rdf:type owl:Class ;
+               
+               rdfs:label "Ordinal Number"@en ;
+               
+               owl:equivalentClass gold:OrdinalNumeral ;
+               
+               rdfs:subClassOf :Numeral ;
+               
+               :definition "An ordinal numeral is a numeral which designates a position in a sequence. [Christian Lehmann, under \"ordinal numeral\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :example "Engl. first, second, third ... [Christian Lehmann, under \"ordinal numeral\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+               
+               :externalDefinition <http://purl.org/olia/olia.owl#OrdinalNumber> .
+
+
+
+###  http://mmoon.org/mmoon/Particle
+
+:Particle rdf:type owl:Class ;
+          
+          rdfs:label "Particle"@en ;
+          
+          owl:equivalentClass gold:Particle ;
+          
+          rdfs:subClassOf :WordclassAffiliation ;
+          
+          :definition "A particle (particula s.l.) is a word of a syntactic class that does not inflect, i.e. neither a noun (nomen) nor a verb. [Christian Lehmann, under \"particle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+          
+          :externalDefinition <http://purl.org/olia/olia.owl#Particle> .
 
 
 
@@ -3554,6 +3985,24 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
 
 
 
+###  http://mmoon.org/mmoon/PersonalPronoun
+
+:PersonalPronoun rdf:type owl:Class ;
+                 
+                 rdfs:label "Personal Pronoun"@en ;
+                 
+                 owl:equivalentClass gold:PersonalPronoun ;
+                 
+                 rdfs:subClassOf :Pronoun ;
+                 
+                 :definition "A personal pronoun is a pronoun (a pro - noun phrase) that codes person. [Christian Lehmann, under \"personal pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 
+                 :example "English „I“, „he“, „she“, „it“, „we“, „they“ etc.  [Christian Lehmann, under \"personal pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 
+                 :externalDefinition <http://purl.org/olia/olia.owl#PersonalPronoun> .
+
+
+
 ###  http://mmoon.org/mmoon/PlaceNominalizer
 
 :PlaceNominalizer rdf:type owl:Class ;
@@ -3580,6 +4029,20 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
 In some languages the plural is also used for generics and objects that always occur in groups. [Christian Lehmann, under \"plural\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
         
         :externalDefinition <http://purl.org/olia/olia.owl#Plural> .
+
+
+
+###  http://mmoon.org/mmoon/PolarAdjective
+
+:PolarAdjective rdf:type owl:Class ;
+                
+                rdfs:label "Polar Adjective"@en ;
+                
+                rdfs:subClassOf :Adjective ;
+                
+                :definition "A polar adjective is one whose meaning designates a value - typically a polar (i.e. extreme) value - on a gradable parameter. [Christian Lehmann, under \"polar adjective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :externalDefinition <http://purl.org/olia/olia.owl#RelativeAdjective> .
 
 
 
@@ -3611,15 +4074,34 @@ In some languages the plural is also used for generics and objects that always o
 
 
 
+###  http://mmoon.org/mmoon/PossessiveAdjective
+
+:PossessiveAdjective rdf:type owl:Class ;
+                     
+                     rdfs:label "Possessive Adjective"@en ;
+                     
+                     rdfs:subClassOf :DenominalAdjective ;
+                     
+                     :definition "A possessive adjective is an adjective derived from a noun designating X which characterizes its referent as belonging to X.  [Christian Lehmann, under \"possessive adjective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                     
+                     :example "lat. patrius <- pater, Romanus <- Roma.  [Christian Lehmann, under \"possessive adjective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]" .
+
+
+
 ###  http://mmoon.org/mmoon/PossessivePronoun
 
 :PossessivePronoun rdf:type owl:Class ;
                    
-                   rdfs:label "Possessive pronoun"@en ;
+                   rdfs:label "Possessive Pronoun"@en ;
+                   
+                   owl:equivalentClass gold:PossessivePronoun ;
                    
                    rdfs:subClassOf :Pronoun ;
                    
-                   rdfs:isDefinedBy "http://purl.org/olia/olia.owl#PossessivePronoun" .
+                   :definition """a special type of pronoun used prototypically to indicate the possessor in an attributive possession relation. It typically has the inflectional categories of the adjective.
+The possessive pronoun is normally a modifier to a head noun that represents the possessum. It can also be used to indicate the subject or object relation for the nominalization of a verb or a nonfinite verb form. [Christian Lehmann, under \"possessive pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                   
+                   :externalDefinition <http://purl.org/olia/olia.owl#PossessivePronoun> .
 
 
 
@@ -3672,6 +4154,22 @@ In some languages the plural is also used for generics and objects that always o
             rdfs:subClassOf :Essive ;
             
             rdfs:comment "The postessive is a case that expresses location behind the referent of its carrier. (CL, lido)"@en .
+
+
+
+###  http://mmoon.org/mmoon/Postposition
+
+:Postposition rdf:type owl:Class ;
+              
+              rdfs:label "Postposition"@en ;
+              
+              owl:equivalentClass gold:Postposition ;
+              
+              rdfs:subClassOf :Adposition ;
+              
+              :definition "A postposition is an adposition that follows its complement.  [Christian Lehmann, under \"postposition\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              
+              :externalDefinition <http://purl.org/olia/olia.owl#Postposition> .
 
 
 
@@ -3744,6 +4242,22 @@ In Ancient Greek, potential modality is an intepretation of the optative mood. [
 
 
 
+###  http://mmoon.org/mmoon/Preposition
+
+:Preposition rdf:type owl:Class ;
+             
+             rdfs:label "Preposition"@en ;
+             
+             owl:equivalentClass gold:Preposition ;
+             
+             rdfs:subClassOf :Adposition ;
+             
+             :definition "A preposition is an adposition which precedes its complement.  [Christian Lehmann, under \"preposition\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#Preposition> .
+
+
+
 ###  http://mmoon.org/mmoon/Present
 
 :Present rdf:type owl:Class ;
@@ -3809,7 +4323,35 @@ Many languages have a prohibitive allomorph of the negator at the clause level. 
 
 :Pronoun rdf:type owl:Class ;
          
-         rdfs:subClassOf :WordclassAffiliation .
+         rdfs:label "Pronoun"@en ;
+         
+         owl:equivalentClass gold:Pronominal ;
+         
+         rdfs:subClassOf :WordclassAffiliation ;
+         
+         :definition "A pronoun is a pro-form that belongs to a nominal syntactic category, The prototypical pronoun has the same distribution as an NP. [Christian Lehmann, under \"pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+         
+         :example "English „he“, „his“, „which“. [Christian Lehmann, under \"pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+         
+         :externalDefinition <http://purl.org/olia/olia.owl#Pronoun> .
+
+
+
+###  http://mmoon.org/mmoon/ProperNoun
+
+:ProperNoun rdf:type owl:Class ;
+            
+            rdfs:label "Proper Noun"@en ;
+            
+            owl:equivalentClass gold:ProperNoun ;
+            
+            rdfs:subClassOf :Noun ;
+            
+            :example "\"John\", \"Danube\", \"Argentine\", \"Sirius\"  [Christian Lehmann, under \"proper noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :definition "A proper name is a name of an individual (as opposed to a collective). [Christian Lehmann, under \"proper noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            
+            :externalDefinition <http://purl.org/olia/olia.owl#ProperNoun> .
 
 
 
@@ -3854,6 +4396,20 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
 
 
 
+###  http://mmoon.org/mmoon/QuestionParticle
+
+:QuestionParticle rdf:type owl:Class ;
+                  
+                  rdfs:label "Question Particle"@en ;
+                  
+                  rdfs:subClassOf :Particle ;
+                  
+                  :definition "An interrogative particle is a particle which has interrogative meaning and occurs in interrogative sentences. [Christian Lehmann, under \"interrogative particle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                  
+                  :externalDefinition <http://purl.org/olia/olia.owl#InterrogativeParticle> .
+
+
+
 ###  http://mmoon.org/mmoon/Realis
 
 :Realis rdf:type owl:Class ;
@@ -3881,6 +4437,26 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
             :definition "a past that refers to a time in a span including the period culturally defined as ‚yesterday’ and a period ranging backwards, on a cultural and situational basis, to a time a week previous or a few months previous. [Christian Lehmann, under \"recent past\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             :externalDefinition <http://purl.org/olia/olia.owl#RecentPast> .
+
+
+
+###  http://mmoon.org/mmoon/ReciprocalPronoun
+
+:ReciprocalPronoun rdf:type owl:Class ;
+                   
+                   rdfs:label "Reciprocal Pronoun"@en ;
+                   
+                   owl:equivalentClass gold:ReciprocalPronoun ;
+                   
+                   rdfs:subClassOf :Pronoun ;
+                   
+                   :definition """A reciprocal pronoun is a pronoun coding a mutual relationship of action among the referents of a subject that is semantically plural.
+Phenomenology:
+Often, the reflexive pronoun functions as a reciprocal pronoun. [Christian Lehmann, under \"reciprocal pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                   
+                   :example "Engl. «each other» in «they hit each other» or «they resemble each other». Lehmann, under \"reciprocal pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :externalDefinition <http://purl.org/olia/olia.owl#ReciprocalPronoun> .
 
 
 
@@ -3975,6 +4551,22 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
                  :definition "a relative tense that refers to a time as simultaneous with some contextually determined temporal reference point. [Christian Lehmann, under \"relative present\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                  
                  :externalDefinition <http://purl.org/olia/olia.owl#RelativePresent> .
+
+
+
+###  http://mmoon.org/mmoon/RelativePronoun
+
+:RelativePronoun rdf:type owl:Class ;
+                 
+                 rdfs:label "Relative Pronoun"@en ;
+                 
+                 owl:equivalentClass gold:RelativePronoun ;
+                 
+                 rdfs:subClassOf :Pronoun ;
+                 
+                 :definition "a special pronoun which combines the functions of a plain relativizer and a clause internal pronoun that refers to the head of the relative clause.[Christian Lehmann, under \"relative pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                 
+                 :externalDefinition <http://purl.org/olia/olia.owl#RelativePronoun> .
 
 
 
@@ -4272,6 +4864,20 @@ In a compound word: The stem is the morphological representative of one of the t
 
 
 
+###  http://mmoon.org/mmoon/TemporalAdverb
+
+:TemporalAdverb rdf:type owl:Class ;
+                
+                rdfs:label "Temporal Adverb"@en ;
+                
+                rdfs:subClassOf :Adverb ;
+                
+                :definition "A temporal adverb is an adverb which refers to the time of an action. [Christian Lehmann, under \"temporal adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :example "Yesterday, today, tomorrow, next/last year/week/ month, early, late etc. Yagua has an adverb tââriy which means something like ‚long time’. With a clause in the past tense it means ‚a long time ago’, in other clauses it means ‚for a long time’ or ‚late in the afternoon’.  [Christian Lehmann, under \"temporal adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Tense
 
 :Tense rdf:type owl:Class ;
@@ -4363,7 +4969,15 @@ The most important temporal relations between the two time-points are simultanei
 
 :Verb rdf:type owl:Class ;
       
-      rdfs:subClassOf :WordclassAffiliation .
+      rdfs:label "Verb"@en ;
+      
+      owl:equivalentClass gold:Verbal ;
+      
+      rdfs:subClassOf :WordclassAffiliation ;
+      
+      :definition "A verb is a word that is a member of a part of speech whose prototypical members designate events and processes. [Christian Lehmann, under \"verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+      
+      :externalDefinition <http://purl.org/olia/olia.owl#Verb> .
 
 
 
@@ -4573,6 +5187,24 @@ gold:ActiveVoice rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/Adjectival
+
+gold:Adjectival rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Adposition
+
+gold:Adposition rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Adverbial
+
+gold:Adverbial rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Affix
 
 gold:Affix rdf:type owl:Class .
@@ -4585,9 +5217,27 @@ gold:AntiPassiveVoice rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/Article
+
+gold:Article rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/AspectProperty
 
 gold:AspectProperty rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Auxiliary
+
+gold:Auxiliary rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/CardinalNumeral
+
+gold:CardinalNumeral rdf:type owl:Class .
 
 
 
@@ -4609,15 +5259,51 @@ gold:Circumfix rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/CommonNoun
+
+gold:CommonNoun rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Complementizer
+
+gold:Complementizer rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/Compound
 
 gold:Compound rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/Conjunction
+
+gold:Conjunction rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/ContinuousAspect
 
 gold:ContinuousAspect rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Copula
+
+gold:Copula rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Demonstrative
+
+gold:Demonstrative rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Determiner
+
+gold:Determiner rdf:type owl:Class .
 
 
 
@@ -4723,6 +5409,12 @@ gold:ImpersonalPassiveVoice rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/IndefinitePronoun
+
+gold:IndefinitePronoun rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/IndicativeMood
 
 gold:IndicativeMood rdf:type owl:Class .
@@ -4732,6 +5424,12 @@ gold:IndicativeMood rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/Infix
 
 gold:Infix rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Interjection
+
+gold:Interjection rdf:type owl:Class .
 
 
 
@@ -4795,15 +5493,39 @@ gold:NonPastTense rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/Noun
+
+gold:Noun rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/NumberProperty
 
 gold:NumberProperty rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/Numeral
+
+gold:Numeral rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/OptativeMood
 
 gold:OptativeMood rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/OrdinalNumeral
+
+gold:OrdinalNumeral rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Particle
+
+gold:Particle rdf:type owl:Class .
 
 
 
@@ -4843,15 +5565,33 @@ gold:PersonProperty rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/PersonalPronoun
+
+gold:PersonalPronoun rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/PluralNumber
 
 gold:PluralNumber rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/PossessivePronoun
+
+gold:PossessivePronoun rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/PostHodiernalFutureTense
 
 gold:PostHodiernalFutureTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Postposition
+
+gold:Postposition rdf:type owl:Class .
 
 
 
@@ -4867,6 +5607,12 @@ gold:Prefix rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/Preposition
+
+gold:Preposition rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/PresentTense
 
 gold:PresentTense rdf:type owl:Class .
@@ -4876,6 +5622,18 @@ gold:PresentTense rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/ProhibitiveMood
 
 gold:ProhibitiveMood rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/Pronominal
+
+gold:Pronominal rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/ProperNoun
+
+gold:ProperNoun rdf:type owl:Class .
 
 
 
@@ -4891,6 +5649,12 @@ gold:RecentPastTense rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/ReciprocalPronoun
+
+gold:ReciprocalPronoun rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/RelativePastTense
 
 gold:RelativePastTense rdf:type owl:Class .
@@ -4900,6 +5664,12 @@ gold:RelativePastTense rdf:type owl:Class .
 ###  http://purl.org/linguistics/gold/RelativePresentTense
 
 gold:RelativePresentTense rdf:type owl:Class .
+
+
+
+###  http://purl.org/linguistics/gold/RelativePronoun
+
+gold:RelativePronoun rdf:type owl:Class .
 
 
 
@@ -4975,6 +5745,12 @@ gold:Transitivizer rdf:type owl:Class .
 
 
 
+###  http://purl.org/linguistics/gold/Verbal
+
+gold:Verbal rdf:type owl:Class .
+
+
+
 ###  http://purl.org/linguistics/gold/VoiceProperty
 
 gold:VoiceProperty rdf:type owl:Class .
@@ -5037,6 +5813,17 @@ rdfs:Resource rdf:type owl:Class .
      rdfs:label "ABS"^^xsd:string ;
      
      rdfs:comment "Absolutive gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/ABSADJ
+
+:ABSADJ rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "ABSADJ"^^xsd:string ;
+        
+        rdfs:comment "Absolute Adjective gloss."@en .
 
 
 
@@ -6691,6 +7478,17 @@ rdfs:Resource rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/mmoon/LOCADV
+
+:LOCADV rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "LOCADV"^^xsd:string ;
+        
+        rdfs:comment "Local Adverb gloss."@en .
+
+
+
 ###  http://mmoon.org/mmoon/LOCNR
 
 :LOCNR rdf:type :MorphemicGloss ,
@@ -6732,6 +7530,17 @@ rdfs:Resource rdf:type owl:Class .
       rdfs:label "MALE"^^xsd:string ;
       
       rdfs:comment "Male gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/MANADV
+
+:MANADV rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "MANADV"^^xsd:string ;
+        
+        rdfs:comment "Manner Adverb gloss."@en .
 
 
 
@@ -7126,6 +7935,17 @@ rdfs:Resource rdf:type owl:Class .
       rdfs:label "PNCT"^^xsd:string ;
       
       rdfs:comment "Punctual gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/POLADJ
+
+:POLADJ rdf:type :MorphemicGloss ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "POLADJ"^^xsd:string ;
+        
+        rdfs:comment "Polar Adjective gloss."@en .
 
 
 
@@ -7942,6 +8762,17 @@ rdfs:Resource rdf:type owl:Class .
           rdfs:label "SUPTRANS"^^xsd:string ;
           
           rdfs:comment "Supertranslative gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/TEMPADV
+
+:TEMPADV rdf:type :MorphemicGloss ,
+                  owl:NamedIndividual ;
+         
+         rdfs:label "TEMPADV"^^xsd:string ;
+         
+         rdfs:comment "Termporal Adverb gloss."@en .
 
 
 
