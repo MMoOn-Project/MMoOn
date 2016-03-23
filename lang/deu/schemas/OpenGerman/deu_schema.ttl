@@ -565,6 +565,66 @@ mmoon:ZeroMorph rdf:type owl:Class .
 
 
 
+###  http://mmoon.org/lang/deu/schema/og/AbsoluteAdjective
+
+:AbsoluteAdjective rdf:type mmoon:AbsoluteAdjective ,
+                            owl:NamedIndividual ;
+                   
+                   rdfs:label "Absolutes Adjektiv"@de ,
+                              "Absolute Adjective"@en .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Adjective
+
+:Adjective rdf:type mmoon:Adjective ,
+                    owl:NamedIndividual ;
+           
+           rdfs:label "Adjektiv"@de ,
+                      "Adjective"@en .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/AuxiliaryVerb
+
+:AuxiliaryVerb rdf:type mmoon:AuxiliaryVerb ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "Hilfsverb"@de ,
+                          "Auxiliary Verb"@en .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/CommonNoun
+
+:CommonNoun rdf:type mmoon:CommonNoun ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Appellativum"@de ,
+                       "Common Noun"@en .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Copula
+
+:Copula rdf:type mmoon:Copula ,
+                 owl:NamedIndividual ;
+        
+        rdfs:label "Kopula"@de ,
+                   "Copula"@en .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/FiniteVerb
+
+:FiniteVerb rdf:type mmoon:FiniteVerb ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Finites Verb"@de ,
+                       "Finite Verb"@en .
+
+
+
 ###  http://mmoon.org/lang/deu/schema/og/IrregularConjugation
 
 :IrregularConjugation rdf:type mmoon:IrregularConjugation ,
@@ -647,6 +707,26 @@ Der Adjektivstamm weicht von der regelmäßigen Superlativbildung ab.
 
 :NoWordFormation rdf:type mmoon:NoWordFormation ,
                           owl:NamedIndividual .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/NonFiniteVerb
+
+:NonFiniteVerb rdf:type mmoon:NonFiniteVerb ,
+                        owl:NamedIndividual ;
+               
+               rdfs:label "Infinites Verb"@de ,
+                          "Non-Finite Verb"@en .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Noun
+
+:Noun rdf:type mmoon:Noun ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "Substantiv"@de ,
+                 "Noun"@en .
 
 
 
@@ -830,13 +910,33 @@ Endung Nominativ Plural: keine"""@de .
 
 
 
+###  http://mmoon.org/lang/deu/schema/og/PolarAdjective
+
+:PolarAdjective rdf:type mmoon:PolarAdjective ,
+                         owl:NamedIndividual ;
+                
+                rdfs:label "Polares Adjektiv"@de ,
+                           "Polar Adjective"@en .
+
+
+
 ###  http://mmoon.org/lang/deu/schema/og/PredicativeAdj
 
 :PredicativeAdj rdf:type mmoon:PredicativeAdj ,
                          owl:NamedIndividual ;
                 
                 rdfs:label "Prädikatives Adjektiv"@de ,
-                           "Predicative adjective"@en .
+                           "Predicative Adjective"@en .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/ProperNoun
+
+:ProperNoun rdf:type mmoon:ProperNoun ,
+                     owl:NamedIndividual ;
+            
+            rdfs:label "Eigenname"@de ,
+                       "Proper Noun"@en .
 
 
 
@@ -845,7 +945,7 @@ Endung Nominativ Plural: keine"""@de .
 :RegularConjugation rdf:type mmoon:RegularConjugation ,
                              owl:NamedIndividual ;
                     
-                    rdfs:label "Relmäßige Konjugation"@de ,
+                    rdfs:label "Regelmäßige Konjugation"@de ,
                                "Regular conjugation"@en ;
                     
                     rdfs:comment """Die regelmäßige Konjugation zeichnet sich dadurch aus, dass der Verbstamm in allen Zeitformen und Modi gleich bleibt. 
@@ -898,6 +998,16 @@ Der Adjektivstamm im Superlativ wird meist mit dem Suffix  \"-st\" gebildet. Bei
                                 "Strong adjectival declension"@en ;
                      
                      rdfs:comment "Adjektive, die ohne Artikel beim Substantiv stehen, deklinieren stark."@de .
+
+
+
+###  http://mmoon.org/lang/deu/schema/og/Verb
+
+:Verb rdf:type mmoon:Verb ,
+               owl:NamedIndividual ;
+      
+      rdfs:label "Verb"@de ,
+                 "Verb"@en .
 
 
 
