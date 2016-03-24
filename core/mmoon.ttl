@@ -491,6 +491,18 @@ skos:definition rdf:type owl:AnnotationProperty .
 
 
 
+###  http://mmoon.org/mmoon/hasWordclassAffiliation
+
+:hasWordclassAffiliation rdf:type owl:ObjectProperty ;
+                         
+                         rdfs:label "has wordclass affiliation"@en ;
+                         
+                         rdfs:range :WordclassAffiliation ;
+                         
+                         rdfs:subPropertyOf :hasMeaning .
+
+
+
 ###  http://mmoon.org/mmoon/hasWordform
 
 :hasWordform rdf:type owl:ObjectProperty ;
