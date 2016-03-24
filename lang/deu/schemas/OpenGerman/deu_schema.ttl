@@ -14,27 +14,6 @@
 
 #################################################################
 #
-#    Annotation properties
-#
-#################################################################
-
-
-###  http://mmoon.org/mmoon/forLanguage
-
-mmoon:forLanguage rdf:type owl:AnnotationProperty .
-
-
-
-###  http://purl.org/dc/elements/1.1/language
-
-<http://purl.org/dc/elements/1.1/language> rdf:type owl:AnnotationProperty .
-
-
-
-
-
-#################################################################
-#
 #    Classes
 #
 #################################################################
