@@ -167,7 +167,9 @@ deu_inventory:CompoundWord_Hochhaus rdf:type deu_schema:CompoundWord ,
                                              owl:NamedIndividual ;
                                     
                                     rdfs:label "Hochhaus"@de ,
-                                               "multistorey building"@en .
+                                               "multistorey building"@en ;
+											   
+									mmoon:hasRepresentation deu_inventory:Representation_Hochhaus .		   
 
 
 
@@ -177,7 +179,9 @@ deu_inventory:DerivedWord_Bearbeitung rdf:type deu_schema:DerivedWord ,
                                                owl:NamedIndividual ;
                                       
                                       rdfs:label "Bearbeitung"@de ,
-                                                 "the processing"@en .
+                                                 "the processing"@en ;
+												 
+									  mmoon:hasRepresentation deu_inventory:Representation_Bearbeitung .			 
 
 
 
@@ -191,6 +195,8 @@ deu_inventory:DerivedWord_Kauf rdf:type deu_schema:DerivedWord ,
 the purchase"""@en ;
                                
                                mmoon:isDerivedFrom deu_inventory:Lexeme_kaufen ;
+							   
+							   mmoon:hasWordclassAffiliation deu_schema:CommonNoun ;	
                                
                                mmoon:hasRepresentation deu_inventory:Representation_Kauf ;
                                
@@ -219,7 +225,11 @@ deu_inventory:DerivedWord_Käufer rdf:type deu_schema:DerivedWord ,
                                           owl:NamedIndividual ;
                                  
                                  rdfs:label "Käufer"@en ,
-                                            "buyer, purchaser"@en .
+                                            "buyer, purchaser"@en ;
+								
+mmoon:hasWordclassAffiliation deu_schema:CommonNoun ;
+
+ mmoon:hasRepresentation deu_inventory:Representation_Käufer .								
 
 
 
@@ -229,7 +239,9 @@ deu_inventory:DerivedWord_Käuferin rdf:type deu_schema:DerivedWord ,
                                             owl:NamedIndividual ;
                                    
                                    rdfs:label "Käuferin"@de ,
-                                              "buyer, purchaser"@en .
+                                              "buyer, purchaser"@en ;
+											  
+								   mmoon:hasRepresentation deu_inventory:Representation_Käuferin .			  
 
 
 
@@ -244,6 +256,8 @@ deu_inventory:DerivedWord_Schlaf rdf:type deu_schema:DerivedWord ,
                                  mmoon:isDerivedFrom deu_inventory:Lexeme_schlafen ;
                                  
                                  mmoon:hasRepresentation deu_inventory:Representation_Schlaf ;
+								 
+								 mmoon:hasWordclassAffiliation deu_schema:CommonNoun ;
                                  
                                  mmoon:consistsOfStem deu_inventory:Stem_schlaf1 ;
                                  
@@ -266,7 +280,10 @@ deu_inventory:DerivedWord_bearbeiten rdf:type deu_schema:DerivedWord ,
                                               owl:NamedIndividual ;
                                      
                                      rdfs:label "bearbeiten"@de ,
-                                                "to process"@en .
+                                                "to process"@en ;
+									
+									 mmoon:hasRepresentation deu_inventory:Representation_bearbeiten .
+ 	
 
 
 
@@ -276,7 +293,9 @@ deu_inventory:DerivedWord_unschön rdf:type deu_schema:DerivedWord ,
                                            owl:NamedIndividual ;
                                   
                                   rdfs:label "unschön"@de ,
-                                             "unbeautiful"@en .
+                                             "unbeautiful"@en ;
+											 
+								  mmoon:hasRepresentation deu_inventory:Representation_unschön .			 
 
 
 
@@ -289,6 +308,8 @@ deu_inventory:DerivedWord_verkaufen rdf:type deu_schema:DerivedWord ,
                                                "to sell"@en ;
                                     
                                     mmoon:isDerivedFrom deu_inventory:Lexeme_kaufen ;
+									
+									mmoon:hasWordclassAffiliation deu_schema:NonFiniteVerb ;
                                     
                                     mmoon:consistsOfAffix deu_inventory:Prefix_ver1 ;
                                     
@@ -606,7 +627,9 @@ deu_inventory:Lexeme_Haus rdf:type deu_schema:Lexeme ,
                                    owl:NamedIndividual ;
                           
                           rdfs:label "Haus"@de ,
-                                     "house"@en .
+                                     "house"@en ;
+									 
+						  mmoon:hasRepresentation deu_inventory:Representation_Haus .			 
 
 
 
@@ -616,7 +639,9 @@ deu_inventory:Lexeme_Kiefer1 rdf:type deu_schema:Lexeme ,
                                       owl:NamedIndividual ;
                              
                              rdfs:label "Kiefer1"@de ,
-                                        "pine tree"@en .
+                                        "pine tree"@en ;
+										
+							mmoon:hasRepresentation deu_inventory:Representation_Kiefer .			
 
 
 
@@ -626,7 +651,9 @@ deu_inventory:Lexeme_Kiefer2 rdf:type deu_schema:Lexeme ,
                                       owl:NamedIndividual ;
                              
                              rdfs:label "Kiefer2"@de ,
-                                        "jawbone"@en .
+                                        "jawbone"@en ;
+										
+							mmoon:hasRepresentation deu_inventory:Representation_Kiefer .				
 
 
 
@@ -634,6 +661,10 @@ deu_inventory:Lexeme_Kiefer2 rdf:type deu_schema:Lexeme ,
 
 deu_inventory:Lexeme_arbeiten rdf:type deu_schema:Lexeme ,
                                        owl:NamedIndividual ;
+									   
+							 mmoon:hasWordclassAffiliation deu_schema:NonFiniteVerb ;		
+								
+							mmoon:hasRepresentation deu_inventory:Representation_arbeiten ;	
                               
                               rdfs:label "arbeiten"@de ,
                                          "to work"@en .
@@ -646,7 +677,9 @@ deu_inventory:Lexeme_hoch rdf:type deu_schema:Lexeme ,
                                    owl:NamedIndividual ;
                           
                           rdfs:label "hoch"@de ,
-                                     "high"@en .
+                                     "high"@en ;
+						 mmoon:hasRepresentation deu_inventory:Representation_hoch .		
+								
 
 
 
@@ -659,6 +692,8 @@ deu_inventory:Lexeme_kaufen rdf:type deu_schema:Lexeme ,
                                        "to buy"@en ;
                             
                             mmoon:hasRepresentation deu_inventory:Representation_kaufen ;
+							
+							mmoon:hasWordclassAffiliation deu_schema:NonFiniteVerb ;	
                             
                             mmoon:consistsOfRoot deu_inventory:Root_kauf ;
                             
@@ -690,6 +725,8 @@ small"""@en ;
                            mmoon:hasRepresentation deu_inventory:Representation_klein ;
                            
                            mmoon:consistsOfRoot deu_inventory:Root_klein ;
+						   
+						   mmoon:hasWordclassAffiliation deu_schema:PolarAdjective ;
                            
                            mmoon:hasWordform deu_inventory:SyntheticWordform_kleiner1 ,
                                              deu_inventory:SyntheticWordform_kleinerer1 ,
@@ -708,6 +745,8 @@ deu_inventory:Lexeme_schlafen rdf:type deu_schema:Lexeme ,
                                          "to sleep"@en ;
                               
                               mmoon:hasRepresentation deu_inventory:Representation_schlafen ;
+							  
+							  mmoon:hasWordclassAffiliation deu_schema:NonFiniteVerb ;	
                               
                               mmoon:consistsOfRoot deu_inventory:Root_schlaf ;
                               
@@ -733,7 +772,9 @@ deu_inventory:Lexeme_schön rdf:type deu_schema:Lexeme ,
                                     owl:NamedIndividual ;
                            
                            rdfs:label "schön"@de ,
-                                      "beautiful"@en .
+                                      "beautiful"@en ;
+									  
+						  mmoon:hasRepresentation deu_inventory:Representation_schön .			  
 
 
 
@@ -746,6 +787,8 @@ deu_inventory:Lexeme_sein rdf:type deu_schema:Lexeme ,
                                      "to be"@en ;
                           
                           mmoon:hasRepresentation deu_inventory:Representation_sein ;
+						  
+						  mmoon:hasWordclassAffiliation deu_schema:NonFiniteVerb ;	
                           
                           mmoon:consistsOfRoot deu_inventory:Root_sei ;
                           
@@ -768,6 +811,10 @@ deu_inventory:Lexeme_sein rdf:type deu_schema:Lexeme ,
 
 deu_inventory:Lexeme_tot rdf:type deu_schema:Lexeme ,
                                   owl:NamedIndividual ;
+								  
+						 mmoon:hasWordclassAffiliation deu_schema:AbsoluteAdjective ;	
+
+						mmoon:hasRepresentation deu_inventory:Representation_tot ;	
                          
                          rdfs:label "tot"@de ,
                                     "dead"@en .
@@ -797,7 +844,7 @@ deu_inventory:Prefix_un1 rdf:type deu_schema:Prefix ,
 deu_inventory:Prefix_ver1 rdf:type deu_schema:Prefix ,
                                    owl:NamedIndividual ;
                           
-                          rdfs:label "ver"@de ;
+                          rdfs:label "ver1"@de ;
                           
                           mmoon:correspondsToMorpheme deu_inventory:AtomicMorpheme_RES ;
                           
@@ -874,6 +921,13 @@ deu_inventory:Representation_Schlaf rdf:type deu_schema:Representation ,
                                              owl:NamedIndividual ;
                                     
                                     mmoon:orthographicRepresentation "Schlaf" .
+									
+###  http://mmoon.org/lang/deu/inventory/og/Representation_arbeiten
+
+deu_inventory:Representation_arbeiten rdf:type deu_schema:Representation ,
+                                             owl:NamedIndividual ;
+                                    
+                                    mmoon:orthographicRepresentation "arbeiten" .									
 
 
 
@@ -912,6 +966,12 @@ deu_inventory:Representation_bin rdf:type deu_schema:Representation ,
                                  mmoon:orthographicRepresentation "bin" .
 
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_unschön
+
+deu_inventory:Representation_unschön rdf:type deu_schema:Representation ,
+                                          owl:NamedIndividual ;
+                                 
+                                 mmoon:orthographicRepresentation "unschön" .
 
 ###  http://mmoon.org/lang/deu/inventory/og/Representation_bist
 
@@ -1028,7 +1088,12 @@ deu_inventory:Representation_klein rdf:type deu_schema:Representation ,
                                    
                                    mmoon:orthographicRepresentation "klein" .
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_Bearbeitung
 
+deu_inventory:Representation_Bearbeitung rdf:type deu_schema:Representation ,
+                                            owl:NamedIndividual ;
+                                   
+                                   mmoon:orthographicRepresentation "Bearbeitung" .
 
 ###  http://mmoon.org/lang/deu/inventory/og/Representation_kleiner
 
@@ -1064,7 +1129,12 @@ deu_inventory:Representation_kleinster rdf:type deu_schema:Representation ,
                                        
                                        mmoon:orthographicRepresentation "kleinster" .
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_Kiefer
 
+deu_inventory:Representation_Kiefer rdf:type deu_schema:Representation ,
+                                                owl:NamedIndividual ;
+                                       
+                                       mmoon:orthographicRepresentation "Kiefer" .
 
 ###  http://mmoon.org/lang/deu/inventory/og/Representation_n
 
@@ -1101,6 +1171,21 @@ deu_inventory:Representation_schlafe rdf:type deu_schema:Representation ,
                                      mmoon:orthographicRepresentation "schlafe" .
 
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_hoch
+
+deu_inventory:Representation_hoch rdf:type deu_schema:Representation ,
+                                              owl:NamedIndividual ;
+                                     
+                                     mmoon:orthographicRepresentation "hoch" .
+									 
+									 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_bearbeiten
+
+deu_inventory:Representation_bearbeiten
+ rdf:type deu_schema:Representation ,
+                                              owl:NamedIndividual ;
+                                     
+                                     mmoon:orthographicRepresentation "bearbeiten" .									 
 
 ###  http://mmoon.org/lang/deu/inventory/og/Representation_schlafen
 
@@ -1118,8 +1203,27 @@ deu_inventory:Representation_schlaft rdf:type deu_schema:Representation ,
                                      
                                      mmoon:orthographicRepresentation "schlaft" .
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_schön
 
+deu_inventory:Representation_schön rdf:type deu_schema:Representation ,
+                                              owl:NamedIndividual ;
+                                     
+                                     mmoon:orthographicRepresentation "schön" .
+									 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_tot
 
+deu_inventory:Representation_tot rdf:type deu_schema:Representation ,
+                                              owl:NamedIndividual ;
+                                     
+                                     mmoon:orthographicRepresentation "tot" .									 
+
+###  http://mmoon.org/lang/deu/inventory/og/Representation_Hochhaus
+
+deu_inventory:Representation_Hochhaus rdf:type deu_schema:Representation ,
+                                              owl:NamedIndividual ;
+                                     
+                                     mmoon:orthographicRepresentation "Hochhaus" .									 
+									 
 ###  http://mmoon.org/lang/deu/inventory/og/Representation_schläf
 
 deu_inventory:Representation_schläf rdf:type deu_schema:Representation ,
@@ -1153,6 +1257,13 @@ deu_inventory:Representation_sei rdf:type deu_schema:Representation ,
                                           owl:NamedIndividual ;
                                  
                                  mmoon:orthographicRepresentation "sei" .
+								 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_Haus
+
+deu_inventory:Representation_Haus rdf:type deu_schema:Representation ,
+                                          owl:NamedIndividual ;
+                                 
+                                 mmoon:orthographicRepresentation "Haus" .								 
 
 
 
@@ -1263,7 +1374,20 @@ deu_inventory:Representation_äu rdf:type deu_schema:Representation ,
                                 mmoon:orthographicRepresentation "äu" .
 
 
+###  http://mmoon.org/lang/deu/inventory/og/Representation_Käufer
 
+deu_inventory:Representation_Käufer rdf:type deu_schema:Representation ,
+                                         owl:NamedIndividual ;
+                                
+                                mmoon:orthographicRepresentation "Käufer" .
+								
+###  http://mmoon.org/lang/deu/inventory/og/Representation_Käuferin
+
+deu_inventory:Representation_Käuferin rdf:type deu_schema:Representation ,
+                                         owl:NamedIndividual ;
+                                
+                                mmoon:orthographicRepresentation "Käuferin" .								
+								
 ###  http://mmoon.org/lang/deu/inventory/og/Root_kauf
 
 deu_inventory:Root_kauf rdf:type deu_schema:Root ,
