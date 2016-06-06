@@ -20,8 +20,12 @@
 This is the reference ontology from which various language specific MMoOn Inventories can be derived."""@en ;
                           
                           owl:versionInfo "Version 1.0, 2016"@en ;
+                          
+                          owl:imports lexvo: ,
+                                      gold: ,
+                                      rdfs: ,
+                                      skos: .
 
-                          owl:imports rdfs:, skos:, gold:, lexvo: .
 
 #################################################################
 #
@@ -1244,7 +1248,9 @@ The base may be transitive, in which case its direct object is demoted upon the 
         rdfs:subClassOf :LinguisticCategory ;
         
         :definition """Aspect is an inflectional category concerning the internal temporal structure, particularly the initial and final temporal boundaries, of the situation designated by the verb.
-Aspect treats a situation as bounded or non-bounded with respect to other situations in the universe-of-discourse, so that syntagmatic relations of taxis can be established among them. [Christian Lehmann, under \"aspect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+Aspect treats a situation as bounded or non-bounded with respect to other situations in the universe-of-discourse, so that syntagmatic relations of taxis can be established among them. [Christian Lehmann, under \"aspect\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+        
+        :externalDefinition <http://purl.org/olia/olia-top.owl#AspectFeature> .
 
 
 
@@ -1574,6 +1580,22 @@ Since the causer occupies the subject slot of the causative verb and the base ve
 
 
 
+###  http://mmoon.org/mmoon/CompletiveAspect
+
+:CompletiveAspect rdf:type owl:Class ;
+                  
+                  rdfs:label "Completive Aspect"@en ;
+                  
+                  owl:equivalentClass gold:CompletiveAspect ;
+                  
+                  rdfs:subClassOf :Aspect ;
+                  
+                  :definition "an aspect encoding a situation as completed. The term is applicable, if a language has grammaticalized two oppositions, „+/-completive“ and „+/-perfective“. Otherwise, the term „perfective“ is to be used. [Christian Lehmann, under \"completive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                  
+                  :externalDefinition <http://purl.org/olia/olia.owl#CompletiveAspect> .
+
+
+
 ###  http://mmoon.org/mmoon/ComplexMorpheme
 
 :ComplexMorpheme rdf:type owl:Class ;
@@ -1641,18 +1663,33 @@ Compounding [compositio thematum] is the formation of a stem by combination of t
 
 
 
-###  http://mmoon.org/mmoon/Conative
+###  http://mmoon.org/mmoon/ConativeAktionsart
 
-:Conative rdf:type owl:Class ;
-          
-          rdfs:label "Conative"@en ;
-          
-          rdfs:subClassOf :Aktionsart ;
-          
-          :definition """Definition:
+:ConativeAktionsart rdf:type owl:Class ;
+                    
+                    rdfs:label "Conative Aktionsart"@en ;
+                    
+                    rdfs:subClassOf :Aktionsart ;
+                    
+                    :definition """Definition:
 The conative is a verbal aspect or aktionsart which means that the agent of the situation tries to achieve the action desginated by the verb stem. [Christian Lehmann, under \"conative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
-          
-          :example """Â«John kicked at the wall.Â» [implying that he did not hit it]
+                    
+                    :example """Â«John kicked at the wall.Â» [implying that he did not hit it]
+[Christian Lehmann, under \"conative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/ConativeAspect
+
+:ConativeAspect rdf:type owl:Class ;
+                
+                rdfs:label "Conative Aspect"@en ;
+                
+                rdfs:subClassOf :Aspect ;
+                
+                :definition "The conative is a verbal aspect or aktionsart which means that the agent of the situation tries to achieve the action desginated by the verb stem. [Christian Lehmann, under \"conative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :example """«John kicked at the wall.» [implying that he did not hit it]
 [Christian Lehmann, under \"conative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
 
 
@@ -1735,20 +1772,22 @@ Prototypically, a conjunction links two clauses. However, coordinative conjuncti
 
 
 
-###  http://mmoon.org/mmoon/Continuous
+###  http://mmoon.org/mmoon/ContinuousAspect
 
-:Continuous rdf:type owl:Class ;
-            
-            rdfs:label "Continuous"@en ;
-            
-            owl:equivalentClass gold:ContinuousAspect ;
-            
-            rdfs:subClassOf :Aspect ;
-            
-            rdfs:comment """A situation is continuous 1 iff it is ongoing.
+:ContinuousAspect rdf:type owl:Class ;
+                  
+                  rdfs:label "Continuous Aspect"@en ;
+                  
+                  owl:equivalentClass gold:ContinuousAspect ;
+                  
+                  rdfs:subClassOf :Aspect ;
+                  
+                  :definition """A situation is continuous 1 iff it is ongoing.
 Derivatively,a verb designating such a situation is continuous 1.
 Continuitas situationis is the property of being continuous 1.
-[Christian Lehmann, under \"continuity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+[Christian Lehmann, under \"continuity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                  
+                  :externalDefinition <http://purl.org/olia/olia.owl#ContinuousAspect> .
 
 
 
@@ -1995,6 +2034,20 @@ It thus „links“ a predicate nominal to the subject. [Christian Lehmann, unde
                       :definition "a pronoun with deictic function. [Christian Lehmann, under \"demonstrative pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                       
                       :externalDefinition <http://purl.org/olia/olia.owl#DemonstrativePronoun> .
+
+
+
+###  http://mmoon.org/mmoon/Demonym
+
+:Demonym rdf:type owl:Class ;
+         
+         rdfs:label "Demonym"@en ;
+         
+         rdfs:subClassOf :DenominalNoun ;
+         
+         rdfs:comment "Also known as \"gentilic\"."@en ;
+         
+         :example "Chinese (N) --> China (N)."@en .
 
 
 
@@ -2317,17 +2370,31 @@ Is a kind of lexeme which is formed by the morphological modification of another
 
 
 
-###  http://mmoon.org/mmoon/Distributive
+###  http://mmoon.org/mmoon/DistributiveAktionsart
 
-:Distributive rdf:type owl:Class ;
-              
-              rdfs:label "Distributive"@en ;
-              
-              rdfs:subClassOf :Iterative ;
-              
-              :definition "Is an iterative that expresses the application of an event to members of a group one after another, typically to the referents named by the subject of an intransitive verb or the object of a transitive verb. [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-              
-              :example "the Russian â€žpo-â€œ in â€žOn po-zapiral dveriâ€œ â€šHe locked the doors one at a timeâ€™ (example from Comrie 1985a: 344).  [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+:DistributiveAktionsart rdf:type owl:Class ;
+                        
+                        rdfs:label "Distributive Aktionsart"@en ;
+                        
+                        rdfs:subClassOf :IterativeAktionsart ;
+                        
+                        :definition "Is an iterative that expresses the application of an event to members of a group one after another, typically to the referents named by the subject of an intransitive verb or the object of a transitive verb. [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                        
+                        :example "the Russian â€žpo-â€œ in â€žOn po-zapiral dveriâ€œ â€šHe locked the doors one at a timeâ€™ (example from Comrie 1985a: 344).  [Christian Lehmann, under \"distributive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/DistributiveAspect
+
+:DistributiveAspect rdf:type owl:Class ;
+                    
+                    rdfs:label "Distributive Aspect"@en ;
+                    
+                    owl:equivalentClass gold:DistributiveAspect ;
+                    
+                    rdfs:subClassOf :Aspect ;
+                    
+                    :definition "A verbal aspect expressing that the action or state denoted by the verb is performed or experienced simultaneously by more than one individual or object. [Pei and Gaynor 1954: 59]"@en .
 
 
 
@@ -2369,15 +2436,31 @@ kenapac uwaya pieya:tik ‘someone seems to be coming here’
 
 
 
-###  http://mmoon.org/mmoon/Durative
+###  http://mmoon.org/mmoon/DurativeAktionsart
 
-:Durative rdf:type owl:Class ;
-          
-          rdfs:label "Durative"@en ;
-          
-          rdfs:subClassOf :Aktionsart ;
-          
-          :definition "The durative is a verbal category - generally an aktionsart - designating durativity. [Christian Lehmann, under \"durative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+:DurativeAktionsart rdf:type owl:Class ;
+                    
+                    rdfs:label "Durative Aktionsart"@en ;
+                    
+                    rdfs:subClassOf :Aktionsart ;
+                    
+                    :definition "The durative is a verbal category - generally an aktionsart - designating durativity. [Christian Lehmann, under \"durative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/DurativeAspect
+
+:DurativeAspect rdf:type owl:Class ;
+                
+                rdfs:label "Durative Aspect"@en ;
+                
+                owl:equivalentClass gold:DurativeAspect ;
+                
+                rdfs:subClassOf :Aspect ;
+                
+                :definition "A situation is durative iff it is dynamic, but atelic. [Christian Lehmann, under \"durativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :externalDefinition <http://purl.org/olia/olia.owl#DurativeAspect> .
 
 
 
@@ -2616,15 +2699,31 @@ German Â«tÃ¶tenÂ» â€škillâ€™ from Â«totÂ» â€šdeadâ€™
 
 
 
-###  http://mmoon.org/mmoon/Frequentative
+###  http://mmoon.org/mmoon/FrequentativeAktionsart
 
-:Frequentative rdf:type owl:Class ;
-               
-               rdfs:label "Frequentative"@en ;
-               
-               rdfs:subClassOf :Iterative ;
-               
-               :definition "Is a kind of iterative. [Christian Lehmann, under \"frequentative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+:FrequentativeAktionsart rdf:type owl:Class ;
+                         
+                         rdfs:label "Frequentative Aktionsart"@en ;
+                         
+                         rdfs:subClassOf :IterativeAktionsart ;
+                         
+                         :definition "Is a kind of iterative. [Christian Lehmann, under \"frequentative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/FrequentiveAspect
+
+:FrequentiveAspect rdf:type owl:Class ;
+                   
+                   rdfs:label "Frequentive Aspect"@en ;
+                   
+                   owl:equivalentClass gold:FrequentiveAspect ;
+                   
+                   rdfs:subClassOf :Aspect ;
+                   
+                   :definition "Events which are frequently repeated, differs from habitual in that it can only be based upon the observation of several occurrences of the event concerned, whereas habitual can be based upon the observation of a single occurrence [Bhat 1999: 53]."@en ;
+                   
+                   :externalDefinitionDesc <http://purl.org/olia/olia.owl#FrequentiveAspect> .
 
 
 
@@ -2757,21 +2856,22 @@ This often the case for inherent meanings such as number for nouns or tense for 
 
 
 
-###  http://mmoon.org/mmoon/Habitual
+###  http://mmoon.org/mmoon/HabitualAspect
 
-:Habitual rdf:type owl:Class ;
-          
-          rdfs:label "Habitual"@en ;
-          
-          owl:equivalentClass gold:HabitualAspect ;
-          
-          rdfs:subClassOf :Aspect ;
-          
-          :example "http://linguistics-ontology.org/gold/2010/HabitualAspect#examples"^^xsd:anyURI ;
-          
-          rdfs:comment "Habitual is an imperfective that expresses the occurrence of an event or state as a characteristic of a period of time. [Christian Lehmann, under \"habitual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-          
-          :example "The English expression „used to“ in „He used to live here“.  [Christian Lehmann, under \"habitual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+:HabitualAspect rdf:type owl:Class ;
+                
+                rdfs:label "Habitual Aspect"@en ;
+                
+                owl:equivalentClass gold:HabitualAspect ;
+                
+                rdfs:subClassOf :Aspect ;
+                
+                :definition "Habitual is an imperfective that expresses the occurrence of an event or state as a characteristic of a period of time. [Christian Lehmann, under \"habitual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                
+                :example "The English expression „used to“ in „He used to live here“.  [Christian Lehmann, under \"habitual\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ,
+                         <http://linguistics-ontology.org/gold/2010/HabitualAspect#examples> ;
+                
+                :externalDefinitionDesc <http://purl.org/olia/olia.owl#HabitualAspect> .
 
 
 
@@ -2912,6 +3012,25 @@ The imperative in the strict sense is of second person. The imperative in the wi
 
 
 
+###  http://mmoon.org/mmoon/ImperfectiveAspect
+
+:ImperfectiveAspect rdf:type owl:Class ;
+                    
+                    rdfs:label "Imperfective Aspect"@en ;
+                    
+                    owl:equivalentClass gold:ImperfectiveAspect ;
+                    
+                    rdfs:subClassOf :Aspect ;
+                    
+                    :definition """An imperfective 1 verb is one which views a situation from inside, not seeing its temporal borders, thus providing a partial view of it.
+The imperfective 2 is the imperfective 1 aspect. [Christian Lehmann, under \"imperfective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                    
+                    :example <http://linguistics-ontology.org/gold/2010/ImperfectiveAspect#examples> ;
+                    
+                    :externalDefinitionDesc <http://purl.org/olia/olia.owl#ImperfectiveAspect> .
+
+
+
 ###  http://mmoon.org/mmoon/ImpersonalPassive
 
 :ImpersonalPassive rdf:type owl:Class ;
@@ -2930,6 +3049,24 @@ The imperative in the strict sense is of second person. The imperative in the wi
 
 
 
+###  http://mmoon.org/mmoon/InceptiveAspect
+
+:InceptiveAspect rdf:type owl:Class ;
+                 
+                 rdfs:label "Inceptive Aspect"@en ;
+                 
+                 owl:equivalentClass gold:InceptiveAspect ;
+                 
+                 rdfs:subClassOf :Aspect ;
+                 
+                 :definition "InceptiveAspect, also called the ingressive, encodes the beginning portion of some event [Bybee 1985: 147, 149; Payne 1997: 240; Bhat 1999: 176]."@en ;
+                 
+                 :example <http://linguistics-ontology.org/gold/2010/InceptiveAspect#examples> ;
+                 
+                 :externalDefinitionDesc <http://purl.org/olia/olia.owl#InceptiveAspect> .
+
+
+
 ###  http://mmoon.org/mmoon/Inchoative
 
 :Inchoative rdf:type owl:Class ;
@@ -2938,7 +3075,7 @@ The imperative in the strict sense is of second person. The imperative in the wi
             
             rdfs:subClassOf :Aktionsart ;
             
-            :example "Lat. alb-us â€žwhiteâ€œ - alb-esc-ere â€žbecome whiteâ€œ. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            :example "The affix -sc- in Latin: liuere 'be blue' - liuescere 'become blue' marks inchoative. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             :definition """The inchoative is the aktionsart of a durative(-terminative) verb derived from a stative base. It designates transition into the state designated by the base.
 Its application in a language is sometimes so general that it is a general device of deriving dynamic from stative predicates, of verbs from non-verbal bases. It can then be called â€žprocessiveâ€œ. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
@@ -3209,18 +3346,36 @@ sobaka ksaetsja â€šthe dog bitesâ€™.  [Christian Lehmann, under \"intro
 
 
 
-###  http://mmoon.org/mmoon/Iterative
+###  http://mmoon.org/mmoon/IterativeAktionsart
 
-:Iterative rdf:type owl:Class ;
-           
-           rdfs:label "Iterative"@en ;
-           
-           rdfs:subClassOf :Aktionsart ;
-           
-           :definition """A verb is iterative iff it designates a sequence of instances of a given elementary situation.
+:IterativeAktionsart rdf:type owl:Class ;
+                     
+                     rdfs:label "Iterative Aktionsart"@en ;
+                     
+                     rdfs:subClassOf :Aktionsart ;
+                     
+                     :definition """A verb is iterative iff it designates a sequence of instances of a given elementary situation.
 The notion will normally be relevant only if there is an iterative derivation. [Christian Lehmann, under \"iterative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
-           
-           :example "Latin derivation by a -ta-suffix, cf. nuere â€šnodâ€™ - nutare â€šnodâ€™; salire â€šjumpâ€™ - saltare â€šdanceâ€™. [Christian Lehmann, under \"iterative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+                     
+                     :example "Latin derivation by a -ta-suffix, cf. nuere â€šnodâ€™ - nutare â€šnodâ€™; salire â€šjumpâ€™ - saltare â€šdanceâ€™. [Christian Lehmann, under \"iterative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/IterativeAspect
+
+:IterativeAspect rdf:type owl:Class ;
+                 
+                 rdfs:label "Iterative Aspect"@en ;
+                 
+                 owl:equivalentClass gold:IterativeAspect ;
+                 
+                 rdfs:subClassOf :Aspect ;
+                 
+                 :definition "IterativeAspect, also called repetitive, encodes a number of events of the same type that are repeated on a particular occasion. The time interval which is relevant to the iterative is relatively shorter than in the case of the habitual [Bybee 1985: 150; Bybee, Perkins and Pagliuca 1994: 127]. Portrays events repeated on the same occasion (like the iterative knocking on the door) [Bhat 1999: 53]."@en ;
+                 
+                 :example <http://linguistics-ontology.org/gold/2010/IterativeAspect#examples> ;
+                 
+                 :externalDefinitionDesc <http://purl.org/olia/olia.owl#IterativeAspect> .
 
 
 
@@ -3960,6 +4115,26 @@ The passive can generally only be formed from agentive verbs. [Christian Lehmann
 
 
 
+###  http://mmoon.org/mmoon/PerfectiveAspect
+
+:PerfectiveAspect rdf:type owl:Class ;
+                  
+                  rdfs:label "Perfective Aspect"@en ;
+                  
+                  owl:equivalentClass gold:PerfectiveAspect ;
+                  
+                  rdfs:subClassOf :Aspect ;
+                  
+                  :definition """A perfective 1 verb is one which views a situation from outside, including its temporal borders, thus providing a total view of it.
+The perfective 2 is the perfective 1 aspect. [Christian Lehmann, under \"perfective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                  
+                  :example "Perfective „He walked there“ vs. imperfective „He was walking there“ or „He used to walk there“. [Christian Lehmann, under \"perfective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ,
+                           <http://linguistics-ontology.org/gold/2010/PerfectiveAspect#examples> ;
+                  
+                  :externalDefinitionDesc <http://purl.org/olia/olia.owl#PerfectiveAspect> .
+
+
+
 ###  http://mmoon.org/mmoon/Person
 
 :Person rdf:type owl:Class ;
@@ -4307,6 +4482,24 @@ In Ancient Greek, potential modality is an intepretation of the optative mood. [
 
 
 
+###  http://mmoon.org/mmoon/ProgressiveAspect
+
+:ProgressiveAspect rdf:type owl:Class ;
+                   
+                   rdfs:label "Progressive Aspect"@en ;
+                   
+                   owl:equivalentClass gold:ProgressiveAspect ;
+                   
+                   rdfs:subClassOf :Aspect ;
+                   
+                   :example "In English, the progressive can be applied to processes but not to states. If it is nevertheless combined with a stative predicate, this converts it into a process, as in such contrasting pairs as „Fred is silly“ vs. „Fred is being silly“, the former stative, the latter processual and paraphrasable as „Fred is acting in a silly manner“ [example from Comrie, 1976:36].  [Christian Lehmann, under \"progressive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :definition "The progressive is an aspect that views a situation from within; i.e. the situation is represented as developing without attention to its temporal boundaries. [Christian Lehmann, under \"progressive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :externalDefinition <http://purl.org/olia/olia.owl#ProgressiveAspect> .
+
+
+
 ###  http://mmoon.org/mmoon/Prohibitive
 
 :Prohibitive rdf:type owl:Class ;
@@ -4371,6 +4564,20 @@ Many languages have a prohibitive allomorph of the negator at the clause level. 
              :definition "A derivational meaning resulting in the meaning 'having N'."@en ;
              
              :example "Ponapean: \"pihl\" (noun 'water') --> \"pil-en\" (adjective 'waterly')"@en .
+
+
+
+###  http://mmoon.org/mmoon/ProspectiveAspect
+
+:ProspectiveAspect rdf:type owl:Class ;
+                   
+                   rdfs:label "Prospective Aspect"@en ;
+                   
+                   rdfs:subClassOf :Aspect ;
+                   
+                   :example "English „going to“ in „Bill is going to throw himself off the cliff“.  [Christian Lehmann, under \"prospective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :definition "an aspect encoding a state of being about to do something in future situation (as English „going to“ in „Bill is going to throw himself off the cliff“, a statement of Bill’s present state, true irrespective of whether he is stopped or not). [Christian Lehmann, under \"prospective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
 
 
 
@@ -4653,6 +4860,20 @@ Often, the reflexive pronoun functions as a reciprocal pronoun. [Christian Lehma
 
 
 
+###  http://mmoon.org/mmoon/ResultativeAspect
+
+:ResultativeAspect rdf:type owl:Class ;
+                   
+                   rdfs:label "Resultative Aspect"@en ;
+                   
+                   rdfs:subClassOf :Aspect ;
+                   
+                   :definition "The resultative is a verbal aspect which means that the central participant of the situation is in the state resulting from the change designated by the verb stem. [Christian Lehmann, under \"resultative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :example "«The vase is broken.» as a resultative counterpart of «X breaks/broke the vase.» [Christian Lehmann, under \"resultative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
 ###  http://mmoon.org/mmoon/Reversion
 
 :Reversion rdf:type owl:Class ;
@@ -4709,17 +4930,33 @@ Often, the reflexive pronoun functions as a reciprocal pronoun. [Christian Lehma
 
 
 
-###  http://mmoon.org/mmoon/Semelfactive
+###  http://mmoon.org/mmoon/SemelfactiveAktionsart
 
-:Semelfactive rdf:type owl:Class ;
-              
-              rdfs:label "Semelfactive"@en ;
-              
-              rdfs:subClassOf :Aktionsart ;
-              
-              :definition "Is an Aktionsart of verbs designating one instance of a typically durative or iterative situation. The notion will normally be relevant only if there is a semelfactive derivation converting durative into punctual predicates. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-              
-              :example "the Russian suffix -nu, cf. kolotâ€™ â€šchopâ€™ - kolâ€™nutâ€™ â€šcleaveâ€™. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+:SemelfactiveAktionsart rdf:type owl:Class ;
+                        
+                        rdfs:label "Semelfactive Aktionsart"@en ;
+                        
+                        rdfs:subClassOf :Aktionsart ;
+                        
+                        :definition "Is an Aktionsart of verbs designating one instance of a typically durative or iterative situation. The notion will normally be relevant only if there is a semelfactive derivation converting durative into punctual predicates. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                        
+                        :example "the Russian suffix -nu, cf. kolotâ€™ â€šchopâ€™ - kolâ€™nutâ€™ â€šcleaveâ€™. [Christian Lehmann, under \"semelfactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/SemelfactiveAspect
+
+:SemelfactiveAspect rdf:type owl:Class ;
+                    
+                    rdfs:label "Semelfactive Aspect"@en ;
+                    
+                    owl:equivalentClass gold:SemelfactiveAspect ;
+                    
+                    rdfs:subClassOf :Aspect ;
+                    
+                    :definition "Momentaneous, without an inherent end-point, as sneeze [Michaelis 1998: xvi]."@en ;
+                    
+                    :externalDefinition <http://purl.org/olia/olia.owl#SemelfactiveAspect> .
 
 
 
@@ -4760,6 +4997,22 @@ The replacive morph is a construct of taxonomic structuralism.
           :example "In â€šman - menâ€™, the latter contains the replacive morph â€ša -> eâ€™. [Christian Lehmann, under \"replacive morph\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
           
           :externalDefinition <http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsASimulfix.htm> .
+
+
+
+###  http://mmoon.org/mmoon/SimultaneousAspect
+
+:SimultaneousAspect rdf:type owl:Class ;
+                    
+                    rdfs:label "Simultaneous Aspect"@en ;
+                    
+                    owl:equivalentClass gold:SimultaneousAspect ;
+                    
+                    rdfs:subClassOf :Aspect ;
+                    
+                    :definition "a temporal relation in which the events or states of proposition(s) are communicated as occurring at the same time, cf. „while“ in „Mrs. Brown bought groceries while Mr. Brown got gas for the car“ (example from Fleming 1988: 182) and by expressions such as „simultaneously“ and „meanwhile“ (examples from Halliday & Hasan 1976: 262). [Christian Lehmann, under \"simultaneity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                    
+                    :example "„while“ in „Mrs. Brown bought groceries while Mr. Brown got gas for the car“ (example from Fleming 1988: 182)"@en .
 
 
 
@@ -4897,6 +5150,23 @@ In a compound word: The stem is the morphological representative of one of the t
 The most important temporal relations between the two time-points are simultaneity, anteriority and posteriority. They found the tenses present, past and future.  [Christian Lehmann, under \"tense\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
        
        :externalDefinition <http://purl.org/olia/olia.owl#TenseFeature> .
+
+
+
+###  http://mmoon.org/mmoon/TerminativeAspect
+
+:TerminativeAspect rdf:type owl:Class ;
+                   
+                   rdfs:label "Terminative Aspect"@en ;
+                   
+                   owl:equivalentClass gold:TerminativeAspect ;
+                   
+                   rdfs:subClassOf :Aspect ;
+                   
+                   :definition """A telic situation is terminative, iff it contains the end point of a process. A verb that designates such a situation has terminative aktionsart.
+Terminativity is the property of a situation to be terminative.  [Christian Lehmann, under \"terminativitty\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                   
+                   :externalDefinitionDesc <http://purl.org/olia/olia.owl#TerminativeAspect> .
 
 
 
@@ -5148,12 +5418,12 @@ Word-formation is also called lexeme-formation and stem-formation ."""@en .
           
           rdfs:subClassOf :Word ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :inflectionalRelation ;
-                            owl:someValuesFrom :Inflection
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :consistsOfMorph ;
                             owl:someValuesFrom :Stem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :inflectionalRelation ;
+                            owl:someValuesFrom :Inflection
                           ] ;
           
           :definition """A word form is one of the morphological manifestations of a lexeme in text. For all parts of speech that inflect, the specification of inflectional categories for a lexeme generates the set of its word forms. [Christian Lehmann, under \"word form\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -5183,6 +5453,548 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
            :externalDefinitionDesc "A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
            
            :usageNote "A zero morpheme is posited only if it is in equipollent opposition to overt morphemes. If the term in question is, instead, the unmarked member of a privative opposition, no morpheme is posited. Conversion  can be conceived as derivation using a zero morpheme.  [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://purl.org/linguistics/gold/ActiveVoice
+
+
+
+
+###  http://purl.org/linguistics/gold/Adjectival
+
+
+
+
+###  http://purl.org/linguistics/gold/Adposition
+
+
+
+
+###  http://purl.org/linguistics/gold/Adverbial
+
+
+
+
+###  http://purl.org/linguistics/gold/Affix
+
+
+
+
+###  http://purl.org/linguistics/gold/AntiPassiveVoice
+
+
+
+
+###  http://purl.org/linguistics/gold/Article
+
+
+
+
+###  http://purl.org/linguistics/gold/AspectProperty
+
+
+
+
+###  http://purl.org/linguistics/gold/Auxiliary
+
+
+
+
+###  http://purl.org/linguistics/gold/CardinalNumeral
+
+
+
+
+###  http://purl.org/linguistics/gold/CategoryChanger
+
+
+
+
+###  http://purl.org/linguistics/gold/CausativeVoice
+
+
+
+
+###  http://purl.org/linguistics/gold/Circumfix
+
+
+
+
+###  http://purl.org/linguistics/gold/CommonNoun
+
+
+
+
+###  http://purl.org/linguistics/gold/Complementizer
+
+
+
+
+###  http://purl.org/linguistics/gold/CompletiveAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/Compound
+
+
+
+
+###  http://purl.org/linguistics/gold/Conjunction
+
+
+
+
+###  http://purl.org/linguistics/gold/ContinuousAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/Copula
+
+
+
+
+###  http://purl.org/linguistics/gold/Demonstrative
+
+
+
+
+###  http://purl.org/linguistics/gold/Determiner
+
+
+
+
+###  http://purl.org/linguistics/gold/DirectVoice
+
+
+
+
+###  http://purl.org/linguistics/gold/DistributiveAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/DualNumber
+
+
+
+
+###  http://purl.org/linguistics/gold/DubitiveMood
+
+
+
+
+###  http://purl.org/linguistics/gold/DurativeAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/FeminineGender
+
+
+
+
+###  http://purl.org/linguistics/gold/FirstPerson
+
+
+
+
+###  http://purl.org/linguistics/gold/FrequentiveAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/FutureInFutureTense
+
+
+
+
+###  http://purl.org/linguistics/gold/FutureInPastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/FuturePerfectTense
+
+
+
+
+###  http://purl.org/linguistics/gold/FutureTense
+
+
+
+
+###  http://purl.org/linguistics/gold/GenderProperty
+
+
+
+
+###  http://purl.org/linguistics/gold/HabitualAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/HesternalPastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/HodiernalFutureTense
+
+
+
+
+###  http://purl.org/linguistics/gold/HodiernalPastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/ImmediateFutureTense
+
+
+
+
+###  http://purl.org/linguistics/gold/ImmediatePastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/ImperfectiveAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/ImpersonalPassiveVoice
+
+
+
+
+###  http://purl.org/linguistics/gold/InceptiveAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/IndefinitePronoun
+
+
+
+
+###  http://purl.org/linguistics/gold/IndicativeMood
+
+
+
+
+###  http://purl.org/linguistics/gold/Infix
+
+
+
+
+###  http://purl.org/linguistics/gold/Interjection
+
+
+
+
+###  http://purl.org/linguistics/gold/Intransitivizer
+
+
+
+
+###  http://purl.org/linguistics/gold/IrrealisMood
+
+
+
+
+###  http://purl.org/linguistics/gold/IterativeAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/LexicalItem
+
+
+
+
+###  http://purl.org/linguistics/gold/MasculineGender
+
+
+
+
+###  http://purl.org/linguistics/gold/MoodProperty
+
+
+
+
+###  http://purl.org/linguistics/gold/NegativePolarity
+
+
+
+
+###  http://purl.org/linguistics/gold/NeuterGender
+
+
+
+
+###  http://purl.org/linguistics/gold/Nominalizer
+
+
+
+
+###  http://purl.org/linguistics/gold/NonFutureTense
+
+
+
+
+###  http://purl.org/linguistics/gold/NonPastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/Noun
+
+
+
+
+###  http://purl.org/linguistics/gold/NumberProperty
+
+
+
+
+###  http://purl.org/linguistics/gold/Numeral
+
+
+
+
+###  http://purl.org/linguistics/gold/OptativeMood
+
+
+
+
+###  http://purl.org/linguistics/gold/OrdinalNumeral
+
+
+
+
+###  http://purl.org/linguistics/gold/Particle
+
+
+
+
+###  http://purl.org/linguistics/gold/PassiveVoice
+
+
+
+
+###  http://purl.org/linguistics/gold/PastPerfectTense
+
+
+
+
+###  http://purl.org/linguistics/gold/PastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/PaucalNumber
+
+
+
+
+###  http://purl.org/linguistics/gold/PerfectTense
+
+
+
+
+###  http://purl.org/linguistics/gold/PerfectiveAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/PersonProperty
+
+
+
+
+###  http://purl.org/linguistics/gold/PersonalPronoun
+
+
+
+
+###  http://purl.org/linguistics/gold/PluralNumber
+
+
+
+
+###  http://purl.org/linguistics/gold/PossessivePronoun
+
+
+
+
+###  http://purl.org/linguistics/gold/PostHodiernalFutureTense
+
+
+
+
+###  http://purl.org/linguistics/gold/Postposition
+
+
+
+
+###  http://purl.org/linguistics/gold/PreHodiernalPastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/Prefix
+
+
+
+
+###  http://purl.org/linguistics/gold/Preposition
+
+
+
+
+###  http://purl.org/linguistics/gold/PresentTense
+
+
+
+
+###  http://purl.org/linguistics/gold/ProgressiveAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/ProhibitiveMood
+
+
+
+
+###  http://purl.org/linguistics/gold/Pronominal
+
+
+
+
+###  http://purl.org/linguistics/gold/ProperNoun
+
+
+
+
+###  http://purl.org/linguistics/gold/RealisMood
+
+
+
+
+###  http://purl.org/linguistics/gold/RecentPastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/ReciprocalPronoun
+
+
+
+
+###  http://purl.org/linguistics/gold/RelativePastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/RelativePresentTense
+
+
+
+
+###  http://purl.org/linguistics/gold/RelativePronoun
+
+
+
+
+###  http://purl.org/linguistics/gold/RemotePastTense
+
+
+
+
+###  http://purl.org/linguistics/gold/Repetitive
+
+
+
+
+###  http://purl.org/linguistics/gold/Root
+
+
+
+
+###  http://purl.org/linguistics/gold/SecondPerson
+
+
+
+
+###  http://purl.org/linguistics/gold/SemelfactiveAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/SimultaneousAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/SingularNumber
+
+
+
+
+###  http://purl.org/linguistics/gold/Stem
+
+
+
+
+###  http://purl.org/linguistics/gold/SubjunctiveMood
+
+
+
+
+###  http://purl.org/linguistics/gold/Suffix
+
+
+
+
+###  http://purl.org/linguistics/gold/TenseProperty
+
+
+
+
+###  http://purl.org/linguistics/gold/TerminativeAspect
+
+
+
+
+###  http://purl.org/linguistics/gold/ThirdPerson
+
+
+
+
+###  http://purl.org/linguistics/gold/TimitiveMood
+
+
+
+
+###  http://purl.org/linguistics/gold/Transitivizer
+
+
+
+
+###  http://purl.org/linguistics/gold/Verbal
+
+
+
+
+###  http://purl.org/linguistics/gold/VoiceProperty
+
+
+
 
 
 
@@ -7181,6 +7993,14 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
       rdfs:label "NVIS"^^xsd:string ;
       
       rdfs:comment "Nonvisual gloss."@en .
+
+
+
+###  http://mmoon.org/mmoon/Nominalization
+
+:Nominalization rdf:type owl:NamedIndividual ;
+                
+                :hasAbstractIdentity :NMLZ .
 
 
 
