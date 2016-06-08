@@ -546,7 +546,8 @@ skos:definition rdf:type owl:AnnotationProperty .
                
                :definition "States that a morph is an allomorph to another morph which are both realizations of the same morpheme and which occur in complementary or free distribution."@en ;
                
-               :externalDefinitionDesc """http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAnAllomorph.htm: 
+               :externalDefinitionDesc """http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAnAllomorph.htm
+
 An allomorph is one of two or more complementary morphs which manifest a morpheme in its different phonological or morphological environments."""@en ;
                
                rdfs:range :Morph ;
@@ -1059,13 +1060,33 @@ The unit modified by an adverb is typically a clause, but may be any other categ
 
 
 
-###  http://mmoon.org/mmoon/Alienability
+###  http://mmoon.org/mmoon/AlienabilityClassifier
 
-:Alienability rdf:type owl:Class ;
-              
-              rdfs:label "Alienability"@en ;
-              
-              rdfs:subClassOf :LinguisticCategory .
+:AlienabilityClassifier rdf:type owl:Class ;
+                        
+                        rdfs:label "Alienability Classifier"@en ;
+                        
+                        rdfs:subClassOf :Classifier ;
+                        
+                        :definition "Marks a possessive relation between a possessor and a possessum, which may or may not be permanently or necessarily possessed."@en ;
+                        
+                        :externalDefinitionDesc "The alienability of a noun is its property of being alienable. A noun is alienable iff it is not inalienable.  [Christian Lehmann, under \"alienability\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                        
+                        :usageNote "This category should be used for languages which morphologically mark alienability on pronouns, nouns or other parts of possessive constructions."@en .
+
+
+
+###  http://mmoon.org/mmoon/Alienable
+
+:Alienable rdf:type owl:Class ;
+           
+           rdfs:label "Alienable"@en ;
+           
+           rdfs:subClassOf :AlienabilityClassifier ;
+           
+           :definition """http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAnAlienableNoun.htm
+
+An alienable noun is a noun that a) refers to something viewed as not permanently or necessarily possessed, and b) is thus not obligatorily expressed as possessed in a language that also has inalienable nouns. (Crystal 1980:20; McKaughan and Loving 1973:31)"""@en .
 
 
 
@@ -1097,13 +1118,53 @@ Engl. sang (synthetic) vs. has sung (periphrastic). [Christian Lehmann, under \"
 
 
 
-###  http://mmoon.org/mmoon/Animacy
+###  http://mmoon.org/mmoon/AnimacyClassifier
 
-:Animacy rdf:type owl:Class ;
+:AnimacyClassifier rdf:type owl:Class ;
+                   
+                   rdfs:label "Animacy Classifier"@en ;
+                   
+                   rdfs:subClassOf :Classifier ;
+                   
+                   :definition "Animacy 1 is the property of being animate 1 or inanimate 1.  [Christian Lehmann, under \"animacy\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                   
+                   :externalDefinitionDesc """http://www.glottopedia.org/index.php/Animacy
+
+Animacy is a grammatical and/or semantic category of nouns based on how sentient or alive the referent of the noun in a given taxonomic scheme is. Animacy can have various effects on the grammar of a language, such as choice of pronoun (what/who), case endings, word order, or the form a verb takes when it is associated with that noun."""@en ;
+                   
+                   :externalDefinition <http://purl.org/olia/olia-top.owl#AnimacyFeature> .
+
+
+
+###  http://mmoon.org/mmoon/Animal
+
+:Animal rdf:type owl:Class ;
+        
+        rdfs:label "Animal"@en ;
+        
+        rdfs:subClassOf :Animate ;
+        
+        :definition "Is a lexical category of nouns having animal referents."@en .
+
+
+
+###  http://mmoon.org/mmoon/Animate
+
+:Animate rdf:type owl:Class ;
          
-         rdfs:label "Animacy"@en ;
+         rdfs:label "Animate"@en ;
          
-         rdfs:subClassOf :LinguisticCategory .
+         owl:equivalentClass gold:AnimateGender ;
+         
+         rdfs:subClassOf :AnimacyClassifier ;
+         
+         :definition """A noun of a language is animate 1 iff it belongs either to
+- a lexical category of nouns having human or animal referents;
+- a grammatical noun class composed primarily of such nouns.  [Christian Lehmann, under \"animacy\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+         
+         :example "http://linguistics-ontology.org/gold/2010/AnimateGender#examples"@en ;
+         
+         :externalDefinition <http://purl.org/olia/olia.owl#Animate> .
 
 
 
@@ -1254,6 +1315,16 @@ Aspect treats a situation as bounded or non-bounded with respect to other situat
 
 
 
+###  http://mmoon.org/mmoon/Assumed
+
+:Assumed rdf:type owl:Class ;
+         
+         rdfs:label "Assumed"@en ;
+         
+         rdfs:subClassOf :Evidentiality .
+
+
+
 ###  http://mmoon.org/mmoon/AtomicMorpheme
 
 :AtomicMorpheme rdf:type owl:Class ;
@@ -1309,6 +1380,16 @@ An exception is made for person and number morphemes, e.g. the third person sing
                  :example "German: lachen \"to laugh\"(V) --> lÃ¤cheln \"to smile\"(V)"@de ;
                  
                  :definition "A verb which is derived from another verb stem that denotes a smaller intensity than the deriving verb stem."@en .
+
+
+
+###  http://mmoon.org/mmoon/Auditory
+
+:Auditory rdf:type owl:Class ;
+          
+          rdfs:label "Auditory"@en ;
+          
+          rdfs:subClassOf :Evidentiality .
 
 
 
@@ -1493,13 +1574,14 @@ Since the causer occupies the subject slot of the causative verb and the base ve
             
             rdfs:label "Classifier"@en ;
             
+            owl:equivalentClass gold:Classifier ;
+            
             rdfs:subClassOf :LinguisticCategory ;
             
-            rdfs:comment "a word or morpheme that indicates that a linguistic unit (typically a noun) belongs to a certain class of units. (CL, lido)"@en ;
+            :definition "a word or morpheme that indicates that a linguistic unit (typically a noun) belongs to a certain class of units.  [Christian Lehmann, under \"classifier\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
-            rdfs:isDefinedBy "http://purl.org/olia/olia.owl#Classifier" ;
-            
-            :definition "a word or morpheme that indicates that a linguistic unit (typically a noun) belongs to a certain class of units. (CL, lido)"@en ;
+            :example """example of chinise classifier:
+http://www.glottopedia.org/index.php/Classifier"""@en ;
             
             :externalDefinition <http://purl.org/olia/olia.owl#Classifier> .
 
@@ -1513,7 +1595,9 @@ Since the causer occupies the subject slot of the causative verb and the base ve
            
            rdfs:subClassOf :LinguisticCategory ;
            
-           :externalDefinition <http://purl.org/olia/olia.owl#ClusivityFeature> .
+           :definition "Clusivity is an overarching term for various kinds of inclusive - exclusive oppositions as found in the marking of person. (http://www.glottopedia.org/index.php/Clusivity)"@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia-top.owl#ClusivityFeature> .
 
 
 
@@ -1561,6 +1645,22 @@ Since the causer occupies the subject slot of the causative verb and the base ve
             :definition "A common noun (as opposed to a proper noun) is a noun which designates a concept (as opposed to an individual). [Christian Lehmann, under \"common noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             :externalDefinition <http://purl.org/olia/olia.owl#CommonNoun> .
+
+
+
+###  http://mmoon.org/mmoon/Comparative
+
+:Comparative rdf:type owl:Class ;
+             
+             rdfs:label "Comparative"@en ;
+             
+             rdfs:subClassOf :DegreeOfComparison ;
+             
+             :example "Eng.: high --> high-er"@en ;
+             
+             :definition "The comparative is a grammatical category of the adjective or adverb which signifies that whatever is modified by the adjective/adverb has the property designated by it to a higher degree than the standard of comparison. [Christian Lehmann, under \"comparative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#Comparative> .
 
 
 
@@ -1623,10 +1723,6 @@ Since the causer occupies the subject slot of the causative verb and the base ve
               
               rdfs:subClassOf :Lexeme ,
                               [ rdf:type owl:Restriction ;
-                                owl:onProperty :compoundingRelation ;
-                                owl:someValuesFrom :Compounding
-                              ] ,
-                              [ rdf:type owl:Restriction ;
                                 owl:onProperty :isComposedOf ;
                                 owl:onClass [ rdf:type owl:Class ;
                                               owl:unionOf ( :GrammaticalWord
@@ -1634,6 +1730,10 @@ Since the causer occupies the subject slot of the causative verb and the base ve
                                                           )
                                             ] ;
                                 owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :compoundingRelation ;
+                                owl:someValuesFrom :Compounding
                               ] ;
               
               :definition """A compound is a stem formed by composition. [Christian Lehmann, under \"compound\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
@@ -1709,6 +1809,16 @@ The conative is a verbal aspect or aktionsart which means that the agent of the 
              :definition "The conditional is a mood marking a sentence that is, or is construed as, the apodosis of an unreal condition. [Christian Lehmann, under \"conditional\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              
              :externalDefinition <http://purl.org/olia/olia.owl#ConditionalMood> .
+
+
+
+###  http://mmoon.org/mmoon/Conjectural
+
+:Conjectural rdf:type owl:Class ;
+             
+             rdfs:label "Conjectural"@en ;
+             
+             rdfs:subClassOf :Evidentiality .
 
 
 
@@ -1846,7 +1956,11 @@ It thus „links“ a predicate nominal to the subject. [Christian Lehmann, unde
               
               rdfs:label "Countability"@en ;
               
-              rdfs:subClassOf :LinguisticCategory .
+              rdfs:subClassOf :LinguisticCategory ;
+              
+              :definition "Is a nominal feature denoting whether a noun is countable or not."@en ;
+              
+              :externalDefinition <http://purl.org/olia/olia-top.owl#CountabilityFeature> .
 
 
 
@@ -1856,7 +1970,24 @@ It thus „links“ a predicate nominal to the subject. [Christian Lehmann, unde
            
            rdfs:label "Countable"@en ;
            
-           rdfs:subClassOf :Countability .
+           rdfs:subClassOf :Countability ;
+           
+           :definition """A count noun is a common noun which designates an individual (as opposed to a mass).
+
+A count noun
+- has a semantically regular plural form
+- combines with the indefinite article and with cardinal numerals
+- combines with the quantifier ‚many’ (as opposed to ‚much’). [Christian Lehmann, under \"countable noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+           
+           :example "Engl. „farmer“, „farmers“, „many farmers“, „two farmers“, „a farmer“, *“much farmer“. [Christian Lehmann, under \"countable noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           
+           :externalDefinitionDesc """http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsACountNoun.htm
+
+A count noun is a noun whose possible referents are thought of as separate entities. It thus has the ability a) to take a plural form, b)  to occur with distinctive determiners (such as a/an, many), and c)  to occur with cardinal numerals.
+
+It does not have the ability, however, to occur with a determiner such as much."""@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia.owl#Countable> .
 
 
 
@@ -1985,6 +2116,19 @@ It thus „links“ a predicate nominal to the subject. [Christian Lehmann, unde
 
 
 
+###  http://mmoon.org/mmoon/Definite
+
+:Definite rdf:type owl:Class ;
+          
+          rdfs:label "Definite"@en ;
+          
+          rdfs:subClassOf :Definiteness ,
+                          :Determination ;
+          
+          rdfs:isDefinedBy "http://purl.org/olia/olia.owl#Definite" .
+
+
+
 ###  http://mmoon.org/mmoon/Definiteness
 
 :Definiteness rdf:type owl:Class ;
@@ -2011,13 +2155,13 @@ It thus „links“ a predicate nominal to the subject. [Christian Lehmann, unde
 
 :DegreeOfComparison rdf:type owl:Class ;
                     
-                    rdfs:label "Degree of comparison"@en ;
+                    rdfs:label "Degree of Comparison"@en ;
                     
                     rdfs:subClassOf :LinguisticCategory ;
                     
-                    :definition "Is a grammatical category of the adjective or adverb which allows a comparison between the extent to which whatever is modified by the adjective/adverb possesses the quality designated by it, and something else. [Christian Lehmann, under \"degree of comparison\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                    :definition "Degree of comparison is a grammatical category of the adjective or adverb which allows a comparison between the extent to which whatever is modified by the adjective/adverb possesses the quality designated by it, and something else. [Christian Lehmann, under \"degree of comparison\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                     
-                    :externalDefinition <http://purl.org/olia/olia.owl#DegreeFeature> .
+                    :externalDefinition <http://purl.org/olia/olia-top.owl#DegreeFeature> .
 
 
 
@@ -2354,6 +2498,16 @@ Is a kind of lexeme which is formed by the morphological modification of another
 
 
 
+###  http://mmoon.org/mmoon/DirectEvidential
+
+:DirectEvidential rdf:type owl:Class ;
+                  
+                  rdfs:label "Direct evidential"@en ;
+                  
+                  rdfs:subClassOf :Evidentiality .
+
+
+
 ###  http://mmoon.org/mmoon/DirectVoice
 
 :DirectVoice rdf:type owl:Class ;
@@ -2532,11 +2686,23 @@ Derivatively, a linguistic sign designating such a phenomenon is called dynamic.
 
 
 
+###  http://mmoon.org/mmoon/Evidential
+
+:Evidential rdf:type owl:Class ;
+            
+            rdfs:label "Evidential"@en ;
+            
+            rdfs:subClassOf :Evidentiality .
+
+
+
 ###  http://mmoon.org/mmoon/Evidentiality
 
 :Evidentiality rdf:type owl:Class ;
                
                rdfs:label "Evidentiality"@en ;
+               
+               owl:equivalentClass gold:EvidentialityProperty ;
                
                rdfs:subClassOf :LinguisticCategory .
 
@@ -2551,6 +2717,20 @@ Derivatively, a linguistic sign designating such a phenomenon is called dynamic.
              rdfs:subClassOf :Mood ;
              
              :definition "The exclamative is a mood typically used to express exclamation, a vehement expression of strong emotion.  [Christian Lehmann, under \"exclamative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Exclusive
+
+:Exclusive rdf:type owl:Class ;
+           
+           rdfs:label "Exclusive"@en ;
+           
+           rdfs:subClassOf :Clusivity ;
+           
+           :definition "A non-singular first person form is exclusive iff it refers to a group that excludes the addressee. [Christian Lehmann, under \"exclusive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia.owl#Exclusive> .
 
 
 
@@ -2937,6 +3117,22 @@ This often the case for inherent meanings such as number for nouns or tense for 
 
 
 
+###  http://mmoon.org/mmoon/Human
+
+:Human rdf:type owl:Class ;
+       
+       rdfs:label "Human"@en ;
+       
+       owl:equivalentClass gold:HumanGender ;
+       
+       rdfs:subClassOf :Animate ;
+       
+       :definition "Is a lexical category of nouns having human referents."@en ;
+       
+       :externalDefinition <http://purl.org/olia/olia.owl#Human> .
+
+
+
 ###  http://mmoon.org/mmoon/Illative
 
 :Illative rdf:type owl:Class ;
@@ -3049,6 +3245,44 @@ The imperfective 2 is the imperfective 1 aspect. [Christian Lehmann, under \"imp
 
 
 
+###  http://mmoon.org/mmoon/Inalienable
+
+:Inalienable rdf:type owl:Class ;
+             
+             rdfs:label "Inalienable"@en ;
+             
+             rdfs:subClassOf :AlienabilityClassifier ;
+             
+             :externalDefinitionDesc """A noun is inalienable iff it has grammatical, especially morphological, properties of a relational noun.
+The idea of the term is that the typical denotata of inalienable nouns, such as body parts and relatives, can not change their possessor.
+Typical properties of the relevant kind are the obligatory government of a possessive attribute, commonly represented or mediated by a possessive affix or clitic, and the necessity to apply derivational marking if no possessive relation is to be expressed. [Christian Lehmann, under \"inalienable noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+             
+             :definition """http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAnInalienableNoun.htm
+
+An inalienable noun is a noun that a)  refers to something viewed as permanently and necessarily possessed, and b) is thus obligatorily expressed as possessed. It may require a distinguishing possessive form. (McKaughan and Loving 1973)"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Inanimate
+
+:Inanimate rdf:type owl:Class ;
+           
+           rdfs:label "Inanimate"@en ;
+           
+           owl:equivalentClass gold:InanimateGender ;
+           
+           rdfs:subClassOf :AnimacyClassifier ;
+           
+           :definition """Inanimate 1 is
+1. a lexical category of nouns having inanimate referents;
+2. a grammaticalized noun class in some languages composed primarily of such nouns.  [Christian Lehmann, under \"animacy\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+           
+           :example "http://linguistics-ontology.org/gold/2010/InanimateGender#examples"@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia.owl#Inanimate> .
+
+
+
 ###  http://mmoon.org/mmoon/InceptiveAspect
 
 :InceptiveAspect rdf:type owl:Class ;
@@ -3079,6 +3313,33 @@ The imperfective 2 is the imperfective 1 aspect. [Christian Lehmann, under \"imp
             
             :definition """The inchoative is the aktionsart of a durative(-terminative) verb derived from a stative base. It designates transition into the state designated by the base.
 Its application in a language is sometimes so general that it is a general device of deriving dynamic from stative predicates, of verbs from non-verbal bases. It can then be called â€žprocessiveâ€œ. [Christian Lehmann, under \"inchoative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/Inclusive
+
+:Inclusive rdf:type owl:Class ;
+           
+           rdfs:label "Inclusive"@en ;
+           
+           rdfs:subClassOf :Clusivity ;
+           
+           :definition "A first person non-singular form is inclusive iff it refers to a group including the addressee. [Christian Lehmann, under \"inclusive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           
+           :externalDefinition <http://purl.org/olia/olia.owl#Inclusive> .
+
+
+
+###  http://mmoon.org/mmoon/Indefinite
+
+:Indefinite rdf:type owl:Class ;
+            
+            rdfs:label "Indefinite"@en ;
+            
+            rdfs:subClassOf :Definiteness ,
+                            :Determination ;
+            
+            rdfs:isDefinedBy "http://purl.org/olia/olia.owl#Indefinite" .
 
 
 
@@ -3114,6 +3375,16 @@ An indefinite pronoun may be negative. [Christian Lehmann, under \"indefinite pr
             :definition "The indicative is the unmarked mood. It is used when no special modal nuance in the clause or sentence is intended. It is the default mood of independent declarative and often also of interrogative sentences.  [Christian Lehmann, under \"indicative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
             
             :externalDefinition <http://purl.org/olia/olia.owl#IndicativeMood> .
+
+
+
+###  http://mmoon.org/mmoon/Inferential
+
+:Inferential rdf:type owl:Class ;
+             
+             rdfs:label "Inferential"@en ;
+             
+             rdfs:subClassOf :Evidentiality .
 
 
 
@@ -3400,7 +3671,9 @@ The jussive may, in principle, be directed to any of the three persons. This is 
 
 ###  http://mmoon.org/mmoon/Lative
 
-:Lative rdf:type owl:Class .
+:Lative rdf:type owl:Class ;
+        
+        rdfs:subClassOf :Case .
 
 
 
@@ -3862,7 +4135,19 @@ Negation is an operation on a linguistic sign which converts its meaning into th
          
          rdfs:subClassOf :AbsoluteTense ;
          
-         skos:definition "an absolute tense that refers to a time that may be anywhere in a range at or after the moment of utterance. [Christian Lehmann, under \"nonpast\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+         :definition "an absolute tense that refers to a time that may be anywhere in a range at or after the moment of utterance. [Christian Lehmann, under \"nonpast\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/NonVisual
+
+:NonVisual rdf:type owl:Class ;
+           
+           rdfs:label "Nonvisual"@en ;
+           
+           rdfs:subClassOf :Evidentiality ;
+           
+           rdfs:comment "The nonvisual evidential is a sensory evidential that signals that the speaker has perceived, although not seen, the situation designated by the sentence. (CL, lido)"@en .
 
 
 
@@ -4238,7 +4523,13 @@ In some languages the plural is also used for generics and objects that always o
 
 :Positive rdf:type owl:Class ;
           
-          rdfs:subClassOf :DegreeOfComparison .
+          rdfs:label "Positive"@en ;
+          
+          rdfs:subClassOf :DegreeOfComparison ;
+          
+          :definition "The positive is the basic form of an adjective with regard to degrees of comparison. [Christian Lehmann, under \"positive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+          
+          :externalDefinition <http://purl.org/olia/olia.owl#Positive> .
 
 
 
@@ -4622,6 +4913,16 @@ Engl. \"kind\" (adjective) -> \"kindness\" (noun)"""@en .
 
 
 
+###  http://mmoon.org/mmoon/Quotative
+
+:Quotative rdf:type owl:Class ;
+           
+           rdfs:label "Quotative"@en ;
+           
+           rdfs:subClassOf :Evidentiality .
+
+
+
 ###  http://mmoon.org/mmoon/Realis
 
 :Realis rdf:type owl:Class ;
@@ -4828,6 +5129,16 @@ Often, the reflexive pronoun functions as a reciprocal pronoun. [Christian Lehma
 
 
 
+###  http://mmoon.org/mmoon/Reportative
+
+:Reportative rdf:type owl:Class ;
+             
+             rdfs:label "Reportative"@en ;
+             
+             rdfs:subClassOf :Evidentiality .
+
+
+
 ###  http://mmoon.org/mmoon/Representation
 
 :Representation rdf:type owl:Class ;
@@ -4970,6 +5281,16 @@ Often, the reflexive pronoun functions as a reciprocal pronoun. [Christian Lehma
 
 
 
+###  http://mmoon.org/mmoon/Sensory
+
+:Sensory rdf:type owl:Class ;
+         
+         rdfs:label "Sensory"@en ;
+         
+         rdfs:subClassOf :Evidentiality .
+
+
+
 ###  http://mmoon.org/mmoon/SentenceType
 
 :SentenceType rdf:type owl:Class ;
@@ -5032,6 +5353,16 @@ The replacive morph is a construct of taxonomic structuralism.
 
 
 
+###  http://mmoon.org/mmoon/Speculative
+
+:Speculative rdf:type owl:Class ;
+             
+             rdfs:label "Speculative"@en ;
+             
+             rdfs:subClassOf :Evidentiality .
+
+
+
 ###  http://mmoon.org/mmoon/State
 
 :State rdf:type owl:Class ;
@@ -5057,6 +5388,23 @@ The replacive morph is a construct of taxonomic structuralism.
          :definition """A phenomenon - especially a situation - is stative to the extent that it does not change during the time that it obtains.
 Derivatively, a linguistic sign designating such a phenomenon is called stative.
 Christian Lehmann, under \"stativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
+
+
+
+###  http://mmoon.org/mmoon/StatusConstructus
+
+:StatusConstructus rdf:type owl:Class ;
+                   
+                   rdfs:label "Status constructus"@en ;
+                   
+                   rdfs:subClassOf :Definiteness ;
+                   
+                   rdfs:comment """Status constructus is a morphological form of the noun 1 if this is the head of a genitive attribute.
+
+Phenomenology:
+The category is known from Semitic languages such as Accadic. (CL, lido)"""@en ;
+                   
+                   rdfs:isDefinedBy "http://purl.org/olia/olia.owl#StatusConstructus" .
 
 
 
@@ -5105,6 +5453,22 @@ In a compound word: The stem is the morphological representative of one of the t
         rdfs:subClassOf :Affix ;
         
         :definition "A suffix is an affix that follows its stem or root. [Christian Lehmann, under \"suffix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Superlative
+
+:Superlative rdf:type owl:Class ;
+             
+             rdfs:label "Superlative"@en ;
+             
+             rdfs:subClassOf :DegreeOfComparison ;
+             
+             :example "Eng.: high --> high-est"@en ;
+             
+             :definition "The superlative is a grammatical category of the adjective or adverb which signifies that whatever is modified by the adjective/adverb has the property designated by it to a higher degree than all the other members of the same class. [Christian Lehmann, under \"superlative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#Superlative> .
 
 
 
@@ -5228,6 +5592,28 @@ Terminativity is the property of a situation to be terminative.  [Christian Lehm
 
 
 
+###  http://mmoon.org/mmoon/Uncountable
+
+:Uncountable rdf:type owl:Class ;
+             
+             rdfs:label "Uncountable"@en ;
+             
+             rdfs:subClassOf :Countability ;
+             
+             :definition """A mass noun is a noun which designates a mass.
+It has distinguishing features such as inability to take a plural form, or occurrence with distinctive determiners, such as English „some“ and „much“, but not with others, such as English“many“. See the engl. examples „stealth“, „much stealth“, *“stealths“, *“a stealth“. [Christian Lehmann, under \"mass noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+             
+             :externalDefinitionDesc """http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAMassNoun.htm
+
+A mass noun is a noun whose referents are not thought of as separate entities.
+It may have distinguishing features such as the following:
+- The inability to take a plural form
+-  Cooccurrence with some determiners (such as some and much), but not others (such as the English many)"""@en ;
+             
+             :externalDefinition <http://purl.org/olia/olia.owl#Uncountable> .
+
+
+
 ###  http://mmoon.org/mmoon/ValencyChange
 
 :ValencyChange rdf:type owl:Class ;
@@ -5331,6 +5717,16 @@ Terminativity is the property of a situation to be terminative.  [Christian Lehm
                rdfs:subClassOf :FunctionalDerivation ;
                
                rdfs:comment "Verbalization is the derivation of a verb from another part of speech [by means of a derivational morpheme]. [Christian Lehmann, under \"verbalization\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
+
+
+
+###  http://mmoon.org/mmoon/Visual
+
+:Visual rdf:type owl:Class ;
+        
+        rdfs:label "Visual"@en ;
+        
+        rdfs:subClassOf :Evidentiality .
 
 
 
@@ -5453,548 +5849,6 @@ It expresses the combination of a lexeme and a set of grammatical meanings. A wo
            :externalDefinitionDesc "A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
            
            :usageNote "A zero morpheme is posited only if it is in equipollent opposition to overt morphemes. If the term in question is, instead, the unmarked member of a privative opposition, no morpheme is posited. Conversion  can be conceived as derivation using a zero morpheme.  [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en .
-
-
-
-###  http://purl.org/linguistics/gold/ActiveVoice
-
-
-
-
-###  http://purl.org/linguistics/gold/Adjectival
-
-
-
-
-###  http://purl.org/linguistics/gold/Adposition
-
-
-
-
-###  http://purl.org/linguistics/gold/Adverbial
-
-
-
-
-###  http://purl.org/linguistics/gold/Affix
-
-
-
-
-###  http://purl.org/linguistics/gold/AntiPassiveVoice
-
-
-
-
-###  http://purl.org/linguistics/gold/Article
-
-
-
-
-###  http://purl.org/linguistics/gold/AspectProperty
-
-
-
-
-###  http://purl.org/linguistics/gold/Auxiliary
-
-
-
-
-###  http://purl.org/linguistics/gold/CardinalNumeral
-
-
-
-
-###  http://purl.org/linguistics/gold/CategoryChanger
-
-
-
-
-###  http://purl.org/linguistics/gold/CausativeVoice
-
-
-
-
-###  http://purl.org/linguistics/gold/Circumfix
-
-
-
-
-###  http://purl.org/linguistics/gold/CommonNoun
-
-
-
-
-###  http://purl.org/linguistics/gold/Complementizer
-
-
-
-
-###  http://purl.org/linguistics/gold/CompletiveAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/Compound
-
-
-
-
-###  http://purl.org/linguistics/gold/Conjunction
-
-
-
-
-###  http://purl.org/linguistics/gold/ContinuousAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/Copula
-
-
-
-
-###  http://purl.org/linguistics/gold/Demonstrative
-
-
-
-
-###  http://purl.org/linguistics/gold/Determiner
-
-
-
-
-###  http://purl.org/linguistics/gold/DirectVoice
-
-
-
-
-###  http://purl.org/linguistics/gold/DistributiveAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/DualNumber
-
-
-
-
-###  http://purl.org/linguistics/gold/DubitiveMood
-
-
-
-
-###  http://purl.org/linguistics/gold/DurativeAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/FeminineGender
-
-
-
-
-###  http://purl.org/linguistics/gold/FirstPerson
-
-
-
-
-###  http://purl.org/linguistics/gold/FrequentiveAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/FutureInFutureTense
-
-
-
-
-###  http://purl.org/linguistics/gold/FutureInPastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/FuturePerfectTense
-
-
-
-
-###  http://purl.org/linguistics/gold/FutureTense
-
-
-
-
-###  http://purl.org/linguistics/gold/GenderProperty
-
-
-
-
-###  http://purl.org/linguistics/gold/HabitualAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/HesternalPastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/HodiernalFutureTense
-
-
-
-
-###  http://purl.org/linguistics/gold/HodiernalPastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/ImmediateFutureTense
-
-
-
-
-###  http://purl.org/linguistics/gold/ImmediatePastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/ImperfectiveAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/ImpersonalPassiveVoice
-
-
-
-
-###  http://purl.org/linguistics/gold/InceptiveAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/IndefinitePronoun
-
-
-
-
-###  http://purl.org/linguistics/gold/IndicativeMood
-
-
-
-
-###  http://purl.org/linguistics/gold/Infix
-
-
-
-
-###  http://purl.org/linguistics/gold/Interjection
-
-
-
-
-###  http://purl.org/linguistics/gold/Intransitivizer
-
-
-
-
-###  http://purl.org/linguistics/gold/IrrealisMood
-
-
-
-
-###  http://purl.org/linguistics/gold/IterativeAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/LexicalItem
-
-
-
-
-###  http://purl.org/linguistics/gold/MasculineGender
-
-
-
-
-###  http://purl.org/linguistics/gold/MoodProperty
-
-
-
-
-###  http://purl.org/linguistics/gold/NegativePolarity
-
-
-
-
-###  http://purl.org/linguistics/gold/NeuterGender
-
-
-
-
-###  http://purl.org/linguistics/gold/Nominalizer
-
-
-
-
-###  http://purl.org/linguistics/gold/NonFutureTense
-
-
-
-
-###  http://purl.org/linguistics/gold/NonPastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/Noun
-
-
-
-
-###  http://purl.org/linguistics/gold/NumberProperty
-
-
-
-
-###  http://purl.org/linguistics/gold/Numeral
-
-
-
-
-###  http://purl.org/linguistics/gold/OptativeMood
-
-
-
-
-###  http://purl.org/linguistics/gold/OrdinalNumeral
-
-
-
-
-###  http://purl.org/linguistics/gold/Particle
-
-
-
-
-###  http://purl.org/linguistics/gold/PassiveVoice
-
-
-
-
-###  http://purl.org/linguistics/gold/PastPerfectTense
-
-
-
-
-###  http://purl.org/linguistics/gold/PastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/PaucalNumber
-
-
-
-
-###  http://purl.org/linguistics/gold/PerfectTense
-
-
-
-
-###  http://purl.org/linguistics/gold/PerfectiveAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/PersonProperty
-
-
-
-
-###  http://purl.org/linguistics/gold/PersonalPronoun
-
-
-
-
-###  http://purl.org/linguistics/gold/PluralNumber
-
-
-
-
-###  http://purl.org/linguistics/gold/PossessivePronoun
-
-
-
-
-###  http://purl.org/linguistics/gold/PostHodiernalFutureTense
-
-
-
-
-###  http://purl.org/linguistics/gold/Postposition
-
-
-
-
-###  http://purl.org/linguistics/gold/PreHodiernalPastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/Prefix
-
-
-
-
-###  http://purl.org/linguistics/gold/Preposition
-
-
-
-
-###  http://purl.org/linguistics/gold/PresentTense
-
-
-
-
-###  http://purl.org/linguistics/gold/ProgressiveAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/ProhibitiveMood
-
-
-
-
-###  http://purl.org/linguistics/gold/Pronominal
-
-
-
-
-###  http://purl.org/linguistics/gold/ProperNoun
-
-
-
-
-###  http://purl.org/linguistics/gold/RealisMood
-
-
-
-
-###  http://purl.org/linguistics/gold/RecentPastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/ReciprocalPronoun
-
-
-
-
-###  http://purl.org/linguistics/gold/RelativePastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/RelativePresentTense
-
-
-
-
-###  http://purl.org/linguistics/gold/RelativePronoun
-
-
-
-
-###  http://purl.org/linguistics/gold/RemotePastTense
-
-
-
-
-###  http://purl.org/linguistics/gold/Repetitive
-
-
-
-
-###  http://purl.org/linguistics/gold/Root
-
-
-
-
-###  http://purl.org/linguistics/gold/SecondPerson
-
-
-
-
-###  http://purl.org/linguistics/gold/SemelfactiveAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/SimultaneousAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/SingularNumber
-
-
-
-
-###  http://purl.org/linguistics/gold/Stem
-
-
-
-
-###  http://purl.org/linguistics/gold/SubjunctiveMood
-
-
-
-
-###  http://purl.org/linguistics/gold/Suffix
-
-
-
-
-###  http://purl.org/linguistics/gold/TenseProperty
-
-
-
-
-###  http://purl.org/linguistics/gold/TerminativeAspect
-
-
-
-
-###  http://purl.org/linguistics/gold/ThirdPerson
-
-
-
-
-###  http://purl.org/linguistics/gold/TimitiveMood
-
-
-
-
-###  http://purl.org/linguistics/gold/Transitivizer
-
-
-
-
-###  http://purl.org/linguistics/gold/Verbal
-
-
-
-
-###  http://purl.org/linguistics/gold/VoiceProperty
-
-
-
 
 
 
