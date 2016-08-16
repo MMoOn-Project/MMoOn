@@ -604,6 +604,23 @@ morphemic gloss: \"GEN\""""@en ;
 
 lexvo:Language a owl:Class .
 # 
+# http://mmoon.org/mmoon/Ablative
+
+:Ablative a owl:Class ;
+	owl:equivalentClass gold:AblativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition """The ablative is a case that signals spatial orientation, esp. motion, away from the referent of its carrier.
+To the extent that it is grammaticalized in a language, its function may also include other circumstantial case roles.
+[Christian Lehmann, under \"ablative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#AblativeCase> ;
+	:usageNote """Delimitation and History:
+Ablative is less specific than elative. If in paradigmatic opposition to elative, it may mean ‚from outside of referent’.
+
+Phenomenology:
+The term stems from Latin grammar. In Latin and some other languages. the ablative can also express a variety of meanings including instrument, cause, location, source, and time.
+[Christian Lehmann, under \"ablative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Ablative"@en .
+# 
 # http://mmoon.org/mmoon/AbsoluteAdjective
 
 :AbsoluteAdjective a owl:Class ;
@@ -633,7 +650,9 @@ lexvo:Language a owl:Class .
 
 :Absolutive a owl:Class ;
 	owl:equivalentClass gold:AbsolutiveCase ;
-	rdfs:subClassOf :Case ;
+	rdfs:subClassOf :CasusRectus ;
+	:definition """The absolutive is the case which (possibly among other things) marks the absolutive grammatical relation.
+[Christian Lehmann, under \"absolutive case\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#AbsolutiveCase> ;
 	rdfs:label "Absolutive"@en .
 # 
@@ -641,7 +660,9 @@ lexvo:Language a owl:Class .
 
 :Accusative a owl:Class ;
 	owl:equivalentClass gold:AccusativeCase ;
-	rdfs:subClassOf :Case ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The accusative is the case that, in the accusative system of fundamental relations, marks the direct object and sometimes other syntactic functions, too.
+[Christian Lehmann, under \"accusative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#Accusative> ;
 	rdfs:label "Accusative"@en .
 # 
@@ -671,6 +692,24 @@ An action noun is a non-oriented verbal noun (nomen substantivum), i.e. one whic
 	:definition "Active is the basic voice. While other voices indicate that the subject does not have the semantic function of actor, the active indicates nothing of the kind and thus by default maps the actor on the subject.  [Christian Lehmann, under \"active\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#ActiveVoice> ;
 	rdfs:label "Active"@en .
+# 
+# http://mmoon.org/mmoon/Adelative
+
+:Adelative a owl:Class ;
+	rdfs:subClassOf :Elative ;
+	:definition "The adelative is a case that signals spatial orientation, esp. motion, out of the region adjacent to the referent of its carrier. [Christian Lehmann, under \"adelative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+	rdfs:label "Adelative"@en .
+# 
+# http://mmoon.org/mmoon/Adessive
+
+:Adessive a owl:Class ;
+	owl:equivalentClass gold:AdessiveCase ;
+	rdfs:subClassOf :Essive ;
+	:definition """The adessive is a case expressing rest near the referent or its carrier.
+It occurs in Finno-Ugric languages.
+[Christian Lehmann, under \"adessive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#AdessiveCase> ;
+	rdfs:label "Adessive"@en .
 # 
 # http://mmoon.org/mmoon/AdjectivalInflection
 
@@ -804,6 +843,14 @@ The unit modified by an adverb is typically a clause, but may be any other categ
 	:example "Eng. \"to work\"(V) --> \"worker\"(N)."@en ;
 	rdfs:label "Agent noun"@en .
 # 
+# http://mmoon.org/mmoon/Agentive
+
+:Agentive a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The agentive is the case of the agent in a passive construction.
+[Christian Lehmann, under \"agentive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Agentive"@en .
+# 
 # http://mmoon.org/mmoon/Aktionsart
 
 :Aktionsart a owl:Class ;
@@ -828,6 +875,19 @@ The unit modified by an adverb is typically a clause, but may be any other categ
 
 An alienable noun is a noun that a) refers to something viewed as not permanently or necessarily possessed, and b) is thus not obligatorily expressed as possessed in a language that also has inalienable nouns. (Crystal 1980:20; McKaughan and Loving 1973:31)"""@en ;
 	rdfs:label "Alienable"@en .
+# 
+# http://mmoon.org/mmoon/Allative
+
+:Allative a owl:Class ;
+	owl:equivalentClass gold:AllativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition """The allative is a case which expresses spatial orientation, esp. motion, to or toward the referent of its carrier.
+[Christian Lehmann, under \"aditive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#AditiveCase> , <http://purl.org/olia/olia.owl#AllativeCase> ;
+	:usageNote """“Allative“ has been used in studies of Finnish and Eskimo. 
+The synonym „aditive“ is used especially of Basque.
+[Christian Lehmann, under \"aditive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Allative"@en .
 # 
 # http://mmoon.org/mmoon/AnalyticWordform
 
@@ -1054,9 +1114,36 @@ A noun is augmentative 1 iff it is derived by augmentation."""@en ;
 
 :Aversive a owl:Class ;
 	owl:equivalentClass gold:AversiveCase ;
-	rdfs:subClassOf :Case ;
+	rdfs:subClassOf :LocalCase ;
+	:definition """The aversive is a case expressing a relation of aversion of the located object from the referent of its carrier.
+[Christian Lehmann, under \"aversive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """Djagubay (Australia):
+ngawu yarrn.ga-ng gurra:-lan
+SBJ.1.SG fear-PRS dog-AVERS
+“I am afraid of the dog.“
+[Christian Lehmann, under \"aversive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#AversiveCase> ;
 	rdfs:label "Aversive"@en .
+# 
+# http://mmoon.org/mmoon/Benefactive
+
+:Benefactive a owl:Class ;
+	owl:equivalentClass gold:BenefactiveCase ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The benefactive (casus benefactivus) is a case which marks the semantic role of beneficiary.
+[Christian Lehmann, under \"benefactive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#BenefactiveCase> ;
+	rdfs:label "Benefactive"@en .
+# 
+# http://mmoon.org/mmoon/BenefactiveDative
+
+:BenefactiveDative a owl:Class ;
+	rdfs:subClassOf :Benefactive , :Dative ;
+	:definition """The benfactive dative is a dative which expresses a benefactive relation of the NP so marked to the dependency controller.
+[Christian Lehmann, under \"benefactive dative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:usageNote """The term ‚dativus commodi’ is used in studies of Latin.
+[Christian Lehmann, under \"benefactive dative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Benefactive Dative"@en .
 # 
 # http://mmoon.org/mmoon/CardinalNumber
 
@@ -1084,6 +1171,26 @@ b) the marking of syntactic/semantic relations on the governing expression (e.g.
 [Christian Lehmann, under \"case\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	:externalDefinition <http://purl.org/olia/olia-top.owl#CaseFeature> ;
 	rdfs:label "Case"@en .
+# 
+# http://mmoon.org/mmoon/CasusRectus
+
+:CasusRectus a owl:Class ;
+	rdfs:subClassOf :Case ;
+	:definition """The casus rectus of a system is that case which marks the subject of a copula clause (or nominal clause). Thus, the nominative in the accusative system, the absolutive in the ergative system.
+
+Phenomenology:
+The casus rectus may be unmarked as against the oblique cases or may be based on a different declension stem.
+[Christian Lehmann, under \"casus rectus\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Casus Rectus"@en .
+# 
+# http://mmoon.org/mmoon/CausativeCase
+
+:CausativeCase a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The causative case is a case that expresses that the referent of its NP is the cause of the situation expressed by the clause containing it.
+[Christian Lehmann, under \"causative case\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#CausativeCase> ;
+	rdfs:label "Causative Case"@en .
 # 
 # http://mmoon.org/mmoon/CausativeVerb
 
@@ -1166,6 +1273,16 @@ http://www.glottopedia.org/index.php/Classifier"""@en ;
 	:definition "A noun which is derived from another noun stem that denotes group of persons."@en ;
 	:example "German: \"Lehrer\"(N) 'teacher' --> \"Lehrerschaft\"(N) 'body of teachers'."@de ;
 	rdfs:label "Collective person noun"@en .
+# 
+# http://mmoon.org/mmoon/Comitative
+
+:Comitative a owl:Class ;
+	owl:equivalentClass gold:ComitativeCase ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The comitative case on a nominal expression signifies that the referent of that expression is a peripheral participant of a situation that takes part in it in a way analogous to some central participant, usually the actor.
+[Christian Lehmann, under \"comitative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ComitativeCase> ;
+	rdfs:label "Comitative"@en .
 # 
 # http://mmoon.org/mmoon/Common
 
@@ -1321,6 +1438,33 @@ Prototypically, a conjunction links two clauses. However, coordinative conjuncti
 	rdfs:comment "'so that'"@en ;
 	rdfs:label "Consecutive"@en .
 # 
+# http://mmoon.org/mmoon/Contablative
+
+:Contablative a owl:Class ;
+	owl:equivalentClass gold:ContablativeCase ;
+	rdfs:subClassOf :Ablative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ContablativeCase> ;
+	:externalDefinitionDesc "ContablativeCase expresses that the referent of the noun it marks is the location 'from near' which another referent is moving. It has the meaning 'from near'. Kibrik says that Archi (aqc) possesses a nominal spatial form expressing ContablativeCase, namely -raš [Kibrik 1998: 470]."@en ;
+	rdfs:label "Contablative"@en .
+# 
+# http://mmoon.org/mmoon/Contallative
+
+:Contallative a owl:Class ;
+	owl:equivalentClass gold:ContallativeCase ;
+	rdfs:subClassOf :Allative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ContallativeCase> ;
+	:externalDefinitionDesc "Contallative Case expresses that something is moving toward the vicinity of the referent of the noun it marks. It has the meaning 'towards the vicinity of'. Kibrik says that Archi (aqc) possesses a nominal spatial form expressing ContallativeCase, namely -rši [Kibrik 1998: 470]."@en ;
+	rdfs:label "Contallative"@en .
+# 
+# http://mmoon.org/mmoon/Conterminative
+
+:Conterminative a owl:Class ;
+	owl:equivalentClass gold:ConterminativeCase ;
+	rdfs:subClassOf :Terminative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ConterminativeCase> ;
+	:externalDefinitionDesc "ConterminativeCase expresses the notion of something moving into the vicinity of the referent of the noun it marks, but not through that region. It has the meaning 'moving into the vicinity of'. Kibrik says that Archi (aqc) possesses a nominal spatial form expressing ConterminativeCase, namely -rakana [Kibrik 1998: 470]."@en ;
+	rdfs:label "Conterminative"@en .
+# 
 # http://mmoon.org/mmoon/Continuative
 
 :Continuative a owl:Class ;
@@ -1343,6 +1487,15 @@ Continuitas situationis is the property of being continuous 1.
 [Christian Lehmann, under \"continuity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#ContinuousAspect> ;
 	rdfs:label "Continuous Aspect"@en .
+# 
+# http://mmoon.org/mmoon/Contlative
+
+:Contlative a owl:Class ;
+	owl:equivalentClass gold:ContlativeCase ;
+	rdfs:subClassOf :Lative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ConterminativeCase> ;
+	:externalDefinitionDesc "ContlativeCase expresses that the referent of the noun it marks is the location in the vicinity of which another referent is moving. It has the meaning 'in the vicinity of'. Kibrik says that Archi (aqc) possesses a nominal spatial form expressing ContlativeCase, namely -rak [Kibrik 1998: 470]."@en ;
+	rdfs:label "Contlative"@en .
 # 
 # http://mmoon.org/mmoon/Converb
 
@@ -1416,8 +1569,22 @@ It does not have the ability, however, to occur with a determiner such as much."
 
 :Dative a owl:Class ;
 	owl:equivalentClass gold:DativeCase ;
-	rdfs:subClassOf :Case ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The dative is the case that marks the indirect object. It may also be the case that marks NPs with the role of recipient and perhaps similar roles, as the beneficiary or the - adverbal -possessor.
+[Christian Lehmann, under \"dative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#DativeCase> ;
 	rdfs:label "Dative"@en .
+# 
+# http://mmoon.org/mmoon/DativusEthicus
+
+:DativusEthicus a owl:Class ;
+	rdfs:subClassOf :Dative ;
+	:definition """The dativus ethicus is the dative marking an adjunct consisting of a (non-emphatic) pronoun of first or second person which is not directly involved in the designated situation. As the procedure involves a speech-act participant in the designated situation, it expresses the latter’s relevance to that participant.
+More generally, the dativus ethicus is such an adjunct.
+[Christian Lehmann, under \"dativus ethicus\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """German «Laß mir ja die Katze in Ruhe!» ‚Do leave the cat in peace!’
+[Christian Lehmann, under \"dativus ethicus\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Dativus Ethicus"@en .
 # 
 # http://mmoon.org/mmoon/DeadjectivalAdjective
 
@@ -1518,6 +1685,15 @@ The definiteness of an NP is its property of being definite (or not).
 	:definition "Degree of comparison is a grammatical category of the adjective or adverb which allows a comparison between the extent to which whatever is modified by the adjective/adverb possesses the quality designated by it, and something else. [Christian Lehmann, under \"degree of comparison\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:externalDefinition <http://purl.org/olia/olia-top.owl#DegreeFeature> ;
 	rdfs:label "Degree of Comparison"@en .
+# 
+# http://mmoon.org/mmoon/Delative
+
+:Delative a owl:Class ;
+	owl:equivalentClass gold:DelativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition "The delative is a case expressing spatial orientation, esp. motion downward from the referent of its carrier. [Christian Lehmann, under \"delative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#DelativeCase> ;
+	rdfs:label "Delative"@en .
 # 
 # http://mmoon.org/mmoon/DemonstrativePronoun
 
@@ -1659,6 +1835,21 @@ Is a kind of lexeme which is formed by the morphological modification of another
 	:example "Sanskrit: \"â€šs:r.no-ti\" (V) 'hears' --> \"â€šsu-â€™srÂ¡u-.sa-ti\"(V) (RED-hear-DES-3.SG) 'wants to hear'."@sa ;
 	rdfs:label "Desiderative verb"@en .
 # 
+# http://mmoon.org/mmoon/Destinative
+
+:Destinative a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The destinative is a case that marks the referent of its carrier as the destination or the purpose of an action.
+[Christian Lehmann, under \"purposive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#PurposiveCase> ;
+	:usageNote """Also called \"purposive\".
+
+The term was introduced in Basque and Finno-Ugric linguistics.
+
+The carrier of a destinative typically includes nominalized verb forms or even subordinate clauses.
+[Christian Lehmann, under \"purposive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Destinative"@en .
+# 
 # http://mmoon.org/mmoon/Determination
 
 :Determination a owl:Class ;
@@ -1724,6 +1915,13 @@ Is a kind of lexeme which is formed by the morphological modification of another
 	:externalDefinition gold:DiminuativeSize , <http://purl.org/olia/olia.owl#DiminutiveNoun> ;
 	rdfs:label "Diminutive noun"@en .
 # 
+# http://mmoon.org/mmoon/DirectCase
+
+:DirectCase a owl:Class ;
+	rdfs:subClassOf :Case ;
+	:externalDefinition <http://purl.org/olia/olia.owl#DirectCase> ;
+	rdfs:label "Direct Case"@en .
+# 
 # http://mmoon.org/mmoon/DirectVoice
 
 :DirectVoice a owl:Class ;
@@ -1748,6 +1946,13 @@ Is a kind of lexeme which is formed by the morphological modification of another
 	rdfs:subClassOf :Aspect ;
 	:definition "A verbal aspect expressing that the action or state denoted by the verb is performed or experienced simultaneously by more than one individual or object. [Pei and Gaynor 1954: 59]"@en ;
 	rdfs:label "Distributive Aspect"@en .
+# 
+# http://mmoon.org/mmoon/DistributiveCase
+
+:DistributiveCase a owl:Class ;
+	rdfs:subClassOf :Case ;
+	:externalDefinition <http://purl.org/olia/olia.owl#DistributiveCase> ;
+	rdfs:label "Distributive Case"@en .
 # 
 # http://mmoon.org/mmoon/Dual
 
@@ -1808,7 +2013,24 @@ Derivatively, a linguistic sign designating such a phenomenon is called dynamic.
 # http://mmoon.org/mmoon/Elative
 
 :Elative a owl:Class ;
-	rdfs:subClassOf :Lative .
+	owl:equivalentClass gold:ElativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition """The elative is a case expressing spatial orientation, esp. motion, out of the referent of its carrier.
+ [Christian Lehmann, under \"elative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ElativeCase> ;
+	:usageNote """This term is used especially in studies of Finno-Ugric grammar.
+Elative is often contrasted with ablative - from inside vs. from outside.
+ [Christian Lehmann, under \"elative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Elative"@en .
+# 
+# http://mmoon.org/mmoon/Emphasizer
+
+:Emphasizer a owl:Class ;
+	rdfs:subClassOf :FocusMarker ;
+	:definition "An emphasizer is a formative lending emphasis to what it accompanies. [Christian Lehmann, under \"emphasizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
+	:example """the „co“ in Vietnamese in ISE 141.
+[Christian Lehmann, under \"focus marker\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
+	rdfs:label "Emphasizer"@en .
 # 
 # http://mmoon.org/mmoon/EmptyMorph
 
@@ -1830,10 +2052,44 @@ _:genid57 a owl:Restriction ;
 	:usageNote "An empty morpheme is realized by an empty morph. Often an empty morph is realized for the sake of euphony."@en ;
 	rdfs:label "Empty morpheme"@en .
 # 
+# http://mmoon.org/mmoon/Equative
+
+:Equative a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition "A case that expresses likeness or identity to the referent of the NP, thus having the meaning of „as“,“like“, or „in the capacity of“. [Christian Lehmann, under \"equative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#EquativeCase> ;
+	rdfs:label "Equative"@en .
+# 
+# http://mmoon.org/mmoon/Ergative
+
+:Ergative a owl:Class ;
+	owl:equivalentClass gold:ErgativeCase ;
+	rdfs:subClassOf :CrossReferencePosition , :Oblique ;
+	:definition """The ergative is the case which marks a nominal expression as bearing the ergative function.
+[Christian Lehmann, under \"ergative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ErgativeCase> ;
+	rdfs:label "Ergative"@en .
+# 
 # http://mmoon.org/mmoon/Essive
 
 :Essive a owl:Class ;
-	rdfs:subClassOf :Case .
+	owl:equivalentClass gold:EssiveCase ;
+	rdfs:subClassOf :LocalCase ;
+	:definition """The essive (casus essivus localis) is a case expressing a
+generic stative local or temporal function of its carrier.
+[Christian Lehmann, under \"essive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#EssiveCase> ;
+	:usageNote """This term is opposed to ‚lative’: insofar as essive cases mark different locations, lative ones mark motions.
+If the case system contains just one essive case, it is usually called locative.
+[Christian Lehmann, under \"essive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Essive"@en .
+# 
+# http://mmoon.org/mmoon/EssiveFormalCase
+
+:EssiveFormalCase a owl:Class ;
+	rdfs:subClassOf :Essive ;
+	:externalDefinition <http://purl.org/olia/olia.owl#EssiveFormalCase> ;
+	rdfs:label "Essive Formal Case"@en .
 # 
 # http://mmoon.org/mmoon/Evidentiality
 
@@ -1901,6 +2157,17 @@ German Â«tÃ¶tenÂ» â€škillâ€™ from Â«totÂ» â€šdeadâ€™
 	:externalDefinitionDesc "Factitivity is the property of a verb to be factitive. [Christian Lehmann, under \"factitivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	rdfs:label "Factitivity"@en .
 # 
+# http://mmoon.org/mmoon/Factive
+
+:Factive a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The factive is the case of the entity resulting from the verb’s (transformative) action.
+[Christian Lehmann, under \"factive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#FactiveCase> ;
+	:usageNote """the term is used in studies of Japanese and Finno-Ugric languages.
+[Christian Lehmann, under \"factive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Factive"@en .
+# 
 # http://mmoon.org/mmoon/FemaleNominalizer
 
 :FemaleNominalizer a owl:Class ;
@@ -1948,9 +2215,23 @@ German Â«tÃ¶tenÂ» â€škillâ€™ from Â«totÂ» â€šdeadâ€™
 
 :FocusMarker a owl:Class ;
 	rdfs:subClassOf :LinguisticCategory ;
-	:definition "A focus marker is a marker - generally a morpheme - indicating the focus of a sentence. (CL, lido)"@en ;
+	:definition "A focus marker is a marker - generally a morpheme - indicating the focus of a sentence.  [Christian Lehmann, under \"focus marker\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#FocusMarker> ;
 	rdfs:label "Focus marker"@en .
+# 
+# http://mmoon.org/mmoon/FocusParticle
+
+:FocusParticle a owl:Class ;
+	rdfs:subClassOf :FocusMarker ;
+	:definition """A focus particle is a particle 2 which is a focus marker.
+[Christian Lehmann, under \"focus particle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]
+
+The terms ‚focus particle’ and ‚scope particle’ are taken as synonymous, since the scope of a scope particle appears to be focal.
+
+particle 2: A particle (particula s.s.), or particle proper, is a particle (particula s.l.) which belongs to neither or the other subcategories of particle (particula s.l.) (traditionally adverb, adposition, connective, interjection).
+[Christian Lehmann, under \"particle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
+	:example "German \"erst\":  \"ich habe sie erst gestern gesehen\", \"da solltest du erst mal Erwin sehen\"."@en ;
+	rdfs:label "Focus Particle"@en .
 # 
 # http://mmoon.org/mmoon/Folklore
 
@@ -2042,6 +2323,21 @@ This often the case for inherent meanings such as number for nouns or tense for 
 	:externalDefinition <http://purl.org/olia/olia.owl#GenderFeature> ;
 	rdfs:label "Gender"@en .
 # 
+# http://mmoon.org/mmoon/Genitive
+
+:Genitive a owl:Class ;
+	owl:equivalentClass gold:GenitiveCase ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The genitive is the case that marks the possessive attribute (which then is a genitive attribute).
+
+Phenomenology:
+The genitive may also mark other adnominal relations of its host, e.g. an associative relation, a source relation, the relation of the whole to its part, a kin relation, agentive and patientive relations of its referent to a nominalized verb.
+[Christian Lehmann, under \"genitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """whole-part (as „the man’s foot“), kinship (“the man’s brother“), doer-activity (“the man’s singing“), creator-created (“the man’s book“), or depicted-depiction (“the man’s picture“) (examples from Fleming, 1988:10)
+[Christian Lehmann, under \"genitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#GenitiveCase> ;
+	rdfs:label "Genitive"@en .
+# 
 # http://mmoon.org/mmoon/GrammaticalWord
 
 :GrammaticalWord a owl:Class ;
@@ -2107,8 +2403,15 @@ This often the case for inherent meanings such as number for nouns or tense for 
 # http://mmoon.org/mmoon/Illative
 
 :Illative a owl:Class ;
+	owl:equivalentClass gold:IllativeCase ;
 	rdfs:subClassOf :Lative ;
-	rdfs:isDefinedBy "http://purl.org/linguistics/gold/IllativeCase" ;
+	:definition """The illative is a case that expresses motion into the referent of its carrier.
+[Christian Lehmann, under \"illative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """Finnish „talo-on“ ‚house-into’, ‚into the house’ [example from Lyons 1968:299]
+ [Christian Lehmann, under \"illative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#IllativeCase> ;
+	:usageNote """This term was first used in Finno-Ugric studies.
+ [Christian Lehmann, under \"illative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	rdfs:label "Illative"@en .
 # 
 # http://mmoon.org/mmoon/ImmediateFuture
@@ -2168,6 +2471,14 @@ The imperfective 2 is the imperfective 1 aspect. [Christian Lehmann, under \"imp
 	:externalDefinition <http://purl.org/olia/olia.owl#ImpersonalPassive> ;
 	rdfs:label "Impersonal passive"@en .
 # 
+# http://mmoon.org/mmoon/Inablative
+
+:Inablative a owl:Class ;
+	owl:equivalentClass gold:InablativeCase ;
+	rdfs:subClassOf :Ablative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InablativeCase> ;
+	rdfs:label "Inablative"@en .
+# 
 # http://mmoon.org/mmoon/Inalienable
 
 :Inalienable a owl:Class ;
@@ -2179,6 +2490,14 @@ An inalienable noun is a noun that a)  refers to something viewed as permanently
 The idea of the term is that the typical denotata of inalienable nouns, such as body parts and relatives, can not change their possessor.
 Typical properties of the relevant kind are the obligatory government of a possessive attribute, commonly represented or mediated by a possessive affix or clitic, and the necessity to apply derivational marking if no possessive relation is to be expressed. [Christian Lehmann, under \"inalienable noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	rdfs:label "Inalienable"@en .
+# 
+# http://mmoon.org/mmoon/Inallative
+
+:Inallative a owl:Class ;
+	owl:equivalentClass gold:InallativeCase ;
+	rdfs:subClassOf :Allative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InallativeCase> ;
+	rdfs:label "Inallative"@en .
 # 
 # http://mmoon.org/mmoon/Inanimate
 
@@ -2249,6 +2568,19 @@ An indefinite pronoun may be negative. [Christian Lehmann, under \"indefinite pr
 	:externalDefinition <http://purl.org/olia/olia.owl#IndicativeMood> ;
 	rdfs:label "Indicative"@en .
 # 
+# http://mmoon.org/mmoon/Inessive
+
+:Inessive a owl:Class ;
+	owl:equivalentClass gold:InessiveCase ;
+	rdfs:subClassOf :Essive ;
+	:definition """a case which expresses location within the referent of the NP, cf. Finnish „talo-ssa“ ‚house-in’ ‚in the house’ [example from Lyons, 1968:299]).
+This term is used especially in Finnish grammatical studies.
+[Christian Lehmann, under \"inessive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """Finnish „talo-ssa“ ‚house-in’ ‚in the house’ [example from Lyons, 1968:299]).
+[Christian Lehmann, under \"inessive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InessiveCase> ;
+	rdfs:label "Inessive"@en .
+# 
 # http://mmoon.org/mmoon/Inferential
 
 :Inferential a owl:Class ;
@@ -2314,6 +2646,41 @@ English only has lexical contrasts such as stative â€šknowâ€™ vs. ingre
 An instrument noun is an oriented deverbal noun that designates something that functions as an instrument in the situation designated by the base verb. [Christian Lehmann, under \"instrument noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	rdfs:label "Instrument noun"@en .
 # 
+# http://mmoon.org/mmoon/Instrumental
+
+:Instrumental a owl:Class ;
+	owl:equivalentClass gold:InstrumentalCase ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The instrumental is a case such that an NP in the instrumental means ‚with (i.e. using) NP’.
+ [Christian Lehmann, under \"instrumental\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InstrumentalCase> ;
+	rdfs:label "Instrumental"@en .
+# 
+# http://mmoon.org/mmoon/Interablative
+
+:Interablative a owl:Class ;
+	owl:equivalentClass gold:InterablativeCase ;
+	rdfs:subClassOf :Ablative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InterablativeCase> ;
+	rdfs:label "Interablative"@en .
+# 
+# http://mmoon.org/mmoon/Interallative
+
+:Interallative a owl:Class ;
+	owl:equivalentClass gold:InterallativeCase ;
+	rdfs:subClassOf :Allative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InterallativeCase> ;
+	rdfs:label "Interallative"@en .
+# 
+# http://mmoon.org/mmoon/Interessive
+
+:Interessive a owl:Class ;
+	owl:equivalentClass gold:InteressiveCase ;
+	rdfs:subClassOf :Essive ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InteressiveCase> ;
+	:externalDefinitionDesc "Interessive expresses that  the referent of the noun it marks is the location between which another referent exists. It has the meaning of 'between'."@en ;
+	rdfs:label "Interessive"@en .
+# 
 # http://mmoon.org/mmoon/Interjection
 
 :Interjection a owl:Class ;
@@ -2324,6 +2691,22 @@ An interjection is typically brief, used most often as an exclamation or as part
 	:example "Engl. „psst!“, „ugh!“, „well, well!“, „yes“, „no“. [Christian Lehmann, under \"interjection\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#Interjection> ;
 	rdfs:label "Interjection"@en .
+# 
+# http://mmoon.org/mmoon/Interlative
+
+:Interlative a owl:Class ;
+	owl:equivalentClass gold:InterlativeCase ;
+	rdfs:subClassOf :Lative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InterlativeCase> ;
+	rdfs:label "Interlative"@en .
+# 
+# http://mmoon.org/mmoon/Interminative
+
+:Interminative a owl:Class ;
+	owl:equivalentClass gold:InterminativeCase ;
+	rdfs:subClassOf :Terminative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InterminativeCase> ;
+	rdfs:label "Interminative"@en .
 # 
 # http://mmoon.org/mmoon/InterpropositionalRelation
 
@@ -2344,6 +2727,22 @@ An interjection is typically brief, used most often as an exclamation or as part
 	:externalDefinition <http://purl.org/olia/olia.owl#IWHPronoun> ;
 	rdfs:label "Interrogative Pronoun"@en .
 # 
+# http://mmoon.org/mmoon/Interterminative
+
+:Interterminative a owl:Class ;
+	owl:equivalentClass gold:InterterminativeCase ;
+	rdfs:subClassOf :Terminative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#InterterminativeCase> ;
+	rdfs:label "Interterminative"@en .
+# 
+# http://mmoon.org/mmoon/Intertranslative
+
+:Intertranslative a owl:Class ;
+	owl:equivalentClass gold:IntertranslativeCase ;
+	rdfs:subClassOf :Translative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#IntertranslativeCase> ;
+	rdfs:label "Intertranslative"@en .
+# 
 # http://mmoon.org/mmoon/Intransitivizer
 
 :Intransitivizer a owl:Class ;
@@ -2353,6 +2752,14 @@ An interjection is typically brief, used most often as an exclamation or as part
 	:externalDefinitionDesc """A verb is intransitive iff it does not govern a direct object. Derivatively, a construction is intransitive iff it is based on such a verb.
 An intransitive verb is not necessarily monovalent, as it can take other kinds of complements different from a direct object.  [Christian Lehmann, under \"intransiviation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	rdfs:label "Intransitivizer"@en .
+# 
+# http://mmoon.org/mmoon/Intranslative
+
+:Intranslative a owl:Class ;
+	owl:equivalentClass gold:IntranslativeCase ;
+	rdfs:subClassOf :Translative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#IntranslativeCase> ;
+	rdfs:label "Intranslative"@en .
 # 
 # http://mmoon.org/mmoon/Introflection
 
@@ -2429,7 +2836,14 @@ The jussive may, in principle, be directed to any of the three persons. This is 
 # http://mmoon.org/mmoon/Lative
 
 :Lative a owl:Class ;
-	rdfs:subClassOf :Case .
+	owl:equivalentClass gold:LativeCase ;
+	rdfs:subClassOf :LocalCase ;
+	:definition """A lative is a case that expresses motion with respect to the referent of its carrier.
+[Christian Lehmann, under \"lative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#LativeCase> ;
+	:usageNote """This term is used especially in Finno-Ugric grammar.
+[Christian Lehmann, under \"lative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Lative"@en .
 # 
 # http://mmoon.org/mmoon/Lexeme
 
@@ -2458,6 +2872,37 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
 	:externalDefinition <http://purl.org/olia/olia.owl#LocationAdverb> ;
 	rdfs:label "Local Adverb"@en .
 # 
+# http://mmoon.org/mmoon/LocalCase
+
+:LocalCase a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """A local case is any case such that the NP carrying it designates a reference point for the situation of the clause and the case designates the local relation to this reference point, plus possibly a spatial region of the latter.
+[Christian Lehmann, under \"local case\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:usageNote """Local cases often have temporal, instrumental, causal and other meanings, in addition. They may also be governed and thus forfeit a concrete local meaning.
+[Christian Lehmann, under \"local case\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]""" ;
+	rdfs:label "Local Case"@en .
+# 
+# http://mmoon.org/mmoon/Locative
+
+:Locative a owl:Class ;
+	owl:equivalentClass gold:LocativeCase ;
+	rdfs:subClassOf :Essive ;
+	:definition """The locative is a case that expresses location at the referent of its carrier.
+[Christian Lehmann, under \"locative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#LocativeCase> ;
+	:usageNote """An alternative term „adessive“ is used especially in Finnish and Hungarian studies.
+[Christian Lehmann, under \"locative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Locative"@en .
+# 
+# http://mmoon.org/mmoon/Malefactive
+
+:Malefactive a owl:Class ;
+	owl:equivalentClass gold:MalefactiveCase ;
+	rdfs:subClassOf :Case ;
+	:externalDefinition <http://purl.org/olia/olia.owl#MalefactiveCase> ;
+	:externalDefinitionDesc "Opposite of Benefactive,  used when the marked noun is negatively affected in the clause."@en ;
+	rdfs:label "Malefactive"@en .
+# 
 # http://mmoon.org/mmoon/MannerAdverb
 
 :MannerAdverb a owl:Class ;
@@ -2466,6 +2911,14 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
 	:example "Engl.: quickly, slowly, patiently, etc.  [Christian Lehmann, under \"manner adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:externalDefinition <http://purl.org/olia/ilposts.owl#MannerAdverb> ;
 	rdfs:label "Manner Adverb"@en .
+# 
+# http://mmoon.org/mmoon/MannerCase
+
+:MannerCase a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """a case or a case relator marking the semantic role of manner.
+[Christian Lehmann, under \"manner\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Manner Case"@en .
 # 
 # http://mmoon.org/mmoon/Masculine
 
@@ -2492,6 +2945,14 @@ A lexeme [lexema] is a word in its capacity as a unit of the lexicon. In a text,
 	:definition "This class comprises a wide range of meanings a word or morpheme can be associated with, e.g. linguistic categories, morphosyntactic features, lexical senses, derivational meanings."@en ;
 	rdfs:label "Meaning"@en .
 # 
+# http://mmoon.org/mmoon/Mediative
+
+:Mediative a owl:Class ;
+	rdfs:subClassOf :Essive ;
+	:definition """The mediative is a case expression a location between or among the referent of its carrier.
+[Christian Lehmann, under \"mediative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Mediative"@en .
+# 
 # http://mmoon.org/mmoon/Mediopassive
 
 :Mediopassive a owl:Class ;
@@ -2510,6 +2971,7 @@ child my beat -MEDIOPASSIVE
 :MiddleVoice a owl:Class ;
 	rdfs:subClassOf :Voice ;
 	:definition "Middle voice is a voice that indicates that the subject is the actor and acts upon himself or herself reflexively, or for his or her own benefit. (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsMiddleVoice.htm)"@en ;
+	:example "Greek «loúo»  'I wash' vs. «loúomai» 'I wash myself' (Hartmann & Stork 1972: 252)"@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#MiddleVoice> ;
 	rdfs:label "Middle voice"@en .
 # 
@@ -2585,6 +3047,18 @@ For convenience the morpheme instances are rendered by the same notatinal means 
 	rdfs:subClassOf :Meaning ;
 	rdfs:comment "Is a feature that affects the syntactic environment of a word."@en ;
 	rdfs:label "Morphosyntactic feature"@en .
+# 
+# http://mmoon.org/mmoon/MultiplicativeCase
+
+:MultiplicativeCase a owl:Class ;
+	rdfs:subClassOf :Case ;
+	:externalDefinition <http://purl.org/olia/olia.owl#MultiplicativeCase> ;
+	:externalDefinitionDesc """The multiplicative case is a grammatical case used for marking a number of something (\\\"three times\\\").
+The case is found in the Hungarian language, for example nyolc (eight), nyolcszor (eight times).
+The case appears also in Finnish as an adverbial (adverb-forming) case. Used with a cardinal number it denotes the number of actions; for example, viisi (five) -> viidesti (five times). Used with adjectives it refers to the mean of the action, corresponding the English suffix -ly: kaunis (beautiful) -> kauniisti (beautifully). It is also used with a small number of nouns: leikki (play) -> leikisti (just kidding, not really). In addition, it acts as an intensifier when used with a swearword: piru -> pirusti.
+			(http://en.wikipedia.org/wiki/Multiplicative_case)
+		\""""@en ;
+	rdfs:label "Multiplicative Case"@en .
 # 
 # http://mmoon.org/mmoon/Narrative
 
@@ -2689,8 +3163,11 @@ A negator is a grammatical formative - a particle or affix - which combines with
 # http://mmoon.org/mmoon/Nominative
 
 :Nominative a owl:Class ;
-	rdfs:subClassOf :Case ;
-	rdfs:isDefinedBy "http://purl.org/linguistics/gold/NominativeCase" ;
+	owl:equivalentClass gold:NominativeCase ;
+	rdfs:subClassOf :CasusRectus ;
+	:definition """The nominative is the case that marks the subject in the accusative system of fundamental relations. It is also the case of nouns used in isolation (hence its name) and in predicate position. It is often not marked formally.
+[Christian Lehmann, under \"nominative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#Nominative> ;
 	rdfs:label "Nominative"@en .
 # 
 # http://mmoon.org/mmoon/NonFiniteVerb
@@ -2772,6 +3249,14 @@ A negator is a grammatical formative - a particle or affix - which combines with
 	:externalDefinition <http://purl.org/olia/olia.owl#Numeral> ;
 	rdfs:label "Numeral"@en .
 # 
+# http://mmoon.org/mmoon/ObjectiveCase
+
+:ObjectiveCase a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ObjectiveCase> ;
+	:usageNote "As the objective case is defined as \"Case used to express the direct object, indirect object, object of a preposition, object complement and subject of an infinitive. (cf. external definition)\", this case shall only be used if no other more specific case (i.e. accusative, dative or nominative) applies."@en ;
+	rdfs:label "Objective Case"@en .
+# 
 # http://mmoon.org/mmoon/Obligative
 
 :Obligative a owl:Class ;
@@ -2780,6 +3265,25 @@ A negator is a grammatical formative - a particle or affix - which combines with
 	:example "“must“ in „You must do as I say“ or „has to“ in „Paul has to be shaved“. [Christian Lehmann, under \"obligative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#ObligativeModality> ;
 	rdfs:label "Obligative"@en .
+# 
+# http://mmoon.org/mmoon/Oblique
+
+:Oblique a owl:Class ;
+	owl:equivalentClass gold:ObliqueCase ;
+	rdfs:subClassOf :Case ;
+	:definition """An oblique case is any case except the casus rectus of the respective system.
+[Christian Lehmann, under \"oblique case\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ObliqueCase> ;
+	:usageNote """Delimitation and History:
+The distinction between ptosis orthé (casus rectus, direct case) and the other cases goes back to Dionysius Thrax. These others were later called ptóseis plagiai (casus obliqui, oblique cases).
+
+Derivatively, non-subject complements are called oblique.
+Yet more derivatively, other verbal dependents are sometimes called oblique.
+
+Phenomenology:
+Oblique cases are often morphologically marked as against the casus rectus or all based on a special declension stem.
+[Christian Lehmann, under \"oblique case\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Oblique"@en .
 # 
 # http://mmoon.org/mmoon/Optative
 
@@ -2807,6 +3311,21 @@ A negator is a grammatical formative - a particle or affix - which combines with
 	:definition "A particle (particula s.l.) is a word of a syntactic class that does not inflect, i.e. neither a noun (nomen) nor a verb. [Christian Lehmann, under \"particle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#Particle> ;
 	rdfs:label "Particle"@en .
+# 
+# http://mmoon.org/mmoon/Partitive
+
+:Partitive a owl:Class ;
+	owl:equivalentClass gold:PartitiveCase ;
+	rdfs:subClassOf :Oblique ;
+	:definition """A construction or a structural device is partitive iff it expresses that the referent of an NP is only partly affected by the situation. Thus, if the referent is a set, a proper subset is formed; if it is a mass, an instance of that mass is formed; if it is an individual, that individual is only partly affected.
+The partitive is a case which is partitive.
+ [Christian Lehmann, under \"partitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#PartitiveCase> ;
+	:usageNote """The case is well-known from Finno-Ugric languages.
+
+The genitive may have a partitive reading, as in Latin. French has a so-called partitive article. Languages such as Finnish have a special partitive case.
+ [Christian Lehmann, under \"partitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Partitive"@en .
 # 
 # http://mmoon.org/mmoon/Passive
 
@@ -2881,6 +3400,16 @@ The perfective 2 is the perfective 1 aspect. [Christian Lehmann, under \"perfect
 	:example <http://linguistics-ontology.org/gold/2010/PerfectiveAspect#examples> , "Perfective „He walked there“ vs. imperfective „He was walking there“ or „He used to walk there“. [Christian Lehmann, under \"perfective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:externalDefinitionDesc <http://purl.org/olia/olia.owl#PerfectiveAspect> ;
 	rdfs:label "Perfective Aspect"@en .
+# 
+# http://mmoon.org/mmoon/Perlative
+
+:Perlative a owl:Class ;
+	owl:equivalentClass gold:PerlativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition """The perlative is a case expression spatial orientation, esp. motion, through or by the referent of its carrier.
+[Christian Lehmann, under \"perlative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#PerlativeCase> ;
+	rdfs:label "Perlative"@en .
 # 
 # http://mmoon.org/mmoon/Person
 
@@ -2968,6 +3497,17 @@ In some languages the plural is also used for generics and objects that always o
 	:example "lat. patrius <- pater, Romanus <- Roma.  [Christian Lehmann, under \"possessive adjective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]" ;
 	rdfs:label "Possessive Adjective"@en .
 # 
+# http://mmoon.org/mmoon/PossessiveDative
+
+:PossessiveDative a owl:Class ;
+	owl:equivalentClass gold:PossessedCase ;
+	rdfs:subClassOf :Dative ;
+	:definition """The possessive dative is a dative case marking an NP in the role of possessor.
+[Christian Lehmann, under \"possessive dative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example <http://linguistics-ontology.org/gold/2010/PossessedCase#examples> ;
+	:externalDefinition <http://purl.org/olia/olia.owl#PossessedCase> ;
+	rdfs:label "Possessive Dative"@en .
+# 
 # http://mmoon.org/mmoon/PossessivePronoun
 
 :PossessivePronoun a owl:Class ;
@@ -2991,7 +3531,8 @@ The possessive pronoun is normally a modifier to a head noun that represents the
 
 :Postelative a owl:Class ;
 	rdfs:subClassOf :Elative ;
-	rdfs:comment "The postelative is a case that signals spatial orientation, esp. motion, away from the back side or from the domain behind of the referent of its carrier."@en ;
+	:definition """The postelative is a case that signals spatial orientation, esp. motion, away from the back side or from the domain behind of the referent of its carrier.
+[Christian Lehmann, under \"postelative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	rdfs:label "Postelative"@en .
 # 
 # http://mmoon.org/mmoon/Posterior
@@ -3005,7 +3546,8 @@ The possessive pronoun is normally a modifier to a head noun that represents the
 
 :Postessive a owl:Class ;
 	rdfs:subClassOf :Essive ;
-	rdfs:comment "The postessive is a case that expresses location behind the referent of its carrier. (CL, lido)"@en ;
+	:definition """The postessive is a case that expresses location behind the referent of its carrier. 
+[Christian Lehmann, under \"postessive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	rdfs:label "Postessive"@en .
 # 
 # http://mmoon.org/mmoon/Postposition
@@ -3034,6 +3576,14 @@ In Ancient Greek, potential modality is an intepretation of the optative mood. [
 	:definition "The precative is a mood encoding requests. [Christian Lehmann, under \"precative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:example "Sanskrit «bhav-ati» ‚becomes’ - «bhu-ya-t» ‚may become’.  [Christian Lehmann, under \"precative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	rdfs:label "Precative"@en .
+# 
+# http://mmoon.org/mmoon/Preclusive
+
+:Preclusive a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """a case with a meaning like „except“.
+[Christian Lehmann, under \"preclusive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Preclusive"@en .
 # 
 # http://mmoon.org/mmoon/PredicativeAdj
 
@@ -3067,6 +3617,14 @@ In Ancient Greek, potential modality is an intepretation of the optative mood. [
 	:externalDefinition <http://purl.org/olia/olia.owl#Preposition> ;
 	rdfs:label "Preposition"@en .
 # 
+# http://mmoon.org/mmoon/PrepositionalCase
+
+:PrepositionalCase a owl:Class ;
+	rdfs:subClassOf :Case ;
+	:externalDefinition <http://purl.org/olia/olia.owl#PrepositionalCase> ;
+	:externalDefinitionDesc "Case used to express the direct object, indirect object, object of a preposition, object complement and subject of an infinitive."@en ;
+	rdfs:label "Prepositional Case"@en .
+# 
 # http://mmoon.org/mmoon/Present
 
 :Present a owl:Class ;
@@ -3075,6 +3633,17 @@ In Ancient Greek, potential modality is an intepretation of the optative mood. [
 	:definition "an absolute tense which refers to the moment of utterance.  [Christian Lehmann, under \"present\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#Present> ;
 	rdfs:label "Present"@en .
+# 
+# http://mmoon.org/mmoon/Privative
+
+:Privative a owl:Class ;
+	owl:equivalentClass gold:AbessiveCase ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The privative is a case that expresses the lack or absence of the referent of its noun phrase, i.e. ‚without’.
+[Christian Lehmann, under \"privative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#AbessiveCase> ;
+	:usageNote "also called \"abessive\" case"@en ;
+	rdfs:label "Privative"@en .
 # 
 # http://mmoon.org/mmoon/PrivativeAdjectivizer
 
@@ -3113,6 +3682,17 @@ Phenomenology:
 Many languages have a prohibitive allomorph of the negator at the clause level. [Christian Lehmann, under \"prohibitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	rdfs:label "Prohibitive"@en .
 # 
+# http://mmoon.org/mmoon/Prolative
+
+:Prolative a owl:Class ;
+	rdfs:subClassOf :Lative ;
+	:definition """The prolative is a case that expresses motion along or by the referent of its carrier.
+[Christian Lehmann, under \"prolative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """Finnish „-tse“ in ISE 128a, ISE 128b
+[Christian Lehmann, under \"prolative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ProlativeCase> ;
+	rdfs:label "Prolative"@en .
+# 
 # http://mmoon.org/mmoon/Pronoun
 
 :Pronoun a owl:Class ;
@@ -3140,6 +3720,17 @@ Many languages have a prohibitive allomorph of the negator at the clause level. 
 	:definition "A derivational meaning resulting in the meaning 'having N'."@en ;
 	:example "Ponapean: \"pihl\" (noun 'water') --> \"pil-en\" (adjective 'waterly')"@en ;
 	rdfs:label "Proprietive"@en .
+# 
+# http://mmoon.org/mmoon/ProprietiveCase
+
+:ProprietiveCase a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The proprietive is a case on X meaning „having X, „provided with X“, similar to the comitative and converse to the genitive insofar as it marks the possessive relatioh on the possessed rather than on the possessor item.
+[Christian Lehmann, under \"proprietive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ProprietiveCase> ;
+	:usageNote """Frequent in Australian languages.
+[Christian Lehmann, under \"proprietive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Proprietive Case"@en .
 # 
 # http://mmoon.org/mmoon/ProspectiveAspect
 
@@ -3209,6 +3800,15 @@ This class should be used whenever one of the terms \"second hand evidential\" o
 	:externalDefinition <http://purl.org/olia/olia.owl#RecentPast> ;
 	rdfs:label "Recent Past"@en .
 # 
+# http://mmoon.org/mmoon/ReciprocalMiddle
+
+:ReciprocalMiddle a owl:Class ;
+	owl:equivalentClass gold:ReciprocalMiddleVoice ;
+	rdfs:subClassOf :MiddleVoice ;
+	:definition "Referents of plural subject do action to one another [Siewierska 1988: 257]."@en ;
+	:externalDefinition "http://purl.org/olia/olia.owl#ReciprocalMiddle"@en ;
+	rdfs:label "Reciprocal Middle"@en .
+# 
 # http://mmoon.org/mmoon/ReciprocalPronoun
 
 :ReciprocalPronoun a owl:Class ;
@@ -3221,17 +3821,35 @@ Often, the reflexive pronoun functions as a reciprocal pronoun. [Christian Lehma
 	:externalDefinition <http://purl.org/olia/olia.owl#ReciprocalPronoun> ;
 	rdfs:label "Reciprocal Pronoun"@en .
 # 
-# http://mmoon.org/mmoon/ReflexiveVoice
+# http://mmoon.org/mmoon/Referentive
 
-:ReflexiveVoice a owl:Class ;
-	rdfs:subClassOf :Reflexivity ;
-	:externalDefinition <http://purl.org/olia/olia.owl#ReflexiveVoice> ;
-	rdfs:label "Reflexive Voice"@en .
+:Referentive a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """a case with the meaning of „about“.
+[Christian Lehmann, under \"referentive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Referentive"@en .
 # 
-# http://mmoon.org/mmoon/Reflexivity
+# http://mmoon.org/mmoon/Reflexive
 
-:Reflexivity a owl:Class ;
-	rdfs:subClassOf :LinguisticCategory .
+:Reflexive a owl:Class ;
+	owl:equivalentClass gold:ReflexiveMiddleVoice ;
+	rdfs:subClassOf :MiddleVoice ;
+	:definition "Is a middle voice construction that contains a grammatical marking for reflexivity (i.e. by an affix or by a pronoun)."@en ;
+	:example """Russ. Streljat’-sja ‚’, myt’-sja ‚to wash oneself’
+Dogon ind-i ‚to wash oneself’
+[Christian Lehmann, under \"reflexivity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ReflexiveMiddle> , <http://purl.org/olia/olia.owl#ReflexiveVoice> ;
+	rdfs:label "Reflexive"@en .
+# 
+# http://mmoon.org/mmoon/ReflexivePronoun
+
+:ReflexivePronoun a owl:Class ;
+	owl:equivalentClass gold:ReflexivePronoun ;
+	rdfs:subClassOf :Pronoun ;
+	:definition "A reflexive pronoun is a pronoun which is coreferent with a nominal expression of the same sentence which has some higher-ranging syntactic function, usually the subject. [Christian Lehmann, under \"reflexive pronoun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+	:example <http://linguistics-ontology.org/gold/2010/ReflexivePronoun#examples> ;
+	:externalDefinition <http://purl.org/olia/olia.owl#ReflexivePronoun> ;
+	rdfs:label "Reflexive Pronoun"@en .
 # 
 # http://mmoon.org/mmoon/RegularConjugation
 
@@ -3467,6 +4085,16 @@ The replacive morph is a construct of taxonomic structuralism.
 	:externalDefinition <http://purl.org/olia/olia.owl#Singular> ;
 	rdfs:label "Singular"@en .
 # 
+# http://mmoon.org/mmoon/Sociative
+
+:Sociative a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """a case having the meaning of „with“.
+[Christian Lehmann, under \"sociative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SociativeCase> ;
+	:usageNote "Also called associative."@en ;
+	rdfs:label "Sociative"@en .
+# 
 # http://mmoon.org/mmoon/Speculative
 
 :Speculative a owl:Class ;
@@ -3516,6 +4144,40 @@ In a derived word: The stem is the morphological representative of the lexical b
 In a compound word: The stem is the morphological representative of one of the two stems the word is composed of."""@en ;
 	rdfs:label "Stem"@en .
 # 
+# http://mmoon.org/mmoon/Subablative
+
+:Subablative a owl:Class ;
+	owl:equivalentClass gold:SubablativeCase ;
+	rdfs:subClassOf :Ablative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SubablativeCase> ;
+	rdfs:label "Subablative"@en .
+# 
+# http://mmoon.org/mmoon/Suballative
+
+:Suballative a owl:Class ;
+	owl:equivalentClass gold:SuballativeCase ;
+	rdfs:subClassOf :Allative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SuballativeCase> ;
+	rdfs:label "Suballative"@en .
+# 
+# http://mmoon.org/mmoon/Subelative
+
+:Subelative a owl:Class ;
+	rdfs:subClassOf :Elative ;
+	:definition """The subelative is a case expressing motion away from the space under the referent of its carrier.
+ [Christian Lehmann, under \"subelative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Subelative"@en .
+# 
+# http://mmoon.org/mmoon/Subessive
+
+:Subessive a owl:Class ;
+	owl:equivalentClass gold:SubessiveCase ;
+	rdfs:subClassOf :Essive ;
+	:definition """The subessive is a case that expresses location under the referent of its carrier.
+[Christian Lehmann, under \"subessive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SubessiveCase> ;
+	rdfs:label "Subessive"@en .
+# 
 # http://mmoon.org/mmoon/Subjunctive
 
 :Subjunctive a owl:Class ;
@@ -3525,6 +4187,32 @@ In a compound word: The stem is the morphological representative of one of the t
 	:externalDefinition <http://purl.org/olia/olia.owl#SubjunctiveMood> ;
 	rdfs:label "Subjunctive"@en .
 # 
+# http://mmoon.org/mmoon/Sublative
+
+:Sublative a owl:Class ;
+	owl:equivalentClass gold:SublativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition """The sublative is a case expression spatial orientation, esp. motion, towards the lower surface or the region beneath the referent of its carrier.
+[Christian Lehmann, under \"sublative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SublativeCase> ;
+	rdfs:label "Sublative"@en .
+# 
+# http://mmoon.org/mmoon/Subterminative
+
+:Subterminative a owl:Class ;
+	owl:equivalentClass gold:SubterminativeCase ;
+	rdfs:subClassOf :Terminative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SubterminativeCase> ;
+	rdfs:label "Subterminative"@en .
+# 
+# http://mmoon.org/mmoon/Subtranslative
+
+:Subtranslative a owl:Class ;
+	owl:equivalentClass gold:SubtranslativeCase ;
+	rdfs:subClassOf :Translative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SubtranslativeCase> ;
+	rdfs:label "Subtranslative"@en .
+# 
 # http://mmoon.org/mmoon/Suffix
 
 :Suffix a owl:Class ;
@@ -3532,6 +4220,42 @@ In a compound word: The stem is the morphological representative of one of the t
 	rdfs:subClassOf :Affix ;
 	:definition "A suffix is an affix that follows its stem or root. [Christian Lehmann, under \"suffix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
 	rdfs:label "Suffix"@en .
+# 
+# http://mmoon.org/mmoon/Superablative
+
+:Superablative a owl:Class ;
+	owl:equivalentClass gold:SuperablativeCase ;
+	rdfs:subClassOf :Ablative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SuperablativeCase> ;
+	rdfs:label "Superablative"@en .
+# 
+# http://mmoon.org/mmoon/Superallative
+
+:Superallative a owl:Class ;
+	owl:equivalentClass gold:SuperallativeCase ;
+	rdfs:subClassOf :Allative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SuperallativeCase> ;
+	rdfs:label "Superallative"@en .
+# 
+# http://mmoon.org/mmoon/Superelative
+
+:Superelative a owl:Class ;
+	rdfs:subClassOf :Elative ;
+	:definition """The superelative is a case expressing motion away from the space above or from the upper surface of the referent of its carrier.
+[Christian Lehmann, under \"superelative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Superelative"@en .
+# 
+# http://mmoon.org/mmoon/Superessive
+
+:Superessive a owl:Class ;
+	owl:equivalentClass gold:SuperessiveCase ;
+	rdfs:subClassOf :Essive ;
+	:definition """The superessive is a case that expresses location (up)on or over the referent of its carrier.
+[Christian Lehmann, under \"superessive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SuperessiveCase> ;
+	:usageNote """This term is used especially in studies of Finno-Ugric languages.
+[Christian Lehmann, under \"superessive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Superessive"@en .
 # 
 # http://mmoon.org/mmoon/Superlative
 
@@ -3541,6 +4265,33 @@ In a compound word: The stem is the morphological representative of one of the t
 	:example "Eng.: high --> high-est"@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#Superlative> ;
 	rdfs:label "Superlative"@en .
+# 
+# http://mmoon.org/mmoon/SuperlativeCase
+
+:SuperlativeCase a owl:Class ;
+	owl:equivalentClass gold:SuperlativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition """The superdirective (non-standard: superlative) is a case which expresses motion over the top of the referent of its carrier.
+[Christian Lehmann, under \"superdirective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SuperlativeCase> ;
+	:usageNote "also called \"superdirective\"."@en ;
+	rdfs:label "SuperlativeCase"@en .
+# 
+# http://mmoon.org/mmoon/Superterminative
+
+:Superterminative a owl:Class ;
+	owl:equivalentClass gold:SuperterminativeCase ;
+	rdfs:subClassOf :Terminative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SuperterminativeCase> ;
+	rdfs:label "Superterminative"@en .
+# 
+# http://mmoon.org/mmoon/Supertranslative
+
+:Supertranslative a owl:Class ;
+	owl:equivalentClass gold:SupertranslativeCase ;
+	rdfs:subClassOf :Translative ;
+	:externalDefinition <http://purl.org/olia/olia.owl#SupertranslativeCase> ;
+	rdfs:label "Supertranslative"@en .
 # 
 # http://mmoon.org/mmoon/SyntheticWordform
 
@@ -3558,6 +4309,13 @@ In a compound word: The stem is the morphological representative of one of the t
 	:example "Yesterday, today, tomorrow, next/last year/week/ month, early, late etc. Yagua has an adverb tââriy which means something like ‚long time’. With a clause in the past tense it means ‚a long time ago’, in other clauses it means ‚for a long time’ or ‚late in the afternoon’.  [Christian Lehmann, under \"temporal adverb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	rdfs:label "Temporal Adverb"@en .
 # 
+# http://mmoon.org/mmoon/TemporalisCase
+
+:TemporalisCase a owl:Class ;
+	rdfs:subClassOf :Case ;
+	:externalDefinition <http://purl.org/olia/olia.owl#TemporalisCase> ;
+	rdfs:label "Temporalis Case"@en .
+# 
 # http://mmoon.org/mmoon/Tense
 
 :Tense a owl:Class ;
@@ -3567,6 +4325,17 @@ In a compound word: The stem is the morphological representative of one of the t
 The most important temporal relations between the two time-points are simultaneity, anteriority and posteriority. They found the tenses present, past and future.  [Christian Lehmann, under \"tense\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
 	:externalDefinition <http://purl.org/olia/olia.owl#TenseFeature> ;
 	rdfs:label "Tense"@en .
+# 
+# http://mmoon.org/mmoon/Terminative
+
+:Terminative a owl:Class ;
+	owl:equivalentClass gold:TerminativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition """The terminative is a case that expresses motion as far as or up to the location of the referent of its carrier. 
+[Christian Lehmann, under \"destinative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#TerminativeCase> ;
+	:usageNote "also called \"destinative\" case."@en ;
+	rdfs:label "Terminative"@en .
 # 
 # http://mmoon.org/mmoon/TerminativeAspect
 
@@ -3596,12 +4365,38 @@ Terminativity is the property of a situation to be terminative.  [Christian Lehm
 	:example "the Turkish suffix „-esi“.  [Christian Lehmann, under \"timitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]" ;
 	rdfs:label "Timitive"@en .
 # 
+# http://mmoon.org/mmoon/TopicMarker
+
+:TopicMarker a owl:Class ;
+	rdfs:subClassOf :LinguisticCategory ;
+	:definition """A topic of a sentence is a syntagm that contains reference points for the predication contained in the rest of the sentence.
+
+The topic constituent is generally left-dislocated.
+It may be marked by a dedicated grammatical formative, e.g. in Tagalog by a preposition, in Japanese by a postposition, in Yucatec Maya by an enclitic.
+
+[Christian Lehmann, under \"topic\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:usageNote "This meaning should only be used if it applys to morphemes and not to syntagms, i.e. if topic is \"marked by a dedicated grammatical formative\"."@en ;
+	rdfs:label "Topic Marker"@en .
+# 
 # http://mmoon.org/mmoon/Transfix
 
 :Transfix a owl:Class ;
 	rdfs:subClassOf :Affix ;
 	:definition "A transfix is a discontinuous affix at least one of whose components is an infix.  [Christian Lehmann, under \"transfix\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
 	rdfs:label "Transfix"@en .
+# 
+# http://mmoon.org/mmoon/Transformative
+
+:Transformative a owl:Class ;
+	rdfs:subClassOf :Oblique ;
+	:definition """The transformative [casus transformativus] is a case marking the goal of a change of category, property or state.
+[Christian Lehmann, under \"transformative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """Estonian:
+soo muutu-s põllu-ks
+marsh(NOM) change:PAST-3.SG field-TRNSF
+’the swamp changed into arable land’
+[Christian Lehmann, under \"transformative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Transformative"@en .
 # 
 # http://mmoon.org/mmoon/Transitivizer
 
@@ -3610,6 +4405,19 @@ Terminativity is the property of a situation to be terminative.  [Christian Lehm
 	rdfs:subClassOf :ValencyChange ;
 	:definition "A transitiviser is an affix which changes the transitivity of an intransitive verb into a transitive one. [Christian Lehmann, under \"transitivizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	rdfs:label "Transitivizer"@en .
+# 
+# http://mmoon.org/mmoon/Translative
+
+:Translative a owl:Class ;
+	owl:equivalentClass gold:TranslativeCase ;
+	rdfs:subClassOf :Lative ;
+	:definition """The translative is a case marking an NP through whose referent something moves.
+[Christian Lehmann, under \"translative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """Finnish „-ksi“ with local and transformative meaning. ISE 129a
+ISE 129b
+[Christian Lehmann, under \"translative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#TranslativeCase> ;
+	rdfs:label "Translative"@en .
 # 
 # http://mmoon.org/mmoon/Uncountable
 
@@ -3625,6 +4433,14 @@ It may have distinguishing features such as the following:
 - The inability to take a plural form
 -  Cooccurrence with some determiners (such as some and much), but not others (such as the English many)"""@en ;
 	rdfs:label "Uncountable"@en .
+# 
+# http://mmoon.org/mmoon/Unitive
+
+:Unitive a owl:Class ;
+	rdfs:subClassOf :Comitative ;
+	:definition """The unitive is a case such that an NP in the unitive means ‚together with NP’.
+[Christian Lehmann, under \"unitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	rdfs:label "Unitive"@en .
 # 
 # http://mmoon.org/mmoon/ValencyChange
 
@@ -3697,6 +4513,21 @@ It may have distinguishing features such as the following:
 	:example <http://linguistics-ontology.org/gold/2010/VisualEvidentiality#examples> ;
 	:externalDefinition <http://purl.org/olia/olia.owl#VisualEvidentiality> ;
 	rdfs:label "Visual"@en .
+# 
+# http://mmoon.org/mmoon/Vocative
+
+:Vocative a owl:Class ;
+	owl:equivalentClass gold:VocativeCase ;
+	rdfs:subClassOf :CasusRectus ;
+	:definition """The vocative is the case of a noun whose referent is being addressed by the use of the noun.
+The vocative is unlike all the other cases in that the NP marked for it has no syntactic function in a clause, but constitutes a clause - and consequently possibly an utterance -by itself.
+
+If the vocative needs to be classified as either casus rectus or obliquus, since it is definitely not oblique, it has to be rectus.
+[Christian Lehmann, under \"vocative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:example """Latin. „Brute“ in „Et tu, Brute!“ ‚You too, Brutus!’ (Hartmann & Stork 1972:251)
+[Christian Lehmann, under \"vocative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+	:externalDefinition <http://purl.org/olia/olia.owl#VocativeCase> ;
+	rdfs:label "Vocative"@en .
 # 
 # http://mmoon.org/mmoon/Voice
 
@@ -3784,6 +4615,10 @@ _:genid68 a owl:Restriction ;
 	:usageNote "A zero morpheme is posited only if it is in equipollent opposition to overt morphemes. If the term in question is, instead, the unmarked member of a privative opposition, no morpheme is posited. Conversion  can be conceived as derivation using a zero morpheme.  [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
 	rdfs:label "Zero morph"@en .
 # 
+# http://purl.org/linguistics/gold/AbessiveCase
+# 
+# http://purl.org/linguistics/gold/AblativeCase
+# 
 # http://purl.org/linguistics/gold/AbsolutiveCase
 # 
 # http://purl.org/linguistics/gold/AccusativeCase
@@ -3791,6 +4626,8 @@ _:genid68 a owl:Restriction ;
 # http://purl.org/linguistics/gold/ActiveVoice
 
 gold:ActiveVoice a owl:Class .
+# 
+# http://purl.org/linguistics/gold/AdessiveCase
 # 
 # http://purl.org/linguistics/gold/Adjectival
 
@@ -3807,6 +4644,8 @@ gold:Adverbial a owl:Class .
 # http://purl.org/linguistics/gold/Affix
 
 gold:Affix a owl:Class .
+# 
+# http://purl.org/linguistics/gold/AllativeCase
 # 
 # http://purl.org/linguistics/gold/AnimateGender
 
@@ -3834,6 +4673,8 @@ gold:Auxiliary a owl:Class .
 # 
 # http://purl.org/linguistics/gold/AversiveCase
 # 
+# http://purl.org/linguistics/gold/BenefactiveCase
+# 
 # http://purl.org/linguistics/gold/CardinalNumeral
 
 gold:CardinalNumeral a owl:Class .
@@ -3856,6 +4697,8 @@ gold:Circumfix a owl:Class .
 
 gold:Classifier a owl:Class .
 # 
+# http://purl.org/linguistics/gold/ComitativeCase
+# 
 # http://purl.org/linguistics/gold/CommonNoun
 
 gold:CommonNoun a owl:Class .
@@ -3876,9 +4719,17 @@ gold:Compound a owl:Class .
 
 gold:Conjunction a owl:Class .
 # 
+# http://purl.org/linguistics/gold/ContablativeCase
+# 
+# http://purl.org/linguistics/gold/ContallativeCase
+# 
+# http://purl.org/linguistics/gold/ConterminativeCase
+# 
 # http://purl.org/linguistics/gold/ContinuousAspect
 
 gold:ContinuousAspect a owl:Class .
+# 
+# http://purl.org/linguistics/gold/ContlativeCase
 # 
 # http://purl.org/linguistics/gold/Copula
 
@@ -3887,6 +4738,8 @@ gold:Copula a owl:Class .
 # http://purl.org/linguistics/gold/DativeCase
 # 
 # http://purl.org/linguistics/gold/DeductiveEvidentiality
+# 
+# http://purl.org/linguistics/gold/DelativeCase
 # 
 # http://purl.org/linguistics/gold/Demonstrative
 
@@ -3917,6 +4770,12 @@ gold:DubitiveMood a owl:Class .
 # http://purl.org/linguistics/gold/DurativeAspect
 
 gold:DurativeAspect a owl:Class .
+# 
+# http://purl.org/linguistics/gold/ElativeCase
+# 
+# http://purl.org/linguistics/gold/ErgativeCase
+# 
+# http://purl.org/linguistics/gold/EssiveCase
 # 
 # http://purl.org/linguistics/gold/EvidentialityProperty
 
@@ -3956,6 +4815,8 @@ gold:FutureTense a owl:Class .
 
 gold:GenderProperty a owl:Class .
 # 
+# http://purl.org/linguistics/gold/GenitiveCase
+# 
 # http://purl.org/linguistics/gold/HabitualAspect
 
 gold:HabitualAspect a owl:Class .
@@ -3978,6 +4839,8 @@ gold:HodiernalPastTense a owl:Class .
 
 gold:HumanGender a owl:Class .
 # 
+# http://purl.org/linguistics/gold/IllativeCase
+# 
 # http://purl.org/linguistics/gold/ImmediateFutureTense
 
 gold:ImmediateFutureTense a owl:Class .
@@ -3993,6 +4856,10 @@ gold:ImperfectiveAspect a owl:Class .
 # http://purl.org/linguistics/gold/ImpersonalPassiveVoice
 
 gold:ImpersonalPassiveVoice a owl:Class .
+# 
+# http://purl.org/linguistics/gold/InablativeCase
+# 
+# http://purl.org/linguistics/gold/InallativeCase
 # 
 # http://purl.org/linguistics/gold/InanimateGender
 
@@ -4012,19 +4879,39 @@ gold:IndicativeMood a owl:Class .
 # 
 # http://purl.org/linguistics/gold/IndirectEvidentiality
 # 
+# http://purl.org/linguistics/gold/InessiveCase
+# 
 # http://purl.org/linguistics/gold/InferentialEvidentiality
 # 
 # http://purl.org/linguistics/gold/Infix
 
 gold:Infix a owl:Class .
 # 
+# http://purl.org/linguistics/gold/InstrumentalCase
+# 
+# http://purl.org/linguistics/gold/InterablativeCase
+# 
+# http://purl.org/linguistics/gold/InterallativeCase
+# 
+# http://purl.org/linguistics/gold/InteressiveCase
+# 
 # http://purl.org/linguistics/gold/Interjection
 
 gold:Interjection a owl:Class .
 # 
+# http://purl.org/linguistics/gold/InterlativeCase
+# 
+# http://purl.org/linguistics/gold/InterminativeCase
+# 
+# http://purl.org/linguistics/gold/InterterminativeCase
+# 
+# http://purl.org/linguistics/gold/IntertranslativeCase
+# 
 # http://purl.org/linguistics/gold/Intransitivizer
 
 gold:Intransitivizer a owl:Class .
+# 
+# http://purl.org/linguistics/gold/IntranslativeCase
 # 
 # http://purl.org/linguistics/gold/IrrealisMood
 
@@ -4034,9 +4921,15 @@ gold:IrrealisMood a owl:Class .
 
 gold:IterativeAspect a owl:Class .
 # 
+# http://purl.org/linguistics/gold/LativeCase
+# 
 # http://purl.org/linguistics/gold/LexicalItem
 
 gold:LexicalItem a owl:Class .
+# 
+# http://purl.org/linguistics/gold/LocativeCase
+# 
+# http://purl.org/linguistics/gold/MalefactiveCase
 # 
 # http://purl.org/linguistics/gold/MasculineGender
 
@@ -4058,6 +4951,8 @@ gold:NeuterGender a owl:Class .
 
 gold:Nominalizer a owl:Class .
 # 
+# http://purl.org/linguistics/gold/NominativeCase
+# 
 # http://purl.org/linguistics/gold/NonFutureTense
 
 gold:NonFutureTense a owl:Class .
@@ -4078,6 +4973,8 @@ gold:NumberProperty a owl:Class .
 
 gold:Numeral a owl:Class .
 # 
+# http://purl.org/linguistics/gold/ObliqueCase
+# 
 # http://purl.org/linguistics/gold/OptativeMood
 
 gold:OptativeMood a owl:Class .
@@ -4093,6 +4990,8 @@ gold:OrdinalNumeral a owl:Class .
 # http://purl.org/linguistics/gold/Particle
 
 gold:Particle a owl:Class .
+# 
+# http://purl.org/linguistics/gold/PartitiveCase
 # 
 # http://purl.org/linguistics/gold/PassiveVoice
 
@@ -4118,6 +5017,8 @@ gold:PerfectTense a owl:Class .
 
 gold:PerfectiveAspect a owl:Class .
 # 
+# http://purl.org/linguistics/gold/PerlativeCase
+# 
 # http://purl.org/linguistics/gold/PersonProperty
 
 gold:PersonProperty a owl:Class .
@@ -4133,6 +5034,8 @@ gold:PluralNumber a owl:Class .
 # http://purl.org/linguistics/gold/PolarityProperty
 # 
 # http://purl.org/linguistics/gold/PositivePolarity
+# 
+# http://purl.org/linguistics/gold/PossessedCase
 # 
 # http://purl.org/linguistics/gold/PossessivePronoun
 
@@ -4186,9 +5089,15 @@ gold:RealisMood a owl:Class .
 
 gold:RecentPastTense a owl:Class .
 # 
+# http://purl.org/linguistics/gold/ReciprocalMiddleVoice
+# 
 # http://purl.org/linguistics/gold/ReciprocalPronoun
 
 gold:ReciprocalPronoun a owl:Class .
+# 
+# http://purl.org/linguistics/gold/ReflexiveMiddleVoice
+# 
+# http://purl.org/linguistics/gold/ReflexivePronoun
 # 
 # http://purl.org/linguistics/gold/RelativePastTense
 
@@ -4236,13 +5145,37 @@ gold:SingularNumber a owl:Class .
 
 gold:Stem a owl:Class .
 # 
+# http://purl.org/linguistics/gold/SubablativeCase
+# 
+# http://purl.org/linguistics/gold/SuballativeCase
+# 
+# http://purl.org/linguistics/gold/SubessiveCase
+# 
 # http://purl.org/linguistics/gold/SubjunctiveMood
 
 gold:SubjunctiveMood a owl:Class .
 # 
+# http://purl.org/linguistics/gold/SublativeCase
+# 
+# http://purl.org/linguistics/gold/SubterminativeCase
+# 
+# http://purl.org/linguistics/gold/SubtranslativeCase
+# 
 # http://purl.org/linguistics/gold/Suffix
 
 gold:Suffix a owl:Class .
+# 
+# http://purl.org/linguistics/gold/SuperablativeCase
+# 
+# http://purl.org/linguistics/gold/SuperallativeCase
+# 
+# http://purl.org/linguistics/gold/SuperessiveCase
+# 
+# http://purl.org/linguistics/gold/SuperlativeCase
+# 
+# http://purl.org/linguistics/gold/SuperterminativeCase
+# 
+# http://purl.org/linguistics/gold/SupertranslativeCase
 # 
 # http://purl.org/linguistics/gold/TenseProperty
 
@@ -4251,6 +5184,8 @@ gold:TenseProperty a owl:Class .
 # http://purl.org/linguistics/gold/TerminativeAspect
 
 gold:TerminativeAspect a owl:Class .
+# 
+# http://purl.org/linguistics/gold/TerminativeCase
 # 
 # http://purl.org/linguistics/gold/ThirdPerson
 
@@ -4264,11 +5199,15 @@ gold:TimitiveMood a owl:Class .
 
 gold:Transitivizer a owl:Class .
 # 
+# http://purl.org/linguistics/gold/TranslativeCase
+# 
 # http://purl.org/linguistics/gold/Verbal
 
 gold:Verbal a owl:Class .
 # 
 # http://purl.org/linguistics/gold/VisualEvidentiality
+# 
+# http://purl.org/linguistics/gold/VocativeCase
 # 
 # http://purl.org/linguistics/gold/VoiceProperty
 
