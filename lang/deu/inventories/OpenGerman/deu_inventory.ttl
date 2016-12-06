@@ -5,7 +5,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix gold: <http://purl.org/linguistics/gold/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix mmoon: <http://mmoon.org/mmoon/> .
+@prefix mmoon: <http://mmoon.org/mmoon/core/> .
 @prefix deu_schema: <http://mmoon.org/lang/deu/schema/og/> .
 @prefix deu_inventory: <http://mmoon.org/lang/deu/inventory/og/> .
 @base <http://mmoon.org/lang/deu/inventory/og/> .
