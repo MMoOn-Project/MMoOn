@@ -8,7 +8,7 @@ sources := {
 
 mainClass in (Compile, run) := Some("ProtegePostprocess")
 
-scalaVersion := "2.11.9"
+scalaVersion := "2.11.8"
 
 libraryDependencies += "org.aksw.owlpod" %% "owlpod" % "0.5.2-SNAPSHOT"
 

@@ -55,8 +55,8 @@ trait CommonRunConfig { this: OwlpodRunner =>
 
   lazy val mmoonOGDocs = OntologyDocumentList(
     "core/mmoon.ttl",
-    "lang/deu/schemas/OpenGerman/deu_schema.ttl",
-    "lang/deu/inventories/OpenGerman/deu_inventory.ttl"
+    "deu/schema/og/deu_schema.ttl",
+    "deu/inventory/og/deu_inventory.ttl"
   )
 
   lazy val mmoonOHDocs = OntologyDocumentList(
@@ -72,9 +72,9 @@ trait CommonRunConfig { this: OwlpodRunner =>
   }
 
   protected lazy val ontIRI2ShortPath = Map(
-    "http://mmoon.org/mmoon/".toIRI -> "core/mmoon.ttl",
-    "http://mmoon.org/lang/deu/schema/og/".toIRI -> "lang/deu/schemas/OpenGerman/deu_schema.ttl",
-    "http://mmoon.org/lang/deu/inventory/og/".toIRI -> "lang/deu/inventories/OpenGerman/deu_inventory.ttl",
+    "http://mmoon.org/core/".toIRI -> "core/mmoon.ttl",
+    "http://mmoon.org/deu/schema/og/".toIRI -> "deu/schema/og/deu_schema.ttl",
+    "http://mmoon.org/deu/inventory/og/".toIRI -> "deu/inventory/og/deu_inventory.ttl",
     "http://mmoon.org/lang/heb/schema/oh/".toIRI -> "lang/heb/schemas/OpenHebrew/heb_schema.ttl",
     "http://mmoon.org/lang/heb/inventory/oh/".toIRI -> "lang/heb/inventories/OpenHebrew/heb_inventory.ttl"
   )
