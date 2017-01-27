@@ -1,4 +1,4 @@
-@prefix : <http://mmoon.org/mmoon/core/> .
+@prefix : <http://mmoon.org/core/> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -10,17 +10,17 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix lexvo: <http://lexvo.org/ontology#> .
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@base <http://mmoon.org/mmoon/core/> .
+@base <http://mmoon.org/core/> .
 
-<http://mmoon.org/mmoon/core/> rdf:type owl:Ontology ;
-                                owl:versionIRI <http://mmoon.org/mmoon/core/v1.0.0/> ;
-                                dc:creator <http://aksw.org/BettinaKlimek.rdf> ;
-                                dc:identifier "http://mmoon.org/mmoon/core/v1.0.0/"^^xsd:anyURI ;
-                                dc:title "The Multilingual Morpheme Ontology"@en ;
-                                owl:versionInfo "Version 1.0, 2016. Created and maintained by Bettina Klimek."@en ;
-                                dct:license <https://creativecommons.org/licenses/by/4.0/> ;
-                                rdfs:label "Multilingual Morpheme Ontology"@en ;
-                                dc:description """The Multilingual Morpheme Ontology (MMoOn) is  an ontological model that contains the vocabulary needed to describe the morphological elements, meanings and representations of natural languages. 
+<http://mmoon.org/core/> rdf:type owl:Ontology ;
+                          owl:versionIRI <http://mmoon.org/core/v1.0.0/> ;
+                          dc:creator <http://aksw.org/BettinaKlimek.rdf> ;
+                          dc:identifier "http://mmoon.org/mmoon/core/v1.0.0/"^^xsd:anyURI ;
+                          dc:title "The Multilingual Morpheme Ontology"@en ;
+                          owl:versionInfo "Version 1.0, 2016. Created and maintained by Bettina Klimek."@en ;
+                          dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+                          rdfs:label "Multilingual Morpheme Ontology"@en ;
+                          dc:description """The Multilingual Morpheme Ontology (MMoOn) is  an ontological model that contains the vocabulary needed to describe the morphological elements, meanings and representations of natural languages. 
 
 This is the reference ontology from which various language specific MMoOn Inventories can be derived."""@en .
 
@@ -408,6 +408,13 @@ The term stems from Latin grammar. In Latin and some other languages. the ablati
                        :externalDefinition <http://purl.org/olia/olia.owll#AbsoluteRelativeTense> ;
                        rdfs:label "Absolute-Relative Tense"@en .
 
+:AbsoluteState rdf:type owl:Class ;
+               rdfs:subClassOf :NominalState ;
+               :definition "The absolute state marks the absence of syntactic dependents on the noun and is usually unmarked. (Melʹčuk, Igorʹ Aleksandrovič, and David Beck. Aspects of the Theory of Morphology. Vol. 10. Walter de Gruyter, 2006.)"@en ;
+               :example """\"glima\" (no marking) 'gown'
+(http://pluto.huji.ac.il/~edit/edit/Construct%20State%20EHLL.pdf)"""@he ;
+               rdfs:label "Absolute State"@en .
+
 :AbsoluteTense rdf:type owl:Class ;
                rdfs:subClassOf :Tense ;
                :definition "An absolute tense is a tense that has the point of time of the speech act as its immediate point of reference.  [Christian Lehmann, under \"absolute tense\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
@@ -510,6 +517,7 @@ It occurs in Finno-Ugric languages.
 
 :Admonitive rdf:type owl:Class ;
             rdfs:subClassOf :Mood ;
+            :definition "The admonitive mood expresses warnings, encouragement or recommendations."@de ;
             :externalDefinition <http://purl.org/olia/olia.owl#AdmonitiveModality> ;
             rdfs:label "Admonitive"@en .
 
@@ -579,7 +587,7 @@ The unit modified by an adverb is typically a clause, but may be any other categ
 
 :AlienabilityClassifier rdf:type owl:Class ;
                         rdfs:subClassOf :Classifier ;
-                        :definition "Marks a possessive relation between a possessor and a possessum, which may or may not be permanently or necessarily possessed."@en ;
+                        :definition "Is a kind of possessive classifier. Marks a possessive relation between a possessor and a possessum, which may or may not be permanently or necessarily possessed."@en ;
                         :externalDefinitionDesc "The alienability of a noun is its property of being alienable. A noun is alienable iff it is not inalienable.  [Christian Lehmann, under \"alienability\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                         :usageNote "This category should be used for languages which morphologically mark alienability on pronouns, nouns or other parts of possessive constructions."@en ;
                         rdfs:label "Alienability Classifier"@en .
@@ -702,11 +710,6 @@ The base may be transitive, in which case its direct object is demoted upon the 
  [Christian Lehmann, under \"applicative verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
                  rdfs:label "Applicative Verb"@en .
 
-:Apprehensional rdf:type owl:Class ;
-                rdfs:subClassOf :InterpropositionalRelation ;
-                rdfs:label "'lest'"@en ,
-                           "Apprehensional"@en .
-
 :Article rdf:type owl:Class ;
          owl:equivalentClass gold:Article ;
          rdfs:subClassOf :Determiner ;
@@ -816,8 +819,7 @@ SBJ.1.SG fear-PRS dog-AVERS
              rdfs:label "Benefactive"@en .
 
 :BenefactiveDative rdf:type owl:Class ;
-                   rdfs:subClassOf :Benefactive ,
-                                   :Dative ;
+                   rdfs:subClassOf :Dative ;
                    :definition """The benfactive dative is a dative which expresses a benefactive relation of the NP so marked to the dependency controller.
 [Christian Lehmann, under \"benefactive dative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
                    :usageNote """The term ‚dativus commodi’ is used in studies of Latin.
@@ -905,18 +907,13 @@ Since the causer occupies the subject slot of the causative verb and the base ve
                 :externalDefinition <http://purl.org/olia/olia.owl#Circumposition> ;
                 rdfs:label "Cicumposition"@en .
 
-:Circumstantial rdf:type owl:Class ;
-                rdfs:subClassOf :InterpropositionalRelation ;
-                rdfs:comment "'in, by'"@en ;
-                rdfs:label "Circumstantial"@en .
-
 :Classifier rdf:type owl:Class ;
             owl:equivalentClass gold:Classifier ;
             rdfs:subClassOf :LinguisticCategory ;
             :definition "a word or morpheme that indicates that a linguistic unit (typically a noun) belongs to a certain class of units.  [Christian Lehmann, under \"classifier\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-            :example """example of chinise classifier:
-http://www.glottopedia.org/index.php/Classifier"""@en ;
             :externalDefinition <http://purl.org/olia/olia.owl#Classifier> ;
+            :externalDefinitionDesc """A classifier is a word or affix that expresses the classification of a noun.
+(http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsAClassifier.htm)"""@en ;
             rdfs:label "Classifier"@en .
 
 :Clusivity rdf:type owl:Class ;
@@ -1028,8 +1025,7 @@ http://www.glottopedia.org/index.php/Classifier"""@en ;
                 rdfs:label "Conative Aspect"@en .
 
 :Conditional rdf:type owl:Class ;
-             rdfs:subClassOf :InterpropositionalRelation ,
-                             :Mood ;
+             rdfs:subClassOf :Mood ;
              :definition "The conditional is a mood marking a sentence that is, or is construed as, the apodosis of an unreal condition. [Christian Lehmann, under \"conditional\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              :example """\"I wouldn’t do it\" (if some relevant condition were fulfilled, e.g. if I were you).
  [Christian Lehmann, under \"conditional\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
@@ -1049,10 +1045,20 @@ Prototypically, a conjunction links two clauses. However, coordinative conjuncti
              :externalDefinition <http://purl.org/olia/olia.owl#Conjunction> ;
              rdfs:label "Conjunction"@en .
 
-:Consecutive rdf:type owl:Class ;
-             rdfs:subClassOf :InterpropositionalRelation ;
-             rdfs:comment "'so that'"@en ;
-             rdfs:label "Consecutive"@en .
+:ConstructState rdf:type owl:Class ;
+                rdfs:subClassOf :NominalState ;
+                :definition "The construct state marks the nominal N1 that syntactically subordinates another nominal N2. (Melʹčuk, Igorʹ Aleksandrovič, and David Beck. Aspects of the Theory of Morphology. Vol. 10. Walter de Gruyter, 2006.)"@en ;
+                :example """\"glimat- ha-melex\"
+gown-CS the-king 
+'the king's gown'
+(http://pluto.huji.ac.il/~edit/edit/Construct%20State%20EHLL.pdf)"""@he ;
+                :externalDefinition <http://purl.org/olia/olia.owl#StatusConstructus> ;
+                :externalDefinitionDesc """Status constructus is a morphological form of the noun 1 if this is the head of a genitive attribute.
+
+Phenomenology:
+The category is known from Semitic languages such as Accadic. 
+[Christian Lehmann, under \"status constructus\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                rdfs:label "Construct State"@en .
 
 :Contablative rdf:type owl:Class ;
               owl:equivalentClass gold:ContablativeCase ;
@@ -1100,8 +1106,9 @@ Continuitas situationis is the property of being continuous 1.
             rdfs:label "Contlative"@en .
 
 :Converb rdf:type owl:Class ;
+         owl:equivalentClass gold:Converb ;
          rdfs:subClassOf :NonFiniteVerb ;
-         :definition "A converb is a non-finite verb form such that the subordinate clause whose head the converb is is neither a complement (“argument“) of the main verb nor an attribute to some nominal, but typically an adjunct to the main verb. [Christian Lehmann, under \"finite verb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+         :definition "A converb is a non-finite verb form such that the subordinate clause whose head the converb is is neither a complement (“argument“) of the main verb nor an attribute to some nominal, but typically an adjunct to the main verb. [Christian Lehmann, under \"converb\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
          rdfs:label "Converb"@en .
 
 :Conversion rdf:type owl:Class ;
@@ -1150,18 +1157,6 @@ It does not have the ability, however, to occur with a determiner such as much.
            rdfs:subClassOf :Future ;
            :definition "a future tense referring to tomorrow. [Christian Lehmann, under \"crastinal future\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
            rdfs:label "Crastinal"@en .
-
-:CrossReference rdf:type owl:Class ;
-                rdfs:subClassOf :MorphosyntacticFeature ;
-                :definition """Personal agreement is agreement in the category of person.
-
-Delimitation and History:
-Although the terms ‚cross-reference’, ‚argument indexing’ and ‚head-marking’ appear to designate different phenomena from personal agreement, the terms actually have a largely overlapping extension.
-
-Phenomenology:
-Apart from very few exceptions, personal agreement occurs only in external agreement.
-
-under \"cross-reference\""""@en .
 
 :Dative rdf:type owl:Class ;
         owl:equivalentClass gold:DativeCase ;
@@ -1228,8 +1223,7 @@ More generally, the dativus ethicus is such an adjunct.
            rdfs:label "Deductive"@en .
 
 :Definite rdf:type owl:Class ;
-          rdfs:subClassOf :Definiteness ,
-                          :Determination ;
+          rdfs:subClassOf :Definiteness ;
           :definition """Definite NPs are NPs whose referent can be uniquely identified by the hearer. Unique identifiability occurs under two main kinds of circumstances: One of these is in anaphoric situations, to refer back to something mentioned in the preceding discourse (e.g. I bought a new bicycle... My husband likes the bicycle). The other is in associative contexts, to refer to something that is not mentioned in the preceding discourse but that is identifiable because of an associatative relationship (e.g. I bought a new bicycle. The saddle is very comfortable). 
 (http://www.glottopedia.org/index.php/Definite)"""@en ;
           :externalDefinition <http://purl.org/olia/olia.owl#Definite> ;
@@ -1308,13 +1302,14 @@ The definiteness of an NP is its property of being definite (or not).
 
 :DerivationalMeaning rdf:type owl:Class ;
                      rdfs:subClassOf :Meaning ;
-                     :definition "The derivational meaning is a meaning that is not relevant for grammar but affect the lexeme meaning. It comprises morphological categories which belong to the realm of derivation (that is, a non-obligatory morphological category) [Christian Lehmann, under \"derivation category\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                     :definition "The derivational meaning is a meaning that is not relevant for grammar but affects the lexeme meaning. It comprises morphological categories which belong to the realm of derivation (that is, a non-obligatory morphological category) [Christian Lehmann, under \"derivation category\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                      rdfs:label "Derivational Meaning"@en .
 
 :DerivativeNegation rdf:type owl:Class ;
                     rdfs:subClassOf :Expansion ;
                     :definition "Is a derivative negation, which is the formation of the negated counterpart of a stem by derivation.[Christian Lehmann, under \"derivative negation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                     :example "\"necessary\"  vs. \"un-necessary\", \"use-ful\" vs. \"use-less\""@en ;
+                    :usageNote "Even though this meaning is synonymous to the \"Negation\" meaning of the linguistic category of Polarity, it is modelled here as a separate meaning which is reserved for derivational affixes expressing lexical negation within a derived word."@en ;
                     rdfs:label "Derivative Negation"@en .
 
 :DerivedAdjective rdf:type owl:Class ;
@@ -1391,10 +1386,6 @@ The carrier of a destinative typically includes nominalized verb forms or even s
 [Christian Lehmann, under \"purposive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
              rdfs:label "Destinative"@en .
 
-:Determination rdf:type owl:Class ;
-               rdfs:subClassOf :LinguisticCategory ;
-               rdfs:label "Determination"@en .
-
 :Determiner rdf:type owl:Class ;
             owl:equivalentClass gold:Determiner ;
             rdfs:subClassOf :WordclassAffiliation ;
@@ -1426,6 +1417,12 @@ The carrier of a destinative typically includes nominalized verb forms or even s
               rdfs:subClassOf :DerivedVerb ;
               :definition "Is a verb lexeme which is derived from another verb stem."@en ;
               rdfs:label "Deverbal Verb"@en .
+
+:DifferentSubject rdf:type owl:Class ;
+                  rdfs:subClassOf :RelativePerson ;
+                  :definition """[Denotes] relative person indicating that an actant (typically, the subject) of the clause is not the same as an actant (again, typically the subject) of some other clause, either a following clause or the final clause in a clause chain, or the main clause in a sentence.
+[Christian Lehmann, under \"different subject marker\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                  rdfs:label "Different Subject"@en .
 
 :Diminution rdf:type owl:Class ;
             rdfs:subClassOf :NounExpansion ;
@@ -1471,7 +1468,7 @@ The carrier of a destinative typically includes nominalized verb forms or even s
                     rdfs:label "Distributive Aspect"@en .
 
 :DistributiveCase rdf:type owl:Class ;
-                  rdfs:subClassOf :Case ;
+                  rdfs:subClassOf :Oblique ;
                   :externalDefinition <http://purl.org/olia/olia.owl#DistributiveCase> ;
                   rdfs:label "Distributive Case"@en .
 
@@ -1530,12 +1527,12 @@ Elative is often contrasted with ablative - from inside vs. from outside.
  [Christian Lehmann, under \"elative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
          rdfs:label "Elative"@en .
 
-:Emphasizer rdf:type owl:Class ;
-            rdfs:subClassOf :FocusMarker ;
-            :definition "An emphasizer is a formative lending emphasis to what it accompanies. [Christian Lehmann, under \"emphasizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
-            :example """the „co“ in Vietnamese in ISE 141.
-[Christian Lehmann, under \"focus marker\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@vi ;
-            rdfs:label "Emphasizer"@en .
+:EmphaticParticle rdf:type owl:Class ;
+                  rdfs:subClassOf :Particle ;
+                  :definition """An emphasizer is a formative lending emphasis to what it accompanies. 
+[Christian Lehmann, under \"emphasizer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                  :externalDefinition <http://purl.org/olia/olia.owl#EmphaticParticle> ;
+                  rdfs:label "Emphatic Particle"@en .
 
 :EmptyMorph rdf:type owl:Class ;
             rdfs:subClassOf :Affix ,
@@ -1564,8 +1561,7 @@ Elative is often contrasted with ablative - from inside vs. from outside.
 
 :Ergative rdf:type owl:Class ;
           owl:equivalentClass gold:ErgativeCase ;
-          rdfs:subClassOf :CrossReference ,
-                          :Oblique ;
+          rdfs:subClassOf :Oblique ;
           :definition """The ergative is the case which marks a nominal expression as bearing the ergative function.
 [Christian Lehmann, under \"ergative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
           :externalDefinition <http://purl.org/olia/olia.owl#ErgativeCase> ;
@@ -1610,7 +1606,7 @@ al-anmyş 'it is rumoured that s/he took'.
 
 :Exclusive rdf:type owl:Class ;
            rdfs:subClassOf :Clusivity ;
-           :definition "A non-singular first person form is exclusive iff it refers to a group that excludes the addressee. [Christian Lehmann, under \"exclusive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           :definition "A  [...]  form is exclusive iff it refers to a group that excludes the addressee. [Christian Lehmann, under \"exclusive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
            :externalDefinition <http://purl.org/olia/olia.owl#Exclusive> ;
            rdfs:label "Exclusive"@en .
 
@@ -1690,21 +1686,15 @@ While there may be a subordinate agent in a causative construction, there may be
              :externalDefinition <http://purl.org/olia/olia.owl#First> ;
              rdfs:label "First Person"@en .
 
-:FocusMarker rdf:type owl:Class ;
-             rdfs:subClassOf :LinguisticCategory ;
-             :definition "A focus marker is a marker - generally a morpheme - indicating the focus of a sentence.  [Christian Lehmann, under \"focus marker\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
-             :externalDefinition <http://purl.org/olia/olia.owl#FocusMarker> ;
-             rdfs:label "Focus Marker"@en .
-
 :FocusParticle rdf:type owl:Class ;
-               rdfs:subClassOf :FocusMarker ;
+               rdfs:subClassOf :Particle ;
                :definition """A focus particle is a particle 2 which is a focus marker.
 [Christian Lehmann, under \"focus particle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]
 
 The terms ‚focus particle’ and ‚scope particle’ are taken as synonymous, since the scope of a scope particle appears to be focal.
 
 particle 2: A particle (particula s.s.), or particle proper, is a particle (particula s.l.) which belongs to neither or the other subcategories of particle (particula s.l.) (traditionally adverb, adposition, connective, interjection).
-[Christian Lehmann, under \"particle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
+[Christian Lehmann, under \"particle s.s.\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
                :example "\"erst\" as in  \"ich habe sie erst gestern gesehen\", \"da solltest du erst mal Erwin sehen\"."@de ;
                rdfs:label "Focus Particle"@en .
 
@@ -1794,7 +1784,18 @@ The genitive may also mark other adnominal relations of its host, e.g. an associ
           rdfs:label "Genitive"@en .
 
 :Gerund rdf:type owl:Class ;
+        owl:equivalentClass gold:Gerund ;
         rdfs:subClassOf :Converb ;
+        :definition "The gerund is a converb whose logical subject is coreferential with the subject or, more rarely, the object of the main verb, according to mechanisms of subject-control, and which does not specify the interpropositional relation with the main clause. [Christian Lehmann, under \"gerund\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+        :externalDefinition <http://purl.org/olia/olia.owl#Gerund> ;
+        :usageNote """Delimitation and History:
+A verbal noun is similar to a nonfinite verb. There are two differences:
+- The former is formed by derivation, the latter by Inflection.
+- The distribution class of a verbal noun is necessarily that of a noun, while nonfinite verb forms may belong to other distribution classes, including adverbs.
+
+Examples:
+“description“ from „describe“, or „walking“ in „Brisk walking is good exercise“
+[Christian Lehmann, under \"verbal noun\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
         rdfs:label "Gerund"@en .
 
 :GrammaticalWord rdf:type owl:Class ;
@@ -1835,6 +1836,15 @@ A grammatical word has only a grammatical meaning. It can have different word-fo
                :externalDefinition <http://purl.org/olia/olia.owl#HodiernalPast> ;
                rdfs:label "Hodiernal Past"@en .
 
+:Honorificity rdf:type owl:Class ;
+              rdfs:subClassOf :SocialDeixis ;
+              :definition """A linguistic sign is honorific iff it is part of a subsystem such that the selection among its members expresses a level of status of some speech act participant or, more rarely, some other referent. The person to whom honorification is thus made is not necessarily the referent of the honorific sign.
+Honorificity is the property of a linguistic sign to be honorific. [Christian Lehmann, under \"honorification\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+              :example """As expressed in the distinction in many European languages between familiar and polite second-person pronouns.
+[Christian Lehmann, under \"honorification\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+              :externalDefinition <http://purl.org/olia/olia.owl#Honorific> ;
+              rdfs:label "Honorificity"@en .
+
 :Hortative rdf:type owl:Class ;
            rdfs:subClassOf :Mood ;
            :definition "The hortative is a grammatical category - commonly a mood -that encodes directive modality directed to the first person, usually plural.  [Christian Lehmann, under \"hortative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
@@ -1846,7 +1856,14 @@ A grammatical word has only a grammatical meaning. It can have different word-fo
        rdfs:subClassOf :Animate ;
        :definition "Is a lexical category of nouns having human referents."@en ;
        :externalDefinition <http://purl.org/olia/olia.owl#Human> ;
+       :externalDefinitionDesc """An animate being is human iff it belongs to the species of homo sapiens.
+ [Christian Lehmann, under \"humanness\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
        rdfs:label "Human"@en .
+
+:Humbleness rdf:type owl:Class ;
+            rdfs:subClassOf :SocialDeixis ;
+            :definition "A grammatical device - usually a person pronominal element -is humble iff it expresses that its referent is socially inferior with respect to another referent. [Christian Lehmann, under \"humbleness\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            rdfs:label "Humbleness"@la .
 
 :Illative rdf:type owl:Class ;
           owl:equivalentClass gold:IllativeCase ;
@@ -1957,13 +1974,14 @@ Its application in a language is sometimes so general that it is a general devic
 
 :Inclusive rdf:type owl:Class ;
            rdfs:subClassOf :Clusivity ;
-           :definition "A first person non-singular form is inclusive iff it refers to a group including the addressee. [Christian Lehmann, under \"inclusive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           :definition "A [...] form is inclusive iff it refers to a group including the addressee. [Christian Lehmann, under \"inclusive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
            :externalDefinition <http://purl.org/olia/olia.owl#Inclusive> ;
+           :usageNote """The inclusive value of the clusivity category  tends to occur in combination with values of the number or/and person categories. 
+For the sake of consistency accross MMoOn morpheme inventories person and number values must be assigned seperately to morphs exhibiting this combination of category values. Hence, values such as \"first person inclusive\" are not provided under the clusivity category."""@en ;
            rdfs:label "Inclusive"@en .
 
 :Indefinite rdf:type owl:Class ;
-            rdfs:subClassOf :Definiteness ,
-                            :Determination ;
+            rdfs:subClassOf :Definiteness ;
             :definition """Indefiniteness is a kind of definiteness indicating that the referent(s) of an expression are not presumed to be identifiable.
 The referent is not identifiable because of a lack of shared knowledge or situation, including no previous mention of the referent.
 (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsIndefiniteness.htm)"""@en ;
@@ -2009,6 +2027,8 @@ This term is used especially in Finnish grammatical studies.
 
 :Infinitve rdf:type owl:Class ;
            rdfs:subClassOf :NonFiniteVerb ;
+           :definition "An infinitive is a verb form whose subject slot is blocked so that it does not function as the main verb of an independent clause. However, it does designate a situation core, so it may function as the head of a (nonfinite) dependent clause. Morphologically, it is a non-finite form which is crucially not specified for person, number and mood. Other categories which may or may not be absent include tense, aspect and voice. [Christian Lehmann, under \"infinitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           :externalDefinition <http://purl.org/olia/olia.owl#Infinitive> ;
            rdfs:label "Infinitive"@en .
 
 :Infix rdf:type owl:Class ;
@@ -2039,7 +2059,7 @@ English only has lexical contrasts such as stative \"know\" vs. ingressive \"rea
 
 :Inhabitant rdf:type owl:Class ;
             rdfs:subClassOf :NounExpansion ;
-            :definition "Denotes the inhabitant of a country or region noun."@en ;
+            :definition "Denotes the inhabitant of a country, city, location or region noun."@en ;
             rdfs:label "Inhabitant"@en .
 
 :InstrumentNominalizer rdf:type owl:Class ;
@@ -2062,6 +2082,12 @@ English only has lexical contrasts such as stative \"know\" vs. ingressive \"rea
  [Christian Lehmann, under \"instrumental\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
               :externalDefinition <http://purl.org/olia/olia.owl#InstrumentalCase> ;
               rdfs:label "Instrumental"@en .
+
+:IntensifyingAdverb rdf:type owl:Class ;
+                    rdfs:subClassOf :Adverb ;
+                    :definition """An intensifier is an adverb which modifies gradable adjectives, adverbs and verbs and intensifies the meaning of the item it modifies. 
+[Christian Lehmann, under \"intensifyer\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                    rdfs:label "Intensifying Adverb"@en .
 
 :Interablative rdf:type owl:Class ;
                owl:equivalentClass gold:InterablativeCase ;
@@ -2104,13 +2130,6 @@ An interjection is typically brief, used most often as an exclamation or as part
                :externalDefinition <http://purl.org/olia/olia.owl#InterminativeCase> ;
                rdfs:label "Interminative"@en .
 
-:InterpropositionalRelation rdf:type owl:Class ;
-                            rdfs:subClassOf :MorphosyntacticFeature ;
-                            :definition """an explicit or inferred coherence relation between propositions or groups of propositions that are typically expressed by clauses or larger portions of text, that accounts for the coherence of the two portions of text.
-[Christian Lehmann, under \"interpropositional relation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
-                            :usageNote """„Interpropositional relation“ has been chosen here as a rubric for relations various authors have proposed, under different names, to account for text structure or coherence. Not every author would agree that this label is the best one for these relations; nor would all agree that every relation cited here belongs in a list of „interpropositional relations“, either for reason of disputation over the validity of a relation itself, or for reason of some restriction on the usage of the term „interpropositional relation“.
-[Christian Lehmann, under \"interpropositional relation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en .
-
 :Interrogative rdf:type owl:Class ;
                rdfs:subClassOf :Mood ;
                :definition """The interrogative is a mood that signals a question.
@@ -2151,12 +2170,6 @@ An intransitive verb is not necessarily monovalent, as it can take other kinds o
                rdfs:subClassOf :Translative ;
                :externalDefinition <http://purl.org/olia/olia.owl#IntranslativeCase> ;
                rdfs:label "Intranslative"@en .
-
-:Introflection rdf:type owl:Class ;
-               rdfs:subClassOf :Inflection ,
-                               :WordFormation ;
-               :definition "Nonconcatenative morphology, also called discontinuous morphology and introflection, is a form of word-formation [and inflection] in which the root is modified and does not involve stringing morphemes together. [Haspelmath and Sims: Understanding morphology. 2002, Sections 3.1.2 - 3.1.4]"@en ;
-               rdfs:label "Introflection"@en .
 
 :Introversion rdf:type owl:Class ;
               rdfs:subClassOf :Intransitivizer ;
@@ -2241,6 +2254,7 @@ All lexical entries that inflect have a holistic abstract sense representing the
                     rdfs:subClassOf :Meaning ;
                     :definition """A linguistic category is the intension of a linguistic class.
 It is typically constituted by a set of features that define a parameter whose values are subcategories of the category in question. [Christian Lehmann, under \"linguistic category\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                    :usageNote "The linguistic categories modelled here as meanings represent linguistic features which are usually obligatory expressed in a given language."@en ;
                     rdfs:label "Linguistic Category"@en .
 
 :LocalAdverb rdf:type owl:Class ;
@@ -2271,7 +2285,7 @@ It is typically constituted by a set of features that define a parameter whose v
 
 :Malefactive rdf:type owl:Class ;
              owl:equivalentClass gold:MalefactiveCase ;
-             rdfs:subClassOf :Case ;
+             rdfs:subClassOf :Oblique ;
              :definition "Opposite of Benefactive,  used when the marked noun is negatively affected in the clause. [Zúñiga and Kittilä 2010: 5]"@en ;
              :externalDefinition <http://purl.org/olia/olia.owl#MalefactiveCase> ;
              rdfs:label "Malefactive"@en .
@@ -2329,7 +2343,7 @@ child my beat -MEDIOPASSIVE
 
 :MiddleVoice rdf:type owl:Class ;
              rdfs:subClassOf :Voice ;
-             :definition "Middle voice is a voice that indicates that the subject is the actor and acts upon himself or herself reflexively, or for his or her own benefit. (http://www-01.sil.org/linguistics/GlossaryOflinguisticTerms/WhatIsMiddleVoice.htm)"@en ;
+             :definition "The middle is a voice indicating that the subject acts upon himself (reflexively), or for his own benefit, or in the case of a plural subject, on each other. [Christian Lehmann, under \"middle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              :example """Greek: 
 \"loúo\"  'I wash'  vs. \"loúomai\" 'I wash myself' (Hartmann & Stork 1972: 252)"""@el ;
              :externalDefinition <http://purl.org/olia/olia.owl#MiddleVoice> ;
@@ -2341,10 +2355,19 @@ child my beat -MEDIOPASSIVE
 [Christian Lehmann, under \"mirative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
           rdfs:label "Mirative"@en .
 
+:ModalParticle rdf:type owl:Class ;
+               rdfs:subClassOf :Particle ;
+               :definition """A modal particle is a particle with a modal meaning. 
+[Christian Lehmann, under \"modal particle.\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
+               :externalDefinition <http://purl.org/olia/olia.owl#ModalParticle> ;
+               rdfs:label "Modal Particle"@en .
+
 :Mood rdf:type owl:Class ;
       owl:equivalentClass gold:MoodProperty ;
       rdfs:subClassOf :LinguisticCategory ;
-      :definition "Mood is an inflectional category expressing modality. [Christian Lehmann, under \"mood\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+      :definition """Mood is an inflectional category expressing modality. [Christian Lehmann, under \"mood\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+Modalitiy is a functional domain comprising a set of sentence-level semantic categories which have it in common that they specify a condition of or an attitude towards the realization of what is designated by the sentence. [Christian Lehmann, under \"modality\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
       :externalDefinition <http://purl.org/olia/olia.owl#Moodfeature> ;
       rdfs:label "Mood"@en .
 
@@ -2368,7 +2391,7 @@ child my beat -MEDIOPASSIVE
 Depending on the kind of correspondence between a morpheme and its morph realization, three kinds of morphemes are established: 1) atomic morphemes, 2) fusional morphemes and 3) empty morphemes."""@en ;
           :usageNote """A morpheme resource describes only the conceptual side, i.e. the significatum, which is realized by one or more morphs in a certain language. Thus, the meaning(s) it conveys must be always stated via the mmoon:hasMeaning property.
 
-For convenience the morpheme instances are rendered by the same notatinal means as the morphemic glosses, i.e. the plural morpheme is rendered in short as \"PL\"."""@en ;
+For convenience the morpheme instances are rendered by the same notational means as the morphemic glosses, i.e. a plural morpheme can be rendered in short as \"lang_inv:AtomicMorpheme_PL\"."""@en ;
           rdfs:label "Morpheme"@en .
 
 :MorphemeInventory rdf:type owl:Class ;
@@ -2393,13 +2416,8 @@ For convenience the morpheme instances are rendered by the same notatinal means 
                            :definition "Is the relationship between word-forms of a [lexical entry] (inflection) or the relationship between [lexical entries] of a word family (derivation and compounding). [Haspelmath and Sims: Understanding morphology. 2002:18]"@en ;
                            rdfs:label "Morphological Relationship"@en .
 
-:MorphosyntacticFeature rdf:type owl:Class ;
-                        rdfs:subClassOf :Meaning ;
-                        rdfs:comment "Is a feature that affects the syntactic environment of a word."@en ;
-                        rdfs:label "Morphosyntactic feature"@en .
-
 :MultiplicativeCase rdf:type owl:Class ;
-                    rdfs:subClassOf :Case ;
+                    rdfs:subClassOf :Oblique ;
                     :definition """The multiplicative case is a grammatical case used for marking a number of something (\\\"three times\\\").
 The case is found in the Hungarian language, for example nyolc (eight), nyolcszor (eight times).
 The case appears also in Finnish as an adverbial (adverb-forming) case. Used with a cardinal number it denotes the number of actions; for example, viisi (five) -> viidesti (five times). Used with adjectives it refers to the mean of the action, corresponding the English suffix -ly: kaunis (beautiful) -> kauniisti (beautifully). It is also used with a small number of nouns: leikki (play) -> leikisti (just kidding, not really). In addition, it acts as an intensifier when used with a swearword: piru -> pirusti.\"
@@ -2418,13 +2436,9 @@ The case appears also in Finnish as an adverbial (adverb-forming) case. Used wit
           :definition """A linguistic sign - prototypically a clause - is negative iff negation has applied to it.
 Negation is an operation on a linguistic sign which converts its meaning into the contradictory one. Its prototypical instance is a speech act which declares false the proposition which constitutes the operand. However, negation may apply at all linguistic levels from the sentence down to the word.
 The operator of negation is the negator.
-[Christian Lehmann, under \"negation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]
-
-A negator is a grammatical formative - a particle or affix - which combines with a linguistic unit X and functions as an operator of negation of X (as the operand).
-[Christian Lehmann, under \"negator\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
-          :example <http://linguistics-ontology.org/gold/2010/NegativePolarity#examples> ,
-                   """\"not\", \"un-\".
-[Christian Lehmann, under \"negator\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
+[Christian Lehmann, under \"negation\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"""@en ;
+          :example <http://linguistics-ontology.org/gold/2010/NegativePolarity#examples> ;
+          :usageNote "Even though this meaning is synonymous to the \"DerivativeNegation\" meaning of the derivational meaning subclass of Expansion, it is modelled here as a separate meaning which is reserved for grammatical morphemes expressing negation, e.g. negative particle, determiners, pronouns."@en ;
           rdfs:label "Negation"@en .
 
 :Neuter rdf:type owl:Class ;
@@ -2473,6 +2487,11 @@ A negator is a grammatical formative - a particle or affix - which combines with
                    rdfs:subClassOf :Inflection ;
                    :definition "Is the process of generating word-forms of nominal stems."@en ;
                    rdfs:label "Nominal Inflection"@en .
+
+:NominalState rdf:type owl:Class ;
+              rdfs:subClassOf :LinguisticCategory ;
+              :definition "Nominal state is an inflectional category of nominals (often found in Semitic, Arabic and Iranian languages) that expresses absence or presence of syntactic dependents of the noun. (Melʹčuk, Igorʹ Aleksandrovič, and David Beck. Aspects of the Theory of Morphology. Vol. 10. Walter de Gruyter, 2006.)"@en ;
+              rdfs:label "Nominal State"@en .
 
 :NominalVerb rdf:type owl:Class ;
              rdfs:subClassOf :Conversion ;
@@ -2550,10 +2569,33 @@ A negator is a grammatical formative - a particle or affix - which combines with
          :externalDefinition <http://purl.org/olia/olia.owl#Numeral> ;
          rdfs:label "Numeral"@en .
 
+:NumeralClassifier rdf:type owl:Class ;
+                   rdfs:subClassOf :Classifier ;
+                   :definition """Let a counted NP be an NP that includes a nominal - called the counted nominal - which provides the semantic head, and a numeral specifying the cardinality of the set designated by the counted nominal. A numeral classifier (NC) is a word or affix that is a member of a paradigm with the following properties:
+1. A numeral (of the language) forms a binary phrase with a member of this paradigm (thus, not with the counted nominal). This phrase is called classifier phrase.
+2. The classifier phrase forms a binary phrase with the counted nominal. This phrase is a counted NP.
+3. The choice of the NC from among its paradigm is, by default, conditioned by the semantic class of the counted nominal. This is so both if the counted nominal is a constituent of the counted NP and if the numeral classifier phrase constitutes a headless NP (in deictic or anaphoric use).
+Condition 3 of the definition implies that the numeral classifier system of a language (its paradigm of numeral classifiers) brings about some sort of classification of the nouns of the language.
+[Christian Lehmann, under \"numeal classifier\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]
+
+Phenomenology:
+“Numeral classifiers are found with fair frequency all around the Pacific rim but almost nowhere else.“ (Nichols 1992: 213)
+[Christian Lehmann, under \"numeal classifier\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                   :example """In Chinese, unless the noun itself denotes a unit of a measurement (e.g. nián 'year'), it must be preceded by a classifier when it occurs with a numeral or a demonstrative. 
+(http://www.glottopedia.org/index.php/Classifier)"""@zh ;
+                   :usageNote """Numeral classifiers differ from mensuratives in the following features:
+- Semantically, a numeral classifier is a hyperonym of the nominal that the numeral phrase combines with. A mensurative is not.
+- Consequently, there are commonly selection restrictions of the kind 1 : n between a classifier and the counted nominal, while combinations of mensuratives with measured nominals are n : n.
+- The syntagmatic semantic relation between a mensurative phrase and the nominal is partitive, while the relation between a classifier phrase and the nominal is not.
+[Christian Lehmann, under \"numeal classifier\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+                   rdfs:label "Numeral Classifier"@en .
+
 :ObjectiveCase rdf:type owl:Class ;
                rdfs:subClassOf :Oblique ;
+               :definition """Case used to express the direct object, indirect object, object of a preposition, object complement and subject of an infinitive. 
+(http://www.isocat.org/rest/dc/2798)"""@en ;
                :externalDefinition <http://purl.org/olia/olia.owl#ObjectiveCase> ;
-               :usageNote "As the objective case is defined as \"Case used to express the direct object, indirect object, object of a preposition, object complement and subject of an infinitive. (cf. external definition)\", this case shall only be used if no other more specific case (i.e. accusative, dative or nominative) applies."@en ;
+               :usageNote "This case shall only be used if no other more specific case (i.e. accusative or dative) applies."@en ;
                rdfs:label "Objective Case"@en .
 
 :Obligative rdf:type owl:Class ;
@@ -2584,6 +2626,7 @@ Oblique cases are often morphologically marked as against the casus rectus or al
 :Optative rdf:type owl:Class ;
           owl:equivalentClass gold:OptativeMood ;
           rdfs:subClassOf :Mood ;
+          :definition "The optative mood expresses wishes."@de ;
           :externalDefinition <http://purl.org/olia/olia.owl#OptativeMood> ;
           rdfs:label "Optative"@en .
 
@@ -2597,11 +2640,14 @@ Oblique cases are often morphologically marked as against the casus rectus or al
                rdfs:label "Ordinal Number"@en .
 
 :Participle rdf:type owl:Class ;
+            owl:equivalentClass gold:Participle ;
             rdfs:subClassOf :NonFiniteVerb ;
+            :definition "A participle is a verbal adjective or some nonfinite verb form which functions as an adjective. It is distinguished from other verbal adjectives by being neutral with respect to modal categories. [Christian Lehmann, under \"participle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+            :externalDefinition <http://purl.org/olia/olia.owl#Participle> ;
             rdfs:label "Participle"@en .
 
 :Particle rdf:type owl:Class ;
-          owl:equivalentClass gold:Particle ;
+          owl:equivalentClass gold:NominalParticle ;
           rdfs:subClassOf :WordclassAffiliation ;
           :definition "A particle (particula s.l.) is a word of a syntactic class that does not inflect, i.e. neither a noun (nomen) nor a verb. [Christian Lehmann, under \"particle\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
           :externalDefinition <http://purl.org/olia/olia.owl#Particle> ;
@@ -2744,11 +2790,6 @@ In some languages the plural is also used for generics and objects that always o
           :externalDefinition <http://purl.org/olia/olia.owl#Positive> ;
           rdfs:label "Positive"@en .
 
-:Possessive rdf:type owl:Class ;
-            rdfs:subClassOf :CrossReference ;
-            rdfs:comment "a relation of possession between two entities. (CL, lido)"@en ;
-            rdfs:label "Possessive"@en .
-
 :PossessiveAdjective rdf:type owl:Class ;
                      rdfs:subClassOf :DenominalAdjective ;
                      :definition "A possessive adjective is an adjective derived from a noun designating X which characterizes its referent as belonging to X.  [Christian Lehmann, under \"possessive adjective\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
@@ -2807,9 +2848,7 @@ The possessive pronoun is normally a modifier to a head noun that represents the
 
 :Potential rdf:type owl:Class ;
            rdfs:subClassOf :Mood ;
-           :definition """The potential is a mood or modality that expresses that the situation designated may be realized.
-
- [Christian Lehmann, under \"obligative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+           :definition "The potential is a mood or modality that expresses that the situation designated may be realized. [Christian Lehmann, under \"potential\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
            rdfs:label "Potential"@en .
 
 :Precative rdf:type owl:Class ;
@@ -2846,9 +2885,8 @@ The possessive pronoun is normally a modifier to a head noun that represents the
              rdfs:label "Preposition"@en .
 
 :PrepositionalCase rdf:type owl:Class ;
-                   rdfs:subClassOf :Case ;
+                   rdfs:subClassOf :Oblique ;
                    :externalDefinition <http://purl.org/olia/olia.owl#PrepositionalCase> ;
-                   :externalDefinitionDesc "Case used to express the direct object, indirect object, object of a preposition, object complement and subject of an infinitive."@en ;
                    rdfs:label "Prepositional Case"@en .
 
 :Present rdf:type owl:Class ;
@@ -2891,9 +2929,7 @@ The possessive pronoun is normally a modifier to a head noun that represents the
 :Prohibitive rdf:type owl:Class ;
              owl:equivalentClass gold:ProhibitiveMood ;
              rdfs:subClassOf :Mood ;
-             :definition """The prohibitive is a mood that signals prohibition. It is the negative counterpart to the imperative.
-
-[Christian Lehmann, under \"prohibitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
+             :definition "The prohibitive is a mood that signals prohibition. It is the negative counterpart to the imperative. [Christian Lehmann, under \"prohibitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              :usageNote "Many languages have a prohibitive allomorph of the negator at the clause level. [Christian Lehmann, under \"prohibitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
              rdfs:label "Prohibitive"@en .
 
@@ -3065,6 +3101,11 @@ Often, the reflexive pronoun functions as a reciprocal pronoun. [Christian Lehma
               :externalDefinition <http://purl.org/olia/olia.owl#RelativePast> ;
               rdfs:label "Relative Past"@en .
 
+:RelativePerson rdf:type owl:Class ;
+                rdfs:subClassOf :LinguisticCategory ;
+                :definition "The relative person category manifests switch reference. Term introduced in the 1970s by L. Brodskaya, in analogy to ‚relative tense’. Further developed in Cheremisina et al. 1984, 1986 (Tungusic, Mongolic). [Christian Lehmann, under \"relative person\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+                rdfs:label "Relative Person"@en .
+
 :RelativePresent rdf:type owl:Class ;
                  owl:equivalentClass gold:RelativePresentTense ;
                  rdfs:subClassOf :RelativeTense ;
@@ -3124,6 +3165,8 @@ This class should be used whenever one of the terms \"indirect evidential\" or \
 
 :ResultativeAktionsart rdf:type owl:Class ;
                        rdfs:subClassOf :Aktionsart ;
+                       :definition "The resultative Aktionsart designates the transition of the action, process or state encoded in the verbal stem into a resulting and completed new state."@en ;
+                       :example "\"arbeiten\" 'to work' --> \"ab-arbeiten\" 'to work sth. off '(until all the work is finished)"@de ;
                        rdfs:label "Resultative Aktionsart"@en .
 
 :ResultativeAspect rdf:type owl:Class ;
@@ -3131,6 +3174,12 @@ This class should be used whenever one of the terms \"indirect evidential\" or \
                    :definition "The resultative is a verbal aspect which means that the central participant of the situation is in the state resulting from the change designated by the verb stem. [Christian Lehmann, under \"resultative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                    :example "\"The vase is broken.\" as a resultative counterpart of \"X breaks/broke the vase.\" [Christian Lehmann, under \"resultative\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
                    rdfs:label "Resultative Aspect"@en .
+
+:Reverence rdf:type owl:Class ;
+           rdfs:subClassOf :SocialDeixis ;
+           :definition "Reverence is a kind of social deixis encoding very high status. [Christian Lehmann, under \"reverence\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           :example "Latin second-person plural pronoun „vos“ used as a reverential form for addressing an emperor (example from Brown & Gilman 1960: 255). [Christian Lehmann, under \"reverence\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@la ;
+           rdfs:label "Reverence"@en .
 
 :Reversion rdf:type owl:Class ;
            rdfs:subClassOf :VerbExpansion ;
@@ -3144,6 +3193,11 @@ This class should be used whenever one of the terms \"indirect evidential\" or \
       :definition "A morph that constitutes the semantic nucleus of a stem. It cannot be further segmented and is often not specified for a part of speech. [Christian Lehmann, under \"root\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
       :example "There are lexical roots, like Engl. \"get\", and grammatical roots, like Engl. \"wh-\". [Christian Lehmann, under \"root\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
       rdfs:label "Root"@en .
+
+:SameSubject rdf:type owl:Class ;
+             rdfs:subClassOf :RelativePerson ;
+             :definition "[Denotes] relative person indicating that an actant (typically, the subject) of the clause is identical to an actant (again, typically the subject) of some other clause, either a following clause or the final clause in a clause chain, or the main clause in a sentence.[Christian Lehmann, under \"same subject marker\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+             rdfs:label "Same Subject"@en .
 
 :SecondPerson rdf:type owl:Class ;
               owl:equivalentClass gold:SecondPerson ;
@@ -3224,6 +3278,11 @@ The replacive morph is a construct of taxonomic structuralism.
           :externalDefinition <http://purl.org/olia/olia.owl#Singular> ;
           rdfs:label "Singular"@en .
 
+:SocialDeixis rdf:type owl:Class ;
+              rdfs:subClassOf :LinguisticCategory ;
+              :definition "Social deixis is deixis based on the social characteristics or distinctions of the participants or referents of a speech act. [Christian Lehmann, under \"social deixis\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+              rdfs:label "Social Deixis"@en .
+
 :Sociative rdf:type owl:Class ;
            rdfs:subClassOf :Oblique ;
            :definition """a case having the meaning of 'with'.
@@ -3250,16 +3309,6 @@ The replacive morph is a construct of taxonomic structuralism.
 Derivatively, a linguistic sign designating such a phenomenon is called stative.
 Christian Lehmann, under \"stativity\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
          rdfs:label "Stative"@en .
-
-:StatusConstructus rdf:type owl:Class ;
-                   rdfs:subClassOf :Definiteness ;
-                   :definition """Status constructus is a morphological form of the noun 1 if this is the head of a genitive attribute.
-
-Phenomenology:
-The category is known from Semitic languages such as Accadic. 
-[Christian Lehmann, under \"status constructus\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
-                   :externalDefinition <http://purl.org/olia/olia.owl#StatusConstructus> ;
-                   rdfs:label "Status constructus"@en .
 
 :Stem rdf:type owl:Class ;
       owl:equivalentClass gold:Stem ;
@@ -3402,7 +3451,7 @@ In a compound word: The stem is the morphological representative of one of the t
                 rdfs:label "Temporal Adverb"@en .
 
 :TemporalisCase rdf:type owl:Class ;
-                rdfs:subClassOf :Case ;
+                rdfs:subClassOf :Oblique ;
                 :externalDefinition <http://purl.org/olia/olia.owl#TemporalisCase> ;
                 rdfs:label "Temporalis Case"@en .
 
@@ -3445,17 +3494,6 @@ Terminativity is the property of a situation to be terminative.  [Christian Lehm
           :example """the Turkish suffix \"-esi\".  
 [Christian Lehmann, under \"timitive\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@tr ;
           rdfs:label "Timitive"@en .
-
-:TopicMarker rdf:type owl:Class ;
-             rdfs:subClassOf :LinguisticCategory ;
-             :definition """A topic of a sentence is a syntagm that contains reference points for the predication contained in the rest of the sentence.
-[Christian Lehmann, under \"topic\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ;
-             :usageNote """The topic constituent is generally left-dislocated.
-It may be marked by a dedicated grammatical formative, e.g. in Tagalog by a preposition, in Japanese by a postposition, in Yucatec Maya by an enclitic.
-
-[Christian Lehmann, under \"topic\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"""@en ,
-                        "This meaning should only be used if it applys to morphemes and not to syntagms, i.e. if topic is \"marked by a dedicated grammatical formative\"."@en ;
-             rdfs:label "Topic Marker"@en .
 
 :Transfix rdf:type owl:Class ;
           rdfs:subClassOf :Affix ;
@@ -3627,17 +3665,26 @@ b) with additional semantic content by adding a derivational morpheme."""@en ;
           rdfs:label "Word-form"@en .
 
 :ZeroMorph rdf:type owl:Class ;
-           rdfs:subClassOf :Affix ;
-           :definition "A morpheme that has a morphological meaning that corresponds to no overt form.  [Haspelmath and Sims: Understanding morphology. 2002:64]"@en ;
-           :externalDefinitionDesc "A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero    morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
-           :usageNote "A zero morpheme is posited only if it is in equipollent opposition to overt morphemes. If the term in question is, instead, the unmarked member of a privative opposition, no morpheme is posited. Conversion  can be conceived as derivation using a zero morpheme.  [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ,
-                      """Since zero morphs have no corresponding orthographic or phonetic representation the morphemic representation of of a zero morph instance to be chosen for consistency across all mmoon morpheme inventories is \"-Z\", i.e.:
+           rdfs:subClassOf :Affix .
 
-mmoon:Representation_ZM     mmoon:morphemicRepresentation \"-Z\" ."""@en ;
-           rdfs:label "Zero Morph"@en .
-
-:Representation_ZM rdf:type owl:NamedIndividual ;
+:Representation_ZM rdf:type owl:NamedIndividual ,
+                            :Representation ;
                    :morphemicRepresentation "-Z"^^xsd:string .
 
-###  Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/
+:ZeroMorph rdf:type owl:NamedIndividual ;
+           :hasRepresentation :Representation_ZM .
+
+:ZeroMorph :definition "A morpheme that has a morphological meaning that corresponds to no overt form.  [Haspelmath and Sims: Understanding morphology. 2002:64]"@en ;
+           :externalDefinitionDesc "A zero morpheme is a morpheme which has no significans. [Christian Lehmann, under \"zero    morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ;
+           :usageNote "A zero morpheme is posited only if it is in equipollent opposition to overt morphemes. If the term in question is, instead, the unmarked member of a privative opposition, no morpheme is posited. Conversion  can be conceived as derivation using a zero morpheme.  [Christian Lehmann, under \"zero morpheme\" at http://linguistik.uni-erfurt.de:8080/lido/Lido]"@en ,
+                      """Since zero morphs have no corresponding orthographic or phonetic representation the representation of of a zero morph instance to be chosen for consistency across all MMoOn morpheme inventories is \"mmoon:Representation_ZM\", which is already specified for its morphemic representation “-Z” in the MMoOn Core ontology .
+
+lang_inv:Zeromorph_x rdf:type lang_schema:ZeroMorph ;
+                     mmoon:hasRepresentation mmoon:Representation_ZM .
+
+mmoon:Representation_ZM rdf:type mmoon:Representation ;
+                        mmoon:morphemicRepresentation \"-Z\" ."""@en ;
+           rdfs:label "Zero Morph"@en .
+
+###  Generated by the OWL API (version 5.0.5.20170104-0800) https://github.com/owlcs/owlapi/
 ###  Warning: type declarations were not added automatically.
