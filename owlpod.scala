@@ -8,8 +8,8 @@ import org.aksw.owlpod.tasks._
 import org.aksw.owlpod.tasks.ImportConfig._
 import org.aksw.owlpod.util._
 import org.semanticweb.owlapi.util.CommonBaseIRIMapper
-
-import scalax.file.Path
+import better.files._
+import java.io.{File => JFile}
 
 object Con extends OwlpodRunner with CommonRunConfig {
 
@@ -19,12 +19,10 @@ object Con extends OwlpodRunner with CommonRunConfig {
       ontDocSets = Seq(mmoonOGDocs),
       tasks = Seq(
         SeparateOrdinalDigits,
-        new AddInferences(),
-        new RemoveExternalDeclarations()),
+        new AddInferences()),
       outputConfig = MultipleFormats(Set(Turtle, NTriples, OWLXML, RDFXML),
-        formatLocations = AddFilenameInfix(""), skipUndeclared = true, overwriteExisting = true,
-        postprocessors = Seq(MMoOnVersionFix, TrimComments(false), MMoOnVersionFix,
-          NormalizeBlankLinesForTurtle)),
+        formatLocations = AddFilenameInfix("op"),
+        postprocessors = Seq(TrimComments(), NormalizeBlankLinesForTurtle)),
       iriMappings = Seq(mmoonRepoIriMapper)
     )
   )
@@ -37,8 +35,10 @@ object ProtegePostprocess extends OwlpodRunner with CommonRunConfig {
       name = "MMoOn OpenGerman Protege Post-Processing",
       ontDocSets = Seq(mmoonOGDocs),
       tasks = Seq(),
-      outputConfig = ReplaceSources(postprocessors = Seq(/*MMoOnVersionFix, */TrimComments(true)/*, MMoOnVersionFix,*/,
-        NormalizeBlankLinesForTurtle)),
+      outputConfig = MultipleFormats(Set(Turtle, RDFXML),
+        formatLocations = AddFilenameInfix("op"),
+        postprocessors = Seq(TrimComments()/*, NormalizeBlankLinesForTurtle*/),
+        overwriteExisting = true),
       iriMappings = Seq(mmoonRepoIriMapper)
     )
   )
@@ -51,7 +51,7 @@ trait CommonRunConfig { this: OwlpodRunner =>
     executionPolicy = FailOnEverythingPolicy
   )
 
-  lazy val mmoonRoot = Path.fromString(".").toAbsolute
+  lazy val mmoonRoot: File = File(".").path.toAbsolutePath
 
   lazy val mmoonOGDocs = OntologyDocumentList(
     "core/mmoon.ttl",
@@ -66,7 +66,7 @@ trait CommonRunConfig { this: OwlpodRunner =>
 
   lazy val mmoonRepoIriMapper: CommonBaseIRIMapper = {
 
-    val im = new CommonBaseIRIMapper(mmoonRoot.toURI)
+    val im = new CommonBaseIRIMapper(mmoonRoot.uri)
     ontIRI2ShortPath foreach { case (iri, sp) => im.addMapping(iri, sp) }
     im
   }
