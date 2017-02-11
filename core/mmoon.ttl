@@ -187,8 +187,11 @@ reference point or when additional textual information has to be provided for an
 
 :grammaticalMeaning rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf :hasMeaning ;
-                    rdfs:range :LinguisticCategory ,
-                               :WordclassAffiliation ;
+                    rdfs:range [ rdf:type owl:Class ;
+                                 owl:unionOf ( :LinguisticCategory
+                                               :WordclassAffiliation
+                                             )
+                               ] ;
                     :definition "States that a morph, morpheme or word resource has some grammatical meaning."@en ;
                     rdfs:label "grammatical meaning"@en .
 
