@@ -9,7 +9,6 @@ import org.aksw.owlpod.tasks.ImportConfig._
 import org.aksw.owlpod.util._
 import org.semanticweb.owlapi.util.CommonBaseIRIMapper
 import better.files._
-import java.io.{File => JFile}
 
 object Con extends OwlpodRunner with CommonRunConfig {
 
@@ -34,11 +33,9 @@ object ProtegePostprocess extends OwlpodRunner with CommonRunConfig {
     CurationSetup(
       name = "MMoOn OpenGerman Protege Post-Processing",
       ontDocSets = Seq(mmoonOGDocs),
-      tasks = Seq(),
-      outputConfig = MultipleFormats(Set(Turtle, RDFXML),
-        formatLocations = AddFilenameInfix("op"),
-        postprocessors = Seq(TrimComments()/*, NormalizeBlankLinesForTurtle*/),
-        overwriteExisting = true),
+      tasks = Seq(RemoveExternalAxioms()),
+      outputConfig = ReplaceSources(
+        postprocessors = Seq(TrimComments(), NormalizeBlankLinesForTurtle)),
       iriMappings = Seq(mmoonRepoIriMapper)
     )
   )
