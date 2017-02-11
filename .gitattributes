@@ -1,0 +1,9 @@
+* text eol=lf
+*.ttl text eol=lf
+*.nt test eol=lf
+*.nq test eol=lf
+*.rdf text eol=lf
+*.owx test eol=lf
+*.ofn text eol=lf
+*.omn test eol=lf
+
