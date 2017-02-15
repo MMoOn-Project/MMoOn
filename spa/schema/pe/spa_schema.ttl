@@ -2,7 +2,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix spa_schema: <http://mmoon.org/spa/schema/pi/>
+@prefix spa_schema: <http://mmoon.org/spa/schema/pe/>
 
 <http://mmoon.org/spa/schema/pe/>  rdf:type owl:Ontology ;
                                     owl:imports <http://mmoon.org/core/v1.0.0/>;
@@ -13,7 +13,7 @@
                                     owl:versionInfo "Version 1.0, 2017. Created and maintained by Bettina Klimek."@en ;
                                     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
                                     rdfs:label "Spanish Morpheme Ontology"@en ;
-                                    dc:description """The Spanish Morpheme Ontology is derived from the more general Multilingual Morpheme Ontology (MMoOn). It's a language specific model that contains the vocabulary needed to describe the morphological elements, meanings and representations of natural languages."""@en .
+                                    dc:description """The Spanish Morpheme Ontology is derived from the more general Multilingual Morpheme Ontology (MMoOn). It's a language specific model that contains the vocabulary needed to describe the morphological elements, meanings and representations of the Spanish language."""@en .
 
 spa_schema:MorphemeInventory   rdf:type mmoon:MorphemeInventory ,
                                 owl:NamedIndividual ;
