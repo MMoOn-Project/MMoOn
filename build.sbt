@@ -10,10 +10,9 @@ mainClass in (Compile, run) := Some("ProtegePostprocess")
 
 scalaVersion := "2.11.8"
 
-libraryDependencies += "org.aksw.owlpod" %% "owlpod" % "0.5.3-SNAPSHOT"
+libraryDependencies += "org.aksw.owlpod" %% "owlpod" % "0.5.4"
 
 resolvers ++= Seq(
     "AKSW Snapshots" at "http://maven.aksw.org/repository/snapshots/",
     "AKSW Internal" at "http://maven.aksw.org/repository/internal/"
-
 )
