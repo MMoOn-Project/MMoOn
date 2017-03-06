@@ -10,8 +10,8 @@
 @base <http://mmoon.org/deu/inventory/og/> .
 
 <http://mmoon.org/deu/inventory/og/> rdf:type owl:Ontology ;
-                                           owl:imports mmoon: ,
-                                                       deu_schema: .
+                                      owl:imports deu_schema: ,
+                                                  mmoon: .
 
 :AtomicMorpheme_COMPR rdf:type owl:NamedIndividual ,
                                 deu_schema:AtomicMorpheme ;
@@ -92,19 +92,19 @@
 :DerivedWord_Kauf rdf:type owl:NamedIndividual ,
                            deu_schema:DerivedWord ;
                   mmoon:consistsOfAffix :ZeroMorph_01 ;
-                  mmoon:consistsOfStem :Stem_kauf1 ;
+                  mmoon:consistsOfStem :Stem_kauf_1 ;
                   mmoon:derivationalRelation deu_schema:VerbalNoun ;
                   mmoon:hasRepresentation :Representation_Kauf ;
                   mmoon:hasWordclassAffiliation deu_schema:CommonNoun ;
-                  mmoon:hasWordform :SyntheticWordform_Kauf1 ,
-                                    :SyntheticWordform_Kauf2 ,
-                                    :SyntheticWordform_Kauf3 ,
+                  mmoon:hasWordform :SyntheticWordform_Kauf_1 ,
+                                    :SyntheticWordform_Kauf_2 ,
+                                    :SyntheticWordform_Kauf_3 ,
                                     :SyntheticWordform_Kaufe ,
                                     :SyntheticWordform_Kaufes ,
                                     :SyntheticWordform_Kaufs ,
-                                    :SyntheticWordform_Käufe1 ,
-                                    :SyntheticWordform_Käufe2 ,
-                                    :SyntheticWordform_Käufe3 ,
+                                    :SyntheticWordform_Käufe_1 ,
+                                    :SyntheticWordform_Käufe_2 ,
+                                    :SyntheticWordform_Käufe_3 ,
                                     :SyntheticWordform_Käufen ;
                   mmoon:isDerivedFrom :Lexeme_kaufen ;
                   rdfs:label "Kauf"@de ,
@@ -127,13 +127,13 @@ the purchase"""@en .
 :DerivedWord_Schlaf rdf:type owl:NamedIndividual ,
                              deu_schema:DerivedWord ;
                     mmoon:consistsOfAffix :ZeroMorph_01 ;
-                    mmoon:consistsOfStem :Stem_schlaf1 ;
+                    mmoon:consistsOfStem :Stem_schlaf_1 ;
                     mmoon:derivationalRelation deu_schema:VerbalNoun ;
                     mmoon:hasRepresentation :Representation_Schlaf ;
                     mmoon:hasWordclassAffiliation deu_schema:CommonNoun ;
-                    mmoon:hasWordform :SyntheticWordform_Schlaf1 ,
-                                      :SyntheticWordform_Schlaf2 ,
-                                      :SyntheticWordform_Schlaf3 ,
+                    mmoon:hasWordform :SyntheticWordform_Schlaf_1 ,
+                                      :SyntheticWordform_Schlaf_2 ,
+                                      :SyntheticWordform_Schlaf_3 ,
                                       :SyntheticWordform_Schlafe ,
                                       :SyntheticWordform_Schlafes ,
                                       :SyntheticWordform_Schlafs ;
@@ -155,21 +155,21 @@ the purchase"""@en .
 
 :DerivedWord_verkaufen rdf:type owl:NamedIndividual ,
                                 deu_schema:DerivedWord ;
-                       mmoon:consistsOfAffix :Prefix_ver1 ,
-                                             :Suffix_en1 ;
-                       mmoon:consistsOfStem :Stem_kauf1 ;
+                       mmoon:consistsOfAffix :Prefix_ver_1 ,
+                                             :Suffix_en_1 ;
+                       mmoon:consistsOfStem :Stem_kauf_1 ;
                        mmoon:derivationalRelation deu_schema:ResultativeVerb ;
                        mmoon:hasRepresentation :Representation_verkaufen ;
                        mmoon:hasWordclassAffiliation deu_schema:NonFiniteVerb ;
                        mmoon:hasWordform :SyntheticWordform_verkauf ,
-                                         :SyntheticWordform_verkaufe1 ,
-                                         :SyntheticWordform_verkaufe2 ,
-                                         :SyntheticWordform_verkaufen1 ,
-                                         :SyntheticWordform_verkaufen2 ,
+                                         :SyntheticWordform_verkaufe_1 ,
+                                         :SyntheticWordform_verkaufe_2 ,
+                                         :SyntheticWordform_verkaufen_1 ,
+                                         :SyntheticWordform_verkaufen_2 ,
                                          :SyntheticWordform_verkaufst ,
-                                         :SyntheticWordform_verkauft1 ,
-                                         :SyntheticWordform_verkauft2 ,
-                                         :SyntheticWordform_verkauft3 ;
+                                         :SyntheticWordform_verkauft_1 ,
+                                         :SyntheticWordform_verkauft_2 ,
+                                         :SyntheticWordform_verkauft_3 ;
                        mmoon:isDerivedFrom :Lexeme_kaufen ;
                        rdfs:label "to sell"@en ,
                                   "verkaufen"@de .
@@ -308,17 +308,17 @@ the purchase"""@en .
              rdfs:label "Haus"@de ,
                         "house"@en .
 
-:Lexeme_Kiefer1 rdf:type owl:NamedIndividual ,
-                         deu_schema:Lexeme ;
-                mmoon:hasRepresentation :Representation_Kiefer ;
-                rdfs:label "Kiefer1"@de ,
-                           "pine tree"@en .
+:Lexeme_Kiefer_1 rdf:type owl:NamedIndividual ,
+                          deu_schema:Lexeme ;
+                 mmoon:hasRepresentation :Representation_Kiefer ;
+                 rdfs:label "Kiefer 1"@de ,
+                            "pine tree"@en .
 
-:Lexeme_Kiefer2 rdf:type owl:NamedIndividual ,
-                         deu_schema:Lexeme ;
-                mmoon:hasRepresentation :Representation_Kiefer ;
-                rdfs:label "Kiefer2"@de ,
-                           "jawbone"@en .
+:Lexeme_Kiefer_2 rdf:type owl:NamedIndividual ,
+                          deu_schema:Lexeme ;
+                 mmoon:hasRepresentation :Representation_Kiefer ;
+                 rdfs:label "Kiefer 2"@de ,
+                            "jawbone"@en .
 
 :Lexeme_arbeiten rdf:type owl:NamedIndividual ,
                           deu_schema:Lexeme ;
@@ -335,20 +335,20 @@ the purchase"""@en .
 
 :Lexeme_kaufen rdf:type owl:NamedIndividual ,
                         deu_schema:Lexeme ;
-               mmoon:consistsOfAffix :Suffix_en1 ;
+               mmoon:consistsOfAffix :Suffix_en_1 ;
                mmoon:consistsOfRoot :Root_kauf ;
                mmoon:derivationalRelation deu_schema:NoWordFormation ;
                mmoon:hasRepresentation :Representation_kaufen ;
                mmoon:hasWordclassAffiliation deu_schema:NonFiniteVerb ;
-               mmoon:hasWordform :SyntheticWordform_kauf1 ,
-                                 :SyntheticWordform_kaufe1 ,
-                                 :SyntheticWordform_kaufe2 ,
-                                 :SyntheticWordform_kaufen1 ,
-                                 :SyntheticWordform_kaufen2 ,
+               mmoon:hasWordform :SyntheticWordform_kauf_1 ,
+                                 :SyntheticWordform_kaufe_1 ,
+                                 :SyntheticWordform_kaufe_2 ,
+                                 :SyntheticWordform_kaufen_1 ,
+                                 :SyntheticWordform_kaufen_2 ,
                                  :SyntheticWordform_kaufst ,
-                                 :SyntheticWordform_kauft1 ,
-                                 :SyntheticWordform_kauft2 ,
-                                 :SyntheticWordform_kauft3 ;
+                                 :SyntheticWordform_kauft_1 ,
+                                 :SyntheticWordform_kauft_2 ,
+                                 :SyntheticWordform_kauft_3 ;
                rdfs:label "kaufen"@de ,
                           "to buy"@en .
 
@@ -358,27 +358,27 @@ the purchase"""@en .
               mmoon:derivationalRelation deu_schema:NoWordFormation ;
               mmoon:hasRepresentation :Representation_klein ;
               mmoon:hasWordclassAffiliation deu_schema:PolarAdjective ;
-              mmoon:hasWordform :SyntheticWordform_kleiner1 ,
-                                :SyntheticWordform_kleinerer1 ,
-                                :SyntheticWordform_kleinster1 ;
+              mmoon:hasWordform :SyntheticWordform_kleiner_1 ,
+                                :SyntheticWordform_kleinerer_1 ,
+                                :SyntheticWordform_kleinster_1 ;
               rdfs:label "klein"@de ,
                          """little,
 small"""@en .
 
 :Lexeme_schlafen rdf:type owl:NamedIndividual ,
                           deu_schema:Lexeme ;
-                 mmoon:consistsOfAffix :Suffix_en1 ;
+                 mmoon:consistsOfAffix :Suffix_en_1 ;
                  mmoon:consistsOfRoot :Root_schlaf ;
                  mmoon:derivationalRelation deu_schema:NoWordFormation ;
                  mmoon:hasRepresentation :Representation_schlafen ;
                  mmoon:hasWordclassAffiliation deu_schema:NonFiniteVerb ;
-                 mmoon:hasWordform :SyntheticWordform_schlaf1 ,
-                                   :SyntheticWordform_schlafe1 ,
-                                   :SyntheticWordform_schlafe2 ,
-                                   :SyntheticWordform_schlafen1 ,
-                                   :SyntheticWordform_schlafen2 ,
-                                   :SyntheticWordform_schlaft1 ,
-                                   :SyntheticWordform_schlaft2 ,
+                 mmoon:hasWordform :SyntheticWordform_schlaf_1 ,
+                                   :SyntheticWordform_schlafe_1 ,
+                                   :SyntheticWordform_schlafe_2 ,
+                                   :SyntheticWordform_schlafen_1 ,
+                                   :SyntheticWordform_schlafen_2 ,
+                                   :SyntheticWordform_schlaft_1 ,
+                                   :SyntheticWordform_schlaft_2 ,
                                    :SyntheticWordform_schläfst ,
                                    :SyntheticWordform_schläft ;
                  rdfs:label "schlafen"@de ,
@@ -392,7 +392,7 @@ small"""@en .
 
 :Lexeme_sein rdf:type owl:NamedIndividual ,
                       deu_schema:Lexeme ;
-             mmoon:consistsOfAffix :Suffix_n1 ;
+             mmoon:consistsOfAffix :Suffix_n_1 ;
              mmoon:consistsOfRoot :Root_sei ;
              mmoon:derivationalRelation deu_schema:NoWordFormation ;
              mmoon:hasRepresentation :Representation_sein ;
@@ -401,10 +401,10 @@ small"""@en .
                                :SyntheticWordform_bist ,
                                :SyntheticWordform_ist ,
                                :SyntheticWordform_sei ,
-                               :SyntheticWordform_seid1 ,
-                               :SyntheticWordform_seid2 ,
-                               :SyntheticWordform_sind1 ,
-                               :SyntheticWordform_sind2 ;
+                               :SyntheticWordform_seid_1 ,
+                               :SyntheticWordform_seid_2 ,
+                               :SyntheticWordform_sind_1 ,
+                               :SyntheticWordform_sind_2 ;
              rdfs:label "sein"@de ,
                         "to be"@en .
 
@@ -419,15 +419,15 @@ small"""@en .
                     deu_schema:Prefix ;
            rdfs:label "be"@de .
 
-:Prefix_un1 rdf:type owl:NamedIndividual ,
-                     deu_schema:Prefix ;
-            rdfs:label "un1"@de .
-
-:Prefix_ver1 rdf:type owl:NamedIndividual ,
+:Prefix_un_1 rdf:type owl:NamedIndividual ,
                       deu_schema:Prefix ;
-             mmoon:correspondsToMorpheme :AtomicMorpheme_RES ;
-             mmoon:hasRepresentation :Representation_ver ;
-             rdfs:label "ver1"@de .
+             rdfs:label "un 1"@de .
+
+:Prefix_ver_1 rdf:type owl:NamedIndividual ,
+                       deu_schema:Prefix ;
+              mmoon:correspondsToMorpheme :AtomicMorpheme_RES ;
+              mmoon:hasRepresentation :Representation_ver ;
+              rdfs:label "ver 1"@de .
 
 :Representation_Bearbeitung rdf:type owl:NamedIndividual ,
                                      deu_schema:Representation ;
@@ -709,23 +709,23 @@ small"""@en .
                       deu_schema:Simulfix ;
              mmoon:correspondsToMorpheme :AtomicMorpheme_PL ;
              mmoon:hasRepresentation :Representation_äu ;
-             mmoon:isAllomorphTo :Suffix_e4 ;
+             mmoon:isAllomorphTo :Suffix_e_4 ;
              rdfs:label "äu"@de .
 
-:Stem_Kauf1 rdf:type owl:NamedIndividual ,
-                     deu_schema:Stem ;
-            mmoon:consistsOfRoot :Root_kauf ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_kauf.M.SG ;
-            mmoon:hasRepresentation :Representation_Kauf ;
-            mmoon:isHomonymTo :Stem_Kauf2 ;
-            rdfs:label "Kauf1"@de .
+:Stem_Kauf_1 rdf:type owl:NamedIndividual ,
+                      deu_schema:Stem ;
+             mmoon:consistsOfRoot :Root_kauf ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_kauf.M.SG ;
+             mmoon:hasRepresentation :Representation_Kauf ;
+             mmoon:isHomonymTo :Stem_Kauf_2 ;
+             rdfs:label "Kauf 1"@de .
 
-:Stem_Kauf2 rdf:type owl:NamedIndividual ,
-                     deu_schema:Stem ;
-            mmoon:consistsOfRoot :Root_kauf ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_kauf.M.SG.NOM ;
-            mmoon:hasRepresentation :Representation_Kauf ;
-            rdfs:label "Kauf2"@de .
+:Stem_Kauf_2 rdf:type owl:NamedIndividual ,
+                      deu_schema:Stem ;
+             mmoon:consistsOfRoot :Root_kauf ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_kauf.M.SG.NOM ;
+             mmoon:hasRepresentation :Representation_Kauf ;
+             rdfs:label "Kauf 2"@de .
 
 :Stem_Käuf rdf:type owl:NamedIndividual ,
                     deu_schema:Stem ;
@@ -734,19 +734,19 @@ small"""@en .
            mmoon:hasRepresentation :Representation_Käuf ;
            rdfs:label "Käuf"@de .
 
-:Stem_Schlaf1 rdf:type owl:NamedIndividual ,
-                       deu_schema:Stem ;
-              mmoon:consistsOfRoot :Root_schlaf ;
-              mmoon:correspondsToMorpheme :FusionalMorpheme_schlaf.SG.M ;
-              mmoon:hasRepresentation :Representation_Schlaf ;
-              rdfs:label "Schlaf1"@de .
+:Stem_Schlaf_1 rdf:type owl:NamedIndividual ,
+                        deu_schema:Stem ;
+               mmoon:consistsOfRoot :Root_schlaf ;
+               mmoon:correspondsToMorpheme :FusionalMorpheme_schlaf.SG.M ;
+               mmoon:hasRepresentation :Representation_Schlaf ;
+               rdfs:label "Schlaf 1"@de .
 
-:Stem_Schlaf2 rdf:type owl:NamedIndividual ,
-                       deu_schema:Stem ;
-              mmoon:consistsOfRoot :Root_schlaf ;
-              mmoon:correspondsToMorpheme :FusionalMorpheme_schlaf.SG.M.NOM ;
-              mmoon:hasRepresentation :Representation_Schlaf ;
-              rdfs:label "Schlaf2"@de .
+:Stem_Schlaf_2 rdf:type owl:NamedIndividual ,
+                        deu_schema:Stem ;
+               mmoon:consistsOfRoot :Root_schlaf ;
+               mmoon:correspondsToMorpheme :FusionalMorpheme_schlaf.SG.M.NOM ;
+               mmoon:hasRepresentation :Representation_Schlaf ;
+               rdfs:label "Schlaf 2"@de .
 
 :Stem_bin rdf:type owl:NamedIndividual ,
                    deu_schema:Stem ;
@@ -766,60 +766,60 @@ small"""@en .
           mmoon:hasRepresentation :Representation_ist ;
           rdfs:label "ist"@de .
 
-:Stem_kauf1 rdf:type owl:NamedIndividual ,
-                     deu_schema:Stem ;
-            mmoon:consistsOfRoot :Root_kauf ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_kauf.PRS.IND ;
-            mmoon:hasRepresentation :Representation_kauf ;
-            mmoon:isHomonymTo :Stem_kauf2 ;
-            rdfs:label "kauf1"@de .
-
-:Stem_kauf2 rdf:type owl:NamedIndividual ,
-                     deu_schema:Stem ;
-            mmoon:consistsOfRoot :Root_kauf ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_kauf.IMP ;
-            mmoon:hasRepresentation :Representation_kauf ;
-            rdfs:label "kauf2"@de .
-
-:Stem_klein1 rdf:type owl:NamedIndividual ,
+:Stem_kauf_1 rdf:type owl:NamedIndividual ,
                       deu_schema:Stem ;
-             mmoon:consistsOfRoot :Root_klein ;
-             mmoon:correspondsToMorpheme :FusionalMorpheme_klein.POS ;
-             mmoon:hasRepresentation :Representation_klein ;
-             rdfs:label "klein1"@de .
+             mmoon:consistsOfRoot :Root_kauf ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_kauf.PRS.IND ;
+             mmoon:hasRepresentation :Representation_kauf ;
+             mmoon:isHomonymTo :Stem_kauf_2 ;
+             rdfs:label "kauf 1"@de .
 
-:Stem_kleiner1 rdf:type owl:NamedIndividual ,
-                        deu_schema:Stem ;
-               mmoon:consistsOfAffix :Suffix_er2 ;
-               mmoon:consistsOfRoot :Root_klein ;
-               mmoon:correspondsToMorpheme :ComplexMorpheme_klein-COMPR ;
-               mmoon:hasRepresentation :Representation_kleiner ;
-               rdfs:label "kleiner1"@de .
+:Stem_kauf_2 rdf:type owl:NamedIndividual ,
+                      deu_schema:Stem ;
+             mmoon:consistsOfRoot :Root_kauf ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_kauf.IMP ;
+             mmoon:hasRepresentation :Representation_kauf ;
+             rdfs:label "kauf 2"@de .
 
-:Stem_kleinst1 rdf:type owl:NamedIndividual ,
-                        deu_schema:Stem ;
-               mmoon:consistsOfAffix :Suffix_st1 ;
-               mmoon:consistsOfRoot :Root_klein ;
-               mmoon:correspondsToMorpheme :ComplexMorpheme_klein-SUP ;
-               mmoon:hasRepresentation :Representation_kleinst ;
-               rdfs:label "kleinst1"@de .
-
-:Stem_schlaf1 rdf:type owl:NamedIndividual ,
+:Stem_klein_1 rdf:type owl:NamedIndividual ,
                        deu_schema:Stem ;
-              mmoon:consistsOfRoot :Root_schlaf ;
-              mmoon:correspondsToMorpheme :FusionalMorpheme_schlaf.PRS.IND ;
-              mmoon:hasRepresentation :Representation_schlaf ;
-              mmoon:isAllomorphTo :Stem_schläf ;
-              rdfs:label "schlaf1"@de .
+              mmoon:consistsOfRoot :Root_klein ;
+              mmoon:correspondsToMorpheme :FusionalMorpheme_klein.POS ;
+              mmoon:hasRepresentation :Representation_klein ;
+              rdfs:label "klein 1"@de .
 
-:Stem_schlaf2 rdf:type owl:NamedIndividual ,
-                       deu_schema:Stem ;
-              mmoon:consistsOfRoot :Root_schlaf ;
-              mmoon:correspondsToMorpheme :FusionalMorpheme_schlaf.IMP ;
-              mmoon:hasRepresentation :Representation_schlaf ;
-              mmoon:isHomonymTo :Stem_schlaf1 ,
-                                :Stem_schläf ;
-              rdfs:label "schlaf2"@de .
+:Stem_kleiner_1 rdf:type owl:NamedIndividual ,
+                         deu_schema:Stem ;
+                mmoon:consistsOfAffix :Suffix_er_2 ;
+                mmoon:consistsOfRoot :Root_klein ;
+                mmoon:correspondsToMorpheme :ComplexMorpheme_klein-COMPR ;
+                mmoon:hasRepresentation :Representation_kleiner ;
+                rdfs:label "kleiner 1"@de .
+
+:Stem_kleinst_1 rdf:type owl:NamedIndividual ,
+                         deu_schema:Stem ;
+                mmoon:consistsOfAffix :Suffix_st_1 ;
+                mmoon:consistsOfRoot :Root_klein ;
+                mmoon:correspondsToMorpheme :ComplexMorpheme_klein-SUP ;
+                mmoon:hasRepresentation :Representation_kleinst ;
+                rdfs:label "kleinst 1"@de .
+
+:Stem_schlaf_1 rdf:type owl:NamedIndividual ,
+                        deu_schema:Stem ;
+               mmoon:consistsOfRoot :Root_schlaf ;
+               mmoon:correspondsToMorpheme :FusionalMorpheme_schlaf.PRS.IND ;
+               mmoon:hasRepresentation :Representation_schlaf ;
+               mmoon:isAllomorphTo :Stem_schläf ;
+               rdfs:label "schlaf 1"@de .
+
+:Stem_schlaf_2 rdf:type owl:NamedIndividual ,
+                        deu_schema:Stem ;
+               mmoon:consistsOfRoot :Root_schlaf ;
+               mmoon:correspondsToMorpheme :FusionalMorpheme_schlaf.IMP ;
+               mmoon:hasRepresentation :Representation_schlaf ;
+               mmoon:isHomonymTo :Stem_schlaf_1 ,
+                                 :Stem_schläf ;
+               rdfs:label "schlaf 2"@de .
 
 :Stem_schläf rdf:type owl:NamedIndividual ,
                       deu_schema:Stem ;
@@ -828,12 +828,12 @@ small"""@en .
              mmoon:hasRepresentation :Representation_schläf ;
              rdfs:label "schläf"@de .
 
-:Stem_sei1 rdf:type owl:NamedIndividual ,
-                    deu_schema:Stem ;
-           mmoon:consistsOfRoot :Root_sei ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_sei.IMP ;
-           mmoon:hasRepresentation :Representation_sei ;
-           rdfs:label "sei"@de .
+:Stem_sei_1 rdf:type owl:NamedIndividual ,
+                     deu_schema:Stem ;
+            mmoon:consistsOfRoot :Root_sei ;
+            mmoon:correspondsToMorpheme :FusionalMorpheme_sei.IMP ;
+            mmoon:hasRepresentation :Representation_sei ;
+            rdfs:label "sei"@de .
 
 :Stem_seid rdf:type owl:NamedIndividual ,
                     deu_schema:Stem ;
@@ -841,367 +841,367 @@ small"""@en .
            mmoon:hasRepresentation :Representation_seid ;
            rdfs:label "seid"@de .
 
-:Stem_sind1 rdf:type owl:NamedIndividual ,
-                     deu_schema:Stem ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_sei.1.PL.PRS.IND ;
-            mmoon:hasRepresentation :Representation_sind ;
-            mmoon:isHomonymTo :Stem_sind2 ;
-            rdfs:label "sind1"@de .
+:Stem_sind_1 rdf:type owl:NamedIndividual ,
+                      deu_schema:Stem ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_sei.1.PL.PRS.IND ;
+             mmoon:hasRepresentation :Representation_sind ;
+             mmoon:isHomonymTo :Stem_sind_2 ;
+             rdfs:label "sind 1"@de .
 
-:Stem_sind2 rdf:type owl:NamedIndividual ,
-                     deu_schema:Stem ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_sei.3.PL.PRS.IND ;
-            mmoon:hasRepresentation :Representation_sind ;
-            rdfs:label "sind2"@de .
+:Stem_sind_2 rdf:type owl:NamedIndividual ,
+                      deu_schema:Stem ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_sei.3.PL.PRS.IND ;
+             mmoon:hasRepresentation :Representation_sind ;
+             rdfs:label "sind 2"@de .
 
-:Stem_verkauf1 rdf:type owl:NamedIndividual ,
-                        deu_schema:Stem ;
-               mmoon:consistsOfAffix :Prefix_ver1 ;
-               mmoon:consistsOfStem :Stem_kauf1 ;
-               mmoon:correspondsToMorpheme :ComplexMorpheme_RES-kauf.PRS.IND ;
-               mmoon:hasRepresentation :Representation_verkauf ;
-               mmoon:isHomonymTo :Stem_verkauf2 ;
-               rdfs:label "verkauf1"@de .
+:Stem_verkauf_1 rdf:type owl:NamedIndividual ,
+                         deu_schema:Stem ;
+                mmoon:consistsOfAffix :Prefix_ver_1 ;
+                mmoon:consistsOfStem :Stem_kauf_1 ;
+                mmoon:correspondsToMorpheme :ComplexMorpheme_RES-kauf.PRS.IND ;
+                mmoon:hasRepresentation :Representation_verkauf ;
+                mmoon:isHomonymTo :Stem_verkauf_2 ;
+                rdfs:label "verkauf 1"@de .
 
-:Stem_verkauf2 rdf:type owl:NamedIndividual ,
-                        deu_schema:Stem ;
-               mmoon:consistsOfAffix :Prefix_ver1 ;
-               mmoon:consistsOfStem :Stem_kauf2 ;
-               mmoon:correspondsToMorpheme :ComplexMorpheme_RES-kauf.IMP ;
-               mmoon:hasRepresentation :Representation_verkauf ;
-               rdfs:label "verkauf2"@de .
+:Stem_verkauf_2 rdf:type owl:NamedIndividual ,
+                         deu_schema:Stem ;
+                mmoon:consistsOfAffix :Prefix_ver_1 ;
+                mmoon:consistsOfStem :Stem_kauf_2 ;
+                mmoon:correspondsToMorpheme :ComplexMorpheme_RES-kauf.IMP ;
+                mmoon:hasRepresentation :Representation_verkauf ;
+                rdfs:label "verkauf 2"@de .
 
-:Suffix_d1 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_2.PL ;
-           mmoon:hasRepresentation :Representation_d ;
-           mmoon:isAllomorphTo :Suffix_t2 ;
-           rdfs:label "d1"@de .
-
-:Suffix_e1 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_1.SG ;
-           mmoon:hasRepresentation :Representation_e ;
-           mmoon:isHomonymTo :Suffix_e2 ,
-                             :Suffix_e3 ,
-                             :Suffix_e4 ,
-                             :Suffix_e5 ,
-                             :Suffix_e6 ;
-           rdfs:label "e1"@de .
-
-:Suffix_e2 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_2.SG ;
-           mmoon:hasRepresentation :Representation_e ;
-           mmoon:isHomonymTo :Suffix_e1 ,
-                             :Suffix_e3 ,
-                             :Suffix_e4 ,
-                             :Suffix_e5 ,
-                             :Suffix_e6 ;
-           rdfs:label "e2"@de .
-
-:Suffix_e3 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_DAT.SG ;
-           mmoon:hasRepresentation :Representation_e ;
-           mmoon:isHomonymTo :Suffix_e1 ,
-                             :Suffix_e2 ,
-                             :Suffix_e4 ,
-                             :Suffix_e5 ,
-                             :Suffix_e6 ;
-           rdfs:label "e3"@de .
-
-:Suffix_e4 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_NOM.PL ;
-           mmoon:hasRepresentation :Representation_e ;
-           mmoon:isHomonymTo :Suffix_e1 ,
-                             :Suffix_e2 ,
-                             :Suffix_e3 ,
-                             :Suffix_e5 ,
-                             :Suffix_e6 ;
-           rdfs:label "e4"@de .
-
-:Suffix_e5 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_ACC.PL ;
-           mmoon:hasRepresentation :Representation_e ;
-           mmoon:isHomonymTo :Suffix_e1 ,
-                             :Suffix_e2 ,
-                             :Suffix_e3 ,
-                             :Suffix_e4 ,
-                             :Suffix_e6 ;
-           rdfs:label "e5"@de .
-
-:Suffix_e6 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_GEN.PL ;
-           mmoon:hasRepresentation :Representation_e ;
-           mmoon:isHomonymTo :Suffix_e1 ,
-                             :Suffix_e2 ,
-                             :Suffix_e3 ,
-                             :Suffix_e4 ,
-                             :Suffix_e5 ;
-           rdfs:label "e6"@de .
-
-:Suffix_en1 rdf:type owl:NamedIndividual ,
+:Suffix_d_1 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :AtomicMorpheme_INF ;
-            mmoon:hasRepresentation :Representation_en ;
-            mmoon:isAllomorphTo :Suffix_n1 ;
-            mmoon:isHomonymTo :Suffix_en2 ,
-                              :Suffix_en3 ,
-                              :Suffix_en4 ;
-            rdfs:label "en1"@de .
+            mmoon:correspondsToMorpheme :FusionalMorpheme_2.PL ;
+            mmoon:hasRepresentation :Representation_d ;
+            mmoon:isAllomorphTo :Suffix_t_2 ;
+            rdfs:label "d 1"@de .
 
-:Suffix_en2 rdf:type owl:NamedIndividual ,
+:Suffix_e_1 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_1.PL ;
-            mmoon:hasRepresentation :Representation_en ;
-            mmoon:isHomonymTo :Suffix_en1 ,
-                              :Suffix_en3 ,
-                              :Suffix_en4 ;
-            rdfs:label "en2"@de .
+            mmoon:correspondsToMorpheme :FusionalMorpheme_1.SG ;
+            mmoon:hasRepresentation :Representation_e ;
+            mmoon:isHomonymTo :Suffix_e_2 ,
+                              :Suffix_e_3 ,
+                              :Suffix_e_4 ,
+                              :Suffix_e_5 ,
+                              :Suffix_e_6 ;
+            rdfs:label "e 1"@de .
 
-:Suffix_en3 rdf:type owl:NamedIndividual ,
+:Suffix_e_2 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_3.PL ;
-            mmoon:hasRepresentation :Representation_en ;
-            mmoon:isHomonymTo :Suffix_en1 ,
-                              :Suffix_en4 ;
-            rdfs:label "en3"@de .
+            mmoon:correspondsToMorpheme :FusionalMorpheme_2.SG ;
+            mmoon:hasRepresentation :Representation_e ;
+            mmoon:isHomonymTo :Suffix_e_1 ,
+                              :Suffix_e_3 ,
+                              :Suffix_e_4 ,
+                              :Suffix_e_5 ,
+                              :Suffix_e_6 ;
+            rdfs:label "e 2"@de .
 
-:Suffix_en4 rdf:type owl:NamedIndividual ,
+:Suffix_e_3 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_DAT.PL ;
-            mmoon:hasRepresentation :Representation_en ;
-            mmoon:isHomonymTo :Suffix_en1 ,
-                              :Suffix_en2 ,
-                              :Suffix_en3 ;
-            rdfs:label "en4"@de .
+            mmoon:correspondsToMorpheme :FusionalMorpheme_DAT.SG ;
+            mmoon:hasRepresentation :Representation_e ;
+            mmoon:isHomonymTo :Suffix_e_1 ,
+                              :Suffix_e_2 ,
+                              :Suffix_e_4 ,
+                              :Suffix_e_5 ,
+                              :Suffix_e_6 ;
+            rdfs:label "e 3"@de .
 
-:Suffix_er1 rdf:type owl:NamedIndividual ,
+:Suffix_e_4 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_NOM.SG.M ;
-            mmoon:hasRepresentation :Representation_er ;
-            mmoon:isHomonymTo :Suffix_er2 ,
-                              :Suffix_er3 ;
-            rdfs:label "er1"@de .
+            mmoon:correspondsToMorpheme :FusionalMorpheme_NOM.PL ;
+            mmoon:hasRepresentation :Representation_e ;
+            mmoon:isHomonymTo :Suffix_e_1 ,
+                              :Suffix_e_2 ,
+                              :Suffix_e_3 ,
+                              :Suffix_e_5 ,
+                              :Suffix_e_6 ;
+            rdfs:label "e 4"@de .
 
-:Suffix_er2 rdf:type owl:NamedIndividual ,
+:Suffix_e_5 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :AtomicMorpheme_COMPR ;
-            mmoon:hasRepresentation :Representation_er ;
-            mmoon:isHomonymTo :Suffix_er1 ,
-                              :Suffix_er3 ;
-            rdfs:label "er2"@de .
+            mmoon:correspondsToMorpheme :FusionalMorpheme_ACC.PL ;
+            mmoon:hasRepresentation :Representation_e ;
+            mmoon:isHomonymTo :Suffix_e_1 ,
+                              :Suffix_e_2 ,
+                              :Suffix_e_3 ,
+                              :Suffix_e_4 ,
+                              :Suffix_e_6 ;
+            rdfs:label "e 5"@de .
 
-:Suffix_er3 rdf:type owl:NamedIndividual ,
+:Suffix_e_6 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_AG.NMLZ ;
-            mmoon:hasRepresentation :Representation_er ;
-            mmoon:isHomonymTo :Suffix_er1 ,
-                              :Suffix_er2 ;
-            rdfs:label "er3"@de .
+            mmoon:correspondsToMorpheme :FusionalMorpheme_GEN.PL ;
+            mmoon:hasRepresentation :Representation_e ;
+            mmoon:isHomonymTo :Suffix_e_1 ,
+                              :Suffix_e_2 ,
+                              :Suffix_e_3 ,
+                              :Suffix_e_4 ,
+                              :Suffix_e_5 ;
+            rdfs:label "e 6"@de .
 
-:Suffix_er4 rdf:type owl:NamedIndividual ,
-                     deu_schema:Suffix ;
-            rdfs:label "er4"@de .
+:Suffix_en_1 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :AtomicMorpheme_INF ;
+             mmoon:hasRepresentation :Representation_en ;
+             mmoon:isAllomorphTo :Suffix_n_1 ;
+             mmoon:isHomonymTo :Suffix_en_2 ,
+                               :Suffix_en_3 ,
+                               :Suffix_en_4 ;
+             rdfs:label "en 1"@de .
 
-:Suffix_es1 rdf:type owl:NamedIndividual ,
-                     deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_GEN.SG ;
-            mmoon:hasRepresentation :Representation_es ;
-            mmoon:isAllomorphTo :Suffix_s1 ;
-            rdfs:label "es1"@de .
+:Suffix_en_2 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_1.PL ;
+             mmoon:hasRepresentation :Representation_en ;
+             mmoon:isHomonymTo :Suffix_en_1 ,
+                               :Suffix_en_3 ,
+                               :Suffix_en_4 ;
+             rdfs:label "en 2"@de .
+
+:Suffix_en_3 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_3.PL ;
+             mmoon:hasRepresentation :Representation_en ;
+             mmoon:isHomonymTo :Suffix_en_1 ,
+                               :Suffix_en_4 ;
+             rdfs:label "en 3"@de .
+
+:Suffix_en_4 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_DAT.PL ;
+             mmoon:hasRepresentation :Representation_en ;
+             mmoon:isHomonymTo :Suffix_en_1 ,
+                               :Suffix_en_2 ,
+                               :Suffix_en_3 ;
+             rdfs:label "en 4"@de .
+
+:Suffix_er_1 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_NOM.SG.M ;
+             mmoon:hasRepresentation :Representation_er ;
+             mmoon:isHomonymTo :Suffix_er_2 ,
+                               :Suffix_er_3 ;
+             rdfs:label "er 1"@de .
+
+:Suffix_er_2 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :AtomicMorpheme_COMPR ;
+             mmoon:hasRepresentation :Representation_er ;
+             mmoon:isHomonymTo :Suffix_er_1 ,
+                               :Suffix_er_3 ;
+             rdfs:label "er 2"@de .
+
+:Suffix_er_3 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_AG.NMLZ ;
+             mmoon:hasRepresentation :Representation_er ;
+             mmoon:isHomonymTo :Suffix_er_1 ,
+                               :Suffix_er_2 ;
+             rdfs:label "er 3"@de .
+
+:Suffix_er_4 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             rdfs:label "er 4"@de .
+
+:Suffix_es_1 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_GEN.SG ;
+             mmoon:hasRepresentation :Representation_es ;
+             mmoon:isAllomorphTo :Suffix_s_1 ;
+             rdfs:label "es 1"@de .
 
 :Suffix_in rdf:type owl:NamedIndividual ,
                     deu_schema:Suffix ;
            rdfs:label "in"@de .
 
-:Suffix_n1 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :AtomicMorpheme_INF ;
-           mmoon:hasRepresentation :Representation_n ;
-           mmoon:isHomonymTo :Suffix_n2 ;
-           rdfs:label "n1"@de .
-
-:Suffix_n2 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_ACC.SG ;
-           mmoon:hasRepresentation :Representation_n ;
-           rdfs:label "n2"@de .
-
-:Suffix_s1 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_GEN.SG ;
-           mmoon:hasRepresentation :Representation_s ;
-           rdfs:label "s1"@de .
-
-:Suffix_st1 rdf:type owl:NamedIndividual ,
+:Suffix_n_1 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :AtomicMorpheme_SUP ;
-            mmoon:hasRepresentation :Representation_st ;
-            mmoon:isHomonymTo :Suffix_st2 ;
-            rdfs:label "st1"@de .
+            mmoon:correspondsToMorpheme :AtomicMorpheme_INF ;
+            mmoon:hasRepresentation :Representation_n ;
+            mmoon:isHomonymTo :Suffix_n_2 ;
+            rdfs:label "n 1"@de .
 
-:Suffix_st2 rdf:type owl:NamedIndividual ,
+:Suffix_n_2 rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
-            mmoon:correspondsToMorpheme :FusionalMorpheme_2.SG ;
-            mmoon:hasRepresentation :Representation_st ;
-            mmoon:isAllomorphTo :Suffix_e2 ;
-            rdfs:label "st2"@de .
+            mmoon:correspondsToMorpheme :FusionalMorpheme_ACC.SG ;
+            mmoon:hasRepresentation :Representation_n ;
+            rdfs:label "n 2"@de .
 
-:Suffix_t1 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_3.SG ;
-           mmoon:hasRepresentation :Representation_t ;
-           mmoon:isHomonymTo :Suffix_t2 ,
-                             :Suffix_t3 ;
-           rdfs:label "t1"@de .
+:Suffix_s_1 rdf:type owl:NamedIndividual ,
+                     deu_schema:Suffix ;
+            mmoon:correspondsToMorpheme :FusionalMorpheme_GEN.SG ;
+            mmoon:hasRepresentation :Representation_s ;
+            rdfs:label "s 1"@de .
 
-:Suffix_t2 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_2.PL ;
-           mmoon:hasRepresentation :Representation_t ;
-           mmoon:isHomonymTo :Suffix_t1 ,
-                             :Suffix_t3 ;
-           rdfs:label "t2"@de .
+:Suffix_st_1 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :AtomicMorpheme_SUP ;
+             mmoon:hasRepresentation :Representation_st ;
+             mmoon:isHomonymTo :Suffix_st_2 ;
+             rdfs:label "st 1"@de .
 
-:Suffix_t3 rdf:type owl:NamedIndividual ,
-                    deu_schema:Suffix ;
-           mmoon:correspondsToMorpheme :FusionalMorpheme_2.PL ;
-           mmoon:hasRepresentation :Representation_t ;
-           mmoon:isHomonymTo :Suffix_t1 ,
-                             :Suffix_t2 ;
-           rdfs:label "t3"@de .
+:Suffix_st_2 rdf:type owl:NamedIndividual ,
+                      deu_schema:Suffix ;
+             mmoon:correspondsToMorpheme :FusionalMorpheme_2.SG ;
+             mmoon:hasRepresentation :Representation_st ;
+             mmoon:isAllomorphTo :Suffix_e_2 ;
+             rdfs:label "st 2"@de .
+
+:Suffix_t_1 rdf:type owl:NamedIndividual ,
+                     deu_schema:Suffix ;
+            mmoon:correspondsToMorpheme :FusionalMorpheme_3.SG ;
+            mmoon:hasRepresentation :Representation_t ;
+            mmoon:isHomonymTo :Suffix_t_2 ,
+                              :Suffix_t_3 ;
+            rdfs:label "t 1"@de .
+
+:Suffix_t_2 rdf:type owl:NamedIndividual ,
+                     deu_schema:Suffix ;
+            mmoon:correspondsToMorpheme :FusionalMorpheme_2.PL ;
+            mmoon:hasRepresentation :Representation_t ;
+            mmoon:isHomonymTo :Suffix_t_1 ,
+                              :Suffix_t_3 ;
+            rdfs:label "t 2"@de .
+
+:Suffix_t_3 rdf:type owl:NamedIndividual ,
+                     deu_schema:Suffix ;
+            mmoon:correspondsToMorpheme :FusionalMorpheme_2.PL ;
+            mmoon:hasRepresentation :Representation_t ;
+            mmoon:isHomonymTo :Suffix_t_1 ,
+                              :Suffix_t_2 ;
+            rdfs:label "t 3"@de .
 
 :Suffix_ung rdf:type owl:NamedIndividual ,
                      deu_schema:Suffix ;
             rdfs:label "ung"@de .
 
-:SyntheticWordform_Kauf1 rdf:type owl:NamedIndividual ,
-                                  deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfStem :Stem_Kauf2 ;
-                         mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                         mmoon:hasRepresentation :Representation_Kauf ;
-                         rdfs:label "Kauf1"@de .
+:SyntheticWordform_Kauf_1 rdf:type owl:NamedIndividual ,
+                                   deu_schema:SyntheticWordform ;
+                          mmoon:consistsOfStem :Stem_Kauf_2 ;
+                          mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                          mmoon:hasRepresentation :Representation_Kauf ;
+                          rdfs:label "Kauf 1"@de .
 
-:SyntheticWordform_Kauf2 rdf:type owl:NamedIndividual ,
-                                  deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfAffix :ZeroMorph_02 ;
-                         mmoon:consistsOfStem :Stem_Kauf1 ;
-                         mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                         mmoon:hasRepresentation :Representation_Kauf ;
-                         rdfs:label "Kauf2"@de .
+:SyntheticWordform_Kauf_2 rdf:type owl:NamedIndividual ,
+                                   deu_schema:SyntheticWordform ;
+                          mmoon:consistsOfAffix :ZeroMorph_02 ;
+                          mmoon:consistsOfStem :Stem_Kauf_1 ;
+                          mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                          mmoon:hasRepresentation :Representation_Kauf ;
+                          rdfs:label "Kauf 2"@de .
 
-:SyntheticWordform_Kauf3 rdf:type owl:NamedIndividual ,
-                                  deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfAffix :ZeroMorph_03 ;
-                         mmoon:consistsOfStem :Stem_Kauf1 ;
-                         mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                         mmoon:hasRepresentation :Representation_Kauf ;
-                         rdfs:label "Kauf3"@de .
+:SyntheticWordform_Kauf_3 rdf:type owl:NamedIndividual ,
+                                   deu_schema:SyntheticWordform ;
+                          mmoon:consistsOfAffix :ZeroMorph_03 ;
+                          mmoon:consistsOfStem :Stem_Kauf_1 ;
+                          mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                          mmoon:hasRepresentation :Representation_Kauf ;
+                          rdfs:label "Kauf 3"@de .
 
 :SyntheticWordform_Kaufe rdf:type owl:NamedIndividual ,
                                   deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfAffix :Suffix_e3 ;
-                         mmoon:consistsOfStem :Stem_Kauf1 ;
+                         mmoon:consistsOfAffix :Suffix_e_3 ;
+                         mmoon:consistsOfStem :Stem_Kauf_1 ;
                          mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
                          mmoon:hasRepresentation :Representation_Kaufe ;
                          rdfs:label "Kaufe"@de .
 
 :SyntheticWordform_Kaufes rdf:type owl:NamedIndividual ,
                                    deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_es1 ;
-                          mmoon:consistsOfStem :Stem_Kauf1 ;
+                          mmoon:consistsOfAffix :Suffix_es_1 ;
+                          mmoon:consistsOfStem :Stem_Kauf_1 ;
                           mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
                           mmoon:hasRepresentation :Representation_Kaufes ;
                           rdfs:label "Kaufes"@de .
 
 :SyntheticWordform_Kaufs rdf:type owl:NamedIndividual ,
                                   deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfAffix :Suffix_s1 ;
-                         mmoon:consistsOfStem :Stem_Kauf1 ;
+                         mmoon:consistsOfAffix :Suffix_s_1 ;
+                         mmoon:consistsOfStem :Stem_Kauf_1 ;
                          mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
                          mmoon:hasRepresentation :Representation_Kaufs ;
                          rdfs:label "Kaufs"@de .
 
-:SyntheticWordform_Käufe1 rdf:type owl:NamedIndividual ,
-                                   deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_e4 ;
-                          mmoon:consistsOfStem :Stem_Käuf ;
-                          mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                          mmoon:hasRepresentation :Representation_Käufe ;
-                          rdfs:label "Käufe1"@de .
+:SyntheticWordform_Käufe_1 rdf:type owl:NamedIndividual ,
+                                    deu_schema:SyntheticWordform ;
+                           mmoon:consistsOfAffix :Suffix_e_4 ;
+                           mmoon:consistsOfStem :Stem_Käuf ;
+                           mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                           mmoon:hasRepresentation :Representation_Käufe ;
+                           rdfs:label "Käufe 1"@de .
 
-:SyntheticWordform_Käufe2 rdf:type owl:NamedIndividual ,
-                                   deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_e5 ;
-                          mmoon:consistsOfStem :Stem_Käuf ;
-                          mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                          mmoon:hasRepresentation :Representation_Käufe ;
-                          rdfs:label "Käufe2"@de .
+:SyntheticWordform_Käufe_2 rdf:type owl:NamedIndividual ,
+                                    deu_schema:SyntheticWordform ;
+                           mmoon:consistsOfAffix :Suffix_e_5 ;
+                           mmoon:consistsOfStem :Stem_Käuf ;
+                           mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                           mmoon:hasRepresentation :Representation_Käufe ;
+                           rdfs:label "Käufe 2"@de .
 
-:SyntheticWordform_Käufe3 rdf:type owl:NamedIndividual ,
-                                   deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_e6 ;
-                          mmoon:consistsOfStem :Stem_Käuf ;
-                          mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                          mmoon:hasRepresentation :Representation_Käufe ;
-                          rdfs:label "Käufe3"@de .
+:SyntheticWordform_Käufe_3 rdf:type owl:NamedIndividual ,
+                                    deu_schema:SyntheticWordform ;
+                           mmoon:consistsOfAffix :Suffix_e_6 ;
+                           mmoon:consistsOfStem :Stem_Käuf ;
+                           mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                           mmoon:hasRepresentation :Representation_Käufe ;
+                           rdfs:label "Käufe 3"@de .
 
 :SyntheticWordform_Käufen rdf:type owl:NamedIndividual ,
                                    deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_en4 ;
+                          mmoon:consistsOfAffix :Suffix_en_4 ;
                           mmoon:consistsOfStem :Stem_Käuf ;
                           mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
                           mmoon:hasRepresentation :Representation_Käufen ;
                           rdfs:label "Käufen"@de .
 
-:SyntheticWordform_Schlaf1 rdf:type owl:NamedIndividual ,
-                                    deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfStem :Stem_Schlaf2 ;
-                           mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                           mmoon:hasRepresentation :Representation_Schlaf ;
-                           rdfs:label "Schlaf1"@de .
+:SyntheticWordform_Schlaf_1 rdf:type owl:NamedIndividual ,
+                                     deu_schema:SyntheticWordform ;
+                            mmoon:consistsOfStem :Stem_Schlaf_2 ;
+                            mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                            mmoon:hasRepresentation :Representation_Schlaf ;
+                            rdfs:label "Schlaf 1"@de .
 
-:SyntheticWordform_Schlaf2 rdf:type owl:NamedIndividual ,
-                                    deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfAffix :ZeroMorph_02 ;
-                           mmoon:consistsOfStem :Stem_Schlaf1 ;
-                           mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                           mmoon:hasRepresentation :Representation_Schlaf ;
-                           rdfs:label "Schlaf2"@de .
+:SyntheticWordform_Schlaf_2 rdf:type owl:NamedIndividual ,
+                                     deu_schema:SyntheticWordform ;
+                            mmoon:consistsOfAffix :ZeroMorph_02 ;
+                            mmoon:consistsOfStem :Stem_Schlaf_1 ;
+                            mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                            mmoon:hasRepresentation :Representation_Schlaf ;
+                            rdfs:label "Schlaf 2"@de .
 
-:SyntheticWordform_Schlaf3 rdf:type owl:NamedIndividual ,
-                                    deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfAffix :ZeroMorph_03 ;
-                           mmoon:consistsOfStem :Stem_Schlaf1 ;
-                           mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
-                           mmoon:hasRepresentation :Representation_Schlaf ;
-                           rdfs:label "Schlaf3"@de .
+:SyntheticWordform_Schlaf_3 rdf:type owl:NamedIndividual ,
+                                     deu_schema:SyntheticWordform ;
+                            mmoon:consistsOfAffix :ZeroMorph_03 ;
+                            mmoon:consistsOfStem :Stem_Schlaf_1 ;
+                            mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
+                            mmoon:hasRepresentation :Representation_Schlaf ;
+                            rdfs:label "Schlaf 3"@de .
 
 :SyntheticWordform_Schlafe rdf:type owl:NamedIndividual ,
                                     deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfAffix :Suffix_e3 ;
-                           mmoon:consistsOfStem :Stem_Schlaf1 ;
+                           mmoon:consistsOfAffix :Suffix_e_3 ;
+                           mmoon:consistsOfStem :Stem_Schlaf_1 ;
                            mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
                            mmoon:hasRepresentation :Representation_Schlafe ;
                            rdfs:label "Schlafe"@de .
 
 :SyntheticWordform_Schlafes rdf:type owl:NamedIndividual ,
                                      deu_schema:SyntheticWordform ;
-                            mmoon:consistsOfAffix :Suffix_es1 ;
-                            mmoon:consistsOfStem :Stem_Schlaf1 ;
+                            mmoon:consistsOfAffix :Suffix_es_1 ;
+                            mmoon:consistsOfStem :Stem_Schlaf_1 ;
                             mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
                             mmoon:hasRepresentation :Representation_Schlafes ;
                             rdfs:label "Schlafes"@de .
 
 :SyntheticWordform_Schlafs rdf:type owl:NamedIndividual ,
                                     deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfAffix :Suffix_s1 ;
-                           mmoon:consistsOfStem :Stem_Schlaf1 ;
+                           mmoon:consistsOfAffix :Suffix_s_1 ;
+                           mmoon:consistsOfStem :Stem_Schlaf_1 ;
                            mmoon:hasMorphologicalRelationship deu_schema:NounDeclension1 ;
                            mmoon:hasRepresentation :Representation_Schlafs ;
                            rdfs:label "Schlafs"@de .
@@ -1227,164 +1227,164 @@ small"""@en .
                        mmoon:hasRepresentation :Representation_ist ;
                        rdfs:label "ist"@de .
 
-:SyntheticWordform_kauf1 rdf:type owl:NamedIndividual ,
-                                  deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfAffix :ZeroMorph_04 ;
-                         mmoon:consistsOfStem :Stem_kauf2 ;
-                         mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                         mmoon:hasRepresentation :Representation_kauf ;
-                         rdfs:label "kaufe"@de .
-
-:SyntheticWordform_kaufe1 rdf:type owl:NamedIndividual ,
+:SyntheticWordform_kauf_1 rdf:type owl:NamedIndividual ,
                                    deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_e1 ;
-                          mmoon:consistsOfStem :Stem_kauf1 ;
+                          mmoon:consistsOfAffix :ZeroMorph_04 ;
+                          mmoon:consistsOfStem :Stem_kauf_2 ;
                           mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                          mmoon:hasRepresentation :Representation_kaufe ;
-                          rdfs:label "kauf"@de .
-
-:SyntheticWordform_kaufe2 rdf:type owl:NamedIndividual ,
-                                   deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_e2 ;
-                          mmoon:consistsOfStem :Stem_kauf2 ;
-                          mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                          mmoon:hasRepresentation :Representation_kaufe ;
+                          mmoon:hasRepresentation :Representation_kauf ;
                           rdfs:label "kaufe"@de .
 
-:SyntheticWordform_kaufen1 rdf:type owl:NamedIndividual ,
+:SyntheticWordform_kaufe_1 rdf:type owl:NamedIndividual ,
                                     deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfAffix :Suffix_en2 ;
-                           mmoon:consistsOfStem :Stem_kauf1 ;
+                           mmoon:consistsOfAffix :Suffix_e_1 ;
+                           mmoon:consistsOfStem :Stem_kauf_1 ;
                            mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                           mmoon:hasRepresentation :Representation_kaufen ;
-                           rdfs:label "kaufen1"@de .
+                           mmoon:hasRepresentation :Representation_kaufe ;
+                           rdfs:label "kauf"@de .
 
-:SyntheticWordform_kaufen2 rdf:type owl:NamedIndividual ,
+:SyntheticWordform_kaufe_2 rdf:type owl:NamedIndividual ,
                                     deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfAffix :Suffix_en3 ;
-                           mmoon:consistsOfStem :Stem_kauf1 ;
+                           mmoon:consistsOfAffix :Suffix_e_2 ;
+                           mmoon:consistsOfStem :Stem_kauf_2 ;
                            mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                           mmoon:hasRepresentation :Representation_kaufen ;
-                           rdfs:label "kaufen2"@de .
+                           mmoon:hasRepresentation :Representation_kaufe ;
+                           rdfs:label "kaufe"@de .
+
+:SyntheticWordform_kaufen_1 rdf:type owl:NamedIndividual ,
+                                     deu_schema:SyntheticWordform ;
+                            mmoon:consistsOfAffix :Suffix_en_2 ;
+                            mmoon:consistsOfStem :Stem_kauf_1 ;
+                            mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                            mmoon:hasRepresentation :Representation_kaufen ;
+                            rdfs:label "kaufen 1"@de .
+
+:SyntheticWordform_kaufen_2 rdf:type owl:NamedIndividual ,
+                                     deu_schema:SyntheticWordform ;
+                            mmoon:consistsOfAffix :Suffix_en_3 ;
+                            mmoon:consistsOfStem :Stem_kauf_1 ;
+                            mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                            mmoon:hasRepresentation :Representation_kaufen ;
+                            rdfs:label "kaufen 2"@de .
 
 :SyntheticWordform_kaufst rdf:type owl:NamedIndividual ,
                                    deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_st2 ;
-                          mmoon:consistsOfStem :Stem_kauf1 ;
+                          mmoon:consistsOfAffix :Suffix_st_2 ;
+                          mmoon:consistsOfStem :Stem_kauf_1 ;
                           mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
                           mmoon:hasRepresentation :Representation_kaufst ;
                           rdfs:label "kaufst"@de .
 
-:SyntheticWordform_kauft1 rdf:type owl:NamedIndividual ,
-                                   deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_t1 ;
-                          mmoon:consistsOfStem :Stem_kauf1 ;
-                          mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                          mmoon:hasRepresentation :Representation_kauft ;
-                          rdfs:label "kauft1"@de .
-
-:SyntheticWordform_kauft2 rdf:type owl:NamedIndividual ,
-                                   deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_t2 ;
-                          mmoon:consistsOfStem :Stem_kauf1 ;
-                          mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                          mmoon:hasRepresentation :Representation_kauft ;
-                          rdfs:label "kauft2"@de .
-
-:SyntheticWordform_kauft3 rdf:type owl:NamedIndividual ,
-                                   deu_schema:SyntheticWordform ;
-                          mmoon:consistsOfAffix :Suffix_t3 ;
-                          mmoon:consistsOfStem :Stem_kauf2 ;
-                          mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                          mmoon:hasRepresentation :Representation_kauft ;
-                          rdfs:label "kauft3"@de .
-
-:SyntheticWordform_kleiner1 rdf:type owl:NamedIndividual ,
-                                     deu_schema:SyntheticWordform ;
-                            mmoon:consistsOfAffix :Suffix_er1 ;
-                            mmoon:consistsOfStem :Stem_klein1 ;
-                            mmoon:hasMorphologicalRelationship deu_schema:RegularDegree ,
-                                                               deu_schema:StrongAdjDeclension ;
-                            mmoon:hasRepresentation :Representation_kleiner ;
-                            rdfs:label "kleiner1"@de .
-
-:SyntheticWordform_kleinerer1 rdf:type owl:NamedIndividual ,
-                                       deu_schema:SyntheticWordform ;
-                              mmoon:consistsOfAffix :Suffix_er1 ;
-                              mmoon:consistsOfStem :Stem_kleiner1 ;
-                              mmoon:hasMorphologicalRelationship deu_schema:RegularDegree ,
-                                                                 deu_schema:StrongAdjDeclension ;
-                              mmoon:hasRepresentation :Representation_kleinerer ;
-                              rdfs:label "kleinerer1"@de .
-
-:SyntheticWordform_kleinster1 rdf:type owl:NamedIndividual ,
-                                       deu_schema:SyntheticWordform ;
-                              mmoon:consistsOfAffix :Suffix_er1 ;
-                              mmoon:consistsOfStem :Stem_kleinst1 ;
-                              mmoon:hasMorphologicalRelationship deu_schema:RegularDegree ,
-                                                                 deu_schema:StrongAdjDeclension ;
-                              mmoon:hasRepresentation :Representation_kleinster ;
-                              rdfs:label "kleinster1"@de .
-
-:SyntheticWordform_schlaf1 rdf:type owl:NamedIndividual ,
+:SyntheticWordform_kauft_1 rdf:type owl:NamedIndividual ,
                                     deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfAffix :ZeroMorph_04 ;
-                           mmoon:consistsOfStem :Stem_schlaf2 ;
-                           mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                           mmoon:hasRepresentation :Representation_schlaf ;
-                           rdfs:label "schlaf"@de .
+                           mmoon:consistsOfAffix :Suffix_t_1 ;
+                           mmoon:consistsOfStem :Stem_kauf_1 ;
+                           mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                           mmoon:hasRepresentation :Representation_kauft ;
+                           rdfs:label "kauft 1"@de .
 
-:SyntheticWordform_schlafe1 rdf:type owl:NamedIndividual ,
-                                     deu_schema:SyntheticWordform ;
-                            mmoon:consistsOfAffix :Suffix_e1 ;
-                            mmoon:consistsOfStem :Stem_schlaf1 ;
-                            mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                            mmoon:hasRepresentation :Representation_schlafe ;
-                            rdfs:label "schlafe1"@de .
+:SyntheticWordform_kauft_2 rdf:type owl:NamedIndividual ,
+                                    deu_schema:SyntheticWordform ;
+                           mmoon:consistsOfAffix :Suffix_t_2 ;
+                           mmoon:consistsOfStem :Stem_kauf_1 ;
+                           mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                           mmoon:hasRepresentation :Representation_kauft ;
+                           rdfs:label "kauft 2"@de .
 
-:SyntheticWordform_schlafe2 rdf:type owl:NamedIndividual ,
-                                     deu_schema:SyntheticWordform ;
-                            mmoon:consistsOfAffix :Suffix_e2 ;
-                            mmoon:consistsOfStem :Stem_schlaf2 ;
-                            mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                            mmoon:hasRepresentation :Representation_schlafe ;
-                            rdfs:label "schlafe2"@de .
+:SyntheticWordform_kauft_3 rdf:type owl:NamedIndividual ,
+                                    deu_schema:SyntheticWordform ;
+                           mmoon:consistsOfAffix :Suffix_t_3 ;
+                           mmoon:consistsOfStem :Stem_kauf_2 ;
+                           mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                           mmoon:hasRepresentation :Representation_kauft ;
+                           rdfs:label "kauft 3"@de .
 
-:SyntheticWordform_schlafen1 rdf:type owl:NamedIndividual ,
+:SyntheticWordform_kleiner_1 rdf:type owl:NamedIndividual ,
                                       deu_schema:SyntheticWordform ;
-                             mmoon:consistsOfAffix :Suffix_en2 ;
-                             mmoon:consistsOfStem :Stem_schlaf1 ;
-                             mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                             mmoon:hasRepresentation :Representation_schlafen ;
-                             rdfs:label "schlafen1"@de .
+                             mmoon:consistsOfAffix :Suffix_er_1 ;
+                             mmoon:consistsOfStem :Stem_klein_1 ;
+                             mmoon:hasMorphologicalRelationship deu_schema:RegularDegree ,
+                                                                deu_schema:StrongAdjDeclension ;
+                             mmoon:hasRepresentation :Representation_kleiner ;
+                             rdfs:label "kleiner 1"@de .
 
-:SyntheticWordform_schlafen2 rdf:type owl:NamedIndividual ,
+:SyntheticWordform_kleinerer_1 rdf:type owl:NamedIndividual ,
+                                        deu_schema:SyntheticWordform ;
+                               mmoon:consistsOfAffix :Suffix_er_1 ;
+                               mmoon:consistsOfStem :Stem_kleiner_1 ;
+                               mmoon:hasMorphologicalRelationship deu_schema:RegularDegree ,
+                                                                  deu_schema:StrongAdjDeclension ;
+                               mmoon:hasRepresentation :Representation_kleinerer ;
+                               rdfs:label "kleinerer 1"@de .
+
+:SyntheticWordform_kleinster_1 rdf:type owl:NamedIndividual ,
+                                        deu_schema:SyntheticWordform ;
+                               mmoon:consistsOfAffix :Suffix_er_1 ;
+                               mmoon:consistsOfStem :Stem_kleinst_1 ;
+                               mmoon:hasMorphologicalRelationship deu_schema:RegularDegree ,
+                                                                  deu_schema:StrongAdjDeclension ;
+                               mmoon:hasRepresentation :Representation_kleinster ;
+                               rdfs:label "kleinster 1"@de .
+
+:SyntheticWordform_schlaf_1 rdf:type owl:NamedIndividual ,
+                                     deu_schema:SyntheticWordform ;
+                            mmoon:consistsOfAffix :ZeroMorph_04 ;
+                            mmoon:consistsOfStem :Stem_schlaf_2 ;
+                            mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                            mmoon:hasRepresentation :Representation_schlaf ;
+                            rdfs:label "schlaf"@de .
+
+:SyntheticWordform_schlafe_1 rdf:type owl:NamedIndividual ,
                                       deu_schema:SyntheticWordform ;
-                             mmoon:consistsOfAffix :Suffix_en3 ;
-                             mmoon:consistsOfStem :Stem_schlaf1 ;
+                             mmoon:consistsOfAffix :Suffix_e_1 ;
+                             mmoon:consistsOfStem :Stem_schlaf_1 ;
                              mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                             mmoon:hasRepresentation :Representation_schlafen ;
-                             rdfs:label "schlafen2"@de .
+                             mmoon:hasRepresentation :Representation_schlafe ;
+                             rdfs:label "schlafe 1"@de .
 
-:SyntheticWordform_schlaft1 rdf:type owl:NamedIndividual ,
-                                     deu_schema:SyntheticWordform ;
-                            mmoon:consistsOfAffix :Suffix_t2 ;
-                            mmoon:consistsOfStem :Stem_schlaf1 ;
-                            mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                            mmoon:hasRepresentation :Representation_schlaft ;
-                            rdfs:label "schlaft1"@de .
+:SyntheticWordform_schlafe_2 rdf:type owl:NamedIndividual ,
+                                      deu_schema:SyntheticWordform ;
+                             mmoon:consistsOfAffix :Suffix_e_2 ;
+                             mmoon:consistsOfStem :Stem_schlaf_2 ;
+                             mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                             mmoon:hasRepresentation :Representation_schlafe ;
+                             rdfs:label "schlafe 2"@de .
 
-:SyntheticWordform_schlaft2 rdf:type owl:NamedIndividual ,
-                                     deu_schema:SyntheticWordform ;
-                            mmoon:consistsOfAffix :Suffix_t3 ;
-                            mmoon:consistsOfStem :Stem_schlaf2 ;
-                            mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                            mmoon:hasRepresentation :Representation_schlaft ;
-                            rdfs:label "schlaft2"@de .
+:SyntheticWordform_schlafen_1 rdf:type owl:NamedIndividual ,
+                                       deu_schema:SyntheticWordform ;
+                              mmoon:consistsOfAffix :Suffix_en_2 ;
+                              mmoon:consistsOfStem :Stem_schlaf_1 ;
+                              mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                              mmoon:hasRepresentation :Representation_schlafen ;
+                              rdfs:label "schlafen 1"@de .
+
+:SyntheticWordform_schlafen_2 rdf:type owl:NamedIndividual ,
+                                       deu_schema:SyntheticWordform ;
+                              mmoon:consistsOfAffix :Suffix_en_3 ;
+                              mmoon:consistsOfStem :Stem_schlaf_1 ;
+                              mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                              mmoon:hasRepresentation :Representation_schlafen ;
+                              rdfs:label "schlafen 2"@de .
+
+:SyntheticWordform_schlaft_1 rdf:type owl:NamedIndividual ,
+                                      deu_schema:SyntheticWordform ;
+                             mmoon:consistsOfAffix :Suffix_t_2 ;
+                             mmoon:consistsOfStem :Stem_schlaf_1 ;
+                             mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                             mmoon:hasRepresentation :Representation_schlaft ;
+                             rdfs:label "schlaft 1"@de .
+
+:SyntheticWordform_schlaft_2 rdf:type owl:NamedIndividual ,
+                                      deu_schema:SyntheticWordform ;
+                             mmoon:consistsOfAffix :Suffix_t_3 ;
+                             mmoon:consistsOfStem :Stem_schlaf_2 ;
+                             mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                             mmoon:hasRepresentation :Representation_schlaft ;
+                             rdfs:label "schlaft 2"@de .
 
 :SyntheticWordform_schläfst rdf:type owl:NamedIndividual ,
                                      deu_schema:SyntheticWordform ;
-                            mmoon:consistsOfAffix :Suffix_st2 ;
+                            mmoon:consistsOfAffix :Suffix_st_2 ;
                             mmoon:consistsOfStem :Stem_schläf ;
                             mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
                             mmoon:hasRepresentation :Representation_schläfst ;
@@ -1392,7 +1392,7 @@ small"""@en .
 
 :SyntheticWordform_schläft rdf:type owl:NamedIndividual ,
                                     deu_schema:SyntheticWordform ;
-                           mmoon:consistsOfAffix :Suffix_t1 ;
+                           mmoon:consistsOfAffix :Suffix_t_1 ;
                            mmoon:consistsOfStem :Stem_schläf ;
                            mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
                            mmoon:hasRepresentation :Representation_schläft ;
@@ -1401,116 +1401,116 @@ small"""@en .
 :SyntheticWordform_sei rdf:type owl:NamedIndividual ,
                                 deu_schema:SyntheticWordform ;
                        mmoon:consistsOfAffix :ZeroMorph_04 ;
-                       mmoon:consistsOfStem :Stem_sei1 ;
+                       mmoon:consistsOfStem :Stem_sei_1 ;
                        mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
                        mmoon:hasRepresentation :Representation_sei ;
                        rdfs:label "sei"@de .
 
-:SyntheticWordform_seid1 rdf:type owl:NamedIndividual ,
-                                  deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfStem :Stem_seid ;
-                         mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                         mmoon:hasRepresentation :Representation_seid ;
-                         rdfs:label "seid1"@de .
+:SyntheticWordform_seid_1 rdf:type owl:NamedIndividual ,
+                                   deu_schema:SyntheticWordform ;
+                          mmoon:consistsOfStem :Stem_seid ;
+                          mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                          mmoon:hasRepresentation :Representation_seid ;
+                          rdfs:label "seid 1"@de .
 
-:SyntheticWordform_seid2 rdf:type owl:NamedIndividual ,
-                                  deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfAffix :Suffix_d1 ;
-                         mmoon:consistsOfStem :Stem_sei1 ;
-                         mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                         mmoon:hasRepresentation :Representation_seid ;
-                         rdfs:label "seid2"@de .
+:SyntheticWordform_seid_2 rdf:type owl:NamedIndividual ,
+                                   deu_schema:SyntheticWordform ;
+                          mmoon:consistsOfAffix :Suffix_d_1 ;
+                          mmoon:consistsOfStem :Stem_sei_1 ;
+                          mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                          mmoon:hasRepresentation :Representation_seid ;
+                          rdfs:label "seid 2"@de .
 
-:SyntheticWordform_sind1 rdf:type owl:NamedIndividual ,
-                                  deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfStem :Stem_sind1 ;
-                         mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                         mmoon:hasRepresentation :Representation_sind ;
-                         rdfs:label "sind1"@de .
+:SyntheticWordform_sind_1 rdf:type owl:NamedIndividual ,
+                                   deu_schema:SyntheticWordform ;
+                          mmoon:consistsOfStem :Stem_sind_1 ;
+                          mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                          mmoon:hasRepresentation :Representation_sind ;
+                          rdfs:label "sind 1"@de .
 
-:SyntheticWordform_sind2 rdf:type owl:NamedIndividual ,
-                                  deu_schema:SyntheticWordform ;
-                         mmoon:consistsOfStem :Stem_sind2 ;
-                         mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
-                         mmoon:hasRepresentation :Representation_sind ;
-                         rdfs:label "sind2"@de .
+:SyntheticWordform_sind_2 rdf:type owl:NamedIndividual ,
+                                   deu_schema:SyntheticWordform ;
+                          mmoon:consistsOfStem :Stem_sind_2 ;
+                          mmoon:hasMorphologicalRelationship deu_schema:IrregularConjugation ;
+                          mmoon:hasRepresentation :Representation_sind ;
+                          rdfs:label "sind 2"@de .
 
 :SyntheticWordform_verkauf rdf:type owl:NamedIndividual ,
                                     deu_schema:SyntheticWordform ;
                            mmoon:consistsOfAffix :ZeroMorph_04 ;
-                           mmoon:consistsOfStem :Stem_verkauf2 ;
+                           mmoon:consistsOfStem :Stem_verkauf_2 ;
                            mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
                            mmoon:hasRepresentation :Representation_verkauf ;
                            rdfs:label "verkauf"@de .
 
-:SyntheticWordform_verkaufe1 rdf:type owl:NamedIndividual ,
-                                      deu_schema:SyntheticWordform ;
-                             mmoon:consistsOfAffix :Suffix_e1 ;
-                             mmoon:consistsOfStem :Stem_verkauf1 ;
-                             mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                             mmoon:hasRepresentation :Representation_verkaufe ;
-                             rdfs:label "verkaufe1"@de .
-
-:SyntheticWordform_verkaufe2 rdf:type owl:NamedIndividual ,
-                                      deu_schema:SyntheticWordform ;
-                             mmoon:consistsOfAffix :Suffix_e2 ;
-                             mmoon:consistsOfStem :Stem_verkauf2 ;
-                             mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                             mmoon:hasRepresentation :Representation_verkaufe ;
-                             rdfs:label "verkaufe2"@de .
-
-:SyntheticWordform_verkaufen1 rdf:type owl:NamedIndividual ,
+:SyntheticWordform_verkaufe_1 rdf:type owl:NamedIndividual ,
                                        deu_schema:SyntheticWordform ;
-                              mmoon:consistsOfAffix :Suffix_en2 ;
-                              mmoon:consistsOfStem :Stem_verkauf1 ;
+                              mmoon:consistsOfAffix :Suffix_e_1 ;
+                              mmoon:consistsOfStem :Stem_verkauf_1 ;
                               mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                              mmoon:hasRepresentation :Representation_verkaufen ;
-                              rdfs:label "verkaufen1"@de .
+                              mmoon:hasRepresentation :Representation_verkaufe ;
+                              rdfs:label "verkaufe 1"@de .
 
-:SyntheticWordform_verkaufen2 rdf:type owl:NamedIndividual ,
+:SyntheticWordform_verkaufe_2 rdf:type owl:NamedIndividual ,
                                        deu_schema:SyntheticWordform ;
-                              mmoon:consistsOfAffix :Suffix_en3 ;
-                              mmoon:consistsOfStem :Stem_verkauf1 ;
+                              mmoon:consistsOfAffix :Suffix_e_2 ;
+                              mmoon:consistsOfStem :Stem_verkauf_2 ;
                               mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                              mmoon:hasRepresentation :Representation_verkaufen ;
-                              rdfs:label "verkaufen2"@de .
+                              mmoon:hasRepresentation :Representation_verkaufe ;
+                              rdfs:label "verkaufe 2"@de .
+
+:SyntheticWordform_verkaufen_1 rdf:type owl:NamedIndividual ,
+                                        deu_schema:SyntheticWordform ;
+                               mmoon:consistsOfAffix :Suffix_en_2 ;
+                               mmoon:consistsOfStem :Stem_verkauf_1 ;
+                               mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                               mmoon:hasRepresentation :Representation_verkaufen ;
+                               rdfs:label "verkaufen 1"@de .
+
+:SyntheticWordform_verkaufen_2 rdf:type owl:NamedIndividual ,
+                                        deu_schema:SyntheticWordform ;
+                               mmoon:consistsOfAffix :Suffix_en_3 ;
+                               mmoon:consistsOfStem :Stem_verkauf_1 ;
+                               mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                               mmoon:hasRepresentation :Representation_verkaufen ;
+                               rdfs:label "verkaufen 2"@de .
 
 :SyntheticWordform_verkaufst rdf:type owl:NamedIndividual ,
                                       deu_schema:SyntheticWordform ;
-                             mmoon:consistsOfAffix :Suffix_st2 ;
-                             mmoon:consistsOfStem :Stem_verkauf1 ;
+                             mmoon:consistsOfAffix :Suffix_st_2 ;
+                             mmoon:consistsOfStem :Stem_verkauf_1 ;
                              mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
                              mmoon:hasRepresentation :Representation_verkaufst ;
                              rdfs:label "verkaufst"@de .
 
-:SyntheticWordform_verkauft1 rdf:type owl:NamedIndividual ,
-                                      deu_schema:SyntheticWordform ;
-                             mmoon:consistsOfAffix :Suffix_t1 ;
-                             mmoon:consistsOfStem :Stem_verkauf1 ;
-                             mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                             mmoon:hasRepresentation :Representation_verkauft ;
-                             rdfs:label "verkauft1"@de .
+:SyntheticWordform_verkauft_1 rdf:type owl:NamedIndividual ,
+                                       deu_schema:SyntheticWordform ;
+                              mmoon:consistsOfAffix :Suffix_t_1 ;
+                              mmoon:consistsOfStem :Stem_verkauf_1 ;
+                              mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                              mmoon:hasRepresentation :Representation_verkauft ;
+                              rdfs:label "verkauft 1"@de .
 
-:SyntheticWordform_verkauft2 rdf:type owl:NamedIndividual ,
-                                      deu_schema:SyntheticWordform ;
-                             mmoon:consistsOfAffix :Suffix_t2 ;
-                             mmoon:consistsOfStem :Stem_verkauf1 ;
-                             mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                             mmoon:hasRepresentation :Representation_verkauft ;
-                             rdfs:label "verkauft2"@de .
+:SyntheticWordform_verkauft_2 rdf:type owl:NamedIndividual ,
+                                       deu_schema:SyntheticWordform ;
+                              mmoon:consistsOfAffix :Suffix_t_2 ;
+                              mmoon:consistsOfStem :Stem_verkauf_1 ;
+                              mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                              mmoon:hasRepresentation :Representation_verkauft ;
+                              rdfs:label "verkauft 2"@de .
 
-:SyntheticWordform_verkauft3 rdf:type owl:NamedIndividual ,
-                                      deu_schema:SyntheticWordform ;
-                             mmoon:consistsOfAffix :Suffix_t3 ;
-                             mmoon:consistsOfStem :Stem_verkauf2 ;
-                             mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
-                             mmoon:hasRepresentation :Representation_verkauft ;
-                             rdfs:label "verkauft3"@de .
+:SyntheticWordform_verkauft_3 rdf:type owl:NamedIndividual ,
+                                       deu_schema:SyntheticWordform ;
+                              mmoon:consistsOfAffix :Suffix_t_3 ;
+                              mmoon:consistsOfStem :Stem_verkauf_2 ;
+                              mmoon:hasMorphologicalRelationship deu_schema:RegularConjugation ;
+                              mmoon:hasRepresentation :Representation_verkauft ;
+                              rdfs:label "verkauft 3"@de .
 
 :ZeroMorph_01 rdf:type owl:NamedIndividual ,
                        deu_schema:ZeroMorph ;
               mmoon:correspondsToMorpheme :AtomicMorpheme_NMLZ ;
-              mmoon:isAllomorphTo :Suffix_er3 ;
+              mmoon:isAllomorphTo :Suffix_er_3 ;
               mmoon:isHomonymTo :ZeroMorph_02 ,
                                 :ZeroMorph_03 ,
                                 :ZeroMorph_04 ;
@@ -1519,7 +1519,7 @@ small"""@en .
 :ZeroMorph_02 rdf:type owl:NamedIndividual ,
                        deu_schema:ZeroMorph ;
               mmoon:correspondsToMorpheme :FusionalMorpheme_ACC.SG ;
-              mmoon:isAllomorphTo :Suffix_n2 ;
+              mmoon:isAllomorphTo :Suffix_n_2 ;
               mmoon:isHomonymTo :ZeroMorph_01 ,
                                 :ZeroMorph_03 ,
                                 :ZeroMorph_04 ;
@@ -1528,7 +1528,7 @@ small"""@en .
 :ZeroMorph_03 rdf:type owl:NamedIndividual ,
                        deu_schema:ZeroMorph ;
               mmoon:correspondsToMorpheme :FusionalMorpheme_DAT.SG ;
-              mmoon:isAllomorphTo :Suffix_e3 ;
+              mmoon:isAllomorphTo :Suffix_e_3 ;
               mmoon:isHomonymTo :ZeroMorph_01 ,
                                 :ZeroMorph_02 ,
                                 :ZeroMorph_04 ;
@@ -1537,12 +1537,12 @@ small"""@en .
 :ZeroMorph_04 rdf:type owl:NamedIndividual ,
                        deu_schema:ZeroMorph ;
               mmoon:correspondsToMorpheme :FusionalMorpheme_2.SG ;
-              mmoon:isAllomorphTo :Suffix_e2 ,
-                                  :Suffix_st2 ;
+              mmoon:isAllomorphTo :Suffix_e_2 ,
+                                  :Suffix_st_2 ;
               mmoon:isHomonymTo :ZeroMorph_01 ,
                                 :ZeroMorph_02 ,
                                 :ZeroMorph_03 ;
               rdfs:label "04"@de .
 
-###  Generated by the OWL API (version 5.0.2.20160507-1747) https://github.com/owlcs/owlapi/
+###  Generated by the OWL API (version 5.0.5) https://github.com/owlcs/owlapi/
 ###  Warning: type declarations were not added automatically.
