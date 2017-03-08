@@ -81,7 +81,7 @@ trait CommonRunConfig { this: OwlpodRunner =>
 
   lazy val mmoonOGDocs = OntologyDocumentList(
     "deu/schema/og.ttl",
-    "deu/inventory/ogttl"
+    "deu/inventory/og.ttl"
   )
 
   lazy val mmoonOHDocs = OntologyDocumentList(
