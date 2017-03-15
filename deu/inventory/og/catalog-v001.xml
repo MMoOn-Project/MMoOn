@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="core" name="http://mmoon.org/core/" uri="../../../core/mmoon.ttl"/>
-    <uri id="deu-schema-og" name="http://mmoon.org/deu/schema/og/" uri="../../schema/og/deu_schema.ttl"/>
-</catalog>
