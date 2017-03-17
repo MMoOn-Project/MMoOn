@@ -985,7 +985,6 @@ Since the causer occupies the subject slot of the causative verb and the base ve
                   rdfs:label "Completive Aspect"@en .
 
 :CompoundWord rdf:type owl:Class ;
-              owl:equivalentClass gold:Compound ;
               rdfs:subClassOf :Lexeme ;
               :definition "A compound word is a complex lexeme which consists of two lexical meanings (conveyed in the lexical stems of which it is composed). It is formed by the combination of two stems, which can be simple or complex."@en ;
               :example "Engl. \"playground\" is a compound word consisting of the two simple lexemes/stems \"play\" and \"ground\"."@en ;
