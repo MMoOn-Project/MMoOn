@@ -322,6 +322,14 @@ reference point or when additional textual information has to be provided for an
              :definition "States that a morph is homonym to another morph, i.e. although sharing the same orthographic and/or morphemic representation both morphs encode different meanings and thus realize different morphemes."@en ;
              rdfs:label "is homonym to"@en .
 
+:morphemicRepresentation rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Representation ;
+                         rdfs:range rdf:langString .
+
+:orthographicRepresentation rdf:type owl:ObjectProperty ;
+                            rdfs:domain :Representation ;
+                            rdfs:range rdf:langString .
+
 :partOfLanguage rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :associatedToLanguage ;
                 rdfs:domain [ rdf:type owl:Class ;
@@ -332,56 +340,33 @@ reference point or when additional textual information has to be provided for an
                 :definition "States that a morph or word resources is a linguistic entity as part of a certain language."@en ;
                 rdfs:label "part of language"@en .
 
+:phoneticRepresentation rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Representation ;
+                        rdfs:range rdf:langString .
+
+:senseDefinition rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Sense ;
+                 rdfs:range rdf:langString .
+
 :senseLink rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
            rdfs:range rdfs:Resource ;
            :definition "This relation points to an external sense resource defining the meaning of a lexeme, morph or morpheme."@en ;
            rdfs:label "sense link"@en .
 
-:morphemicRepresentation rdf:type owl:DatatypeProperty ;
-                         rdfs:domain :Representation ;
-                         rdfs:range rdf:langString ;
-                         :definition """Is the representation of a morph.
-It includes:
-a) marking of the prefix  boundary with a hyphen, eg. prefix-
-b) marking of the suffix boundary with a hyphen, e.g. -suffix
-c) marking of the infix boundry inclosed in angled brackets, e.g. <infix>
-d) marking of the circumfix boundary by setting them off by angled brackets, e.g. circumfix prefix><circumfix suffix
-e) marking of the transfix and simulfix boundary with a backslash, e.g. \\transfix or simulfix
-f) marking of the zero morph with \"Z\" and a  morpheme boundary, e.g. -Z 
-
-The morphemic representation consists of a morphemic boundary marking and the conventional orthographic representation of it. It differs from the orthographic representation in that it is marked by one of the typographic conventions a) - f). It differs from the morphemic gloss in that it renders the orthographic representation of the morph instead of the corresponding meaning glosses. I.e. for the English genetive \"-s\" morph the three representations are as follows:
-
-orthographic rep.: \"s\"
-morphemic rep.: \"-s\"
-morphemic gloss: \"GEN\""""@en ;
-                         rdfs:label "morphemic representation"@en .
-
-:orthographicRepresentation rdf:type owl:DatatypeProperty ;
-                            rdfs:domain :Representation ;
-                            rdfs:range rdf:langString ;
-                            :definition "Is the representation adhering to the characters of the writing system (graphemes) according to the language of the MMoOn inventory."@en ;
-                            rdfs:label "orthographic representation"@en .
-
-:phoneticRepresentation rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :Representation ;
-                        rdfs:range rdf:langString ;
-                        :definition "Is the phonetic representation according to the IPA symbols."@en ;
-                        rdfs:label "phonetic representation"@en .
-
-:senseDefinition rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :Sense ;
-                 rdfs:range rdf:langString ;
-                 :definition "Is some definition of a sense resource."@en ;
-                 rdfs:label "sense definition"@en .
-
-:transliteration rdf:type owl:DatatypeProperty ;
+:transliteration rdf:type owl:ObjectProperty ;
                  rdfs:domain :Representation ;
-                 rdfs:range rdf:langString ;
-                 :definition "This property renders orthographic representations of the writing system of the language of the morpheme inventory in symbols of another writing system, which ideally adhere to the latin alphabet."@en ;
-                 :externalDefinition <https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet> ;
-                 :usageNote "A reference to the mapping relation of the two writing system involved is highly recommended."@en ;
-                 rdfs:label "transliteration"@en .
+                 rdfs:range rdf:langString .
+
+:morphemicRepresentation rdf:type owl:DatatypeProperty .
+
+:orthographicRepresentation rdf:type owl:DatatypeProperty .
+
+:phoneticRepresentation rdf:type owl:DatatypeProperty .
+
+:senseDefinition rdf:type owl:DatatypeProperty .
+
+:transliteration rdf:type owl:DatatypeProperty .
 
 :Ablative rdf:type owl:Class ;
           owl:equivalentClass gold:AblativeCase ;
@@ -2289,12 +2274,12 @@ It is typically constituted by a set of features that define a parameter whose v
            :externalDefinitionDesc "The masculine is a gender such that if born by an animate noun, this typically designates a male being.  [Christian Lehmann, under \"masculine\" at http://linguistik.uni-erfurt.de:8080/lido/Lido ]"@en ;
            rdfs:label "Masculine"@en .
 
-:MaterialAdjective rdf:type owl:Class ;
-                   rdfs:subClassOf :DenominalAdjective ,
-                                   :SemanticDerivation ;
-                   :definition "An adjective which is derived from a noun denoting some kind of material and means 'being made of this material'."@en ;
-                   :example "\"Holz\" 'wood' --> \"hölzern\" 'wooden'"@de ;
-                   rdfs:label "Material Adjective"@en .
+:MaterialAdjectivizer rdf:type owl:Class ;
+                      rdfs:subClassOf :DenominalAdjective ,
+                                      :SemanticDerivation ;
+                      :definition "An adjective which is derived from a noun denoting some kind of material and means 'being made of this material'."@en ;
+                      :example "\"Holz\" 'wood' --> \"hölzern\" 'wooden'"@de ;
+                      rdfs:label "Material Adjectivizer"@en .
 
 :Meaning rdf:type owl:Class ;
          :definition "This class comprises a wide range of meanings a word, morph or morpheme can be associated with, e.g. linguistic categories, word-class affiliation, (lexical) senses, derivational meanings."@en ;
@@ -3643,6 +3628,36 @@ lang_inv:Zeromorph_x rdf:type lang_schema:ZeroMorph ;
 mmoon:Representation_ZM rdf:type mmoon:Representation ;
                         mmoon:morphemicRepresentation \"-Z\" ."""@en ;
            rdfs:label "Zero Morph"@en .
+
+:morphemicRepresentation :definition """Is the representation of a morph.
+It includes:
+a) marking of the prefix  boundary with a hyphen, eg. prefix-
+b) marking of the suffix boundary with a hyphen, e.g. -suffix
+c) marking of the infix boundry inclosed in angled brackets, e.g. <infix>
+d) marking of the circumfix boundary by setting them off by angled brackets, e.g. circumfix prefix><circumfix suffix
+e) marking of the transfix and simulfix boundary with a backslash, e.g. \\transfix or simulfix
+f) marking of the zero morph with \"Z\" and a  morpheme boundary, e.g. -Z 
+
+The morphemic representation consists of a morphemic boundary marking and the conventional orthographic representation of it. It differs from the orthographic representation in that it is marked by one of the typographic conventions a) - f). It differs from the morphemic gloss in that it renders the orthographic representation of the morph instead of the corresponding meaning glosses. I.e. for the English genetive \"-s\" morph the three representations are as follows:
+
+orthographic rep.: \"s\"
+morphemic rep.: \"-s\"
+morphemic gloss: \"GEN\""""@en ;
+                         rdfs:label "morphemic representation"@en .
+
+:orthographicRepresentation :definition "Is the representation adhering to the characters of the writing system (graphemes) according to the language of the MMoOn inventory."@en ;
+                            rdfs:label "orthographic representation"@en .
+
+:phoneticRepresentation :definition "Is the phonetic representation according to the IPA symbols."@en ;
+                        rdfs:label "phonetic representation"@en .
+
+:senseDefinition :definition "Is some definition of a sense resource."@en ;
+                 rdfs:label "sense definition"@en .
+
+:transliteration :definition "This property renders orthographic representations of the writing system of the language of the morpheme inventory in symbols of another writing system, which ideally adhere to the latin alphabet."@en ;
+                 :externalDefinition <https://en.wikipedia.org/wiki/ISO_basic_Latin_alphabet> ;
+                 :usageNote "A reference to the mapping relation of the two writing system involved is highly recommended."@en ;
+                 rdfs:label "transliteration"@en .
 
 ###  Generated by the OWL API (version 5.0.5.20170104-0800) https://github.com/owlcs/owlapi/
 ###  Warning: type declarations were not added automatically.
