@@ -385,10 +385,18 @@ morphemic gloss: \"GEN\""""@en ;
 
 :Ablative rdf:type owl:Class ;
           owl:equivalentClass gold:AblativeCase ;
-          rdfs:subClassOf :Lative .
+          rdfs:subClassOf :Lative ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_ABL
+                          ] .
 
 :AbsoluteAdjective rdf:type owl:Class ;
-                   rdfs:subClassOf :Adjective .
+                   rdfs:subClassOf :Adjective ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_ABSADJ
+                                   ] .
 
 :AbsoluteRelativeTense rdf:type owl:Class ;
                        rdfs:subClassOf :Tense ;
@@ -397,7 +405,11 @@ morphemic gloss: \"GEN\""""@en ;
                        rdfs:label "Absolute-Relative Tense"@en .
 
 :AbsoluteState rdf:type owl:Class ;
-               rdfs:subClassOf :NominalState .
+               rdfs:subClassOf :NominalState ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_AC
+                               ] .
 
 :AbsoluteTense rdf:type owl:Class ;
                rdfs:subClassOf :Tense ;
@@ -407,14 +419,26 @@ morphemic gloss: \"GEN\""""@en ;
 
 :Absolutive rdf:type owl:Class ;
             owl:equivalentClass gold:AbsolutiveCase ;
-            rdfs:subClassOf :CasusRectus .
+            rdfs:subClassOf :CasusRectus ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_ABS
+                            ] .
 
 :Accusative rdf:type owl:Class ;
             owl:equivalentClass gold:AccusativeCase ;
-            rdfs:subClassOf :Oblique .
+            rdfs:subClassOf :Oblique ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_ACC
+                            ] .
 
 :ActionNominalizer rdf:type owl:Class ;
-                   rdfs:subClassOf :SemanticDerivation .
+                   rdfs:subClassOf :SemanticDerivation ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_ACNR
+                                   ] .
 
 :ActionNoun rdf:type owl:Class ;
             rdfs:subClassOf :DeverbalNoun ;
@@ -426,14 +450,26 @@ morphemic gloss: \"GEN\""""@en ;
 
 :Active rdf:type owl:Class ;
         owl:equivalentClass gold:ActiveVoice ;
-        rdfs:subClassOf :Voice .
+        rdfs:subClassOf :Voice ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_ACT
+                        ] .
 
 :Adelative rdf:type owl:Class ;
-           rdfs:subClassOf :Elative .
+           rdfs:subClassOf :Elative ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_ADELAT
+                           ] .
 
 :Adessive rdf:type owl:Class ;
           owl:equivalentClass gold:AdessiveCase ;
-          rdfs:subClassOf :Essive .
+          rdfs:subClassOf :Essive ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_ADESS
+                          ] .
 
 :AdjectivalInflection rdf:type owl:Class ;
                       rdfs:subClassOf :Inflection ;
@@ -442,7 +478,11 @@ morphemic gloss: \"GEN\""""@en ;
 
 :Adjective rdf:type owl:Class ;
            owl:equivalentClass gold:Adjectival ;
-           rdfs:subClassOf :WordclassAffiliation .
+           rdfs:subClassOf :WordclassAffiliation ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_ADJ
+                           ] .
 
 :AdjectiveCompound rdf:type owl:Class ;
                    rdfs:subClassOf :Compounding ;
@@ -468,18 +508,34 @@ morphemic gloss: \"GEN\""""@en ;
                rdfs:label "Adjective Verb"@en .
 
 :Adjectivization rdf:type owl:Class ;
-                 rdfs:subClassOf :FunctionalDerivation .
+                 rdfs:subClassOf :FunctionalDerivation ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_ADJZ
+                                 ] .
 
 :Admonitive rdf:type owl:Class ;
-            rdfs:subClassOf :Mood .
+            rdfs:subClassOf :Mood ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_ADM
+                            ] .
 
 :Adposition rdf:type owl:Class ;
             owl:equivalentClass gold:Adposition ;
-            rdfs:subClassOf :WordclassAffiliation .
+            rdfs:subClassOf :WordclassAffiliation ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_ADP
+                            ] .
 
 :Adverb rdf:type owl:Class ;
         owl:equivalentClass gold:Adverbial ;
-        rdfs:subClassOf :WordclassAffiliation .
+        rdfs:subClassOf :WordclassAffiliation ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_ADV
+                        ] .
 
 :AdverbCompound rdf:type owl:Class ;
                 rdfs:subClassOf :Compounding ;
@@ -488,11 +544,19 @@ morphemic gloss: \"GEN\""""@en ;
                 rdfs:label "Adverb Compound"@en .
 
 :Adverbialization rdf:type owl:Class ;
-                  rdfs:subClassOf :FunctionalDerivation .
+                  rdfs:subClassOf :FunctionalDerivation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_ADVZ
+                                  ] .
 
 :Affirmation rdf:type owl:Class ;
              owl:equivalentClass gold:PositivePolarity ;
-             rdfs:subClassOf :Polarity .
+             rdfs:subClassOf :Polarity ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_AFFMT
+                             ] .
 
 :Affix rdf:type owl:Class ;
        owl:equivalentClass gold:Affix ;
@@ -501,7 +565,11 @@ morphemic gloss: \"GEN\""""@en ;
        rdfs:label "Affix"@en .
 
 :AgentNominalizer rdf:type owl:Class ;
-                  rdfs:subClassOf :SemanticDerivation .
+                  rdfs:subClassOf :SemanticDerivation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_AGNR
+                                  ] .
 
 :AgentNoun rdf:type owl:Class ;
            rdfs:subClassOf :DeverbalNoun ;
@@ -510,7 +578,11 @@ morphemic gloss: \"GEN\""""@en ;
            rdfs:label "Agent Noun"@en .
 
 :Agentive rdf:type owl:Class ;
-          rdfs:subClassOf :Oblique .
+          rdfs:subClassOf :Oblique ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_AGC
+                          ] .
 
 :Aktionsart rdf:type owl:Class ;
             rdfs:subClassOf :VerbExpansion ;
@@ -525,11 +597,19 @@ morphemic gloss: \"GEN\""""@en ;
                         rdfs:label "Alienability Classifier"@en .
 
 :Alienable rdf:type owl:Class ;
-           rdfs:subClassOf :AlienabilityClassifier .
+           rdfs:subClassOf :AlienabilityClassifier ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_AL
+                           ] .
 
 :Allative rdf:type owl:Class ;
           owl:equivalentClass gold:AllativeCase ;
-          rdfs:subClassOf :Lative .
+          rdfs:subClassOf :Lative ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_ALL
+                          ] .
 
 :AnalyticWordform rdf:type owl:Class ;
                   rdfs:subClassOf :Wordform ;
@@ -557,27 +637,55 @@ Within one language, periphrasis is recognized by a paradigmatic relation betwee
                    rdfs:label "Animacy Classifier"@en .
 
 :Animal rdf:type owl:Class ;
-        rdfs:subClassOf :Animate .
+        rdfs:subClassOf :Animate ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_ANML
+                        ] .
 
 :Animate rdf:type owl:Class ;
          owl:equivalentClass gold:AnimateGender ;
-         rdfs:subClassOf :AnimacyClassifier .
+         rdfs:subClassOf :AnimacyClassifier ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_AN
+                         ] .
 
 :Anterior rdf:type owl:Class ;
-          rdfs:subClassOf :RelativeTense .
+          rdfs:subClassOf :RelativeTense ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_ANT
+                          ] .
 
 :Anticausative rdf:type owl:Class ;
-               rdfs:subClassOf :Intransitivizer .
+               rdfs:subClassOf :Intransitivizer ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_ACAUS
+                               ] .
 
 :Antipassive rdf:type owl:Class ;
              owl:equivalentClass gold:AntiPassiveVoice ;
-             rdfs:subClassOf :Voice .
+             rdfs:subClassOf :Voice ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_ANTIP
+                             ] .
 
 :Aorist rdf:type owl:Class ;
-        rdfs:subClassOf :Past .
+        rdfs:subClassOf :Past ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_AOR
+                        ] .
 
 :Applicative rdf:type owl:Class ;
-             rdfs:subClassOf :VerbExpansion .
+             rdfs:subClassOf :VerbExpansion ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_APPL
+                             ] .
 
 :ApplicativeVerb rdf:type owl:Class ;
                  rdfs:subClassOf :DeverbalVerb ;
@@ -591,7 +699,11 @@ The base may be transitive, in which case its direct object is demoted upon the 
 
 :Article rdf:type owl:Class ;
          owl:equivalentClass gold:Article ;
-         rdfs:subClassOf :Determiner .
+         rdfs:subClassOf :Determiner ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_ART
+                         ] .
 
 :Aspect rdf:type owl:Class ;
         owl:equivalentClass gold:AspectProperty ;
@@ -603,7 +715,11 @@ Aspect treats a situation as bounded or non-bounded with respect to other situat
 
 :Assumptive rdf:type owl:Class ;
             owl:equivalentClass gold:AssumptiveEvidentiality ;
-            rdfs:subClassOf :Evidentiality .
+            rdfs:subClassOf :Evidentiality ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_ASSUM
+                            ] .
 
 :AtomicMorpheme rdf:type owl:Class ;
                 rdfs:subClassOf :Morpheme ;
@@ -614,7 +730,11 @@ An exception is made for person and number morphemes, e.g. the third person sing
                 rdfs:label "Atomic Morpheme"@en .
 
 :Attenuation rdf:type owl:Class ;
-             rdfs:subClassOf :Expansion .
+             rdfs:subClassOf :Expansion ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_ATTEN
+                             ] .
 
 :AttenuativeAdjective rdf:type owl:Class ;
                       rdfs:subClassOf :DeadjectivalAdjective ;
@@ -630,10 +750,18 @@ An exception is made for person and number morphemes, e.g. the third person sing
 
 :Auditory rdf:type owl:Class ;
           owl:equivalentClass gold:AuditoryEvidentiality ;
-          rdfs:subClassOf :NonVisual .
+          rdfs:subClassOf :NonVisual ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_AUD
+                          ] .
 
 :Augmentation rdf:type owl:Class ;
-              rdfs:subClassOf :NounExpansion .
+              rdfs:subClassOf :NounExpansion ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_AUG
+                              ] .
 
 :AugmentativeNoun rdf:type owl:Class ;
                   rdfs:subClassOf :DenominalNoun ;
@@ -647,22 +775,42 @@ A noun is augmentative 1 iff it is derived by augmentation.
 
 :AuxiliaryVerb rdf:type owl:Class ;
                owl:equivalentClass gold:Auxiliary ;
-               rdfs:subClassOf :Verb .
+               rdfs:subClassOf :Verb ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_AUX
+                               ] .
 
 :Aversive rdf:type owl:Class ;
           owl:equivalentClass gold:AversiveCase ;
-          rdfs:subClassOf :LocalCase .
+          rdfs:subClassOf :LocalCase ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_AVERS
+                          ] .
 
 :Benefactive rdf:type owl:Class ;
              owl:equivalentClass gold:BenefactiveCase ;
-             rdfs:subClassOf :Oblique .
+             rdfs:subClassOf :Oblique ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_BEN
+                             ] .
 
 :BenefactiveDative rdf:type owl:Class ;
-                   rdfs:subClassOf :Dative .
+                   rdfs:subClassOf :Dative ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_BENDAT
+                                   ] .
 
 :CardinalNumber rdf:type owl:Class ;
                 owl:equivalentClass gold:CardinalNumeral ;
-                rdfs:subClassOf :Numeral .
+                rdfs:subClassOf :Numeral ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_CARD
+                                ] .
 
 :Case rdf:type owl:Class ;
       owl:equivalentClass gold:CaseProperty ;
@@ -689,7 +837,11 @@ The casus rectus may be unmarked as against the oblique cases or may be based on
              rdfs:label "Casus Rectus"@en .
 
 :CausativeCase rdf:type owl:Class ;
-               rdfs:subClassOf :Oblique .
+               rdfs:subClassOf :Oblique ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_CAUSC
+                               ] .
 
 :CausativeVerb rdf:type owl:Class ;
                rdfs:subClassOf :DeverbalVerb ;
@@ -705,10 +857,18 @@ An underived verb cannot be causative by this definition. However, the paradigma
 
 :CausativeVoice rdf:type owl:Class ;
                 owl:equivalentClass gold:CausativeVoice ;
-                rdfs:subClassOf :Voice .
+                rdfs:subClassOf :Voice ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_CAUS
+                                ] .
 
 :Causativization rdf:type owl:Class ;
-                 rdfs:subClassOf :ValencyChange .
+                 rdfs:subClassOf :ValencyChange ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_CAUSV
+                                 ] .
 
 :Circumfix rdf:type owl:Class ;
            owl:equivalentClass gold:Circumfix ;
@@ -717,7 +877,11 @@ An underived verb cannot be causative by this definition. However, the paradigma
            rdfs:label "Circumfix"@en .
 
 :Circumposition rdf:type owl:Class ;
-                rdfs:subClassOf :Adposition .
+                rdfs:subClassOf :Adposition ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_CIRP
+                                ] .
 
 :Classifier rdf:type owl:Class ;
             owl:equivalentClass gold:Classifier ;
@@ -742,25 +906,49 @@ An underived verb cannot be causative by this definition. However, the paradigma
 
 :Comitative rdf:type owl:Class ;
             owl:equivalentClass gold:ComitativeCase ;
-            rdfs:subClassOf :Oblique .
+            rdfs:subClassOf :Oblique ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_COM
+                            ] .
 
 :Common rdf:type owl:Class ;
-        rdfs:subClassOf :Gender .
+        rdfs:subClassOf :Gender ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_COMM
+                        ] .
 
 :CommonNoun rdf:type owl:Class ;
             owl:equivalentClass gold:CommonNoun ;
-            rdfs:subClassOf :Noun .
+            rdfs:subClassOf :Noun ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_NNC
+                            ] .
 
 :Comparative rdf:type owl:Class ;
-             rdfs:subClassOf :DegreeOfComparison .
+             rdfs:subClassOf :DegreeOfComparison ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_COMPR
+                             ] .
 
 :Complementizer rdf:type owl:Class ;
                 owl:equivalentClass gold:Complementizer ;
-                rdfs:subClassOf :Conjunction .
+                rdfs:subClassOf :Conjunction ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_COMP
+                                ] .
 
 :CompletiveAspect rdf:type owl:Class ;
                   owl:equivalentClass gold:CompletiveAspect ;
-                  rdfs:subClassOf :Aspect .
+                  rdfs:subClassOf :Aspect ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_COMPL
+                                  ] .
 
 :CompoundWord rdf:type owl:Class ;
               rdfs:subClassOf :Lexeme ;
@@ -778,13 +966,25 @@ An underived verb cannot be causative by this definition. However, the paradigma
              rdfs:label "Compounding"@en .
 
 :ConativeAktionsart rdf:type owl:Class ;
-                    rdfs:subClassOf :Aktionsart .
+                    rdfs:subClassOf :Aktionsart ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_CNTV
+                                    ] .
 
 :ConativeAspect rdf:type owl:Class ;
-                rdfs:subClassOf :Aspect .
+                rdfs:subClassOf :Aspect ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_CNTVA
+                                ] .
 
 :Conditional rdf:type owl:Class ;
-             rdfs:subClassOf :Mood .
+             rdfs:subClassOf :Mood ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_COND
+                             ] .
 
 :Conjugation rdf:type owl:Class ;
              rdfs:subClassOf :VerbalInflection ;
@@ -793,37 +993,73 @@ An underived verb cannot be causative by this definition. However, the paradigma
 
 :Conjunction rdf:type owl:Class ;
              owl:equivalentClass gold:Conjunction ;
-             rdfs:subClassOf :WordclassAffiliation .
+             rdfs:subClassOf :WordclassAffiliation ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_CONJ
+                             ] .
 
 :ConstructState rdf:type owl:Class ;
-                rdfs:subClassOf :NominalState .
+                rdfs:subClassOf :NominalState ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_SC
+                                ] .
 
 :Contablative rdf:type owl:Class ;
               owl:equivalentClass gold:ContablativeCase ;
-              rdfs:subClassOf :Ablative .
+              rdfs:subClassOf :Ablative ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_CONTABL
+                              ] .
 
 :Contallative rdf:type owl:Class ;
               owl:equivalentClass gold:ContallativeCase ;
-              rdfs:subClassOf :Allative .
+              rdfs:subClassOf :Allative ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_CONTALL
+                              ] .
 
 :Conterminative rdf:type owl:Class ;
                 owl:equivalentClass gold:ConterminativeCase ;
-                rdfs:subClassOf :Terminative .
+                rdfs:subClassOf :Terminative ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_CONTERM
+                                ] .
 
 :Continuative rdf:type owl:Class ;
-              rdfs:subClassOf :Aktionsart .
+              rdfs:subClassOf :Aktionsart ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_CNT
+                              ] .
 
 :ContinuousAspect rdf:type owl:Class ;
                   owl:equivalentClass gold:ContinuousAspect ;
-                  rdfs:subClassOf :Aspect .
+                  rdfs:subClassOf :Aspect ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_CONT
+                                  ] .
 
 :Contlative rdf:type owl:Class ;
             owl:equivalentClass gold:ContlativeCase ;
-            rdfs:subClassOf :Lative .
+            rdfs:subClassOf :Lative ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_CONLAT
+                            ] .
 
 :Converb rdf:type owl:Class ;
          owl:equivalentClass gold:Converb ;
-         rdfs:subClassOf :NonFiniteVerb .
+         rdfs:subClassOf :NonFiniteVerb ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_CONV
+                         ] .
 
 :Conversion rdf:type owl:Class ;
             rdfs:subClassOf :Derivation ;
@@ -838,7 +1074,11 @@ E.g.: \"kindness\"(N) is an deadjectival noun and not an adjective noun"""@en ;
 
 :Copula rdf:type owl:Class ;
         owl:equivalentClass gold:Copula ;
-        rdfs:subClassOf :Verb .
+        rdfs:subClassOf :Verb ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_COP
+                        ] .
 
 :Countability rdf:type owl:Class ;
               rdfs:subClassOf :LinguisticCategory ;
@@ -847,17 +1087,33 @@ E.g.: \"kindness\"(N) is an deadjectival noun and not an adjective noun"""@en ;
               rdfs:label "Countability"@en .
 
 :Countable rdf:type owl:Class ;
-           rdfs:subClassOf :Countability .
+           rdfs:subClassOf :Countability ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_CTB
+                           ] .
 
 :Crastinal rdf:type owl:Class ;
-           rdfs:subClassOf :Future .
+           rdfs:subClassOf :Future ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_CRAS
+                           ] .
 
 :Dative rdf:type owl:Class ;
         owl:equivalentClass gold:DativeCase ;
-        rdfs:subClassOf :Oblique .
+        rdfs:subClassOf :Oblique ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_DAT
+                        ] .
 
 :DativusEthicus rdf:type owl:Class ;
-                rdfs:subClassOf :Dative .
+                rdfs:subClassOf :Dative ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_DATETH
+                                ] .
 
 :DeadjectivalAdjective rdf:type owl:Class ;
                        rdfs:subClassOf :DerivedAdjective ;
@@ -888,7 +1144,11 @@ E.g.: \"kindness\"(N) is an deadjectival noun and not an adjective noun"""@en ;
                   rdfs:label "Deadverbal Adverb"@en .
 
 :DeclarativeMood rdf:type owl:Class ;
-                 rdfs:subClassOf :Mood .
+                 rdfs:subClassOf :Mood ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_DECL
+                                 ] .
 
 :Declension rdf:type owl:Class ;
             rdfs:subClassOf :NominalInflection ;
@@ -897,10 +1157,18 @@ E.g.: \"kindness\"(N) is an deadjectival noun and not an adjective noun"""@en ;
 
 :Deductive rdf:type owl:Class ;
            owl:equivalentClass gold:DeductiveEvidentiality ;
-           rdfs:subClassOf :Inferential .
+           rdfs:subClassOf :Inferential ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_DEDUC
+                           ] .
 
 :Definite rdf:type owl:Class ;
-          rdfs:subClassOf :Definiteness .
+          rdfs:subClassOf :Definiteness ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_DEF
+                          ] .
 
 :Definiteness rdf:type owl:Class ;
               rdfs:subClassOf :LinguisticCategory ;
@@ -926,11 +1194,19 @@ The definiteness of an NP is its property of being definite (or not).
 
 :Delative rdf:type owl:Class ;
           owl:equivalentClass gold:DelativeCase ;
-          rdfs:subClassOf :Lative .
+          rdfs:subClassOf :Lative ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_DEL
+                          ] .
 
 :DemonstrativePronoun rdf:type owl:Class ;
                       owl:equivalentClass gold:Demonstrative ;
-                      rdfs:subClassOf :Pronoun .
+                      rdfs:subClassOf :Pronoun ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasAbstractIdentity ;
+                                        owl:hasValue :MorphemicGloss_DEMPR
+                                      ] .
 
 :Demonym rdf:type owl:Class ;
          rdfs:subClassOf :DenominalNoun ;
@@ -973,7 +1249,11 @@ The definiteness of an NP is its property of being definite (or not).
                      rdfs:label "Derivational Meaning"@en .
 
 :DerivativeNegation rdf:type owl:Class ;
-                    rdfs:subClassOf :Expansion .
+                    rdfs:subClassOf :Expansion ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_N-
+                                    ] .
 
 :DerivedAdjective rdf:type owl:Class ;
                   rdfs:subClassOf :Derivation ;
@@ -1005,7 +1285,11 @@ Is a kind of lexeme which is formed by the morphological modification of another
              rdfs:label "Derived Word"@en .
 
 :Desiderative rdf:type owl:Class ;
-              rdfs:subClassOf :VerbExpansion .
+              rdfs:subClassOf :VerbExpansion ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_DES
+                              ] .
 
 :DesiderativeVerb rdf:type owl:Class ;
                   rdfs:subClassOf :DeverbalVerb ;
@@ -1018,11 +1302,19 @@ RED-hear-DES-3.SG
                   rdfs:label "Desiderative Verb"@en .
 
 :Destinative rdf:type owl:Class ;
-             rdfs:subClassOf :Oblique .
+             rdfs:subClassOf :Oblique ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_DEST
+                             ] .
 
 :Determiner rdf:type owl:Class ;
             owl:equivalentClass gold:Determiner ;
-            rdfs:subClassOf :WordclassAffiliation .
+            rdfs:subClassOf :WordclassAffiliation ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_DET
+                            ] .
 
 :DeverbalAdjective rdf:type owl:Class ;
                    rdfs:subClassOf :DerivedAdjective ;
@@ -1048,10 +1340,18 @@ RED-hear-DES-3.SG
               rdfs:label "Deverbal Verb"@en .
 
 :DifferentSubject rdf:type owl:Class ;
-                  rdfs:subClassOf :RelativePerson .
+                  rdfs:subClassOf :RelativePerson ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_DS
+                                  ] .
 
 :Diminution rdf:type owl:Class ;
-            rdfs:subClassOf :NounExpansion .
+            rdfs:subClassOf :NounExpansion ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_DIM
+                            ] .
 
 :DiminutiveNoun rdf:type owl:Class ;
                 rdfs:subClassOf :DenominalNoun ;
@@ -1063,49 +1363,101 @@ RED-hear-DES-3.SG
                 rdfs:label "Diminutive Noun"@en .
 
 :DirectCase rdf:type owl:Class ;
-            rdfs:subClassOf :Case .
+            rdfs:subClassOf :Case ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_DIRC
+                            ] .
 
 :DirectVoice rdf:type owl:Class ;
              owl:equivalentClass gold:DirectVoice ;
-             rdfs:subClassOf :Active .
+             rdfs:subClassOf :Active ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_DR
+                             ] .
 
 :DistributiveAktionsart rdf:type owl:Class ;
-                        rdfs:subClassOf :IterativeAktionsart .
+                        rdfs:subClassOf :IterativeAktionsart ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasAbstractIdentity ;
+                                          owl:hasValue :MorphemicGloss_DISTR
+                                        ] .
 
 :DistributiveAspect rdf:type owl:Class ;
                     owl:equivalentClass gold:DistributiveAspect ;
-                    rdfs:subClassOf :Aspect .
+                    rdfs:subClassOf :Aspect ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_DISTRV
+                                    ] .
 
 :DistributiveCase rdf:type owl:Class ;
-                  rdfs:subClassOf :Oblique .
+                  rdfs:subClassOf :Oblique ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_DISTRC
+                                  ] .
 
 :Dual rdf:type owl:Class ;
       owl:equivalentClass gold:DualNumber ;
-      rdfs:subClassOf :Number .
+      rdfs:subClassOf :Number ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasAbstractIdentity ;
+                        owl:hasValue :MorphemicGloss_DU
+                      ] .
 
 :Dubitative rdf:type owl:Class ;
             owl:equivalentClass gold:DubitiveMood ;
-            rdfs:subClassOf :Mood .
+            rdfs:subClassOf :Mood ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_DUB
+                            ] .
 
 :DurativeAktionsart rdf:type owl:Class ;
-                    rdfs:subClassOf :Aktionsart .
+                    rdfs:subClassOf :Aktionsart ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_DUR
+                                    ] .
 
 :DurativeAspect rdf:type owl:Class ;
                 owl:equivalentClass gold:DurativeAspect ;
-                rdfs:subClassOf :Aspect .
+                rdfs:subClassOf :Aspect ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_DURA
+                                ] .
 
 :Dynamic rdf:type owl:Class ;
-         rdfs:subClassOf :Aktionsart .
+         rdfs:subClassOf :Aktionsart ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_DYN
+                         ] .
 
 :Egressive rdf:type owl:Class ;
-           rdfs:subClassOf :Aktionsart .
+           rdfs:subClassOf :Aktionsart ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_EGR
+                           ] .
 
 :Elative rdf:type owl:Class ;
          owl:equivalentClass gold:ElativeCase ;
-         rdfs:subClassOf :Lative .
+         rdfs:subClassOf :Lative ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_ELAT
+                         ] .
 
 :EmphaticParticle rdf:type owl:Class ;
-                  rdfs:subClassOf :Particle .
+                  rdfs:subClassOf :Particle ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_EMPHPART
+                                  ] .
 
 :EmptyMorph rdf:type owl:Class ;
             rdfs:subClassOf :Affix ,
@@ -1127,18 +1479,34 @@ RED-hear-DES-3.SG
                rdfs:label "Empty Morpheme"@en .
 
 :Equative rdf:type owl:Class ;
-          rdfs:subClassOf :Oblique .
+          rdfs:subClassOf :Oblique ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_EQT
+                          ] .
 
 :Ergative rdf:type owl:Class ;
           owl:equivalentClass gold:ErgativeCase ;
-          rdfs:subClassOf :Oblique .
+          rdfs:subClassOf :Oblique ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_ERG
+                          ] .
 
 :Essive rdf:type owl:Class ;
         owl:equivalentClass gold:EssiveCase ;
-        rdfs:subClassOf :LocalCase .
+        rdfs:subClassOf :LocalCase ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_ESS
+                        ] .
 
 :EssiveFormalCase rdf:type owl:Class ;
-                  rdfs:subClassOf :Essive .
+                  rdfs:subClassOf :Essive ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_ESSFORM
+                                  ] .
 
 :Evidentiality rdf:type owl:Class ;
                owl:equivalentClass gold:EvidentialityProperty ;
@@ -1156,10 +1524,18 @@ al-anmyş 'it is rumoured that s/he took'.
                rdfs:label "Evidentiality"@en .
 
 :Exclamative rdf:type owl:Class ;
-             rdfs:subClassOf :Mood .
+             rdfs:subClassOf :Mood ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_EXCLA
+                             ] .
 
 :Exclusive rdf:type owl:Class ;
-           rdfs:subClassOf :Clusivity .
+           rdfs:subClassOf :Clusivity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_EXCL
+                           ] .
 
 :Expansion rdf:type owl:Class ;
            rdfs:subClassOf :DerivationalMeaning ;
@@ -1182,13 +1558,25 @@ While there may be a subordinate agent in a causative construction, there may be
                rdfs:label "Factitive Verb"@en .
 
 :Factitivity rdf:type owl:Class ;
-             rdfs:subClassOf :SemanticDerivation .
+             rdfs:subClassOf :SemanticDerivation ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_FACT
+                             ] .
 
 :Factive rdf:type owl:Class ;
-         rdfs:subClassOf :Oblique .
+         rdfs:subClassOf :Oblique ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_FAC
+                         ] .
 
 :FemaleNominalization rdf:type owl:Class ;
-                      rdfs:subClassOf :NounExpansion .
+                      rdfs:subClassOf :NounExpansion ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasAbstractIdentity ;
+                                        owl:hasValue :MorphemicGloss_FEMN
+                                      ] .
 
 :FemaleNoun rdf:type owl:Class ;
             rdfs:subClassOf :DenominalNoun ;
@@ -1198,28 +1586,56 @@ While there may be a subordinate agent in a causative construction, there may be
 
 :Feminine rdf:type owl:Class ;
           owl:equivalentClass gold:FeminineGender ;
-          rdfs:subClassOf :Gender .
+          rdfs:subClassOf :Gender ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_F
+                          ] .
 
 :FiniteVerb rdf:type owl:Class ;
-            rdfs:subClassOf :Verb .
+            rdfs:subClassOf :Verb ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_VFIN
+                            ] .
 
 :FirstPerson rdf:type owl:Class ;
              owl:equivalentClass gold:FirstPerson ;
-             rdfs:subClassOf :Person .
+             rdfs:subClassOf :Person ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_1P
+                             ] .
 
 :FocusParticle rdf:type owl:Class ;
-               rdfs:subClassOf :Particle .
+               rdfs:subClassOf :Particle ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_FOCPART
+                               ] .
 
 :Folklore rdf:type owl:Class ;
           owl:equivalentClass gold:FolkloreEvidentiality ;
-          rdfs:subClassOf :Evidentiality .
+          rdfs:subClassOf :Evidentiality ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_FOLK
+                          ] .
 
 :FrequentativeAktionsart rdf:type owl:Class ;
-                         rdfs:subClassOf :IterativeAktionsart .
+                         rdfs:subClassOf :IterativeAktionsart ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty :hasAbstractIdentity ;
+                                           owl:hasValue :MorphemicGloss_FREQ
+                                         ] .
 
 :FrequentiveAspect rdf:type owl:Class ;
                    owl:equivalentClass gold:FrequentiveAspect ;
-                   rdfs:subClassOf :Aspect .
+                   rdfs:subClassOf :Aspect ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_FREQA
+                                   ] .
 
 :FunctionalDerivation rdf:type owl:Class ;
                       owl:equivalentClass gold:CategoryChanger ;
@@ -1235,19 +1651,35 @@ While there may be a subordinate agent in a causative construction, there may be
 
 :Future rdf:type owl:Class ;
         owl:equivalentClass gold:FutureTense ;
-        rdfs:subClassOf :AbsoluteTense .
+        rdfs:subClassOf :AbsoluteTense ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_FUT
+                        ] .
 
 :FutureInFuture rdf:type owl:Class ;
                 owl:equivalentClass gold:FutureInFutureTense ;
-                rdfs:subClassOf :AbsoluteRelativeTense .
+                rdfs:subClassOf :AbsoluteRelativeTense ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_FFUT
+                                ] .
 
 :FutureInPast rdf:type owl:Class ;
               owl:equivalentClass gold:FutureInPastTense ;
-              rdfs:subClassOf :AbsoluteRelativeTense .
+              rdfs:subClassOf :AbsoluteRelativeTense ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_FPST
+                              ] .
 
 :FuturePerfect rdf:type owl:Class ;
                owl:equivalentClass gold:FuturePerfectTense ;
-               rdfs:subClassOf :AbsoluteRelativeTense .
+               rdfs:subClassOf :AbsoluteRelativeTense ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_FUTPRF
+                               ] .
 
 :Gender rdf:type owl:Class ;
         owl:equivalentClass gold:GenderProperty ;
@@ -1258,11 +1690,19 @@ While there may be a subordinate agent in a causative construction, there may be
 
 :Genitive rdf:type owl:Class ;
           owl:equivalentClass gold:GenitiveCase ;
-          rdfs:subClassOf :Oblique .
+          rdfs:subClassOf :Oblique ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_GEN
+                          ] .
 
 :Gerund rdf:type owl:Class ;
         owl:equivalentClass gold:Gerund ;
-        rdfs:subClassOf :Converb .
+        rdfs:subClassOf :Converb ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_GER
+                        ] .
 
 :GrammaticalWord rdf:type owl:Class ;
                  rdfs:subClassOf :LexicalEntry ;
@@ -1274,105 +1714,217 @@ A grammatical word has only a grammatical meaning. It can have different word-fo
 
 :HabitualAspect rdf:type owl:Class ;
                 owl:equivalentClass gold:HabitualAspect ;
-                rdfs:subClassOf :Aspect .
+                rdfs:subClassOf :Aspect ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_HABIT
+                                ] .
 
 :HesternalPast rdf:type owl:Class ;
                owl:equivalentClass gold:HesternalPastTense ;
-               rdfs:subClassOf :Past .
+               rdfs:subClassOf :Past ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_HEST
+                               ] .
 
 :HodiernalFuture rdf:type owl:Class ;
                  owl:equivalentClass gold:HodiernalFutureTense ;
-                 rdfs:subClassOf :Future .
+                 rdfs:subClassOf :Future ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_HODFUT
+                                 ] .
 
 :HodiernalPast rdf:type owl:Class ;
                owl:equivalentClass gold:HodiernalPastTense ;
-               rdfs:subClassOf :Past .
+               rdfs:subClassOf :Past ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_HODPST
+                               ] .
 
 :Honorificity rdf:type owl:Class ;
-              rdfs:subClassOf :SocialDeixis .
+              rdfs:subClassOf :SocialDeixis ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_HON
+                              ] .
 
 :Hortative rdf:type owl:Class ;
-           rdfs:subClassOf :Mood .
+           rdfs:subClassOf :Mood ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_HORT
+                           ] .
 
 :Human rdf:type owl:Class ;
        owl:equivalentClass gold:HumanGender ;
-       rdfs:subClassOf :Animate .
+       rdfs:subClassOf :Animate ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAbstractIdentity ;
+                         owl:hasValue :MorphemicGloss_HUM
+                       ] .
 
 :Humbleness rdf:type owl:Class ;
-            rdfs:subClassOf :SocialDeixis .
+            rdfs:subClassOf :SocialDeixis ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_DEV
+                            ] .
 
 :Illative rdf:type owl:Class ;
           owl:equivalentClass gold:IllativeCase ;
-          rdfs:subClassOf :Lative .
+          rdfs:subClassOf :Lative ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_ILL
+                          ] .
 
 :ImmediateFuture rdf:type owl:Class ;
                  owl:equivalentClass gold:ImmediateFutureTense ;
-                 rdfs:subClassOf :Future .
+                 rdfs:subClassOf :Future ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_IMMFUT
+                                 ] .
 
 :ImmediatePast rdf:type owl:Class ;
                owl:equivalentClass gold:ImmediatePastTense ;
-               rdfs:subClassOf :Past .
+               rdfs:subClassOf :Past ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_IMMPST
+                               ] .
 
 :Imperative rdf:type owl:Class ;
-            rdfs:subClassOf :Mood .
+            rdfs:subClassOf :Mood ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_IMP
+                            ] .
 
 :Imperfect rdf:type owl:Class ;
-           rdfs:subClassOf :Past .
+           rdfs:subClassOf :Past ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_IMPF
+                           ] .
 
 :ImperfectiveAspect rdf:type owl:Class ;
                     owl:equivalentClass gold:ImperfectiveAspect ;
-                    rdfs:subClassOf :Aspect .
+                    rdfs:subClassOf :Aspect ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_IPFV
+                                    ] .
 
 :ImpersonalPassive rdf:type owl:Class ;
                    owl:equivalentClass gold:ImpersonalPassiveVoice ;
-                   rdfs:subClassOf :Passive .
+                   rdfs:subClassOf :Passive ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_IPS
+                                   ] .
 
 :Inablative rdf:type owl:Class ;
             owl:equivalentClass gold:InablativeCase ;
-            rdfs:subClassOf :Ablative .
+            rdfs:subClassOf :Ablative ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_INABL
+                            ] .
 
 :Inalienable rdf:type owl:Class ;
-             rdfs:subClassOf :AlienabilityClassifier .
+             rdfs:subClassOf :AlienabilityClassifier ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_INAL
+                             ] .
 
 :Inallative rdf:type owl:Class ;
             owl:equivalentClass gold:InallativeCase ;
-            rdfs:subClassOf :Allative .
+            rdfs:subClassOf :Allative ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_INALL
+                            ] .
 
 :Inanimate rdf:type owl:Class ;
            owl:equivalentClass gold:InanimateGender ;
-           rdfs:subClassOf :AnimacyClassifier .
+           rdfs:subClassOf :AnimacyClassifier ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_INAN
+                           ] .
 
 :InceptiveAspect rdf:type owl:Class ;
                  owl:equivalentClass gold:InceptiveAspect ;
-                 rdfs:subClassOf :Aspect .
+                 rdfs:subClassOf :Aspect ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_INCP
+                                 ] .
 
 :Inchoative rdf:type owl:Class ;
-            rdfs:subClassOf :Aktionsart .
+            rdfs:subClassOf :Aktionsart ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_INCH
+                            ] .
 
 :Inclusive rdf:type owl:Class ;
-           rdfs:subClassOf :Clusivity .
+           rdfs:subClassOf :Clusivity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_INCL
+                           ] .
 
 :Indefinite rdf:type owl:Class ;
-            rdfs:subClassOf :Definiteness .
+            rdfs:subClassOf :Definiteness ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_INDEF
+                            ] .
 
 :IndefinitePronoun rdf:type owl:Class ;
                    owl:equivalentClass gold:IndefinitePronoun ;
-                   rdfs:subClassOf :Pronoun .
+                   rdfs:subClassOf :Pronoun ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_INDPR
+                                   ] .
 
 :Indicative rdf:type owl:Class ;
             owl:equivalentClass gold:IndicativeMood ;
-            rdfs:subClassOf :Mood .
+            rdfs:subClassOf :Mood ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_IND
+                            ] .
 
 :Inessive rdf:type owl:Class ;
           owl:equivalentClass gold:InessiveCase ;
-          rdfs:subClassOf :Essive .
+          rdfs:subClassOf :Essive ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_INESS
+                          ] .
 
 :Inferential rdf:type owl:Class ;
              owl:equivalentClass gold:InferentialEvidentiality ;
-             rdfs:subClassOf :Evidentiality .
+             rdfs:subClassOf :Evidentiality ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_INFR
+                             ] .
 
 :Infinitve rdf:type owl:Class ;
-           rdfs:subClassOf :NonFiniteVerb .
+           rdfs:subClassOf :NonFiniteVerb ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_INF
+                           ] .
 
 :Infix rdf:type owl:Class ;
        owl:equivalentClass gold:Infix ;
@@ -1391,13 +1943,25 @@ Its expression is typically located farther from the root than that of derivatio
             rdfs:label "Inflection"@en .
 
 :Ingressive rdf:type owl:Class ;
-            rdfs:subClassOf :Aktionsart .
+            rdfs:subClassOf :Aktionsart ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_INGR
+                            ] .
 
 :Inhabitant rdf:type owl:Class ;
-            rdfs:subClassOf :NounExpansion .
+            rdfs:subClassOf :NounExpansion ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_INH
+                            ] .
 
 :InstrumentNominalizer rdf:type owl:Class ;
-                       rdfs:subClassOf :SemanticDerivation .
+                       rdfs:subClassOf :SemanticDerivation ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasAbstractIdentity ;
+                                         owl:hasValue :MorphemicGloss_INSTNR
+                                       ] .
 
 :InstrumentNoun rdf:type owl:Class ;
                 rdfs:subClassOf :DeverbalNoun ;
@@ -1409,63 +1973,127 @@ Its expression is typically located farther from the root than that of derivatio
 
 :Instrumental rdf:type owl:Class ;
               owl:equivalentClass gold:InstrumentalCase ;
-              rdfs:subClassOf :Oblique .
+              rdfs:subClassOf :Oblique ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_INS
+                              ] .
 
 :IntensifyingAdverb rdf:type owl:Class ;
-                    rdfs:subClassOf :Adverb .
+                    rdfs:subClassOf :Adverb ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_INTADV
+                                    ] .
 
 :Interablative rdf:type owl:Class ;
                owl:equivalentClass gold:InterablativeCase ;
-               rdfs:subClassOf :Ablative .
+               rdfs:subClassOf :Ablative ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_INTABL
+                               ] .
 
 :Interallative rdf:type owl:Class ;
                owl:equivalentClass gold:InterallativeCase ;
-               rdfs:subClassOf :Allative .
+               rdfs:subClassOf :Allative ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_INTALL
+                               ] .
 
 :Interessive rdf:type owl:Class ;
              owl:equivalentClass gold:InteressiveCase ;
-             rdfs:subClassOf :Essive .
+             rdfs:subClassOf :Essive ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_INTESS
+                             ] .
 
 :Interjection rdf:type owl:Class ;
               owl:equivalentClass gold:Interjection ;
-              rdfs:subClassOf :WordclassAffiliation .
+              rdfs:subClassOf :WordclassAffiliation ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_INTJ
+                              ] .
 
 :Interlative rdf:type owl:Class ;
              owl:equivalentClass gold:InterlativeCase ;
-             rdfs:subClassOf :Lative .
+             rdfs:subClassOf :Lative ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_INTLAT
+                             ] .
 
 :Interminative rdf:type owl:Class ;
                owl:equivalentClass gold:InterminativeCase ;
-               rdfs:subClassOf :Terminative .
+               rdfs:subClassOf :Terminative ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_INTERM
+                               ] .
 
 :Interrogative rdf:type owl:Class ;
-               rdfs:subClassOf :Mood .
+               rdfs:subClassOf :Mood ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_INT
+                               ] .
 
 :InterrogativePronoun rdf:type owl:Class ;
-                      rdfs:subClassOf :Pronoun .
+                      rdfs:subClassOf :Pronoun ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasAbstractIdentity ;
+                                        owl:hasValue :MorphemicGloss_INTPR
+                                      ] .
 
 :Interterminative rdf:type owl:Class ;
                   owl:equivalentClass gold:InterterminativeCase ;
-                  rdfs:subClassOf :Terminative .
+                  rdfs:subClassOf :Terminative ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_INTTERM
+                                  ] .
 
 :Intertranslative rdf:type owl:Class ;
                   owl:equivalentClass gold:IntertranslativeCase ;
-                  rdfs:subClassOf :Translative .
+                  rdfs:subClassOf :Translative ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_INTTRANS
+                                  ] .
 
 :Intransitivizer rdf:type owl:Class ;
                  owl:equivalentClass gold:Intransitivizer ;
-                 rdfs:subClassOf :ValencyChange .
+                 rdfs:subClassOf :ValencyChange ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_INTRR
+                                 ] .
 
 :Intranslative rdf:type owl:Class ;
                owl:equivalentClass gold:IntranslativeCase ;
-               rdfs:subClassOf :Translative .
+               rdfs:subClassOf :Translative ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_INTRANS
+                               ] .
 
 :Introversion rdf:type owl:Class ;
-              rdfs:subClassOf :Intransitivizer .
+              rdfs:subClassOf :Intransitivizer ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_INTRV
+                              ] .
 
 :Irrealis rdf:type owl:Class ;
           owl:equivalentClass gold:IrrealisMood ;
-          rdfs:subClassOf :Mood .
+          rdfs:subClassOf :Mood ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_IRR
+                          ] .
 
 :IrregularConjugation rdf:type owl:Class ;
                       rdfs:subClassOf :Conjugation ;
@@ -1478,20 +2106,36 @@ Its expression is typically located farther from the root than that of derivatio
                  rdfs:label "Irregular Degree"@en .
 
 :IterativeAktionsart rdf:type owl:Class ;
-                     rdfs:subClassOf :Aktionsart .
+                     rdfs:subClassOf :Aktionsart ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasAbstractIdentity ;
+                                       owl:hasValue :MorphemicGloss_ITER
+                                     ] .
 
 :IterativeAspect rdf:type owl:Class ;
                  owl:equivalentClass gold:IterativeAspect ;
-                 rdfs:subClassOf :Aspect .
+                 rdfs:subClassOf :Aspect ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_ITERA
+                                 ] .
 
 :Jussive rdf:type owl:Class ;
-         rdfs:subClassOf :Mood .
+         rdfs:subClassOf :Mood ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_JUSS
+                         ] .
 
 :Language rdf:type owl:Class .
 
 :Lative rdf:type owl:Class ;
         owl:equivalentClass gold:LativeCase ;
-        rdfs:subClassOf :LocalCase .
+        rdfs:subClassOf :LocalCase ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_LAT
+                        ] .
 
 :Lexeme rdf:type owl:Class ;
         rdfs:subClassOf :LexicalEntry ;
@@ -1514,48 +2158,96 @@ It is typically constituted by a set of features that define a parameter whose v
                     rdfs:label "Linguistic Category"@en .
 
 :LocalAdverb rdf:type owl:Class ;
-             rdfs:subClassOf :Adverb .
+             rdfs:subClassOf :Adverb ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_LOCADV
+                             ] .
 
 :LocalCase rdf:type owl:Class ;
-           rdfs:subClassOf :Oblique .
+           rdfs:subClassOf :Oblique ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_LOCAL
+                           ] .
 
 :Locative rdf:type owl:Class ;
           owl:equivalentClass gold:LocativeCase ;
-          rdfs:subClassOf :Essive .
+          rdfs:subClassOf :Essive ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_LOC
+                          ] .
 
 :Malefactive rdf:type owl:Class ;
              owl:equivalentClass gold:MalefactiveCase ;
-             rdfs:subClassOf :Oblique .
+             rdfs:subClassOf :Oblique ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_MAL
+                             ] .
 
 :MannerAdverb rdf:type owl:Class ;
-              rdfs:subClassOf :Adverb .
+              rdfs:subClassOf :Adverb ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_MANADV
+                              ] .
 
 :MannerCase rdf:type owl:Class ;
-            rdfs:subClassOf :Oblique .
+            rdfs:subClassOf :Oblique ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_MOD
+                            ] .
 
 :Masculine rdf:type owl:Class ;
            owl:equivalentClass gold:MasculineGender ;
-           rdfs:subClassOf :Gender .
+           rdfs:subClassOf :Gender ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_M
+                           ] .
 
 :MaterialAdjectivizer rdf:type owl:Class ;
                       rdfs:subClassOf :DenominalAdjective ,
-                                      :SemanticDerivation .
+                                      :SemanticDerivation ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty :hasAbstractIdentity ;
+                                        owl:hasValue :MorphemicGloss_MATAR
+                                      ] .
 
 :Meaning rdf:type owl:Class ;
          :definition "This class comprises a wide range of meanings a word, morph or morpheme can be associated with, e.g. linguistic categories, word-class affiliation, (lexical) senses, derivational meanings."@en ;
          rdfs:label "Meaning"@en .
 
 :Mediative rdf:type owl:Class ;
-           rdfs:subClassOf :Essive .
+           rdfs:subClassOf :Essive ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_MEDT
+                           ] .
 
 :Mediopassive rdf:type owl:Class ;
-              rdfs:subClassOf :Passive .
+              rdfs:subClassOf :Passive ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_MEDP
+                              ] .
 
 :MiddleVoice rdf:type owl:Class ;
-             rdfs:subClassOf :Voice .
+             rdfs:subClassOf :Voice ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_MID
+                             ] .
 
 :Mirative rdf:type owl:Class ;
-          rdfs:subClassOf :Evidentiality .
+          rdfs:subClassOf :Evidentiality ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_MIR
+                          ] .
 
 :ModalParticle rdf:type owl:Class ;
                rdfs:subClassOf :Particle ;
@@ -1610,18 +2302,34 @@ For convenience the morpheme instances are rendered by the same notational means
                            rdfs:label "Morphological Relationship"@en .
 
 :MultiplicativeCase rdf:type owl:Class ;
-                    rdfs:subClassOf :Oblique .
+                    rdfs:subClassOf :Oblique ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_MULT
+                                    ] .
 
 :Narrative rdf:type owl:Class ;
-           rdfs:subClassOf :Past .
+           rdfs:subClassOf :Past ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_NARR
+                           ] .
 
 :Negation rdf:type owl:Class ;
           owl:equivalentClass gold:NegativePolarity ;
-          rdfs:subClassOf :Polarity .
+          rdfs:subClassOf :Polarity ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_NEG
+                          ] .
 
 :Neuter rdf:type owl:Class ;
         owl:equivalentClass gold:NeuterGender ;
-        rdfs:subClassOf :Gender .
+        rdfs:subClassOf :Gender ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_N
+                        ] .
 
 :NoDegree rdf:type owl:Class ;
           rdfs:subClassOf :AdjectivalInflection ;
@@ -1634,7 +2342,11 @@ For convenience the morpheme instances are rendered by the same notational means
               rdfs:label "No inflection"@en .
 
 :NoMeaning rdf:type owl:Class ;
-           rdfs:subClassOf :Meaning .
+           rdfs:subClassOf :Meaning ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_E
+                           ] .
 
 :NoWordFormation rdf:type owl:Class ;
                  rdfs:subClassOf :WordFormation ;
@@ -1671,30 +2383,58 @@ For convenience the morpheme instances are rendered by the same notational means
 
 :Nominalization rdf:type owl:Class ;
                 owl:equivalentClass gold:Nominalizer ;
-                rdfs:subClassOf :FunctionalDerivation .
+                rdfs:subClassOf :FunctionalDerivation ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_NMLZ
+                                ] .
 
 :Nominative rdf:type owl:Class ;
             owl:equivalentClass gold:NominativeCase ;
-            rdfs:subClassOf :CasusRectus .
+            rdfs:subClassOf :CasusRectus ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_NOM
+                            ] .
 
 :NonFiniteVerb rdf:type owl:Class ;
-               rdfs:subClassOf :Verb .
+               rdfs:subClassOf :Verb ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_VNFIN
+                               ] .
 
 :NonFuture rdf:type owl:Class ;
            owl:equivalentClass gold:NonFutureTense ;
-           rdfs:subClassOf :AbsoluteTense .
+           rdfs:subClassOf :AbsoluteTense ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_NFUT
+                           ] .
 
 :NonPast rdf:type owl:Class ;
          owl:equivalentClass gold:NonPastTense ;
-         rdfs:subClassOf :AbsoluteTense .
+         rdfs:subClassOf :AbsoluteTense ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_NPST
+                         ] .
 
 :NonVisual rdf:type owl:Class ;
            owl:equivalentClass gold:OtherThanVisualEvidentiality ;
-           rdfs:subClassOf :Sensory .
+           rdfs:subClassOf :Sensory ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_NVIS
+                           ] .
 
 :Noun rdf:type owl:Class ;
       owl:equivalentClass gold:Noun ;
-      rdfs:subClassOf :WordclassAffiliation .
+      rdfs:subClassOf :WordclassAffiliation ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasAbstractIdentity ;
+                        owl:hasValue :MorphemicGloss_NN
+                      ] .
 
 :NounAdjective rdf:type owl:Class ;
                rdfs:subClassOf :Conversion ;
@@ -1716,74 +2456,150 @@ For convenience the morpheme instances are rendered by the same notational means
 
 :Numeral rdf:type owl:Class ;
          owl:equivalentClass gold:Numeral ;
-         rdfs:subClassOf :WordclassAffiliation .
+         rdfs:subClassOf :WordclassAffiliation ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_NUM
+                         ] .
 
 :NumeralClassifier rdf:type owl:Class ;
-                   rdfs:subClassOf :Classifier .
+                   rdfs:subClassOf :Classifier ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_NUMCL
+                                   ] .
 
 :ObjectiveCase rdf:type owl:Class ;
-               rdfs:subClassOf :Oblique .
+               rdfs:subClassOf :Oblique ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_OBJC
+                               ] .
 
 :Obligative rdf:type owl:Class ;
-            rdfs:subClassOf :Mood .
+            rdfs:subClassOf :Mood ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_OBLG
+                            ] .
 
 :Oblique rdf:type owl:Class ;
          owl:equivalentClass gold:ObliqueCase ;
-         rdfs:subClassOf :Case .
+         rdfs:subClassOf :Case ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_OBL
+                         ] .
 
 :Optative rdf:type owl:Class ;
           owl:equivalentClass gold:OptativeMood ;
-          rdfs:subClassOf :Mood .
+          rdfs:subClassOf :Mood ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_OPT
+                          ] .
 
 :OrdinalNumber rdf:type owl:Class ;
                owl:equivalentClass gold:OrdinalNumeral ;
-               rdfs:subClassOf :Numeral .
+               rdfs:subClassOf :Numeral ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_ORD
+                               ] .
 
 :Participle rdf:type owl:Class ;
             owl:equivalentClass gold:Participle ;
-            rdfs:subClassOf :NonFiniteVerb .
+            rdfs:subClassOf :NonFiniteVerb ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_PART
+                            ] .
 
 :Particle rdf:type owl:Class ;
           owl:equivalentClass gold:NominalParticle ;
-          rdfs:subClassOf :WordclassAffiliation .
+          rdfs:subClassOf :WordclassAffiliation ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_PRTC
+                          ] .
 
 :Partitive rdf:type owl:Class ;
            owl:equivalentClass gold:PartitiveCase ;
-           rdfs:subClassOf :Oblique .
+           rdfs:subClassOf :Oblique ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_PRTV
+                           ] .
 
 :Passive rdf:type owl:Class ;
          owl:equivalentClass gold:PassiveVoice ;
-         rdfs:subClassOf :Voice .
+         rdfs:subClassOf :Voice ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_PASS
+                         ] .
 
 :Past rdf:type owl:Class ;
       owl:equivalentClass gold:PastTense ;
-      rdfs:subClassOf :AbsoluteTense .
+      rdfs:subClassOf :AbsoluteTense ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasAbstractIdentity ;
+                        owl:hasValue :MorphemicGloss_PST
+                      ] .
 
 :PastInFuture rdf:type owl:Class ;
-              rdfs:subClassOf :AbsoluteRelativeTense .
+              rdfs:subClassOf :AbsoluteRelativeTense ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_PFUT
+                              ] .
 
 :PastPerfect rdf:type owl:Class ;
              owl:equivalentClass gold:PastPerfectTense ;
-             rdfs:subClassOf :AbsoluteRelativeTense .
+             rdfs:subClassOf :AbsoluteRelativeTense ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_PPRF
+                             ] .
 
 :PatientNominalizer rdf:type owl:Class ;
-                    rdfs:subClassOf :SemanticDerivation .
+                    rdfs:subClassOf :SemanticDerivation ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_PATNR
+                                    ] .
 
 :Paucal rdf:type owl:Class ;
         owl:equivalentClass gold:PaucalNumber ;
-        rdfs:subClassOf :Number .
+        rdfs:subClassOf :Number ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_PAU
+                        ] .
 
 :Perfect rdf:type owl:Class ;
          owl:equivalentClass gold:PerfectTense ;
-         rdfs:subClassOf :RelativeTense .
+         rdfs:subClassOf :RelativeTense ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_PRF
+                         ] .
 
 :PerfectiveAspect rdf:type owl:Class ;
                   owl:equivalentClass gold:PerfectiveAspect ;
-                  rdfs:subClassOf :Aspect .
+                  rdfs:subClassOf :Aspect ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_PFV
+                                  ] .
 
 :Perlative rdf:type owl:Class ;
            owl:equivalentClass gold:PerlativeCase ;
-           rdfs:subClassOf :Lative .
+           rdfs:subClassOf :Lative ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_PERL
+                           ] .
 
 :Person rdf:type owl:Class ;
         owl:equivalentClass gold:PersonProperty ;
@@ -1793,21 +2609,41 @@ For convenience the morpheme instances are rendered by the same notational means
         rdfs:label "Person"@en .
 
 :PersonNominalizer rdf:type owl:Class ;
-                   rdfs:subClassOf :SemanticDerivation .
+                   rdfs:subClassOf :SemanticDerivation ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_PRSNR
+                                   ] .
 
 :PersonalPronoun rdf:type owl:Class ;
                  owl:equivalentClass gold:PersonalPronoun ;
-                 rdfs:subClassOf :Pronoun .
+                 rdfs:subClassOf :Pronoun ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_PPR
+                                 ] .
 
 :PlaceNominalizer rdf:type owl:Class ;
-                  rdfs:subClassOf :SemanticDerivation .
+                  rdfs:subClassOf :SemanticDerivation ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_LOCNR
+                                  ] .
 
 :Plural rdf:type owl:Class ;
         owl:equivalentClass gold:PluralNumber ;
-        rdfs:subClassOf :Number .
+        rdfs:subClassOf :Number ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_PL
+                        ] .
 
 :PolarAdjective rdf:type owl:Class ;
-                rdfs:subClassOf :Adjective .
+                rdfs:subClassOf :Adjective ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_POLADJ
+                                ] .
 
 :Polarity rdf:type owl:Class ;
           owl:equivalentClass gold:PolarityProperty ;
@@ -1819,7 +2655,11 @@ For convenience the morpheme instances are rendered by the same notational means
           rdfs:label "Polarity"@en .
 
 :Positive rdf:type owl:Class ;
-          rdfs:subClassOf :DegreeOfComparison .
+          rdfs:subClassOf :DegreeOfComparison ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_POS
+                          ] .
 
 :PossessiveAdjective rdf:type owl:Class ;
                      rdfs:subClassOf :DenominalAdjective ;
@@ -1831,37 +2671,77 @@ patrius <- pater, Romanus <- Roma.
 
 :PossessiveDative rdf:type owl:Class ;
                   owl:equivalentClass gold:PossessedCase ;
-                  rdfs:subClassOf :Dative .
+                  rdfs:subClassOf :Dative ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_DATPOSS
+                                  ] .
 
 :PossessivePronoun rdf:type owl:Class ;
                    owl:equivalentClass gold:PossessivePronoun ;
-                   rdfs:subClassOf :Pronoun .
+                   rdfs:subClassOf :Pronoun ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_POSSPR
+                                   ] .
 
 :PostHodiernalFuture rdf:type owl:Class ;
                      owl:equivalentClass gold:PostHodiernalFutureTense ;
-                     rdfs:subClassOf :Future .
+                     rdfs:subClassOf :Future ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasAbstractIdentity ;
+                                       owl:hasValue :MorphemicGloss_PHODFUT
+                                     ] .
 
 :Postelative rdf:type owl:Class ;
-             rdfs:subClassOf :Elative .
+             rdfs:subClassOf :Elative ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_POSTEL
+                             ] .
 
 :Posterior rdf:type owl:Class ;
-           rdfs:subClassOf :RelativeTense .
+           rdfs:subClassOf :RelativeTense ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_POST
+                           ] .
 
 :Postessive rdf:type owl:Class ;
-            rdfs:subClassOf :Essive .
+            rdfs:subClassOf :Essive ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_POSTESS
+                            ] .
 
 :Postposition rdf:type owl:Class ;
               owl:equivalentClass gold:Postposition ;
-              rdfs:subClassOf :Adposition .
+              rdfs:subClassOf :Adposition ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_PPOS
+                              ] .
 
 :Potential rdf:type owl:Class ;
-           rdfs:subClassOf :Mood .
+           rdfs:subClassOf :Mood ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_POT
+                           ] .
 
 :Precative rdf:type owl:Class ;
-           rdfs:subClassOf :Mood .
+           rdfs:subClassOf :Mood ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_PREC
+                           ] .
 
 :Preclusive rdf:type owl:Class ;
-            rdfs:subClassOf :Oblique .
+            rdfs:subClassOf :Oblique ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_PRCL
+                            ] .
 
 :Prefix rdf:type owl:Class ;
         owl:equivalentClass gold:Prefix ;
@@ -1871,97 +2751,201 @@ patrius <- pater, Romanus <- Roma.
 
 :PrehodiernalPast rdf:type owl:Class ;
                   owl:equivalentClass gold:PreHodiernalPastTense ;
-                  rdfs:subClassOf :Past .
+                  rdfs:subClassOf :Past ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_PRHODPST
+                                  ] .
 
 :Preposition rdf:type owl:Class ;
              owl:equivalentClass gold:Preposition ;
-             rdfs:subClassOf :Adposition .
+             rdfs:subClassOf :Adposition ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_PRPOS
+                             ] .
 
 :PrepositionalCase rdf:type owl:Class ;
-                   rdfs:subClassOf :Oblique .
+                   rdfs:subClassOf :Oblique ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_PREPC
+                                   ] .
 
 :Present rdf:type owl:Class ;
          owl:equivalentClass gold:PresentTense ;
-         rdfs:subClassOf :AbsoluteTense .
+         rdfs:subClassOf :AbsoluteTense ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_PRS
+                         ] .
 
 :Privative rdf:type owl:Class ;
            owl:equivalentClass gold:AbessiveCase ;
-           rdfs:subClassOf :Oblique .
+           rdfs:subClassOf :Oblique ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_PRIV
+                           ] .
 
 :PrivativeAdjectivizer rdf:type owl:Class ;
-                       rdfs:subClassOf :SemanticDerivation .
+                       rdfs:subClassOf :SemanticDerivation ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasAbstractIdentity ;
+                                         owl:hasValue :MorphemicGloss_PRIVAR
+                                       ] .
 
 :Processive rdf:type owl:Class ;
-            rdfs:subClassOf :SemanticDerivation .
+            rdfs:subClassOf :SemanticDerivation ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_PROC
+                            ] .
 
 :ProgressiveAspect rdf:type owl:Class ;
                    owl:equivalentClass gold:ProgressiveAspect ;
-                   rdfs:subClassOf :Aspect .
+                   rdfs:subClassOf :Aspect ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_PROG
+                                   ] .
 
 :Prohibitive rdf:type owl:Class ;
              owl:equivalentClass gold:ProhibitiveMood ;
-             rdfs:subClassOf :Mood .
+             rdfs:subClassOf :Mood ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_PROH
+                             ] .
 
 :Prolative rdf:type owl:Class ;
-           rdfs:subClassOf :Lative .
+           rdfs:subClassOf :Lative ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_PROLAT
+                           ] .
 
 :Pronoun rdf:type owl:Class ;
          owl:equivalentClass gold:Pronominal ;
-         rdfs:subClassOf :WordclassAffiliation .
+         rdfs:subClassOf :WordclassAffiliation ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_PR
+                         ] .
 
 :ProperNoun rdf:type owl:Class ;
             owl:equivalentClass gold:ProperNoun ;
-            rdfs:subClassOf :Noun .
+            rdfs:subClassOf :Noun ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_NNP
+                            ] .
 
 :Proprietive rdf:type owl:Class ;
-             rdfs:subClassOf :SemanticDerivation .
+             rdfs:subClassOf :SemanticDerivation ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_PROPR
+                             ] .
 
 :ProprietiveCase rdf:type owl:Class ;
-                 rdfs:subClassOf :Oblique .
+                 rdfs:subClassOf :Oblique ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_PROPRC
+                                 ] .
 
 :ProspectiveAspect rdf:type owl:Class ;
-                   rdfs:subClassOf :Aspect .
+                   rdfs:subClassOf :Aspect ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_PROSP
+                                   ] .
 
 :Punctual rdf:type owl:Class ;
-          rdfs:subClassOf :Aktionsart .
+          rdfs:subClassOf :Aktionsart ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_PNCT
+                          ] .
 
 :Quality rdf:type owl:Class ;
-         rdfs:subClassOf :SemanticDerivation .
+         rdfs:subClassOf :SemanticDerivation ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_QUAL
+                         ] .
 
 :QuestionParticle rdf:type owl:Class ;
-                  rdfs:subClassOf :Particle .
+                  rdfs:subClassOf :Particle ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_QPART
+                                  ] .
 
 :Quotative rdf:type owl:Class ;
            owl:equivalentClass gold:OtherSourceEvidentiality ,
                                gold:SecondHandEvidentiality ;
-           rdfs:subClassOf :Evidentiality .
+           rdfs:subClassOf :Evidentiality ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_QUOT
+                           ] .
 
 :Realis rdf:type owl:Class ;
         owl:equivalentClass gold:RealisMood ;
-        rdfs:subClassOf :Mood .
+        rdfs:subClassOf :Mood ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_RLS
+                        ] .
 
 :RecentPast rdf:type owl:Class ;
             owl:equivalentClass gold:RecentPastTense ;
-            rdfs:subClassOf :Past .
+            rdfs:subClassOf :Past ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_RECPST
+                            ] .
 
 :ReciprocalMiddle rdf:type owl:Class ;
                   owl:equivalentClass gold:ReciprocalMiddleVoice ;
-                  rdfs:subClassOf :MiddleVoice .
+                  rdfs:subClassOf :MiddleVoice ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_RECMID
+                                  ] .
 
 :ReciprocalPronoun rdf:type owl:Class ;
                    owl:equivalentClass gold:ReciprocalPronoun ;
-                   rdfs:subClassOf :Pronoun .
+                   rdfs:subClassOf :Pronoun ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_RECPR
+                                   ] .
 
 :Referentive rdf:type owl:Class ;
-             rdfs:subClassOf :Oblique .
+             rdfs:subClassOf :Oblique ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_REFC
+                             ] .
 
 :ReflexivePronoun rdf:type owl:Class ;
                   owl:equivalentClass gold:ReflexivePronoun ;
-                  rdfs:subClassOf :Pronoun .
+                  rdfs:subClassOf :Pronoun ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_REFLPR
+                                  ] .
 
 :ReflexiveVoice rdf:type owl:Class ;
                 owl:equivalentClass gold:ReflexiveMiddleVoice ;
-                rdfs:subClassOf :MiddleVoice .
+                rdfs:subClassOf :MiddleVoice ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_REFL
+                                ] .
 
 :RegularConjugation rdf:type owl:Class ;
                     rdfs:subClassOf :Conjugation ;
@@ -1974,11 +2958,19 @@ patrius <- pater, Romanus <- Roma.
                rdfs:label "Regular Degree"@en .
 
 :Relational rdf:type owl:Class ;
-            rdfs:subClassOf :SemanticDerivation .
+            rdfs:subClassOf :SemanticDerivation ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_RELL
+                            ] .
 
 :RelativePast rdf:type owl:Class ;
               owl:equivalentClass gold:RelativePastTense ;
-              rdfs:subClassOf :RelativeTense .
+              rdfs:subClassOf :RelativeTense ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_RELPST
+                              ] .
 
 :RelativePerson rdf:type owl:Class ;
                 rdfs:subClassOf :LinguisticCategory ;
@@ -1987,11 +2979,19 @@ patrius <- pater, Romanus <- Roma.
 
 :RelativePresent rdf:type owl:Class ;
                  owl:equivalentClass gold:RelativePresentTense ;
-                 rdfs:subClassOf :RelativeTense .
+                 rdfs:subClassOf :RelativeTense ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_RELPRS
+                                 ] .
 
 :RelativePronoun rdf:type owl:Class ;
                  owl:equivalentClass gold:RelativePronoun ;
-                 rdfs:subClassOf :Pronoun .
+                 rdfs:subClassOf :Pronoun ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_RELPR
+                                 ] .
 
 :RelativeTense rdf:type owl:Class ;
                rdfs:subClassOf :Tense ;
@@ -2001,32 +3001,60 @@ patrius <- pater, Romanus <- Roma.
 
 :RemotePast rdf:type owl:Class ;
             owl:equivalentClass gold:RemotePastTense ;
-            rdfs:subClassOf :Past .
+            rdfs:subClassOf :Past ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_REMPST
+                            ] .
 
 :Repetitive rdf:type owl:Class ;
             owl:equivalentClass gold:Repetitive ;
-            rdfs:subClassOf :VerbExpansion .
+            rdfs:subClassOf :VerbExpansion ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_REP
+                            ] .
 
 :Reportative rdf:type owl:Class ;
              owl:equivalentClass gold:HearsayEvidentiality ,
                                  gold:IndirectEvidentiality ;
-             rdfs:subClassOf :Evidentiality .
+             rdfs:subClassOf :Evidentiality ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_RPRT
+                             ] .
 
 :Representation rdf:type owl:Class ;
                 :definition "A linguistic representation of a word or morph."@en ;
                 rdfs:label "Representation"@en .
 
 :ResultativeAktionsart rdf:type owl:Class ;
-                       rdfs:subClassOf :Aktionsart .
+                       rdfs:subClassOf :Aktionsart ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :hasAbstractIdentity ;
+                                         owl:hasValue :MorphemicGloss_RES
+                                       ] .
 
 :ResultativeAspect rdf:type owl:Class ;
-                   rdfs:subClassOf :Aspect .
+                   rdfs:subClassOf :Aspect ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_RESA
+                                   ] .
 
 :Reverence rdf:type owl:Class ;
-           rdfs:subClassOf :SocialDeixis .
+           rdfs:subClassOf :SocialDeixis ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_REV
+                           ] .
 
 :Reversion rdf:type owl:Class ;
-           rdfs:subClassOf :VerbExpansion .
+           rdfs:subClassOf :VerbExpansion ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_RVRS
+                           ] .
 
 :Root rdf:type owl:Class ;
       owl:equivalentClass gold:Root ;
@@ -2036,11 +3064,19 @@ patrius <- pater, Romanus <- Roma.
       rdfs:label "Root"@en .
 
 :SameSubject rdf:type owl:Class ;
-             rdfs:subClassOf :RelativePerson .
+             rdfs:subClassOf :RelativePerson ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_SS
+                             ] .
 
 :SecondPerson rdf:type owl:Class ;
               owl:equivalentClass gold:SecondPerson ;
-              rdfs:subClassOf :Person .
+              rdfs:subClassOf :Person ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_2P
+                              ] .
 
 :SemanticDerivation rdf:type owl:Class ;
                     rdfs:subClassOf :WordclassChangingDerivation ;
@@ -2048,11 +3084,19 @@ patrius <- pater, Romanus <- Roma.
                     rdfs:label "Semantic Derivation"@en .
 
 :SemelfactiveAktionsart rdf:type owl:Class ;
-                        rdfs:subClassOf :Aktionsart .
+                        rdfs:subClassOf :Aktionsart ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty :hasAbstractIdentity ;
+                                          owl:hasValue :MorphemicGloss_SMLF
+                                        ] .
 
 :SemelfactiveAspect rdf:type owl:Class ;
                     owl:equivalentClass gold:SemelfactiveAspect ;
-                    rdfs:subClassOf :Aspect .
+                    rdfs:subClassOf :Aspect ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_SEML
+                                    ] .
 
 :Sense rdf:type owl:Class ;
        rdfs:subClassOf :Meaning ;
@@ -2068,7 +3112,11 @@ In usage #b, the signified is a ‚system-meaning’, while sense is an ‚utter
 
 :Sensory rdf:type owl:Class ;
          owl:equivalentClass gold:DirectEvidentiality ;
-         rdfs:subClassOf :Evidentiality .
+         rdfs:subClassOf :Evidentiality ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_SENS
+                         ] .
 
 :SimpleLexeme rdf:type owl:Class ;
               rdfs:subClassOf :Lexeme ;
@@ -2091,11 +3139,19 @@ The replacive morph is a construct of taxonomic structuralism.
 
 :SimultaneousAspect rdf:type owl:Class ;
                     owl:equivalentClass gold:SimultaneousAspect ;
-                    rdfs:subClassOf :Aspect .
+                    rdfs:subClassOf :Aspect ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasAbstractIdentity ;
+                                      owl:hasValue :MorphemicGloss_SIM
+                                    ] .
 
 :Singular rdf:type owl:Class ;
           owl:equivalentClass gold:SingularNumber ;
-          rdfs:subClassOf :Number .
+          rdfs:subClassOf :Number ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_SG
+                          ] .
 
 :SocialDeixis rdf:type owl:Class ;
               rdfs:subClassOf :LinguisticCategory ;
@@ -2103,16 +3159,32 @@ The replacive morph is a construct of taxonomic structuralism.
               rdfs:label "Social Deixis"@en .
 
 :Sociative rdf:type owl:Class ;
-           rdfs:subClassOf :Oblique .
+           rdfs:subClassOf :Oblique ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_SOC
+                           ] .
 
 :Speculative rdf:type owl:Class ;
-             rdfs:subClassOf :Evidentiality .
+             rdfs:subClassOf :Evidentiality ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_SPECL
+                             ] .
 
 :State rdf:type owl:Class ;
-       rdfs:subClassOf :NounExpansion .
+       rdfs:subClassOf :NounExpansion ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasAbstractIdentity ;
+                         owl:hasValue :MorphemicGloss_STA
+                       ] .
 
 :Stative rdf:type owl:Class ;
-         rdfs:subClassOf :Aktionsart .
+         rdfs:subClassOf :Aktionsart ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_STAT
+                         ] .
 
 :Stem rdf:type owl:Class ;
       owl:equivalentClass gold:Stem ;
@@ -2126,34 +3198,66 @@ In a compound word: The stem is the morphological representative of one of the t
 
 :Subablative rdf:type owl:Class ;
              owl:equivalentClass gold:SubablativeCase ;
-             rdfs:subClassOf :Ablative .
+             rdfs:subClassOf :Ablative ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_SUBABL
+                             ] .
 
 :Suballative rdf:type owl:Class ;
              owl:equivalentClass gold:SuballativeCase ;
-             rdfs:subClassOf :Allative .
+             rdfs:subClassOf :Allative ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_SUBALL
+                             ] .
 
 :Subelative rdf:type owl:Class ;
-            rdfs:subClassOf :Elative .
+            rdfs:subClassOf :Elative ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasAbstractIdentity ;
+                              owl:hasValue :MorphemicGloss_SUBEL
+                            ] .
 
 :Subessive rdf:type owl:Class ;
            owl:equivalentClass gold:SubessiveCase ;
-           rdfs:subClassOf :Essive .
+           rdfs:subClassOf :Essive ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_SUBESS
+                           ] .
 
 :Subjunctive rdf:type owl:Class ;
              owl:equivalentClass gold:SubjunctiveMood ;
-             rdfs:subClassOf :Mood .
+             rdfs:subClassOf :Mood ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_SUBJ
+                             ] .
 
 :Sublative rdf:type owl:Class ;
            owl:equivalentClass gold:SublativeCase ;
-           rdfs:subClassOf :Lative .
+           rdfs:subClassOf :Lative ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasAbstractIdentity ;
+                             owl:hasValue :MorphemicGloss_SUBL
+                           ] .
 
 :Subterminative rdf:type owl:Class ;
                 owl:equivalentClass gold:SubterminativeCase ;
-                rdfs:subClassOf :Terminative .
+                rdfs:subClassOf :Terminative ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_SUBTERM
+                                ] .
 
 :Subtranslative rdf:type owl:Class ;
                 owl:equivalentClass gold:SubtranslativeCase ;
-                rdfs:subClassOf :Translative .
+                rdfs:subClassOf :Translative ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_SUBTRANS
+                                ] .
 
 :Suffix rdf:type owl:Class ;
         owl:equivalentClass gold:Suffix ;
@@ -2163,33 +3267,65 @@ In a compound word: The stem is the morphological representative of one of the t
 
 :Superablative rdf:type owl:Class ;
                owl:equivalentClass gold:SuperablativeCase ;
-               rdfs:subClassOf :Ablative .
+               rdfs:subClassOf :Ablative ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_SUPABL
+                               ] .
 
 :Superallative rdf:type owl:Class ;
                owl:equivalentClass gold:SuperallativeCase ;
-               rdfs:subClassOf :Allative .
+               rdfs:subClassOf :Allative ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_SUPALL
+                               ] .
 
 :Superelative rdf:type owl:Class ;
-              rdfs:subClassOf :Elative .
+              rdfs:subClassOf :Elative ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasAbstractIdentity ;
+                                owl:hasValue :MorphemicGloss_SUPEL
+                              ] .
 
 :Superessive rdf:type owl:Class ;
              owl:equivalentClass gold:SuperessiveCase ;
-             rdfs:subClassOf :Essive .
+             rdfs:subClassOf :Essive ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_SUPESS
+                             ] .
 
 :Superlative rdf:type owl:Class ;
-             rdfs:subClassOf :DegreeOfComparison .
+             rdfs:subClassOf :DegreeOfComparison ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_SUP
+                             ] .
 
 :SuperlativeCase rdf:type owl:Class ;
                  owl:equivalentClass gold:SuperlativeCase ;
-                 rdfs:subClassOf :Lative .
+                 rdfs:subClassOf :Lative ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasAbstractIdentity ;
+                                   owl:hasValue :MorphemicGloss_SUPL
+                                 ] .
 
 :Superterminative rdf:type owl:Class ;
                   owl:equivalentClass gold:SuperterminativeCase ;
-                  rdfs:subClassOf :Terminative .
+                  rdfs:subClassOf :Terminative ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_SUPTERM
+                                  ] .
 
 :Supertranslative rdf:type owl:Class ;
                   owl:equivalentClass gold:SupertranslativeCase ;
-                  rdfs:subClassOf :Translative .
+                  rdfs:subClassOf :Translative ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasAbstractIdentity ;
+                                    owl:hasValue :MorphemicGloss_SUPTRANS
+                                  ] .
 
 :SyntheticWordform rdf:type owl:Class ;
                    rdfs:subClassOf :Wordform ;
@@ -2198,10 +3334,18 @@ In a compound word: The stem is the morphological representative of one of the t
                    rdfs:label "Synthetic Word-form"@en .
 
 :TemporalAdverb rdf:type owl:Class ;
-                rdfs:subClassOf :Adverb .
+                rdfs:subClassOf :Adverb ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_TEMPADV
+                                ] .
 
 :TemporalisCase rdf:type owl:Class ;
-                rdfs:subClassOf :Oblique .
+                rdfs:subClassOf :Oblique ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_TEMP
+                                ] .
 
 :Tense rdf:type owl:Class ;
        owl:equivalentClass gold:TenseProperty ;
@@ -2213,19 +3357,35 @@ The most important temporal relations between the two time-points are simultanei
 
 :Terminative rdf:type owl:Class ;
              owl:equivalentClass gold:TerminativeCase ;
-             rdfs:subClassOf :Lative .
+             rdfs:subClassOf :Lative ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_TERM
+                             ] .
 
 :TerminativeAspect rdf:type owl:Class ;
                    owl:equivalentClass gold:TerminativeAspect ;
-                   rdfs:subClassOf :Aspect .
+                   rdfs:subClassOf :Aspect ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasAbstractIdentity ;
+                                     owl:hasValue :MorphemicGloss_TERMI
+                                   ] .
 
 :ThirdPerson rdf:type owl:Class ;
              owl:equivalentClass gold:ThirdPerson ;
-             rdfs:subClassOf :Person .
+             rdfs:subClassOf :Person ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_3P
+                             ] .
 
 :Timitive rdf:type owl:Class ;
           owl:equivalentClass gold:TimitiveMood ;
-          rdfs:subClassOf :Mood .
+          rdfs:subClassOf :Mood ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_TIM
+                          ] .
 
 :Transfix rdf:type owl:Class ;
           rdfs:subClassOf :Affix ;
@@ -2233,21 +3393,41 @@ The most important temporal relations between the two time-points are simultanei
           rdfs:label "Transfix"@en .
 
 :Transformative rdf:type owl:Class ;
-                rdfs:subClassOf :Oblique .
+                rdfs:subClassOf :Oblique ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasAbstractIdentity ;
+                                  owl:hasValue :MorphemicGloss_TRANSF
+                                ] .
 
 :Transitivizer rdf:type owl:Class ;
                owl:equivalentClass gold:Transitivizer ;
-               rdfs:subClassOf :ValencyChange .
+               rdfs:subClassOf :ValencyChange ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_TRR
+                               ] .
 
 :Translative rdf:type owl:Class ;
              owl:equivalentClass gold:TranslativeCase ;
-             rdfs:subClassOf :Lative .
+             rdfs:subClassOf :Lative ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_TRANS
+                             ] .
 
 :Uncountable rdf:type owl:Class ;
-             rdfs:subClassOf :Countability .
+             rdfs:subClassOf :Countability ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasAbstractIdentity ;
+                               owl:hasValue :MorphemicGloss_UNCTB
+                             ] .
 
 :Unitive rdf:type owl:Class ;
-         rdfs:subClassOf :Comitative .
+         rdfs:subClassOf :Comitative ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAbstractIdentity ;
+                           owl:hasValue :MorphemicGloss_UNIT
+                         ] .
 
 :ValencyChange rdf:type owl:Class ;
                rdfs:subClassOf :VerbExpansion ;
@@ -2256,7 +3436,11 @@ The most important temporal relations between the two time-points are simultanei
 
 :Verb rdf:type owl:Class ;
       owl:equivalentClass gold:Verbal ;
-      rdfs:subClassOf :WordclassAffiliation .
+      rdfs:subClassOf :WordclassAffiliation ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasAbstractIdentity ;
+                        owl:hasValue :MorphemicGloss_V
+                      ] .
 
 :VerbExpansion rdf:type owl:Class ;
                rdfs:subClassOf :Expansion ;
@@ -2287,15 +3471,27 @@ The most important temporal relations between the two time-points are simultanei
             rdfs:label "Verbal Noun"@en .
 
 :Verbalization rdf:type owl:Class ;
-               rdfs:subClassOf :FunctionalDerivation .
+               rdfs:subClassOf :FunctionalDerivation ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasAbstractIdentity ;
+                                 owl:hasValue :MorphemicGloss_VBZ
+                               ] .
 
 :Visual rdf:type owl:Class ;
         owl:equivalentClass gold:VisualEvidentiality ;
-        rdfs:subClassOf :Sensory .
+        rdfs:subClassOf :Sensory ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasAbstractIdentity ;
+                          owl:hasValue :MorphemicGloss_VIS
+                        ] .
 
 :Vocative rdf:type owl:Class ;
           owl:equivalentClass gold:VocativeCase ;
-          rdfs:subClassOf :CasusRectus .
+          rdfs:subClassOf :CasusRectus ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAbstractIdentity ;
+                            owl:hasValue :MorphemicGloss_VOC
+                          ] .
 
 :Voice rdf:type owl:Class ;
        owl:equivalentClass gold:VoiceProperty ;
