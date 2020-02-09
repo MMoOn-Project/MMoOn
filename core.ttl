@@ -2147,8 +2147,8 @@ Its expression is typically located farther from the root than that of derivatio
               :definition """A lexical entry is a word as it appears as an entry in a dictionary. It can be a lexeme or a grammatical word.
 All lexical entries that inflect have a holistic abstract sense representing the core meaning shared by a set of closely-related word-forms. The lexical entry can be one of the word-forms which is chosen as the representative of the inflectional paradigm of the lexeme."""@en ;
               rdfs:label "Lexical Entry"@en ;
-              skos:broadMatch gold:LexicalItem ,
-                              ontolex:LexicalEntry .
+              skos:broadMatch gold:LexicalItem ;
+              rdfs:subClassOf ontolex:LexicalEntry .
 
 :LinguisticCategory rdf:type owl:Class ;
                     rdfs:subClassOf :Meaning ;
