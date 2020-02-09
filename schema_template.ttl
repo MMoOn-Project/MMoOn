@@ -1,0 +1,2674 @@
+@prefix : <http://example.org/lang/schema/pi/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix mmoon: <http://mmoon.org/core/> .
+@prefix lang_schema: <http://example.org/lang/schema/pi/> .
+@base <http://example.org/lang/schema/pi/> .
+
+<http://example.org/lang/schema/pi/> rdf:type owl:Ontology ;
+                                      owl:imports mmoon:v1.0.0/ ;
+                                      <http://purl.org/dc/elements/1.1/description> """This is the schema template for creating MMoOn Morpheme Inventory datasets. It imports the MMoOn Core Ontology (http://mmoon.org/core/v1.0.0/) and provides the necessary subclasses and instantiations that are ready-to-use for describing language-specific morphological language data. 
+
+It is recommended to adjust the ontology URI as follows: replace 'lang' with an ISO 639-3 language code and 'pi' with the name of the project for which the created dataset will be used. 
+
+This template can be reused for describing language data of multiple languages. For every language a new schema file can be created."""@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://mmoon.org/core/forLanguage
+mmoon:forLanguage rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/lang/schema/pi/ActionNoun
+lang_schema:ActionNoun rdf:type owl:Class ;
+                       rdfs:subClassOf lang_schema:DeverbalNoun ,
+                                       mmoon:ActionNoun .
+
+
+###  http://example.org/lang/schema/pi/AdjectivalInflection
+lang_schema:AdjectivalInflection rdf:type owl:Class ;
+                                 rdfs:subClassOf lang_schema:Inflection ,
+                                                 mmoon:AdjectivalInflection .
+
+
+###  http://example.org/lang/schema/pi/AdjectiveCompound
+lang_schema:AdjectiveCompound rdf:type owl:Class ;
+                              rdfs:subClassOf lang_schema:Compounding ,
+                                              mmoon:AdjectiveCompound .
+
+
+###  http://example.org/lang/schema/pi/AdjectiveNoun
+lang_schema:AdjectiveNoun rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:Conversion ,
+                                          mmoon:AdjectiveNoun .
+
+
+###  http://example.org/lang/schema/pi/AdjectiveVerb
+lang_schema:AdjectiveVerb rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:Conversion ,
+                                          mmoon:AdjectiveVerb .
+
+
+###  http://example.org/lang/schema/pi/AdverbCompound
+lang_schema:AdverbCompound rdf:type owl:Class ;
+                           rdfs:subClassOf lang_schema:Compounding ,
+                                           mmoon:AdverbCompound .
+
+
+###  http://example.org/lang/schema/pi/Affix
+lang_schema:Affix rdf:type owl:Class ;
+                  rdfs:subClassOf lang_schema:Morph ,
+                                  mmoon:Affix .
+
+
+###  http://example.org/lang/schema/pi/AgentNoun
+lang_schema:AgentNoun rdf:type owl:Class ;
+                      rdfs:subClassOf lang_schema:DeverbalNoun ,
+                                      mmoon:AgentNoun .
+
+
+###  http://example.org/lang/schema/pi/AnalyticWordform
+lang_schema:AnalyticWordform rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:Wordform ,
+                                             mmoon:AnalyticWordform .
+
+
+###  http://example.org/lang/schema/pi/ApplicativeVerb
+lang_schema:ApplicativeVerb rdf:type owl:Class ;
+                            rdfs:subClassOf lang_schema:DeverbalVerb ,
+                                            mmoon:ApplicativeVerb .
+
+
+###  http://example.org/lang/schema/pi/AtomicMorpheme
+lang_schema:AtomicMorpheme rdf:type owl:Class ;
+                           rdfs:subClassOf lang_schema:Morpheme ,
+                                           mmoon:AtomicMorpheme .
+
+
+###  http://example.org/lang/schema/pi/AttenuativeAdjective
+lang_schema:AttenuativeAdjective rdf:type owl:Class ;
+                                 rdfs:subClassOf lang_schema:DeadjectivalAdjective ,
+                                                 mmoon:AttenuativeAdjective .
+
+
+###  http://example.org/lang/schema/pi/AttenuativeVerb
+lang_schema:AttenuativeVerb rdf:type owl:Class ;
+                            rdfs:subClassOf lang_schema:DeverbalVerb ,
+                                            mmoon:AttenuativeVerb .
+
+
+###  http://example.org/lang/schema/pi/AugmentativeNoun
+lang_schema:AugmentativeNoun rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:DenominalNoun ,
+                                             mmoon:AugmentativeNoun .
+
+
+###  http://example.org/lang/schema/pi/CausativeVerb
+lang_schema:CausativeVerb rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:DeverbalVerb ,
+                                          mmoon:CausativeVerb .
+
+
+###  http://example.org/lang/schema/pi/Circumfix
+lang_schema:Circumfix rdf:type owl:Class ;
+                      rdfs:subClassOf lang_schema:Affix ,
+                                      mmoon:Circumfix .
+
+
+###  http://example.org/lang/schema/pi/CollectivePersonNoun
+lang_schema:CollectivePersonNoun rdf:type owl:Class ;
+                                 rdfs:subClassOf lang_schema:DenominalNoun ,
+                                                 mmoon:CollectivePersonNoun .
+
+
+###  http://example.org/lang/schema/pi/CompoundWord
+lang_schema:CompoundWord rdf:type owl:Class ;
+                         rdfs:subClassOf lang_schema:Lexeme ,
+                                         mmoon:CompoundWord .
+
+
+###  http://example.org/lang/schema/pi/Compounding
+lang_schema:Compounding rdf:type owl:Class ;
+                        rdfs:subClassOf lang_schema:WordFormation ,
+                                        mmoon:Compounding .
+
+
+###  http://example.org/lang/schema/pi/Conjugation
+lang_schema:Conjugation rdf:type owl:Class ;
+                        rdfs:subClassOf lang_schema:VerbalInflection ,
+                                        mmoon:Conjugation .
+
+
+###  http://example.org/lang/schema/pi/Conversion
+lang_schema:Conversion rdf:type owl:Class ;
+                       rdfs:subClassOf lang_schema:Derivation ,
+                                       mmoon:Conversion .
+
+
+###  http://example.org/lang/schema/pi/DeadjectivalAdjective
+lang_schema:DeadjectivalAdjective rdf:type owl:Class ;
+                                  rdfs:subClassOf lang_schema:DerivedAdjective ,
+                                                  mmoon:DeadjectivalAdjective .
+
+
+###  http://example.org/lang/schema/pi/DeadjectivalAdverb
+lang_schema:DeadjectivalAdverb rdf:type owl:Class ;
+                               rdfs:subClassOf lang_schema:DerivedAdverb ,
+                                               mmoon:DeadjectivalAdverb .
+
+
+###  http://example.org/lang/schema/pi/DeadjectivalNoun
+lang_schema:DeadjectivalNoun rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:DerivedNoun ,
+                                             mmoon:DeadjectivalNoun .
+
+
+###  http://example.org/lang/schema/pi/DeadjectivalVerb
+lang_schema:DeadjectivalVerb rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:DerivedVerb ,
+                                             mmoon:DeadjectivalVerb .
+
+
+###  http://example.org/lang/schema/pi/DeadverbalAdverb
+lang_schema:DeadverbalAdverb rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:DerivedAdverb ,
+                                             mmoon:DeadverbalAdverb .
+
+
+###  http://example.org/lang/schema/pi/Declension
+lang_schema:Declension rdf:type owl:Class ;
+                       rdfs:subClassOf lang_schema:NominalInflection ,
+                                       mmoon:Declension .
+
+
+###  http://example.org/lang/schema/pi/Degree
+lang_schema:Degree rdf:type owl:Class ;
+                   rdfs:subClassOf lang_schema:AdjectivalInflection ,
+                                   mmoon:Degree .
+
+
+###  http://example.org/lang/schema/pi/Demonym
+lang_schema:Demonym rdf:type owl:Class ;
+                    rdfs:subClassOf lang_schema:DenominalNoun ,
+                                    mmoon:Demonym .
+
+
+###  http://example.org/lang/schema/pi/DenominalAdjective
+lang_schema:DenominalAdjective rdf:type owl:Class ;
+                               rdfs:subClassOf lang_schema:DerivedAdjective ,
+                                               mmoon:DenominalAdjective .
+
+
+###  http://example.org/lang/schema/pi/DenominalAdverb
+lang_schema:DenominalAdverb rdf:type owl:Class ;
+                            rdfs:subClassOf lang_schema:DerivedAdverb ,
+                                            mmoon:DenominalAdverb .
+
+
+###  http://example.org/lang/schema/pi/DenominalNoun
+lang_schema:DenominalNoun rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:DerivedNoun ,
+                                          mmoon:DenominalNoun .
+
+
+###  http://example.org/lang/schema/pi/DenominalVerb
+lang_schema:DenominalVerb rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:DerivedVerb ,
+                                          mmoon:DenominalVerb .
+
+
+###  http://example.org/lang/schema/pi/Derivation
+lang_schema:Derivation rdf:type owl:Class ;
+                       rdfs:subClassOf lang_schema:WordFormation ,
+                                       mmoon:Derivation .
+
+
+###  http://example.org/lang/schema/pi/DerivedAdjective
+lang_schema:DerivedAdjective rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:Derivation ,
+                                             mmoon:DerivedAdjective .
+
+
+###  http://example.org/lang/schema/pi/DerivedAdverb
+lang_schema:DerivedAdverb rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:Derivation ,
+                                          mmoon:DerivedAdverb .
+
+
+###  http://example.org/lang/schema/pi/DerivedNoun
+lang_schema:DerivedNoun rdf:type owl:Class ;
+                        rdfs:subClassOf lang_schema:Derivation ,
+                                        mmoon:DerivedNoun .
+
+
+###  http://example.org/lang/schema/pi/DerivedVerb
+lang_schema:DerivedVerb rdf:type owl:Class ;
+                        rdfs:subClassOf lang_schema:Derivation ,
+                                        mmoon:DerivedVerb .
+
+
+###  http://example.org/lang/schema/pi/DerivedWord
+lang_schema:DerivedWord rdf:type owl:Class ;
+                        rdfs:subClassOf lang_schema:Lexeme ,
+                                        mmoon:DerivedWord .
+
+
+###  http://example.org/lang/schema/pi/DesiderativeVerb
+lang_schema:DesiderativeVerb rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:DeverbalVerb ,
+                                             mmoon:DesiderativeVerb .
+
+
+###  http://example.org/lang/schema/pi/DeverbalAdjective
+lang_schema:DeverbalAdjective rdf:type owl:Class ;
+                              rdfs:subClassOf lang_schema:DerivedAdjective ,
+                                              mmoon:DeverbalAdjective .
+
+
+###  http://example.org/lang/schema/pi/DeverbalAdverb
+lang_schema:DeverbalAdverb rdf:type owl:Class ;
+                           rdfs:subClassOf lang_schema:DerivedAdverb ,
+                                           mmoon:DeverbalAdverb .
+
+
+###  http://example.org/lang/schema/pi/DeverbalNoun
+lang_schema:DeverbalNoun rdf:type owl:Class ;
+                         rdfs:subClassOf lang_schema:DerivedNoun ,
+                                         mmoon:DeverbalNoun .
+
+
+###  http://example.org/lang/schema/pi/DeverbalVerb
+lang_schema:DeverbalVerb rdf:type owl:Class ;
+                         rdfs:subClassOf lang_schema:DerivedVerb ,
+                                         mmoon:DeverbalVerb .
+
+
+###  http://example.org/lang/schema/pi/DiminutiveNoun
+lang_schema:DiminutiveNoun rdf:type owl:Class ;
+                           rdfs:subClassOf lang_schema:DenominalNoun ,
+                                           mmoon:DiminutiveNoun .
+
+
+###  http://example.org/lang/schema/pi/EmptyMorph
+lang_schema:EmptyMorph rdf:type owl:Class ;
+                       rdfs:subClassOf lang_schema:Affix ,
+                                       mmoon:EmptyMorph .
+
+
+###  http://example.org/lang/schema/pi/EmptyMorpheme
+lang_schema:EmptyMorpheme rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:Morpheme ,
+                                          mmoon:EmptyMorpheme .
+
+
+###  http://example.org/lang/schema/pi/FactitiveVerb
+lang_schema:FactitiveVerb rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:DeadjectivalVerb ,
+                                          mmoon:FactitiveVerb .
+
+
+###  http://example.org/lang/schema/pi/FemaleNoun
+lang_schema:FemaleNoun rdf:type owl:Class ;
+                       rdfs:subClassOf lang_schema:DenominalNoun ,
+                                       mmoon:FemaleNoun .
+
+
+###  http://example.org/lang/schema/pi/FusionalMorpheme
+lang_schema:FusionalMorpheme rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:Morpheme ,
+                                             mmoon:FusionalMorpheme .
+
+
+###  http://example.org/lang/schema/pi/GrammaticalWord
+lang_schema:GrammaticalWord rdf:type owl:Class ;
+                            rdfs:subClassOf lang_schema:LexicalEntry ,
+                                            mmoon:GrammaticalWord .
+
+
+###  http://example.org/lang/schema/pi/Infix
+lang_schema:Infix rdf:type owl:Class ;
+                  rdfs:subClassOf lang_schema:Affix ,
+                                  mmoon:Infix .
+
+
+###  http://example.org/lang/schema/pi/Inflection
+lang_schema:Inflection rdf:type owl:Class ;
+                       rdfs:subClassOf lang_schema:MorphologicalRelationship ,
+                                       mmoon:Inflection .
+
+
+###  http://example.org/lang/schema/pi/InstrumentNoun
+lang_schema:InstrumentNoun rdf:type owl:Class ;
+                           rdfs:subClassOf lang_schema:DeverbalNoun ,
+                                           mmoon:InstrumentNoun .
+
+
+###  http://example.org/lang/schema/pi/IrregularConjugation
+lang_schema:IrregularConjugation rdf:type owl:Class ;
+                                 rdfs:subClassOf lang_schema:Conjugation ,
+                                                 mmoon:IrregularConjugation .
+
+
+###  http://example.org/lang/schema/pi/IrregularDegree
+lang_schema:IrregularDegree rdf:type owl:Class ;
+                            rdfs:subClassOf lang_schema:Degree ,
+                                            mmoon:IrregularDegree .
+
+
+###  http://example.org/lang/schema/pi/Lexeme
+lang_schema:Lexeme rdf:type owl:Class ;
+                   rdfs:subClassOf lang_schema:LexicalEntry ,
+                                   mmoon:Lexeme .
+
+
+###  http://example.org/lang/schema/pi/LexicalEntry
+lang_schema:LexicalEntry rdf:type owl:Class ;
+                         rdfs:subClassOf lang_schema:Word .
+
+
+###  http://example.org/lang/schema/pi/MaterialAdjectivizer
+lang_schema:MaterialAdjectivizer rdf:type owl:Class ;
+                                 rdfs:subClassOf lang_schema:DenominalAdjective ,
+                                                 mmoon:MaterialAdjectivizer .
+
+
+###  http://example.org/lang/schema/pi/Morph
+lang_schema:Morph rdf:type owl:Class ;
+                  rdfs:subClassOf mmoon:Morph .
+
+
+###  http://example.org/lang/schema/pi/Morpheme
+lang_schema:Morpheme rdf:type owl:Class ;
+                     rdfs:subClassOf mmoon:Morpheme .
+
+
+###  http://example.org/lang/schema/pi/MorphologicalRelationship
+lang_schema:MorphologicalRelationship rdf:type owl:Class ;
+                                      rdfs:subClassOf mmoon:MorphologicalRelationship .
+
+
+###  http://example.org/lang/schema/pi/NoDegree
+lang_schema:NoDegree rdf:type owl:Class ;
+                     rdfs:subClassOf lang_schema:AdjectivalInflection ,
+                                     mmoon:NoDegree .
+
+
+###  http://example.org/lang/schema/pi/NoInflection
+lang_schema:NoInflection rdf:type owl:Class ;
+                         rdfs:subClassOf lang_schema:Inflection ,
+                                         mmoon:NoInflection .
+
+
+###  http://example.org/lang/schema/pi/NoWordFormation
+lang_schema:NoWordFormation rdf:type owl:Class ;
+                            rdfs:subClassOf lang_schema:WordFormation ,
+                                            mmoon:NoWordFormation .
+
+
+###  http://example.org/lang/schema/pi/NominalAdverb
+lang_schema:NominalAdverb rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:Conversion ,
+                                          mmoon:NominalAdverb .
+
+
+###  http://example.org/lang/schema/pi/NominalCompound
+lang_schema:NominalCompound rdf:type owl:Class ;
+                            rdfs:subClassOf lang_schema:Compounding ,
+                                            mmoon:NominalCompound .
+
+
+###  http://example.org/lang/schema/pi/NominalInflection
+lang_schema:NominalInflection rdf:type owl:Class ;
+                              rdfs:subClassOf lang_schema:Inflection ,
+                                              mmoon:NominalInflection .
+
+
+###  http://example.org/lang/schema/pi/NominalVerb
+lang_schema:NominalVerb rdf:type owl:Class ;
+                        rdfs:subClassOf lang_schema:Conversion ,
+                                        mmoon:NominalVerb .
+
+
+###  http://example.org/lang/schema/pi/NounAdjective
+lang_schema:NounAdjective rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:Conversion ,
+                                          mmoon:NounAdjective .
+
+
+###  http://example.org/lang/schema/pi/PossessiveAdjective
+lang_schema:PossessiveAdjective rdf:type owl:Class ;
+                                rdfs:subClassOf lang_schema:DenominalAdjective ,
+                                                mmoon:PossessiveAdjective .
+
+
+###  http://example.org/lang/schema/pi/Prefix
+lang_schema:Prefix rdf:type owl:Class ;
+                   rdfs:subClassOf lang_schema:Affix ,
+                                   mmoon:Prefix .
+
+
+###  http://example.org/lang/schema/pi/RegularConjugation
+lang_schema:RegularConjugation rdf:type owl:Class ;
+                               rdfs:subClassOf lang_schema:Conjugation ,
+                                               mmoon:RegularConjugation .
+
+
+###  http://example.org/lang/schema/pi/RegularDegree
+lang_schema:RegularDegree rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:Degree ,
+                                          mmoon:RegularDegree .
+
+
+###  http://example.org/lang/schema/pi/Representation
+lang_schema:Representation rdf:type owl:Class ;
+                           rdfs:subClassOf mmoon:Representation .
+
+
+###  http://example.org/lang/schema/pi/Root
+lang_schema:Root rdf:type owl:Class ;
+                 rdfs:subClassOf lang_schema:Morph ,
+                                 mmoon:Root .
+
+
+###  http://example.org/lang/schema/pi/SimpleLexeme
+lang_schema:SimpleLexeme rdf:type owl:Class ;
+                         rdfs:subClassOf lang_schema:Lexeme ,
+                                         mmoon:SimpleLexeme .
+
+
+###  http://example.org/lang/schema/pi/Simulfix
+lang_schema:Simulfix rdf:type owl:Class ;
+                     rdfs:subClassOf lang_schema:Affix ,
+                                     mmoon:Simulfix .
+
+
+###  http://example.org/lang/schema/pi/Stem
+lang_schema:Stem rdf:type owl:Class ;
+                 rdfs:subClassOf lang_schema:Morph ,
+                                 mmoon:Stem .
+
+
+###  http://example.org/lang/schema/pi/Suffix
+lang_schema:Suffix rdf:type owl:Class ;
+                   rdfs:subClassOf lang_schema:Affix ,
+                                   mmoon:Suffix .
+
+
+###  http://example.org/lang/schema/pi/SyntheticWordform
+lang_schema:SyntheticWordform rdf:type owl:Class ;
+                              rdfs:subClassOf lang_schema:Wordform ,
+                                              mmoon:SyntheticWordform .
+
+
+###  http://example.org/lang/schema/pi/Transfix
+lang_schema:Transfix rdf:type owl:Class ;
+                     rdfs:subClassOf lang_schema:Affix ,
+                                     mmoon:Transfix .
+
+
+###  http://example.org/lang/schema/pi/VerbalAdjective
+lang_schema:VerbalAdjective rdf:type owl:Class ;
+                            rdfs:subClassOf lang_schema:Conversion ,
+                                            mmoon:VerbalAdjective .
+
+
+###  http://example.org/lang/schema/pi/VerbalCompound
+lang_schema:VerbalCompound rdf:type owl:Class ;
+                           rdfs:subClassOf lang_schema:Compounding ,
+                                           mmoon:VerbalCompound .
+
+
+###  http://example.org/lang/schema/pi/VerbalInflection
+lang_schema:VerbalInflection rdf:type owl:Class ;
+                             rdfs:subClassOf lang_schema:Inflection ,
+                                             mmoon:VerbalInflection .
+
+
+###  http://example.org/lang/schema/pi/VerbalNoun
+lang_schema:VerbalNoun rdf:type owl:Class ;
+                       rdfs:subClassOf lang_schema:Conversion ,
+                                       mmoon:VerbalNoun .
+
+
+###  http://example.org/lang/schema/pi/Word
+lang_schema:Word rdf:type owl:Class ;
+                 rdfs:subClassOf mmoon:Word .
+
+
+###  http://example.org/lang/schema/pi/WordFormation
+lang_schema:WordFormation rdf:type owl:Class ;
+                          rdfs:subClassOf lang_schema:MorphologicalRelationship ,
+                                          mmoon:WordFormation .
+
+
+###  http://example.org/lang/schema/pi/Wordform
+lang_schema:Wordform rdf:type owl:Class ;
+                     rdfs:subClassOf lang_schema:Word ,
+                                     mmoon:Wordform .
+
+
+###  http://example.org/lang/schema/pi/ZeroMorph
+lang_schema:ZeroMorph rdf:type owl:Class ;
+                      rdfs:subClassOf lang_schema:Affix ,
+                                      mmoon:ZeroMorph .
+
+
+###  http://mmoon.org/core/Apprehensional
+mmoon:Apprehensional rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/Circumstantial
+mmoon:Circumstantial rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/Consecutive
+mmoon:Consecutive rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/CrossReference
+mmoon:CrossReference rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/Determination
+mmoon:Determination rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/Emphasizer
+mmoon:Emphasizer rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/FocusMarker
+mmoon:FocusMarker rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/InterpropositionalRelation
+mmoon:InterpropositionalRelation rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/MorphosyntacticFeature
+mmoon:MorphosyntacticFeature rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/Possessive
+mmoon:Possessive rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/StatusConstructus
+mmoon:StatusConstructus rdf:type owl:Class .
+
+
+###  http://mmoon.org/core/TopicMarker
+mmoon:TopicMarker rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/lang/schema/pi/Ablative
+lang_schema:Ablative rdf:type owl:NamedIndividual ,
+                              mmoon:Ablative .
+
+
+###  http://example.org/lang/schema/pi/AbsoluteAdjective
+lang_schema:AbsoluteAdjective rdf:type owl:NamedIndividual ,
+                                       mmoon:AbsoluteAdjective .
+
+
+###  http://example.org/lang/schema/pi/AbsoluteRelativeTense
+lang_schema:AbsoluteRelativeTense rdf:type owl:NamedIndividual ,
+                                           mmoon:AbsoluteRelativeTense .
+
+
+###  http://example.org/lang/schema/pi/AbsoluteState
+lang_schema:AbsoluteState rdf:type owl:NamedIndividual ,
+                                   mmoon:AbsoluteState .
+
+
+###  http://example.org/lang/schema/pi/AbsoluteTense
+lang_schema:AbsoluteTense rdf:type owl:NamedIndividual ,
+                                   mmoon:AbsoluteTense .
+
+
+###  http://example.org/lang/schema/pi/Absolutive
+lang_schema:Absolutive rdf:type owl:NamedIndividual ,
+                                mmoon:Absolutive .
+
+
+###  http://example.org/lang/schema/pi/Accusative
+lang_schema:Accusative rdf:type owl:NamedIndividual ,
+                                mmoon:Accusative .
+
+
+###  http://example.org/lang/schema/pi/ActionNominalizer
+lang_schema:ActionNominalizer rdf:type owl:NamedIndividual ,
+                                       mmoon:ActionNominalizer .
+
+
+###  http://example.org/lang/schema/pi/ActionNoun
+lang_schema:ActionNoun rdf:type owl:NamedIndividual ,
+                                mmoon:ActionNoun .
+
+
+###  http://example.org/lang/schema/pi/Active
+lang_schema:Active rdf:type owl:NamedIndividual ,
+                            mmoon:Active .
+
+
+###  http://example.org/lang/schema/pi/Adelative
+lang_schema:Adelative rdf:type owl:NamedIndividual ,
+                               mmoon:Adelative .
+
+
+###  http://example.org/lang/schema/pi/Adessive
+lang_schema:Adessive rdf:type owl:NamedIndividual ,
+                              mmoon:Adessive .
+
+
+###  http://example.org/lang/schema/pi/AdjectivalInflection
+lang_schema:AdjectivalInflection rdf:type owl:NamedIndividual ,
+                                          mmoon:AdjectivalInflection .
+
+
+###  http://example.org/lang/schema/pi/Adjective
+lang_schema:Adjective rdf:type owl:NamedIndividual ,
+                               mmoon:Adjective .
+
+
+###  http://example.org/lang/schema/pi/AdjectiveCompound
+lang_schema:AdjectiveCompound rdf:type owl:NamedIndividual ,
+                                       mmoon:AdjectiveCompound .
+
+
+###  http://example.org/lang/schema/pi/AdjectiveExpansion
+lang_schema:AdjectiveExpansion rdf:type owl:NamedIndividual ,
+                                        mmoon:AdjectiveExpansion .
+
+
+###  http://example.org/lang/schema/pi/AdjectiveNoun
+lang_schema:AdjectiveNoun rdf:type owl:NamedIndividual ,
+                                   mmoon:AdjectiveNoun .
+
+
+###  http://example.org/lang/schema/pi/AdjectiveVerb
+lang_schema:AdjectiveVerb rdf:type owl:NamedIndividual ,
+                                   mmoon:AdjectiveVerb .
+
+
+###  http://example.org/lang/schema/pi/Adjectivization
+lang_schema:Adjectivization rdf:type owl:NamedIndividual ,
+                                     mmoon:Adjectivization .
+
+
+###  http://example.org/lang/schema/pi/Admonitive
+lang_schema:Admonitive rdf:type owl:NamedIndividual ,
+                                mmoon:Admonitive .
+
+
+###  http://example.org/lang/schema/pi/Adposition
+lang_schema:Adposition rdf:type owl:NamedIndividual ,
+                                mmoon:Adposition .
+
+
+###  http://example.org/lang/schema/pi/Adverb
+lang_schema:Adverb rdf:type owl:NamedIndividual ,
+                            mmoon:Adverb .
+
+
+###  http://example.org/lang/schema/pi/AdverbCompound
+lang_schema:AdverbCompound rdf:type owl:NamedIndividual ,
+                                    mmoon:AdverbCompound .
+
+
+###  http://example.org/lang/schema/pi/Adverbialization
+lang_schema:Adverbialization rdf:type owl:NamedIndividual ,
+                                      mmoon:Adverbialization .
+
+
+###  http://example.org/lang/schema/pi/Affirmation
+lang_schema:Affirmation rdf:type owl:NamedIndividual ,
+                                 mmoon:Affirmation .
+
+
+###  http://example.org/lang/schema/pi/AgentNominalizer
+lang_schema:AgentNominalizer rdf:type owl:NamedIndividual ,
+                                      mmoon:AgentNominalizer .
+
+
+###  http://example.org/lang/schema/pi/AgentNoun
+lang_schema:AgentNoun rdf:type owl:NamedIndividual ,
+                               mmoon:AgentNoun .
+
+
+###  http://example.org/lang/schema/pi/Agentive
+lang_schema:Agentive rdf:type owl:NamedIndividual ,
+                              mmoon:Agentive .
+
+
+###  http://example.org/lang/schema/pi/Aktionsart
+lang_schema:Aktionsart rdf:type owl:NamedIndividual ,
+                                mmoon:Aktionsart .
+
+
+###  http://example.org/lang/schema/pi/AlienabilityClassifier
+lang_schema:AlienabilityClassifier rdf:type owl:NamedIndividual ,
+                                            mmoon:AlienabilityClassifier .
+
+
+###  http://example.org/lang/schema/pi/Alienable
+lang_schema:Alienable rdf:type owl:NamedIndividual ,
+                               mmoon:Alienable .
+
+
+###  http://example.org/lang/schema/pi/Allative
+lang_schema:Allative rdf:type owl:NamedIndividual ,
+                              mmoon:Allative .
+
+
+###  http://example.org/lang/schema/pi/AnimacyClassifier
+lang_schema:AnimacyClassifier rdf:type owl:NamedIndividual ,
+                                       mmoon:AnimacyClassifier .
+
+
+###  http://example.org/lang/schema/pi/Animal
+lang_schema:Animal rdf:type owl:NamedIndividual ,
+                            mmoon:Animal .
+
+
+###  http://example.org/lang/schema/pi/Animate
+lang_schema:Animate rdf:type owl:NamedIndividual ,
+                             mmoon:Animate .
+
+
+###  http://example.org/lang/schema/pi/Anterior
+lang_schema:Anterior rdf:type owl:NamedIndividual ,
+                              mmoon:Anterior .
+
+
+###  http://example.org/lang/schema/pi/Anticausative
+lang_schema:Anticausative rdf:type owl:NamedIndividual ,
+                                   mmoon:Anticausative .
+
+
+###  http://example.org/lang/schema/pi/Antipassive
+lang_schema:Antipassive rdf:type owl:NamedIndividual ,
+                                 mmoon:Antipassive .
+
+
+###  http://example.org/lang/schema/pi/Aorist
+lang_schema:Aorist rdf:type owl:NamedIndividual ,
+                            mmoon:Aorist .
+
+
+###  http://example.org/lang/schema/pi/Applicative
+lang_schema:Applicative rdf:type owl:NamedIndividual ,
+                                 mmoon:Applicative .
+
+
+###  http://example.org/lang/schema/pi/ApplicativeVerb
+lang_schema:ApplicativeVerb rdf:type owl:NamedIndividual ,
+                                     mmoon:ApplicativeVerb .
+
+
+###  http://example.org/lang/schema/pi/Apprehensional
+lang_schema:Apprehensional rdf:type owl:NamedIndividual ,
+                                    mmoon:Apprehensional .
+
+
+###  http://example.org/lang/schema/pi/Article
+lang_schema:Article rdf:type owl:NamedIndividual ,
+                             mmoon:Article .
+
+
+###  http://example.org/lang/schema/pi/Aspect
+lang_schema:Aspect rdf:type owl:NamedIndividual ,
+                            mmoon:Aspect .
+
+
+###  http://example.org/lang/schema/pi/Assumptive
+lang_schema:Assumptive rdf:type owl:NamedIndividual ,
+                                mmoon:Assumptive .
+
+
+###  http://example.org/lang/schema/pi/Attenuation
+lang_schema:Attenuation rdf:type owl:NamedIndividual ,
+                                 mmoon:Attenuation .
+
+
+###  http://example.org/lang/schema/pi/AttenuativeAdjective
+lang_schema:AttenuativeAdjective rdf:type owl:NamedIndividual ,
+                                          mmoon:AttenuativeAdjective .
+
+
+###  http://example.org/lang/schema/pi/AttenuativeVerb
+lang_schema:AttenuativeVerb rdf:type owl:NamedIndividual ,
+                                     mmoon:AttenuativeVerb .
+
+
+###  http://example.org/lang/schema/pi/Auditory
+lang_schema:Auditory rdf:type owl:NamedIndividual ,
+                              mmoon:Auditory .
+
+
+###  http://example.org/lang/schema/pi/Augmentation
+lang_schema:Augmentation rdf:type owl:NamedIndividual ,
+                                  mmoon:Augmentation .
+
+
+###  http://example.org/lang/schema/pi/AugmentativeNoun
+lang_schema:AugmentativeNoun rdf:type owl:NamedIndividual ,
+                                      mmoon:AugmentativeNoun .
+
+
+###  http://example.org/lang/schema/pi/AuxiliaryVerb
+lang_schema:AuxiliaryVerb rdf:type owl:NamedIndividual ,
+                                   mmoon:AuxiliaryVerb .
+
+
+###  http://example.org/lang/schema/pi/Aversive
+lang_schema:Aversive rdf:type owl:NamedIndividual ,
+                              mmoon:Aversive .
+
+
+###  http://example.org/lang/schema/pi/Benefactive
+lang_schema:Benefactive rdf:type owl:NamedIndividual ,
+                                 mmoon:Benefactive .
+
+
+###  http://example.org/lang/schema/pi/BenefactiveDative
+lang_schema:BenefactiveDative rdf:type owl:NamedIndividual ,
+                                       mmoon:BenefactiveDative .
+
+
+###  http://example.org/lang/schema/pi/CardinalNumber
+lang_schema:CardinalNumber rdf:type owl:NamedIndividual ,
+                                    mmoon:CardinalNumber .
+
+
+###  http://example.org/lang/schema/pi/Case
+lang_schema:Case rdf:type owl:NamedIndividual ,
+                          mmoon:Case .
+
+
+###  http://example.org/lang/schema/pi/CasusRectus
+lang_schema:CasusRectus rdf:type owl:NamedIndividual ,
+                                 mmoon:CasusRectus .
+
+
+###  http://example.org/lang/schema/pi/CausativeCase
+lang_schema:CausativeCase rdf:type owl:NamedIndividual ,
+                                   mmoon:CausativeCase .
+
+
+###  http://example.org/lang/schema/pi/CausativeVerb
+lang_schema:CausativeVerb rdf:type owl:NamedIndividual ,
+                                   mmoon:CausativeVerb .
+
+
+###  http://example.org/lang/schema/pi/CausativeVoice
+lang_schema:CausativeVoice rdf:type owl:NamedIndividual ,
+                                    mmoon:CausativeVoice .
+
+
+###  http://example.org/lang/schema/pi/Causativization
+lang_schema:Causativization rdf:type owl:NamedIndividual ,
+                                     mmoon:Causativization .
+
+
+###  http://example.org/lang/schema/pi/Circumposition
+lang_schema:Circumposition rdf:type owl:NamedIndividual ,
+                                    mmoon:Circumposition .
+
+
+###  http://example.org/lang/schema/pi/Circumstantial
+lang_schema:Circumstantial rdf:type owl:NamedIndividual ,
+                                    mmoon:Circumstantial .
+
+
+###  http://example.org/lang/schema/pi/Classifier
+lang_schema:Classifier rdf:type owl:NamedIndividual ,
+                                mmoon:Classifier .
+
+
+###  http://example.org/lang/schema/pi/Clusivity
+lang_schema:Clusivity rdf:type owl:NamedIndividual ,
+                               mmoon:Clusivity .
+
+
+###  http://example.org/lang/schema/pi/CollectivePersonNoun
+lang_schema:CollectivePersonNoun rdf:type owl:NamedIndividual ,
+                                          mmoon:CollectivePersonNoun .
+
+
+###  http://example.org/lang/schema/pi/Comitative
+lang_schema:Comitative rdf:type owl:NamedIndividual ,
+                                mmoon:Comitative .
+
+
+###  http://example.org/lang/schema/pi/Common
+lang_schema:Common rdf:type owl:NamedIndividual ,
+                            mmoon:Common .
+
+
+###  http://example.org/lang/schema/pi/CommonNoun
+lang_schema:CommonNoun rdf:type owl:NamedIndividual ,
+                                mmoon:CommonNoun .
+
+
+###  http://example.org/lang/schema/pi/Comparative
+lang_schema:Comparative rdf:type owl:NamedIndividual ,
+                                 mmoon:Comparative .
+
+
+###  http://example.org/lang/schema/pi/Complementizer
+lang_schema:Complementizer rdf:type owl:NamedIndividual ,
+                                    mmoon:Complementizer .
+
+
+###  http://example.org/lang/schema/pi/CompletiveAspect
+lang_schema:CompletiveAspect rdf:type owl:NamedIndividual ,
+                                      mmoon:CompletiveAspect .
+
+
+###  http://example.org/lang/schema/pi/Compounding
+lang_schema:Compounding rdf:type owl:NamedIndividual ,
+                                 mmoon:Compounding .
+
+
+###  http://example.org/lang/schema/pi/ConativeAktionsart
+lang_schema:ConativeAktionsart rdf:type owl:NamedIndividual ,
+                                        mmoon:ConativeAktionsart .
+
+
+###  http://example.org/lang/schema/pi/ConativeAspect
+lang_schema:ConativeAspect rdf:type owl:NamedIndividual ,
+                                    mmoon:ConativeAspect .
+
+
+###  http://example.org/lang/schema/pi/Conditional
+lang_schema:Conditional rdf:type owl:NamedIndividual ,
+                                 mmoon:Conditional .
+
+
+###  http://example.org/lang/schema/pi/Conjugation
+lang_schema:Conjugation rdf:type owl:NamedIndividual ,
+                                 mmoon:Conjugation .
+
+
+###  http://example.org/lang/schema/pi/Conjunction
+lang_schema:Conjunction rdf:type owl:NamedIndividual ,
+                                 mmoon:Conjunction .
+
+
+###  http://example.org/lang/schema/pi/Consecutive
+lang_schema:Consecutive rdf:type owl:NamedIndividual ,
+                                 mmoon:Consecutive .
+
+
+###  http://example.org/lang/schema/pi/ConstructState
+lang_schema:ConstructState rdf:type owl:NamedIndividual ,
+                                    mmoon:ConstructState .
+
+
+###  http://example.org/lang/schema/pi/Contablative
+lang_schema:Contablative rdf:type owl:NamedIndividual ,
+                                  mmoon:Contablative .
+
+
+###  http://example.org/lang/schema/pi/Contallative
+lang_schema:Contallative rdf:type owl:NamedIndividual ,
+                                  mmoon:Contallative .
+
+
+###  http://example.org/lang/schema/pi/Conterminative
+lang_schema:Conterminative rdf:type owl:NamedIndividual ,
+                                    mmoon:Conterminative .
+
+
+###  http://example.org/lang/schema/pi/Continuative
+lang_schema:Continuative rdf:type owl:NamedIndividual ,
+                                  mmoon:Continuative .
+
+
+###  http://example.org/lang/schema/pi/ContinuousAspect
+lang_schema:ContinuousAspect rdf:type owl:NamedIndividual ,
+                                      mmoon:ContinuousAspect .
+
+
+###  http://example.org/lang/schema/pi/Contlative
+lang_schema:Contlative rdf:type owl:NamedIndividual ,
+                                mmoon:Contlative .
+
+
+###  http://example.org/lang/schema/pi/Converb
+lang_schema:Converb rdf:type owl:NamedIndividual ,
+                             mmoon:Converb .
+
+
+###  http://example.org/lang/schema/pi/Conversion
+lang_schema:Conversion rdf:type owl:NamedIndividual ,
+                                mmoon:Conversion .
+
+
+###  http://example.org/lang/schema/pi/Copula
+lang_schema:Copula rdf:type owl:NamedIndividual ,
+                            mmoon:Copula .
+
+
+###  http://example.org/lang/schema/pi/Countability
+lang_schema:Countability rdf:type owl:NamedIndividual ,
+                                  mmoon:Countability .
+
+
+###  http://example.org/lang/schema/pi/Countable
+lang_schema:Countable rdf:type owl:NamedIndividual ,
+                               mmoon:Countable .
+
+
+###  http://example.org/lang/schema/pi/Crastinal
+lang_schema:Crastinal rdf:type owl:NamedIndividual ,
+                               mmoon:Crastinal .
+
+
+###  http://example.org/lang/schema/pi/CrossReference
+lang_schema:CrossReference rdf:type owl:NamedIndividual ,
+                                    mmoon:CrossReference .
+
+
+###  http://example.org/lang/schema/pi/Dative
+lang_schema:Dative rdf:type owl:NamedIndividual ,
+                            mmoon:Dative .
+
+
+###  http://example.org/lang/schema/pi/DativusEthicus
+lang_schema:DativusEthicus rdf:type owl:NamedIndividual ,
+                                    mmoon:DativusEthicus .
+
+
+###  http://example.org/lang/schema/pi/DeadjectivalAdjective
+lang_schema:DeadjectivalAdjective rdf:type owl:NamedIndividual ,
+                                           mmoon:DeadjectivalAdjective .
+
+
+###  http://example.org/lang/schema/pi/DeadjectivalAdverb
+lang_schema:DeadjectivalAdverb rdf:type owl:NamedIndividual ,
+                                        mmoon:DeadjectivalAdverb .
+
+
+###  http://example.org/lang/schema/pi/DeadjectivalNoun
+lang_schema:DeadjectivalNoun rdf:type owl:NamedIndividual ,
+                                      mmoon:DeadjectivalNoun .
+
+
+###  http://example.org/lang/schema/pi/DeadjectivalVerb
+lang_schema:DeadjectivalVerb rdf:type owl:NamedIndividual ,
+                                      mmoon:DeadjectivalVerb .
+
+
+###  http://example.org/lang/schema/pi/DeadverbalAdverb
+lang_schema:DeadverbalAdverb rdf:type owl:NamedIndividual ,
+                                      mmoon:DeadverbalAdverb .
+
+
+###  http://example.org/lang/schema/pi/DeclarativeMood
+lang_schema:DeclarativeMood rdf:type owl:NamedIndividual ,
+                                     mmoon:DeclarativeMood .
+
+
+###  http://example.org/lang/schema/pi/Declension
+lang_schema:Declension rdf:type owl:NamedIndividual ,
+                                mmoon:Declension .
+
+
+###  http://example.org/lang/schema/pi/Deductive
+lang_schema:Deductive rdf:type owl:NamedIndividual ,
+                               mmoon:Deductive .
+
+
+###  http://example.org/lang/schema/pi/Definite
+lang_schema:Definite rdf:type owl:NamedIndividual ,
+                              mmoon:Definite .
+
+
+###  http://example.org/lang/schema/pi/Definiteness
+lang_schema:Definiteness rdf:type owl:NamedIndividual ,
+                                  mmoon:Definiteness .
+
+
+###  http://example.org/lang/schema/pi/Degree
+lang_schema:Degree rdf:type owl:NamedIndividual ,
+                            mmoon:Degree .
+
+
+###  http://example.org/lang/schema/pi/DegreeOfComparison
+lang_schema:DegreeOfComparison rdf:type owl:NamedIndividual ,
+                                        mmoon:DegreeOfComparison .
+
+
+###  http://example.org/lang/schema/pi/Delative
+lang_schema:Delative rdf:type owl:NamedIndividual ,
+                              mmoon:Delative .
+
+
+###  http://example.org/lang/schema/pi/DemonstrativePronoun
+lang_schema:DemonstrativePronoun rdf:type owl:NamedIndividual ,
+                                          mmoon:DemonstrativePronoun .
+
+
+###  http://example.org/lang/schema/pi/Demonym
+lang_schema:Demonym rdf:type owl:NamedIndividual ,
+                             mmoon:Demonym .
+
+
+###  http://example.org/lang/schema/pi/DenominalAdjective
+lang_schema:DenominalAdjective rdf:type owl:NamedIndividual ,
+                                        mmoon:DenominalAdjective .
+
+
+###  http://example.org/lang/schema/pi/DenominalAdverb
+lang_schema:DenominalAdverb rdf:type owl:NamedIndividual ,
+                                     mmoon:DenominalAdverb .
+
+
+###  http://example.org/lang/schema/pi/DenominalNoun
+lang_schema:DenominalNoun rdf:type owl:NamedIndividual ,
+                                   mmoon:DenominalNoun .
+
+
+###  http://example.org/lang/schema/pi/DenominalVerb
+lang_schema:DenominalVerb rdf:type owl:NamedIndividual ,
+                                   mmoon:DenominalVerb .
+
+
+###  http://example.org/lang/schema/pi/Derivation
+lang_schema:Derivation rdf:type owl:NamedIndividual ,
+                                mmoon:Derivation .
+
+
+###  http://example.org/lang/schema/pi/DerivationalMeaning
+lang_schema:DerivationalMeaning rdf:type owl:NamedIndividual ,
+                                         mmoon:DerivationalMeaning .
+
+
+###  http://example.org/lang/schema/pi/DerivativeNegation
+lang_schema:DerivativeNegation rdf:type owl:NamedIndividual ,
+                                        mmoon:DerivativeNegation .
+
+
+###  http://example.org/lang/schema/pi/DerivedAdjective
+lang_schema:DerivedAdjective rdf:type owl:NamedIndividual ,
+                                      mmoon:DerivedAdjective .
+
+
+###  http://example.org/lang/schema/pi/DerivedAdverb
+lang_schema:DerivedAdverb rdf:type owl:NamedIndividual ,
+                                   mmoon:DerivedAdverb .
+
+
+###  http://example.org/lang/schema/pi/DerivedNoun
+lang_schema:DerivedNoun rdf:type owl:NamedIndividual ,
+                                 mmoon:DerivedNoun .
+
+
+###  http://example.org/lang/schema/pi/DerivedVerb
+lang_schema:DerivedVerb rdf:type owl:NamedIndividual ,
+                                 mmoon:DerivedVerb .
+
+
+###  http://example.org/lang/schema/pi/Desiderative
+lang_schema:Desiderative rdf:type owl:NamedIndividual ,
+                                  mmoon:Desiderative .
+
+
+###  http://example.org/lang/schema/pi/DesiderativeVerb
+lang_schema:DesiderativeVerb rdf:type owl:NamedIndividual ,
+                                      mmoon:DesiderativeVerb .
+
+
+###  http://example.org/lang/schema/pi/Destinative
+lang_schema:Destinative rdf:type owl:NamedIndividual ,
+                                 mmoon:Destinative .
+
+
+###  http://example.org/lang/schema/pi/Determination
+lang_schema:Determination rdf:type owl:NamedIndividual ,
+                                   mmoon:Determination .
+
+
+###  http://example.org/lang/schema/pi/Determiner
+lang_schema:Determiner rdf:type owl:NamedIndividual ,
+                                mmoon:Determiner .
+
+
+###  http://example.org/lang/schema/pi/DeverbalAdjective
+lang_schema:DeverbalAdjective rdf:type owl:NamedIndividual ,
+                                       mmoon:DeverbalAdjective .
+
+
+###  http://example.org/lang/schema/pi/DeverbalAdverb
+lang_schema:DeverbalAdverb rdf:type owl:NamedIndividual ,
+                                    mmoon:DeverbalAdverb .
+
+
+###  http://example.org/lang/schema/pi/DeverbalNoun
+lang_schema:DeverbalNoun rdf:type owl:NamedIndividual ,
+                                  mmoon:DeverbalNoun .
+
+
+###  http://example.org/lang/schema/pi/DeverbalVerb
+lang_schema:DeverbalVerb rdf:type owl:NamedIndividual ,
+                                  mmoon:DeverbalVerb .
+
+
+###  http://example.org/lang/schema/pi/DifferentSubject
+lang_schema:DifferentSubject rdf:type owl:NamedIndividual ,
+                                      mmoon:DifferentSubject .
+
+
+###  http://example.org/lang/schema/pi/Diminution
+lang_schema:Diminution rdf:type owl:NamedIndividual ,
+                                mmoon:Diminution .
+
+
+###  http://example.org/lang/schema/pi/DiminutiveNoun
+lang_schema:DiminutiveNoun rdf:type owl:NamedIndividual ,
+                                    mmoon:DiminutiveNoun .
+
+
+###  http://example.org/lang/schema/pi/DirectCase
+lang_schema:DirectCase rdf:type owl:NamedIndividual ,
+                                mmoon:DirectCase .
+
+
+###  http://example.org/lang/schema/pi/DirectVoice
+lang_schema:DirectVoice rdf:type owl:NamedIndividual ,
+                                 mmoon:DirectVoice .
+
+
+###  http://example.org/lang/schema/pi/DistributiveAktionsart
+lang_schema:DistributiveAktionsart rdf:type owl:NamedIndividual ,
+                                            mmoon:DistributiveAktionsart .
+
+
+###  http://example.org/lang/schema/pi/DistributiveAspect
+lang_schema:DistributiveAspect rdf:type owl:NamedIndividual ,
+                                        mmoon:DistributiveAspect .
+
+
+###  http://example.org/lang/schema/pi/DistributiveCase
+lang_schema:DistributiveCase rdf:type owl:NamedIndividual ,
+                                      mmoon:DistributiveCase .
+
+
+###  http://example.org/lang/schema/pi/Dual
+lang_schema:Dual rdf:type owl:NamedIndividual ,
+                          mmoon:Dual .
+
+
+###  http://example.org/lang/schema/pi/Dubitative
+lang_schema:Dubitative rdf:type owl:NamedIndividual ,
+                                mmoon:Dubitative .
+
+
+###  http://example.org/lang/schema/pi/DurativeAktionsart
+lang_schema:DurativeAktionsart rdf:type owl:NamedIndividual ,
+                                        mmoon:DurativeAktionsart .
+
+
+###  http://example.org/lang/schema/pi/DurativeAspect
+lang_schema:DurativeAspect rdf:type owl:NamedIndividual ,
+                                    mmoon:DurativeAspect .
+
+
+###  http://example.org/lang/schema/pi/Dynamic
+lang_schema:Dynamic rdf:type owl:NamedIndividual ,
+                             mmoon:Dynamic .
+
+
+###  http://example.org/lang/schema/pi/Egressive
+lang_schema:Egressive rdf:type owl:NamedIndividual ,
+                               mmoon:Egressive .
+
+
+###  http://example.org/lang/schema/pi/Elative
+lang_schema:Elative rdf:type owl:NamedIndividual ,
+                             mmoon:Elative .
+
+
+###  http://example.org/lang/schema/pi/EmpathicParticle
+lang_schema:EmpathicParticle rdf:type owl:NamedIndividual ,
+                                      mmoon:EmphaticParticle .
+
+
+###  http://example.org/lang/schema/pi/Emphasizer
+lang_schema:Emphasizer rdf:type owl:NamedIndividual ,
+                                mmoon:Emphasizer .
+
+
+###  http://example.org/lang/schema/pi/Equative
+lang_schema:Equative rdf:type owl:NamedIndividual ,
+                              mmoon:Equative .
+
+
+###  http://example.org/lang/schema/pi/Ergative
+lang_schema:Ergative rdf:type owl:NamedIndividual ,
+                              mmoon:Ergative .
+
+
+###  http://example.org/lang/schema/pi/Essive
+lang_schema:Essive rdf:type owl:NamedIndividual ,
+                            mmoon:Essive .
+
+
+###  http://example.org/lang/schema/pi/EssiveFormalCase
+lang_schema:EssiveFormalCase rdf:type owl:NamedIndividual ,
+                                      mmoon:EssiveFormalCase .
+
+
+###  http://example.org/lang/schema/pi/Evidentiality
+lang_schema:Evidentiality rdf:type owl:NamedIndividual ,
+                                   mmoon:Evidentiality .
+
+
+###  http://example.org/lang/schema/pi/Exclamative
+lang_schema:Exclamative rdf:type owl:NamedIndividual ,
+                                 mmoon:Exclamative .
+
+
+###  http://example.org/lang/schema/pi/Exclusive
+lang_schema:Exclusive rdf:type owl:NamedIndividual ,
+                               mmoon:Exclusive .
+
+
+###  http://example.org/lang/schema/pi/Expansion
+lang_schema:Expansion rdf:type owl:NamedIndividual ,
+                               mmoon:Expansion .
+
+
+###  http://example.org/lang/schema/pi/FactitiveVerb
+lang_schema:FactitiveVerb rdf:type owl:NamedIndividual ,
+                                   mmoon:FactitiveVerb .
+
+
+###  http://example.org/lang/schema/pi/Factitivity
+lang_schema:Factitivity rdf:type owl:NamedIndividual ,
+                                 mmoon:Factitivity .
+
+
+###  http://example.org/lang/schema/pi/Factive
+lang_schema:Factive rdf:type owl:NamedIndividual ,
+                             mmoon:Factive .
+
+
+###  http://example.org/lang/schema/pi/FemaleNominalization
+lang_schema:FemaleNominalization rdf:type owl:NamedIndividual ,
+                                          mmoon:FemaleNominalization .
+
+
+###  http://example.org/lang/schema/pi/FemaleNoun
+lang_schema:FemaleNoun rdf:type owl:NamedIndividual ,
+                                mmoon:FemaleNoun .
+
+
+###  http://example.org/lang/schema/pi/Feminine
+lang_schema:Feminine rdf:type owl:NamedIndividual ,
+                              mmoon:Feminine .
+
+
+###  http://example.org/lang/schema/pi/FiniteVerb
+lang_schema:FiniteVerb rdf:type owl:NamedIndividual ,
+                                mmoon:FiniteVerb .
+
+
+###  http://example.org/lang/schema/pi/FirstPerson
+lang_schema:FirstPerson rdf:type owl:NamedIndividual ,
+                                 mmoon:FirstPerson .
+
+
+###  http://example.org/lang/schema/pi/FocusMarker
+lang_schema:FocusMarker rdf:type owl:NamedIndividual ,
+                                 mmoon:FocusMarker .
+
+
+###  http://example.org/lang/schema/pi/FocusParticle
+lang_schema:FocusParticle rdf:type owl:NamedIndividual ,
+                                   mmoon:FocusParticle .
+
+
+###  http://example.org/lang/schema/pi/Folklore
+lang_schema:Folklore rdf:type owl:NamedIndividual ,
+                              mmoon:Folklore .
+
+
+###  http://example.org/lang/schema/pi/FrequentativeAktionsart
+lang_schema:FrequentativeAktionsart rdf:type owl:NamedIndividual ,
+                                             mmoon:FrequentativeAktionsart .
+
+
+###  http://example.org/lang/schema/pi/FrequentiveAspect
+lang_schema:FrequentiveAspect rdf:type owl:NamedIndividual ,
+                                       mmoon:FrequentiveAspect .
+
+
+###  http://example.org/lang/schema/pi/FunctionalDerivation
+lang_schema:FunctionalDerivation rdf:type owl:NamedIndividual ,
+                                          mmoon:FunctionalDerivation .
+
+
+###  http://example.org/lang/schema/pi/Future
+lang_schema:Future rdf:type owl:NamedIndividual ,
+                            mmoon:Future .
+
+
+###  http://example.org/lang/schema/pi/FutureInFuture
+lang_schema:FutureInFuture rdf:type owl:NamedIndividual ,
+                                    mmoon:FutureInFuture .
+
+
+###  http://example.org/lang/schema/pi/FutureInPast
+lang_schema:FutureInPast rdf:type owl:NamedIndividual ,
+                                  mmoon:FutureInPast .
+
+
+###  http://example.org/lang/schema/pi/FuturePerfect
+lang_schema:FuturePerfect rdf:type owl:NamedIndividual ,
+                                   mmoon:FuturePerfect .
+
+
+###  http://example.org/lang/schema/pi/Gender
+lang_schema:Gender rdf:type owl:NamedIndividual ,
+                            mmoon:Gender .
+
+
+###  http://example.org/lang/schema/pi/Genitive
+lang_schema:Genitive rdf:type owl:NamedIndividual ,
+                              mmoon:Genitive .
+
+
+###  http://example.org/lang/schema/pi/Gerund
+lang_schema:Gerund rdf:type owl:NamedIndividual ,
+                            mmoon:Gerund .
+
+
+###  http://example.org/lang/schema/pi/HabitualAspect
+lang_schema:HabitualAspect rdf:type owl:NamedIndividual ,
+                                    mmoon:HabitualAspect .
+
+
+###  http://example.org/lang/schema/pi/HesternalPast
+lang_schema:HesternalPast rdf:type owl:NamedIndividual ,
+                                   mmoon:HesternalPast .
+
+
+###  http://example.org/lang/schema/pi/HodiernalFuture
+lang_schema:HodiernalFuture rdf:type owl:NamedIndividual ,
+                                     mmoon:HodiernalFuture .
+
+
+###  http://example.org/lang/schema/pi/HodiernalPast
+lang_schema:HodiernalPast rdf:type owl:NamedIndividual ,
+                                   mmoon:HodiernalPast .
+
+
+###  http://example.org/lang/schema/pi/Honorificity
+lang_schema:Honorificity rdf:type owl:NamedIndividual ,
+                                  mmoon:Honorificity .
+
+
+###  http://example.org/lang/schema/pi/Hortative
+lang_schema:Hortative rdf:type owl:NamedIndividual ,
+                               mmoon:Hortative .
+
+
+###  http://example.org/lang/schema/pi/Human
+lang_schema:Human rdf:type owl:NamedIndividual ,
+                           mmoon:Human .
+
+
+###  http://example.org/lang/schema/pi/Humbleness
+lang_schema:Humbleness rdf:type owl:NamedIndividual ,
+                                mmoon:Humbleness .
+
+
+###  http://example.org/lang/schema/pi/Illative
+lang_schema:Illative rdf:type owl:NamedIndividual ,
+                              mmoon:Illative .
+
+
+###  http://example.org/lang/schema/pi/ImmediateFuture
+lang_schema:ImmediateFuture rdf:type owl:NamedIndividual ,
+                                     mmoon:ImmediateFuture .
+
+
+###  http://example.org/lang/schema/pi/ImmediatePast
+lang_schema:ImmediatePast rdf:type owl:NamedIndividual ,
+                                   mmoon:ImmediatePast .
+
+
+###  http://example.org/lang/schema/pi/Imperative
+lang_schema:Imperative rdf:type owl:NamedIndividual ,
+                                mmoon:Imperative .
+
+
+###  http://example.org/lang/schema/pi/Imperfect
+lang_schema:Imperfect rdf:type owl:NamedIndividual ,
+                               mmoon:Imperfect .
+
+
+###  http://example.org/lang/schema/pi/ImperfectiveAspect
+lang_schema:ImperfectiveAspect rdf:type owl:NamedIndividual ,
+                                        mmoon:ImperfectiveAspect .
+
+
+###  http://example.org/lang/schema/pi/ImpersonalPassive
+lang_schema:ImpersonalPassive rdf:type owl:NamedIndividual ,
+                                       mmoon:ImpersonalPassive .
+
+
+###  http://example.org/lang/schema/pi/Inablative
+lang_schema:Inablative rdf:type owl:NamedIndividual ,
+                                mmoon:Inablative .
+
+
+###  http://example.org/lang/schema/pi/Inalienable
+lang_schema:Inalienable rdf:type owl:NamedIndividual ,
+                                 mmoon:Inalienable .
+
+
+###  http://example.org/lang/schema/pi/Inallative
+lang_schema:Inallative rdf:type owl:NamedIndividual ,
+                                mmoon:Inallative .
+
+
+###  http://example.org/lang/schema/pi/Inanimate
+lang_schema:Inanimate rdf:type owl:NamedIndividual ,
+                               mmoon:Inanimate .
+
+
+###  http://example.org/lang/schema/pi/InceptiveAspect
+lang_schema:InceptiveAspect rdf:type owl:NamedIndividual ,
+                                     mmoon:InceptiveAspect .
+
+
+###  http://example.org/lang/schema/pi/Inchoative
+lang_schema:Inchoative rdf:type owl:NamedIndividual ,
+                                mmoon:Inchoative .
+
+
+###  http://example.org/lang/schema/pi/Inclusive
+lang_schema:Inclusive rdf:type owl:NamedIndividual ,
+                               mmoon:Inclusive .
+
+
+###  http://example.org/lang/schema/pi/Indefinite
+lang_schema:Indefinite rdf:type owl:NamedIndividual ,
+                                mmoon:Indefinite .
+
+
+###  http://example.org/lang/schema/pi/IndefinitePronoun
+lang_schema:IndefinitePronoun rdf:type owl:NamedIndividual ,
+                                       mmoon:IndefinitePronoun .
+
+
+###  http://example.org/lang/schema/pi/Indicative
+lang_schema:Indicative rdf:type owl:NamedIndividual ,
+                                mmoon:Indicative .
+
+
+###  http://example.org/lang/schema/pi/Inessive
+lang_schema:Inessive rdf:type owl:NamedIndividual ,
+                              mmoon:Inessive .
+
+
+###  http://example.org/lang/schema/pi/Inferential
+lang_schema:Inferential rdf:type owl:NamedIndividual ,
+                                 mmoon:Inferential .
+
+
+###  http://example.org/lang/schema/pi/Infinitve
+lang_schema:Infinitve rdf:type owl:NamedIndividual ,
+                               mmoon:Infinitve .
+
+
+###  http://example.org/lang/schema/pi/Inflection
+lang_schema:Inflection rdf:type owl:NamedIndividual ,
+                                mmoon:Inflection .
+
+
+###  http://example.org/lang/schema/pi/Ingressive
+lang_schema:Ingressive rdf:type owl:NamedIndividual ,
+                                mmoon:Ingressive .
+
+
+###  http://example.org/lang/schema/pi/Inhabitant
+lang_schema:Inhabitant rdf:type owl:NamedIndividual ,
+                                mmoon:Inhabitant .
+
+
+###  http://example.org/lang/schema/pi/InstrumentNominalizer
+lang_schema:InstrumentNominalizer rdf:type owl:NamedIndividual ,
+                                           mmoon:InstrumentNominalizer .
+
+
+###  http://example.org/lang/schema/pi/InstrumentNoun
+lang_schema:InstrumentNoun rdf:type owl:NamedIndividual ,
+                                    mmoon:InstrumentNoun .
+
+
+###  http://example.org/lang/schema/pi/Instrumental
+lang_schema:Instrumental rdf:type owl:NamedIndividual ,
+                                  mmoon:Instrumental .
+
+
+###  http://example.org/lang/schema/pi/IntensifyingAdverb
+lang_schema:IntensifyingAdverb rdf:type owl:NamedIndividual ,
+                                        mmoon:IntensifyingAdverb .
+
+
+###  http://example.org/lang/schema/pi/Interablative
+lang_schema:Interablative rdf:type owl:NamedIndividual ,
+                                   mmoon:Interablative .
+
+
+###  http://example.org/lang/schema/pi/Interallative
+lang_schema:Interallative rdf:type owl:NamedIndividual ,
+                                   mmoon:Interallative .
+
+
+###  http://example.org/lang/schema/pi/Interessive
+lang_schema:Interessive rdf:type owl:NamedIndividual ,
+                                 mmoon:Interessive .
+
+
+###  http://example.org/lang/schema/pi/Interjection
+lang_schema:Interjection rdf:type owl:NamedIndividual ,
+                                  mmoon:Interjection .
+
+
+###  http://example.org/lang/schema/pi/Interlative
+lang_schema:Interlative rdf:type owl:NamedIndividual ,
+                                 mmoon:Interlative .
+
+
+###  http://example.org/lang/schema/pi/Interminative
+lang_schema:Interminative rdf:type owl:NamedIndividual ,
+                                   mmoon:Interminative .
+
+
+###  http://example.org/lang/schema/pi/InterpropositionalRelation
+lang_schema:InterpropositionalRelation rdf:type owl:NamedIndividual ,
+                                                mmoon:InterpropositionalRelation .
+
+
+###  http://example.org/lang/schema/pi/Interrogative
+lang_schema:Interrogative rdf:type owl:NamedIndividual ,
+                                   mmoon:Interrogative .
+
+
+###  http://example.org/lang/schema/pi/InterrogativePronoun
+lang_schema:InterrogativePronoun rdf:type owl:NamedIndividual ,
+                                          mmoon:InterrogativePronoun .
+
+
+###  http://example.org/lang/schema/pi/Interterminative
+lang_schema:Interterminative rdf:type owl:NamedIndividual ,
+                                      mmoon:Interterminative .
+
+
+###  http://example.org/lang/schema/pi/Intertranslative
+lang_schema:Intertranslative rdf:type owl:NamedIndividual ,
+                                      mmoon:Intertranslative .
+
+
+###  http://example.org/lang/schema/pi/Intransitivizer
+lang_schema:Intransitivizer rdf:type owl:NamedIndividual ,
+                                     mmoon:Intransitivizer .
+
+
+###  http://example.org/lang/schema/pi/Intranslative
+lang_schema:Intranslative rdf:type owl:NamedIndividual ,
+                                   mmoon:Intranslative .
+
+
+###  http://example.org/lang/schema/pi/Introversion
+lang_schema:Introversion rdf:type owl:NamedIndividual ,
+                                  mmoon:Introversion .
+
+
+###  http://example.org/lang/schema/pi/Irrealis
+lang_schema:Irrealis rdf:type owl:NamedIndividual ,
+                              mmoon:Irrealis .
+
+
+###  http://example.org/lang/schema/pi/IrregularConjugation
+lang_schema:IrregularConjugation rdf:type owl:NamedIndividual ,
+                                          mmoon:IrregularConjugation .
+
+
+###  http://example.org/lang/schema/pi/IrregularDegree
+lang_schema:IrregularDegree rdf:type owl:NamedIndividual ,
+                                     mmoon:IrregularDegree .
+
+
+###  http://example.org/lang/schema/pi/IterativeAktionsart
+lang_schema:IterativeAktionsart rdf:type owl:NamedIndividual ,
+                                         mmoon:IterativeAktionsart .
+
+
+###  http://example.org/lang/schema/pi/IterativeAspect
+lang_schema:IterativeAspect rdf:type owl:NamedIndividual ,
+                                     mmoon:IterativeAspect .
+
+
+###  http://example.org/lang/schema/pi/Jussive
+lang_schema:Jussive rdf:type owl:NamedIndividual ,
+                             mmoon:Jussive .
+
+
+###  http://example.org/lang/schema/pi/Lative
+lang_schema:Lative rdf:type owl:NamedIndividual ,
+                            mmoon:Lative .
+
+
+###  http://example.org/lang/schema/pi/LinguisticCategory
+lang_schema:LinguisticCategory rdf:type owl:NamedIndividual ,
+                                        mmoon:LinguisticCategory .
+
+
+###  http://example.org/lang/schema/pi/LocalAdverb
+lang_schema:LocalAdverb rdf:type owl:NamedIndividual ,
+                                 mmoon:LocalAdverb .
+
+
+###  http://example.org/lang/schema/pi/LocalCase
+lang_schema:LocalCase rdf:type owl:NamedIndividual ,
+                               mmoon:LocalCase .
+
+
+###  http://example.org/lang/schema/pi/Locative
+lang_schema:Locative rdf:type owl:NamedIndividual ,
+                              mmoon:Locative .
+
+
+###  http://example.org/lang/schema/pi/Malefactive
+lang_schema:Malefactive rdf:type owl:NamedIndividual ,
+                                 mmoon:Malefactive .
+
+
+###  http://example.org/lang/schema/pi/MannerAdverb
+lang_schema:MannerAdverb rdf:type owl:NamedIndividual ,
+                                  mmoon:MannerAdverb .
+
+
+###  http://example.org/lang/schema/pi/MannerCase
+lang_schema:MannerCase rdf:type owl:NamedIndividual ,
+                                mmoon:MannerCase .
+
+
+###  http://example.org/lang/schema/pi/Masculine
+lang_schema:Masculine rdf:type owl:NamedIndividual ,
+                               mmoon:Masculine .
+
+
+###  http://example.org/lang/schema/pi/MaterialAdjectivizer
+lang_schema:MaterialAdjectivizer rdf:type owl:NamedIndividual ,
+                                          mmoon:MaterialAdjectivizer .
+
+
+###  http://example.org/lang/schema/pi/Mediative
+lang_schema:Mediative rdf:type owl:NamedIndividual ,
+                               mmoon:Mediative .
+
+
+###  http://example.org/lang/schema/pi/Mediopassive
+lang_schema:Mediopassive rdf:type owl:NamedIndividual ,
+                                  mmoon:Mediopassive .
+
+
+###  http://example.org/lang/schema/pi/MiddleVoice
+lang_schema:MiddleVoice rdf:type owl:NamedIndividual ,
+                                 mmoon:MiddleVoice .
+
+
+###  http://example.org/lang/schema/pi/Mirative
+lang_schema:Mirative rdf:type owl:NamedIndividual ,
+                              mmoon:Mirative .
+
+
+###  http://example.org/lang/schema/pi/ModalParticle
+lang_schema:ModalParticle rdf:type owl:NamedIndividual ,
+                                   mmoon:ModalParticle .
+
+
+###  http://example.org/lang/schema/pi/Mood
+lang_schema:Mood rdf:type owl:NamedIndividual ,
+                          mmoon:Mood .
+
+
+###  http://example.org/lang/schema/pi/MorphemeInventory
+lang_schema:MorphemeInventory rdf:type owl:NamedIndividual ,
+                                       mmoon:MorphemeInventory ;
+                              mmoon:forLanguage <http://lexvo.org/id/iso639-3/lang> ;
+                              rdfs:label "Morpheme Inventory"@en .
+
+
+###  http://example.org/lang/schema/pi/MorphosyntacticFeature
+lang_schema:MorphosyntacticFeature rdf:type owl:NamedIndividual ,
+                                            mmoon:MorphosyntacticFeature .
+
+
+###  http://example.org/lang/schema/pi/MultiplicativeCase
+lang_schema:MultiplicativeCase rdf:type owl:NamedIndividual ,
+                                        mmoon:MultiplicativeCase .
+
+
+###  http://example.org/lang/schema/pi/Narrative
+lang_schema:Narrative rdf:type owl:NamedIndividual ,
+                               mmoon:Narrative .
+
+
+###  http://example.org/lang/schema/pi/Negation
+lang_schema:Negation rdf:type owl:NamedIndividual ,
+                              mmoon:Negation .
+
+
+###  http://example.org/lang/schema/pi/Neuter
+lang_schema:Neuter rdf:type owl:NamedIndividual ,
+                            mmoon:Neuter .
+
+
+###  http://example.org/lang/schema/pi/NoDegree
+lang_schema:NoDegree rdf:type owl:NamedIndividual ,
+                              mmoon:NoDegree .
+
+
+###  http://example.org/lang/schema/pi/NoInflection
+lang_schema:NoInflection rdf:type owl:NamedIndividual ,
+                                  mmoon:NoInflection .
+
+
+###  http://example.org/lang/schema/pi/NoMeaning
+lang_schema:NoMeaning rdf:type owl:NamedIndividual ,
+                               mmoon:NoMeaning .
+
+
+###  http://example.org/lang/schema/pi/NoWordFormation
+lang_schema:NoWordFormation rdf:type owl:NamedIndividual ,
+                                     mmoon:NoWordFormation .
+
+
+###  http://example.org/lang/schema/pi/NominalAdverb
+lang_schema:NominalAdverb rdf:type owl:NamedIndividual ,
+                                   mmoon:NominalAdverb .
+
+
+###  http://example.org/lang/schema/pi/NominalCompound
+lang_schema:NominalCompound rdf:type owl:NamedIndividual ,
+                                     mmoon:NominalCompound .
+
+
+###  http://example.org/lang/schema/pi/NominalInflection
+lang_schema:NominalInflection rdf:type owl:NamedIndividual ,
+                                       mmoon:NominalInflection .
+
+
+###  http://example.org/lang/schema/pi/NominalState
+lang_schema:NominalState rdf:type owl:NamedIndividual ,
+                                  mmoon:NominalState .
+
+
+###  http://example.org/lang/schema/pi/NominalVerb
+lang_schema:NominalVerb rdf:type owl:NamedIndividual ,
+                                 mmoon:NominalVerb .
+
+
+###  http://example.org/lang/schema/pi/Nominalization
+lang_schema:Nominalization rdf:type owl:NamedIndividual ,
+                                    mmoon:Nominalization .
+
+
+###  http://example.org/lang/schema/pi/Nominative
+lang_schema:Nominative rdf:type owl:NamedIndividual ,
+                                mmoon:Nominative .
+
+
+###  http://example.org/lang/schema/pi/NonFiniteVerb
+lang_schema:NonFiniteVerb rdf:type owl:NamedIndividual ,
+                                   mmoon:NonFiniteVerb .
+
+
+###  http://example.org/lang/schema/pi/NonFuture
+lang_schema:NonFuture rdf:type owl:NamedIndividual ,
+                               mmoon:NonFuture .
+
+
+###  http://example.org/lang/schema/pi/NonPast
+lang_schema:NonPast rdf:type owl:NamedIndividual ,
+                             mmoon:NonPast .
+
+
+###  http://example.org/lang/schema/pi/NonVisual
+lang_schema:NonVisual rdf:type owl:NamedIndividual ,
+                               mmoon:NonVisual .
+
+
+###  http://example.org/lang/schema/pi/Noun
+lang_schema:Noun rdf:type owl:NamedIndividual ,
+                          mmoon:Noun .
+
+
+###  http://example.org/lang/schema/pi/NounAdjective
+lang_schema:NounAdjective rdf:type owl:NamedIndividual ,
+                                   mmoon:NounAdjective .
+
+
+###  http://example.org/lang/schema/pi/NounExpansion
+lang_schema:NounExpansion rdf:type owl:NamedIndividual ,
+                                   mmoon:NounExpansion .
+
+
+###  http://example.org/lang/schema/pi/Number
+lang_schema:Number rdf:type owl:NamedIndividual ,
+                            mmoon:Number .
+
+
+###  http://example.org/lang/schema/pi/Numeral
+lang_schema:Numeral rdf:type owl:NamedIndividual ,
+                             mmoon:Numeral .
+
+
+###  http://example.org/lang/schema/pi/NumeralClassifier
+lang_schema:NumeralClassifier rdf:type owl:NamedIndividual ,
+                                       mmoon:NumeralClassifier .
+
+
+###  http://example.org/lang/schema/pi/ObjectiveCase
+lang_schema:ObjectiveCase rdf:type owl:NamedIndividual ,
+                                   mmoon:ObjectiveCase .
+
+
+###  http://example.org/lang/schema/pi/Obligative
+lang_schema:Obligative rdf:type owl:NamedIndividual ,
+                                mmoon:Obligative .
+
+
+###  http://example.org/lang/schema/pi/Oblique
+lang_schema:Oblique rdf:type owl:NamedIndividual ,
+                             mmoon:Oblique .
+
+
+###  http://example.org/lang/schema/pi/Optative
+lang_schema:Optative rdf:type owl:NamedIndividual ,
+                              mmoon:Optative .
+
+
+###  http://example.org/lang/schema/pi/OrdinalNumber
+lang_schema:OrdinalNumber rdf:type owl:NamedIndividual ,
+                                   mmoon:OrdinalNumber .
+
+
+###  http://example.org/lang/schema/pi/Participle
+lang_schema:Participle rdf:type owl:NamedIndividual ,
+                                mmoon:Participle .
+
+
+###  http://example.org/lang/schema/pi/Particle
+lang_schema:Particle rdf:type owl:NamedIndividual ,
+                              mmoon:Particle .
+
+
+###  http://example.org/lang/schema/pi/Partitive
+lang_schema:Partitive rdf:type owl:NamedIndividual ,
+                               mmoon:Partitive .
+
+
+###  http://example.org/lang/schema/pi/Passive
+lang_schema:Passive rdf:type owl:NamedIndividual ,
+                             mmoon:Passive .
+
+
+###  http://example.org/lang/schema/pi/Past
+lang_schema:Past rdf:type owl:NamedIndividual ,
+                          mmoon:Past .
+
+
+###  http://example.org/lang/schema/pi/PastInFuture
+lang_schema:PastInFuture rdf:type owl:NamedIndividual ,
+                                  mmoon:PastInFuture .
+
+
+###  http://example.org/lang/schema/pi/PastPerfect
+lang_schema:PastPerfect rdf:type owl:NamedIndividual ,
+                                 mmoon:PastPerfect .
+
+
+###  http://example.org/lang/schema/pi/PatientNominalizer
+lang_schema:PatientNominalizer rdf:type owl:NamedIndividual ,
+                                        mmoon:PatientNominalizer .
+
+
+###  http://example.org/lang/schema/pi/Paucal
+lang_schema:Paucal rdf:type owl:NamedIndividual ,
+                            mmoon:Paucal .
+
+
+###  http://example.org/lang/schema/pi/Perfect
+lang_schema:Perfect rdf:type owl:NamedIndividual ,
+                             mmoon:Perfect .
+
+
+###  http://example.org/lang/schema/pi/PerfectiveAspect
+lang_schema:PerfectiveAspect rdf:type owl:NamedIndividual ,
+                                      mmoon:PerfectiveAspect .
+
+
+###  http://example.org/lang/schema/pi/Perlative
+lang_schema:Perlative rdf:type owl:NamedIndividual ,
+                               mmoon:Perlative .
+
+
+###  http://example.org/lang/schema/pi/Person
+lang_schema:Person rdf:type owl:NamedIndividual ,
+                            mmoon:Person .
+
+
+###  http://example.org/lang/schema/pi/PersonNominalizer
+lang_schema:PersonNominalizer rdf:type owl:NamedIndividual ,
+                                       mmoon:PersonNominalizer .
+
+
+###  http://example.org/lang/schema/pi/PersonalPronoun
+lang_schema:PersonalPronoun rdf:type owl:NamedIndividual ,
+                                     mmoon:PersonalPronoun .
+
+
+###  http://example.org/lang/schema/pi/PlaceNominalizer
+lang_schema:PlaceNominalizer rdf:type owl:NamedIndividual ,
+                                      mmoon:PlaceNominalizer .
+
+
+###  http://example.org/lang/schema/pi/Plural
+lang_schema:Plural rdf:type owl:NamedIndividual ,
+                            mmoon:Plural .
+
+
+###  http://example.org/lang/schema/pi/PolarAdjective
+lang_schema:PolarAdjective rdf:type owl:NamedIndividual ,
+                                    mmoon:PolarAdjective .
+
+
+###  http://example.org/lang/schema/pi/Polarity
+lang_schema:Polarity rdf:type owl:NamedIndividual ,
+                              mmoon:Polarity .
+
+
+###  http://example.org/lang/schema/pi/Positive
+lang_schema:Positive rdf:type owl:NamedIndividual ,
+                              mmoon:Positive .
+
+
+###  http://example.org/lang/schema/pi/Possessive
+lang_schema:Possessive rdf:type owl:NamedIndividual ,
+                                mmoon:Possessive .
+
+
+###  http://example.org/lang/schema/pi/PossessiveAdjective
+lang_schema:PossessiveAdjective rdf:type owl:NamedIndividual ,
+                                         mmoon:PossessiveAdjective .
+
+
+###  http://example.org/lang/schema/pi/PossessiveDative
+lang_schema:PossessiveDative rdf:type owl:NamedIndividual ,
+                                      mmoon:PossessiveDative .
+
+
+###  http://example.org/lang/schema/pi/PossessivePronoun
+lang_schema:PossessivePronoun rdf:type owl:NamedIndividual ,
+                                       mmoon:PossessivePronoun .
+
+
+###  http://example.org/lang/schema/pi/PostHodiernalFuture
+lang_schema:PostHodiernalFuture rdf:type owl:NamedIndividual ,
+                                         mmoon:PostHodiernalFuture .
+
+
+###  http://example.org/lang/schema/pi/Postelative
+lang_schema:Postelative rdf:type owl:NamedIndividual ,
+                                 mmoon:Postelative .
+
+
+###  http://example.org/lang/schema/pi/Posterior
+lang_schema:Posterior rdf:type owl:NamedIndividual ,
+                               mmoon:Posterior .
+
+
+###  http://example.org/lang/schema/pi/Postessive
+lang_schema:Postessive rdf:type owl:NamedIndividual ,
+                                mmoon:Postessive .
+
+
+###  http://example.org/lang/schema/pi/Postposition
+lang_schema:Postposition rdf:type owl:NamedIndividual ,
+                                  mmoon:Postposition .
+
+
+###  http://example.org/lang/schema/pi/Potential
+lang_schema:Potential rdf:type owl:NamedIndividual ,
+                               mmoon:Potential .
+
+
+###  http://example.org/lang/schema/pi/Precative
+lang_schema:Precative rdf:type owl:NamedIndividual ,
+                               mmoon:Precative .
+
+
+###  http://example.org/lang/schema/pi/Preclusive
+lang_schema:Preclusive rdf:type owl:NamedIndividual ,
+                                mmoon:Preclusive .
+
+
+###  http://example.org/lang/schema/pi/PrehodiernalPast
+lang_schema:PrehodiernalPast rdf:type owl:NamedIndividual ,
+                                      mmoon:PrehodiernalPast .
+
+
+###  http://example.org/lang/schema/pi/Preposition
+lang_schema:Preposition rdf:type owl:NamedIndividual ,
+                                 mmoon:Preposition .
+
+
+###  http://example.org/lang/schema/pi/PrepositionalCase
+lang_schema:PrepositionalCase rdf:type owl:NamedIndividual ,
+                                       mmoon:PrepositionalCase .
+
+
+###  http://example.org/lang/schema/pi/Present
+lang_schema:Present rdf:type owl:NamedIndividual ,
+                             mmoon:Present .
+
+
+###  http://example.org/lang/schema/pi/Privative
+lang_schema:Privative rdf:type owl:NamedIndividual ,
+                               mmoon:Privative .
+
+
+###  http://example.org/lang/schema/pi/PrivativeAdjectivizer
+lang_schema:PrivativeAdjectivizer rdf:type owl:NamedIndividual ,
+                                           mmoon:PrivativeAdjectivizer .
+
+
+###  http://example.org/lang/schema/pi/Processive
+lang_schema:Processive rdf:type owl:NamedIndividual ,
+                                mmoon:Processive .
+
+
+###  http://example.org/lang/schema/pi/ProgressiveAspect
+lang_schema:ProgressiveAspect rdf:type owl:NamedIndividual ,
+                                       mmoon:ProgressiveAspect .
+
+
+###  http://example.org/lang/schema/pi/Prohibitive
+lang_schema:Prohibitive rdf:type owl:NamedIndividual ,
+                                 mmoon:Prohibitive .
+
+
+###  http://example.org/lang/schema/pi/Prolative
+lang_schema:Prolative rdf:type owl:NamedIndividual ,
+                               mmoon:Prolative .
+
+
+###  http://example.org/lang/schema/pi/Pronoun
+lang_schema:Pronoun rdf:type owl:NamedIndividual ,
+                             mmoon:Pronoun .
+
+
+###  http://example.org/lang/schema/pi/ProperNoun
+lang_schema:ProperNoun rdf:type owl:NamedIndividual ,
+                                mmoon:ProperNoun .
+
+
+###  http://example.org/lang/schema/pi/Proprietive
+lang_schema:Proprietive rdf:type owl:NamedIndividual ,
+                                 mmoon:Proprietive .
+
+
+###  http://example.org/lang/schema/pi/ProprietiveCase
+lang_schema:ProprietiveCase rdf:type owl:NamedIndividual ,
+                                     mmoon:ProprietiveCase .
+
+
+###  http://example.org/lang/schema/pi/ProspectiveAspect
+lang_schema:ProspectiveAspect rdf:type owl:NamedIndividual ,
+                                       mmoon:ProspectiveAspect .
+
+
+###  http://example.org/lang/schema/pi/Punctual
+lang_schema:Punctual rdf:type owl:NamedIndividual ,
+                              mmoon:Punctual .
+
+
+###  http://example.org/lang/schema/pi/Quality
+lang_schema:Quality rdf:type owl:NamedIndividual ,
+                             mmoon:Quality .
+
+
+###  http://example.org/lang/schema/pi/QuestionParticle
+lang_schema:QuestionParticle rdf:type owl:NamedIndividual ,
+                                      mmoon:QuestionParticle .
+
+
+###  http://example.org/lang/schema/pi/Quotative
+lang_schema:Quotative rdf:type owl:NamedIndividual ,
+                               mmoon:Quotative .
+
+
+###  http://example.org/lang/schema/pi/Realis
+lang_schema:Realis rdf:type owl:NamedIndividual ,
+                            mmoon:Realis .
+
+
+###  http://example.org/lang/schema/pi/RecentPast
+lang_schema:RecentPast rdf:type owl:NamedIndividual ,
+                                mmoon:RecentPast .
+
+
+###  http://example.org/lang/schema/pi/ReciprocalMiddle
+lang_schema:ReciprocalMiddle rdf:type owl:NamedIndividual ,
+                                      mmoon:ReciprocalMiddle .
+
+
+###  http://example.org/lang/schema/pi/ReciprocalPronoun
+lang_schema:ReciprocalPronoun rdf:type owl:NamedIndividual ,
+                                       mmoon:ReciprocalPronoun .
+
+
+###  http://example.org/lang/schema/pi/Referentive
+lang_schema:Referentive rdf:type owl:NamedIndividual ,
+                                 mmoon:Referentive .
+
+
+###  http://example.org/lang/schema/pi/ReflexivePronoun
+lang_schema:ReflexivePronoun rdf:type owl:NamedIndividual ,
+                                      mmoon:ReflexivePronoun .
+
+
+###  http://example.org/lang/schema/pi/ReflexiveVoice
+lang_schema:ReflexiveVoice rdf:type owl:NamedIndividual ,
+                                    mmoon:ReflexiveVoice .
+
+
+###  http://example.org/lang/schema/pi/RegularConjugation
+lang_schema:RegularConjugation rdf:type owl:NamedIndividual ,
+                                        mmoon:RegularConjugation .
+
+
+###  http://example.org/lang/schema/pi/RegularDegree
+lang_schema:RegularDegree rdf:type owl:NamedIndividual ,
+                                   mmoon:RegularDegree .
+
+
+###  http://example.org/lang/schema/pi/Relational
+lang_schema:Relational rdf:type owl:NamedIndividual ,
+                                mmoon:Relational .
+
+
+###  http://example.org/lang/schema/pi/RelativePast
+lang_schema:RelativePast rdf:type owl:NamedIndividual ,
+                                  mmoon:RelativePast .
+
+
+###  http://example.org/lang/schema/pi/RelativePerson
+lang_schema:RelativePerson rdf:type owl:NamedIndividual ,
+                                    mmoon:RelativePerson .
+
+
+###  http://example.org/lang/schema/pi/RelativePresent
+lang_schema:RelativePresent rdf:type owl:NamedIndividual ,
+                                     mmoon:RelativePresent .
+
+
+###  http://example.org/lang/schema/pi/RelativePronoun
+lang_schema:RelativePronoun rdf:type owl:NamedIndividual ,
+                                     mmoon:RelativePronoun .
+
+
+###  http://example.org/lang/schema/pi/RelativeTense
+lang_schema:RelativeTense rdf:type owl:NamedIndividual ,
+                                   mmoon:RelativeTense .
+
+
+###  http://example.org/lang/schema/pi/RemotePast
+lang_schema:RemotePast rdf:type owl:NamedIndividual ,
+                                mmoon:RemotePast .
+
+
+###  http://example.org/lang/schema/pi/Repetitive
+lang_schema:Repetitive rdf:type owl:NamedIndividual ,
+                                mmoon:Repetitive .
+
+
+###  http://example.org/lang/schema/pi/Reportative
+lang_schema:Reportative rdf:type owl:NamedIndividual ,
+                                 mmoon:Reportative .
+
+
+###  http://example.org/lang/schema/pi/ResultativeAktionsart
+lang_schema:ResultativeAktionsart rdf:type owl:NamedIndividual ,
+                                           mmoon:ResultativeAktionsart .
+
+
+###  http://example.org/lang/schema/pi/ResultativeAspect
+lang_schema:ResultativeAspect rdf:type owl:NamedIndividual ,
+                                       mmoon:ResultativeAspect .
+
+
+###  http://example.org/lang/schema/pi/Reverence
+lang_schema:Reverence rdf:type owl:NamedIndividual ,
+                               mmoon:Reverence .
+
+
+###  http://example.org/lang/schema/pi/Reversion
+lang_schema:Reversion rdf:type owl:NamedIndividual ,
+                               mmoon:Reversion .
+
+
+###  http://example.org/lang/schema/pi/SameSubject
+lang_schema:SameSubject rdf:type owl:NamedIndividual ,
+                                 mmoon:SameSubject .
+
+
+###  http://example.org/lang/schema/pi/SecondPerson
+lang_schema:SecondPerson rdf:type owl:NamedIndividual ,
+                                  mmoon:SecondPerson .
+
+
+###  http://example.org/lang/schema/pi/SemanticDerivation
+lang_schema:SemanticDerivation rdf:type owl:NamedIndividual ,
+                                        mmoon:SemanticDerivation .
+
+
+###  http://example.org/lang/schema/pi/SemelfactiveAktionsart
+lang_schema:SemelfactiveAktionsart rdf:type owl:NamedIndividual ,
+                                            mmoon:SemelfactiveAktionsart .
+
+
+###  http://example.org/lang/schema/pi/SemelfactiveAspect
+lang_schema:SemelfactiveAspect rdf:type owl:NamedIndividual ,
+                                        mmoon:SemelfactiveAspect .
+
+
+###  http://example.org/lang/schema/pi/Sense
+lang_schema:Sense rdf:type owl:NamedIndividual ,
+                           mmoon:Sense .
+
+
+###  http://example.org/lang/schema/pi/Sensory
+lang_schema:Sensory rdf:type owl:NamedIndividual ,
+                             mmoon:Sensory .
+
+
+###  http://example.org/lang/schema/pi/SimultaneousAspect
+lang_schema:SimultaneousAspect rdf:type owl:NamedIndividual ,
+                                        mmoon:SimultaneousAspect .
+
+
+###  http://example.org/lang/schema/pi/Singular
+lang_schema:Singular rdf:type owl:NamedIndividual ,
+                              mmoon:Singular .
+
+
+###  http://example.org/lang/schema/pi/SocialDeixis
+lang_schema:SocialDeixis rdf:type owl:NamedIndividual ,
+                                  mmoon:SocialDeixis .
+
+
+###  http://example.org/lang/schema/pi/Sociative
+lang_schema:Sociative rdf:type owl:NamedIndividual ,
+                               mmoon:Sociative .
+
+
+###  http://example.org/lang/schema/pi/Speculative
+lang_schema:Speculative rdf:type owl:NamedIndividual ,
+                                 mmoon:Speculative .
+
+
+###  http://example.org/lang/schema/pi/State
+lang_schema:State rdf:type owl:NamedIndividual ,
+                           mmoon:State .
+
+
+###  http://example.org/lang/schema/pi/Stative
+lang_schema:Stative rdf:type owl:NamedIndividual ,
+                             mmoon:Stative .
+
+
+###  http://example.org/lang/schema/pi/StatusConstructus
+lang_schema:StatusConstructus rdf:type owl:NamedIndividual ,
+                                       mmoon:StatusConstructus .
+
+
+###  http://example.org/lang/schema/pi/Subablative
+lang_schema:Subablative rdf:type owl:NamedIndividual ,
+                                 mmoon:Subablative .
+
+
+###  http://example.org/lang/schema/pi/Suballative
+lang_schema:Suballative rdf:type owl:NamedIndividual ,
+                                 mmoon:Suballative .
+
+
+###  http://example.org/lang/schema/pi/Subelative
+lang_schema:Subelative rdf:type owl:NamedIndividual ,
+                                mmoon:Subelative .
+
+
+###  http://example.org/lang/schema/pi/Subessive
+lang_schema:Subessive rdf:type owl:NamedIndividual ,
+                               mmoon:Subessive .
+
+
+###  http://example.org/lang/schema/pi/Subjunctive
+lang_schema:Subjunctive rdf:type owl:NamedIndividual ,
+                                 mmoon:Subjunctive .
+
+
+###  http://example.org/lang/schema/pi/Sublative
+lang_schema:Sublative rdf:type owl:NamedIndividual ,
+                               mmoon:Sublative .
+
+
+###  http://example.org/lang/schema/pi/Subterminative
+lang_schema:Subterminative rdf:type owl:NamedIndividual ,
+                                    mmoon:Subterminative .
+
+
+###  http://example.org/lang/schema/pi/Subtranslative
+lang_schema:Subtranslative rdf:type owl:NamedIndividual ,
+                                    mmoon:Subtranslative .
+
+
+###  http://example.org/lang/schema/pi/Superablative
+lang_schema:Superablative rdf:type owl:NamedIndividual ,
+                                   mmoon:Superablative .
+
+
+###  http://example.org/lang/schema/pi/Superallative
+lang_schema:Superallative rdf:type owl:NamedIndividual ,
+                                   mmoon:Superallative .
+
+
+###  http://example.org/lang/schema/pi/Superelative
+lang_schema:Superelative rdf:type owl:NamedIndividual ,
+                                  mmoon:Superelative .
+
+
+###  http://example.org/lang/schema/pi/Superessive
+lang_schema:Superessive rdf:type owl:NamedIndividual ,
+                                 mmoon:Superessive .
+
+
+###  http://example.org/lang/schema/pi/Superlative
+lang_schema:Superlative rdf:type owl:NamedIndividual ,
+                                 mmoon:Superlative .
+
+
+###  http://example.org/lang/schema/pi/SuperlativeCase
+lang_schema:SuperlativeCase rdf:type owl:NamedIndividual ,
+                                     mmoon:SuperlativeCase .
+
+
+###  http://example.org/lang/schema/pi/Superterminative
+lang_schema:Superterminative rdf:type owl:NamedIndividual ,
+                                      mmoon:Superterminative .
+
+
+###  http://example.org/lang/schema/pi/Supertranslative
+lang_schema:Supertranslative rdf:type owl:NamedIndividual ,
+                                      mmoon:Supertranslative .
+
+
+###  http://example.org/lang/schema/pi/TemporalAdverb
+lang_schema:TemporalAdverb rdf:type owl:NamedIndividual ,
+                                    mmoon:TemporalAdverb .
+
+
+###  http://example.org/lang/schema/pi/TemporalisCase
+lang_schema:TemporalisCase rdf:type owl:NamedIndividual ,
+                                    mmoon:TemporalisCase .
+
+
+###  http://example.org/lang/schema/pi/Tense
+lang_schema:Tense rdf:type owl:NamedIndividual ,
+                           mmoon:Tense .
+
+
+###  http://example.org/lang/schema/pi/Terminative
+lang_schema:Terminative rdf:type owl:NamedIndividual ,
+                                 mmoon:Terminative .
+
+
+###  http://example.org/lang/schema/pi/TerminativeAspect
+lang_schema:TerminativeAspect rdf:type owl:NamedIndividual ,
+                                       mmoon:TerminativeAspect .
+
+
+###  http://example.org/lang/schema/pi/ThirdPerson
+lang_schema:ThirdPerson rdf:type owl:NamedIndividual ,
+                                 mmoon:ThirdPerson .
+
+
+###  http://example.org/lang/schema/pi/Timitive
+lang_schema:Timitive rdf:type owl:NamedIndividual ,
+                              mmoon:Timitive .
+
+
+###  http://example.org/lang/schema/pi/TopicMarker
+lang_schema:TopicMarker rdf:type owl:NamedIndividual ,
+                                 mmoon:TopicMarker .
+
+
+###  http://example.org/lang/schema/pi/Transformative
+lang_schema:Transformative rdf:type owl:NamedIndividual ,
+                                    mmoon:Transformative .
+
+
+###  http://example.org/lang/schema/pi/Transitivizer
+lang_schema:Transitivizer rdf:type owl:NamedIndividual ,
+                                   mmoon:Transitivizer .
+
+
+###  http://example.org/lang/schema/pi/Translative
+lang_schema:Translative rdf:type owl:NamedIndividual ,
+                                 mmoon:Translative .
+
+
+###  http://example.org/lang/schema/pi/Uncountable
+lang_schema:Uncountable rdf:type owl:NamedIndividual ,
+                                 mmoon:Uncountable .
+
+
+###  http://example.org/lang/schema/pi/Unitive
+lang_schema:Unitive rdf:type owl:NamedIndividual ,
+                             mmoon:Unitive .
+
+
+###  http://example.org/lang/schema/pi/ValencyChange
+lang_schema:ValencyChange rdf:type owl:NamedIndividual ,
+                                   mmoon:ValencyChange .
+
+
+###  http://example.org/lang/schema/pi/Verb
+lang_schema:Verb rdf:type owl:NamedIndividual ,
+                          mmoon:Verb .
+
+
+###  http://example.org/lang/schema/pi/VerbExpansion
+lang_schema:VerbExpansion rdf:type owl:NamedIndividual ,
+                                   mmoon:VerbExpansion .
+
+
+###  http://example.org/lang/schema/pi/VerbalAdjective
+lang_schema:VerbalAdjective rdf:type owl:NamedIndividual ,
+                                     mmoon:VerbalAdjective .
+
+
+###  http://example.org/lang/schema/pi/VerbalCompound
+lang_schema:VerbalCompound rdf:type owl:NamedIndividual ,
+                                    mmoon:VerbalCompound .
+
+
+###  http://example.org/lang/schema/pi/VerbalInflection
+lang_schema:VerbalInflection rdf:type owl:NamedIndividual ,
+                                      mmoon:VerbalInflection .
+
+
+###  http://example.org/lang/schema/pi/VerbalNoun
+lang_schema:VerbalNoun rdf:type owl:NamedIndividual ,
+                                mmoon:VerbalNoun .
+
+
+###  http://example.org/lang/schema/pi/Verbalization
+lang_schema:Verbalization rdf:type owl:NamedIndividual ,
+                                   mmoon:Verbalization .
+
+
+###  http://example.org/lang/schema/pi/Visual
+lang_schema:Visual rdf:type owl:NamedIndividual ,
+                            mmoon:Visual .
+
+
+###  http://example.org/lang/schema/pi/Vocative
+lang_schema:Vocative rdf:type owl:NamedIndividual ,
+                              mmoon:Vocative .
+
+
+###  http://example.org/lang/schema/pi/Voice
+lang_schema:Voice rdf:type owl:NamedIndividual ,
+                           mmoon:Voice .
+
+
+###  http://example.org/lang/schema/pi/WordFormation
+lang_schema:WordFormation rdf:type owl:NamedIndividual ,
+                                   mmoon:WordFormation .
+
+
+###  http://example.org/lang/schema/pi/WordclassAffiliation
+lang_schema:WordclassAffiliation rdf:type owl:NamedIndividual ,
+                                          mmoon:WordclassAffiliation .
+
+
+###  http://example.org/lang/schema/pi/WordclassChangingDerivation
+lang_schema:WordclassChangingDerivation rdf:type owl:NamedIndividual ,
+                                                 mmoon:WordclassChangingDerivation .
+
+
+###  Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi
